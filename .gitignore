@@ -1,0 +1,17 @@
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+node_modules
+src/__pycache__
+src/file_layer/__pycache__
+src/pojo/__pycache__
+src/strategy/__pycache__
+src/utils/__pycache__
+src/sources
+src/sources/*
+src/graph_json
