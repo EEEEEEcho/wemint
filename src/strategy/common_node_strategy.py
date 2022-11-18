@@ -39,6 +39,7 @@ def variable_declaration_analysis(variable_declaration: dict, context, mini_prog
                         variable_value = co.search_identifier(value_identifier, context)
                         # taint_type = key_leak.taint_match(variable_value)
                         # scope_check(scope, mini_program, variable_name, variable_value, taint_type)
+                #
 
 
 def expression_statement_analysis(expression_statement: dict, context, mini_program: MiniProgram):
@@ -224,4 +225,4 @@ def object_node_analysis(obj_expression: dict, context):
 
 
 def function_declaration_analysis(function_declaration: dict,function_context: FunctionContext,file_func_dict: dict):
-
+    pass

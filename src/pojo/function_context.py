@@ -8,6 +8,8 @@ class FunctionContext:
         self.scope = scope
         # 当前上下文名字
         self.name = name
+        # 当前上下文是否分析过
+        self.analyzed = False
         # 变量表
         self.variable_table = dict()
         # 参数表

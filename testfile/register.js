@@ -4,9 +4,13 @@ let variable = author + " mengs"
 let c = 10
 let d = 10 * 2
 let e =  c + d + 3
-function jump(){
+function jump(x,y,z){
   let c = 10;
   console.log(c);
+}
+function next(p){
+  let j = p;
+  console.log(j);
 }
 Page({
 
