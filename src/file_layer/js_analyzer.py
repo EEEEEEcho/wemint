@@ -21,46 +21,40 @@ def analysis(js_file_path: str, mini_program: MiniProgram) -> FileContext:
 
 
 def file_level_analysis(js_file_path: str, ast_json: dict, file_context: FileContext, mini_program: MiniProgram):
-
+    # for item in ast_json['body']:
+    #     if item['type'] == 'VariableDeclaration':
+    #         for variable_declarator in item['declarations']:
+    #             variable_name = variable_declarator['id']['name']
+    #             file_context.variable_table[variable_name] = variable_declarator
+    #         # brother_analysis(item, brother_list)
+    #     elif item['type'] == 'FunctionDeclaration':
+    #         function_name = item['id']['name']
+    #         file_context.function_table[function_name] = item
+    #
+    #
+    # for brother in brother_list:
+    #     if brother['name'] in file_context.brother:
+    #         continue
+    #     else:
+    #         if brother['value'] == 'app.js':
+    #             brother_path = mini_program.base_path + '/' + mini_program.name + '/app.js'
+    #         else:
+    #             brother_path = utils.get_brother_path(js_file_path, brother['value'])
+    #         if not af.contains(brother_path):
+    #             brother_file_context = analysis(brother_path, mini_program)
+    #             if brother['value'] == 'app.js':
+    #                 af.set_context(brother_path, brother_file_context.children)
+    #             else:
+    #                 af.set_context(brother_path, brother_file_context)
+    #         file_context.brother_table[brother['name']] = af.get_context(brother_path)
     for item in ast_json['body']:
         if item['type'] == 'VariableDeclaration':
             for variable_declarator in item['declarations']:
                 variable_name = variable_declarator['id']['name']
                 file_context.variable_table[variable_name] = variable_declarator
-            # brother_analysis(item, brother_list)
         elif item['type'] == 'FunctionDeclaration':
             function_name = item['id']['name']
             file_context.function_table[function_name] = item
-
-
-    for brother in brother_list:
-        if brother['name'] in file_context.brother:
-            continue
-        else:
-            if brother['value'] == 'app.js':
-                brother_path = mini_program.base_path + '/' + mini_program.name + '/app.js'
-            else:
-                brother_path = utils.get_brother_path(js_file_path, brother['value'])
-            if not af.contains(brother_path):
-                brother_file_context = analysis(brother_path, mini_program)
-                if brother['value'] == 'app.js':
-                    af.set_context(brother_path, brother_file_context.children)
-                else:
-                    af.set_context(brother_path, brother_file_context)
-            file_context.brother_table[brother['name']] = af.get_context(brother_path)
-
-    for item in ast_json['body']:
-        if item['type'] == 'VariableDeclaration':
-            for variable_declarator in item['declarations']:
-                variable_name = variable_declarator['id']['name']
-                file_context.variable_table[variable_name] = variable_declarator
-            # cns.variable_declaration_analysis(item, file_context, mini_program)
-        # 分析文件级别的函数定义
-        elif item['type'] == 'FunctionDeclaration':
-            file_function_context = FunctionContext(Scope.FILE_FUNCTION)
-            # 其父作用域为文件级别的作用域
-            file_function_context.father = file_context
-            cns.function_declaration_analysis(item, file_function_context, {})
         elif item['type'] == 'ExpressionStatement':
             if item['expression']['type'] == 'CallExpression' and len(item['expression']['arguments']) == 1:
                 page_obj = item['expression']['arguments'][0]
@@ -73,13 +67,14 @@ def file_level_analysis(js_file_path: str, ast_json: dict, file_context: FileCon
                         elif expression['type'] == 'ObjectExpression':
                             file_context.page_object = expression
 
+    for variable_declarator_name, variable_declarator in file_context.variable_table.items():
+        logger.info(variable_declarator_name)
 
             # # 密钥泄露分析
             # cs.taint_function_analysis(item, file_function_context, self.mini_program, Scope.FILE_FUNCTION)
             # # 跳转关系分析
             # destination_set = ns.navigator_analysis(item, self.path, file_function_context, self.mini_program)
             # self.destination_map[function_name] = destination_set
-
         # 分析Page对象
         # elif item['type'] == 'ExpressionStatement':
         #     if item['expression']['type'] == 'CallExpression' and len(item['expression']['arguments']) == 1:
@@ -92,6 +87,14 @@ def file_level_analysis(js_file_path: str, ast_json: dict, file_context: FileCon
         #                     file_context.children = page_obj_analysis(file_context, expression['right'])
         #                 elif expression['type'] == 'ObjectExpression':
         #                     file_context.children = page_obj_analysis(file_context, expression)
+
+
+def variable_declaration_analysis(file_context: FileContext, variable_declaration: dict):
+    pass
+
+
+def function_declaration_analysis(file_context: FileContext, function_declaration: dict):
+    pass
 
 
 def page_obj_analysis(file_context: FileContext, page_object: dict):
@@ -162,4 +165,4 @@ def brother_analysis(variable_declaration: dict, brother_list: list):
 
 
 context = analysis(r'E:\WorkSpace\wxapp-analyzer\testfile\register.js', None)
-logger.info(context)
+# logger.info(context)
