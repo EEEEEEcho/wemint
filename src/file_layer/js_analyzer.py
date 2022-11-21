@@ -67,30 +67,34 @@ def file_level_analysis(js_file_path: str, ast_json: dict, file_context: FileCon
                         elif expression['type'] == 'ObjectExpression':
                             file_context.page_object = expression
 
+    variable_declaration_analysis(file_context,)
+
+    # # 密钥泄露分析
+    # cs.taint_function_analysis(item, file_function_context, self.mini_program, Scope.FILE_FUNCTION)
+    # # 跳转关系分析
+    # destination_set = ns.navigator_analysis(item, self.path, file_function_context, self.mini_program)
+    # self.destination_map[function_name] = destination_set
+    # 分析Page对象
+    # elif item['type'] == 'ExpressionStatement':
+    #     if item['expression']['type'] == 'CallExpression' and len(item['expression']['arguments']) == 1:
+    #         page_object = item['expression']['arguments'][0]
+    #         if page_object['type'] == 'ObjectExpression':
+    #             file_context.children = page_obj_analysis(file_context, page_object)
+    #         elif page_object['type'] == 'SequenceExpression':
+    #             for expression in page_object['expressions']:
+    #                 if expression['type'] == 'AssignmentExpression':
+    #                     file_context.children = page_obj_analysis(file_context, expression['right'])
+    #                 elif expression['type'] == 'ObjectExpression':
+    #                     file_context.children = page_obj_analysis(file_context, expression)
+
+
+def variable_declaration_analysis(file_context: FileContext,mini_program: MiniProgram):
     for variable_declarator_name, variable_declarator in file_context.variable_table.items():
-        logger.info(variable_declarator_name)
-
-            # # 密钥泄露分析
-            # cs.taint_function_analysis(item, file_function_context, self.mini_program, Scope.FILE_FUNCTION)
-            # # 跳转关系分析
-            # destination_set = ns.navigator_analysis(item, self.path, file_function_context, self.mini_program)
-            # self.destination_map[function_name] = destination_set
-        # 分析Page对象
-        # elif item['type'] == 'ExpressionStatement':
-        #     if item['expression']['type'] == 'CallExpression' and len(item['expression']['arguments']) == 1:
-        #         page_object = item['expression']['arguments'][0]
-        #         if page_object['type'] == 'ObjectExpression':
-        #             file_context.children = page_obj_analysis(file_context, page_object)
-        #         elif page_object['type'] == 'SequenceExpression':
-        #             for expression in page_object['expressions']:
-        #                 if expression['type'] == 'AssignmentExpression':
-        #                     file_context.children = page_obj_analysis(file_context, expression['right'])
-        #                 elif expression['type'] == 'ObjectExpression':
-        #                     file_context.children = page_obj_analysis(file_context, expression)
-
-
-def variable_declaration_analysis(file_context: FileContext, variable_declaration: dict):
-    pass
+        variable_init = variable_declarator['init']
+        if variable_init:
+            declarator_type = variable_init['type']
+            if declarator_type == 'CallExpression' and variable_init['callee']['name'] == 'require':
+                print(variable_declarator)
 
 
 def function_declaration_analysis(file_context: FileContext, function_declaration: dict):
@@ -143,26 +147,30 @@ def config_analysis(ast_json: dict, file_context: FileContext):
         file_context.variable_table.update(ans)
 
 
-def brother_analysis(variable_declaration: dict, brother_list: list):
-    for declaration in variable_declaration['declarations']:
-        if declaration['type'] == 'VariableDeclarator':
-            variable_name = declaration['id']['name']
-            variable_init = declaration['init']
-            if variable_init is not None \
-                    and variable_name is not None:
-                # 其他文件的引用
-                if variable_init['type'] == 'CallExpression' and \
-                        'name' in variable_init['callee'] and \
-                        variable_init['callee']['name'] == 'require':
-                    brother_list.append(
-                        {'name': variable_name, 'value': variable_init['arguments'][0]['value']})
-                # getApp()操作
-                elif variable_init['type'] == 'CallExpression' and \
-                        'name' in variable_init['callee'] and \
-                        variable_init['callee']['name'] == 'getApp':
-                    brother_list.append(
-                        {'name': variable_name, 'value': 'app.js'})
+def brother_analysis(variable_declarator: dict,mini_program_path: str):
+    # for declaration in variable_declaration['declarations']:
+    #     if declaration['type'] == 'VariableDeclarator':
+    #         variable_name = declaration['id']['name']
+    #         variable_init = declaration['init']
+    #         if variable_init is not None \
+    #                 and variable_name is not None:
+    #             # 其他文件的引用
+    #             if variable_init['type'] == 'CallExpression' and \
+    #                     'name' in variable_init['callee'] and \
+    #                     variable_init['callee']['name'] == 'require':
+    #                 brother_list.append(
+    #                     {'name': variable_name, 'value': variable_init['arguments'][0]['value']})
+    #             # getApp()操作
+    #             elif variable_init['type'] == 'CallExpression' and \
+    #                     'name' in variable_init['callee'] and \
+    #                     variable_init['callee']['name'] == 'getApp':
+    #                 brother_list.append(
+    #                     {'name': variable_name, 'value': 'app.js'})
+    variable_name = variable_declarator['id']['name']
+    brother_path =
 
 
-context = analysis(r'E:\WorkSpace\wxapp-analyzer\testfile\register.js', None)
-# logger.info(context)
+
+path = r'F:\wxapp-analyzer\testfile\register.js'
+context = analysis(path, None)
+# # logger.info(context)
