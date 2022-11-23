@@ -1,5 +1,6 @@
 import src.strategy.common_node_strategy as cns
 import src.utils.analysed_file as af
+import os
 from src.pojo.file_context import FileContext
 from src.pojo.function_context import FunctionContext
 from src.pojo.scope_enum import Scope
@@ -67,7 +68,7 @@ def file_level_analysis(js_file_path: str, ast_json: dict, file_context: FileCon
                         elif expression['type'] == 'ObjectExpression':
                             file_context.page_object = expression
 
-    variable_declaration_analysis(file_context,)
+    variable_declaration_analysis(file_context, mini_program)
 
     # # 密钥泄露分析
     # cs.taint_function_analysis(item, file_function_context, self.mini_program, Scope.FILE_FUNCTION)
@@ -88,13 +89,14 @@ def file_level_analysis(js_file_path: str, ast_json: dict, file_context: FileCon
     #                     file_context.children = page_obj_analysis(file_context, expression)
 
 
-def variable_declaration_analysis(file_context: FileContext,mini_program: MiniProgram):
+def variable_declaration_analysis(file_context: FileContext, mini_program: MiniProgram):
     for variable_declarator_name, variable_declarator in file_context.variable_table.items():
         variable_init = variable_declarator['init']
         if variable_init:
             declarator_type = variable_init['type']
-            if declarator_type == 'CallExpression' and variable_init['callee']['name'] == 'require':
-                print(variable_declarator)
+            if declarator_type == 'CallExpression' and \
+                    (variable_init['callee']['name'] == 'require' or variable_init['callee']['name'] == 'getApp'):
+                brother_analysis(variable_declarator, file_context, mini_program)
 
 
 def function_declaration_analysis(file_context: FileContext, function_declaration: dict):
@@ -147,30 +149,31 @@ def config_analysis(ast_json: dict, file_context: FileContext):
         file_context.variable_table.update(ans)
 
 
-def brother_analysis(variable_declarator: dict,mini_program_path: str):
-    # for declaration in variable_declaration['declarations']:
-    #     if declaration['type'] == 'VariableDeclarator':
-    #         variable_name = declaration['id']['name']
-    #         variable_init = declaration['init']
-    #         if variable_init is not None \
-    #                 and variable_name is not None:
-    #             # 其他文件的引用
-    #             if variable_init['type'] == 'CallExpression' and \
-    #                     'name' in variable_init['callee'] and \
-    #                     variable_init['callee']['name'] == 'require':
-    #                 brother_list.append(
-    #                     {'name': variable_name, 'value': variable_init['arguments'][0]['value']})
-    #             # getApp()操作
-    #             elif variable_init['type'] == 'CallExpression' and \
-    #                     'name' in variable_init['callee'] and \
-    #                     variable_init['callee']['name'] == 'getApp':
-    #                 brother_list.append(
-    #                     {'name': variable_name, 'value': 'app.js'})
+def brother_analysis(variable_declarator: dict, file_context: FileContext, mini_program: MiniProgram):
     variable_name = variable_declarator['id']['name']
-    brother_path =
+    callee_name = variable_declarator['init']['callee']['name']
+    brother_path = None
+    if callee_name == 'require':
+        relative_path = variable_declarator['init']['arguments'][0]['value']
+        brother_path = utils.get_brother_path(file_context.name, relative_path)
+
+    if callee_name == 'getApp':
+        brother_path = mini_program.path + os.sep + 'app.js'
+
+    if brother_path:
+        if not af.contains(brother_path):
+            brother_context = analysis(brother_path, mini_program)
+            if callee_name == 'getApp':
+                af.set_context(brother_path, brother_context.children)
+            else:
+                af.set_context(brother_path, brother_context)
+        file_context.brother_table[variable_name] = af.get_context(brother_path)
 
 
-
-path = r'F:\wxapp-analyzer\testfile\register.js'
-context = analysis(path, None)
+path = r'F:\wxapp-analyzer\testfile\pages\register.js'
+mp = MiniProgram(r'F:\wxapp-analyzer\testfile', 'test')
+context = analysis(path, mp)
+pass
 # # logger.info(context)
+
+# todo: 只存常量表？

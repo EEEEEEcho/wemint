@@ -1,5 +1,6 @@
 // pages/register/register.js
-let custom = require("../util/util.js");
+let app = getApp();
+let custom = require("../utils/utils.js");
 let author = "echo",date = "2012"
 let variable = author + " mengs"
 let c = 10
