@@ -14,5 +14,7 @@ class FunctionContext:
         self.variable_table = dict()
         # 参数表
         self.arguments_table = dict()
+        # 常量表
+        self.const_variable_table = dict()
         # 父上下文
         self.father = None

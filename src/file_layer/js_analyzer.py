@@ -17,37 +17,11 @@ def analysis(js_file_path: str, mini_program: MiniProgram) -> FileContext:
         if 'config.js' in js_file_path:
             config_analysis(ast_json, file_context)
         else:
-            file_level_analysis(js_file_path, ast_json, file_context, mini_program)
+            file_level_analysis(ast_json, file_context, mini_program)
     return file_context
 
 
-def file_level_analysis(js_file_path: str, ast_json: dict, file_context: FileContext, mini_program: MiniProgram):
-    # for item in ast_json['body']:
-    #     if item['type'] == 'VariableDeclaration':
-    #         for variable_declarator in item['declarations']:
-    #             variable_name = variable_declarator['id']['name']
-    #             file_context.variable_table[variable_name] = variable_declarator
-    #         # brother_analysis(item, brother_list)
-    #     elif item['type'] == 'FunctionDeclaration':
-    #         function_name = item['id']['name']
-    #         file_context.function_table[function_name] = item
-    #
-    #
-    # for brother in brother_list:
-    #     if brother['name'] in file_context.brother:
-    #         continue
-    #     else:
-    #         if brother['value'] == 'app.js':
-    #             brother_path = mini_program.base_path + '/' + mini_program.name + '/app.js'
-    #         else:
-    #             brother_path = utils.get_brother_path(js_file_path, brother['value'])
-    #         if not af.contains(brother_path):
-    #             brother_file_context = analysis(brother_path, mini_program)
-    #             if brother['value'] == 'app.js':
-    #                 af.set_context(brother_path, brother_file_context.children)
-    #             else:
-    #                 af.set_context(brother_path, brother_file_context)
-    #         file_context.brother_table[brother['name']] = af.get_context(brother_path)
+def file_level_analysis(ast_json: dict, file_context: FileContext, mini_program: MiniProgram):
     for item in ast_json['body']:
         if item['type'] == 'VariableDeclaration':
             for variable_declarator in item['declarations']:
@@ -68,7 +42,7 @@ def file_level_analysis(js_file_path: str, ast_json: dict, file_context: FileCon
                         elif expression['type'] == 'ObjectExpression':
                             file_context.page_object = expression
 
-    variable_declaration_analysis(file_context, mini_program)
+    variable_table_analysis(file_context, mini_program)
 
     # # 密钥泄露分析
     # cs.taint_function_analysis(item, file_function_context, self.mini_program, Scope.FILE_FUNCTION)
@@ -89,7 +63,7 @@ def file_level_analysis(js_file_path: str, ast_json: dict, file_context: FileCon
     #                     file_context.children = page_obj_analysis(file_context, expression)
 
 
-def variable_declaration_analysis(file_context: FileContext, mini_program: MiniProgram):
+def variable_table_analysis(file_context: FileContext, mini_program: MiniProgram):
     for variable_declarator_name, variable_declarator in file_context.variable_table.items():
         variable_init = variable_declarator['init']
         if variable_init:
@@ -97,6 +71,8 @@ def variable_declaration_analysis(file_context: FileContext, mini_program: MiniP
             if declarator_type == 'CallExpression' and \
                     (variable_init['callee']['name'] == 'require' or variable_init['callee']['name'] == 'getApp'):
                 brother_analysis(variable_declarator, file_context, mini_program)
+            else:
+                cns.variable_declarator_analysis(variable_declarator, file_context, mini_program)
 
 
 def function_declaration_analysis(file_context: FileContext, function_declaration: dict):
@@ -131,13 +107,6 @@ def page_obj_analysis(file_context: FileContext, page_object: dict):
                     function_context.name = function_name
                     function_context.father = page_context
                     logger.info(function_name)
-                    # # 密钥泄露分析
-                    # cs.taint_function_analysis(_property['value'], function_context, self.mini_program,
-                    #                            Scope.OBJECT_FUNCTION)
-                    # # 跳转关系分析
-                    # destination_set = ns.navigator_analysis(_property['value'], self.path, function_context,
-                    #                                         self.mini_program)
-                    # self.destination_map[function_name] = destination_set
         return page_context
 
 
@@ -173,7 +142,7 @@ def brother_analysis(variable_declarator: dict, file_context: FileContext, mini_
 path = r'F:\wxapp-analyzer\testfile\pages\register.js'
 mp = MiniProgram(r'F:\wxapp-analyzer\testfile', 'test')
 context = analysis(path, mp)
-pass
+logger.info(context.const_variable_table)
 # # logger.info(context)
 
 # todo: 只存常量表？

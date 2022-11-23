@@ -5,41 +5,65 @@ import src.strategy.context_operation as co
 import src.utils.utils as utils
 
 
-def variable_declaration_analysis(variable_declaration: dict, context, mini_program: MiniProgram):
-    for declaration in variable_declaration['declarations']:
-        if declaration['type'] == 'VariableDeclarator':
-            variable_name = declaration['id']['name']
-            variable_init = declaration['init']
-            if variable_init is not None and \
-                    variable_name is not None:
-                # 文本
-                if variable_init['type'] == 'Literal':
-                    variable_value = variable_init['value']
-                    context.variable_table[variable_name] = variable_value
-                # 赋值
-                elif variable_init['type'] == 'Identifier':
-                    value_identifier = variable_init['name']
-                    variable_value = co.search_identifier(value_identifier, context)
-                    context.variable_table[variable_name] = variable_value
-                # 表达式
-                elif variable_init['type'] == 'BinaryExpression':
-                    variable_value = binary_expression_analysis(variable_init, context)
-                    context.variable_table[variable_name] = variable_value
-                # 对象
-                elif variable_init['type'] == 'ObjectExpression':
-                    variable_value = object_node_analysis(variable_init, context)
-                    context.variable_table[variable_name] = variable_value
-                elif variable_init['type'] == 'MemberExpression':
-                    value_identifier = member_expression_analysis(variable_init)
-                    if value_identifier is not None:
-                        # 如果是通过直接使用getApp()方式调用的，那么就要给其最顶层的FileContext添加app.js的brother
-                        if value_identifier.startswith('getApp'):
-                            # pass
-                            co.add_brother_to_context(context, mini_program)
-                        variable_value = co.search_identifier(value_identifier, context)
-                        # taint_type = key_leak.taint_match(variable_value)
-                        # scope_check(scope, mini_program, variable_name, variable_value, taint_type)
-                #
+def variable_declarator_analysis(variable_declarator: dict, context, mini_program: MiniProgram):
+    # todo:对变量名字的校验？
+    variable_name = variable_declarator['id']['name']
+    variable_init = variable_declarator['init']
+    variable_type = variable_init['type']
+    if variable_type == 'Literal':
+        # todo: 对变量值的校验
+        variable_value = variable_init['value']
+        context.const_variable_table[variable_name] = variable_value
+    elif variable_type == 'Identifier':
+        variable_identifier = variable_init['name']
+        variable_value = co.search_identifier(variable_identifier, context)
+        context.const_variable_table[variable_name] = variable_value
+    elif variable_type == 'ObjectExpression' or variable_type == 'ArrayExpression':
+        variable_value = object_node_analysis(variable_init, context)
+        context.const_variable_table[variable_name] = variable_value
+    elif variable_type == 'MemberExpression':
+        # todo:校验？
+        variable_identifier = member_expression_analysis(variable_init)
+        if variable_identifier is not None:
+            if 'getApp' in variable_identifier:
+                co.add_brother_to_context(context, mini_program)
+        variable_value = co.search_identifier(variable_identifier, context)
+        logger.info("variable name:{},variable_value:{}".format(variable_name,variable_value))
+
+    # for declaration in variable_declaration['declarations']:
+    #     if declaration['type'] == 'VariableDeclarator':
+    #         variable_name = declaration['id']['name']
+    #         variable_init = declaration['init']
+    #         if variable_init is not None and \
+    #                 variable_name is not None:
+    #             # 文本
+    #             if variable_init['type'] == 'Literal':
+    #                 variable_value = variable_init['value']
+    #                 context.variable_table[variable_name] = variable_value
+    #             # 赋值
+    #             elif variable_init['type'] == 'Identifier':
+    #                 value_identifier = variable_init['name']
+    #                 variable_value = co.search_identifier(value_identifier, context)
+    #                 context.variable_table[variable_name] = variable_value
+    #             # 表达式
+    #             elif variable_init['type'] == 'BinaryExpression':
+    #                 variable_value = binary_expression_analysis(variable_init, context)
+    #                 context.variable_table[variable_name] = variable_value
+    #             # 对象
+    #             elif variable_init['type'] == 'ObjectExpression':
+    #                 variable_value = object_node_analysis(variable_init, context)
+    #                 context.variable_table[variable_name] = variable_value
+    #             elif variable_init['type'] == 'MemberExpression':
+    #                 value_identifier = member_expression_analysis(variable_init)
+    #                 if value_identifier is not None:
+    #                     # 如果是通过直接使用getApp()方式调用的，那么就要给其最顶层的FileContext添加app.js的brother
+    #                     if value_identifier.startswith('getApp'):
+    #                         # pass
+    #                         co.add_brother_to_context(context, mini_program)
+    #                     variable_value = co.search_identifier(value_identifier, context)
+    # taint_type = key_leak.taint_match(variable_value)
+    # scope_check(scope, mini_program, variable_name, variable_value, taint_type)
+    #
 
 
 def expression_statement_analysis(expression_statement: dict, context, mini_program: MiniProgram):
@@ -121,15 +145,20 @@ def condition_expression_analysis(condition_expression: dict, node_list: list, c
 
 
 def member_expression_analysis(member_expression: dict):
+    # let n = 'name';let name = dict[n] 这种情况不好分析,后续想办法
     obj = member_expression['object']
     prop = member_expression['property']
     if obj['type'] == 'Identifier':
-        if 'name' in obj and 'name' in prop:
-            return obj['name'] + '.' + prop['name']
-        elif 'name' in obj:
+        if 'name' in obj:
+            if 'name' in prop:
+                return obj['name'] + '.' + str(prop['name'])
+            if 'value' in prop:
+                return obj['name'] + '.' + str(prop['value'])
             return obj['name']
         elif 'name' in prop:
             return prop['name']
+        elif 'value' in prop:
+            return prop['value']
         else:
             return None
     elif obj['type'] == 'CallExpression':
@@ -140,12 +169,16 @@ def member_expression_analysis(member_expression: dict):
             return None
     elif obj['type'] == 'MemberExpression':
         value = member_expression_analysis(obj)
-        if value is not None and 'name' in prop:
-            return value + '.' + prop['name']
-        elif value is not None:
+        if value is not None:
+            if 'name' in prop:
+                return value + '.' + str(prop['name'])
+            if 'value' in prop:
+                return value + '.' + str(prop['value'])
             return value
         elif 'name' in prop:
             return prop['name']
+        elif 'value' in prop:
+            return prop['value']
         else:
             return None
     return None
@@ -164,7 +197,7 @@ def binary_expression_analysis(bi_expression, file_function_context):
             return utils.recast_type(bi_expression['value'])
         elif bi_expression['type'] == 'Identifier':
             value_name = bi_expression['name']
-            return co.find_father(value_name, file_function_context)
+            return co.find_context(value_name, file_function_context)
         elif bi_expression['type'] == 'BinaryExpression':
             ops = bi_expression['operator']
             return utils.calculate_value(binary_expression_analysis(bi_expression['left'],
@@ -224,5 +257,5 @@ def object_node_analysis(obj_expression: dict, context):
     return None
 
 
-def function_declaration_analysis(function_declaration: dict,function_context: FunctionContext,file_func_dict: dict):
+def function_declaration_analysis(function_declaration: dict, function_context: FunctionContext, file_func_dict: dict):
     pass
