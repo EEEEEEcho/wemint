@@ -51,10 +51,11 @@ function jump(x, y, z) {
         console.log(c);
     }
     for (let i = 0; i < 10; i++) {
-        let b = 100;
+        let b = 10086;
         console.log(b / 2);
     }
     while (c > 10) {
+      	let p = 20233;
         c--;
     }
 

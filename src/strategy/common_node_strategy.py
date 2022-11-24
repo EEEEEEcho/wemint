@@ -1,6 +1,7 @@
 from src.pojo.miniprogram import MiniProgram
 from src.pojo.function_context import FunctionContext
 from src.pojo.block_context import BlockContext
+from src.pojo.scope_enum import Scope
 from loguru import logger
 import src.strategy.context_operation as co
 import src.utils.utils as utils
@@ -80,22 +81,64 @@ def block_statement_analysis(block_statement: dict, context, mini_program: MiniP
             for variable_declarator in node['declarations']:
                 variable_declarator_analysis(variable_declarator, context, mini_program)
         elif node_type == 'IfStatement':
-            pass
+            if_statement_analysis(node, context, mini_program)
         elif node_type == 'ForStatement':
-            pass
+            for_statement_analysis(node, context, mini_program)
         elif node_type == 'WhileStatement':
-            pass
+            while_statement_analysis(node, context, mini_program)
         elif node_type == 'FunctionDeclaration':
             pass
         elif node_type == 'SwitchStatement':
+            pass
+        elif node_type == 'AssignmentExpression':
+            pass
+        elif node_type == 'UpdateExpression':
             pass
         else:
             continue
 
 
-def if_statement_analysis(if_statement: dict, block_context: BlockContext, mini_program: MiniProgram):
+def if_statement_analysis(if_statement: dict, context, mini_program: MiniProgram):
     # if语句的两端都需要进行分析
-    pass
+    if 'consequent' in if_statement:
+        if if_statement['consequent'] and \
+                'type' in if_statement['consequent']:
+            if if_statement['consequent']['type'] == 'BlockStatement':
+                block_context = BlockContext(Scope.BLOCK)
+                block_context.father = context
+                block_statement_analysis(if_statement['consequent'], block_context, mini_program)
+                logger.info(block_context.const_variable_table)
+            if if_statement['consequent']['type'] == 'IfStatement':
+                if_statement_analysis(if_statement['consequent'], context, mini_program)
+
+    if 'alternate' in if_statement:
+        if if_statement['alternate'] and \
+                'type' in if_statement['alternate']:
+            if if_statement['alternate']['type'] == 'BlockStatement':
+                block_context = BlockContext(Scope.BLOCK)
+                block_context.father = context
+                block_statement_analysis(if_statement['alternate'], block_context, mini_program)
+                logger.info(block_context.const_variable_table)
+            if if_statement['alternate']['type'] == 'IfStatement':
+                if_statement_analysis(if_statement['alternate'], context, mini_program)
+
+
+def for_statement_analysis(for_statement: dict, context, mini_program: MiniProgram):
+    # for循环，只分析循环体中的语句
+    if 'body' in for_statement and for_statement['body']['type'] == 'BlockStatement':
+        block_context = BlockContext(Scope.BLOCK)
+        block_context.father = context
+        block_statement_analysis(for_statement['body'], block_context, mini_program)
+        logger.info(block_context.const_variable_table)
+
+
+def while_statement_analysis(while_statement: dict, context, mini_program: MiniProgram):
+    # while循环，只分析循环体中的语句
+    if 'body' in while_statement and while_statement['body']['type'] == 'BlockStatement':
+        block_context = BlockContext(Scope.BLOCK)
+        block_context.father = context
+        block_statement_analysis(while_statement['body'], block_context, mini_program)
+        logger.info(block_context.const_variable_table)
 
 
 def expression_statement_analysis(expression_statement: dict, context, mini_program: MiniProgram):
