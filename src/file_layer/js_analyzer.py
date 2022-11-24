@@ -129,8 +129,11 @@ def brother_analysis(variable_declarator: dict, file_context: FileContext, mini_
         file_context.brother_table[variable_name] = af.get_context(brother_path)
 
 
-path = r'F:\wxapp-analyzer\testfile\pages\register.js'
-mp = MiniProgram(r'F:\wxapp-analyzer\testfile', 'test')
+base_path = r'E:\WorkSpace\wxapp-analyzer\testfile'
+# base_path = r'F:\wxapp-analyzer\testfile'
+# path = r'F:\wxapp-analyzer\testfile\pages\register.js'
+path = r'E:\WorkSpace\wxapp-analyzer\testfile\pages\register.js'
+mp = MiniProgram(base_path, 'test')
 context = analysis(path, mp)
 # logger.info(context.const_variable_table)
 # # logger.info(context)

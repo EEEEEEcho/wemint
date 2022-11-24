@@ -3,13 +3,13 @@ let app = getApp();
 let custom = require("../utils/utils.js");
 let nameDict = {
     'name': 'echo',
-  	'prop':{
-      'sex':1,
-      'age':18,
-      'arr':[1,2,3,4]
+    'prop': {
+        'sex': 1,
+        'age': 18,
+        'arr': [1, 2, 3, 4]
     }
 }
-let arr = [1,2,3,4]
+let arr = [1, 2, 3, 4]
 let four = arr[2];
 let one = nameDict['prop']['arr'][0]
 let chicken = getApp().chicken;
@@ -17,37 +17,53 @@ let name = nameDict['name']
 let sex = nameDict['prop']['sex']
 let name2 = nameDict.name
 let sex2 = nameDict.prop.sex
-let author = "echo",date = "2012"
+let author = "echo", date = "2012"
 let variable = author + " mengs"
 let c = 10
 let d = 10 * 2
-let e =  c + d + 3
+let e = c + d + 3
 let f = e
-function jump(x,y,z){
-  // let c = 10;
-  // console.log(c);
+
+function jump(x, y, z) {
+    // let c = 10;
+    // console.log(c);
     let c = 20;
     let b = 10;
-    if(c < 30){
+    if (c < 30) {
         let b = 50;
         console.log(b)
-    }
-    else{
+        b = b - 20;
+        if (b > 0) {
+            let h = 100;
+        } else if (b == 0) {
+            let k = 200;
+        } else {
+            let j = 900;
+        }
+    } else {
         let d = c;
+        if (d > 10) {
+            d = d - 20;
+            if (d > 0) {
+                let m = 800;
+            }
+        }
         console.log(c);
     }
-    for(let i = 0;i < 10;i ++){
+    for (let i = 0; i < 10; i++) {
         let b = 100;
         console.log(b / 2);
     }
-    while(c > 10){
-        c --;
+    while (c > 10) {
+        c--;
     }
-    function inner(){
+
+    function inner() {
         let h = c;
         let b = 200;
     }
-    switch (c){
+
+    switch (c) {
         case 20:
             let d = 90;
             console.log(d);
@@ -57,10 +73,12 @@ function jump(x,y,z){
             console.log(e);
     }
 }
-function next(p){
-  let j = p;
-  console.log(j);
+
+function next(p) {
+    let j = p;
+    console.log(j);
 }
+
 Page({
 
     /**
@@ -102,7 +120,7 @@ Page({
     },
     change(e) {
         this.setData({
-            selected: { ...e.detail }
+            selected: {...e.detail}
         })
     },
     close() {
@@ -167,7 +185,7 @@ Page({
         }
         let loginInfo = wx.getStorageSync('loginInfo')
         await utils.showLoading()
-            //6.获取code
+        //6.获取code
         let code = null
         await utils.Http.asyncWXLogin(
             res => {
@@ -186,9 +204,9 @@ Page({
                 encryptData: loginInfo.encryptedData,//用户敏感信息
                 iv: loginInfo.iv,//解密算法的向量
                 realName: realName,
-                phoneNumber:phoneNumber,
-                password:password,
-                department:department,
+                phoneNumber: phoneNumber,
+                password: password,
+                department: department,
                 inviteCode: inviteCode
             },
             res => {
@@ -197,43 +215,40 @@ Page({
             }
         )
         await utils.hideLoading()
-        if(response != null){
-            if(response['data']['code'] == 4){
+        if (response != null) {
+            if (response['data']['code'] == 4) {
                 wx.showToast({
-                  title: '邀请码错误',
-                  icon:'error',
-                  duration:1000
+                    title: '邀请码错误',
+                    icon: 'error',
+                    duration: 1000
                 })
-            }
-            else if(response['data']['code'] == 5){
+            } else if (response['data']['code'] == 5) {
                 wx.showToast({
                     title: '微信用户已存在',
-                    icon:'error',
-                    duration:1000
-                  })
-            }
-            else if(response['data']['code'] == 0){
-                wx.showToast({
-                  title: '注册成功',
-                  icon:'success',
-                  duration:1000
+                    icon: 'error',
+                    duration: 1000
                 })
-                setTimeout(()=>{
+            } else if (response['data']['code'] == 0) {
+                wx.showToast({
+                    title: '注册成功',
+                    icon: 'success',
+                    duration: 1000
+                })
+                setTimeout(() => {
                     wx.navigateTo({
-                      url: '/pages/login/login',
+                        url: '/pages/login/login',
                     })
-                },1000);
+                }, 1000);
             }
-        }
-        else{
+        } else {
             wx.showToast({
                 title: '服务器错误',
-                icon:'error',
-                duration:1000
-              })
+                icon: 'error',
+                duration: 1000
+            })
         }
     },
-	getUserInfo: function () {
+    getUserInfo: function () {
         var e = this;
         wx.login({
             success: function (n) {
@@ -281,10 +296,10 @@ Page({
                 }) : console.log("获取用户登录态失败！" + n.errMsg);
             }
         });
-      test("xxx");
-      this.test(1);
+        test("xxx");
+        this.test(1);
     },
-  test(e){
-    console.log(e)
-  },
+    test(e) {
+        console.log(e)
+    },
 })

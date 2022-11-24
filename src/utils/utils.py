@@ -22,7 +22,6 @@ def generate_ast(file_path):
         return None
     js_util_path = config.PROJECT_ABSOLUTE_PATH + '/js_utils/get-ast.js'
     command = 'node {} {}'.format(js_util_path, file_path)
-    logger.info("command: {}".format(command))
     execute_cmd(command)
     ast_path = file_path.split('.js')[0] + '-ast.json'
     if not os.path.exists(ast_path):

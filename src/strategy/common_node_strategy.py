@@ -1,5 +1,6 @@
 from src.pojo.miniprogram import MiniProgram
 from src.pojo.function_context import FunctionContext
+from src.pojo.block_context import BlockContext
 from loguru import logger
 import src.strategy.context_operation as co
 import src.utils.utils as utils
@@ -49,8 +50,52 @@ def function_declaration_analysis(function_declaration: dict, function_context: 
             function_context.arguments_table[param['name']] = None
     # 分析函数中的节点
     if 'body' in function_declaration and function_declaration['body']['type'] == 'BlockStatement':
-        pass
+        block_statement = function_declaration['body']
+        block_statement_analysis(block_statement, function_context, mini_program)
 
+        # for node in function_declaration['body']['body']:
+        #     node_type = node['type']
+        #     if node_type == 'VariableDeclaration':
+        #         for variable_declarator in node['declarations']:
+        #             variable_declarator_analysis(variable_declarator, function_context, mini_program)
+        #     elif node_type == 'IfStatement':
+        #         pass
+        #     elif node_type == 'ForStatement':
+        #         pass
+        #     elif node_type == 'WhileStatement':
+        #         pass
+        #     elif node_type == 'FunctionDeclaration':
+        #         pass
+        #     elif node_type == 'SwitchStatement':
+        #         pass
+        #     else:
+        #         continue
+    logger.info(function_context.const_variable_table)
+
+
+def block_statement_analysis(block_statement: dict, context, mini_program: MiniProgram):
+    for node in block_statement['body']:
+        node_type = node['type']
+        if node_type == 'VariableDeclaration':
+            for variable_declarator in node['declarations']:
+                variable_declarator_analysis(variable_declarator, context, mini_program)
+        elif node_type == 'IfStatement':
+            pass
+        elif node_type == 'ForStatement':
+            pass
+        elif node_type == 'WhileStatement':
+            pass
+        elif node_type == 'FunctionDeclaration':
+            pass
+        elif node_type == 'SwitchStatement':
+            pass
+        else:
+            continue
+
+
+def if_statement_analysis(if_statement: dict, block_context: BlockContext, mini_program: MiniProgram):
+    # if语句的两端都需要进行分析
+    pass
 
 
 def expression_statement_analysis(expression_statement: dict, context, mini_program: MiniProgram):
@@ -242,4 +287,3 @@ def object_node_analysis(obj_expression: dict, context):
                 ret[key] = object_node_analysis(prop['value'], context)
         return ret
     return None
-
