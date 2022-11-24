@@ -6,21 +6,26 @@ import src.utils.utils as utils
 
 
 def variable_declarator_analysis(variable_declarator: dict, context, mini_program: MiniProgram):
+    """
+    todo: 规则定义，风险检测
+    :param variable_declarator:
+    :param context:
+    :param mini_program:
+    :return:
+    """
     # todo:对变量名字的校验？
     variable_name = variable_declarator['id']['name']
     variable_init = variable_declarator['init']
     variable_type = variable_init['type']
+    variable_value = None
     if variable_type == 'Literal':
         # todo: 对变量值的校验
         variable_value = variable_init['value']
-        context.const_variable_table[variable_name] = variable_value
     elif variable_type == 'Identifier':
         variable_identifier = variable_init['name']
         variable_value = co.search_identifier(variable_identifier, context)
-        context.const_variable_table[variable_name] = variable_value
     elif variable_type == 'ObjectExpression' or variable_type == 'ArrayExpression':
         variable_value = object_node_analysis(variable_init, context)
-        context.const_variable_table[variable_name] = variable_value
     elif variable_type == 'MemberExpression':
         # todo:校验？
         variable_identifier = member_expression_analysis(variable_init)
@@ -28,42 +33,24 @@ def variable_declarator_analysis(variable_declarator: dict, context, mini_progra
             if 'getApp' in variable_identifier:
                 co.add_brother_to_context(context, mini_program)
         variable_value = co.search_identifier(variable_identifier, context)
-        logger.info("variable name:{},variable_value:{}".format(variable_name,variable_value))
+        # 如果找不到值，那就以调用形式出现吧
+        if variable_value is None:
+            variable_value = variable_identifier
+    elif variable_type == 'BinaryExpression':
+        variable_value = binary_expression_analysis(variable_init, context)
+    context.const_variable_table[variable_name] = variable_value
 
-    # for declaration in variable_declaration['declarations']:
-    #     if declaration['type'] == 'VariableDeclarator':
-    #         variable_name = declaration['id']['name']
-    #         variable_init = declaration['init']
-    #         if variable_init is not None and \
-    #                 variable_name is not None:
-    #             # 文本
-    #             if variable_init['type'] == 'Literal':
-    #                 variable_value = variable_init['value']
-    #                 context.variable_table[variable_name] = variable_value
-    #             # 赋值
-    #             elif variable_init['type'] == 'Identifier':
-    #                 value_identifier = variable_init['name']
-    #                 variable_value = co.search_identifier(value_identifier, context)
-    #                 context.variable_table[variable_name] = variable_value
-    #             # 表达式
-    #             elif variable_init['type'] == 'BinaryExpression':
-    #                 variable_value = binary_expression_analysis(variable_init, context)
-    #                 context.variable_table[variable_name] = variable_value
-    #             # 对象
-    #             elif variable_init['type'] == 'ObjectExpression':
-    #                 variable_value = object_node_analysis(variable_init, context)
-    #                 context.variable_table[variable_name] = variable_value
-    #             elif variable_init['type'] == 'MemberExpression':
-    #                 value_identifier = member_expression_analysis(variable_init)
-    #                 if value_identifier is not None:
-    #                     # 如果是通过直接使用getApp()方式调用的，那么就要给其最顶层的FileContext添加app.js的brother
-    #                     if value_identifier.startswith('getApp'):
-    #                         # pass
-    #                         co.add_brother_to_context(context, mini_program)
-    #                     variable_value = co.search_identifier(value_identifier, context)
-    # taint_type = key_leak.taint_match(variable_value)
-    # scope_check(scope, mini_program, variable_name, variable_value, taint_type)
-    #
+
+def function_declaration_analysis(function_declaration: dict, function_context: FunctionContext,
+                                  mini_program: MiniProgram):
+    # 形参列表
+    for param in function_declaration['params']:
+        if param['type'] == 'Identifier':
+            function_context.arguments_table[param['name']] = None
+    # 分析函数中的节点
+    if 'body' in function_declaration and function_declaration['body']['type'] == 'BlockStatement':
+        pass
+
 
 
 def expression_statement_analysis(expression_statement: dict, context, mini_program: MiniProgram):
@@ -256,6 +243,3 @@ def object_node_analysis(obj_expression: dict, context):
         return ret
     return None
 
-
-def function_declaration_analysis(function_declaration: dict, function_context: FunctionContext, file_func_dict: dict):
-    pass

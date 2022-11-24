@@ -6,3 +6,4 @@ class Scope(Enum):
     FILE_FUNCTION = 2
     OBJECT = 3
     OBJECT_FUNCTION = 4
+    BLOCK = 5

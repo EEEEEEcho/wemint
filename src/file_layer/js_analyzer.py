@@ -43,24 +43,7 @@ def file_level_analysis(ast_json: dict, file_context: FileContext, mini_program:
                             file_context.page_object = expression
 
     variable_table_analysis(file_context, mini_program)
-
-    # # 密钥泄露分析
-    # cs.taint_function_analysis(item, file_function_context, self.mini_program, Scope.FILE_FUNCTION)
-    # # 跳转关系分析
-    # destination_set = ns.navigator_analysis(item, self.path, file_function_context, self.mini_program)
-    # self.destination_map[function_name] = destination_set
-    # 分析Page对象
-    # elif item['type'] == 'ExpressionStatement':
-    #     if item['expression']['type'] == 'CallExpression' and len(item['expression']['arguments']) == 1:
-    #         page_object = item['expression']['arguments'][0]
-    #         if page_object['type'] == 'ObjectExpression':
-    #             file_context.children = page_obj_analysis(file_context, page_object)
-    #         elif page_object['type'] == 'SequenceExpression':
-    #             for expression in page_object['expressions']:
-    #                 if expression['type'] == 'AssignmentExpression':
-    #                     file_context.children = page_obj_analysis(file_context, expression['right'])
-    #                 elif expression['type'] == 'ObjectExpression':
-    #                     file_context.children = page_obj_analysis(file_context, expression)
+    function_declaration_analysis(file_context, mini_program)
 
 
 def variable_table_analysis(file_context: FileContext, mini_program: MiniProgram):
@@ -75,8 +58,15 @@ def variable_table_analysis(file_context: FileContext, mini_program: MiniProgram
                 cns.variable_declarator_analysis(variable_declarator, file_context, mini_program)
 
 
-def function_declaration_analysis(file_context: FileContext, function_declaration: dict):
-    pass
+def function_declaration_analysis(file_context: FileContext, mini_program: MiniProgram):
+    for function_name, function_declaration in file_context.function_table.items():
+        if file_context.scope == Scope.FILE:
+            function_context = FunctionContext(Scope.FILE_FUNCTION, function_name)
+            function_context.father = file_context
+        else:
+            function_context = FunctionContext(Scope.OBJECT_FUNCTION, function_name)
+            function_context.father = file_context
+        cns.function_declaration_analysis(function_declaration, function_context, mini_program)
 
 
 def page_obj_analysis(file_context: FileContext, page_object: dict):
@@ -142,7 +132,7 @@ def brother_analysis(variable_declarator: dict, file_context: FileContext, mini_
 path = r'F:\wxapp-analyzer\testfile\pages\register.js'
 mp = MiniProgram(r'F:\wxapp-analyzer\testfile', 'test')
 context = analysis(path, mp)
-logger.info(context.const_variable_table)
+# logger.info(context.const_variable_table)
 # # logger.info(context)
 
 # todo: 只存常量表？

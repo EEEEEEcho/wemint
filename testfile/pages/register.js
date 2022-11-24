@@ -24,8 +24,38 @@ let d = 10 * 2
 let e =  c + d + 3
 let f = e
 function jump(x,y,z){
-  let c = 10;
-  console.log(c);
+  // let c = 10;
+  // console.log(c);
+    let c = 20;
+    let b = 10;
+    if(c < 30){
+        let b = 50;
+        console.log(b)
+    }
+    else{
+        let d = c;
+        console.log(c);
+    }
+    for(let i = 0;i < 10;i ++){
+        let b = 100;
+        console.log(b / 2);
+    }
+    while(c > 10){
+        c --;
+    }
+    function inner(){
+        let h = c;
+        let b = 200;
+    }
+    switch (c){
+        case 20:
+            let d = 90;
+            console.log(d);
+            break;
+        default:
+            let e = 900;
+            console.log(e);
+    }
 }
 function next(p){
   let j = p;
