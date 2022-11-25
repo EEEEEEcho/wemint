@@ -59,14 +59,15 @@ def variable_table_analysis(file_context: FileContext, mini_program: MiniProgram
 
 
 def function_declaration_analysis(file_context: FileContext, mini_program: MiniProgram):
-    for function_name, function_declaration in file_context.function_table.items():
-        if file_context.scope == Scope.FILE:
-            scope_value = Scope.FILE_FUNCTION
-        else:
-            scope_value = Scope.OBJECT_FUNCTION
-        function_context = FunctionContext(scope_value,function_name)
-        function_context.father = file_context
-        cns.function_declaration_analysis(function_declaration, function_context, mini_program)
+    for function_declaration in file_context.function_table.values():
+        cns.function_declaration_analysis(function_declaration, file_context, mini_program)
+        # if file_context.scope == Scope.FILE:
+        #     scope_value = Scope.FILE_FUNCTION
+        # else:
+        #     scope_value = Scope.OBJECT_FUNCTION
+        # function_context = FunctionContext(scope_value, function_name)
+        # function_context.father = file_context
+        # cns.function_declaration_analysis(function_declaration, file_context, mini_program)
 
 
 def page_obj_analysis(file_context: FileContext, page_object: dict):
@@ -129,11 +130,11 @@ def brother_analysis(variable_declarator: dict, file_context: FileContext, mini_
         file_context.brother_table[variable_name] = af.get_context(brother_path)
 
 
-base_path = r'F:\wxapp-analyzer\testfile'
-# base_path = r'E:\WorkSpace\wxapp-analyzer\testfile'
+# base_path = r'F:\wxapp-analyzer\testfile'
+base_path = r'E:\WorkSpace\wxapp-analyzer\testfile'
 
-path = r'F:\wxapp-analyzer\testfile\pages\register.js'
-# path = r'E:\WorkSpace\wxapp-analyzer\testfile\pages\register.js'
+# path = r'F:\wxapp-analyzer\testfile\pages\register.js'
+path = r'E:\WorkSpace\wxapp-analyzer\testfile\pages\register.js'
 mp = MiniProgram(base_path, 'test')
 context = analysis(path, mp)
 # logger.info(context.const_variable_table)

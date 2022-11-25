@@ -43,37 +43,6 @@ def variable_declarator_analysis(variable_declarator: dict, context, mini_progra
     context.const_variable_table[variable_name] = variable_value
 
 
-def function_declaration_analysis(function_declaration: dict, function_context: FunctionContext,
-                                  mini_program: MiniProgram):
-    # 形参列表
-    for param in function_declaration['params']:
-        if param['type'] == 'Identifier':
-            function_context.arguments_table[param['name']] = None
-    # 分析函数中的节点
-    if 'body' in function_declaration and function_declaration['body']['type'] == 'BlockStatement':
-        block_statement = function_declaration['body']
-        block_statement_analysis(block_statement, function_context, mini_program)
-
-        # for node in function_declaration['body']['body']:
-        #     node_type = node['type']
-        #     if node_type == 'VariableDeclaration':
-        #         for variable_declarator in node['declarations']:
-        #             variable_declarator_analysis(variable_declarator, function_context, mini_program)
-        #     elif node_type == 'IfStatement':
-        #         pass
-        #     elif node_type == 'ForStatement':
-        #         pass
-        #     elif node_type == 'WhileStatement':
-        #         pass
-        #     elif node_type == 'FunctionDeclaration':
-        #         pass
-        #     elif node_type == 'SwitchStatement':
-        #         pass
-        #     else:
-        #         continue
-    logger.info(function_context.const_variable_table)
-
-
 def block_statement_analysis(block_statement: dict, context, mini_program: MiniProgram):
     for node in block_statement['body']:
         node_type = node['type']
@@ -87,7 +56,7 @@ def block_statement_analysis(block_statement: dict, context, mini_program: MiniP
         elif node_type == 'WhileStatement':
             while_statement_analysis(node, context, mini_program)
         elif node_type == 'FunctionDeclaration':
-            pass
+            function_declaration_analysis(node, context, mini_program)
         elif node_type == 'SwitchStatement':
             pass
         elif node_type == 'AssignmentExpression':
@@ -139,6 +108,53 @@ def while_statement_analysis(while_statement: dict, context, mini_program: MiniP
         block_context.father = context
         block_statement_analysis(while_statement['body'], block_context, mini_program)
         logger.info(block_context.const_variable_table)
+
+
+def function_declaration_analysis(function_declaration: dict, context,
+                                  mini_program: MiniProgram):
+    if context.scope == Scope.FILE:
+        scope_value = Scope.FILE_FUNCTION
+        function_context_name = function_declaration['id']['name']
+        function_context = FunctionContext(scope_value, function_context_name)
+    elif context.scope == Scope.OBJECT:
+        scope_value = Scope.OBJECT_FUNCTION
+        function_context_name = function_declaration['id']['name']
+        function_context = FunctionContext(scope_value, function_context_name)
+    else:
+        scope_value = Scope.BLOCK
+        function_context = BlockContext(scope_value)
+    function_context.father = context
+    # 形参列表
+    for param in function_declaration['params']:
+        if param['type'] == 'Identifier':
+            function_context.arguments_table[param['name']] = None
+    # 分析函数中的节点
+    if 'body' in function_declaration and function_declaration['body']['type'] == 'BlockStatement':
+        block_statement = function_declaration['body']
+        block_statement_analysis(block_statement, function_context, mini_program)
+
+        # for node in function_declaration['body']['body']:
+        #     node_type = node['type']
+        #     if node_type == 'VariableDeclaration':
+        #         for variable_declarator in node['declarations']:
+        #             variable_declarator_analysis(variable_declarator, function_context, mini_program)
+        #     elif node_type == 'IfStatement':
+        #         pass
+        #     elif node_type == 'ForStatement':
+        #         pass
+        #     elif node_type == 'WhileStatement':
+        #         pass
+        #     elif node_type == 'FunctionDeclaration':
+        #         pass
+        #     elif node_type == 'SwitchStatement':
+        #         pass
+        #     else:
+        #         continue
+    logger.info(function_context.const_variable_table)
+
+
+def switch_statement_analysis():
+    pass
 
 
 def expression_statement_analysis(expression_statement: dict, context, mini_program: MiniProgram):
