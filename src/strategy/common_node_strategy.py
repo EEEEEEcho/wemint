@@ -130,6 +130,20 @@ def function_declaration_analysis(function_declaration: dict, context,
         block_statement_analysis(block_statement, function_context, mini_program)
 
 
+def function_expression_analysis(property_name: str, function_expression: dict,
+                                 context, mini_program: MiniProgram):
+
+    obj_function_context = FunctionContext(Scope.OBJECT_FUNCTION, property_name)
+    obj_function_context.father = context
+    # 形参列表
+    for param in function_expression['params']:
+        if param['type'] == 'Identifier':
+            obj_function_context.arguments_table[param['name']] = None
+
+
+
+
+
 def switch_statement_analysis(switch_statement: dict, context,
                               mini_program: MiniProgram):
     for case_node in switch_statement['cases']:

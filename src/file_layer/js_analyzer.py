@@ -62,13 +62,6 @@ def variable_table_analysis(file_context: FileContext, mini_program: MiniProgram
 def function_declaration_analysis(file_context: FileContext, mini_program: MiniProgram):
     for function_declaration in file_context.function_table.values():
         cns.function_declaration_analysis(function_declaration, file_context, mini_program)
-        # if file_context.scope == Scope.FILE:
-        #     scope_value = Scope.FILE_FUNCTION
-        # else:
-        #     scope_value = Scope.OBJECT_FUNCTION
-        # function_context = FunctionContext(scope_value, function_name)
-        # function_context.father = file_context
-        # cns.function_declaration_analysis(function_declaration, file_context, mini_program)
 
 
 def page_object_analysis(file_context: FileContext, mini_program: MiniProgram):
@@ -78,12 +71,15 @@ def page_object_analysis(file_context: FileContext, mini_program: MiniProgram):
     page_obj_context.name = "Page"
     if "properties" in page_object:
         for obj_property in page_object['properties']:
+            property_name = obj_property['key']['name']
             if obj_property['value']['type'] == 'ObjectExpression':
-                page_obj_context.const_variable_table \
-                    .update(cns.object_node_analysis(obj_property['value'], page_obj_context))
+                page_obj_context.const_variable_table[property_name] \
+                    = cns.object_node_analysis(obj_property['value'], page_obj_context)
             elif obj_property['value']['type'] == 'FunctionExpression':
-                logger.info(obj_property['value'])
-    # logger.info(page_obj_context.const_variable_table)
+                obj_property['value']['id'] = dict()
+                obj_property['value']['id']['name'] = property_name
+                cns.function_declaration_analysis(obj_property['value'], page_obj_context, mini_program)
+    logger.info(page_obj_context.const_variable_table)
 
 
 # def page_obj_analysis(file_context: FileContext, page_object: dict):
