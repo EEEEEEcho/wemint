@@ -44,6 +44,7 @@ def file_level_analysis(ast_json: dict, file_context: FileContext, mini_program:
 
     variable_table_analysis(file_context, mini_program)
     function_declaration_analysis(file_context, mini_program)
+    page_object_analysis(file_context, mini_program)
 
 
 def variable_table_analysis(file_context: FileContext, mini_program: MiniProgram):
@@ -70,35 +71,50 @@ def function_declaration_analysis(file_context: FileContext, mini_program: MiniP
         # cns.function_declaration_analysis(function_declaration, file_context, mini_program)
 
 
-def page_obj_analysis(file_context: FileContext, page_object: dict):
-    """
-    文件中Page对象级别的上下文分析
-    :param file_context:
-    :param page_object:
-    :return:
-    """
-    page_context = FileContext(Scope.OBJECT)
-    page_context.father = file_context
-    # todo: 这里先定义成一个固定值，其实最好的办法是他在项目中的路由名
-    page_context.name = "Page"
-    if 'properties' in page_object:
-        for _property in page_object['properties']:
-            if _property['value']['type'] == 'ObjectExpression':
-                variable_name = _property['key']['name']
-                variable_value = cns.object_node_analysis(_property['value'], page_context)
-                page_context.variable_table[variable_name] = variable_value
-            elif _property['value']['type'] == 'Literal':
-                variable_name = _property['key']['name']
-                variable_value = _property['value']['value']
-                page_context.variable_table[variable_name] = variable_value
-            elif _property['value']['type'] == 'FunctionExpression':
-                if _property['value']['body']['type'] == 'BlockStatement':
-                    function_name = _property['key']['name']
-                    function_context = FileContext(Scope.OBJECT_FUNCTION)
-                    function_context.name = function_name
-                    function_context.father = page_context
-                    logger.info(function_name)
-        return page_context
+def page_object_analysis(file_context: FileContext, mini_program: MiniProgram):
+    page_object = file_context.page_object
+    page_obj_context = FileContext(Scope.OBJECT)
+    page_obj_context.father = file_context
+    page_obj_context.name = "Page"
+    if "properties" in page_object:
+        for obj_property in page_object['properties']:
+            if obj_property['value']['type'] == 'ObjectExpression':
+                page_obj_context.const_variable_table \
+                    .update(cns.object_node_analysis(obj_property['value'], page_obj_context))
+            elif obj_property['value']['type'] == 'FunctionExpression':
+                logger.info(obj_property['value'])
+    # logger.info(page_obj_context.const_variable_table)
+
+
+# def page_obj_analysis(file_context: FileContext, page_object: dict):
+#     """
+#     文件中Page对象级别的上下文分析
+#     :param file_context:
+#     :param page_object:
+#     :return:
+#     """
+#     page_context = FileContext(Scope.OBJECT)
+#     page_context.father = file_context
+#     # todo: 这里先定义成一个固定值，其实最好的办法是他在项目中的路由名
+#     page_context.name = "Page"
+#     if 'properties' in page_object:
+#         for _property in page_object['properties']:
+#             if _property['value']['type'] == 'ObjectExpression':
+#                 variable_name = _property['key']['name']
+#                 variable_value = cns.object_node_analysis(_property['value'], page_context)
+#                 page_context.variable_table[variable_name] = variable_value
+#             elif _property['value']['type'] == 'Literal':
+#                 variable_name = _property['key']['name']
+#                 variable_value = _property['value']['value']
+#                 page_context.variable_table[variable_name] = variable_value
+#             elif _property['value']['type'] == 'FunctionExpression':
+#                 if _property['value']['body']['type'] == 'BlockStatement':
+#                     function_name = _property['key']['name']
+#                     function_context = FileContext(Scope.OBJECT_FUNCTION)
+#                     function_context.name = function_name
+#                     function_context.father = page_context
+#                     logger.info(function_name)
+#         return page_context
 
 
 def config_analysis(ast_json: dict, file_context: FileContext):

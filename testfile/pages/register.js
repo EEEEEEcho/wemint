@@ -1,6 +1,6 @@
 // pages/register/register.js
-let app = getApp();
-let custom = require("../utils/utils.js");
+// let app = getApp();
+// let custom = require("../utils/utils.js");
 let nameDict = {
     'name': 'echo',
     'prop': {
@@ -12,7 +12,7 @@ let nameDict = {
 let arr = [1, 2, 3, 4]
 let four = arr[2];
 let one = nameDict['prop']['arr'][0]
-let chicken = getApp().chicken;
+// let chicken = getApp().chicken;
 let name = nameDict['name']
 let sex = nameDict['prop']['sex']
 let name2 = nameDict.name
@@ -27,8 +27,13 @@ let f = e
 function jump(x, y, z) {
     // let c = 10;
     // console.log(c);
+  	let o = 1234;
     let c = 20;
     let b = 10;
+  	c = b;
+  	c *= 10;
+  	c += 1;
+  	c ++;
     if (c < 30) {
         let b = 50;
         console.log(b)
@@ -260,7 +265,7 @@ Page({
                     },
                     success: function (n) {
                         var o = n.data.openid;
-                        console.log(), wx.setStorageSync("openId", n.data.openId), getApp().globalData.openid = o;
+                        // console.log(), wx.setStorageSync("openId", n.data.openId), getApp().globalData.openid = o;
                         var a = getApp().globalData.userInfo;
                         wx.getUserInfo({
                             success: function (o) {
@@ -285,7 +290,7 @@ Page({
                                             is_login: !0
                                         }), a = n.data.res, console.log(n), wx.setStorageSync("userInfo", n.data.res), wx.setStorageSync("user_id", n.data.user_id),
                                             wx.setStorageSync("nick_name", n.data.nick_name), wx.setStorageSync("city", n.data.city),
-                                            getApp().globalData.userInfo = a, console.log(getApp().globalData), getApp().globalData.nick_name = n.data.nick_name,
+                                            // getApp().globalData.userInfo = a, console.log(getApp().globalData), getApp().globalData.nick_name = n.data.nick_name,
                                             wx.reLaunch({
                                                 url: "/pages/index/index"
                                             }));

@@ -98,3 +98,22 @@ def calculate_value(left_value, ops, right_value):
     elif variable_type == 'string':
         return str(variable_value)
     return None
+
+
+def execute_assign_operate(pre_value, operator, update_value):
+    if operator == "=":
+        return update_value
+    if operator == "+=":
+        return calculate_value(pre_value, "+", update_value)
+    if operator == "-=":
+        return calculate_value(pre_value, "-", update_value)
+    if operator == "*=":
+        return calculate_value(pre_value, "*", update_value)
+    if operator == "/=":
+        return calculate_value(pre_value, "/", update_value)
+    if operator == "^=":
+        return calculate_value(pre_value, "^", update_value)
+    if operator == "&=":
+        return calculate_value(pre_value, "&", update_value)
+    if operator == "|=":
+        return calculate_value(pre_value, "|", update_value)

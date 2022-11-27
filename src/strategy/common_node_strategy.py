@@ -58,13 +58,13 @@ def block_statement_analysis(block_statement: dict, context, mini_program: MiniP
         elif node_type == 'FunctionDeclaration':
             function_declaration_analysis(node, context, mini_program)
         elif node_type == 'SwitchStatement':
-            pass
-        elif node_type == 'AssignmentExpression':
-            pass
-        elif node_type == 'UpdateExpression':
-            pass
+            switch_statement_analysis(node, context, mini_program)
+        elif node_type == 'ExpressionStatement':
+            expression_statement_analysis(node, context, mini_program)
         else:
             continue
+    # 测试上下文分析情况的语句
+    logger.info(context.const_variable_table)
 
 
 def if_statement_analysis(if_statement: dict, context, mini_program: MiniProgram):
@@ -76,7 +76,6 @@ def if_statement_analysis(if_statement: dict, context, mini_program: MiniProgram
                 block_context = BlockContext(Scope.BLOCK)
                 block_context.father = context
                 block_statement_analysis(if_statement['consequent'], block_context, mini_program)
-                logger.info(block_context.const_variable_table)
             if if_statement['consequent']['type'] == 'IfStatement':
                 if_statement_analysis(if_statement['consequent'], context, mini_program)
 
@@ -87,7 +86,6 @@ def if_statement_analysis(if_statement: dict, context, mini_program: MiniProgram
                 block_context = BlockContext(Scope.BLOCK)
                 block_context.father = context
                 block_statement_analysis(if_statement['alternate'], block_context, mini_program)
-                logger.info(block_context.const_variable_table)
             if if_statement['alternate']['type'] == 'IfStatement':
                 if_statement_analysis(if_statement['alternate'], context, mini_program)
 
@@ -98,7 +96,6 @@ def for_statement_analysis(for_statement: dict, context, mini_program: MiniProgr
         block_context = BlockContext(Scope.BLOCK)
         block_context.father = context
         block_statement_analysis(for_statement['body'], block_context, mini_program)
-        logger.info(block_context.const_variable_table)
 
 
 def while_statement_analysis(while_statement: dict, context, mini_program: MiniProgram):
@@ -107,7 +104,6 @@ def while_statement_analysis(while_statement: dict, context, mini_program: MiniP
         block_context = BlockContext(Scope.BLOCK)
         block_context.father = context
         block_statement_analysis(while_statement['body'], block_context, mini_program)
-        logger.info(block_context.const_variable_table)
 
 
 def function_declaration_analysis(function_declaration: dict, context,
@@ -133,64 +129,98 @@ def function_declaration_analysis(function_declaration: dict, context,
         block_statement = function_declaration['body']
         block_statement_analysis(block_statement, function_context, mini_program)
 
-        # for node in function_declaration['body']['body']:
-        #     node_type = node['type']
-        #     if node_type == 'VariableDeclaration':
-        #         for variable_declarator in node['declarations']:
-        #             variable_declarator_analysis(variable_declarator, function_context, mini_program)
-        #     elif node_type == 'IfStatement':
-        #         pass
-        #     elif node_type == 'ForStatement':
-        #         pass
-        #     elif node_type == 'WhileStatement':
-        #         pass
-        #     elif node_type == 'FunctionDeclaration':
-        #         pass
-        #     elif node_type == 'SwitchStatement':
-        #         pass
-        #     else:
-        #         continue
-    logger.info(function_context.const_variable_table)
 
-
-def switch_statement_analysis():
-    pass
+def switch_statement_analysis(switch_statement: dict, context,
+                              mini_program: MiniProgram):
+    for case_node in switch_statement['cases']:
+        fake_block = {'body': []}
+        for consequent in case_node['consequent']:
+            fake_block['body'].append(consequent)
+        block_context = BlockContext(Scope.BLOCK)
+        block_context.father = context
+        block_statement_analysis(fake_block, block_context, mini_program)
+        # logger.info(block_context.const_variable_table)
 
 
 def expression_statement_analysis(expression_statement: dict, context, mini_program: MiniProgram):
-    expression = expression_statement['expression']
-    expression_type = expression['type']
-    function_node_list = []
-    # 直接的函数调用
-    if expression_type == 'CallExpression':
-        call_expression_analysis(expression, function_node_list, context, mini_program)
-    # 条件表达式
-    elif expression_type == 'ConditionalExpression':
-        condition_expression_analysis(expression, function_node_list, context, mini_program)
-    # 一行多个调用表达式
-    elif expression_type == 'SequenceExpression':
-        sequence_expression_analysis(expression, function_node_list, context, mini_program)
-    return function_node_list
+    if 'expression' in expression_statement:
+        expression = expression_statement['expression']
+        expression_type = expression['type']
+        if expression_type == 'AssignmentExpression':
+            assign_expression_analysis(expression_statement['expression'], context, mini_program)
+        elif expression_type == 'UpdateExpression':
+            update_expression_analysis(expression_statement['expression'], context, mini_program)
+        elif expression_type == 'CallExpression':
+            call_expression_analysis(expression_statement['expression'], context, mini_program)
 
 
-def call_expression_analysis(call_expression: dict, node_list: list, context, mini_program: MiniProgram):
+def assign_expression_analysis(assign_expression: dict, context, mini_program: MiniProgram):
+    # 对赋值表达式进行封装，封装为一个VariableDeclaration,进行分析
+    if 'left' in assign_expression and 'right' in assign_expression:
+        variable_name = assign_expression['left']['name']
+        if variable_name in context.const_variable_table:
+            pre_variable_value = context.const_variable_table[variable_name]
+            variable_declarator = dict()
+            variable_declarator['id'] = dict()
+            variable_declarator['id']['name'] = variable_name
+            variable_declarator['init'] = assign_expression['right']
+            variable_declarator_analysis(variable_declarator, context, mini_program)
+            assign_operator = assign_expression['operator']
+            now_value = context.const_variable_table[variable_name]
+            final_value = utils.execute_assign_operate(pre_variable_value, assign_operator, now_value)
+            context.const_variable_table[variable_name] = final_value
+
+
+def update_expression_analysis(update_expression: dict, context, mini_program: MiniProgram):
+    if 'argument' in update_expression and 'operator' in update_expression:
+        variable_name = update_expression['argument']['name']
+        update_operator = update_expression['operator']
+        if variable_name in context.const_variable_table:
+            variable_value = context.const_variable_table[variable_name]
+            if update_operator == "++" and type(variable_value) is int:
+                context.const_variable_table[variable_name] = variable_value + 1
+            if update_operator == "--" and type(variable_value) is int:
+                context.const_variable_table[variable_name] = variable_value - 1
+
+
+# def expression_statement_analysis(expression_statement: dict, context, mini_program: MiniProgram):
+#     expression = expression_statement['expression']
+#     expression_type = expression['type']
+#     function_node_list = []
+#     # 直接的函数调用
+#     if expression_type == 'CallExpression':
+#         call_expression_analysis(expression, function_node_list, context, mini_program)
+#     # 条件表达式
+#     elif expression_type == 'ConditionalExpression':
+#         condition_expression_analysis(expression, function_node_list, context, mini_program)
+#     # 一行多个调用表达式
+#     elif expression_type == 'SequenceExpression':
+#         sequence_expression_analysis(expression, function_node_list, context, mini_program)
+#     return function_node_list
+
+
+def call_expression_analysis(call_expression: dict, context, mini_program: MiniProgram):
     pass
-    # if call_expression['callee']['type'] == 'MemberExpression':
-    #     if 'object' in call_expression['callee'] and 'property' in call_expression['callee']:
-    #         if 'name' in call_expression['callee']['object'] and 'name' in call_expression['callee']['property']:
-    #             obj_name = call_expression['callee']['object']['name']
-    #             func_name = call_expression['callee']['property']['name']
-    #             if obj_name == 'wx' and func_name in utils.request_methods:
-    #                 # 找到了request函数，在这里只分析属性
-    #                 if 'arguments' in call_expression:
-    #                     for argument in call_expression['arguments']:
-    #                         if argument['type'] == 'ObjectExpression':
-    #                             key_leak.appid_secret_analysis(argument, context, mini_program, scope)
-    #     if 'arguments' in call_expression:
-    #         for argument in call_expression['arguments']:
-    #             if argument['type'] == 'ObjectExpression':
-    #                 # 在这里只提取参数中传递的回调函数，并不分析属性
-    #                 function_node_analysis(argument, node_list)
+
+
+# def call_expression_analysis(call_expression: dict, node_list: list, context, mini_program: MiniProgram):
+#     pass
+# if call_expression['callee']['type'] == 'MemberExpression':
+#     if 'object' in call_expression['callee'] and 'property' in call_expression['callee']:
+#         if 'name' in call_expression['callee']['object'] and 'name' in call_expression['callee']['property']:
+#             obj_name = call_expression['callee']['object']['name']
+#             func_name = call_expression['callee']['property']['name']
+#             if obj_name == 'wx' and func_name in utils.request_methods:
+#                 # 找到了request函数，在这里只分析属性
+#                 if 'arguments' in call_expression:
+#                     for argument in call_expression['arguments']:
+#                         if argument['type'] == 'ObjectExpression':
+#                             key_leak.appid_secret_analysis(argument, context, mini_program, scope)
+#     if 'arguments' in call_expression:
+#         for argument in call_expression['arguments']:
+#             if argument['type'] == 'ObjectExpression':
+#                 # 在这里只提取参数中传递的回调函数，并不分析属性
+#                 function_node_analysis(argument, node_list)
 
 
 def find_object_from_ast(tree, object_list: list):
