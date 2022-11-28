@@ -64,7 +64,7 @@ def block_statement_analysis(block_statement: dict, context, mini_program: MiniP
         else:
             continue
     # 测试上下文分析情况的语句
-    # logger.info(context.const_variable_table)
+    logger.info(context.const_variable_table)
 
 
 def if_statement_analysis(if_statement: dict, context, mini_program: MiniProgram):
@@ -143,7 +143,6 @@ def arrow_function_analysis(arrow_function_expression: dict, context, mini_progr
     return function_context
 
 
-
 def switch_statement_analysis(switch_statement: dict, context,
                               mini_program: MiniProgram):
     for case_node in switch_statement['cases']:
@@ -165,21 +164,29 @@ def expression_statement_analysis(expression_statement: dict, context, mini_prog
         elif expression_type == 'UpdateExpression':
             update_expression_analysis(expression_statement['expression'], context, mini_program)
         elif expression_type == 'ConditionalExpression':
-            pass
+            conditional_expression_analysis(expression_statement['expression'], context, mini_program)
         elif expression_type == 'AwaitExpression':
             await_expression_analysis(expression_statement['expression'], context, mini_program)
         elif expression_type == 'CallExpression':
             call_expression_analysis(expression_statement['expression'], context, mini_program)
         elif expression_type == 'SequenceExpression':
-            pass
+            sequence_expression_analysis(expression_statement['expression'], context, mini_program)
+        elif expression_type == 'LogicalExpression':
+            logical_expression_analysis(expression_statement['expression'], context, mini_program)
 
 
 def assign_expression_analysis(assign_expression: dict, context, mini_program: MiniProgram):
     # 对赋值表达式进行封装，封装为一个VariableDeclaration,进行分析
     if 'left' in assign_expression and 'right' in assign_expression:
-        variable_name = assign_expression['left']['name']
-        if variable_name in context.const_variable_table:
-            pre_variable_value = context.const_variable_table[variable_name]
+        left_type = assign_expression['left']['type']
+        variable_name = None
+        if left_type == 'Identifier':
+            variable_name = assign_expression['left']['name']
+        elif left_type == 'MemberExpression':
+            variable_name = member_expression_analysis(assign_expression['left'])
+
+        pre_variable_value = co.search_identifier(variable_name, context)
+        if pre_variable_value:
             variable_declarator = dict()
             variable_declarator['id'] = dict()
             variable_declarator['id']['name'] = variable_name
@@ -203,20 +210,15 @@ def update_expression_analysis(update_expression: dict, context, mini_program: M
                 context.const_variable_table[variable_name] = variable_value - 1
 
 
-# def expression_statement_analysis(expression_statement: dict, context, mini_program: MiniProgram):
-#     expression = expression_statement['expression']
-#     expression_type = expression['type']
-#     function_node_list = []
-#     # 直接的函数调用
-#     if expression_type == 'CallExpression':
-#         call_expression_analysis(expression, function_node_list, context, mini_program)
-#     # 条件表达式
-#     elif expression_type == 'ConditionalExpression':
-#         condition_expression_analysis(expression, function_node_list, context, mini_program)
-#     # 一行多个调用表达式
-#     elif expression_type == 'SequenceExpression':
-#         sequence_expression_analysis(expression, function_node_list, context, mini_program)
-#     return function_node_list
+def conditional_expression_analysis(conditional_expression: dict, context, mini_program: MiniProgram):
+    if 'consequent' in conditional_expression:
+        if conditional_expression['consequent']['type'] == 'CallExpression':
+            call_expression_analysis(conditional_expression['consequent'], context, mini_program)
+
+    if 'alternate' in conditional_expression:
+        if conditional_expression['alternate']['type'] == 'CallExpression':
+            call_expression_analysis(conditional_expression['alternate'], context, mini_program)
+
 
 def await_expression_analysis(await_expression: dict, context, mini_program: MiniProgram):
     if 'argument' in await_expression and await_expression['argument']['type'] == 'CallExpression':
@@ -231,7 +233,6 @@ def call_expression_analysis(call_expression: dict, context, mini_program: MiniP
         call_function_name = callee['name']
     else:
         call_function_name = member_expression_analysis(callee)
-    logger.info(call_function_name)
     # todo: check call_function_name
     for argument in arguments:
         if argument['type'] == 'Literal':
@@ -241,30 +242,26 @@ def call_expression_analysis(call_expression: dict, context, mini_program: MiniP
         elif argument['type'] == 'ObjectExpression' or argument['type'] == 'ArrayExpression':
             literal_value = object_node_analysis(argument, context, mini_program)
             logger.info(literal_value)
-        elif arguments['type'] == 'ArrowFunctionExpression':
+        elif argument['type'] == 'ArrowFunctionExpression':
             arrow_function_analysis(argument, context, mini_program)
         else:
             continue
 
 
-# def call_expression_analysis(call_expression: dict, node_list: list, context, mini_program: MiniProgram):
-#     pass
-# if call_expression['callee']['type'] == 'MemberExpression':
-#     if 'object' in call_expression['callee'] and 'property' in call_expression['callee']:
-#         if 'name' in call_expression['callee']['object'] and 'name' in call_expression['callee']['property']:
-#             obj_name = call_expression['callee']['object']['name']
-#             func_name = call_expression['callee']['property']['name']
-#             if obj_name == 'wx' and func_name in utils.request_methods:
-#                 # 找到了request函数，在这里只分析属性
-#                 if 'arguments' in call_expression:
-#                     for argument in call_expression['arguments']:
-#                         if argument['type'] == 'ObjectExpression':
-#                             key_leak.appid_secret_analysis(argument, context, mini_program, scope)
-#     if 'arguments' in call_expression:
-#         for argument in call_expression['arguments']:
-#             if argument['type'] == 'ObjectExpression':
-#                 # 在这里只提取参数中传递的回调函数，并不分析属性
-#                 function_node_analysis(argument, node_list)
+def logical_expression_analysis(logical_expression: dict, context, mini_program: MiniProgram):
+    node_list = list()
+
+    if 'left' in logical_expression:
+        node_list.append(logical_expression['left'])
+    if 'right' in logical_expression:
+        node_list.append(logical_expression['right'])
+
+    for node in node_list:
+        node_type = node['type']
+        if node_type == 'BinaryExpression':
+            binary_expression_analysis(node, context)
+        elif node_type == 'SequenceExpression':
+            sequence_expression_analysis(node, context, mini_program)
 
 
 def find_object_from_ast(tree, object_list: list):
@@ -351,11 +348,10 @@ def member_expression_analysis(member_expression: dict):
     return None
 
 
-def sequence_expression_analysis(sequence_expression: dict, node_list: list, context,
-                                 mini_program: MiniProgram):
+def sequence_expression_analysis(sequence_expression: dict, context, mini_program: MiniProgram):
     for expression in sequence_expression['expressions']:
         if expression['type'] == 'CallExpression':
-            call_expression_analysis(expression, node_list, context, mini_program)
+            call_expression_analysis(expression, context, mini_program)
 
 
 def binary_expression_analysis(bi_expression, file_function_context):
@@ -400,29 +396,32 @@ def object_node_analysis(obj_expression: dict, context, mini_program: MiniProgra
     elif obj_expression['type'] == 'ObjectExpression':
         ret = {}
         for prop in obj_expression['properties']:
-            if prop['key']['type'] == 'Literal':
-                key = prop['key']['value']
-            else:
-                key = prop['key']['name']
-            if prop['value']['type'] == 'Literal':
-                ret[key] = prop['value']['value']
-            elif prop['value']['type'] == 'Identifier':
-                identifier_value = co.search_identifier(prop['value']['name'], context)
-                ret[key] = identifier_value
-            elif prop['value']['type'] == 'BinaryExpression':
-                binary_value = binary_expression_analysis(prop['value'], context)
-                ret[key] = binary_value
-            elif prop['value']['type'] == 'MemberExpression':
-                identifier = member_expression_analysis(prop['value'])
-                identifier_value = co.search_identifier(identifier, context)
-                ret[key] = identifier_value
-            elif prop['value']['type'] == 'ArrayExpression':
-                ret[key] = object_node_analysis(prop['value'], context, mini_program)
-            elif prop['value']['type'] == 'ObjectExpression':
-                ret[key] = object_node_analysis(prop['value'], context, mini_program)
-            elif prop['value']['type'] == 'FunctionExpression':
-                prop['value']['id'] = dict()
-                prop['value']['id']['name'] = key
-                ret[key] = function_declaration_analysis(prop, context, mini_program)
+            if prop['type'] == 'Property':
+                if prop['key']['type'] == 'Literal':
+                    key = prop['key']['value']
+                else:
+                    key = prop['key']['name']
+                if prop['value']['type'] == 'Literal':
+                    ret[key] = prop['value']['value']
+                elif prop['value']['type'] == 'Identifier':
+                    identifier_value = co.search_identifier(prop['value']['name'], context)
+                    ret[key] = identifier_value
+                elif prop['value']['type'] == 'BinaryExpression':
+                    binary_value = binary_expression_analysis(prop['value'], context)
+                    ret[key] = binary_value
+                elif prop['value']['type'] == 'MemberExpression':
+                    identifier = member_expression_analysis(prop['value'])
+                    identifier_value = co.search_identifier(identifier, context)
+                    ret[key] = identifier_value
+                elif prop['value']['type'] == 'ArrayExpression':
+                    ret[key] = object_node_analysis(prop['value'], context, mini_program)
+                elif prop['value']['type'] == 'ObjectExpression':
+                    ret[key] = object_node_analysis(prop['value'], context, mini_program)
+                elif prop['value']['type'] == 'FunctionExpression':
+                    prop['value']['id'] = dict()
+                    prop['value']['id']['name'] = key
+                    ret[key] = function_declaration_analysis(prop['value'], context, mini_program)
+            elif prop['type'] == 'SpreadElement':
+                ret['spread_element'] = '...' + member_expression_analysis(prop['argument'])
         return ret
     return None

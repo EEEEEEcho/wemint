@@ -15,3 +15,6 @@ class BlockContext:
         self.const_variable_table = dict()
         # 父上下文
         self.father = None
+
+    def __repr__(self):
+        return str(self.const_variable_table)
