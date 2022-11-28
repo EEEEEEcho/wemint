@@ -144,7 +144,7 @@ Page({
         let repassword = e.detail.value['repassword']
         let inviteCode = e.detail.value['inviteCode']
         if (realName == "" || realName.length == 0) {
-            wx.showToast({
+            wx.showToast.show({
                 title: '请填写用户名',
                 icon: 'error',
                 duration: 1000

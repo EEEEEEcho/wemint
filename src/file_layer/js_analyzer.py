@@ -74,7 +74,7 @@ def page_object_analysis(file_context: FileContext, mini_program: MiniProgram):
             property_name = obj_property['key']['name']
             if obj_property['value']['type'] == 'ObjectExpression':
                 page_obj_context.const_variable_table[property_name] \
-                    = cns.object_node_analysis(obj_property['value'], page_obj_context)
+                    = cns.object_node_analysis(obj_property['value'], page_obj_context, mini_program)
             elif obj_property['value']['type'] == 'FunctionExpression':
                 obj_property['value']['id'] = dict()
                 obj_property['value']['id']['name'] = property_name
@@ -113,11 +113,11 @@ def page_object_analysis(file_context: FileContext, mini_program: MiniProgram):
 #         return page_context
 
 
-def config_analysis(ast_json: dict, file_context: FileContext):
+def config_analysis(ast_json: dict, file_context: FileContext, mini_program: MiniProgram):
     object_list = []
     cns.find_object_from_ast(ast_json, object_list)
     for obj in object_list:
-        ans = cns.object_node_analysis(obj, file_context)
+        ans = cns.object_node_analysis(obj, file_context, mini_program)
         file_context.variable_table.update(ans)
 
 
@@ -142,14 +142,15 @@ def brother_analysis(variable_declarator: dict, file_context: FileContext, mini_
         file_context.brother_table[variable_name] = af.get_context(brother_path)
 
 
-# base_path = r'F:\wxapp-analyzer\testfile'
-base_path = r'E:\WorkSpace\wxapp-analyzer\testfile'
-
-# path = r'F:\wxapp-analyzer\testfile\pages\register.js'
-path = r'E:\WorkSpace\wxapp-analyzer\testfile\pages\register.js'
-mp = MiniProgram(base_path, 'test')
-context = analysis(path, mp)
-# logger.info(context.const_variable_table)
-# # logger.info(context)
-
 # todo: 只存常量表？
+if __name__ == '__main__':
+    base_path = r'F:\wxapp-analyzer\testfile'
+    # base_path = r'E:\WorkSpace\wxapp-analyzer\testfile'
+
+    path = r'F:\wxapp-analyzer\testfile\pages\register.js'
+    # path = r'E:\WorkSpace\wxapp-analyzer\testfile\pages\register.js'
+    mp = MiniProgram(base_path, 'test')
+    context = analysis(path, mp)
+    # logger.info(context.const_variable_table)
+    # # logger.info(context)
+    logger.info(context.const_variable_table)
