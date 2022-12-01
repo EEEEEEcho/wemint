@@ -40,6 +40,8 @@ def variable_declarator_analysis(variable_declarator: dict, context, mini_progra
             variable_value = variable_identifier
     elif variable_type == 'BinaryExpression':
         variable_value = binary_expression_analysis(variable_init, context)
+    if mini_program.secret_leak_checker.check_flg:
+        mini_program.secret_leak_checker.do_check(variable_value)
     context.const_variable_table[variable_name] = variable_value
 
 
@@ -233,15 +235,16 @@ def call_expression_analysis(call_expression: dict, context, mini_program: MiniP
         call_function_name = callee['name']
     else:
         call_function_name = member_expression_analysis(callee)
-    # todo: check call_function_name
+    mini_program.secret_leak_checker.check_callee_name(call_function_name)
     for argument in arguments:
         if argument['type'] == 'Literal':
-            # todo: Literal analysis
             literal_value = argument['value']
-            logger.info(literal_value)
+            if mini_program.secret_leak_checker.check_flg:
+                mini_program.secret_leak_checker.check_literal(literal_value)
         elif argument['type'] == 'ObjectExpression' or argument['type'] == 'ArrayExpression':
-            literal_value = object_node_analysis(argument, context, mini_program)
-            logger.info(literal_value)
+            object_value = object_node_analysis(argument, context, mini_program)
+            if mini_program.secret_leak_checker.check_flg:
+                mini_program.secret_leak_checker.check_object(object_value)
         elif argument['type'] == 'ArrowFunctionExpression':
             arrow_function_analysis(argument, context, mini_program)
         else:

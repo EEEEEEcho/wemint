@@ -267,52 +267,52 @@ Page({
                     data: {
                         code: n.code
                     },
-                    success: function (n) {
-                        let second_level = "second_level"
-                        var o = n.data.openid;
-                        console.log(), wx.setStorageSync("openId", n.data.openId), getApp().globalData.openid = o;
-                        var a = getApp().globalData.userInfo;
-                        wx.getUserInfo({
-                            success: function (o) {
-                                let third_level = "third_level"
-                                wx.request({
-                                    url: "https://jira.whjiuyan.cn/index.php/WXAPI/User/register",
-                                    dataType: "json",
-                                    data: {
-                                        country: o.userInfo.country,
-                                        city: o.userInfo.city,
-                                        gender: o.userInfo.gender,
-                                        nick_name: o.userInfo.nickName,
-                                        province: o.userInfo.province,
-                                        head_pic: o.userInfo.avatarUrl,
-                                        open_id: n.data.openid
-                                    },
-                                    method: "GET",
-                                    header: {
-                                        "content-type": "application/x-www-form-urlencoded"
-                                    },
-                                    success: function (n) {
-                                        let forth_level = "forth_level"
-                                        200 == n.data.code && (e.setData({
-                                            is_login: !0
-                                        }), a = n.data.res, console.log(n), wx.setStorageSync("userInfo", n.data.res), wx.setStorageSync("user_id", n.data.user_id),
-                                            wx.setStorageSync("nick_name", n.data.nick_name), wx.setStorageSync("city", n.data.city),
-                                            getApp().globalData.userInfo = a, console.log(getApp().globalData), getApp().globalData.nick_name = n.data.nick_name,
-                                            wx.reLaunch({
-                                                url: "/pages/index/index"
-                                            }));
-                                    }
-                                });
-                            }
-                        }), console.log(a, "000000000000000000000000000000");
-                    }
+                    // success: function (n) {
+                    //     let second_level = "second_level"
+                    //     var o = n.data.openid;
+                    //     console.log(), wx.setStorageSync("openId", n.data.openId), getApp().globalData.openid = o;
+                    //     var a = getApp().globalData.userInfo;
+                    //     wx.getUserInfo({
+                    //         success: function (o) {
+                    //             let third_level = "third_level"
+                    //             wx.request({
+                    //                 url: "https://jira.whjiuyan.cn/index.php/WXAPI/User/register",
+                    //                 dataType: "json",
+                    //                 data: {
+                    //                     country: o.userInfo.country,
+                    //                     city: o.userInfo.city,
+                    //                     gender: o.userInfo.gender,
+                    //                     nick_name: o.userInfo.nickName,
+                    //                     province: o.userInfo.province,
+                    //                     head_pic: o.userInfo.avatarUrl,
+                    //                     open_id: n.data.openid
+                    //                 },
+                    //                 method: "GET",
+                    //                 header: {
+                    //                     "content-type": "application/x-www-form-urlencoded"
+                    //                 },
+                    //                 success: function (n) {
+                    //                     let forth_level = "forth_level"
+                    //                     200 == n.data.code && (e.setData({
+                    //                         is_login: !0
+                    //                     }), a = n.data.res, console.log(n), wx.setStorageSync("userInfo", n.data.res), wx.setStorageSync("user_id", n.data.user_id),
+                    //                         wx.setStorageSync("nick_name", n.data.nick_name), wx.setStorageSync("city", n.data.city),
+                    //                         getApp().globalData.userInfo = a, console.log(getApp().globalData), getApp().globalData.nick_name = n.data.nick_name,
+                    //                         wx.reLaunch({
+                    //                             url: "/pages/index/index"
+                    //                         }));
+                    //                 }
+                    //             });
+                    //         }
+                    //     }), console.log(a, "000000000000000000000000000000");
+                    // }
                 }) : console.log("获取用户登录态失败！" + n.errMsg);
             }
         });
-        test("xxx");
-        this.test(1);
+        // test("xxx");
+        // this.test(1);
     },
-    test(e) {
-        console.log(e)
-    },
+    // test(e) {
+    //     console.log(e)
+    // },
 })
