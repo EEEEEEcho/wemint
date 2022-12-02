@@ -9,6 +9,7 @@ App({
         ceshiUrl: "https://td.sjmd.com.cn/index.php"
     },
     onLaunch: function() {
+        var z = getApp().d.hostUrl
         var e = wx.getStorageSync("logs") || [];
         e.unshift(Date.now()), wx.setStorageSync("logs", e), this.getUserInfo();
     },

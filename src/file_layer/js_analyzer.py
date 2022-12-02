@@ -10,12 +10,13 @@ from loguru import logger
 
 
 def analysis(js_file_path: str, mini_program: MiniProgram) -> FileContext:
+    logger.info(js_file_path)
     file_context = FileContext(Scope.FILE, js_file_path)
     ast_json = utils.generate_ast(js_file_path)
 
     if ast_json is not None:
         if 'config.js' in js_file_path:
-            config_analysis(ast_json, file_context)
+            config_analysis(ast_json, file_context,mini_program)
         else:
             file_level_analysis(ast_json, file_context, mini_program)
     return file_context
@@ -50,11 +51,14 @@ def file_level_analysis(ast_json: dict, file_context: FileContext, mini_program:
 def variable_table_analysis(file_context: FileContext, mini_program: MiniProgram):
     for variable_declarator_name, variable_declarator in file_context.variable_table.items():
         variable_init = variable_declarator['init']
-        if variable_init:
+        if variable_init and 'type' in variable_init:
             declarator_type = variable_init['type']
-            if declarator_type == 'CallExpression' and \
-                    (variable_init['callee']['name'] == 'require' or variable_init['callee']['name'] == 'getApp'):
-                brother_analysis(variable_declarator, file_context, mini_program)
+            if declarator_type == 'CallExpression':
+                if 'callee' in variable_init and variable_init['callee']:
+                    if 'name' in variable_init['callee'] and variable_init['callee']['name']:
+                        callee_name = variable_init['callee']['name']
+                        if callee_name == 'require' or callee_name == 'getApp':
+                            brother_analysis(variable_declarator, file_context, mini_program)
             else:
                 cns.variable_declarator_analysis(variable_declarator, file_context, mini_program)
 
@@ -69,7 +73,8 @@ def page_object_analysis(file_context: FileContext, mini_program: MiniProgram):
     page_obj_context = FileContext(Scope.OBJECT)
     page_obj_context.father = file_context
     page_obj_context.name = "Page"
-    if "properties" in page_object:
+    file_context.children = page_obj_context
+    if page_object and "properties" in page_object:
         for obj_property in page_object['properties']:
             property_name = obj_property['key']['name']
             if obj_property['value']['type'] == 'ObjectExpression':
@@ -118,6 +123,7 @@ def config_analysis(ast_json: dict, file_context: FileContext, mini_program: Min
     cns.find_object_from_ast(ast_json, object_list)
     for obj in object_list:
         ans = cns.object_node_analysis(obj, file_context, mini_program)
+        mini_program.secret_leak_checker.do_check(ans)
         file_context.variable_table.update(ans)
 
 
@@ -142,13 +148,20 @@ def brother_analysis(variable_declarator: dict, file_context: FileContext, mini_
         file_context.brother_table[variable_name] = af.get_context(brother_path)
 
 
-# todo: 只存常量表？
+def app_js_analysis(app_js_path: str, mini_program: MiniProgram):
+    app_js_context = analysis(app_js_path, mini_program)
+    af.set_context(app_js_path, app_js_context.children)
+    mini_program.secret_leak_checker.check_object(app_js_context.children.const_variable_table)
+
+
+# # todo: 只存常量表？
 if __name__ == '__main__':
     # base_path = r'F:\wxapp-analyzer\testfile'
     base_path = r'E:\WorkSpace\wxapp-analyzer\testfile'
 
     # path = r'F:\wxapp-analyzer\testfile\pages\register.js'
-    path = r'E:\WorkSpace\wxapp-analyzer\testfile\pages\register.js'
+    # path = r'E:\WorkSpace\wxapp-analyzer\testfile\pages\register.js'
+    path = r'E:\WorkSpace\wxapp-analyzer\testfile\app.js'
     mp = MiniProgram(base_path, 'test')
     context = analysis(path, mp)
     # logger.info(context.const_variable_table)

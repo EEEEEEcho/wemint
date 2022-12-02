@@ -117,3 +117,36 @@ def execute_assign_operate(pre_value, operator, update_value):
         return calculate_value(pre_value, "&", update_value)
     if operator == "|=":
         return calculate_value(pre_value, "|", update_value)
+
+
+def re_write_json(json_path: str, error_str: str):
+    match = re.search(".*line (\\d+).*", error_str)
+    line_num = -1
+    try:
+        if match:
+            line_num = int(match.group(1)) - 1
+        if line_num > 0:
+            with open(json_path, 'r+', encoding='utf-8') as f:
+                f_list = f.readlines()
+            logger.info(f_list[line_num])
+            f_list[line_num] = f_list[line_num].replace("}", ",", 1)
+            logger.info(f_list[line_num])
+            with open(json_path, 'w+', encoding='utf-8') as f:
+                f.writelines(f_list)
+            logger.info("{} rewrite success".format(json_path))
+            return True
+    except Exception as e:
+        logger.error(e)
+        logger.info("{} rewrite fail".format(json_path))
+        return False
+
+
+# def walk_directory(app_directory: str, mini_program):
+#     files = os.listdir(app_directory)
+#     for file in files:
+#         new_path = os.path.join(app_directory, file)
+#         if os.path.isdir(new_path):
+#             walk_directory(new_path, mini_program)
+#         elif os.path.isfile(new_path):
+#             if new_path.endswith(".js"):
+#                 general_go_through(new_path, mini_program)

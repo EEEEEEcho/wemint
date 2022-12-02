@@ -16,33 +16,71 @@ def variable_declarator_analysis(variable_declarator: dict, context, mini_progra
     :return:
     """
     # todo:对变量名字的校验？
-    variable_name = variable_declarator['id']['name']
-    variable_init = variable_declarator['init']
-    variable_type = variable_init['type']
-    variable_value = None
-    if variable_type == 'Literal':
-        # todo: 对变量值的校验
-        variable_value = variable_init['value']
-    elif variable_type == 'Identifier':
-        variable_identifier = variable_init['name']
-        variable_value = co.search_identifier(variable_identifier, context)
-    elif variable_type == 'ObjectExpression' or variable_type == 'ArrayExpression':
-        variable_value = object_node_analysis(variable_init, context, mini_program)
-    elif variable_type == 'MemberExpression':
-        # todo:校验？
-        variable_identifier = member_expression_analysis(variable_init)
-        if variable_identifier is not None:
-            if 'getApp' in variable_identifier:
-                co.add_brother_to_context(context, mini_program)
-        variable_value = co.search_identifier(variable_identifier, context)
-        # 如果找不到值，那就以调用形式出现吧
-        if variable_value is None:
-            variable_value = variable_identifier
-    elif variable_type == 'BinaryExpression':
-        variable_value = binary_expression_analysis(variable_init, context)
-    if mini_program.secret_leak_checker.check_flg:
-        mini_program.secret_leak_checker.do_check(variable_value)
-    context.const_variable_table[variable_name] = variable_value
+    if 'id' in variable_declarator and 'name' in variable_declarator['id']:
+        variable_name = variable_declarator['id']['name']
+        if 'init' in variable_declarator:
+            variable_init = variable_declarator['init']
+            if variable_init and 'type' in variable_init:
+                variable_type = variable_init['type']
+                variable_value = None
+                if variable_type == 'Literal':
+                    # todo: 对变量值的校验
+                    variable_value = variable_init['value']
+                elif variable_type == 'Identifier':
+                    variable_identifier = variable_init['name']
+                    variable_value = co.search_identifier(variable_identifier, context)
+                elif variable_type == 'ObjectExpression' or variable_type == 'ArrayExpression':
+                    variable_value = object_node_analysis(variable_init, context, mini_program)
+                elif variable_type == 'MemberExpression':
+                    # todo:校验？
+                    variable_identifier = member_expression_analysis(variable_init)
+                    if variable_identifier is not None:
+                        if 'getApp' in variable_identifier:
+                            # 解决在app.js中调用getApp造成的循环解析
+                            tmp_context = context
+                            while tmp_context.father:
+                                tmp_context = tmp_context.father
+                            if "app.js" in tmp_context.name:
+                                variable_identifier = variable_identifier.split("getApp.")[1]
+                                logger.info(variable_identifier)
+                            else:
+                                co.add_brother_to_context(context, mini_program)
+                    variable_value = co.search_identifier(variable_identifier, context)
+                    # 如果找不到值，那就以调用形式出现吧
+                    if variable_value is None:
+                        variable_value = variable_identifier
+                elif variable_type == 'BinaryExpression':
+                    variable_value = binary_expression_analysis(variable_init, context)
+                if mini_program.secret_leak_checker.check_flg:
+                    mini_program.secret_leak_checker.do_check(variable_value)
+                context.const_variable_table[variable_name] = variable_value
+
+    # variable_init = variable_declarator['init']
+    # variable_type = variable_init['type']
+    # variable_value = None
+    # if variable_type == 'Literal':
+    #     # todo: 对变量值的校验
+    #     variable_value = variable_init['value']
+    # elif variable_type == 'Identifier':
+    #     variable_identifier = variable_init['name']
+    #     variable_value = co.search_identifier(variable_identifier, context)
+    # elif variable_type == 'ObjectExpression' or variable_type == 'ArrayExpression':
+    #     variable_value = object_node_analysis(variable_init, context, mini_program)
+    # elif variable_type == 'MemberExpression':
+    #     # todo:校验？
+    #     variable_identifier = member_expression_analysis(variable_init)
+    #     if variable_identifier is not None:
+    #         if 'getApp' in variable_identifier:
+    #             co.add_brother_to_context(context, mini_program)
+    #     variable_value = co.search_identifier(variable_identifier, context)
+    #     # 如果找不到值，那就以调用形式出现吧
+    #     if variable_value is None:
+    #         variable_value = variable_identifier
+    # elif variable_type == 'BinaryExpression':
+    #     variable_value = binary_expression_analysis(variable_init, context)
+    # if mini_program.secret_leak_checker.check_flg:
+    #     mini_program.secret_leak_checker.do_check(variable_value)
+    # context.const_variable_table[variable_name] = variable_value
 
 
 def block_statement_analysis(block_statement: dict, context, mini_program: MiniProgram):
@@ -202,14 +240,15 @@ def assign_expression_analysis(assign_expression: dict, context, mini_program: M
 
 def update_expression_analysis(update_expression: dict, context, mini_program: MiniProgram):
     if 'argument' in update_expression and 'operator' in update_expression:
-        variable_name = update_expression['argument']['name']
-        update_operator = update_expression['operator']
-        if variable_name in context.const_variable_table:
-            variable_value = context.const_variable_table[variable_name]
-            if update_operator == "++" and type(variable_value) is int:
-                context.const_variable_table[variable_name] = variable_value + 1
-            if update_operator == "--" and type(variable_value) is int:
-                context.const_variable_table[variable_name] = variable_value - 1
+        if update_expression['argument'] and 'name' in update_expression['argument']:
+            variable_name = update_expression['argument']['name']
+            update_operator = update_expression['operator']
+            if variable_name and variable_name in context.const_variable_table:
+                variable_value = context.const_variable_table[variable_name]
+                if update_operator == "++" and type(variable_value) is int:
+                    context.const_variable_table[variable_name] = variable_value + 1
+                if update_operator == "--" and type(variable_value) is int:
+                    context.const_variable_table[variable_name] = variable_value - 1
 
 
 def conditional_expression_analysis(conditional_expression: dict, context, mini_program: MiniProgram):
@@ -311,44 +350,47 @@ def condition_expression_analysis(condition_expression: dict, node_list: list, c
 
 def member_expression_analysis(member_expression: dict):
     # let n = 'name';let name = dict[n] 这种情况不好分析,后续想办法
-    obj = member_expression['object']
-    prop = member_expression['property']
-    if obj['type'] == 'Identifier':
-        if 'name' in obj:
-            if 'name' in prop:
-                return obj['name'] + '.' + str(prop['name'])
-            if 'value' in prop:
-                return obj['name'] + '.' + str(prop['value'])
-            return obj['name']
-        elif 'name' in prop:
+    if 'object' in member_expression and 'property' in member_expression:
+        obj = member_expression['object']
+        prop = member_expression['property']
+        if obj['type'] == 'Identifier':
+            if 'name' in obj:
+                if 'name' in prop:
+                    return obj['name'] + '.' + str(prop['name'])
+                if 'value' in prop:
+                    return obj['name'] + '.' + str(prop['value'])
+                return obj['name']
+            elif 'name' in prop:
+                return prop['name']
+            elif 'value' in prop:
+                return prop['value']
+            else:
+                return None
+        elif obj['type'] == 'CallExpression':
+            if 'callee' in obj and 'name' in obj['callee'] and \
+                    'name' in prop:
+                return obj['callee']['name'] + '.' + prop['name']
+            else:
+                return None
+        elif obj['type'] == 'ThisExpression':
             return prop['name']
-        elif 'value' in prop:
-            return prop['value']
-        else:
-            return None
-    elif obj['type'] == 'CallExpression':
-        if 'callee' in obj and 'name' in obj['callee'] and \
-                'name' in prop:
-            return obj['callee']['name'] + '.' + prop['name']
-        else:
-            return None
-    elif obj['type'] == 'ThisExpression':
-        return prop['name']
-    elif obj['type'] == 'MemberExpression':
-        value = member_expression_analysis(obj)
-        if value is not None:
-            if 'name' in prop:
-                return value + '.' + str(prop['name'])
-            if 'value' in prop:
-                return value + '.' + str(prop['value'])
-            return value
-        elif 'name' in prop:
-            return prop['name']
-        elif 'value' in prop:
-            return prop['value']
-        else:
-            return None
-    return None
+        elif obj['type'] == 'MemberExpression':
+            value = member_expression_analysis(obj)
+            if value is not None:
+                if 'name' in prop:
+                    return value + '.' + str(prop['name'])
+                if 'value' in prop:
+                    return value + '.' + str(prop['value'])
+                return value
+            elif 'name' in prop:
+                return prop['name']
+            elif 'value' in prop:
+                return prop['value']
+            else:
+                return None
+        return None
+    else:
+        return None
 
 
 def sequence_expression_analysis(sequence_expression: dict, context, mini_program: MiniProgram):
@@ -383,14 +425,17 @@ def object_node_analysis(obj_expression: dict, context, mini_program: MiniProgra
         li = []
         for element in obj_expression['elements']:
             if element['type'] == 'Literal':
-                li.append(element['value'])
+                if 'value' in element:
+                    li.append(element['value'])
             elif element['type'] == 'Identifier':
-                identifier_value = co.search_identifier(element['name'], context)
-                li.append(identifier_value)
+                if 'name' in element:
+                    identifier_value = co.search_identifier(element['name'], context)
+                    li.append(identifier_value)
             elif element['type'] == 'MemberExpression':
-                identifier = member_expression_analysis(element['value'])
-                identifier_value = co.search_identifier(identifier, context)
-                li.append(identifier_value)
+                if 'value' in element:
+                    identifier = member_expression_analysis(element['value'])
+                    identifier_value = co.search_identifier(identifier, context)
+                    li.append(identifier_value)
             elif element['type'] == 'ObjectExpression':
                 li.append(object_node_analysis(element, context, mini_program))
             elif element['type'] == 'ArrayExpression':
@@ -423,7 +468,8 @@ def object_node_analysis(obj_expression: dict, context, mini_program: MiniProgra
                 elif prop['value']['type'] == 'FunctionExpression':
                     prop['value']['id'] = dict()
                     prop['value']['id']['name'] = key
-                    ret[key] = function_declaration_analysis(prop['value'], context, mini_program)
+                    function_declaration_analysis(prop['value'], context, mini_program)
+                    ret[key] = None
             elif prop['type'] == 'SpreadElement':
                 ret['spread_element'] = '...' + member_expression_analysis(prop['argument'])
         return ret

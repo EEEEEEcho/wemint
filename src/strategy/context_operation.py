@@ -1,4 +1,7 @@
 import os
+
+import loguru
+
 import src.utils.utils as utils
 import src.utils.analysed_file as af
 from src.pojo.miniprogram import MiniProgram
@@ -99,17 +102,19 @@ def get_value_from_dict(variable_list: list, value_table: dict):
 
 def analysis_identifier(variable_list: list, value_table):
     variable_value = None
+    loguru.logger.info(variable_list)
     for i in range(1, len(variable_list)):
         if type(value_table) is dict and variable_list[i] in value_table:
             variable_value = value_table[variable_list[i]]
             if variable_value is None:
                 return None
             value_table = variable_value
-        elif type(value_table) is list and int(variable_list[i]) < len(value_table):
-            variable_value = value_table[int(variable_list[i])]
-            if variable_value is None:
-                return None
-            value_table = variable_value
+        elif type(value_table) is list:
+            if type(variable_list[i]) is int and int(variable_list[i]) < len(value_table):
+                variable_value = value_table[int(variable_list[i])]
+                if variable_value is None:
+                    return None
+                value_table = variable_value
         else:
             break
     return variable_value

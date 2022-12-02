@@ -1,5 +1,7 @@
 import os
 
+import loguru
+
 PROJECT_ABSOLUTE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # PACKAGES_CATALOG = 'E:/WorkSpace/wxapp-echo/src/sources/'
 # 共20766个包
@@ -10,13 +12,14 @@ PROJECT_ABSOLUTE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__
 # 扫描完5660个代码包之后, 中断了一次
 # 扫描完7950个代码包之后，中断了一次，中断之后统计记录结果，发现有3546个代码包有密钥泄露问题。
 # 扫描完10611个代码包之后，中断了一次，中断之后统计记录结果，发现有3727个代码包有密钥泄露问题。
-PACKAGES_CATALOG = 'F:/3w/filter_files/'
+# PACKAGES_CATALOG = 'F:/3w/filter_files/'
+PACKAGES_CATALOG = PROJECT_ABSOLUTE_PATH + os.sep + '/test_wxapkgs/'
 
 ACCESS_TOKEN_URL = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={}&secret={}'
 
 BASIC_INFORMATION_URL = 'https://api.weixin.qq.com/datacube/getweanalysisappiddailysummarytrend?access_token={}'
 
-UNPACK_COMMAND = 'node F:/wxapp-echo/src/wxappUnpacker/wuWxapkg.js {}'
+UNPACK_COMMAND = 'node ' + PROJECT_ABSOLUTE_PATH + os.sep + 'wxappUnpacker/wuWxapkg.js {}'
 
 DB_CONFIG = {
     'host': '127.0.0.1',
