@@ -115,9 +115,14 @@ file_set = set()
 
 for f in file_list:
     file_set.add(f + '.wxapkg')
-package_list = os.listdir(r'F:\filter_files')
-for package in package_list:
-    if package in file_set:
-        source_pkg = r'F:\filter_files' + os.sep + package
-        dest_pkg = r'F:\wxapp-analyzer\testpkg' + os.sep + package
-        shutil.copy(source_pkg,dest_pkg)
+# package_list = os.listdir(r'F:\filter_files')
+# for package in package_list:
+#     if package in file_set:
+#         source_pkg = r'F:\filter_files' + os.sep + package
+#         dest_pkg = r'F:\wxapp-analyzer\testpkg' + os.sep + package
+#         shutil.copy(source_pkg,dest_pkg)
+
+
+"""
+{'wx014ec5a60f84cced-pc.wxapkg', 'wx00cc9fcdbff8d1e6-pc.wxapkg', 'wx012c6141749065da-pc.wxapkg', '.wxapkg', 'wx0014beae8346799b-pc.wxapkg', 'wx0126baeacfa8c1ce-pc.wxapkg', 'wx010490399ec8576a-pc.wxapkg', 'wx0093d940d22b1c87-pc.wxapkg', 'wx0030d34ef7f34069-pc.wxapkg', 'wx00183483cb01c472-pc.wxapkg', 'wx0050fc6b0b420840-pc.wxapkg', 'wx005d2637d9630486-pc.wxapkg', 'wx013e3ebc0cff9673-pc.wxapkg', 'wx004913f7ecc9c4ce-pc.wxapkg', 'wx00bed0240d85f73c-pc.wxapkg', 'wx004a4a047ba3f567-pc.wxapkg', 'wx01612096075e17a0-pc.wxapkg', 'wx004abb7e052a527f-pc.wxapkg', 'wx010ddac564392465-pc.wxapkg', 'wx000b96cc505e1149-pc.wxapkg', 'wx0151ccd6c9133be8-pc.wxapkg', 'wx008bf3324b641193-pc.wxapkg', 'wx00eac0a3a2db4927-pc.wxapkg', 'wx00ca982c22850e07-pc.wxapkg', 'wx00e426b3ef4c2836-pc.wxapkg', 'wx0074fcef3837b7e5-pc.wxapkg', 'wx00783befbf6dc32b-pc.wxapkg', 'wx003df94785131c81-pc.wxapkg', 'wx00eb4375fb6d0c46-pc.wxapkg', 'wx0012c9069fddb0d3-pc.wxapkg', 'wx00e4a41b4474d0fd-pc.wxapkg'}
+"""

@@ -5,6 +5,7 @@ from loguru import logger
 from src.utils import package_decoder
 from src.pojo.miniprogram import MiniProgram
 from src.file_layer import js_analyzer
+from src import test
 
 
 def main():
@@ -38,39 +39,39 @@ def main():
             mini_program.secret_leak_checker.do_verify()
             logger.info(mini_program.secret_leak_checker)
             if mini_program.secret_leak_checker.access_token is not None:
+                test.file_set.remove(mini_program.name + ".wxapkg")
                 leak_count += 1
+    logger.info(test.file_set)
+    logger.info(leak_count)
 
-
-
-
-        # try:
-        #     package_path = packages_catalog + package
-        #     if not os.path.exists(package_path):
-        #         logger.error("{} not found !! ".format(package_path))
-        #         continue
-        #     if os.path.isdir(package_path) or not package_path.endswith('.wxapkg'):
-        #         logger.error("{} is not a package".format(package_path))
-        #         continue
-        #
-        #     compile_flg = package_decoder.decompile_app(package_path)
-        #     if compile_flg:
-        #         program_name = package.split('.wxapkg')[0]
-        #         logger.info("start analyze {} ".format(program_name))
-        #         base_path = packages_catalog
-        #         mini_program = MiniProgram(base_path, program_name)
-        #         for page_name in mini_program.pages:
-        #             js_path = mini_program.path + os.sep + page_name + '.js'
-        #             js_analyzer.analysis(js_path, mini_program)
-        #         # 清空已分析的文件
-        #         af.clear()
-        #         mini_program.secret_leak_checker.do_verify()
-        #         if mini_program.secret_leak_checker.access_token is not None:
-        #             leak_count += 1
-        # except Exception as e:
-        #     logger.error(e.with_traceback())
-        #     logger.error("{} analyzed failed".format(package))
-        count += 1
-    logger.info("count : {}".format(leak_count))
+    # try:
+    #     package_path = packages_catalog + package
+    #     if not os.path.exists(package_path):
+    #         logger.error("{} not found !! ".format(package_path))
+    #         continue
+    #     if os.path.isdir(package_path) or not package_path.endswith('.wxapkg'):
+    #         logger.error("{} is not a package".format(package_path))
+    #         continue
+    #
+    #     compile_flg = package_decoder.decompile_app(package_path)
+    #     if compile_flg:
+    #         program_name = package.split('.wxapkg')[0]
+    #         logger.info("start analyze {} ".format(program_name))
+    #         base_path = packages_catalog
+    #         mini_program = MiniProgram(base_path, program_name)
+    #         for page_name in mini_program.pages:
+    #             js_path = mini_program.path + os.sep + page_name + '.js'
+    #             js_analyzer.analysis(js_path, mini_program)
+    #         # 清空已分析的文件
+    #         af.clear()
+    #         mini_program.secret_leak_checker.do_verify()
+    #         if mini_program.secret_leak_checker.access_token is not None:
+    #             leak_count += 1
+    # except Exception as e:
+    #     logger.error(e.with_traceback())
+    #     logger.error("{} analyzed failed".format(package))
+    # count += 1
+    # logger.info("count : {}".format(leak_count))
 
 
 if __name__ == '__main__':
