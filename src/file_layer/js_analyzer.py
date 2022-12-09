@@ -26,8 +26,9 @@ def file_level_analysis(ast_json: dict, file_context: FileContext, mini_program:
     for item in ast_json['body']:
         if item['type'] == 'VariableDeclaration':
             for variable_declarator in item['declarations']:
-                variable_name = variable_declarator['id']['name']
-                file_context.variable_table[variable_name] = variable_declarator
+                if variable_declarator['id']['type'] == 'Identifier':
+                    variable_name = variable_declarator['id']['name']
+                    file_context.variable_table[variable_name] = variable_declarator
         elif item['type'] == 'FunctionDeclaration':
             function_name = item['id']['name']
             file_context.function_table[function_name] = item
@@ -84,6 +85,8 @@ def variable_table_analysis(file_context: FileContext, mini_program: MiniProgram
                         callee_name = variable_init['callee']['name']
                         if callee_name == 'require' or callee_name == 'getApp':
                             brother_analysis(variable_declarator, file_context, mini_program)
+                    else:
+                        cns.call_expression_analysis(variable_declarator['init'],file_context,mini_program)
             else:
                 cns.variable_declarator_analysis(variable_declarator, file_context, mini_program)
 
@@ -108,6 +111,7 @@ def page_object_analysis(file_context: FileContext, mini_program: MiniProgram):
             elif obj_property['value']['type'] == 'FunctionExpression':
                 obj_property['value']['id'] = dict()
                 obj_property['value']['id']['name'] = property_name
+                page_obj_context.function_table[property_name] = obj_property['value']
                 cns.function_declaration_analysis(obj_property['value'], page_obj_context, mini_program)
             # elif obj_property['value']['type'] == 'SequenceExpression':
 
@@ -196,4 +200,5 @@ if __name__ == '__main__':
     # logger.info(context.const_variable_table)
     # # logger.info(context)
     # logger.info(context.children.const_variable_table)
-    logger.info(mp.secret_leak_checker)
+    mp.backend_checker.analysis()
+    logger.info(mp.backend_checker)

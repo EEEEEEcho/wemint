@@ -51,35 +51,10 @@ def variable_declarator_analysis(variable_declarator: dict, context, mini_progra
                         variable_value = variable_identifier
                 elif variable_type == 'BinaryExpression':
                     variable_value = binary_expression_analysis(variable_init, context)
+                elif variable_type == 'CallExpression':
+                    call_expression_analysis(variable_init, context, mini_program)
                 mini_program.secret_leak_checker.do_check(variable_value)
                 context.const_variable_table[variable_name] = variable_value
-
-    # variable_init = variable_declarator['init']
-    # variable_type = variable_init['type']
-    # variable_value = None
-    # if variable_type == 'Literal':
-    #     # todo: 对变量值的校验
-    #     variable_value = variable_init['value']
-    # elif variable_type == 'Identifier':
-    #     variable_identifier = variable_init['name']
-    #     variable_value = co.search_identifier(variable_identifier, context)
-    # elif variable_type == 'ObjectExpression' or variable_type == 'ArrayExpression':
-    #     variable_value = object_node_analysis(variable_init, context, mini_program)
-    # elif variable_type == 'MemberExpression':
-    #     # todo:校验？
-    #     variable_identifier = member_expression_analysis(variable_init)
-    #     if variable_identifier is not None:
-    #         if 'getApp' in variable_identifier:
-    #             co.add_brother_to_context(context, mini_program)
-    #     variable_value = co.search_identifier(variable_identifier, context)
-    #     # 如果找不到值，那就以调用形式出现吧
-    #     if variable_value is None:
-    #         variable_value = variable_identifier
-    # elif variable_type == 'BinaryExpression':
-    #     variable_value = binary_expression_analysis(variable_init, context)
-    # if mini_program.secret_leak_checker.check_flg:
-    #     mini_program.secret_leak_checker.do_check(variable_value)
-    # context.const_variable_table[variable_name] = variable_value
 
 
 def block_statement_analysis(block_statement: dict, context, mini_program: MiniProgram):
@@ -104,8 +79,8 @@ def block_statement_analysis(block_statement: dict, context, mini_program: MiniP
             return_statement_analysis(node, context, mini_program)
         else:
             continue
-    # 测试上下文分析情况的语句
-    logger.info(context.const_variable_table)
+    # # 测试上下文分析情况的语句
+    # logger.info(context.const_variable_table)
 
 
 def if_statement_analysis(if_statement: dict, context, mini_program: MiniProgram):
@@ -149,13 +124,16 @@ def while_statement_analysis(while_statement: dict, context, mini_program: MiniP
 
 def function_declaration_analysis(function_declaration: dict, context,
                                   mini_program: MiniProgram):
+    function_context_name = None
+    if 'id' in function_declaration and function_declaration['id']:
+        function_id = function_declaration['id']
+        if 'name' in function_id and function_id['name']:
+            function_context_name = function_declaration['id']['name']
     if context.scope == Scope.FILE:
         scope_value = Scope.FILE_FUNCTION
-        function_context_name = function_declaration['id']['name']
         function_context = FunctionContext(scope_value, function_context_name)
     elif context.scope == Scope.OBJECT:
         scope_value = Scope.OBJECT_FUNCTION
-        function_context_name = function_declaration['id']['name']
         function_context = FunctionContext(scope_value, function_context_name)
     else:
         scope_value = Scope.BLOCK
@@ -218,6 +196,7 @@ def expression_statement_analysis(expression_statement: dict, context, mini_prog
 
 
 def assign_expression_analysis(assign_expression: dict, context, mini_program: MiniProgram):
+    # todo: 右边是函数调用表达式
     # 对赋值表达式进行封装，封装为一个VariableDeclaration,进行分析
     if 'left' in assign_expression and 'right' in assign_expression:
         left_type = assign_expression['left']['type']
@@ -230,6 +209,8 @@ def assign_expression_analysis(assign_expression: dict, context, mini_program: M
 
         right_type = assign_expression['right']['type']
 
+        if right_type == 'CallExpression':
+            call_expression_analysis(assign_expression['right'], context, mini_program)
 
         if pre_variable_value:
             variable_declarator = dict()
@@ -278,18 +259,33 @@ def call_expression_analysis(call_expression: dict, context, mini_program: MiniP
         call_function_name = callee['name']
     else:
         call_function_name = member_expression_analysis(callee)
+        if call_function_name:
+            for split_name in call_function_name.split('.'):
+                mini_program.backend_checker.check_callee_name(split_name)
     mini_program.secret_leak_checker.check_callee_name(call_function_name)
+    mini_program.backend_checker.check_callee_name(call_function_name)
     for argument in arguments:
         if argument['type'] == 'Literal':
             literal_value = argument['value']
             mini_program.secret_leak_checker.check_literal(literal_value)
+            mini_program.backend_checker.add_param(literal_value)
+        elif argument['type'] == 'TemplateLiteral':
+            template_literal_analysis(argument, context, mini_program)
         elif argument['type'] == 'ObjectExpression' or argument['type'] == 'ArrayExpression':
             object_value = object_node_analysis(argument, context, mini_program)
             mini_program.secret_leak_checker.check_object(object_value)
+        elif argument['type'] == 'BinaryExpression':
+            object_value = binary_expression_analysis(argument, context)
+            mini_program.secret_leak_checker.check_literal(object_value)
+            mini_program.backend_checker.add_param(object_value)
         elif argument['type'] == 'ArrowFunctionExpression':
             arrow_function_analysis(argument, context, mini_program)
         elif argument['type'] == 'CallExpression':
             call_expression_analysis(argument, context, mini_program)
+        elif argument['type'] == 'FunctionExpression':
+            function_declaration_analysis(argument, context, mini_program)
+        elif argument['type'] == 'ArrowFunctionExpression':
+            arrow_function_analysis(argument, context, mini_program)
         else:
             continue
 
@@ -315,6 +311,14 @@ def return_statement_analysis(return_statement: dict, context, mini_program: Min
         expression_statement = dict()
         expression_statement['expression'] = argument
         expression_statement_analysis(expression_statement, context, mini_program)
+
+
+def template_literal_analysis(template_literal: dict, context, mini_program: MiniProgram):
+    if 'quasis' in template_literal and template_literal['quasis']:
+        for template_element in template_literal['quasis']:
+            literal_value = template_element['value']['raw']
+            mini_program.secret_leak_checker.check_literal(literal_value)
+            mini_program.backend_checker.add_param(literal_value)
 
 
 def find_object_from_ast(tree, object_list: list):
@@ -357,6 +361,8 @@ def member_expression_analysis(member_expression: dict):
             else:
                 return None
         elif obj['type'] == 'CallExpression':
+            # todo:优化
+            # call_expression_analysis(obj, BlockContext(Scope.BLOCK), MiniProgram("xx", "xx"))
             if 'callee' in obj and 'name' in obj['callee'] and \
                     'name' in prop:
                 return obj['callee']['name'] + '.' + prop['name']

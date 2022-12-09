@@ -1,4 +1,5 @@
 from src.strategy.secret_leak_strategy import SecretLeakChecker
+from src.strategy.backend_checker import BackendChecker
 from src.utils import utils
 from loguru import logger
 import os
@@ -15,7 +16,8 @@ class MiniProgram:
         self.path = base_path + os.sep + self.name
         # 密钥泄露问题
         self.secret_leak_checker = SecretLeakChecker()
-
+        # 后门问题
+        self.backend_checker = BackendChecker()
         self.pages = list()
         self.parse_app_json()
 
