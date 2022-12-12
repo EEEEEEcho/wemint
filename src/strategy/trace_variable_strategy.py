@@ -1,5 +1,5 @@
 from src.path.trace import Trace
-from src.path.path import AssignPath, FunctionPath
+from src.path.path import *
 from loguru import logger
 import src.utils.utils as utils
 
@@ -54,41 +54,51 @@ def function_expression_exam(trace: Trace, function_expression: dict, param_set:
 
 def variable_declaration_exam(trace: Trace, variable_declaration_node: dict, param_set: set):
     if 'declarations' in variable_declaration_node:
+        trace.route_type = VariableDeclarationPath()
         for declaration in variable_declaration_node['declarations']:
-            variable_name = declaration['id']['name']
-            variable_init = declaration['init']
-            if variable_init and 'type' in variable_init:
-                init_type = variable_init['type']
-                right_value = None
-                if init_type == 'Identifier':
-                    right_value = variable_init['name']
-                elif init_type == 'MemberExpression':
-                    # right_value = cns.member_expression_analysis(variable_init)
-                    right_value = utils.restore_ast_node(variable_init)
-                if right_value in param_set:
-                    trace.route_type = "Assign"
-                    trace.trace_info = variable_name
-                    param_set.add(variable_name)
-                    trace.is_path = True
+            new_trace = Trace()
+            variable_declarator_exam(new_trace, declaration, param_set)
+            if new_trace.is_path:
+                trace.is_path = True
+                trace.next.append(new_trace)
 
 
 def variable_declarator_exam(trace: Trace, variable_declarator_node: dict, param_set: set):
     variable_name = variable_declarator_node['id']['name']
     variable_init = variable_declarator_node['init']
+    trace.route_type = VariableDeclaratorPath()
     if variable_init and 'type' in variable_init:
         init_type = variable_init['type']
-        right_value = None
         if init_type == 'Identifier':
             right_value = variable_init['name']
+            if right_value and right_value in param_set:
+                param_set.add(variable_name)
+                trace.is_path = True
+                trace.route_type.left = variable_name
+                trace.route_type.right = right_value
         elif init_type == 'MemberExpression':
             right_value = utils.restore_ast_node(variable_init)
-            # right_value = cns.member_expression_analysis(variable_init)
-        if right_value in param_set:
-            next_trace = Trace()
-            next_trace.route_type = "Assign"
-            next_trace.trace_info = variable_name
-            param_set.add(variable_name)
-            trace.next.append(next_trace)
+            if member_identifier_check(right_value, param_set):
+                if variable_name:
+                    param_set.add(variable_name)
+                    trace.is_path = True
+                    trace.route_type.left = variable_name
+                    trace.route_type.right = right_value
+        elif init_type == 'CallExpression':
+            call_expression = variable_init
+            call_function_name = get_call_function_name(call_expression)
+            if member_identifier_check(call_function_name, param_set):
+                call_expression_code = utils.restore_ast_node(call_expression)
+                if variable_name:
+                    param_set.add(variable_name)
+                    trace.is_path = True
+                    trace.route_type.left = variable_name
+                    trace.route_type.right = call_expression_code
+            else:
+                new_trace = find_trace(param_set, variable_init)
+                if new_trace.is_path:
+                    trace.is_path = True
+                    trace.next.append(new_trace)
 
 
 def expression_statement_exam(trace: Trace, expression_statement: dict, param_set: set):

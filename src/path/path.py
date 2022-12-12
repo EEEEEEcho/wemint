@@ -25,3 +25,19 @@ class FunctionPath(Path):
 
     def __repr__(self):
         return str(self.__dict__)
+
+
+class VariableDeclarationPath(Path):
+    def __init__(self):
+        super().__init__('VariableDeclaration')
+
+
+class VariableDeclaratorPath(Path):
+
+    def __init__(self,left: str = None, right: str = None):
+        super().__init__('VariableDeclarator')
+        self.left = left
+        self.right = right
+
+    def __repr__(self):
+        return str(self.__dict__)

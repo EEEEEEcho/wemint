@@ -24,7 +24,6 @@ def variable_declarator_analysis(variable_declarator: dict, context, mini_progra
                 variable_type = variable_init['type']
                 variable_value = None
                 if variable_type == 'Literal':
-                    # todo: 对变量值的校验
                     variable_value = variable_init['value']
                 elif variable_type == 'Identifier':
                     variable_identifier = variable_init['name']
