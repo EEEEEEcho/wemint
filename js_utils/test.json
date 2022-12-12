@@ -1,0 +1,45 @@
+{
+  "type": "CallExpression",
+  "start": 224,
+  "end": 248,
+  "callee": {
+    "type": "MemberExpression",
+    "start": 224,
+    "end": 236,
+    "object": {
+      "type": "Identifier",
+      "start": 224,
+      "end": 228,
+      "name": "left"
+    },
+    "property": {
+      "type": "Identifier",
+      "start": 229,
+      "end": 236,
+      "name": "replace"
+    },
+    "computed": false,
+    "optional": false
+  },
+  "arguments": [
+    {
+      "type": "Literal",
+      "start": 237,
+      "end": 242,
+      "value": {},
+      "raw": "/11/g",
+      "regex": {
+        "pattern": "11",
+        "flags": "g"
+      }
+    },
+    {
+      "type": "Literal",
+      "start": 244,
+      "end": 247,
+      "value": "2",
+      "raw": "'2'"
+    }
+  ],
+  "optional": false
+}

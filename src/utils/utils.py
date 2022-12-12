@@ -141,12 +141,13 @@ def re_write_json(json_path: str, error_str: str):
         return False
 
 
-# def walk_directory(app_directory: str, mini_program):
-#     files = os.listdir(app_directory)
-#     for file in files:
-#         new_path = os.path.join(app_directory, file)
-#         if os.path.isdir(new_path):
-#             walk_directory(new_path, mini_program)
-#         elif os.path.isfile(new_path):
-#             if new_path.endswith(".js"):
-#                 general_go_through(new_path, mini_program)
+def restore_ast_node(ast_node: dict):
+    js_util_path = config.PROJECT_ABSOLUTE_PATH + "/js_utils/restore-ast.js"
+    tmp_node_path = config.TMP_NODE_PATH
+    with open(tmp_node_path, 'w') as f:
+        f.write(json.dumps(ast_node))
+    command = 'node {} {}'.format(js_util_path, tmp_node_path)
+    _, code_str = execute_cmd(command)
+    if code_str != "Error":
+        return code_str.strip()
+    return None

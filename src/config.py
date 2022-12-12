@@ -21,6 +21,8 @@ BASIC_INFORMATION_URL = 'https://api.weixin.qq.com/datacube/getweanalysisappidda
 
 UNPACK_COMMAND = 'node ' + PROJECT_ABSOLUTE_PATH + os.sep + 'wxappUnpacker/wuWxapkg.js {}'
 
+TMP_NODE_PATH = PROJECT_ABSOLUTE_PATH + os.sep + '/tmp_node/tmp_node.json'
+
 DB_CONFIG = {
     'host': '127.0.0.1',
     'port': 3306,

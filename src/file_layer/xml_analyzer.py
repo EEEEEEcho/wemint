@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
 from loguru import logger
 from src.pojo.miniprogram import MiniProgram
-from src.pojo.trace import Trace
 import js_analyzer as ja
 import src.strategy.trace_variable_strategy as tvs
 import os
