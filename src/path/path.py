@@ -41,3 +41,66 @@ class VariableDeclaratorPath(Path):
 
     def __repr__(self):
         return str(self.__dict__)
+
+
+class CallExpressionPath(Path):
+
+    def __init__(self, callee_name: str = None, params: str = None):
+        super().__init__('CallExpression')
+        self.callee = callee_name
+        self.params = params
+
+    def __repr__(self):
+        return str(self.__dict__)
+
+
+class UpdateExpressionPath(Path):
+
+    def __init__(self, identifier: str = None, operate: str = None):
+        super().__init__('UpdateExpression')
+        self.identifier = identifier
+        self.operate = operate
+
+    def __repr__(self):
+        return str(self.__dict__)
+
+
+class ConditionalExpressionPath(Path):
+
+    def __init__(self):
+        super().__init__('ConditionalExpression')
+        self.consequent = None
+        self.alternate = None
+
+    def __repr__(self):
+        return str(self.__dict__)
+
+
+class AwaitExpressionPath(Path):
+
+    def __init__(self):
+        super().__init__('AwaitExpression')
+
+    def __repr__(self):
+        return str(self.__dict__)
+
+
+class LogicalExpressionPath(Path):
+
+    def __init__(self):
+        super().__init__('LogicalExpression')
+        self.left = None
+        self.right = None
+
+    def __repr__(self):
+        return str(self.__dict__)
+
+
+class ObjectExpressionPath(Path):
+
+    def __init__(self):
+        super().__init__('ObjectExpression')
+        self.param_map = dict()
+
+    def __repr__(self):
+        return str(self.__dict__)

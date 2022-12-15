@@ -128,3 +128,12 @@ import shutil
 # """
 
 
+# lis = [1,2,3,4]
+# for i, item in enumerate(lis):
+#     print("{} {}".format(i,item))
+
+s = set()
+s.add(1)
+s.add(2)
+s.add(3)
+print('1' in s)

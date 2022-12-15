@@ -283,8 +283,6 @@ def call_expression_analysis(call_expression: dict, context, mini_program: MiniP
             call_expression_analysis(argument, context, mini_program)
         elif argument['type'] == 'FunctionExpression':
             function_declaration_analysis(argument, context, mini_program)
-        elif argument['type'] == 'ArrowFunctionExpression':
-            arrow_function_analysis(argument, context, mini_program)
         else:
             continue
 
