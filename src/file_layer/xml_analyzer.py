@@ -17,11 +17,6 @@ def find_event_element(xml_path: str):
         soup = BeautifulSoup(open(xml_path, encoding="utf-8"), "html.parser")
         elements = soup.findAll()
         for element in elements:
-            # if element.name == 'form':
-            #     for attr in element.attrs.keys():
-            #         if 'bind' or 'catch' in attr:
-            #             element_event_map[element]
-            logger.info(element.name)
             for attr in element.attrs.keys():
                 if 'bind' in attr or 'catch' in attr:
                     element_event_map[element] = element[attr]
@@ -48,7 +43,7 @@ logger.info(eve_map.values())
 for element, event in eve_map.items():
     if event in context.children.function_table:
         context.children.function_table[event]['id'] = event
-        param_set = {'e.detail.value'}
+        param_set = {'e.detail'}
         trace = tvs.find_trace(param_set, context.children.function_table[event], page_data)
         logger.info(trace)
         logger.info(param_set)
