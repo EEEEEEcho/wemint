@@ -1,0 +1,48 @@
+/* .select-wrap {
+    width: 300rpx;
+}
+.selected {
+    margin-top: 50%;
+} */
+.container{
+    padding: 0;
+}
+form{
+    width: 100%;
+}
+input{
+    width: 85%;
+    border: 2rpx solid #af1616;
+    margin: 3% auto;
+    font-size: 26rpx;
+    padding: 1%;
+}
+.select-wrap{
+    font-size: 26rpx;
+    /* border: 2rpx solid #af1616; */
+    width: 89%;
+    padding-left: 1%;
+    margin: 0 auto;
+    color: #666;
+    display: flex;
+}
+.bumen{
+    width: 10%;
+    text-align: center;
+    padding: 2.5% 1% 1% 1%;
+    border-left: 2rpx solid #af1616;
+    border-top: 2rpx solid #af1616;
+    border-bottom: 2rpx solid #af1616;
+}
+button{
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+    font-size: 24rpx;
+  }
+  .button-sp-area{
+    margin: 0 auto;
+    width: 60%;
+  }
+  .reg{
+    color: #ad1616;
+  }

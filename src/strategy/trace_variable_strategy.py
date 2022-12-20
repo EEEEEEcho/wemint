@@ -70,7 +70,7 @@ def suspicious_node_exam(trace: Trace, suspicious_node: dict, param_set: set, pa
         variable_value = suspicious_node['name']
         if variable_value in param_set or page_data.contains(variable_value):
             trace.is_path = True
-            if route_type == VariableDeclaratorPath:
+            if route_type == VariableDeclaratorPath or route_type == AssignPath:
                 param_set.add(variable_name)
                 logger.info(param_set)
                 trace.route_type.left = variable_name
@@ -84,8 +84,9 @@ def suspicious_node_exam(trace: Trace, suspicious_node: dict, param_set: set, pa
     elif node_type == 'MemberExpression':
         variable_value = utils.restore_ast_node(suspicious_node)
         if member_identifier_check(variable_value, param_set) or page_data.contains(variable_value):
+            param_set.add(variable_value)
             trace.is_path = True
-            if route_type == VariableDeclaratorPath:
+            if route_type == VariableDeclaratorPath or route_type == AssignPath:
                 param_set.add(variable_name)
                 trace.route_type.left = variable_name
                 if 'this.data' in variable_name:
@@ -98,8 +99,9 @@ def suspicious_node_exam(trace: Trace, suspicious_node: dict, param_set: set, pa
     elif node_type == 'CallExpression':
         variable_value = get_call_function_name(suspicious_node)  # call_function_name
         if member_identifier_check(variable_value, param_set) or page_data.contains(variable_value):
+            param_set.add(variable_value)
             trace.is_path = True
-            if route_type == VariableDeclaratorPath:
+            if route_type == VariableDeclaratorPath or route_type == AssignPath:
                 param_set.add(variable_name)
                 trace.route_type.left = variable_name
                 if 'this.data' in variable_name:
@@ -115,7 +117,8 @@ def suspicious_node_exam(trace: Trace, suspicious_node: dict, param_set: set, pa
         if binary_expression_exam(trace, suspicious_node, param_set, page_data):
             trace.is_path = True
             variable_value = utils.restore_ast_node(suspicious_node)
-            if route_type == VariableDeclaratorPath:
+            param_set.add(variable_value)
+            if route_type == VariableDeclaratorPath or route_type == AssignPath:
                 param_set.add(variable_name)
                 trace.route_type.left = variable_name
                 if 'this.data' in variable_name:
@@ -123,6 +126,9 @@ def suspicious_node_exam(trace: Trace, suspicious_node: dict, param_set: set, pa
                 trace.route_type.right = variable_value
             elif route_type == CallExpressionPath or route_type == FunctionPath:
                 trace.route_type.param = variable_value
+    elif node_type == 'ThisExpression':
+        if not page_data.is_empty():
+            param_set.add(variable_name)
     else:
         new_trace = find_trace(param_set, suspicious_node, page_data)
         if new_trace.is_path:
@@ -170,12 +176,21 @@ def variable_declaration_exam(trace: Trace, variable_declaration_node: dict, par
 
 
 def variable_declarator_exam(trace: Trace, variable_declarator_node: dict, param_set: set, page_data: PageData):
-    variable_name = variable_declarator_node['id']['name']
-    logger.info(variable_name)
-    variable_init = variable_declarator_node['init']
-    trace.route_type = VariableDeclaratorPath()
-    if variable_init and 'type' in variable_init:
-        suspicious_node_exam(trace, variable_init, param_set, page_data, variable_name)
+    variable_id = variable_declarator_node['id']
+    variable_id_type = variable_id['type']
+    if variable_id_type == 'Identifier':
+        variable_name = variable_id['name']
+        variable_init = variable_declarator_node['init']
+        trace.route_type = VariableDeclaratorPath()
+        if variable_init and 'type' in variable_init:
+            suspicious_node_exam(trace, variable_init, param_set, page_data, variable_name)
+    elif variable_id_type == 'ObjectPattern':
+        for prop in variable_id['properties']:
+            variable_name = prop['key']['name']
+            variable_init = variable_declarator_node['init']
+            trace.route_type = VariableDeclaratorPath()
+            if variable_init and 'type' in variable_init:
+                suspicious_node_exam(trace, variable_init, param_set, page_data, variable_name)
 
 
 def expression_statement_exam(trace: Trace, expression_statement: dict, param_set: set, page_data: PageData):
@@ -230,7 +245,7 @@ def get_call_function_name(call_expression: dict):
 
 def if_statement_exam(trace: Trace, if_statement: dict, param_set: set, page_data: PageData):
     if 'consequent' in if_statement:
-        trace.route_type = 'If Consequent'
+        trace.route_type = Path('If Consequent')
         if if_statement['consequent'] and \
                 'type' in if_statement['consequent']:
             if if_statement['consequent']['type'] == 'BlockStatement':
@@ -239,7 +254,7 @@ def if_statement_exam(trace: Trace, if_statement: dict, param_set: set, page_dat
             if if_statement['consequent']['type'] == 'IfStatement':
                 if_statement_exam(trace, if_statement['consequent'], param_set, page_data)
     if 'alternate' in if_statement:
-        trace.route_type = 'If Alternate'
+        trace.route_type = Path('If Alternate')
         if if_statement['alternate'] and \
                 'type' in if_statement['alternate']:
             if if_statement['alternate']['type'] == 'BlockStatement':
@@ -259,13 +274,13 @@ def block_statement_exam(trace: Trace, block_statement: dict, param_set: set, pa
 
 
 def for_statement_exam(trace: Trace, for_statement: dict, param_set: set, page_data: PageData):
-    trace.route_type = 'For Loop'
+    trace.route_type = Path('For Loop')
     if 'body' in for_statement and for_statement['body']['type'] == 'BlockStatement':
         block_statement_exam(trace, for_statement['body'], param_set, page_data)
 
 
 def while_statement_exam(trace: Trace, while_statement: dict, param_set: set, page_data: PageData):
-    trace.route_type = 'While Loop'
+    trace.route_type = Path('While Loop')
     if 'body' in while_statement and while_statement['body']['type'] == 'BlockStatement':
         block_statement_exam(trace, while_statement['body'], param_set, page_data)
 
@@ -356,7 +371,9 @@ def logical_expression_exam(trace: Trace, logical_expression: dict, param_set: s
 
 
 def binary_expression_exam(trace: Trace, binary_expression: dict, param_set: set, page_data: PageData):
-    if binary_expression['type'] == 'Identifier':
+    if binary_expression['type'] == 'Literal':
+        return False
+    elif binary_expression['type'] == 'Identifier':
         value_name = binary_expression['name']
         return value_name in param_set or page_data.contains(value_name)
     elif binary_expression['type'] == 'MemberExpression':
@@ -490,35 +507,35 @@ def member_identifier_check(member_identifier: str, param_set: set):
     return False
 
 
-class Node:
-
-    def __init__(self, content):
-        self.content = content
-        self.left = None
-        self.right = None
-
-
-root = Node("root")
-left_node = Node("left")
-right_node = Node("right")
-left_left_node = Node("left_left")
-left_right_node = Node("left_right")
-right_left_node = Node("right_left")
-right_right_node = Node("right_right")
-right_right_left_node = Node("right_right_left")
-right_right_right_node = Node("right_right_right")
-
-root.left = left_node
-root.right = right_node
-
-left_node.left = left_left_node
-left_node.right = left_right_node
-
-right_node.left = right_left_node
-right_node.right = right_right_node
-
-right_right_node.left = right_right_left_node
-right_right_node.right = right_right_right_node
+# class Node:
+#
+#     def __init__(self, content):
+#         self.content = content
+#         self.left = None
+#         self.right = None
+#
+#
+# root = Node("root")
+# left_node = Node("left")
+# right_node = Node("right")
+# left_left_node = Node("left_left")
+# left_right_node = Node("left_right")
+# right_left_node = Node("right_left")
+# right_right_node = Node("right_right")
+# right_right_left_node = Node("right_right_left")
+# right_right_right_node = Node("right_right_right")
+#
+# root.left = left_node
+# root.right = right_node
+#
+# left_node.left = left_left_node
+# left_node.right = left_right_node
+#
+# right_node.left = right_left_node
+# right_node.right = right_right_node
+#
+# right_right_node.left = right_right_left_node
+# right_right_node.right = right_right_right_node
 
 # def walk(root: Node):
 #     new_trace = Trace()

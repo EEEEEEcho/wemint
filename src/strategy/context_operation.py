@@ -102,7 +102,6 @@ def get_value_from_dict(variable_list: list, value_table: dict):
 
 def analysis_identifier(variable_list: list, value_table):
     variable_value = None
-    loguru.logger.info(variable_list)
     for i in range(1, len(variable_list)):
         if type(value_table) is dict and variable_list[i] in value_table:
             variable_value = value_table[variable_list[i]]

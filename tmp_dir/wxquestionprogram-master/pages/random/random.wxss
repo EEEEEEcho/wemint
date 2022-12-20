@@ -1,0 +1,129 @@
+checkbox .wx-checkbox-input{
+    width: 40rpx;
+    height: 40rpx;
+    border: 4rpx solid #333;/* 外圈边框，默认灰色，即未选中状态*/
+    border-radius: 50%;
+    background: none;
+}
+/* 选中后的 背景样式*/
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+    border: 4rpx solid #af1616 !important;
+    background-color: white !important;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+    width: 60%;
+    height: 60%;
+    background: #af1616;/* 内圈实心圆选中状态颜色*/
+    border-radius: 50%;
+    content: '';/* 隐藏✔️*/
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+
+radio .wx-radio-input {
+    width: 40rpx;
+    height: 40rpx;
+    border: 4rpx solid #333;/* 外圈边框，默认灰色，即未选中状态*/
+    border-radius: 50%;
+    background: none;
+  }
+  /*单选按钮选中后内部样式*/
+  radio .wx-radio-input.wx-radio-input-checked {
+    border: 4rpx solid #af1616 !important;
+    background-color: white !important;
+  }
+  /*单选按钮选中后内部中心*/
+  radio .wx-radio-input.wx-radio-input-checked::before {
+    width: 60%;
+    height: 60%;
+    background: #af1616;/* 内圈实心圆选中状态颜色*/
+    border-radius: 50%;
+    content: '';/* 隐藏✔️*/
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+  }
+.title{
+    color: #333;
+    font-size: 32rpx;
+}
+.question_all{
+    width: 90%;
+    margin: 5% auto;
+    border: 2rpx solid #af1616;
+    border-radius: 25rpx;
+    box-shadow: 0rpx 10rpx 30rpx 10rpx #999;
+}
+.question_type{
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    background-color: #af1616;
+    color: white;
+    border-radius: 25rpx 25rpx 0 0;
+}
+.question_type text{
+    margin: 3%;
+    font-size: 36rpx;
+    font-weight: bold;
+}
+.question{
+    width: 90%;
+    margin: 3%;
+    font-size: 32rpx;
+    color: #333;
+}
+.answer{
+    width: 90%;
+    margin: 3%;
+    font-size: 32rpx;
+    color: #333;
+}
+.answer view{
+    margin-top: 2%;
+}
+.submit{
+    margin: 8% 0;
+}
+.clock{
+    display: block;
+    text-align: center;
+    font-size: 38rpx;
+    color: #af1616;
+    margin-top: 3%;
+}
+.summary_all{
+    width: 85%;
+    border-radius: 25rpx;
+    border: 2rpx solid #af1616;
+    box-shadow: 0rpx 3rpx 10rpx 3rpx #999;
+    margin: 8% auto;
+}
+.summary_soc{
+    width: 100%;
+    border-radius: 25rpx 25rpx 0 0;
+    margin: 0 auto;
+    background-color: #af1616;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 150rpx;
+}
+.summary_top{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.summary{
+    width: 50%;
+    font-size: 32rpx;
+    margin: 5%;
+    color: #af1616;
+}
+.buttonGroup{
+    margin: 12%;
+}
+.button{
+    margin: 5%;
+}

@@ -1,0 +1,69 @@
+<!--pages/mine/mine.wxml-->
+<view>
+    <view class="section__ctn">
+        <image src="{{avatarUrl}}"></image>
+    </view>
+    <view class="nickname"><text>{{nickName}}</text></view>
+    <!-- <view><text>姓名：</text><text>{{realName}}</text></view>
+    <view><text>部门：</text><text>{{department}}</text></view>
+    <view><text>工种：</text><text>{{workType}}</text></view>
+    <view><text>分数：</text><text>{{score}}</text></view>
+    <view><text>段位：</text><text>{{level}}</text></view>
+    <view><text>排名：</text><text wx:if="{{rank == -1}}">暂无</text><text wx:else>{{rank}}</text></view> -->
+    <!-- 修改样式之后 -->
+    <view class="my_center">
+        <view class="center_top">
+            <view class="center_top_item">
+                <view class="dou">
+                    姓名
+                </view>
+                <text>
+                    {{realName}}
+                </text>
+            </view>
+            <view class="center_top_item">
+                <view class="dou">
+                    部门
+                </view>
+                <text>
+                    {{department}}
+                </text>
+            </view>
+            <view class="center_top_item">
+                <view class="dou">
+                    工种
+                </view>
+                <text>
+                    {{workType}}
+                </text>
+            </view>
+        </view>
+        <view class="center_top">
+            <view class="center_top_item">
+                <view class="dou">
+                    分数
+                </view>
+                <text>
+                    {{score}}
+                </text>
+            </view>
+            <view class="center_top_item">
+                <view class="dou">
+                    段位
+                </view>
+                <text>
+                    {{level}}
+                </text>
+            </view>
+            <view class="center_top_item">
+                <view class="dou">
+                    排名
+                </view>
+                <view class="soc">
+                    <text style="display:block;margin-top:30%;" wx:if="{{rank == -1}}">暂无</text><text style="display:block;margin-top:30%;" wx:else>{{rank}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <button class="btn_class" type="warn" bindtap="updateUserInfo">修改信息</button>
+</view>

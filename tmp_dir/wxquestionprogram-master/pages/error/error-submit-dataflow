@@ -1,0 +1,30 @@
+// \pages/error/error submit Data Flow
+digraph {
+	"FunctionCall,
+function name -> submit,
+param -> event.detail" [label="FunctionCall,
+function name -> submit,
+param -> event.detail" color=blue]
+	"If Alternate" [label="If Alternate" color=blue]
+	"CallExpression,
+callee name -> this.setData,
+param -> True" [label="CallExpression,
+callee name -> this.setData,
+param -> True" color=blue]
+	"{
+current -> this.data.current
+}" [label="{
+current -> this.data.current
+}" color=blue]
+	"CallExpression,
+callee name -> this.setData,
+param -> True" -> "{
+current -> this.data.current
+}"
+	"If Alternate" -> "CallExpression,
+callee name -> this.setData,
+param -> True"
+	"FunctionCall,
+function name -> submit,
+param -> event.detail" -> "If Alternate"
+}

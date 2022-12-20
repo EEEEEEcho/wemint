@@ -14,3 +14,6 @@ class PageData:
 
     def clear(self):
         self.container.clear()
+
+    def is_empty(self):
+        return len(self.container) == 0

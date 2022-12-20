@@ -1,0 +1,20 @@
+// \pages/worktype/worktype radioChange Data Flow
+digraph {
+	"FunctionCall,
+function name -> radioChange,
+param -> e.detail" [label="FunctionCall,
+function name -> radioChange,
+param -> e.detail" color=blue]
+	"For Loop" [label="For Loop" color=blue]
+	"Assignment,
+left -> items[i].checked,
+right -> items[i].type == e.detail.value" [label="Assignment,
+left -> items[i].checked,
+right -> items[i].type == e.detail.value" color=blue]
+	"For Loop" -> "Assignment,
+left -> items[i].checked,
+right -> items[i].type == e.detail.value"
+	"FunctionCall,
+function name -> radioChange,
+param -> e.detail" -> "For Loop"
+}

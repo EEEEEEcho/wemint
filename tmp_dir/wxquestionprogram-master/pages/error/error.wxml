@@ -1,0 +1,21 @@
+<!-- 单选错题 -->
+<view>
+    <view class="title">当前第{{current+1}}题/共{{total}}题</view>
+    <view class="question_all">
+    <view class="question">题目：{{question.title}}</view>
+    <radio-group bindchange="radioChange" class="answer">
+        <view class="window" wx:for="{{question.options}}" wx:key="unique">
+            <text class="option">{{item.code}}:{{item.option}}</text>
+        </view>
+    </radio-group>
+    <view class="tips">
+        正确答案是:
+        <text wx:for="{{question.answer}}" wx:key="unique">{{item}}</text>
+    </view>
+    <view class="tips">
+        您选择的是:
+        <text>{{question.userSelect}}</text>
+    </view>
+    <button class="button" type="primary" bindtap="submit">下一个错题</button>
+</view>
+</view>

@@ -115,7 +115,7 @@ def page_object_analysis(file_context: FileContext, mini_program: MiniProgram):
                 cns.function_declaration_analysis(obj_property['value'], page_obj_context, mini_program)
             # elif obj_property['value']['type'] == 'SequenceExpression':
 
-    logger.info(page_obj_context.const_variable_table)
+    # logger.info(page_obj_context.const_variable_table)
 
 
 def config_analysis(ast_json: dict, file_context: FileContext, mini_program: MiniProgram):

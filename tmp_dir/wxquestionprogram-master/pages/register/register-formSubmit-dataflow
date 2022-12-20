@@ -1,0 +1,89 @@
+// \pages/register/register formSubmit Data Flow
+digraph {
+	"FunctionCall,
+function name -> formSubmit,
+param -> e.detail" [label="FunctionCall,
+function name -> formSubmit,
+param -> e.detail" color=blue]
+	"VariableDeclarator,
+left -> realName,
+right -> e.detail.value['realName']" [label="VariableDeclarator,
+left -> realName,
+right -> e.detail.value['realName']" color=blue]
+	"FunctionCall,
+function name -> formSubmit,
+param -> e.detail" -> "VariableDeclarator,
+left -> realName,
+right -> e.detail.value['realName']"
+	"VariableDeclarator,
+left -> phoneNumber,
+right -> e.detail.value['phoneNumber']" [label="VariableDeclarator,
+left -> phoneNumber,
+right -> e.detail.value['phoneNumber']" color=blue]
+	"FunctionCall,
+function name -> formSubmit,
+param -> e.detail" -> "VariableDeclarator,
+left -> phoneNumber,
+right -> e.detail.value['phoneNumber']"
+	"VariableDeclarator,
+left -> password,
+right -> e.detail.value['password']" [label="VariableDeclarator,
+left -> password,
+right -> e.detail.value['password']" color=blue]
+	"FunctionCall,
+function name -> formSubmit,
+param -> e.detail" -> "VariableDeclarator,
+left -> password,
+right -> e.detail.value['password']"
+	"VariableDeclarator,
+left -> repassword,
+right -> e.detail.value['repassword']" [label="VariableDeclarator,
+left -> repassword,
+right -> e.detail.value['repassword']" color=blue]
+	"FunctionCall,
+function name -> formSubmit,
+param -> e.detail" -> "VariableDeclarator,
+left -> repassword,
+right -> e.detail.value['repassword']"
+	"VariableDeclarator,
+left -> inviteCode,
+right -> e.detail.value['inviteCode']" [label="VariableDeclarator,
+left -> inviteCode,
+right -> e.detail.value['inviteCode']" color=blue]
+	"FunctionCall,
+function name -> formSubmit,
+param -> e.detail" -> "VariableDeclarator,
+left -> inviteCode,
+right -> e.detail.value['inviteCode']"
+	AwaitExpression [label=AwaitExpression color=blue]
+	"CallExpression,
+callee name -> utils.Http.asyncRequest,
+param -> True" [label="CallExpression,
+callee name -> utils.Http.asyncRequest,
+param -> True" color=blue]
+	"{
+realName -> realName
+phoneNumber -> phoneNumber
+password -> password
+inviteCode -> inviteCode
+}" [label="{
+realName -> realName
+phoneNumber -> phoneNumber
+password -> password
+inviteCode -> inviteCode
+}" color=blue]
+	"CallExpression,
+callee name -> utils.Http.asyncRequest,
+param -> True" -> "{
+realName -> realName
+phoneNumber -> phoneNumber
+password -> password
+inviteCode -> inviteCode
+}"
+	AwaitExpression -> "CallExpression,
+callee name -> utils.Http.asyncRequest,
+param -> True"
+	"FunctionCall,
+function name -> formSubmit,
+param -> e.detail" -> AwaitExpression
+}

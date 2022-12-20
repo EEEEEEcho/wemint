@@ -1,0 +1,40 @@
+<view class="container">
+
+    <form catchsubmit="formSubmit" catchreset="formReset">
+        <view class="page-section">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="realName" placeholder="姓名" id="realName" value="{{realName}}" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" maxlength="11" name="phoneNumber" placeholder="手机号" id="phoneNumber"
+                        value="{{phoneNumber}}" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="password" placeholder="密码" id="password" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="repassword" placeholder="确认密码" id="repassword" />
+                </view>
+            </view>
+            <radio-group bindchange="radioChange">
+                <view class='label'>
+                    <label class="ui-radio {{item.checked==true?'active':''}}" wx:for="{{workTypeList}}" wx:key="index">
+                        <radio value="{{item.worktype_name}}" checked="{{item.worktype_name == worktype_name}}" />
+                        <text class="text">{{item.worktype_name}}</text>
+                    </label>
+                </view>
+            </radio-group>
+        </view>
+
+        <view class="button-area">
+            <button type="primary" formType="submit">提交</button>
+        </view>
+    </form>
+</view>

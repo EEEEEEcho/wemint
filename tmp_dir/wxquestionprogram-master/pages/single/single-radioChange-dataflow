@@ -1,0 +1,28 @@
+// \pages/single/single radioChange Data Flow
+digraph {
+	"FunctionCall,
+function name -> radioChange,
+param -> e.detail" [label="FunctionCall,
+function name -> radioChange,
+param -> e.detail" color=blue]
+	"CallExpression,
+callee name -> this.setData,
+param -> True" [label="CallExpression,
+callee name -> this.setData,
+param -> True" color=blue]
+	"{
+userSelected -> e.detail.value
+}" [label="{
+userSelected -> e.detail.value
+}" color=blue]
+	"CallExpression,
+callee name -> this.setData,
+param -> True" -> "{
+userSelected -> e.detail.value
+}"
+	"FunctionCall,
+function name -> radioChange,
+param -> e.detail" -> "CallExpression,
+callee name -> this.setData,
+param -> True"
+}

@@ -1,0 +1,48 @@
+// \pages/worktype/worktype submit Data Flow
+digraph {
+	"FunctionCall,
+function name -> submit,
+param -> " [label="FunctionCall,
+function name -> submit,
+param -> " color=blue]
+	"VariableDeclarator,
+left -> items,
+right -> this.data.items" [label="VariableDeclarator,
+left -> items,
+right -> this.data.items" color=blue]
+	"FunctionCall,
+function name -> submit,
+param -> " -> "VariableDeclarator,
+left -> items,
+right -> this.data.items"
+	"VariableDeclarator,
+left -> selected,
+right -> this.data.selected" [label="VariableDeclarator,
+left -> selected,
+right -> this.data.selected" color=blue]
+	"FunctionCall,
+function name -> submit,
+param -> " -> "VariableDeclarator,
+left -> selected,
+right -> this.data.selected"
+	"VariableDeclarator,
+left -> selectedValue,
+right -> items[selected].name" [label="VariableDeclarator,
+left -> selectedValue,
+right -> items[selected].name" color=blue]
+	"FunctionCall,
+function name -> submit,
+param -> " -> "VariableDeclarator,
+left -> selectedValue,
+right -> items[selected].name"
+	"Assignment,
+left -> userInfo['workType'],
+right -> selectedValue" [label="Assignment,
+left -> userInfo['workType'],
+right -> selectedValue" color=blue]
+	"FunctionCall,
+function name -> submit,
+param -> " -> "Assignment,
+left -> userInfo['workType'],
+right -> selectedValue"
+}

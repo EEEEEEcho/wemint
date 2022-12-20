@@ -1,0 +1,87 @@
+// \pages/random/random submit Data Flow
+digraph {
+	"FunctionCall,
+function name -> submit,
+param -> " [label="FunctionCall,
+function name -> submit,
+param -> " color=blue]
+	"VariableDeclarator,
+left -> userSelect,
+right -> this.data.userSelected" [label="VariableDeclarator,
+left -> userSelect,
+right -> this.data.userSelected" color=blue]
+	"FunctionCall,
+function name -> submit,
+param -> " -> "VariableDeclarator,
+left -> userSelect,
+right -> this.data.userSelected"
+	"If Alternate" [label="If Alternate" color=blue]
+	"If Alternate" [label="If Alternate" color=blue]
+	"CallExpression,
+callee name -> this.dealErrorOption,
+param -> True" [label="CallExpression,
+callee name -> this.dealErrorOption,
+param -> True" color=blue]
+	"If Alternate" -> "CallExpression,
+callee name -> this.dealErrorOption,
+param -> True"
+	"If Alternate" -> "If Alternate"
+	"If Alternate" [label="If Alternate" color=blue]
+	"CallExpression,
+callee name -> this.dealErrorOption,
+param -> True" [label="CallExpression,
+callee name -> this.dealErrorOption,
+param -> True" color=blue]
+	"If Alternate" -> "CallExpression,
+callee name -> this.dealErrorOption,
+param -> True"
+	"If Alternate" -> "If Alternate"
+	"FunctionCall,
+function name -> submit,
+param -> " -> "If Alternate"
+	"CallExpression,
+callee name -> setTimeout,
+param -> True" [label="CallExpression,
+callee name -> setTimeout,
+param -> True" color=blue]
+	"FunctionCall,
+function name -> Arrow Function,
+param -> None" [label="FunctionCall,
+function name -> Arrow Function,
+param -> None" color=blue]
+	"If Alternate" [label="If Alternate" color=blue]
+	"CallExpression,
+callee name -> this.setData,
+param -> True" [label="CallExpression,
+callee name -> this.setData,
+param -> True" color=blue]
+	"{
+current -> this.data.current
+isChecked -> this.data.isChecked
+}" [label="{
+current -> this.data.current
+isChecked -> this.data.isChecked
+}" color=blue]
+	"CallExpression,
+callee name -> this.setData,
+param -> True" -> "{
+current -> this.data.current
+isChecked -> this.data.isChecked
+}"
+	"If Alternate" -> "CallExpression,
+callee name -> this.setData,
+param -> True"
+	"FunctionCall,
+function name -> Arrow Function,
+param -> None" -> "If Alternate"
+	"CallExpression,
+callee name -> setTimeout,
+param -> True" -> "FunctionCall,
+function name -> Arrow Function,
+param -> None"
+	"FunctionCall,
+function name -> submit,
+param -> " -> "CallExpression,
+callee name -> setTimeout,
+param -> True"
+}

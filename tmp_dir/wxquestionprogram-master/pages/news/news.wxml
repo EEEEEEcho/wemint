@@ -1,0 +1,45 @@
+<view class="style-roll">
+  <!-- 轮播图2 -->
+  <view class="swiper-container">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+      circular="{{duration}}" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+      <block wx:for="{{news}}" wx:key="unique" wx:if="{{index<5}}">
+        <swiper-item>
+          <image src="{{item.imgUrl}}" class="img" bindtap="swipclick" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+
+<view class="news_all" wx:for="{{news}}" wx:key="unique" wx:if="{{index>=5}}"> 
+  <view class="news" bindtap="opencontent" data-newsid='{{news[index].id}}'>
+    <text
+      class='news_title {{isShowAllContent ?"content-all" :"content-breif"}}'>{{news[index].title}}</text>
+    <view class="news_time">
+      <text>{{news[index].publish}}</text>
+      <text>{{news[index].updateTimeStr}}</text>
+    </view>
+  </view>
+</view>
+<!-- <view class="news_all" bindtap="opencontent">
+  <view class="news">
+    <text
+      class='news_title {{isShowAllContent ?"content-all" :"content-breif"}}'>{{news[4].title}}</text>
+    <view class="news_time">
+      <text>{{news[4].publish}}</text>
+      <text>{{news[4].updateTimeStr}}</text>
+    </view>
+  </view>
+</view>
+<view class="news_all" bindtap="opencontent">
+  <view class="news">
+    <text
+      class='news_title {{isShowAllContent ?"content-all" :"content-breif"}}'>{{news[5].title}}</text>
+    <view class="news_time">
+      <text hidden="hidden"></text>
+      <text>{{news[5].publish}}</text>
+      <text>{{news[5].updateTimeStr}}</text>
+    </view>
+  </view>
+</view> -->
