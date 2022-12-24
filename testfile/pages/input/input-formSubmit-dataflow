@@ -1,0 +1,144 @@
+// pages/input/input formSubmit Data Flow
+digraph {
+	"FunctionCall,
+function name -> formSubmit,
+param -> e.detail" [label="FunctionCall,
+function name -> formSubmit,
+param -> e.detail" color=blue]
+	"CallExpression,
+callee name -> this.setData,
+param -> True" [label="CallExpression,
+callee name -> this.setData,
+param -> True" color=blue]
+	"{
+password -> e.detail.value
+}" [label="{
+password -> e.detail.value
+}" color=blue]
+	"CallExpression,
+callee name -> this.setData,
+param -> True" -> "{
+password -> e.detail.value
+}"
+	"FunctionCall,
+function name -> formSubmit,
+param -> e.detail" -> "CallExpression,
+callee name -> this.setData,
+param -> True"
+	"VariableDeclarator,
+left -> systemSetting,
+right -> wx.getSystemSetting" [label="VariableDeclarator,
+left -> systemSetting,
+right -> wx.getSystemSetting" color=blue]
+	"FunctionCall,
+function name -> formSubmit,
+param -> e.detail" -> "VariableDeclarator,
+left -> systemSetting,
+right -> wx.getSystemSetting"
+	"CallExpression,
+callee name -> console.log,
+param -> systemSetting.bluetoothEnabled" [label="CallExpression,
+callee name -> console.log,
+param -> systemSetting.bluetoothEnabled" color=blue]
+	"FunctionCall,
+function name -> formSubmit,
+param -> e.detail" -> "CallExpression,
+callee name -> console.log,
+param -> systemSetting.bluetoothEnabled"
+	"CallExpression,
+callee name -> console.log,
+param -> systemSetting.deviceOrientation" [label="CallExpression,
+callee name -> console.log,
+param -> systemSetting.deviceOrientation" color=blue]
+	"FunctionCall,
+function name -> formSubmit,
+param -> e.detail" -> "CallExpression,
+callee name -> console.log,
+param -> systemSetting.deviceOrientation"
+	"CallExpression,
+callee name -> console.log,
+param -> systemSetting.locationEnabled" [label="CallExpression,
+callee name -> console.log,
+param -> systemSetting.locationEnabled" color=blue]
+	"FunctionCall,
+function name -> formSubmit,
+param -> e.detail" -> "CallExpression,
+callee name -> console.log,
+param -> systemSetting.locationEnabled"
+	"CallExpression,
+callee name -> console.log,
+param -> systemSetting.wifiEnabled" [label="CallExpression,
+callee name -> console.log,
+param -> systemSetting.wifiEnabled" color=blue]
+	"FunctionCall,
+function name -> formSubmit,
+param -> e.detail" -> "CallExpression,
+callee name -> console.log,
+param -> systemSetting.wifiEnabled"
+	"CallExpression,
+callee name -> wx.request,
+param -> True" [label="CallExpression,
+callee name -> wx.request,
+param -> True" color=blue]
+	"{
+url -> 'example.php?info=' + systemSetting.deviceOrientation
+x -> systemSetting.wifiEnabled
+y -> 'settings' + systemSetting.bluetoothEnabled
+}" [label="{
+url -> 'example.php?info=' + systemSetting.deviceOrientation
+x -> systemSetting.wifiEnabled
+y -> 'settings' + systemSetting.bluetoothEnabled
+}" color=blue]
+	"CallExpression,
+callee name -> wx.request,
+param -> True" -> "{
+url -> 'example.php?info=' + systemSetting.deviceOrientation
+x -> systemSetting.wifiEnabled
+y -> 'settings' + systemSetting.bluetoothEnabled
+}"
+	"FunctionCall,
+function name -> formSubmit,
+param -> e.detail" -> "CallExpression,
+callee name -> wx.request,
+param -> True"
+	"CallExpression,
+callee name -> wx.chooseLocation,
+param -> True" [label="CallExpression,
+callee name -> wx.chooseLocation,
+param -> True" color=blue]
+	"FunctionCall,
+function name -> success,
+param -> res" [label="FunctionCall,
+function name -> success,
+param -> res" color=blue]
+	"CallExpression,
+callee name -> console.log,
+param -> res.name" [label="CallExpression,
+callee name -> console.log,
+param -> res.name" color=blue]
+	"FunctionCall,
+function name -> success,
+param -> res" -> "CallExpression,
+callee name -> console.log,
+param -> res.name"
+	"CallExpression,
+callee name -> console.log,
+param -> res.address" [label="CallExpression,
+callee name -> console.log,
+param -> res.address" color=blue]
+	"FunctionCall,
+function name -> success,
+param -> res" -> "CallExpression,
+callee name -> console.log,
+param -> res.address"
+	"CallExpression,
+callee name -> wx.chooseLocation,
+param -> True" -> "FunctionCall,
+function name -> success,
+param -> res"
+	"FunctionCall,
+function name -> formSubmit,
+param -> e.detail" -> "CallExpression,
+callee name -> wx.chooseLocation,
+param -> True"
+}

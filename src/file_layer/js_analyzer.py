@@ -1,5 +1,6 @@
 import src.strategy.common_node_strategy as cns
 import src.utils.analysed_file as af
+import src.utils.circle_set as cs
 import os
 from src.pojo.file_context import FileContext
 from src.pojo.scope_enum import Scope
@@ -86,7 +87,7 @@ def variable_table_analysis(file_context: FileContext, mini_program: MiniProgram
                         if callee_name == 'require' or callee_name == 'getApp':
                             brother_analysis(variable_declarator, file_context, mini_program)
                     else:
-                        cns.call_expression_analysis(variable_declarator['init'],file_context,mini_program)
+                        cns.call_expression_analysis(variable_declarator['init'], file_context, mini_program)
             else:
                 cns.variable_declarator_analysis(variable_declarator, file_context, mini_program)
 
@@ -113,9 +114,6 @@ def page_object_analysis(file_context: FileContext, mini_program: MiniProgram):
                 obj_property['value']['id']['name'] = property_name
                 page_obj_context.function_table[property_name] = obj_property['value']
                 cns.function_declaration_analysis(obj_property['value'], page_obj_context, mini_program)
-            # elif obj_property['value']['type'] == 'SequenceExpression':
-
-    # logger.info(page_obj_context.const_variable_table)
 
 
 def config_analysis(ast_json: dict, file_context: FileContext, mini_program: MiniProgram):
@@ -140,11 +138,17 @@ def brother_analysis(variable_declarator: dict, file_context: FileContext, mini_
 
     if brother_path:
         if not af.contains(brother_path):
-            brother_context = analysis(brother_path, mini_program)
-            if callee_name == 'getApp':
-                af.set_context(brother_path, brother_context.children)
+            cs.increase(brother_path)
+            if cs.can_analysis(brother_path):
+                brother_context = analysis(brother_path, mini_program)
+                if callee_name == 'getApp':
+                    af.set_context(brother_path, brother_context.children)
+                else:
+                    af.set_context(brother_path, brother_context)
+                cs.remove(brother_path)
             else:
-                af.set_context(brother_path, brother_context)
+                cs.decrease(brother_path)
+                return
         file_context.brother_table[variable_name] = af.get_context(brother_path)
 
 

@@ -1,8 +1,9 @@
 from loguru import logger
 from bs4 import BeautifulSoup
 from src.utils.page_data import PageData
-from graphviz import Digraph
+from src.pojo.miniprogram import MiniProgram
 import src.strategy.trace_variable_strategy as tvs
+import src.file_layer.js_analyzer as ja
 import src.utils.painter as painter
 import os
 import copy
@@ -34,36 +35,23 @@ def find_event_element(xml_path: str):
 #             param_name = param_node['name']
 
 
-# js_path = r'E:\WorkSpace\wxapp-analyzer\testfile\pages\input\input.js'
-# base_path = r'E:\WorkSpace\wxapp-analyzer\testfile'
-# mp = MiniProgram(base_path, 'test')
-# context = ja.analysis(js_path, mp)
-# eve_map = find_event_element(r'E:\WorkSpace\wxapp-analyzer\testfile\pages\input\input.wxml')
-# page_data = PageData()
-# logger.info(eve_map.values())
-# for element, event in eve_map.items():
-#     if event in context.children.function_table:
-#         context.children.function_table[event]['id'] = event
-#         param_set = {'e.detail'}
-#         trace = tvs.find_trace(param_set, context.children.function_table[event], page_data)
-#         logger.info(trace)
-#         logger.info(param_set)
-#
-# logger.info(page_data.container)
-
-
 def analysis(context, xml_path: str, page_name):
     eve_map = find_event_element(xml_path)
     page_data = PageData()
     for element, event in eve_map.items():
-        if event in context.children.function_table:
-            context.children.function_table[event]['id'] = event
-            param_set = create_param_set(context.children.function_table[event])
-            original_set = copy.deepcopy(param_set)
-            trace = tvs.find_trace(param_set, context.children.function_table[event], page_data)
-            trace.route_type.params = ",".join(original_set)
-            if trace.is_path:
-                painter.paint_trace(trace, xml_path, page_name, event)
+        if context.children:
+            if event in context.children.function_table:
+                context.children.function_table[event]['id'] = dict()
+                context.children.function_table[event]['id']['name'] = event
+                param_set = create_param_set(context.children.function_table[event])
+                original_set = copy.deepcopy(param_set)
+                trace = tvs.find_trace(param_set, context.children.function_table[event], page_data,
+                                       context.children.function_table)
+                trace.route_type.params = ",".join(original_set)
+                if trace.is_path:
+                    painter.paint_trace(trace, xml_path, page_name, event)
+        else:
+            break
     page_data.clear()
 
 
@@ -71,5 +59,28 @@ def create_param_set(function_node: dict):
     param_set = set()
     for param in function_node['params']:
         if param['type'] == 'Identifier':
-            param_set.add(param['name'] + '.detail')
+            param_set.add(param['name'] + '.')
     return param_set
+
+
+js_path = r'E:\WorkSpace\wxapp-analyzer\testfile\pages\input\input.js'
+base_path = r'E:\WorkSpace\wxapp-analyzer\testfile'
+mp = MiniProgram(base_path, 'test')
+context = ja.analysis(js_path, mp)
+
+analysis(context, r'E:\WorkSpace\wxapp-analyzer\testfile\pages\input\input.wxml','pages/input/input')
+
+
+# eve_map = find_event_element(r'E:\WorkSpace\wxapp-analyzer\testfile\pages\input\input.wxml')
+# page_data = PageData()
+# logger.info(eve_map.values())
+# for element, event in eve_map.items():
+#     if event in context.children.function_table:
+#         context.children.function_table[event]['id'] = event
+#         param_set = create_param_set(context.children.function_table[event])
+#         original_set = copy.deepcopy(param_set)
+#         trace = tvs.find_trace(param_set, context.children.function_table[event], page_data)
+#         logger.info(trace)
+#         logger.info(param_set)
+#
+# logger.info(page_data.container)

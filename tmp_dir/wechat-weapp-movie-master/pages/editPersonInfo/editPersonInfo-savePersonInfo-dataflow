@@ -1,0 +1,78 @@
+// \pages/editPersonInfo/editPersonInfo savePersonInfo Data Flow
+digraph {
+	"FunctionCall,
+function name -> savePersonInfo,
+param -> e." [label="FunctionCall,
+function name -> savePersonInfo,
+param -> e." color=blue]
+	"VariableDeclarator,
+left -> data,
+right -> e.detail.value" [label="VariableDeclarator,
+left -> data,
+right -> e.detail.value" color=blue]
+	"FunctionCall,
+function name -> savePersonInfo,
+param -> e." -> "VariableDeclarator,
+left -> data,
+right -> e.detail.value"
+	"CallExpression,
+callee name -> console.log,
+param -> data" [label="CallExpression,
+callee name -> console.log,
+param -> data" color=blue]
+	"FunctionCall,
+function name -> savePersonInfo,
+param -> e." -> "CallExpression,
+callee name -> console.log,
+param -> data"
+	"CallExpression,
+callee name -> wx.setStorage,
+param -> True" [label="CallExpression,
+callee name -> wx.setStorage,
+param -> True" color=blue]
+	"{
+name -> data.name
+nickName -> data.nickName
+gender -> data.gender
+age -> data.age
+birthday -> data.birthday
+constellation -> data.constellation
+company -> data.company
+school -> data.school
+tel -> data.tel
+email -> data.email
+intro -> data.intro
+}" [label="{
+name -> data.name
+nickName -> data.nickName
+gender -> data.gender
+age -> data.age
+birthday -> data.birthday
+constellation -> data.constellation
+company -> data.company
+school -> data.school
+tel -> data.tel
+email -> data.email
+intro -> data.intro
+}" color=blue]
+	"CallExpression,
+callee name -> wx.setStorage,
+param -> True" -> "{
+name -> data.name
+nickName -> data.nickName
+gender -> data.gender
+age -> data.age
+birthday -> data.birthday
+constellation -> data.constellation
+company -> data.company
+school -> data.school
+tel -> data.tel
+email -> data.email
+intro -> data.intro
+}"
+	"FunctionCall,
+function name -> savePersonInfo,
+param -> e." -> "CallExpression,
+callee name -> wx.setStorage,
+param -> True"
+}

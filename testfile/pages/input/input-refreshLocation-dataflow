@@ -1,0 +1,171 @@
+// pages/input/input refreshLocation Data Flow
+digraph {
+	"FunctionCall,
+function name -> refreshLocation,
+param -> " [label="FunctionCall,
+function name -> refreshLocation,
+param -> " color=blue]
+	"CallExpression,
+callee name -> this.getLocation,
+param -> True" [label="CallExpression,
+callee name -> this.getLocation,
+param -> True" color=blue]
+	"FunctionCall,
+function name -> getLocation,
+param -> None" [label="FunctionCall,
+function name -> getLocation,
+param -> None" color=blue]
+	"CallExpression,
+callee name -> wx.getLocation,
+param -> True" [label="CallExpression,
+callee name -> wx.getLocation,
+param -> True" color=blue]
+	"FunctionCall,
+function name -> success,
+param -> res" [label="FunctionCall,
+function name -> success,
+param -> res" color=blue]
+	"CallExpression,
+callee name -> that.setData,
+param -> True" [label="CallExpression,
+callee name -> that.setData,
+param -> True" color=blue]
+	"{
+latitude -> res.latitude
+}" [label="{
+latitude -> res.latitude
+}" color=blue]
+	"CallExpression,
+callee name -> parseFloat,
+param -> res.longitude + '1'" [label="CallExpression,
+callee name -> parseFloat,
+param -> res.longitude + '1'" color=blue]
+	"{
+latitude -> res.latitude
+}" -> "CallExpression,
+callee name -> parseFloat,
+param -> res.longitude + '1'"
+	"CallExpression,
+callee name -> parseFloat,
+param -> res.longitude + '1'" [label="CallExpression,
+callee name -> parseFloat,
+param -> res.longitude + '1'" color=blue]
+	"{
+latitude -> res.latitude
+}" -> "CallExpression,
+callee name -> parseFloat,
+param -> res.longitude + '1'"
+	"CallExpression,
+callee name -> parseFloat,
+param -> res.longitude + '1'" [label="CallExpression,
+callee name -> parseFloat,
+param -> res.longitude + '1'" color=blue]
+	"{
+latitude -> res.latitude
+}" -> "CallExpression,
+callee name -> parseFloat,
+param -> res.longitude + '1'"
+	"CallExpression,
+callee name -> parseFloat,
+param -> res.longitude + '1'" [label="CallExpression,
+callee name -> parseFloat,
+param -> res.longitude + '1'" color=blue]
+	"{
+latitude -> res.latitude
+}" -> "CallExpression,
+callee name -> parseFloat,
+param -> res.longitude + '1'"
+	"CallExpression,
+callee name -> that.setData,
+param -> True" -> "{
+latitude -> res.latitude
+}"
+	"FunctionCall,
+function name -> success,
+param -> res" -> "CallExpression,
+callee name -> that.setData,
+param -> True"
+	"VariableDeclarator,
+left -> locationParam,
+right -> res.latitude + ',' + res.longitude + '1'" [label="VariableDeclarator,
+left -> locationParam,
+right -> res.latitude + ',' + res.longitude + '1'" color=blue]
+	"FunctionCall,
+function name -> success,
+param -> res" -> "VariableDeclarator,
+left -> locationParam,
+right -> res.latitude + ',' + res.longitude + '1'"
+	"CallExpression,
+callee name -> wx.request,
+param -> True" [label="CallExpression,
+callee name -> wx.request,
+param -> True" color=blue]
+	"{
+location -> locationParam
+}" [label="{
+location -> locationParam
+}" color=blue]
+	"FunctionCall,
+function name -> success,
+param -> res" [label="FunctionCall,
+function name -> success,
+param -> res" color=blue]
+	"CallExpression,
+callee name -> that.setData,
+param -> True" [label="CallExpression,
+callee name -> that.setData,
+param -> True" color=blue]
+	"{
+desc -> res.data.result.formatted_address
+formatted_address -> res.data.result.formatted_address
+}" [label="{
+desc -> res.data.result.formatted_address
+formatted_address -> res.data.result.formatted_address
+}" color=blue]
+	"CallExpression,
+callee name -> that.setData,
+param -> True" -> "{
+desc -> res.data.result.formatted_address
+formatted_address -> res.data.result.formatted_address
+}"
+	"FunctionCall,
+function name -> success,
+param -> res" -> "CallExpression,
+callee name -> that.setData,
+param -> True"
+	"{
+location -> locationParam
+}" -> "FunctionCall,
+function name -> success,
+param -> res"
+	"CallExpression,
+callee name -> wx.request,
+param -> True" -> "{
+location -> locationParam
+}"
+	"FunctionCall,
+function name -> success,
+param -> res" -> "CallExpression,
+callee name -> wx.request,
+param -> True"
+	"CallExpression,
+callee name -> wx.getLocation,
+param -> True" -> "FunctionCall,
+function name -> success,
+param -> res"
+	"FunctionCall,
+function name -> getLocation,
+param -> None" -> "CallExpression,
+callee name -> wx.getLocation,
+param -> True"
+	"CallExpression,
+callee name -> this.getLocation,
+param -> True" -> "FunctionCall,
+function name -> getLocation,
+param -> None"
+	"FunctionCall,
+function name -> refreshLocation,
+param -> " -> "CallExpression,
+callee name -> this.getLocation,
+param -> True"
+}

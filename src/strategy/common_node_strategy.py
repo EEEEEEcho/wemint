@@ -366,7 +366,8 @@ def member_expression_analysis(member_expression: dict):
             else:
                 return None
         elif obj['type'] == 'ThisExpression':
-            return prop['name']
+            if 'name' in prop:
+                return prop['name']
         elif obj['type'] == 'MemberExpression':
             value = member_expression_analysis(obj)
             if value is not None:
@@ -418,53 +419,55 @@ def object_node_analysis(obj_expression: dict, context, mini_program: MiniProgra
     if obj_expression['type'] == 'ArrayExpression':
         li = []
         for element in obj_expression['elements']:
-            if element['type'] == 'Literal':
-                if 'value' in element:
-                    li.append(element['value'])
-            elif element['type'] == 'Identifier':
-                if 'name' in element:
-                    identifier_value = co.search_identifier(element['name'], context)
-                    li.append(identifier_value)
-            elif element['type'] == 'MemberExpression':
-                if 'value' in element:
-                    identifier = member_expression_analysis(element['value'])
-                    identifier_value = co.search_identifier(identifier, context)
-                    li.append(identifier_value)
-            elif element['type'] == 'ObjectExpression':
-                li.append(object_node_analysis(element, context, mini_program))
-            elif element['type'] == 'ArrayExpression':
-                li.append(object_node_analysis(element, context, mini_program))
+            if element:
+                if element['type'] == 'Literal':
+                    if 'value' in element:
+                        li.append(element['value'])
+                elif element['type'] == 'Identifier':
+                    if 'name' in element:
+                        identifier_value = co.search_identifier(element['name'], context)
+                        li.append(identifier_value)
+                elif element['type'] == 'MemberExpression':
+                    if 'value' in element:
+                        identifier = member_expression_analysis(element['value'])
+                        identifier_value = co.search_identifier(identifier, context)
+                        li.append(identifier_value)
+                elif element['type'] == 'ObjectExpression':
+                    li.append(object_node_analysis(element, context, mini_program))
+                elif element['type'] == 'ArrayExpression':
+                    li.append(object_node_analysis(element, context, mini_program))
         return li
     elif obj_expression['type'] == 'ObjectExpression':
         ret = {}
         for prop in obj_expression['properties']:
-            if prop['type'] == 'Property':
-                if prop['key']['type'] == 'Literal':
-                    key = prop['key']['value']
-                else:
-                    key = prop['key']['name']
-                if prop['value']['type'] == 'Literal':
-                    ret[key] = prop['value']['value']
-                elif prop['value']['type'] == 'Identifier':
-                    identifier_value = co.search_identifier(prop['value']['name'], context)
-                    ret[key] = identifier_value
-                elif prop['value']['type'] == 'BinaryExpression':
-                    binary_value = binary_expression_analysis(prop['value'], context)
-                    ret[key] = binary_value
-                elif prop['value']['type'] == 'MemberExpression':
-                    identifier = member_expression_analysis(prop['value'])
-                    identifier_value = co.search_identifier(identifier, context)
-                    ret[key] = identifier_value
-                elif prop['value']['type'] == 'ArrayExpression':
-                    ret[key] = object_node_analysis(prop['value'], context, mini_program)
-                elif prop['value']['type'] == 'ObjectExpression':
-                    ret[key] = object_node_analysis(prop['value'], context, mini_program)
-                elif prop['value']['type'] == 'FunctionExpression':
-                    prop['value']['id'] = dict()
-                    prop['value']['id']['name'] = key
-                    function_declaration_analysis(prop['value'], context, mini_program)
-                    ret[key] = None
-            elif prop['type'] == 'SpreadElement':
-                ret['spread_element'] = '...' + member_expression_analysis(prop['argument'])
+            if prop:
+                if prop['type'] == 'Property':
+                    if prop['key']['type'] == 'Literal':
+                        key = prop['key']['value']
+                    else:
+                        key = prop['key']['name']
+                    if prop['value']['type'] == 'Literal':
+                        ret[key] = prop['value']['value']
+                    elif prop['value']['type'] == 'Identifier':
+                        identifier_value = co.search_identifier(prop['value']['name'], context)
+                        ret[key] = identifier_value
+                    elif prop['value']['type'] == 'BinaryExpression':
+                        binary_value = binary_expression_analysis(prop['value'], context)
+                        ret[key] = binary_value
+                    elif prop['value']['type'] == 'MemberExpression':
+                        identifier = member_expression_analysis(prop['value'])
+                        identifier_value = co.search_identifier(identifier, context)
+                        ret[key] = identifier_value
+                    elif prop['value']['type'] == 'ArrayExpression':
+                        ret[key] = object_node_analysis(prop['value'], context, mini_program)
+                    elif prop['value']['type'] == 'ObjectExpression':
+                        ret[key] = object_node_analysis(prop['value'], context, mini_program)
+                    elif prop['value']['type'] == 'FunctionExpression':
+                        prop['value']['id'] = dict()
+                        prop['value']['id']['name'] = key
+                        function_declaration_analysis(prop['value'], context, mini_program)
+                        ret[key] = None
+                elif prop['type'] == 'SpreadElement':
+                    ret['spread_element'] = '...' + member_expression_analysis(prop['argument'])
         return ret
     return None

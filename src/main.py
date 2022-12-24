@@ -45,7 +45,7 @@ def main():
     # logger.info(leak_count)
 
     base_path = r'E:\WorkSpace\wxapp-analyzer\tmp_dir'
-    program_name = r'\wxquestionprogram-master'
+    program_name = r'\wechat-weapp-movie-master'
     mini_program = MiniProgram(base_path, program_name)
     js_analyzer.app_js_analysis(mini_program.path + os.sep + 'app.js', mini_program)
     for page_name in mini_program.pages:

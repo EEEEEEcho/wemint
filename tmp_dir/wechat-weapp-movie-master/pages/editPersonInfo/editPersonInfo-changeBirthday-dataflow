@@ -1,0 +1,40 @@
+// \pages/editPersonInfo/editPersonInfo changeBirthday Data Flow
+digraph {
+	"FunctionCall,
+function name -> changeBirthday,
+param -> e." [label="FunctionCall,
+function name -> changeBirthday,
+param -> e." color=blue]
+	"VariableDeclarator,
+left -> birthday,
+right -> e.detail.value" [label="VariableDeclarator,
+left -> birthday,
+right -> e.detail.value" color=blue]
+	"FunctionCall,
+function name -> changeBirthday,
+param -> e." -> "VariableDeclarator,
+left -> birthday,
+right -> e.detail.value"
+	"If Alternate" [label="If Alternate" color=blue]
+	"CallExpression,
+callee name -> this.setData,
+param -> True" [label="CallExpression,
+callee name -> this.setData,
+param -> True" color=blue]
+	"{
+birthday -> birthday
+}" [label="{
+birthday -> birthday
+}" color=blue]
+	"CallExpression,
+callee name -> this.setData,
+param -> True" -> "{
+birthday -> birthday
+}"
+	"If Alternate" -> "CallExpression,
+callee name -> this.setData,
+param -> True"
+	"FunctionCall,
+function name -> changeBirthday,
+param -> e." -> "If Alternate"
+}

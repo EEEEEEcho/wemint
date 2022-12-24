@@ -1,0 +1,40 @@
+// \pages/editPersonInfo/editPersonInfo changeGender Data Flow
+digraph {
+	"FunctionCall,
+function name -> changeGender,
+param -> e." [label="FunctionCall,
+function name -> changeGender,
+param -> e." color=blue]
+	"VariableDeclarator,
+left -> genderIndex,
+right -> e.detail.value" [label="VariableDeclarator,
+left -> genderIndex,
+right -> e.detail.value" color=blue]
+	"FunctionCall,
+function name -> changeGender,
+param -> e." -> "VariableDeclarator,
+left -> genderIndex,
+right -> e.detail.value"
+	"If Alternate" [label="If Alternate" color=blue]
+	"CallExpression,
+callee name -> this.setData,
+param -> True" [label="CallExpression,
+callee name -> this.setData,
+param -> True" color=blue]
+	"{
+genderIndex -> genderIndex
+}" [label="{
+genderIndex -> genderIndex
+}" color=blue]
+	"CallExpression,
+callee name -> this.setData,
+param -> True" -> "{
+genderIndex -> genderIndex
+}"
+	"If Alternate" -> "CallExpression,
+callee name -> this.setData,
+param -> True"
+	"FunctionCall,
+function name -> changeGender,
+param -> e." -> "If Alternate"
+}
