@@ -10,7 +10,6 @@ from loguru import logger
 
 
 def analysis(js_file_path: str, mini_program: MiniProgram) -> FileContext:
-    logger.info(js_file_path)
     file_context = FileContext(Scope.FILE, js_file_path)
     ast_json = utils.generate_ast(js_file_path)
 
@@ -37,32 +36,6 @@ def file_level_analysis(ast_json: dict, file_context: FileContext, mini_program:
             if 'expression' in item:
                 expression_list.append(item)
                 find_page_obj(item['expression'], file_context)
-                # expression = item['expression']
-                # if 'type' in expression and expression['type']:
-                #     expression_type = expression['type']
-                #     if expression_type == 'CallExpression':
-                #         # 最普通的正常情况
-                #         if len(expression['arguments']) == 1:
-                #             page_obj = expression['arguments'][0]
-                #             if page_obj['type'] == 'ObjectExpression':
-                #                 file_context.page_object = page_obj
-                #             elif page_obj['type'] == 'SequenceExpression':
-                #                 for expression in page_obj['expressions']:
-                #                     if expression['type'] == 'AssignmentExpression':
-                #                         file_context.page_object = expression['right']
-                #                     elif expression['type'] == 'ObjectExpression':
-                #                         file_context.page_object = expression
-                #     elif expression_type == 'SequenceExpression':
-                #         for children_expression in expression['expressions']:
-                #             if 'callee' in children_expression and children_expression['callee'] and \
-                #                     'name' in children_expression['callee'] and children_expression['callee'][
-                #                 'name'] and \
-                #                     children_expression['callee']['name'] == 'App':
-                #                 file_context.page_object = children_expression['arguments'][0]
-                #     elif expression_type == 'AssignmentExpression':
-                #         right = expression['right']
-                #         if 'arguments' in right and right['arguments'] and len(right['arguments']) > 1:
-                #             file_context.page_object = right['arguments'][0]
 
     variable_table_analysis(file_context, mini_program)
     function_declaration_analysis(file_context, mini_program)

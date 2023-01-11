@@ -1,0 +1,6 @@
+// Test
+digraph {
+	"Node A" [label=a color=blue]
+	"Node B" [label=b color=red]
+	a -> b
+}

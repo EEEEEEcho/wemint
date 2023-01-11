@@ -82,22 +82,26 @@ def calculate_value(left_value, ops, right_value):
     if right_value is None:
         return recast_type(left_value)
 
-    if type(left_value) == str:
-        left_value = "'" + left_value + "'"
-    if type(right_value) == str:
-        right_value = "'" + right_value + "'"
+    if type(left_value) == str and type(right_value) == str:
+        if ops == '+':
+            return left_value + right_value
+    else:
+        if type(left_value) == str:
+            left_value = "'" + left_value + "'"
+        if type(right_value) == str:
+            right_value = "'" + right_value + "'"
 
-    expression = '"' + str(left_value) + ' ' + ops + ' ' + str(right_value) + '"'
-    js_util_path = config.PROJECT_ABSOLUTE_PATH + '/js_utils/eval_util.js'
-    _, ans = execute_cmd('node {} {}'.format(js_util_path, expression))
-    res = ans.split("\n")
-    variable_value = res[0]
-    variable_type = res[1]
-    if variable_type == 'number':
-        return recast_type(variable_value)
-    elif variable_type == 'string':
-        return str(variable_value)
-    return None
+        expression = '"' + str(left_value) + ' ' + ops + ' ' + str(right_value) + '"'
+        js_util_path = config.PROJECT_ABSOLUTE_PATH + '/js_utils/eval_util.js'
+        _, ans = execute_cmd('node {} {}'.format(js_util_path, expression))
+        res = ans.split("\n")
+        variable_value = res[0]
+        variable_type = res[1]
+        if variable_type == 'number':
+            return recast_type(variable_value)
+        elif variable_type == 'string':
+            return str(variable_value)
+        return None
 
 
 def execute_assign_operate(pre_value, operator, update_value):
@@ -151,3 +155,7 @@ def restore_ast_node(ast_node: dict):
     if code_str != "Error":
         return code_str.strip()
     return None
+
+#
+# ans = "'".replace("'", "\\'")
+# print(ans)

@@ -1,0 +1,26 @@
+// pages/input/input collectImage Data Flow
+digraph {
+	ae01f187cbaf4aeaa47e5721a65f82d6 [label="FunctionCall,
+function name -> collectImage,
+param -> None" color=blue]
+	"3d005f88dd1a4d2bbf0d04f23cdda6c9" [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> True" color=blue]
+	"8c134e76257f40d98fc9e640e38fc6e7" [label="FunctionCall,
+function name -> success,
+param -> res" color=blue]
+	"9c10870592154847b8ee1d729a96a286" [label="VariableDeclarator,
+left -> phone,
+right -> res.model + '-' + res.pixelRatio + '-' + res.screenWidth + '-' + res.screenHeight + '-' + res.system" color=blue]
+	"8c134e76257f40d98fc9e640e38fc6e7" -> "9c10870592154847b8ee1d729a96a286"
+	"8f079a5c138f4a0483ed142e637a930c" [label="CallExpression,
+callee name -> wx.request,
+param -> True" color=blue]
+	"88df49762bb24e389b046ff4691596ca" [label="{
+phoneName -> phone
+}" color=blue]
+	"8f079a5c138f4a0483ed142e637a930c" -> "88df49762bb24e389b046ff4691596ca"
+	"8c134e76257f40d98fc9e640e38fc6e7" -> "8f079a5c138f4a0483ed142e637a930c"
+	"3d005f88dd1a4d2bbf0d04f23cdda6c9" -> "8c134e76257f40d98fc9e640e38fc6e7"
+	ae01f187cbaf4aeaa47e5721a65f82d6 -> "3d005f88dd1a4d2bbf0d04f23cdda6c9"
+}

@@ -110,3 +110,6 @@ def decrypt_by_salt_and_iv(wxid, input_file, output_file, salt, iv):
     except Exception as e:
         logger.error(e)
         return False
+
+
+# decompile_app('F:\DataFlow\wx000b96cc505e1149-pc.wxapkg')

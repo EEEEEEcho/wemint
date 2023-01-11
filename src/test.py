@@ -1,13 +1,3 @@
-# import win32api
-# import win32con
-# import time
-# while True:
-#     win32api.keybd_event(69, 0, 0, 0)    #V
-#     time.sleep(0.2)
-#     win32api.keybd_event(69, 0, win32con.KEYEVENTF_KEYUP, 0)
-import os
-import shutil
-
 # file_names = """
 # wx0007df37d3ae60b2-pc
 # wx0009308a238b5105-pc
@@ -131,9 +121,3 @@ import shutil
 # lis = [1,2,3,4]
 # for i, item in enumerate(lis):
 #     print("{} {}".format(i,item))
-
-s = set()
-s.add(1)
-s.add(2)
-s.add(3)
-print('1' in s)

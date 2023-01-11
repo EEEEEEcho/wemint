@@ -134,3 +134,11 @@ Page({
     }
 
 })
+
+Page({
+    getPhoneNumber(e) {
+        this.setData({
+            phoneNumber: e.detail.value
+        })
+    },
+})

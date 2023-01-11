@@ -1,0 +1,86 @@
+// pages/input/input onLoad Data Flow
+digraph {
+	cc655091e2f14817914555cec9d70495 [label="FunctionCall,
+function name -> onLoad,
+param -> None" color=blue]
+	"59b777eb02a04a34ab0cd5bac9ce090e" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"9d2d423b7b4b42f78c52c076a89ce23a" [label="FunctionCall,
+function name -> loginwx,
+param -> None" color=blue]
+	"996a4bff910d4d8a9dcd47144a3d0a3e" [label="CallExpression,
+callee name -> wx.login,
+param -> True" color=blue]
+	d79ad819f2ae4cd3a9d55a05e61a17e1 [label="FunctionCall,
+function name -> success,
+param -> res" color=blue]
+	d0715c050ed34f27b83b9fb973ee3b8e [label="CallExpression,
+callee name -> console.log,
+param -> res.code" color=blue]
+	d79ad819f2ae4cd3a9d55a05e61a17e1 -> d0715c050ed34f27b83b9fb973ee3b8e
+	b584f0451cad4d56840d173021eaa6d2 [label="If Alternate" color=blue]
+	"84fcc2794884475e9c092a08de36329e" [label="CallExpression,
+callee name -> wx.request,
+param -> True" color=blue]
+	"5abdbfb96dda4a0d955e144b5e148991" [label="{
+url -> config.ppbaseDomain + '/user/getUserOppenId.json?loginCode=' + res.code + '&appsign=' + config.appsign
+}" color=blue]
+	"2a5a686fae16407f9dc6f9a64b8e8d6e" [label="FunctionCall,
+function name -> success,
+param -> res" color=blue]
+	f21929f1094f47d2a51ee3379c03426c [label="CallExpression,
+callee name -> console.log,
+param -> '获取用户信息' + res.data.openid" color=blue]
+	"2a5a686fae16407f9dc6f9a64b8e8d6e" -> f21929f1094f47d2a51ee3379c03426c
+	c6b671e2ce124c4c843d35d99a6e42b8 [label="Assignment,
+left -> that.userOppenId,
+right -> res.data.openid" color=blue]
+	"2a5a686fae16407f9dc6f9a64b8e8d6e" -> c6b671e2ce124c4c843d35d99a6e42b8
+	"7e4d176f1c894956b3f178410155484c" [label="If Alternate" color=blue]
+	"6c4b8c6c3fe2495198a6c5dc27301318" [label="CallExpression,
+callee name -> that.setData,
+param -> True" color=blue]
+	e6d328eeaebf4f199602c92cceb94e51 [label="{
+userOppenId -> that.userOppenId
+}" color=blue]
+	"6c4b8c6c3fe2495198a6c5dc27301318" -> e6d328eeaebf4f199602c92cceb94e51
+	"7e4d176f1c894956b3f178410155484c" -> "6c4b8c6c3fe2495198a6c5dc27301318"
+	"0a23263d879943faa699d9c841a3ba90" [label="CallExpression,
+callee name -> that.setData,
+param -> True" color=blue]
+	"8c3ad1ad43054fdeb5f02c2db9d1ba98" [label="{
+userOppenId -> that.userOppenId
+}" color=blue]
+	"0a23263d879943faa699d9c841a3ba90" -> "8c3ad1ad43054fdeb5f02c2db9d1ba98"
+	"7e4d176f1c894956b3f178410155484c" -> "0a23263d879943faa699d9c841a3ba90"
+	"2a5a686fae16407f9dc6f9a64b8e8d6e" -> "7e4d176f1c894956b3f178410155484c"
+	"2404258cf8d34010b6f4a2a0edf8c0a2" [label="CallExpression,
+callee name -> wx.request,
+param -> True" color=blue]
+	"7c7e8aa9242848eb8aa6d21f7bbcc6da" [label="{
+userOpenId -> that.userOppenId
+}" color=blue]
+	"2404258cf8d34010b6f4a2a0edf8c0a2" -> "7c7e8aa9242848eb8aa6d21f7bbcc6da"
+	"2a5a686fae16407f9dc6f9a64b8e8d6e" -> "2404258cf8d34010b6f4a2a0edf8c0a2"
+	"5abdbfb96dda4a0d955e144b5e148991" -> "2a5a686fae16407f9dc6f9a64b8e8d6e"
+	"84fcc2794884475e9c092a08de36329e" -> "5abdbfb96dda4a0d955e144b5e148991"
+	b584f0451cad4d56840d173021eaa6d2 -> "84fcc2794884475e9c092a08de36329e"
+	"8f1eeb54a97c4bcc832b35c98028be78" [label="CallExpression,
+callee name -> console.log,
+param -> '获取用户登录态失败\uFF01' + res.errMsg" color=blue]
+	b584f0451cad4d56840d173021eaa6d2 -> "8f1eeb54a97c4bcc832b35c98028be78"
+	d79ad819f2ae4cd3a9d55a05e61a17e1 -> b584f0451cad4d56840d173021eaa6d2
+	"996a4bff910d4d8a9dcd47144a3d0a3e" -> d79ad819f2ae4cd3a9d55a05e61a17e1
+	"242c39cbbad346c49a3fe4ecb122f5cd" [label="FunctionCall,
+function name -> complete,
+param -> e" color=blue]
+	"996a4bff910d4d8a9dcd47144a3d0a3e" -> "242c39cbbad346c49a3fe4ecb122f5cd"
+	"9cd9932f498a41c9942724ebc9c00507" [label="FunctionCall,
+function name -> fail,
+param -> e" color=blue]
+	"996a4bff910d4d8a9dcd47144a3d0a3e" -> "9cd9932f498a41c9942724ebc9c00507"
+	"9d2d423b7b4b42f78c52c076a89ce23a" -> "996a4bff910d4d8a9dcd47144a3d0a3e"
+	"59b777eb02a04a34ab0cd5bac9ce090e" -> "9d2d423b7b4b42f78c52c076a89ce23a"
+	cc655091e2f14817914555cec9d70495 -> "59b777eb02a04a34ab0cd5bac9ce090e"
+}

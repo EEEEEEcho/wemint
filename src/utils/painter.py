@@ -3,6 +3,7 @@ from graphviz import Digraph
 from loguru import logger
 import json
 
+
 t = "{'route_type': {'description': 'FunctionCall', 'function_name': 'login', 'param': None}, 'is_path': True, " \
     "'next': [{'route_type': {'description': 'If Alternate'}, 'is_path': True, 'next': [{'route_type': {" \
     "'description': 'VariableDeclarator', 'left': 'phoneNumber', 'right': 'this.data.phoneNumber'}, 'is_path': True, " \
@@ -24,14 +25,16 @@ def paint_trace(trace: Trace, xml_path: str, page_name: str, function_name: str)
 
 
 def dfs(trace: Trace, digraph: Digraph):
-    logger.info(trace)
-    if trace.is_path:
-        digraph.node(name=trace.route_type.get_description(), label=trace.route_type.get_description(),
+    if trace.is_path and trace.route_type:
+        # digraph.node(name=trace.route_type.get_description(), label=trace.route_type.get_description(),
+        #              color='blue')
+        digraph.node(name=trace.id, label=trace.route_type.get_description(),
                      color='blue')
         if trace.next:
             for next_trace in trace.next:
                 dfs(next_trace, digraph)
-                digraph.edge(trace.route_type.get_description(), next_trace.route_type.get_description())
+                digraph.edge(trace.id, next_trace.id)
+
 
 # paint_trace(trace_json, 'HHHHH')
 # digraph = Digraph(comment=' Data Flow')
@@ -40,3 +43,9 @@ def dfs(trace: Trace, digraph: Digraph):
 #              shape='rectangle',
 #              color='blue')
 # digraph.render('./test.gv', view=True)
+# graph = Digraph(comment="Test")
+# graph.node(name='Node A', label='a', color='blue')
+# graph.node(name='Node B', label='b', color='red')
+# graph.edge('a', 'b')
+# graph.render("test", view=True)
+# logger.info(str(uuid.uuid4()).replace('-', ''))

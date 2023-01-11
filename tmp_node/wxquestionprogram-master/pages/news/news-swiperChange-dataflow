@@ -2,9 +2,9 @@
 digraph {
 	"FunctionCall,
 function name -> swiperChange,
-param -> e.detail" [label="FunctionCall,
+param -> e." [label="FunctionCall,
 function name -> swiperChange,
-param -> e.detail" color=blue]
+param -> e." color=blue]
 	"VariableDeclarator,
 left -> source,
 right -> e.detail" [label="VariableDeclarator,
@@ -12,7 +12,7 @@ left -> source,
 right -> e.detail" color=blue]
 	"FunctionCall,
 function name -> swiperChange,
-param -> e.detail" -> "VariableDeclarator,
+param -> e." -> "VariableDeclarator,
 left -> source,
 right -> e.detail"
 	"If Alternate" [label="If Alternate" color=blue]
@@ -36,5 +36,5 @@ callee name -> this.setData,
 param -> True"
 	"FunctionCall,
 function name -> swiperChange,
-param -> e.detail" -> "If Alternate"
+param -> e." -> "If Alternate"
 }

@@ -6,6 +6,7 @@ from src.utils import package_decoder
 from src.pojo.miniprogram import MiniProgram
 from src.file_layer import js_analyzer
 from src.file_layer import xml_analyzer
+from src.file_layer import component_analyzer
 from src import test
 
 
@@ -44,15 +45,26 @@ def main():
     #             leak_count += 1
     # logger.info(leak_count)
 
-    base_path = r'E:\WorkSpace\wxapp-analyzer\tmp_dir'
-    program_name = r'\wechat-weapp-movie-master'
+    base_path = r'F:/DataFlow/'
+    program_name = r'wx000b96cc505e1149-pc'
     mini_program = MiniProgram(base_path, program_name)
     js_analyzer.app_js_analysis(mini_program.path + os.sep + 'app.js', mini_program)
     for page_name in mini_program.pages:
-        js_path = mini_program.path + os.sep + page_name + '.js'
-        xml_path = mini_program.path + os.sep + page_name + '.wxml'
-        js_context = js_analyzer.analysis(js_path, mini_program)
-        xml_analyzer.analysis(js_context, xml_path, page_name)
+        try:
+            logger.info("start analysis {} ".format(page_name))
+            js_path = mini_program.path + os.sep + page_name + '.js'
+            xml_path = mini_program.path + os.sep + page_name + '.wxml'
+            json_path = mini_program.path + os.sep + page_name + '.json'
+
+            js_context = js_analyzer.analysis(js_path, mini_program)
+            dom_set = xml_analyzer.analysis(js_context, xml_path, page_name)
+            component_path_list = component_analyzer.find_component_list(json_path, dom_set)
+            logger.info(component_path_list)
+        except Exception as e:
+            logger.exception(e)
+
+        # for component_path in component_path_list:
+
     # 清空已分析的文件
     af.clear()
     mini_program.secret_leak_checker.do_verify()

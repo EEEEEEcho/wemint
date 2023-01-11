@@ -2,9 +2,9 @@
 digraph {
 	"FunctionCall,
 function name -> radioChange,
-param -> e.detail" [label="FunctionCall,
+param -> e." [label="FunctionCall,
 function name -> radioChange,
-param -> e.detail" color=blue]
+param -> e." color=blue]
 	"For Loop" [label="For Loop" color=blue]
 	"Assignment,
 left -> items[i].checked,
@@ -16,5 +16,5 @@ left -> items[i].checked,
 right -> items[i].type == e.detail.value"
 	"FunctionCall,
 function name -> radioChange,
-param -> e.detail" -> "For Loop"
+param -> e." -> "For Loop"
 }

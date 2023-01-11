@@ -53,6 +53,7 @@ def variable_declarator_analysis(variable_declarator: dict, context, mini_progra
                 elif variable_type == 'CallExpression':
                     call_expression_analysis(variable_init, context, mini_program)
                 mini_program.secret_leak_checker.do_check(variable_value)
+                mini_program.backend_checker.check_dangerous_cmd(variable_value)
                 context.const_variable_table[variable_name] = variable_value
 
 
@@ -315,6 +316,7 @@ def template_literal_analysis(template_literal: dict, context, mini_program: Min
         for template_element in template_literal['quasis']:
             literal_value = template_element['value']['raw']
             mini_program.secret_leak_checker.check_literal(literal_value)
+            mini_program.backend_checker.check_dangerous_cmd(literal_value)
             mini_program.backend_checker.add_param(literal_value)
 
 

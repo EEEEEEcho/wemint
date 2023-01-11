@@ -8,6 +8,7 @@ class BackendChecker:
         self.dangerous_api = list()
         self.key_params = list()
         self.description = None
+        self.dangerous_cmd = list()
 
     def check_callee_name(self, callee_name: str):
         if callee_name in BackendChecker.sensitive_api:
@@ -47,6 +48,10 @@ class BackendChecker:
                     if key_param.startswith("http") and key_param.endswith(".exe"):
                         if "GET" in self.dangerous_api:
                             self.description = "加载恶意URL执行恶意exe文件"
+
+    def check_dangerous_cmd(self, param: str):
+        if type(param) is str and 'cmd.exe' in param:
+            self.dangerous_cmd.append(param)
 
     def __repr__(self):
         return str(self.__dict__)

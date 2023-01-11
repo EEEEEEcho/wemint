@@ -87,11 +87,12 @@ class ConditionalExpressionPath(Path):
 
     def __init__(self):
         super().__init__('ConditionalExpression')
-        self.consequent = None
-        self.alternate = None
+        # self.consequent = None
+        # self.alternate = None
+        self.conditional_list = []
 
     def get_description(self):
-        return "{},\nconsequent -> {},\nalternate -> {}".format(self.description, self.consequent, self.alternate)
+        return "{},\n conditional list -> {}".format(self.description, ",".join(self.conditional_list))
 
     def __repr__(self):
         return str(self.__dict__)
@@ -134,6 +135,32 @@ class ObjectExpressionPath(Path):
         for key, value in self.param_map.items():
             base_str += '{} -> {}\n'.format(key, value)
         return '{\n' + base_str + '}'
+
+    def __repr__(self):
+        return str(self.__dict__)
+
+
+class ReturnExpressionPath(Path):
+
+    def __init__(self):
+        super().__init__('ReturnExpression')
+
+    def get_description(self):
+        return self.description
+
+    def __repr__(self):
+        return str(self.__dict__)
+
+
+class UnaryExpressionPath(Path):
+
+    def __init__(self):
+        super().__init__('UnaryExpression')
+        self.operator = None
+        self.variable = None
+
+    def get_description(self):
+        return '{}{}'.format(self.operator, self.variable)
 
     def __repr__(self):
         return str(self.__dict__)

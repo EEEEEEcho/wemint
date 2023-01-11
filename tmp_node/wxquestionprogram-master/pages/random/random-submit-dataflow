@@ -19,69 +19,64 @@ right -> this.data.userSelected"
 	"If Alternate" [label="If Alternate" color=blue]
 	"CallExpression,
 callee name -> this.dealErrorOption,
-param -> True" [label="CallExpression,
+param -> userSelect" [label="CallExpression,
 callee name -> this.dealErrorOption,
-param -> True" color=blue]
+param -> userSelect" color=blue]
+	"FunctionCall,
+function name -> dealErrorOption,
+param -> userSelect" [label="FunctionCall,
+function name -> dealErrorOption,
+param -> userSelect" color=blue]
+	"Assignment,
+left -> wrong.userSelect,
+right -> userSelect" [label="Assignment,
+left -> wrong.userSelect,
+right -> userSelect" color=blue]
+	"FunctionCall,
+function name -> dealErrorOption,
+param -> userSelect" -> "Assignment,
+left -> wrong.userSelect,
+right -> userSelect"
+	"CallExpression,
+callee name -> this.dealErrorOption,
+param -> userSelect" -> "FunctionCall,
+function name -> dealErrorOption,
+param -> userSelect"
 	"If Alternate" -> "CallExpression,
 callee name -> this.dealErrorOption,
-param -> True"
+param -> userSelect"
 	"If Alternate" -> "If Alternate"
 	"If Alternate" [label="If Alternate" color=blue]
 	"CallExpression,
 callee name -> this.dealErrorOption,
-param -> True" [label="CallExpression,
+param -> userSelect" [label="CallExpression,
 callee name -> this.dealErrorOption,
-param -> True" color=blue]
+param -> userSelect" color=blue]
+	"FunctionCall,
+function name -> dealErrorOption,
+param -> userSelect" [label="FunctionCall,
+function name -> dealErrorOption,
+param -> userSelect" color=blue]
+	"Assignment,
+left -> wrong.userSelect,
+right -> userSelect" [label="Assignment,
+left -> wrong.userSelect,
+right -> userSelect" color=blue]
+	"FunctionCall,
+function name -> dealErrorOption,
+param -> userSelect" -> "Assignment,
+left -> wrong.userSelect,
+right -> userSelect"
+	"CallExpression,
+callee name -> this.dealErrorOption,
+param -> userSelect" -> "FunctionCall,
+function name -> dealErrorOption,
+param -> userSelect"
 	"If Alternate" -> "CallExpression,
 callee name -> this.dealErrorOption,
-param -> True"
+param -> userSelect"
 	"If Alternate" -> "If Alternate"
 	"FunctionCall,
 function name -> submit,
 param -> " -> "If Alternate"
-	"CallExpression,
-callee name -> setTimeout,
-param -> True" [label="CallExpression,
-callee name -> setTimeout,
-param -> True" color=blue]
-	"FunctionCall,
-function name -> Arrow Function,
-param -> None" [label="FunctionCall,
-function name -> Arrow Function,
-param -> None" color=blue]
-	"If Alternate" [label="If Alternate" color=blue]
-	"CallExpression,
-callee name -> this.setData,
-param -> True" [label="CallExpression,
-callee name -> this.setData,
-param -> True" color=blue]
-	"{
-current -> this.data.current
-isChecked -> this.data.isChecked
-}" [label="{
-current -> this.data.current
-isChecked -> this.data.isChecked
-}" color=blue]
-	"CallExpression,
-callee name -> this.setData,
-param -> True" -> "{
-current -> this.data.current
-isChecked -> this.data.isChecked
-}"
-	"If Alternate" -> "CallExpression,
-callee name -> this.setData,
-param -> True"
-	"FunctionCall,
-function name -> Arrow Function,
-param -> None" -> "If Alternate"
-	"CallExpression,
-callee name -> setTimeout,
-param -> True" -> "FunctionCall,
-function name -> Arrow Function,
-param -> None"
-	"FunctionCall,
-function name -> submit,
-param -> " -> "CallExpression,
-callee name -> setTimeout,
-param -> True"
 }

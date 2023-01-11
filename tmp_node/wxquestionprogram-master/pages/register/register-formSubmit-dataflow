@@ -2,9 +2,9 @@
 digraph {
 	"FunctionCall,
 function name -> formSubmit,
-param -> e.detail" [label="FunctionCall,
+param -> e." [label="FunctionCall,
 function name -> formSubmit,
-param -> e.detail" color=blue]
+param -> e." color=blue]
 	"VariableDeclarator,
 left -> realName,
 right -> e.detail.value['realName']" [label="VariableDeclarator,
@@ -12,7 +12,7 @@ left -> realName,
 right -> e.detail.value['realName']" color=blue]
 	"FunctionCall,
 function name -> formSubmit,
-param -> e.detail" -> "VariableDeclarator,
+param -> e." -> "VariableDeclarator,
 left -> realName,
 right -> e.detail.value['realName']"
 	"VariableDeclarator,
@@ -22,7 +22,7 @@ left -> phoneNumber,
 right -> e.detail.value['phoneNumber']" color=blue]
 	"FunctionCall,
 function name -> formSubmit,
-param -> e.detail" -> "VariableDeclarator,
+param -> e." -> "VariableDeclarator,
 left -> phoneNumber,
 right -> e.detail.value['phoneNumber']"
 	"VariableDeclarator,
@@ -32,7 +32,7 @@ left -> password,
 right -> e.detail.value['password']" color=blue]
 	"FunctionCall,
 function name -> formSubmit,
-param -> e.detail" -> "VariableDeclarator,
+param -> e." -> "VariableDeclarator,
 left -> password,
 right -> e.detail.value['password']"
 	"VariableDeclarator,
@@ -42,7 +42,7 @@ left -> repassword,
 right -> e.detail.value['repassword']" color=blue]
 	"FunctionCall,
 function name -> formSubmit,
-param -> e.detail" -> "VariableDeclarator,
+param -> e." -> "VariableDeclarator,
 left -> repassword,
 right -> e.detail.value['repassword']"
 	"VariableDeclarator,
@@ -52,7 +52,7 @@ left -> inviteCode,
 right -> e.detail.value['inviteCode']" color=blue]
 	"FunctionCall,
 function name -> formSubmit,
-param -> e.detail" -> "VariableDeclarator,
+param -> e." -> "VariableDeclarator,
 left -> inviteCode,
 right -> e.detail.value['inviteCode']"
 	AwaitExpression [label=AwaitExpression color=blue]
@@ -85,5 +85,5 @@ callee name -> utils.Http.asyncRequest,
 param -> True"
 	"FunctionCall,
 function name -> formSubmit,
-param -> e.detail" -> AwaitExpression
+param -> e." -> AwaitExpression
 }

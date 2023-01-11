@@ -1,4 +1,0 @@
-//  Data Flow
-digraph {
-	"{'description': 'FunctionCall', 'function_name': 'login', 'param': None}" [label="{'description': 'FunctionCall', 'function_name': 'login', 'param': None}" color=blue shape=rectangle]
-}

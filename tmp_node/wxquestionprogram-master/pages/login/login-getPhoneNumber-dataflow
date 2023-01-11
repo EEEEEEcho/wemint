@@ -2,9 +2,9 @@
 digraph {
 	"FunctionCall,
 function name -> getPhoneNumber,
-param -> e.detail" [label="FunctionCall,
+param -> e." [label="FunctionCall,
 function name -> getPhoneNumber,
-param -> e.detail" color=blue]
+param -> e." color=blue]
 	"CallExpression,
 callee name -> this.setData,
 param -> True" [label="CallExpression,
@@ -22,7 +22,7 @@ phoneNumber -> e.detail.value
 }"
 	"FunctionCall,
 function name -> getPhoneNumber,
-param -> e.detail" -> "CallExpression,
+param -> e." -> "CallExpression,
 callee name -> this.setData,
 param -> True"
 }
