@@ -1,46 +1,14 @@
-<!--<view class="container">-->
-
-<!--    <form catchsubmit="formSubmit" catchreset="formReset">-->
-<!--        <view class="page-section">-->
-<!--            <view class="weui-cell weui-cell_input">-->
-<!--                <view class="weui-cell__bd">-->
-<!--                    <input class="weui-input" name="realName" placeholder="姓名" id="realName" />-->
-<!--                </view>-->
-<!--            </view>-->
-<!--            <view class="weui-cell weui-cell_input">-->
-<!--                <view class="weui-cell__bd">-->
-<!--                    <input class="weui-input" maxlength="11" name="phoneNumber" placeholder="手机号" id="phoneNumber" />-->
-<!--                </view>-->
-<!--            </view>-->
-<!--            <view class="select-wrap">-->
-<!--                <text class="bumen">部门</text>-->
-<!--                <select style="width:86%;border:2rpx solid #af1616;" id="select" options="{{options}}" key="department_id" text="department_name" bind:change="change"></select>-->
-<!--            </view>-->
-<!--            <view class="weui-cell weui-cell_input">-->
-<!--                <view class="weui-cell__bd">-->
-<!--                    <input class="weui-input" name="password" placeholder="密码" id="password" />-->
-<!--                </view>-->
-<!--            </view>-->
-<!--            <view class="weui-cell weui-cell_input">-->
-<!--                <view class="weui-cell__bd">-->
-<!--                    <input class="weui-input" name="repassword" placeholder="确认密码" id="repassword" />-->
-<!--                </view>-->
-<!--            </view>-->
-<!--            <view class="weui-cell weui-cell_input">-->
-<!--                <view class="weui-cell__bd">-->
-<!--                    <input class="weui-input" name="inviteCode" placeholder="邀请码" id="inviteCode" />-->
-<!--                </view>-->
-<!--            </view>-->
-<!--        </view>-->
-
-<!--        <view class="button-area">-->
-<!--            <button type="primary" formType="submit">提交</button>-->
-<!--        </view>-->
-<!--    </form>-->
-<!--</view>-->
-
-
-<map longitude="{{longitude}}" latitude="{{latitude}}" class="location-map"></map>
-<view class="location-address">您的当前位置在：{{formatted_address}}</view>
-<view class="location-coord">gps坐标：经度({{latitude}}),纬度纬度({{longitude}})</view>
-<button class="location-refresh" type="primary" loading="{{loading}}" bindtap="refreshLocation">重新定位</button>
+<!--pages/login/login.wxml-->
+<view class="section__ctn">
+    <image src="{{src}}"></image>
+</view>
+<view>
+    <view>
+        <input class="phone" maxlength="11" type="text" placeholder="请输入手机号" id="phoneNumber" bindinput="getPhoneNumber" />
+    </view>
+    <view>
+        <input class="pwd" type="password" placeholder="请输入密码" id="password" bindinput="getPassword" />
+    </view>
+    <button class="log" bindtap="login">登录</button>
+    <button class="reg" bindtap="register">注册</button>
+</view>

@@ -6,6 +6,7 @@ import os
 import subprocess
 import json
 import re
+import copy
 
 request_methods = {'request'}
 navigation_methods = {
@@ -155,6 +156,27 @@ def restore_ast_node(ast_node: dict):
     if code_str != "Error":
         return code_str.strip()
     return None
+
+
+def create_param_set(function_node: dict, argument_position_list: list = None):
+    param_set = set()
+    if argument_position_list is not None:
+        if function_node['params'] and len(function_node['params']) > 0:
+            params = copy.deepcopy(function_node['params'])
+            for position in argument_position_list:
+                param = params[position]
+                if param['type'] == 'Identifier':
+                    param_set.add(param['name'])
+                    param_set.add(param['name'] + '.')
+                    del function_node['params'][position]
+    else:
+        function_node_params = function_node['params']
+        for param in function_node_params[:]:
+            if param['type'] == 'Identifier':
+                param_set.add(param['name'])
+                param_set.add(param['name'] + '.')
+                function_node_params.remove(param)
+    return param_set
 
 #
 # ans = "'".replace("'", "\\'")

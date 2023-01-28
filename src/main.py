@@ -46,7 +46,7 @@ def main():
     # logger.info(leak_count)
 
     base_path = r'F:/DataFlow/'
-    program_name = r'wx000b96cc505e1149-pc'
+    program_name = r'wxquestionprogram-master'
     mini_program = MiniProgram(base_path, program_name)
     js_analyzer.app_js_analysis(mini_program.path + os.sep + 'app.js', mini_program)
     for page_name in mini_program.pages:
@@ -59,7 +59,9 @@ def main():
             js_context = js_analyzer.analysis(js_path, mini_program)
             dom_set = xml_analyzer.analysis(js_context, xml_path, page_name)
             component_path_list = component_analyzer.find_component_list(json_path, dom_set)
-            logger.info(component_path_list)
+            # logger.info(component_path_list)
+            # for component_path in component_path_list:
+            #     js_analyzer.analysis(component_path, mini_program)
         except Exception as e:
             logger.exception(e)
 

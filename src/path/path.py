@@ -24,13 +24,16 @@ class AssignPath(Path):
 
 
 class FunctionPath(Path):
-    def __init__(self, function_name: str = None, params: str = None):
+    def __init__(self, function_name: str = None):
         super().__init__('FunctionCall')
         self.function_name = function_name
-        self.params = params
+        self.params = list()
 
     def get_description(self):
-        return "{},\nfunction name -> {},\nparam -> {}".format(self.description, self.function_name, self.params)
+        base_str = ""
+        for param in self.params:
+            base_str += "{},\n".format(param)
+        return "{},\nfunction name -> {},\nparam -> {}".format(self.description, self.function_name, base_str)
 
     def __repr__(self):
         return str(self.__dict__)
@@ -57,13 +60,16 @@ class VariableDeclaratorPath(Path):
 
 class CallExpressionPath(Path):
 
-    def __init__(self, callee_name: str = None, params: str = None):
+    def __init__(self, callee_name: str = None):
         super().__init__('CallExpression')
         self.callee = callee_name
-        self.params = params
+        self.params = list()
 
     def get_description(self):
-        return "{},\ncallee name -> {},\nparam -> {}".format(self.description, self.callee, self.params)
+        base_str = ""
+        for param in self.params:
+            base_str += "{},\n".format(param)
+        return "{},\ncallee name -> {},\nparam -> {}".format(self.description, self.callee, base_str)
 
     def __repr__(self):
         return str(self.__dict__)
@@ -134,7 +140,7 @@ class ObjectExpressionPath(Path):
         base_str = ""
         for key, value in self.param_map.items():
             base_str += '{} -> {}\n'.format(key, value)
-        return '{\n' + base_str + '}'
+        return 'Object Properties\n{\n' + base_str + '}'
 
     def __repr__(self):
         return str(self.__dict__)

@@ -1,0 +1,20 @@
+// pages/input/input login Data Flow
+digraph {
+	f7cae109e190447d877ffa45586f4206 [label="FunctionCall,
+function name -> login,
+param -> " color=blue]
+	"31159928096d4665aef173630cddc880" [label=AwaitExpression color=blue]
+	"3b902bb72cb94f24a8fefbd81b2f114c" [label="CallExpression,
+callee name -> utils.Http.asyncWXLogin,
+param -> " color=blue]
+	"8856d5cbe0054d8abcd1fa95cb94913d" [label="FunctionCall,
+function name -> Arrow Function,
+param -> " color=blue]
+	"28d2a79dac6b4667b55ebdb1d89d29d5" [label="Assignment,
+left -> code,
+right -> res.code" color=blue]
+	"8856d5cbe0054d8abcd1fa95cb94913d" -> "28d2a79dac6b4667b55ebdb1d89d29d5"
+	"3b902bb72cb94f24a8fefbd81b2f114c" -> "8856d5cbe0054d8abcd1fa95cb94913d"
+	"31159928096d4665aef173630cddc880" -> "3b902bb72cb94f24a8fefbd81b2f114c"
+	f7cae109e190447d877ffa45586f4206 -> "31159928096d4665aef173630cddc880"
+}
