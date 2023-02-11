@@ -1,0 +1,23 @@
+// pages/input/input moneyInput Data Flow
+digraph {
+	"31c0f8e5a94d4915b586153a7817dc81" [label="FunctionCall,
+function name -> moneyInput,
+param -> t,
+t.,
+" color=blue]
+	"47e454fb8aa0421e9face72655657385" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	ae14d6e16f484f22885e3f169876cc17 [label=SequenceExpression color=blue]
+	"27a61102f9394d09b9ae8c9bf2ffb321" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"74a241448cdb4a05a73a0693110f92b1" [label="Object Properties
+{
+txtMoney -> t.detail.value
+}" color=blue]
+	"27a61102f9394d09b9ae8c9bf2ffb321" -> "74a241448cdb4a05a73a0693110f92b1"
+	ae14d6e16f484f22885e3f169876cc17 -> "27a61102f9394d09b9ae8c9bf2ffb321"
+	"47e454fb8aa0421e9face72655657385" -> ae14d6e16f484f22885e3f169876cc17
+	"31c0f8e5a94d4915b586153a7817dc81" -> "47e454fb8aa0421e9face72655657385"
+}

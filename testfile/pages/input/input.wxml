@@ -1,14 +1,2 @@
 <!--pages/login/login.wxml-->
-<view class="section__ctn">
-    <image src="{{src}}"></image>
-</view>
-<view>
-    <view>
-        <input class="phone" maxlength="11" type="text" placeholder="请输入手机号" id="phoneNumber" bindinput="getPhoneNumber" />
-    </view>
-    <view>
-        <input class="pwd" type="password" placeholder="请输入密码" id="password" bindinput="getPassword" />
-    </view>
-    <button class="log" bindtap="login">登录</button>
-    <button class="reg" bindtap="register">注册</button>
-</view>
+<view bindtap="moneyInput"></view>

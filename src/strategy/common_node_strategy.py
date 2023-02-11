@@ -274,6 +274,7 @@ def call_expression_analysis(call_expression: dict, context, mini_program: MiniP
         elif argument['type'] == 'ObjectExpression' or argument['type'] == 'ArrayExpression':
             object_value = object_node_analysis(argument, context, mini_program)
             mini_program.secret_leak_checker.check_object(object_value)
+        # exec("cmd" + ":xxxx")
         elif argument['type'] == 'BinaryExpression':
             object_value = binary_expression_analysis(argument, context)
             mini_program.secret_leak_checker.check_literal(object_value)

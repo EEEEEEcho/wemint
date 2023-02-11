@@ -112,4 +112,4 @@ def decrypt_by_salt_and_iv(wxid, input_file, output_file, salt, iv):
         return False
 
 
-# decompile_app('F:\DataFlow\wx000b96cc505e1149-pc.wxapkg')
+# decompile_app('F:\DataFlow\wx000d416d0d443fa7-pc.wxapkg')

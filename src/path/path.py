@@ -104,10 +104,34 @@ class ConditionalExpressionPath(Path):
         return str(self.__dict__)
 
 
+class VariableDeclarationsPath(Path):
+
+    def __init__(self):
+        super().__init__('VariableDeclarations')
+
+    def get_description(self):
+        return self.description
+
+    def __repr__(self):
+        return str(self.__dict__)
+
+
 class AwaitExpressionPath(Path):
 
     def __init__(self):
         super().__init__('AwaitExpression')
+
+    def get_description(self):
+        return self.description
+
+    def __repr__(self):
+        return str(self.__dict__)
+
+
+class SequenceExpressionPath(Path):
+
+    def __init__(self):
+        super().__init__('SequenceExpression')
 
     def get_description(self):
         return self.description

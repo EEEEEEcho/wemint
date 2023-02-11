@@ -1,3 +1,5 @@
+import copy
+
 from src.path.trace import Trace
 from src.path.path import *
 from src.utils.page_data import PageData
@@ -7,12 +9,12 @@ import src.utils.utils as utils
 
 
 def find_trace(param_set: set, node: dict, page_data: PageData, page_function_table: dict,
-               is_event_function: bool = False):
+               need_new_param: bool = True):
     trace = Trace()
     if 'type' in node and node['type']:
         node_type = node['type']
         if node_type == 'FunctionExpression':
-            function_expression_exam(trace, node, param_set, page_data, page_function_table, is_event_function)
+            function_expression_exam(trace, node, param_set, page_data, page_function_table, need_new_param)
         elif node_type == 'VariableDeclaration':
             variable_declaration_exam(trace, node, param_set, page_data, page_function_table)
         elif node_type == 'VariableDeclarator':
@@ -30,7 +32,7 @@ def find_trace(param_set: set, node: dict, page_data: PageData, page_function_ta
         elif node_type == 'CallExpression':
             call_expression_exam(trace, node, param_set, page_data, page_function_table)
         elif node_type == 'ArrowFunctionExpression':
-            arrow_function_exam(trace, node, param_set, page_data, page_function_table)
+            arrow_function_exam(trace, node, param_set, page_data, page_function_table, need_new_param)
         elif node_type == 'ObjectExpression' or node_type == 'ArrayExpression':
             trace.route_type = ObjectExpressionPath()
             object_expression_exam(trace, node, param_set, page_data, page_function_table)
@@ -42,12 +44,22 @@ def find_trace(param_set: set, node: dict, page_data: PageData, page_function_ta
             unary_expression_exam(trace, node, param_set, page_data, page_function_table)
         elif node_type == 'LogicalExpression':
             logical_expression_exam(trace, node, param_set, page_data, page_function_table)
-        elif node_type == 'Literal':
-            trace.route_type = Path('Literal')
-        elif node_type == 'NewExpression':
-            trace.route_type = Path('New Object')
         elif node_type == 'ReturnStatement':
             return_expression_exam(trace, node, param_set, page_data, page_function_table)
+        elif node_type == 'SequenceExpression':
+            sequence_expression_exam(trace, node, param_set, page_data, page_function_table)
+        elif node_type == 'AssignmentExpression':
+            assign_expression_analysis(trace, node, param_set, page_data, page_function_table)
+        elif node_type == 'BinaryExpression':
+            binary_expression_exam(trace, node, param_set, page_data, page_function_table)
+        elif node_type == 'MemberExpression':
+            trace.route_type = Path("MemberExpression")
+        elif node_type == 'Literal':
+            trace.route_type = Path('Literal')
+        elif node_type == 'Identifier':
+            trace.route_type = Path('Identifier')
+        elif node_type == 'NewExpression':
+            trace.route_type = Path('New Object')
         elif node_type == 'EmptyStatement':
             trace.route_type = Path("EmptyStatement")
         elif node_type == 'BreakStatement':
@@ -60,14 +72,15 @@ def find_trace(param_set: set, node: dict, page_data: PageData, page_function_ta
 
 
 def function_expression_exam(trace: Trace, function_expression: dict, param_set: set, page_data: PageData,
-                             page_function_table: dict, is_event_function: bool, arguments_position_list: list = None):
+                             page_function_table: dict, need_new_param: bool,
+                             arguments_position_list: list = None):
     trace.route_type = FunctionPath()
     if function_expression['id'] and 'name' in function_expression['id']:
         trace.route_type.function_name = function_expression['id']['name']
     else:
         trace.route_type.function_name = 'Anonymous Function'
     block_statement = function_expression['body']
-    if is_event_function:
+    if need_new_param:
         # 如果是事件函数，那么肯定要分析参数列表
         new_param_set = utils.create_param_set(function_expression, arguments_position_list)
     else:
@@ -87,18 +100,17 @@ def function_expression_exam(trace: Trace, function_expression: dict, param_set:
 
 
 def arrow_function_exam(trace: Trace, arrow_function_expression: dict, param_set: set, page_data: PageData,
-                        page_function_table: dict):
+                        page_function_table: dict, need_new_param: bool):
     trace.route_type = FunctionPath()
     if 'id' in arrow_function_expression and arrow_function_expression['id']:
         if 'name' in arrow_function_expression['id'] and arrow_function_expression['id']['name']:
             trace.route_type.function_name = arrow_function_expression['id']['name']
     else:
         trace.route_type.function_name = 'Arrow Function'
-    new_param_set = utils.create_param_set(arrow_function_expression)
     if 'params' in arrow_function_expression and arrow_function_expression['params']:
         for param in arrow_function_expression['params']:
             suspicious_node_exam(trace, param, param_set, page_data, page_function_table)
-    if need_new_set:
+    if need_new_param:
         new_param_set = utils.create_param_set(arrow_function_expression)
     else:
         new_param_set = param_set
@@ -108,7 +120,7 @@ def arrow_function_exam(trace: Trace, arrow_function_expression: dict, param_set
 
 
 def suspicious_node_exam(trace: Trace, suspicious_node: dict, param_set: set, page_data: PageData,
-                         page_function_table: dict, variable_name=None):
+                         page_function_table: dict, variable_name=None, need_new_param: bool = True):
     node_type = suspicious_node['type']
     route_type = type(trace.route_type)
     if node_type == 'Identifier':
@@ -196,7 +208,8 @@ def suspicious_node_exam(trace: Trace, suspicious_node: dict, param_set: set, pa
         if not page_data.is_empty():
             param_set.add(variable_name)
     else:
-        new_trace = find_trace(param_set, suspicious_node, page_data, page_function_table)
+        new_trace = find_trace(param_set, suspicious_node, page_data, page_function_table,
+                               need_new_param)
         if new_trace.is_path:
             trace.is_path = True
             trace.next.append(new_trace)
@@ -228,6 +241,10 @@ def conditional_expression_exam(trace: Trace, conditional_expression: dict, para
     if 'alternate' in conditional_expression and conditional_expression['alternate']:
         suspicious_node_exam(trace, conditional_expression['alternate'], param_set, page_data, page_function_table)
 
+
+# def member_expression_exam(trace: Trace, member_expression: dict, param_set: set, page_data: PageData,
+#                            page_function_table: dict):
+#     variable_value = utils.restore_ast_node(member_expression)
 
 # def param_list_exam(trace: Trace, param_list: list, param_set: set):
 #     for param in param_list:
@@ -267,9 +284,14 @@ def unary_expression_exam(trace: Trace, conditional_expression: dict, param_set:
 
 def variable_declaration_exam(trace: Trace, variable_declaration_node: dict, param_set: set, page_data: PageData,
                               page_function_table: dict):
+    trace.route_type = VariableDeclarationsPath()
     if 'declarations' in variable_declaration_node:
         for declaration in variable_declaration_node['declarations']:
-            variable_declarator_exam(trace, declaration, param_set, page_data, page_function_table)
+            next_trace = find_trace(param_set, declaration, page_data, declaration)
+            # variable_declarator_exam(trace, declaration, param_set, page_data, page_function_table)
+            if next_trace.is_path:
+                trace.is_path = True
+                trace.next.append(next_trace)
 
 
 def variable_declarator_exam(trace: Trace, variable_declarator_node: dict, param_set: set, page_data: PageData,
@@ -311,8 +333,13 @@ def expression_statement_exam(trace: Trace, expression_statement: dict, param_se
                 sequence_expression_exam(trace, expression, param_set, page_data, page_function_table)
             elif expression_type == 'LogicalExpression':
                 logical_expression_exam(trace, expression, param_set, page_data, page_function_table)
+            elif expression_type == 'BinaryExpression':
+                binary_expression_exam(trace, expression, param_set, page_data, page_function_table)
             else:
-                logger.error('Expression Type Error: {}'.format(expression_type))
+                new_trace = find_trace(param_set, expression, page_data, page_function_table)
+                if new_trace.is_path:
+                    trace.is_path = True
+                    trace.next.append(new_trace)
 
 
 def call_expression_exam(trace: Trace, call_expression: dict, param_set: set, page_data: PageData,
@@ -327,14 +354,14 @@ def call_expression_exam(trace: Trace, call_expression: dict, param_set: set, pa
         call_back_functions = extract_call_back_function(arguments)
         # 然后分析其余参数
         for argument in arguments:
-            suspicious_node_exam(trace, argument, param_set, page_data, page_function_table)
+            suspicious_node_exam(trace, argument, param_set, page_data, page_function_table, need_new_param=False)
         # 如果是敏感API，那么开始分析回调函数
         if call_function_name in source_api['callback_api'] and call_back_functions and len(call_back_functions) > 0:
             for call_back_function in call_back_functions:
                 # 不用在这里创建，因为在function那里还会创建一次
                 # branch_param_set = utils.create_param_set(call_back_function)
                 branch_trace = find_trace(param_set, call_back_function, page_data,
-                                          page_function_table)
+                                          page_function_table, True)
                 if branch_trace.is_path:
                     trace.is_path = True
                     trace.next.append(branch_trace)
@@ -365,8 +392,8 @@ def call_expression_exam(trace: Trace, call_expression: dict, param_set: set, pa
                         trace.is_path = True
                         trace.next.append(other_trace)
 
-        if trace.route_type.params is None and trace.is_path:
-            trace.route_type.params = True
+        # if (trace.route_type.params is None or len(trace.route_type.params) == 0) and trace.is_path:
+        #     trace.route_type.params = True
 
 
 def get_call_function_name(call_expression: dict):
@@ -479,10 +506,16 @@ def await_expression_exam(trace: Trace, await_expression: dict, param_set: set, 
 
 def sequence_expression_exam(trace: Trace, sequence_expression: dict, param_set: set, page_data: PageData,
                              page_function_table: dict):
+    trace.route_type = SequenceExpressionPath()
     for expression in sequence_expression['expressions']:
         expression_statement = dict()
+        expression_statement['type'] = 'ExpressionStatement'
         expression_statement['expression'] = expression
-        expression_statement_exam(trace, expression_statement, param_set, page_data, page_function_table)
+        new_trace = find_trace(param_set, expression, page_data, page_function_table)
+        if new_trace.is_path:
+            trace.is_path = True
+            trace.next.append(new_trace)
+        # expression_statement_exam(trace, expression_statement, param_set, page_data, page_function_table)
 
 
 def logical_expression_exam(trace: Trace, logical_expression: dict, param_set: set, page_data: PageData,
@@ -490,6 +523,7 @@ def logical_expression_exam(trace: Trace, logical_expression: dict, param_set: s
     trace.route_type = LogicalExpressionPath()
     if 'left' in logical_expression:
         expression_statement = dict()
+        expression_statement['type'] = 'ExpressionStatement'
         expression_statement['expression'] = logical_expression['left']
         new_trace = find_trace(param_set, expression_statement, page_data, page_function_table)
         if new_trace.is_path:
@@ -498,6 +532,7 @@ def logical_expression_exam(trace: Trace, logical_expression: dict, param_set: s
 
     if 'right' in logical_expression:
         expression_statement = dict()
+        expression_statement['type'] = 'ExpressionStatement'
         expression_statement['expression'] = logical_expression['right']
         new_trace = find_trace(param_set, expression_statement, page_data, page_function_table)
         if new_trace.is_path:
@@ -530,6 +565,8 @@ def binary_expression_exam(trace: Trace, binary_expression: dict, param_set: set
     elif binary_expression['type'] == 'BinaryExpression':
         return binary_expression_exam(trace, binary_expression['left'], param_set, page_data, page_function_table) \
                or binary_expression_exam(trace, binary_expression['right'], param_set, page_data, page_function_table)
+    elif binary_expression['type'] == 'UnaryExpression':
+        unary_expression_exam(trace, binary_expression, param_set, page_data, page_function_table)
     else:
         logger.error('Binary Expression Type Error: {}'.format(binary_expression['type']))
         return False

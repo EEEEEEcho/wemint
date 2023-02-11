@@ -6,12 +6,10 @@ Page({
         password: "",
         src: '/images/login.png'
     },
-    async login() {
-        await utils.Http.asyncWXLogin(
-            res => {
-                    code = res.code
-                }
-            )
+    moneyInput: function(t) {
+        void 0 != t && (this.setData({
+            txtMoney: t.detail.value
+        }), this.verifykInput());
     },
 })
 
