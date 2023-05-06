@@ -1,2 +1,0 @@
-<!--pages/login/login.wxml-->
-<view bindtap="moneyInput"></view>
