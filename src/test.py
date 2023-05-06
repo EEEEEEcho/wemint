@@ -121,3 +121,32 @@
 # lis = [1,2,3,4]
 # for i, item in enumerate(lis):
 #     print("{} {}".format(i,item))
+# import time
+#
+# start = time.time()
+# time.sleep(3)
+# end = time.time()
+# print(end - start)
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 生成一组随机数据
+data = np.random.normal(size=1000)
+
+# 计算每个值的累积分布函数
+sorted_data = np.sort(data)
+cumulative_prob = np.linspace(0, 1, len(sorted_data))
+
+# 自定义x轴刻度和标签
+x_ticks = [7011, 162, 204, 88, 101, 18, 1]
+x_ticklabels = ['Low', '', '', 'Mid', '', '', 'High']
+
+# 绘制CDF图并指定x轴和y轴的标签和刻度
+plt.plot(sorted_data, cumulative_prob)
+plt.xlabel('Data Values')
+plt.ylabel('Cumulative Probability')
+plt.title('CDF Plot')
+plt.xticks(x_ticks, x_ticklabels)
+plt.yticks([0, 10000, 20000, 50000, 100000,1000000,10000000,60000000])
+plt.show()

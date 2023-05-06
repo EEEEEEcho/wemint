@@ -228,7 +228,8 @@ def function_arguments_check(arguments: list, param_set: set, page_data: PageDat
             argument_value = get_call_function_name(argument)
 
         if argument_value:
-            if argument_value in param_set or page_data.contains(argument_value):
+            if argument_value in param_set or page_data.contains(argument_value) \
+                    or member_identifier_check(argument_value, param_set):
                 position_list.append(i)
     return position_list
 

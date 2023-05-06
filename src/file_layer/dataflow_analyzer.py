@@ -4,7 +4,7 @@ from src.utils.page_data import PageData
 from src.pojo.miniprogram import MiniProgram
 from src.utils import utils
 import src.strategy.trace_variable_strategy as tvs
-import src.file_layer.js_analyzer as ja
+import src.file_layer.taint_analyzer as ja
 import src.utils.painter as painter
 import os
 import copy
@@ -63,12 +63,12 @@ def analysis(context, xml_path: str, page_name):
     return dom_set
 
 
-js_path = r'E:\WorkSpace\wxapp-analyzer\testfile\pages\input\input.js'
-base_path = r'E:\WorkSpace\wxapp-analyzer\testfile'
-mp = MiniProgram(base_path, 'test')
-context = ja.analysis(js_path, mp)
-
-analysis(context, r'E:\WorkSpace\wxapp-analyzer\testfile\pages\input\input.wxml', 'pages/input/input')
+# js_path = r'E:\WorkSpace\wxapp-analyzer\testfile\pages\input\input.js'
+# base_path = r'E:\WorkSpace\wxapp-analyzer\testfile'
+# mp = MiniProgram(base_path, 'test')
+# context = ja.analysis(js_path, mp)
+#
+# analysis(context, r'E:\WorkSpace\wxapp-analyzer\testfile\pages\input\input.wxml', 'pages/input/input')
 
 # eve_map = find_event_element(r'E:\WorkSpace\wxapp-analyzer\testfile\pages\input\input.wxml')
 # page_data = PageData()

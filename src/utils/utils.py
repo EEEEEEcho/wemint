@@ -168,7 +168,9 @@ def create_param_set(function_node: dict, argument_position_list: list = None):
                 if param['type'] == 'Identifier':
                     param_set.add(param['name'])
                     param_set.add(param['name'] + '.')
-                    del function_node['params'][position]
+                    # del function_node['params'][position]
+            function_node['params'] = list(filter(lambda i: function_node['params'].index(i)
+                                                            not in argument_position_list, function_node['params']))
     else:
         function_node_params = function_node['params']
         for param in function_node_params[:]:

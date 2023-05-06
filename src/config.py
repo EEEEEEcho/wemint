@@ -13,7 +13,7 @@ PROJECT_ABSOLUTE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__
 # 扫描完7950个代码包之后，中断了一次，中断之后统计记录结果，发现有3546个代码包有密钥泄露问题。
 # 扫描完10611个代码包之后，中断了一次，中断之后统计记录结果，发现有3727个代码包有密钥泄露问题。
 # PACKAGES_CATALOG = 'F:/3w/filter_files/'
-PACKAGES_CATALOG = PROJECT_ABSOLUTE_PATH + os.sep + '/test_wxapkgs/'
+PACKAGES_CATALOG = PROJECT_ABSOLUTE_PATH + os.sep + '/wxapkgs/'
 
 ACCESS_TOKEN_URL = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={}&secret={}'
 
@@ -35,5 +35,4 @@ DB_CONFIG = {
     'maxcached': 0,  # 连接池中最多闲置的连接，0表示不限制，连接使用完成后的空闲连接保留数。
     'maxusage': 5,  # 每个连接最多被重复使用的次数，None表示不限制
     'blocking': True  # 连接池中如果没有可用连接后是否阻塞等待，
-    # True 等待，让用户等待，尽可能的成功； False 不等待然后报错，尽快告诉用户错误，例如抢购，不成功就提示
 }

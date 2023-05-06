@@ -19,7 +19,7 @@ def add_brother_to_context(context, mini_program: MiniProgram):
     else:
         # 没有分析过，那么进行分析
         if not af.contains(brother_path):
-            import src.file_layer.js_analyzer as ja
+            import src.file_layer.taint_analyzer as ja
             # 全局文件中也没有
             file_context = ja.analysis(brother_path, mini_program)
             af.set_context(brother_path, file_context)
