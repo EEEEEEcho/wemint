@@ -1,0 +1,4 @@
+loguru==0.6.0
+beautifulsoup4==4.9.3
+graphviz==0.19.2
+pycryptodome==3.15.0

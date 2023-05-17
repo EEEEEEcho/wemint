@@ -180,6 +180,3 @@ def create_param_set(function_node: dict, argument_position_list: list = None):
                 function_node_params.remove(param)
     return param_set
 
-#
-# ans = "'".replace("'", "\\'")
-# print(ans)

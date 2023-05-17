@@ -17,7 +17,6 @@ src/sources/*
 src/graph_json
 test_wxapkgs
 tmp_dir
-tmp_node
 compare
 wxapkgs
 testfile

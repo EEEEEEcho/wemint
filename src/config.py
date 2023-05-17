@@ -3,16 +3,7 @@ import os
 import loguru
 
 PROJECT_ABSOLUTE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# PACKAGES_CATALOG = 'E:/WorkSpace/wxapp-echo/src/sources/'
-# 共20766个包
-# 剩余12681个包时，终止了一次,此次终止发现了很多反编译之后非正常格式的包，可以考虑以此为分界线
 
-
-# 扫描完5624个代码包之后，中断了一次，中断之后统计记录结果，发现有3412个代码包有密钥泄露问题。
-# 扫描完5660个代码包之后, 中断了一次
-# 扫描完7950个代码包之后，中断了一次，中断之后统计记录结果，发现有3546个代码包有密钥泄露问题。
-# 扫描完10611个代码包之后，中断了一次，中断之后统计记录结果，发现有3727个代码包有密钥泄露问题。
-# PACKAGES_CATALOG = 'F:/3w/filter_files/'
 PACKAGES_CATALOG = PROJECT_ABSOLUTE_PATH + os.sep + '/wxapkgs/'
 
 ACCESS_TOKEN_URL = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={}&secret={}'
@@ -27,7 +18,7 @@ DB_CONFIG = {
     'host': '127.0.0.1',
     'port': 3306,
     'user': 'root',
-    'passwd': 's814466057',
+    'passwd': 'XpQde!@',
     'db': 'taint_db',
     'charset': 'utf8',
     'maxconnections': 10,  # 连接池允许的最大连接数
