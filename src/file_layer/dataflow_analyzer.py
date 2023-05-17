@@ -1,11 +1,11 @@
 from loguru import logger
 from bs4 import BeautifulSoup
-from src.utils.page_data import PageData
-from src.pojo.miniprogram import MiniProgram
-from src.utils import utils
-import src.strategy.trace_variable_strategy as tvs
-import src.file_layer.taint_analyzer as ja
-import src.utils.painter as painter
+from utils.page_data import PageData
+from pojo.miniprogram import MiniProgram
+from utils import utils
+import strategy.trace_variable_strategy as tvs
+import file_layer.taint_analyzer as ja
+import utils.painter as painter
 import os
 import copy
 

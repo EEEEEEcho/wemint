@@ -3,8 +3,8 @@ from Crypto.Hash import SHA1
 from Crypto.Cipher import AES
 from loguru import logger
 import re
-import src.config as config
-import src.utils.utils as utils
+import config as config
+import utils.utils as utils
 import os
 
 # 微信小程序包 自定义标识
@@ -110,6 +110,3 @@ def decrypt_by_salt_and_iv(wxid, input_file, output_file, salt, iv):
     except Exception as e:
         logger.error(e)
         return False
-
-
-decompile_app(r'F:\EmpericalStudy\wx01a1827d7fea9b12.wxapkg')

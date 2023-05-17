@@ -1,7 +1,7 @@
 import collections
 import random
 from loguru import logger
-import src.config as config
+import config as config
 import os
 import subprocess
 import json

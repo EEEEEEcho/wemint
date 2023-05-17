@@ -1,5 +1,5 @@
 import re
-from src import config
+import config as config
 from loguru import logger
 import requests
 import json

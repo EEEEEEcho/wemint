@@ -1,10 +1,10 @@
-from src.pojo.miniprogram import MiniProgram
-from src.pojo.function_context import FunctionContext
-from src.pojo.block_context import BlockContext
-from src.pojo.scope_enum import Scope
+from pojo.miniprogram import MiniProgram
+from pojo.function_context import FunctionContext
+from pojo.block_context import BlockContext
+from pojo.scope_enum import Scope
 from loguru import logger
-import src.strategy.context_operation as co
-import src.utils.utils as utils
+import strategy.context_operation as co
+import utils.utils as utils
 
 
 def variable_declarator_analysis(variable_declarator: dict, context, mini_program: MiniProgram):

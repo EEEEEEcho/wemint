@@ -1,11 +1,8 @@
 import os
-
-import loguru
-
-import src.utils.utils as utils
-import src.utils.analysed_file as af
-from src.pojo.miniprogram import MiniProgram
-from src.pojo.scope_enum import Scope
+import utils.utils as utils
+import utils.analysed_file as af
+from pojo.miniprogram import MiniProgram
+from pojo.scope_enum import Scope
 
 
 def add_brother_to_context(context, mini_program: MiniProgram):

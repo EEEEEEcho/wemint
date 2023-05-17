@@ -1,6 +1,6 @@
-from src.strategy.secret_leak_strategy import SecretLeakChecker
-from src.strategy.backend_checker import BackendChecker
-from src.utils import utils
+from strategy.secret_leak_strategy import SecretLeakChecker
+from strategy.backend_checker import BackendChecker
+from utils import utils
 from loguru import logger
 import os
 import json

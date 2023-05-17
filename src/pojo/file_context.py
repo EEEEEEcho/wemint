@@ -1,4 +1,4 @@
-from src.pojo.scope_enum import Scope
+from pojo.scope_enum import Scope
 
 
 class FileContext:

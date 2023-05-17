@@ -1,4 +1,4 @@
-from src.path.trace import Trace
+from path.trace import Trace
 from graphviz import Digraph
 from loguru import logger
 import json

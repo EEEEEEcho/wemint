@@ -1,11 +1,11 @@
-import src.strategy.common_node_strategy as cns
-import src.utils.analysed_file as af
-import src.utils.circle_set as cs
+import strategy.common_node_strategy as cns
+import utils.analysed_file as af
+import utils.circle_set as cs
 import os
-from src.pojo.file_context import FileContext
-from src.pojo.scope_enum import Scope
-from src.pojo.miniprogram import MiniProgram
-from src.utils import utils
+from pojo.file_context import FileContext
+from pojo.scope_enum import Scope
+from pojo.miniprogram import MiniProgram
+from utils import utils
 from loguru import logger
 
 

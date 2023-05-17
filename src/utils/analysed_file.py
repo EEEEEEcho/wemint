@@ -1,4 +1,4 @@
-from src.pojo.file_context import FileContext
+from pojo.file_context import FileContext
 
 analysed = dict()
 

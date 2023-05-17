@@ -1,11 +1,11 @@
 import copy
 
-from src.path.trace import Trace
-from src.path.path import *
-from src.utils.page_data import PageData
-from src.pojo.source_api import source_api
+from path.trace import Trace
+from path.path import *
+from utils.page_data import PageData
+from pojo.source_api import source_api
 from loguru import logger
-import src.utils.utils as utils
+import utils.utils as utils
 
 
 def find_trace(param_set: set, node: dict, page_data: PageData, page_function_table: dict,
@@ -273,6 +273,13 @@ def conditional_expression_exam(trace: Trace, conditional_expression: dict, para
 #             if new_trace.is_path:
 #                 trace.is_path = True
 #                 trace.next.append(new_trace)
+
+# def param_list_exam(trace: Trace, param_list: list,param_set: set):
+#     for param in param_list:
+#         if param['type'] == 'Identifier':
+#             param_identifier = param['name']
+#             if param_identifier in param_set:
+
 
 def unary_expression_exam(trace: Trace, conditional_expression: dict, param_set: set, page_data: PageData,
                           page_function_table: dict):
