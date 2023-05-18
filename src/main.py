@@ -7,6 +7,7 @@ from file_layer import dataflow_analyzer
 from pojo.miniprogram import MiniProgram
 import time
 import utils.package_decoder as pd
+import utils.utils as util
 import getopt
 
 
@@ -25,6 +26,7 @@ def start_analysis(source_path: str):
     af.clear()
     mini_program.secret_leak_checker.do_verify()
     logger.info(mini_program.secret_leak_checker)
+    util.dump_json(source_path, mini_program.secret_leak_checker)
     end_time = time.time()
     logger.info("Total Consume {}".format(end_time - start_time))
 
@@ -45,8 +47,7 @@ try:
         else:
             raise Exception("Wrong input format！")
 except Exception as e:
-    logger.error(e)
-
+    logger.exception(e)
 # def main():
 # packages_catalog = config.PACKAGES_CATALOG
 # package_list = os.listdir(packages_catalog)

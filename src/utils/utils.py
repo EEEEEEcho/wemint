@@ -180,3 +180,8 @@ def create_param_set(function_node: dict, argument_position_list: list = None):
                 function_node_params.remove(param)
     return param_set
 
+
+def dump_json(source_path, obj):
+    result_dict = json.dumps(obj.to_dict())
+    with open(source_path + os.sep + 'check_report.json', 'w') as f:
+        json.dump(result_dict, f)

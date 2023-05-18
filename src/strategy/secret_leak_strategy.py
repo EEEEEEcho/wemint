@@ -102,3 +102,13 @@ class SecretLeakChecker:
 
     def __repr__(self):
         return str(self.__dict__)
+
+    def to_dict(self):
+        return {
+            "appid": self.appid,
+            "secret": self.secret,
+            "access_token": self.access_token,
+            "visit_total": self.visit_total,
+            "share_pv": self.share_pv,
+            "share_uv": self.share_uv
+        }
