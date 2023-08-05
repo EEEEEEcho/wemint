@@ -1,0 +1,8 @@
+<view class="cclass containView" style="{{cStyle}}">
+    <image binderror="errorLoad" bindload="load" bindtap="click" class="self" hidden="{{!loaded}}" mode="{{mode}}" src="{{src}}" wx:if="{{startLoad}}"></image>
+    <view class="myload" hidden="{{loaded}}">
+        <view class="spinner"></view>
+        <view>正在加载中...</view>
+        <image class="loading error" mode="aspectFill" src="{{errorImg}}" wx:if="{{error}}"></image>
+    </view>
+</view>

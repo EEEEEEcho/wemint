@@ -1,0 +1,51 @@
+// \pages/shop/commissionsource onLoad Data Flow
+digraph {
+	cb329733b6a641bea0dbc24542eed143 [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"6493d6e07fdd47b79570901eb8d7b5a8" [label="CallExpression,
+callee name -> this.getUserFenXiaoInfo,
+param -> " color=blue]
+	cbc2103fe558489593164276ea97270a [label="FunctionCall,
+function name -> getUserFenXiaoInfo,
+param -> " color=blue]
+	ab7286dbc8ec4cc6bc656ecca0219e58 [label=VariableDeclarations color=blue]
+	a35d08d0140f4d10b074067b1a431518 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"0ec7cf85b01545f4ac4829d12bc4b216" [label="Object Properties
+{
+}" color=blue]
+	e4e798125a314490a4edabab87091d04 [label="FunctionCall,
+function name -> success,
+param -> a.,
+a,
+" color=blue]
+	"11fed70e926d4dd39dc3ab7390193660" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	d17b85b7c241416cbf376b33cd988531 [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	cb3e74dfe94a4a1699d6344a760bf582 [label="Object Properties
+{
+allTotal -> a.info.allTotal
+}" color=blue]
+	d17b85b7c241416cbf376b33cd988531 -> cb3e74dfe94a4a1699d6344a760bf582
+	"11fed70e926d4dd39dc3ab7390193660" -> d17b85b7c241416cbf376b33cd988531
+	"7d34616298b645f98711768e4a3bbc72" [label="CallExpression,
+callee name -> e.showModal,
+param -> " color=blue]
+	a6f03621ad064d5dab74cf68ecf02e44 [label="Object Properties
+{
+content -> a.msg
+}" color=blue]
+	"7d34616298b645f98711768e4a3bbc72" -> a6f03621ad064d5dab74cf68ecf02e44
+	"11fed70e926d4dd39dc3ab7390193660" -> "7d34616298b645f98711768e4a3bbc72"
+	e4e798125a314490a4edabab87091d04 -> "11fed70e926d4dd39dc3ab7390193660"
+	"0ec7cf85b01545f4ac4829d12bc4b216" -> e4e798125a314490a4edabab87091d04
+	a35d08d0140f4d10b074067b1a431518 -> "0ec7cf85b01545f4ac4829d12bc4b216"
+	ab7286dbc8ec4cc6bc656ecca0219e58 -> a35d08d0140f4d10b074067b1a431518
+	cbc2103fe558489593164276ea97270a -> ab7286dbc8ec4cc6bc656ecca0219e58
+	"6493d6e07fdd47b79570901eb8d7b5a8" -> cbc2103fe558489593164276ea97270a
+	cb329733b6a641bea0dbc24542eed143 -> "6493d6e07fdd47b79570901eb8d7b5a8"
+}

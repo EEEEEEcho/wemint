@@ -1,0 +1,15 @@
+// \pages/teacher/parentCircle/parentCircle chooseImage Data Flow
+digraph {
+	"28aaf03af21440039e6f007c1c061957" [label="FunctionCall,
+function name -> chooseImage,
+param -> " color=blue]
+	"0137a9388b5b4aa29291cdc46990e54f" [label="CallExpression,
+callee name -> wx.chooseImage,
+param -> " color=blue]
+	"24fd3dddbc76409e98e84d6d7d8aa81f" [label="Object Properties
+{
+count -> this.data.count[this.data.countIndex]
+}" color=blue]
+	"0137a9388b5b4aa29291cdc46990e54f" -> "24fd3dddbc76409e98e84d6d7d8aa81f"
+	"28aaf03af21440039e6f007c1c061957" -> "0137a9388b5b4aa29291cdc46990e54f"
+}

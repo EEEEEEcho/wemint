@@ -1,0 +1,28 @@
+<loading-component showLoading="{{showLoading}}"></loading-component>
+<view class="tab-box">
+    <view class="tab-active">全部</view>
+    <view>商家活动</view>
+    <view>权益精选</view>
+</view>
+<view class="line"></view>
+<view class="ac-box">
+    <image class="ac-img" src="https://imgs.52wxr.com/upload/image/201901/20190117/1547715936223039003.png"></image>
+    <view class="ac-detail-box">
+        <view>
+            <view class="ac-title">坤记美食100元抵用券</view>
+            <view class="ac-tip">探惠会员专享</view>
+        </view>
+        <view>￥<text>9.9</text>抢</view>
+    </view>
+</view>
+<view class="line"></view>
+<view class="ac-box">
+    <image class="ac-img" src="https://imgs.52wxr.com/upload/image/201901/20190117/1547715964019027834.png"></image>
+    <view class="ac-detail-box">
+        <view>
+            <view class="ac-title">潮果园88元购榴莲1个</view>
+            <view class="ac-tip">探惠会员专享</view>
+        </view>
+        <view>￥<text>88</text>抢</view>
+    </view>
+</view>

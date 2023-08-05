@@ -1,0 +1,83 @@
+// \pages/cars/index search Data Flow
+digraph {
+	"2b78e1cc6a744fb68b2ca03eab70470d" [label="FunctionCall,
+function name -> search,
+param -> a.,
+a,
+" color=blue]
+	c8536147cc7c4b42b356d762eff4d90a [label=VariableDeclarations color=blue]
+	bfb83c0c51a449c9bf40515d2d612278 [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.check" color=blue]
+	c8536147cc7c4b42b356d762eff4d90a -> bfb83c0c51a449c9bf40515d2d612278
+	"2b78e1cc6a744fb68b2ca03eab70470d" -> c8536147cc7c4b42b356d762eff4d90a
+	"69063d62986644deb45ee2a6be259b63" [label=SequenceExpression color=blue]
+	"163f9f49d355484aa493268d855eeb8b" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	c69f0209f304416da56bb6d57b35f490 [label="Object Properties
+{
+check -> t
+}" color=blue]
+	"163f9f49d355484aa493268d855eeb8b" -> c69f0209f304416da56bb6d57b35f490
+	"69063d62986644deb45ee2a6be259b63" -> "163f9f49d355484aa493268d855eeb8b"
+	cbbc01895bf646848ab573a1512c968d [label="CallExpression,
+callee name -> this.onLoad,
+param -> " color=blue]
+	c7e60d23cdd749f2bf2037cf30e4509d [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	b3a0fcf7dc3b4e158d505b4d40a05e0b [label=SequenceExpression color=blue]
+	"9f5373c4c5ac434bab4a6fa637399440" [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> " color=blue]
+	"2951f57d283b40318039ef3b33ba3cf4" [label="FunctionCall,
+function name -> success,
+param -> a.,
+a,
+" color=blue]
+	"58af493608c74ff2ada4f55acc5f2c18" [label=SequenceExpression color=blue]
+	"19bc8e7cbbdc446fa4e47d34cb920676" [label="CallExpression,
+callee name -> console.log,
+param -> a.windowWidth,
+" color=blue]
+	"58af493608c74ff2ada4f55acc5f2c18" -> "19bc8e7cbbdc446fa4e47d34cb920676"
+	bd02626087044b42ac3c99acef1317be [label="CallExpression,
+callee name -> console.log,
+param -> a.windowHeight,
+" color=blue]
+	"58af493608c74ff2ada4f55acc5f2c18" -> bd02626087044b42ac3c99acef1317be
+	bfb876ca975146ba80ffa0b7b4aa6438 [label="CallExpression,
+callee name -> i.setData,
+param -> " color=blue]
+	"659c916b15234eb28936e40a42829317" [label="Object Properties
+{
+windowHeight -> a.windowHeight
+}" color=blue]
+	bfb876ca975146ba80ffa0b7b4aa6438 -> "659c916b15234eb28936e40a42829317"
+	"58af493608c74ff2ada4f55acc5f2c18" -> bfb876ca975146ba80ffa0b7b4aa6438
+	"2951f57d283b40318039ef3b33ba3cf4" -> "58af493608c74ff2ada4f55acc5f2c18"
+	"9f5373c4c5ac434bab4a6fa637399440" -> "2951f57d283b40318039ef3b33ba3cf4"
+	b3a0fcf7dc3b4e158d505b4d40a05e0b -> "9f5373c4c5ac434bab4a6fa637399440"
+	"98c8f94a75c64734bbdbfe68db870191" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	de1c398612b94289867e30301ce1479b [label="Object Properties
+{
+hot -> i.data.hot
+pinpai -> i.data.pinpai
+jiage -> i.data.jiage
+chexing -> i.data.cxindex
+cheling -> i.data.cheling
+biansuxiang -> i.data.biansuxiang
+pailiang -> i.data.pailiang
+paifang -> i.data.paifang
+color -> i.data.color
+}" color=blue]
+	"98c8f94a75c64734bbdbfe68db870191" -> de1c398612b94289867e30301ce1479b
+	b3a0fcf7dc3b4e158d505b4d40a05e0b -> "98c8f94a75c64734bbdbfe68db870191"
+	c7e60d23cdd749f2bf2037cf30e4509d -> b3a0fcf7dc3b4e158d505b4d40a05e0b
+	cbbc01895bf646848ab573a1512c968d -> c7e60d23cdd749f2bf2037cf30e4509d
+	"69063d62986644deb45ee2a6be259b63" -> cbbc01895bf646848ab573a1512c968d
+	"2b78e1cc6a744fb68b2ca03eab70470d" -> "69063d62986644deb45ee2a6be259b63"
+}

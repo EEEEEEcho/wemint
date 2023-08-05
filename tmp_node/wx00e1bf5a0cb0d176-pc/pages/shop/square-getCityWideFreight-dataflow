@@ -1,0 +1,56 @@
+// \pages/shop/square getCityWideFreight Data Flow
+digraph {
+	"69439843257944178e3c79db79af03a6" [label="FunctionCall,
+function name -> getCityWideFreight,
+param -> " color=blue]
+	"132a430b61bd4c21b8ca985744eaf580" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"27fbc215651c4aa3ae5a5361c0b05958" [label="ConditionalExpression,
+ conditional list -> this.defaultStores,this.isdefaultStores" color=blue]
+	"0ea976be4a874ee489c672bcabe05749" [label="CallExpression,
+callee name -> this.defaultStores,
+param -> " color=blue]
+	c17807a5acac4e77929b6d9020f63f0a [label="FunctionCall,
+function name -> defaultStores,
+param -> " color=blue]
+	e9b1caef02744dbab561c2a30cd0f8eb [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	f7002b6463a94f1ea9de6222072c390f [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=enableCityDistribution&addressId=' + s + '&storeId=' + o + '&cargo_price=' + i.data.getPriceInfo.ordermoney
+}" color=blue]
+	e9b1caef02744dbab561c2a30cd0f8eb -> f7002b6463a94f1ea9de6222072c390f
+	c17807a5acac4e77929b6d9020f63f0a -> e9b1caef02744dbab561c2a30cd0f8eb
+	"0ea976be4a874ee489c672bcabe05749" -> c17807a5acac4e77929b6d9020f63f0a
+	"27fbc215651c4aa3ae5a5361c0b05958" -> "0ea976be4a874ee489c672bcabe05749"
+	"465466b759584abfab62d71ea48095f9" [label="CallExpression,
+callee name -> this.isdefaultStores,
+param -> " color=blue]
+	d9d2fdf25b1f41e2b5773ec79b71595e [label="FunctionCall,
+function name -> isdefaultStores,
+param -> " color=blue]
+	d0de8d4f5cca45b2bc754a1cb729fd05 [label=VariableDeclarations color=blue]
+	"71898d5881f6466b98247260d51df5cf" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"960d0d8a7b174015ba82e019c7b2c41d" [label="ConditionalExpression,
+ conditional list -> a.data.defaultAddr.ID" color=blue]
+	"71898d5881f6466b98247260d51df5cf" -> "960d0d8a7b174015ba82e019c7b2c41d"
+	d0de8d4f5cca45b2bc754a1cb729fd05 -> "71898d5881f6466b98247260d51df5cf"
+	d9d2fdf25b1f41e2b5773ec79b71595e -> d0de8d4f5cca45b2bc754a1cb729fd05
+	"0847aca61fcf4a209942252b1cc9967a" [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	"57c2a81e2ff74bd7845b7c61262c3d59" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=getCityDistributionStore&addressId=' + i + '&cargo_price=' + a.data.getPriceInfo.ordermoney
+}" color=blue]
+	"0847aca61fcf4a209942252b1cc9967a" -> "57c2a81e2ff74bd7845b7c61262c3d59"
+	d9d2fdf25b1f41e2b5773ec79b71595e -> "0847aca61fcf4a209942252b1cc9967a"
+	"465466b759584abfab62d71ea48095f9" -> d9d2fdf25b1f41e2b5773ec79b71595e
+	"27fbc215651c4aa3ae5a5361c0b05958" -> "465466b759584abfab62d71ea48095f9"
+	"132a430b61bd4c21b8ca985744eaf580" -> "27fbc215651c4aa3ae5a5361c0b05958"
+	"69439843257944178e3c79db79af03a6" -> "132a430b61bd4c21b8ca985744eaf580"
+}

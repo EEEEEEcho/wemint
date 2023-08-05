@@ -1,0 +1,19 @@
+// \pages/tourist/home/home fetchSearchList Data Flow
+digraph {
+	"40734979720c4c38a65caaaf3347ac98" [label="FunctionCall,
+function name -> fetchSearchList,
+param -> " color=blue]
+	"787373a88c0a461d88a6da728e61bd7e" [label=VariableDeclarations color=blue]
+	f65907b5658741cbaf2241229dd5da6c [label="VariableDeclarator,
+left -> e,
+right -> t.data.is_pay" color=blue]
+	"787373a88c0a461d88a6da728e61bd7e" -> f65907b5658741cbaf2241229dd5da6c
+	"40734979720c4c38a65caaaf3347ac98" -> "787373a88c0a461d88a6da728e61bd7e"
+	"59073b07611c4f00b37281973ee28f4f" [label="CallExpression,
+callee name -> a,
+param -> t.data.searchPageNum,
+t.data.callbackcount,
+e,
+" color=blue]
+	"40734979720c4c38a65caaaf3347ac98" -> "59073b07611c4f00b37281973ee28f4f"
+}

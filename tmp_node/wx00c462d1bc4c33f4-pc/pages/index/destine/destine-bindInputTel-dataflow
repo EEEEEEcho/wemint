@@ -1,0 +1,23 @@
+// \pages/index/destine/destine bindInputTel Data Flow
+digraph {
+	"27c7c5c253b743378dcc92e22db82686" [label="FunctionCall,
+function name -> bindInputTel,
+param -> t.,
+t,
+" color=blue]
+	"45ec4cafa6bb4f12b95f728ae6ca7e58" [label=SequenceExpression color=blue]
+	"9b148a247bd44a8ca4d98595a9403de5" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"63297ba766284a35b63cdf61277b54fa" [label="Object Properties
+{
+contractTel -> t.detail.value
+}" color=blue]
+	"9b148a247bd44a8ca4d98595a9403de5" -> "63297ba766284a35b63cdf61277b54fa"
+	"45ec4cafa6bb4f12b95f728ae6ca7e58" -> "9b148a247bd44a8ca4d98595a9403de5"
+	"35974f7cc73b4ba9bf189358c0e876f7" [label="Assignment,
+left -> a.globalData.contractTel,
+right -> t.detail.value" color=blue]
+	"45ec4cafa6bb4f12b95f728ae6ca7e58" -> "35974f7cc73b4ba9bf189358c0e876f7"
+	"27c7c5c253b743378dcc92e22db82686" -> "45ec4cafa6bb4f12b95f728ae6ca7e58"
+}

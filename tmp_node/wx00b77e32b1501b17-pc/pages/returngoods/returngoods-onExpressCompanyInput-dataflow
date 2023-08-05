@@ -1,0 +1,17 @@
+// \pages/returngoods/returngoods onExpressCompanyInput Data Flow
+digraph {
+	"1ec66e46471f4f2ca7c6cfb30d0e93f3" [label="FunctionCall,
+function name -> onExpressCompanyInput,
+param -> t.,
+t,
+" color=blue]
+	dd146ff2495e45a8a624bb7a68ec2947 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	bbfe247195594d948d8623621c883b4c [label="Object Properties
+{
+ExpressCompany -> t.detail.value
+}" color=blue]
+	dd146ff2495e45a8a624bb7a68ec2947 -> bbfe247195594d948d8623621c883b4c
+	"1ec66e46471f4f2ca7c6cfb30d0e93f3" -> dd146ff2495e45a8a624bb7a68ec2947
+}

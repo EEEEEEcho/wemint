@@ -1,0 +1,71 @@
+<navbar data="{{navbar}}"></navbar>
+<myLoading id="myLoading"></myLoading>
+<view class="container" style="height:{{'calc(100vh - '+navigateStatusContainerHeight+')'}}">
+    <view style="position:relative;width: 670rpx;height: 2rpx;"></view>
+    <view class="container-item">
+        <view class="building-item-title">
+            <text>客户信息</text>
+        </view>
+        <view class="building-item">
+            <view class="building-item-input-phone">
+                <input bindblur="userPhone" confirmType="next" maxlength="11" placeholder="报备号码" placeholderClass="building-item-input-placeholder" type="number" value="{{phoneNum}}"></input>
+            </view>
+        </view>
+        <view class="building-item">
+            <view class="building-item-input-name">
+                <input bindblur="getUserName" class="building-item-input" confirmType="next" maxlength="5" placeholder="请输入客户姓名" placeholderClass="building-item-input-placeholder" value="{{userName}}"></input>
+            </view>
+            <view bindtap="selectSex" class="building-item-male" data-sex="{{1}}" style="{{sexType==1?'background: #2359CC;':'background: #F2F2F2;'}}">
+                <text style="{{sexType==1?'color: #FFFFFF;':'color: #A5A5A5;'}}">男</text>
+            </view>
+            <view bindtap="selectSex" class="building-item-female" data-sex="{{0}}" style="{{sexType==0?'background: #2359CC;':'background: #F2F2F2;'}}">
+                <text style="{{sexType==0?'color: #FFFFFF;':'color: #A5A5A5;'}}">女</text>
+            </view>
+        </view>
+    </view>
+    <view class="container-item" wx:if="{{showAdviser}}">
+        <view class="building-item-title">
+            <text>指定顾问</text>
+        </view>
+        <view class="building-item" style="background: #F2F2F2;border-radius: 10rpx;z-index: 10;margin: 0px;">
+            <view bindtap="showAdviserList" class="adviser">
+                <view class="adviser-left">
+                    <text style="color:{{currentAdviserStatus=='-1'?'#FC5F5F':'#A5A5A5'}}">{{adviserName?adviserName:'请选择顾问'}}</text>
+                </view>
+                <view class="adviser-right {{showSelectAdviserDialog?'adviser-right-expand':'adviser-right-shrink'}}" wx:if="{{showAdviserList}}"></view>
+            </view>
+        </view>
+        <view class="adviser_warning" wx:if="{{currentAdviserStatus==-1&&adviserName}}">
+            <text style="color:#FC5F5F">！当前指定顾问【{{adviserName}}】已失效，请手动选择一名顾问</text>
+        </view>
+        <view class="adviser-content" style="height: {{showSelectAdviserDialog?adviserList.length*70+'rpx':'0rpx'}};" wx:if="{{showAdviserList}}">
+            <view bindtap="selectAdviser" class="adviser-content-item" data-index="{{index}}" data-item="{{item}}" wx:for="{{adviserList}}" wx:key="key">
+                <text>{{item.adviserName}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="container-item">
+        <view class="building-item-title">
+            <text>报备验证码</text>
+        </view>
+        <view class="building-item">
+            <view class="building-item-input-code">
+                <input bindblur="getMSGCodeValue" confirmType="next" maxlength="6" placeholder="验证码" placeholderClass="building-item-input-placeholder" value="{{msgCode}}"></input>
+            </view>
+            <view bindtap="getMSGCode" class="building-item-sendMsg" style="background:{{showDaoJiShi?'#B5B5B5':'#2359CC'}}">
+                <text>{{currentTime}}</text>
+            </view>
+            <view class="building-item-warning" wx:if="{{currentPhone}}">
+                <text>您的身份绑定号码为{{currentPhone}}，报备客户需发送验证码至该号码</text>
+            </view>
+        </view>
+    </view>
+    <view class="container-bottom-container">
+        <view class="container-bottom-desc" wx:if="{{reportStatus}}">
+            <text>{{reportStatus}}</text>
+        </view>
+        <view bindtap="commitReport" class="container-bottom">
+            <text>提交报备</text>
+        </view>
+    </view>
+</view>

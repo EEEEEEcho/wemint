@@ -1,0 +1,30 @@
+// \pages/stu/home/home touchstart Data Flow
+digraph {
+	"41b955d1fd92411ca48d9dc4f4ebb22c" [label="FunctionCall,
+function name -> touchstart,
+param -> t,
+t.,
+" color=blue]
+	"8f21c34d91a6464e8acada891bbd5ec4" [label=SequenceExpression color=blue]
+	"45233467579f4e3693e831fa6d8f122e" [label="CallExpression,
+callee name -> this.data.noticeList.forEach,
+param -> " color=blue]
+	"3e1c7817d12a4ef4ab0a6c2ee7b2367f" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> t,
+" color=blue]
+	"45233467579f4e3693e831fa6d8f122e" -> "3e1c7817d12a4ef4ab0a6c2ee7b2367f"
+	"8f21c34d91a6464e8acada891bbd5ec4" -> "45233467579f4e3693e831fa6d8f122e"
+	"6c69341ed4264fa8a3975c102c15a538" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"0e3ce717a02d4ceb9843f0d32beb1587" [label="Object Properties
+{
+startX -> t.changedTouches[0].clientX
+startY -> t.changedTouches[0].clientY
+noticeList -> this.data.noticeList
+}" color=blue]
+	"6c69341ed4264fa8a3975c102c15a538" -> "0e3ce717a02d4ceb9843f0d32beb1587"
+	"8f21c34d91a6464e8acada891bbd5ec4" -> "6c69341ed4264fa8a3975c102c15a538"
+	"41b955d1fd92411ca48d9dc4f4ebb22c" -> "8f21c34d91a6464e8acada891bbd5ec4"
+}

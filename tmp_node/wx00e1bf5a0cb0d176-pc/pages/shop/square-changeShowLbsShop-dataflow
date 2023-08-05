@@ -1,0 +1,38 @@
+// \pages/shop/square changeShowLbsShop Data Flow
+digraph {
+	d8438fa111404faf80a67d5b43e140c5 [label="FunctionCall,
+function name -> changeShowLbsShop,
+param -> " color=blue]
+	a63d73956d4340d8a2d2f8c4896f50e1 [label="CallExpression,
+callee name -> wx.getLocation,
+param -> " color=blue]
+	ccc7781f532a42e5ae4c14d4946bd043 [label="FunctionCall,
+function name -> success,
+param -> e.,
+e,
+" color=blue]
+	"61fba665269b4716a06d1d77e2a9fff1" [label=VariableDeclarations color=blue]
+	aec289ea17b44b87adf7251549e221f9 [label="VariableDeclarator,
+left -> a,
+right -> e.latitude" color=blue]
+	"61fba665269b4716a06d1d77e2a9fff1" -> aec289ea17b44b87adf7251549e221f9
+	"23ce1a03e093430289b716cc6c6e61dc" [label="VariableDeclarator,
+left -> i,
+right -> e.longitude" color=blue]
+	"61fba665269b4716a06d1d77e2a9fff1" -> "23ce1a03e093430289b716cc6c6e61dc"
+	ccc7781f532a42e5ae4c14d4946bd043 -> "61fba665269b4716a06d1d77e2a9fff1"
+	"348321eb33d14239b603d07e7bc6c4ab" [label=SequenceExpression color=blue]
+	e11537b4a34c4e54ac7b85ad97fa379a [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	ce985bdfffd740c192da740888aa1246 [label="Object Properties
+{
+lat -> a
+lng -> i
+}" color=blue]
+	e11537b4a34c4e54ac7b85ad97fa379a -> ce985bdfffd740c192da740888aa1246
+	"348321eb33d14239b603d07e7bc6c4ab" -> e11537b4a34c4e54ac7b85ad97fa379a
+	ccc7781f532a42e5ae4c14d4946bd043 -> "348321eb33d14239b603d07e7bc6c4ab"
+	a63d73956d4340d8a2d2f8c4896f50e1 -> ccc7781f532a42e5ae4c14d4946bd043
+	d8438fa111404faf80a67d5b43e140c5 -> a63d73956d4340d8a2d2f8c4896f50e1
+}

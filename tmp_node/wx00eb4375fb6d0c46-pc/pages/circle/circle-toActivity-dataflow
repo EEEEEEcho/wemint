@@ -1,0 +1,17 @@
+// \pages/circle/circle toActivity Data Flow
+digraph {
+	f2f6ab82c7b24e2a8f2b4f36c5e0d8d4 [label="FunctionCall,
+function name -> toActivity,
+param -> e.,
+e,
+" color=blue]
+	cfc1bddabcda4d79a5dda94b5d04b6d4 [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	e46e599740bf41e388a2eb5088665f03 [label="Object Properties
+{
+url -> '/pages/share/share?shareUrl=' + e.currentTarget.dataset.shareurl
+}" color=blue]
+	cfc1bddabcda4d79a5dda94b5d04b6d4 -> e46e599740bf41e388a2eb5088665f03
+	f2f6ab82c7b24e2a8f2b4f36c5e0d8d4 -> cfc1bddabcda4d79a5dda94b5d04b6d4
+}

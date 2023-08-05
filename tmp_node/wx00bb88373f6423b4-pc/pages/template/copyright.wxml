@@ -1,0 +1,10 @@
+<view class="copyright {{copyrightInfo.copyrightClassName}}" wx:if="{{copyrightInfo.Enable==1}}">
+    <view class="common">
+        <view class="section-1" wx:if="{{copyrightInfo.ShowIcon==1}}">
+            <image class="icon" mode="aspectFit" src="{{copyrightInfo.IconPath}}"></image>
+        </view>
+        <view class="section-2">
+            {{copyrightInfo.Intro}}
+        </view>
+    </view>
+</view>

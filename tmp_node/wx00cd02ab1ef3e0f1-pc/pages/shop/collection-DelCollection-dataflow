@@ -1,0 +1,30 @@
+// \pages/shop/collection DelCollection Data Flow
+digraph {
+	b53386b44d0f4067a13b702084a6ac58 [label="FunctionCall,
+function name -> DelCollection,
+param -> e.,
+e,
+" color=blue]
+	"8694d91854be4083ac75e55895cc4d32" [label=VariableDeclarations color=blue]
+	"28ded3662107438faf1c2e9beee5c737" [label="VariableDeclarator,
+left -> o,
+right -> a.data.newList" color=blue]
+	"8694d91854be4083ac75e55895cc4d32" -> "28ded3662107438faf1c2e9beee5c737"
+	"782d6ed8079740d7b37c2119081d244f" [label="VariableDeclarator,
+left -> s,
+right -> a.data.checkobj" color=blue]
+	"8694d91854be4083ac75e55895cc4d32" -> "782d6ed8079740d7b37c2119081d244f"
+	b53386b44d0f4067a13b702084a6ac58 -> "8694d91854be4083ac75e55895cc4d32"
+	"1d157495ee144c84904735581fd8961d" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	e7cafd7d3c44494dadac8ea5a6eb3a99 [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	"3bd79fb680694315842f66b25ac7e12e" [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	e7cafd7d3c44494dadac8ea5a6eb3a99 -> "3bd79fb680694315842f66b25ac7e12e"
+	"1d157495ee144c84904735581fd8961d" -> e7cafd7d3c44494dadac8ea5a6eb3a99
+	b53386b44d0f4067a13b702084a6ac58 -> "1d157495ee144c84904735581fd8961d"
+}

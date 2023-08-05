@@ -1,0 +1,9 @@
+module.exports = ({
+    getTag: (function(tags) {
+        if (tags == '' || tags == null) {
+            return ([])
+        } else {
+            return (JSON.parse(tags))
+        }
+    }),
+});

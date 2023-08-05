@@ -1,0 +1,34 @@
+// \pages/noticeList/noticeList getPhoneNumber Data Flow
+digraph {
+	"4fed6f66f757406c9ece9ae717c1c13f" [label="FunctionCall,
+function name -> getPhoneNumber,
+param -> e,
+e.,
+" color=blue]
+	"9689267f5fc24807b566413a07dc7fde" [label=VariableDeclarations color=blue]
+	a654831ca0a74b268c71802289893201 [label="VariableDeclarator,
+left -> a,
+right -> e.detail.iv" color=blue]
+	"9689267f5fc24807b566413a07dc7fde" -> a654831ca0a74b268c71802289893201
+	"04f6c4e5766f464a8f05898b483e0423" [label="VariableDeclarator,
+left -> o,
+right -> e.detail.encryptedData" color=blue]
+	"9689267f5fc24807b566413a07dc7fde" -> "04f6c4e5766f464a8f05898b483e0423"
+	"4fed6f66f757406c9ece9ae717c1c13f" -> "9689267f5fc24807b566413a07dc7fde"
+	f6939389eff7421fba68c38394dd7fdb [label=SequenceExpression color=blue]
+	"670e48415ac44c59982e44a1c9c92aea" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	bea4a295079744adb934e4767e28ed0a [label=SequenceExpression color=blue]
+	"26d2edb524d743cda9819217ecd38bb5" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"78e2a4ff071a44b09f035398afc30683" [label="CallExpression,
+callee name -> s.getPhone,
+param -> o,
+a,
+" color=blue]
+	"26d2edb524d743cda9819217ecd38bb5" -> "78e2a4ff071a44b09f035398afc30683"
+	bea4a295079744adb934e4767e28ed0a -> "26d2edb524d743cda9819217ecd38bb5"
+	"670e48415ac44c59982e44a1c9c92aea" -> bea4a295079744adb934e4767e28ed0a
+	f6939389eff7421fba68c38394dd7fdb -> "670e48415ac44c59982e44a1c9c92aea"
+	"4fed6f66f757406c9ece9ae717c1c13f" -> f6939389eff7421fba68c38394dd7fdb
+}

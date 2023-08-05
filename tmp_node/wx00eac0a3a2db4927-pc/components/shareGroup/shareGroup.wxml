@@ -1,0 +1,18 @@
+<view catchtouchmove="preventTouchMove" class="shareGroup" wx:if="{{isShow}}">
+    <view class="deliveryLayout">
+        <text class="freeTitle">正在免单</text>
+        <view class="line"></view>
+        <view class="dateTimeLayout">
+            <text class="dateTime">剩余名额:{{groupInfo.surplus}}  {{exemptionTime}}</text>
+        </view>
+        <view class="avatarLayout">
+            <image class="avatar" src="{{item.avatar}}" wx:for="{{groupInfo.users}}"></image>
+        </view>
+        <text catchtap="joinFree" class="goFree" data-group-uuid="{{groupInfo.groupUuid}}" style="width: 70%" wx:if="{{!isShare}}">去免单</text>
+        <view class="goFreeLayout" wx:if="{{isShare}}">
+            <text class="goFree" style="position: absolute">分享</text>
+            <button class="goFreeShare" openType="share"></button>
+        </view>
+    </view>
+    <image catchtap="onClosePop" class="closeIcon" mode="aspectFill" src="http://oss.shangmian.xin/weixin_applets_icon_ic_ad_popup.png"></image>
+</view>

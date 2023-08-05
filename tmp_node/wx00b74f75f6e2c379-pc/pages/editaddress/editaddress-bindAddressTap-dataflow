@@ -1,0 +1,18 @@
+// \pages/editaddress/editaddress bindAddressTap Data Flow
+digraph {
+	d883ec0f19af42179c67167560476139 [label="FunctionCall,
+function name -> bindAddressTap,
+param -> e,
+e.,
+" color=blue]
+	c2fb995fff7e4736a424a52b411317e1 [label=VariableDeclarations color=blue]
+	c87713a8ae8b407bb2355cd6f7336c44 [label="VariableDeclarator,
+left -> address,
+right -> e.detail.value" color=blue]
+	c2fb995fff7e4736a424a52b411317e1 -> c87713a8ae8b407bb2355cd6f7336c44
+	d883ec0f19af42179c67167560476139 -> c2fb995fff7e4736a424a52b411317e1
+	"128c77f97d0b4e15b220f46372cfba73" [label="Assignment,
+left -> that.data.address,
+right -> address" color=blue]
+	d883ec0f19af42179c67167560476139 -> "128c77f97d0b4e15b220f46372cfba73"
+}

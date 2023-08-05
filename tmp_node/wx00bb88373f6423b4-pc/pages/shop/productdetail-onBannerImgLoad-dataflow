@@ -1,0 +1,19 @@
+// \pages/shop/productdetail onBannerImgLoad Data Flow
+digraph {
+	"32696ff8bbe843eaa18a63c42dbda3af" [label="FunctionCall,
+function name -> onBannerImgLoad,
+param -> t,
+t.,
+" color=blue]
+	"4fdcc6dbf0f44337965441df4c2f4e74" [label=VariableDeclarations color=blue]
+	"9795acf1059c46d891334b9ac245f94c" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	a206662c32784b3c8da2ab2d3d295490 [label="CallExpression,
+callee name -> a.imageUtil,
+param -> t,
+" color=blue]
+	"9795acf1059c46d891334b9ac245f94c" -> a206662c32784b3c8da2ab2d3d295490
+	"4fdcc6dbf0f44337965441df4c2f4e74" -> "9795acf1059c46d891334b9ac245f94c"
+	"32696ff8bbe843eaa18a63c42dbda3af" -> "4fdcc6dbf0f44337965441df4c2f4e74"
+}

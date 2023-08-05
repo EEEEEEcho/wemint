@@ -1,0 +1,110 @@
+.ModuleNavigationCall .box {
+    overflow: hidden;
+}
+
+.ModuleNavigationCall image {
+    vertical-align: middle;
+}
+
+.ModuleNavigationCall .navigation {
+    width: 100%;
+    margin-left: 20rpx;
+}
+
+.ModuleNavigationCall .navigation .address {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 72rpx;
+    padding: 24rpx 0;
+    overflow: hidden;
+}
+
+.ModuleNavigationCall .navigation .addressFont {
+    width: 536rpx;
+    font-size: 30rpx;
+    color: #333;
+    padding-right: 60rpx;
+}
+
+.ModuleNavigationCall .navigation .addressIcon {
+    width: 128rpx;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    margin-right: 20rpx;
+}
+
+.ModuleNavigationCall .navigation .addressIcon-line {
+    width: 2rpx;
+    height: 50rpx;
+    background-color: #e6e6e6;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -25rpx;
+}
+
+.ModuleNavigationCall .navigation .addressIcon image {
+    width: 52rpx;
+    height: 52rpx;
+}
+
+.ModuleNavigationCall .navigation .lines {
+    width: 100%;
+    background-color: #e6e6e6;
+}
+
+.ModuleNavigationCall .navigation .addressNum {
+    width: 536rpx;
+    font-size: 30rpx;
+    color: #333;
+    padding-right: 60rpx;
+}
+
+.ModuleNavigationCall .navigation-1 {
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.ModuleNavigationCall .navigation-1 .address {
+    min-width: 375rpx;
+    flex-grow: 1;
+    position: relative;
+    cursor: pointer;
+}
+
+.ModuleNavigationCall .navigation-1 .address span {
+    font-size: 32rpx;
+    font-family: pingFang-SC-Medium;
+    color: #333;
+}
+
+.ModuleNavigationCall .navigation-1 .address .addressFont {
+    line-height: 100rpx;
+}
+
+.ModuleNavigationCall .navigation-1 image {
+    width: 52rpx;
+    height: 52rpx;
+    margin-right: 20rpx;
+}
+
+.ModuleNavigationCall .navigation-1 .line {
+    width: 2rpx;
+    height: 50rpx;
+    background-color: #e6e6e6;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -25rpx;
+}
+
+.ModuleNavigationCall .navigation-1 .yijian {
+    display: inline-block;
+}

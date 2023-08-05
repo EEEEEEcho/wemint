@@ -1,0 +1,51 @@
+<view class="s_pagebg">
+    <view class="s_box">
+        <view class="yhuiq" wx:for="{{coupon}}" wx:key="*this">
+            <view class="yhtu">
+                <image mode="widthFix" src="../../images/ybg1.png" style="width:100%;"></image>
+            </view>
+            <view class="yh_con">
+                <view class="h3">¥{{item.money}}<view class="font1">满{{item.meet_money}}元可用</view>
+                </view>
+                <view class="h4">{{item.title}}<view class="font1">有效期：{{item.starttime}} —{{item.endtime2}}</view>
+                </view>
+                <view class="h5" wx:if="{{item.lingqu==0}}">
+                    <view bindtap="addCoupon" class="lingq" data-id="{{item.id}}">立即领取</view>
+                </view>
+                <view class="h5" wx:else>
+                    <view class="lingq" style="color: #999;border: 1px solid #999;">已领取</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view id="foot">
+    <navigator class="navig" hoverClass="none" openType="switchTab" url="../index/index">
+        <view class="fot1">
+            <image class="img1" mode="widthFix" src="../../images/icon11.jpg"></image>
+            <image class="img2" mode="widthFix" src="../../images/icon12.jpg"></image>
+            <view class="font">首页</view>
+        </view>
+    </navigator>
+    <navigator class="navig" hoverClass="none" openType="switchTab" url="../prod/prod">
+        <view class="fot1">
+            <image class="img1" mode="widthFix" src="../../images/icon21.jpg"></image>
+            <image class="img2" mode="widthFix" src="../../images/icon22.jpg"></image>
+            <view class="font">分类</view>
+        </view>
+    </navigator>
+    <navigator class="navig" hoverClass="none" openType="switchTab" url="../buy/buy">
+        <view class="fot1">
+            <image class="img1" mode="widthFix" src="../../images/icon31.jpg"></image>
+            <image class="img2" mode="widthFix" src="../../images/icon32.jpg"></image>
+            <view class="font">购物车</view>
+        </view>
+    </navigator>
+    <navigator class="navig" hoverClass="none" openType="switchTab" url="../my/my">
+        <view class="fot2">
+            <image class="img1" mode="widthFix" src="../../images/icon41.jpg"></image>
+            <image class="img2" mode="widthFix" src="../../images/icon42.jpg"></image>
+            <view class="font">我的</view>
+        </view>
+    </navigator>
+</view>

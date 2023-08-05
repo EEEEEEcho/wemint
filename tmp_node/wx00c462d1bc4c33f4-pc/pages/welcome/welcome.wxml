@@ -1,0 +1,107 @@
+<view style="overflow:{{scroFlag}};max-height:100vh">
+    <view class="container">
+        <view class="row title">
+            <input bindinput="setStorName" class="search" placeholder="请输入店铺名称"></input>
+            <image bindtap="searchStoreByName" class="search-icon" src="../../images/search.png"></image>
+        </view>
+    </view>
+    <swiper autoplay="true" class="swiper" duration="1000" indicatorDots="true" interval="5000">
+        <swiper-item wx:for="{{slider}}" wx:key="movies">
+            <image class="slide-image" mode="aspectFill" src="{{item.picUrl}}"></image>
+        </swiper-item>
+    </swiper>
+    <view class="container tab-title">
+        <view class="row" style="line-height:16px;">
+            <view bindtap="disLeft" class="col-6 leftbar">
+                <text class="size15">{{leftText}}</text>
+                <text class="iconfont icon-jiantouarrow483"></text>
+            </view>
+            <view bindtap="disRight" class="col-6 rightbar">
+                <text class="size15">{{rightText}}</text>
+                <text class="iconfont icon-jiantouarrow483"></text>
+            </view>
+        </view>
+    </view>
+    <view class="tab-stores">
+        <view bindtap="gotoIndex" class="container li" data-store-info="{{item}}" data-store-info-delivery-price="{{item.storeInfoDeliveryPrice}}" data-store-name="{{item.storeInfoName}}" data-storeuid="{{item.storeInfoStoreId}}" wx:for="{{stores}}" wx:key="id">
+            <view class="row">
+                <view class="flex40 clear-padding-right">
+                    <image class="store-img" src="{{item.storeInfoHeadImgUrl}}"></image>
+                </view>
+                <view class="flex60 flex">
+                    <view>
+                        <text class="store-name">{{item.storeInfoName}}</text>
+                        <text class="store-dis size15" wx:if="{{rightText=='人气最高'}}">{{item.logon}}</text>
+                        <text class="store-dis size15" wx:if="{{rightText=='销量最高'}}">{{item.logon}}</text>
+                        <text class="store-dis size15" wx:if="{{rightText=='距我最近'}}">{{item.distance==null||item.distance==undefined||item.distance>=10000||item.distance==''||item.distance=='0'?'无距离信息':item.distance+'km'}}</text>
+                    </view>
+                    <view>
+                        <text class="store-point">评分</text>
+                        <view wx:for="{{starurls[index]}}" wx:key="id">
+                            <image class="xing" src="{{item.starurl}}"></image>
+                        </view>
+                    </view>
+                    <view>
+                        <text class="store-shoptime">营业时间：{{item.storeInfoBusinessStartTime}}-{{item.storeInfoBusinessEndTime}}</text>
+                    </view>
+                    <view>
+                        <text class="store-position">{{item.storeInfoAddress}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="cover" style="display:{{disRight}}">
+    <view bindtap="cancel" class="cover1" style="display:{{disRight}}"></view>
+    <view class="search-right">
+        <view class="row">
+            <view bindtap="disLeft" class="col-6 leftbar1">
+                <text class="size15">{{leftText}}</text>
+                <text class="iconfont icon-jiantouarrow483"></text>
+            </view>
+            <view bindtap="cancel" class="col-6 rightbar1">
+                <text class="size15">{{rightText}}</text>
+                <text class="iconfont icon-jiantouarrow483"></text>
+            </view>
+        </view>
+        <view class="row" style="padding-left:20px; padding-right:20px;">
+            <view class="col-4 clear-padding-both tcenter">
+                <text bindtap="maxPopu" style="font-size:15px;">人气最高</text>
+            </view>
+            <view class="col-4 clear-padding-both tcenter">
+                <text bindtap="maxSale" style="font-size:15px;">销量最高</text>
+            </view>
+            <view class="col-4 clear-padding-both tcenter">
+                <text bindtap="nearBy" style="font-size:15px;">距我最近</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="cover" style="display:{{disLeft}}">
+    <view bindtap="cancel" class="cover1" style="display:{{disLeft}}"></view>
+    <view class="search-left">
+        <view class="row">
+            <view bindtap="cancel" class="col-6 leftbar1">
+                <text class="size15">{{leftText}}</text>
+                <text class="iconfont icon-jiantouarrow483"></text>
+            </view>
+            <view bindtap="disRight" class="col-6 rightbar1">
+                <text class="size15">{{rightText}}</text>
+                <text class="iconfont icon-jiantouarrow483"></text>
+            </view>
+        </view>
+        <view class="row" wx:for="{{rows}}" wx:for-index="rowindex" wx:key="id">
+            <view class="col-6 clear-padding-both tcenter" wx:for="{{rows[rowindex]}}" wx:for-index="cellindex" wx:for-item="cell" wx:key="key">
+                <text bindtap="area" data-areaName="{{cell.areaName}}">{{cell.areaName}}</text>
+            </view>
+        </view>
+        <view class="row">
+            <view bindtap="toOther" class="col-12 clear-padding-both tcenter-sp">其它城市</view>
+        </view>
+    </view>
+</view>
+<view class="shouquan" wx:if="{{shouquan==true}}">
+    <image class="avatr_img" src="{{shouquanImg}}"></image>
+    <button bindgetuserinfo="goDetail" class="activate" openType="getUserInfo" wx:if="{{shouquan==true}}">一键授权</button>
+</view>

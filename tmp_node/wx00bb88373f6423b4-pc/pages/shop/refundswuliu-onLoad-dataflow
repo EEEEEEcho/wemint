@@ -1,0 +1,51 @@
+// \pages/shop/refundswuliu onLoad Data Flow
+digraph {
+	cae196f757e54200b635e060490d23cb [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"642309f2f24e411a86719c6e0126b15b" [label=SequenceExpression color=blue]
+	ac1a87d4f9a540a9a024cb18d4022fbf [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"021077d7523e427fb06ff396fa8f5013" [label="CallExpression,
+callee name -> e.getPageUrl,
+param -> a,
+" color=blue]
+	ac1a87d4f9a540a9a024cb18d4022fbf -> "021077d7523e427fb06ff396fa8f5013"
+	"642309f2f24e411a86719c6e0126b15b" -> ac1a87d4f9a540a9a024cb18d4022fbf
+	c3a1e9d28197443695a69fbf27c5c322 [label="CallExpression,
+callee name -> e.registerGlobalFunctions,
+param -> a,
+" color=blue]
+	"642309f2f24e411a86719c6e0126b15b" -> c3a1e9d28197443695a69fbf27c5c322
+	"745311d17f4b49eb9dec613a93f4b103" [label="CallExpression,
+callee name -> this.loadrefundsreson,
+param -> " color=blue]
+	f5b3ac853ac34cb2800942ecab169d47 [label="FunctionCall,
+function name -> loadrefundsreson,
+param -> " color=blue]
+	beab6a0ec0b8470ba225247495b7aeb7 [label="If Alternate" color=blue]
+	"1eab91683b66422392a9b1685abacfcd" [label=SequenceExpression color=blue]
+	f915bc07e94c462c89eb316c28324140 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	c24c56cb8c5245bbba99fc3889f8bd8f [label="Assignment,
+left -> a,
+right -> t.data.queryparams.pkey" color=blue]
+	f915bc07e94c462c89eb316c28324140 -> c24c56cb8c5245bbba99fc3889f8bd8f
+	"1eab91683b66422392a9b1685abacfcd" -> f915bc07e94c462c89eb316c28324140
+	abf56cfc685044008f3597b486142e12 [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	bc57e1a4e5a14767b0ff1518bfa54997 [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=rdetail&pkey=' + a
+}" color=blue]
+	abf56cfc685044008f3597b486142e12 -> bc57e1a4e5a14767b0ff1518bfa54997
+	"1eab91683b66422392a9b1685abacfcd" -> abf56cfc685044008f3597b486142e12
+	beab6a0ec0b8470ba225247495b7aeb7 -> "1eab91683b66422392a9b1685abacfcd"
+	f5b3ac853ac34cb2800942ecab169d47 -> beab6a0ec0b8470ba225247495b7aeb7
+	"745311d17f4b49eb9dec613a93f4b103" -> f5b3ac853ac34cb2800942ecab169d47
+	"642309f2f24e411a86719c6e0126b15b" -> "745311d17f4b49eb9dec613a93f4b103"
+	cae196f757e54200b635e060490d23cb -> "642309f2f24e411a86719c6e0126b15b"
+}

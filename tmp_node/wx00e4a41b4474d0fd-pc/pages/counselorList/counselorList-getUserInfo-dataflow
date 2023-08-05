@@ -1,0 +1,13 @@
+// \pages/counselorList/counselorList getUserInfo Data Flow
+digraph {
+	b71bb38ae76747b4920fefeaa11ecc8e [label="FunctionCall,
+function name -> getUserInfo,
+param -> e,
+e.,
+" color=blue]
+	d81ec6f3859e445b9f0f834182176f62 [label="CallExpression,
+callee name -> d.call,
+param -> e,
+" color=blue]
+	b71bb38ae76747b4920fefeaa11ecc8e -> d81ec6f3859e445b9f0f834182176f62
+}

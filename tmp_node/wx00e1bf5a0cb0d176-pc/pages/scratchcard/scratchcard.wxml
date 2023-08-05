@@ -1,0 +1,111 @@
+<view class="container" style="background: {{isUnderway?'linear-gradient(to right, #f23c40, #e86243)':''}};">
+    <view class="container-bg" style="background-image: url({{baseUrl}}/images/wxapp/scratch_bg04.png);height: {{winHeight}}rpx;" wx:if="{{isUnderway}}">
+        <view catchtap="toHomeIndex" class="toIndexHome flexBox flexAlign" wx:if="{{indexBtn}}">
+            <text class="iconfont icon-iconfont_homepage"></text>
+            <text class="home-title">首页</text>
+        </view>
+        <image class="scratch_title" mode="widthFix" src="{{baseUrl}}/images/wxapp/scratch_title.png"></image>
+        <view class="activity-area flexBox flexDirectionColumn flexAlign">
+            <view class="activity-con-txt flexBox flexAlign flexJustify">
+                <text class="activitySurplus">距离{{timestatus==1?'开始':'结束'}}还剩</text>
+                <text class="shi">{{activityTime.day}}</text>
+                <text class="activityDay">天</text>
+                <text class="shi">{{activityTime.hour}}</text>
+                <text class="colon">:</text>
+                <text class="shi">{{activityTime.minute}}</text>
+                <text class="colon">:</text>
+                <text class="shi">{{activityTime.second}}</text>
+            </view>
+            <view id="guagua" style="width: {{show_width}}rpx; height: {{show_height}}rpx;background: {{!is_popus_hidden?'#f4f4f4':'#fff5e6'}};">
+                <canvas bindtouchend="endCanvas" bindtouchmove="moveCanvas" bindtouchstart="startCanvas" canvasId="guaguaCanvas" disableScroll="true" style="width: {{show_width}}rpx; height: {{show_height}}rpx;" wx:if="{{result_type&&info.status==3&&!haveNotimes&&!haveNotimesBox&&!getMobileFlag&&is_popus_hidden&&!showNoPrize&&!rejectAccredit}}"></canvas>
+                <image src="/images/scratch_mark.jpg" style="width: {{show_width}}rpx; height: {{show_height}}rpx;" wx:if="{{info.status==2||getMobileFlag||!is_popus_hidden||showNoPrize||haveNotimesBox||rejectAccredit}}"></image>
+                <view class="get-phone-btn-bg" style="background-image: url({{baseUrl}}/images/wxapp/getPhoneBtn.png);" wx:if="{{getMobileFlag&&!haveNotimesBox}}">
+                    <button bindgetphonenumber="getPhoneNumber" class="get-phone-btn flexBox flexAlign flexJustify" hoverClass="none" openType="getPhoneNumber">点我刮奖</button>
+                </view>
+                <view class="wait-mark flexBox flexAlign flexJustify" wx:if="{{info.status==2||showNoPrize}}">{{info.status==2?'活动未开始':'全部奖品已抽完，请期待下一次活动。'}}</view>
+                <view class="wait-mark flexBox flexAlign flexJustify" wx:if="{{haveNotimesBox}}">{{info.participateType==1?'参与次数已用完':'今天参与次数已用完，明天再来！'}}</view>
+                <view class="guagua-re flexBox flexAlign flexDirectionColumn flexJustify" style="width: {{show_width}}rpx; height: {{show_height}}rpx;background-image: {{isWin?'url('+baseUrl+'/images/wxapp/something.png)':''}};" wx:if="{{info.status==3&&!haveNotimesBox&&!getMobileFlag&&is_popus_hidden&&!showNoPrize}}">
+                    <view class="result-val">
+                        <text class="result-level" wx:if="{{isWin}}">{{resultData.prizeTitle}}：</text>
+                        <text class="result-data {{!isWin?'thanksFont':''}}">{{resultData.prizeName}}</text>
+                    </view>
+                    <view class="guagua-re-tips" wx:if="{{isWin}}">手气不错，快点分享给小伙伴~</view>
+                </view>
+            </view>
+        </view>
+        <view class="more-counts flexBox flexDirectionColumn flexAlign" wx:if="{{!showNoPrize}}">
+            <view class="counts-tips" wx:if="{{lotteryCountData.lotteryCount>0}}"></view>
+            <view bindtap="reset" class="reset-btn" style="background-image: url({{baseUrl}}/images/wxapp/scratch_btn.png);" wx:if="{{showResetBtn&&lotteryCountData.lotteryCount>0}}">
+                <view class="reset-btn-text flexBox flexAlign flexJustify">再刮一次</view>
+            </view>
+            <view class="counts flexBox flexDirectionRow" wx:if="{{showShareBtn}}">
+                <view class="share-tips">分享1次可获得1次机会，</view>
+                <view class="counts-tips">
+                    <text>还可以分享</text>
+                    <text class="less-count">{{info.canShare==1?lotteryCountData.remainShareCount:lotteryCountData.remainJiFenCount}}</text>
+                    <text>次</text>
+                </view>
+            </view>
+            <view class="scratch-btn" style="background-image: url({{baseUrl}}/images/wxapp/scratch_btn.png);" wx:if="{{showShareBtn}}">
+                <button catchtap="shareToFriend" class="share-btn flexBox flexAlign flexJustify" hoverClass="none" openType="share" type="default">
+                    <text class="share-title">分享获得机会</text>
+                    <text class="jiantou">></text>
+                </button>
+            </view>
+            <view class="counts flexBox flexDirectionRow" wx:if="{{showJiFenBtn}}">
+                <view class="share-tips">消耗{{info.jiFenConst}}积分可获得1次机会，</view>
+                <view class="counts-tips">
+                    <text>还可以兑换</text>
+                    <text class="less-count">{{info.canShare==1?lotteryCountData.remainShareCount:lotteryCountData.remainJiFenCount}}</text>
+                    <text>次</text>
+                </view>
+            </view>
+            <view class="scratch-btn" style="background-image: url({{baseUrl}}/images/wxapp/scratch_btn.png);" wx:if="{{showJiFenBtn}}">
+                <button catchtap="payJifen" class="share-btn flexBox flexAlign flexJustify" type="default">
+                    <text class="share-title">消耗{{info.jiFenConst}}积分</text>
+                    <text class="jiantou">></text>
+                </button>
+            </view>
+            <view class="counts-tips" wx:if="{{haveNotimes}}">{{info.participateType==1?'参与次数已用完':'今天参与次数已用完，明天再来！'}}</view>
+            <view class="scratch-btn {{haveNotimesBox?'mt40':''}}" style="background-image: url({{baseUrl}}/images/wxapp/scratch_btn.png);" wx:if="{{haveNotimes||haveNotimesBox}}">
+                <button class="share-btn flexBox flexAlign flexJustify" hoverClass="none" openType="share" type="default">
+                    <text class="share-title">分享给其他小伙伴试试运气吧！</text>
+                </button>
+            </view>
+        </view>
+        <view class="scratch-bottom">
+            <view class="other-btn flexBox flexAlign flexJustify">
+                <view catchtap="toPrizeRule" class="btn-view flexBox flexAlign flexJustify">
+                    <view class="pirze-btn">奖品</view>
+                    <text style="font-size: 24rpx;">|</text>
+                    <view class="regulation">规则</view>
+                </view>
+                <view bindtap="toMyprize" class="btn-view flexBox flexAlign flexJustify">
+                    <text>我要兑奖</text>
+                    <view class="prize-num flexBox flexAlign flexJustify" wx:if="{{winnerCount>0}}">{{winnerCount>99?'...':winnerCount}}</view>
+                </view>
+            </view>
+            <view class="winner-list flexBox flexAlign flexJustify" style="background: {{winnerList.length>0?'rgba(210, 74, 60, .5)':''}};">
+                <view class="list-title" wx:if="{{winnerList.length>0}}">中奖名单</view>
+                <view class="list-right" wx:if="{{winnerList.length>0}}">
+                    <swiper autoplay="{{autoplay}}" circular="true" displayMultipleItems="1" interval="3000" vertical="true">
+                        <swiper-item wx:for="{{winnerList}}" wx:key="index">
+                            <view class="item-box flexBox flexAlign">
+                                <view class="nickname">ID:{{item.nickName}}</view>
+                                <view class="item-prize">获得:{{item.prizeName}}</view>
+                            </view>
+                        </swiper-item>
+                    </swiper>
+                    <view class="swiper-mark"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="lottery-default flexBox flexAlign flexDirectionColumn" style="height: {{winHeight}}rpx;" wx:if="{{isUnpublished}}">
+        <image mode="widthFix" src="{{baseUrl}}/images/wxapp/blank_10.png"></image>
+        <view class="blank-title">{{info.status==1||info.status==4?'活动已结束':''}}</view>
+        <view bindtap="toHomeIndex" class="toHomeIndex">去商城</view>
+    </view>
+</view>
+<include src="/pages/template/getUserInfo.wxml"></include>
+<popus bind:closeEvent="is_popus_close" bind:payEvent="is_popus_pay" bind:shareEvent="is_popus_share" dialogShow="{{is_dialog_show}}" isLoading="{{is_loading}}" popusHidden="{{is_popus_hidden}}" popusMsg="{{is_popus_msg}}" popusStatus="{{is_popus_status}}" popusText="{{is_popus_text}}" prizeImg="{{is_popus_prizeImg}}"></popus>

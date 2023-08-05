@@ -1,0 +1,50 @@
+// \pages/shop/balance onShow Data Flow
+digraph {
+	"7bbda1cb58b0458b89a08adf752a55b0" [label="FunctionCall,
+function name -> onShow,
+param -> " color=blue]
+	a96ea84b8fcc429581847bf485523c9a [label="CallExpression,
+callee name -> this.loadOrder,
+param -> " color=blue]
+	"116255f07085450cad9b04b505e974ad" [label="FunctionCall,
+function name -> loadOrder,
+param -> " color=blue]
+	a36f7a24c7094f1ea8d628d9c1ca14af [label="If Alternate" color=blue]
+	"7f15e31b09f84f4580e4bdbadfc62d2b" [label=VariableDeclarations color=blue]
+	"28a6df6df0f7423dba653fccc66d832b" [label="VariableDeclarator,
+left -> i,
+right -> e.data.recordcount" color=blue]
+	"7f15e31b09f84f4580e4bdbadfc62d2b" -> "28a6df6df0f7423dba653fccc66d832b"
+	c1fc4543f9274f56b5b5551a05deb2a1 [label="VariableDeclarator,
+left -> o,
+right -> e.data.orderlist.length" color=blue]
+	"7f15e31b09f84f4580e4bdbadfc62d2b" -> c1fc4543f9274f56b5b5551a05deb2a1
+	a36f7a24c7094f1ea8d628d9c1ca14af -> "7f15e31b09f84f4580e4bdbadfc62d2b"
+	"77687eea178543019b914ab73b4fc8d5" [label="If Alternate" color=blue]
+	"1bb1d2684f2f4eeab6777bd4c17caf86" [label=VariableDeclarations color=blue]
+	"7c386ded23d64034a73264333f081465" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"7c97649a92394af0a7de87cb234f2cfb" [label="CallExpression,
+callee name -> Math.ceil,
+param -> o / e.data.pagesize,
+" color=blue]
+	"7c386ded23d64034a73264333f081465" -> "7c97649a92394af0a7de87cb234f2cfb"
+	"1bb1d2684f2f4eeab6777bd4c17caf86" -> "7c386ded23d64034a73264333f081465"
+	"77687eea178543019b914ab73b4fc8d5" -> "1bb1d2684f2f4eeab6777bd4c17caf86"
+	"99914a1831f148c486c46fa6ef3c245d" [label=SequenceExpression color=blue]
+	dfb9688c78d544e289e527e82f4ff5e1 [label="CallExpression,
+callee name -> a.sendRequest,
+param -> " color=blue]
+	d716a7e028c74db093b2bbe22561a707 [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=getFinance&page=' + s + '&pagesize=' + e.data.pagesize
+}" color=blue]
+	dfb9688c78d544e289e527e82f4ff5e1 -> d716a7e028c74db093b2bbe22561a707
+	"99914a1831f148c486c46fa6ef3c245d" -> dfb9688c78d544e289e527e82f4ff5e1
+	"77687eea178543019b914ab73b4fc8d5" -> "99914a1831f148c486c46fa6ef3c245d"
+	a36f7a24c7094f1ea8d628d9c1ca14af -> "77687eea178543019b914ab73b4fc8d5"
+	"116255f07085450cad9b04b505e974ad" -> a36f7a24c7094f1ea8d628d9c1ca14af
+	a96ea84b8fcc429581847bf485523c9a -> "116255f07085450cad9b04b505e974ad"
+	"7bbda1cb58b0458b89a08adf752a55b0" -> a96ea84b8fcc429581847bf485523c9a
+}

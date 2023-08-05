@@ -1,0 +1,13 @@
+// \pages/index/takeOut/takeOut onShow Data Flow
+digraph {
+	a3a78aed4a314e3f99e0dff96eca5767 [label="FunctionCall,
+function name -> onShow,
+param -> " color=blue]
+	"1326dd945c2a49798941043e5e621d98" [label=SequenceExpression color=blue]
+	"94de4467601243ed8fcac8e12925cc58" [label="CallExpression,
+callee name -> console.log,
+param -> e.data.back,
+" color=blue]
+	"1326dd945c2a49798941043e5e621d98" -> "94de4467601243ed8fcac8e12925cc58"
+	a3a78aed4a314e3f99e0dff96eca5767 -> "1326dd945c2a49798941043e5e621d98"
+}

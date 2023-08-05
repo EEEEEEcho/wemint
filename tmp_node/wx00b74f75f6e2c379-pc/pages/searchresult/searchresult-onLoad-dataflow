@@ -1,0 +1,11 @@
+// \pages/searchresult/searchresult onLoad Data Flow
+digraph {
+	"9546bdc4b77745be9da1566a315a3264" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"8e1b7444bc5f4fdc9ea006261dd27d4e" [label="CallExpression,
+callee name -> that.loadData,
+param -> that,
+" color=blue]
+	"9546bdc4b77745be9da1566a315a3264" -> "8e1b7444bc5f4fdc9ea006261dd27d4e"
+}

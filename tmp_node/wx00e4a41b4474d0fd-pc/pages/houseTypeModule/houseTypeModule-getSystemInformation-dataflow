@@ -1,0 +1,38 @@
+// \pages/houseTypeModule/houseTypeModule getSystemInformation Data Flow
+digraph {
+	"2090485b561446b78ee1938d07763bb6" [label="FunctionCall,
+function name -> getSystemInformation,
+param -> " color=blue]
+	"390627734f02482187d5bdfafb355ca7" [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> " color=blue]
+	dfd8c961aa0e48408bb1d005476da69b [label="FunctionCall,
+function name -> success,
+param -> t.,
+t,
+" color=blue]
+	"788a33c89dbb4989b3d5e1d89b7405ad" [label=VariableDeclarations color=blue]
+	"25f3739ec6514c59885c202d152072c0" [label="VariableDeclarator,
+left -> a,
+right -> t.windowHeight * (750 / t.windowWidth) - 180" color=blue]
+	"788a33c89dbb4989b3d5e1d89b7405ad" -> "25f3739ec6514c59885c202d152072c0"
+	dfd8c961aa0e48408bb1d005476da69b -> "788a33c89dbb4989b3d5e1d89b7405ad"
+	"1845e84dc1c54b2b8533abe1cdcc345d" [label=SequenceExpression color=blue]
+	"6b298080bc874924ad63ace90acc4405" [label="CallExpression,
+callee name -> console.log,
+param -> 'onLoad:' + a,
+" color=blue]
+	"1845e84dc1c54b2b8533abe1cdcc345d" -> "6b298080bc874924ad63ace90acc4405"
+	"0b80a9ffeef74e9d8e3889605cddaed8" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"247662decc044fd18df78d424d47731b" [label="Object Properties
+{
+currentWindowsWidth -> a
+}" color=blue]
+	"0b80a9ffeef74e9d8e3889605cddaed8" -> "247662decc044fd18df78d424d47731b"
+	"1845e84dc1c54b2b8533abe1cdcc345d" -> "0b80a9ffeef74e9d8e3889605cddaed8"
+	dfd8c961aa0e48408bb1d005476da69b -> "1845e84dc1c54b2b8533abe1cdcc345d"
+	"390627734f02482187d5bdfafb355ca7" -> dfd8c961aa0e48408bb1d005476da69b
+	"2090485b561446b78ee1938d07763bb6" -> "390627734f02482187d5bdfafb355ca7"
+}

@@ -1,0 +1,35 @@
+// \pages/productdetail/productdetail addAmount Data Flow
+digraph {
+	afed9c635cdc4a2da28986cf9712e8bc [label="FunctionCall,
+function name -> addAmount,
+param -> e,
+e.,
+" color=blue]
+	"79ee2bc87eb746829581f5fcda522fd1" [label=VariableDeclarations color=blue]
+	a5e8e5ff3496402a96abecc88c6d1efb [label="VariableDeclarator,
+left -> amount,
+right -> this.data.buyAmount" color=blue]
+	"79ee2bc87eb746829581f5fcda522fd1" -> a5e8e5ff3496402a96abecc88c6d1efb
+	afed9c635cdc4a2da28986cf9712e8bc -> "79ee2bc87eb746829581f5fcda522fd1"
+	"3ea6e99787fd422e9a983235f08fa8fb" [label=VariableDeclarations color=blue]
+	e2afee48e32e410dbfb36d4eacf8ca44 [label="VariableDeclarator,
+left -> stock,
+right -> this.data.skuStock" color=blue]
+	"3ea6e99787fd422e9a983235f08fa8fb" -> e2afee48e32e410dbfb36d4eacf8ca44
+	afed9c635cdc4a2da28986cf9712e8bc -> "3ea6e99787fd422e9a983235f08fa8fb"
+	a62e5502836e45348dca940cc865d41c [label="Assignment,
+left -> amount,
+right -> amount + 1" color=blue]
+	afed9c635cdc4a2da28986cf9712e8bc -> a62e5502836e45348dca940cc865d41c
+	"1e234bff0f9c424bac41270797ccd716" [label="If Alternate" color=blue]
+	"00e2ec074a2f45efbca1dce11f719499" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"728fb3b96afd414cae61ff4234df34e5" [label="Object Properties
+{
+buyAmount -> amount
+}" color=blue]
+	"00e2ec074a2f45efbca1dce11f719499" -> "728fb3b96afd414cae61ff4234df34e5"
+	"1e234bff0f9c424bac41270797ccd716" -> "00e2ec074a2f45efbca1dce11f719499"
+	afed9c635cdc4a2da28986cf9712e8bc -> "1e234bff0f9c424bac41270797ccd716"
+}

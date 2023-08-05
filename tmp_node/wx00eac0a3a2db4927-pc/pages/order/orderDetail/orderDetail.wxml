@@ -1,0 +1,138 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="orderDetail column" style="margin-top: {{navH+status+10}}px;">
+    <view class="topLayout row" style="background:{{goodType==2&&detailInfo.order.isWinning==1?'#ed7b43':'#474752'}}">
+        <view class="statusTextLayout column">
+            <view class="statusNumberLayout row">
+                <text class="statusTitle">{{statusTitle}}</text>
+                <text class="statusNumber" wx:if="{{luckNumber!='0'}}">{{luckNumber}}</text>
+            </view>
+            <text class="statusRemark">{{statusRemark}}</text>
+        </view>
+        <image class="topShopLogo" mode="aspectFill" src="{{detailInfo.shop.logo}}"></image>
+    </view>
+    <view class="addressLayout">
+        <view class="receiptLayout row">
+            <text class="receipt">收件人:</text>
+            <text class="receiptName">{{detailInfo.order.name}}</text>
+            <text class="receiptPhone">{{detailInfo.order.mobile}}</text>
+        </view>
+        <view class="receiptAddress row">
+            <text class="addressLabel">收货地址:</text>
+            <text class="addressText">{{detailInfo.order.address}}</text>
+        </view>
+    </view>
+    <view class="deliveryLayout" wx:if="{{detailInfo.order.deliverType==2&&(detailInfo.order.status==4||detailInfo.order.status==5)}}">
+        <view class="receiptLayout row">
+            <text class="receipt">配送师傅:</text>
+            <text class="receiptName">{{detailInfo.order.courierName}}</text>
+            <text class="receiptPhone">{{detailInfo.order.courierMobile}}</text>
+        </view>
+        <view class="receiptAddress row">
+            <text class="deliveryLabel">配送时间:</text>
+            <text class="deliveryDate">{{detail.getTime(detailInfo.order.deliveryAt)}}</text>
+            <text bindtap="onCourierMobile" class="courierPhone">联系他</text>
+        </view>
+    </view>
+    <view class="freeLayout column" wx:if="{{detailInfo.exemptionGroup!=null}}">
+        <text class="freeTitle">我参与的免单</text>
+        <view class="fightGroupLayout row">
+            <text class="fightGroupLabel">拼团人数:</text>
+            <image class="fightGroupAvatar" src="{{user.avatar}}" style="margin-left: {{index>0?'-16rpx':'0rpx'}}" wx:for="{{detailInfo.exemptionGroup.users}}" wx:for-item="user" wx:key="index"></image>
+            <text class="freePeople">{{detailInfo.exemptionGroup.isFull==0?'差'+detailInfo.exemptionGroup.surplus+'人':'人数已满'}}</text>
+            <view class="shareFreeLayout">
+                <text class="shareFree">分享免单</text>
+                <button class="shareButton" openType="share"></button>
+            </view>
+        </view>
+        <view class="lotteryTimeLayout row">
+            <text class="lotteryTimeLabel">开奖时间:</text>
+            <view class="lotteryDate row" wx:if="{{detailInfo.exemptionGroup.isFull==0}}">
+                <text class="remainder">剩余</text>
+                <text class="remainderNumber">{{freeDay}}</text>
+                <text class="remainder">天</text>
+                <text class="hourNumber">{{freeHour}}</text>
+                <text class="colon">:</text>
+                <text class="minuteNumber">{{freeMinute}}</text>
+                <text class="colon">:</text>
+                <text class="secondNumber">{{freeSecond}}</text>
+            </view>
+            <text class="lotteryStatus" wx:if="{{detailInfo.exemptionGroup.isFull!=0}}">{{lotteryStatus}}</text>
+            <text class="lotteryRemark">{{lotteryResult}}</text>
+        </view>
+        <view class="lineStyle" wx:if="{{detailInfo.order.groupStatus==10}}"></view>
+        <view class="lotteryNumberLayout row" wx:if="{{detailInfo.order.groupStatus==10}}">
+            <text class="lotteryLabel">中奖号码</text>
+            <text class="lotteryNumber">{{detailInfo.exemptionGroup.winningNum}}</text>
+            <text class="lotteryPhone">{{detailInfo.exemptionGroup.winningUserNickname}}</text>
+        </view>
+    </view>
+    <view class="orderList column">
+        <view class="shopLayout row">
+            <image class="shopLogo" lazyLoad="true" mode="aspectFill" src="{{detailInfo.shop.logo}}"></image>
+            <text class="shopName" wx:if="{{detailInfo.shop.name!=null}}">{{detailInfo.shop.name}}</text>
+            <view class="statusLayout">
+                <image class="orderDeposit" src="http://oss.shangmian.xin/weixin_applets_order_deposit.png" wx:if="{{detailInfo.order.payType==2}}"></image>
+                <text class="orderStatus">{{orderStatus}}</text>
+            </view>
+        </view>
+        <view class="lineStyle"></view>
+        <order-good good="{{item}}" wx:for="{{detailInfo.goods}}"></order-good>
+    </view>
+    <view class="remarksLayout column">
+        <view class="deliveryMethodLayout row">
+            <text class="deliveryMethod">配送方式</text>
+            <text class="logistics">{{deliveryText}}</text>
+        </view>
+        <view class="promotionLayout row">
+            <text class="deliveryMethod">促销优惠</text>
+            <text class="logistics" wx:if="{{detailInfo.order!=undefined}}">¥{{detailInfo.order.discountFee/100}}</text>
+        </view>
+        <view class="amountLayout row">
+            <text class="orderAmount">订单金额</text>
+            <text class="priceValue" wx:if="{{detailInfo.order!=undefined}}">¥{{detailInfo.order.orderFee/100}}</text>
+        </view>
+    </view>
+    <view class="goodTotalLayout row">
+        <text class="piece">{{detail.getGoodNum(detailInfo.goods)}}件商品</text>
+        <text class="totalPay" wx:if="{{detailInfo.order!=undefined}}">合计实付:</text>
+        <text class="priceTotal" wx:if="{{detailInfo.order!=undefined}}">¥{{detailInfo.order.billFee/100}}</text>
+        <text class="finalPayLabel" wx:if="{{detailInfo.order.payType==2&&goodType==1}}">{{detailInfo.order.isPay===1?'尾款:':detailInfo.order.isPay===0?'未付款:':''}}</text>
+        <text class="finalPayFee" wx:if="{{detailInfo.order.payType==2&&goodType==1}}">{{detailInfo.order.isPay===1?'¥'+detailInfo.order.finalPayFee/100:detailInfo.order.isPay===0?'¥'+detailInfo.order.frontPayFee/100:''}}</text>
+    </view>
+    <view class="dataLayout column" wx:if="{{detailInfo.order!=undefined}}">
+        <view class="orderNumberLayout row">
+            <text class="orderLabel">订单编号:</text>
+            <text class="orderNumber">{{detailInfo.order.orderSubUuid}}</text>
+            <text bindtap="copyClick" class="copyBtn">复制</text>
+        </view>
+        <view class="createTimeLayout row" wx:if="{{detailInfo.order.tradeUuid!=undefined&&detailInfo.order.tradeUuid!=''}}">
+            <text class="createTimeLabel">{{goodType==1?'交易号1:':'交易号:'}}</text>
+            <text class="timeNumber">{{detailInfo.order.tradeUuid}}{{goodType==1?'(定金)':''}}</text>
+        </view>
+        <view class="createTimeLayout row" wx:if="{{detailInfo.order.finalTradeUuid!=undefined&&detailInfo.order.finalTradeUuid!=''&&goodType==1}}">
+            <text class="createTimeLabel">交易号2:</text>
+            <text class="timeNumber">{{detailInfo.order.finalTradeUuid}}(尾款)</text>
+        </view>
+        <view class="createTimeLayout row" wx:if="{{detailInfo.order.createdAt!=undefined}}">
+            <text class="createTimeLabel">创建时间:</text>
+            <text class="timeNumber">{{detail.getTime(detailInfo.order.createdAt)}}</text>
+        </view>
+        <view class="payForTimeLayout row" wx:if="{{detailInfo.order.payAt!=undefined}}">
+            <text class="payForTimeLabel">付款时间:</text>
+            <text class="timeNumber">{{detail.getTime(detailInfo.order.payAt)}}</text>
+        </view>
+        <view class="shipLayout row" wx:if="{{detailInfo.order.deliveryAt!=undefined}}">
+            <text class="payForTimeLabel">发货时间:</text>
+            <text class="timeNumber">{{detail.getTime(detailInfo.order.deliveryAt)}}</text>
+        </view>
+    </view>
+    <view class="orderBottom row" wx:if="{{isThreeShowGray||isTwoShowGray||isShowGray||isShowYellow}}">
+        <text bindtap="onThreeGrayClick" class="grayBtn" wx:if="{{isThreeShowGray}}">{{threeGrayText}}</text>
+        <text bindtap="onTwoGrayClick" class="grayBtn" wx:if="{{isTwoShowGray}}">{{twoGrayText}}</text>
+        <text bindtap="onGrayClick" class="grayBtn" wx:if="{{isShowGray}}">{{grayText}}</text>
+        <text bindtap="onRedClick" class="yellowBtn" wx:if="{{isShowYellow}}">{{yellowText}}</text>
+    </view>
+</view>
+<loading-view isShow="{{isShowLoad}}"></loading-view>
+<share-group groupUuid="{{shareGroupUuid}}" isShare="{{true}}" isShow="{{isShareGroup}}"></share-group>
+<wxs module="detail" src="orderDetail.wxs" />

@@ -1,0 +1,30 @@
+<view class="wx-content-info" wx:if="{{imageSrc}}">
+    <view class="wx-corpper" style="width:{{cropperInitW}}rpx;height:{{cropperInitH}}rpx;background:#000" wx:if="{{isShowImg}}">
+        <view class="wx-corpper-content" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL}}rpx;top:{{cropperT}}rpx">
+            <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx"></image>
+            <view bindtouchmove="contentMoveing" bindtouchstart="contentStartMove" class="wx-corpper-crop-box" style="width:{{cutW}}rpx;height:{{cutH}}rpx;left:{{cutL}}rpx;top:{{cutT}}rpx">
+                <view class="wx-cropper-view-box">
+                    <view class="wx-cropper-dashed-h"></view>
+                    <view class="wx-cropper-dashed-v"></view>
+                    <view catchtouchmove="dragMove" catchtouchstart="dragStart" class="wx-cropper-line-t" data-drag="top"></view>
+                    <view catchtouchmove="dragMove" catchtouchstart="dragStart" class="wx-cropper-line-r" data-drag="right"></view>
+                    <view catchtouchmove="dragMove" catchtouchstart="dragStart" class="wx-cropper-line-b" data-drag="bottom"></view>
+                    <view catchtouchmove="dragMove" catchtouchstart="dragStart" class="wx-cropper-line-l" data-drag="left"></view>
+                    <view catchtouchmove="dragMove" catchtouchstart="dragStart" class="wx-cropper-point point-t" data-drag="top"></view>
+                    <view class="wx-cropper-point point-tr" data-drag="topTight"></view>
+                    <view catchtouchmove="dragMove" catchtouchstart="dragStart" class="wx-cropper-point point-r" data-drag="right"></view>
+                    <view catchtouchmove="dragMove" catchtouchstart="dragStart" class="wx-cropper-point point-rb" data-drag="rightBottom"></view>
+                    <view catchtouchmove="dragMove" catchtouchstart="dragStart" class="wx-cropper-point point-b" data-drag="bottom"></view>
+                    <view class="wx-cropper-point point-bl" data-drag="bottomLeft"></view>
+                    <view catchtouchmove="dragMove" catchtouchstart="dragStart" class="wx-cropper-point point-l" data-drag="left"></view>
+                    <view class="wx-cropper-point point-lt" data-drag="leftTop"></view>
+                </view>
+            </view>
+        </view>
+        <view>asdf</view>
+    </view>
+    <canvas canvasId="myCanvas" style="position:absolute;border: 1px solid red; width:{{qualityWidth}}px;height:{{qualityWidth/innerAspectRadio}}px;top:-9999px;left:-9999px;"></canvas>
+    <button bindtap="getImageInfo" style="position:fixed;bottom:120rpx;width:180rpx;left:20%;transform:translate3d(-50%,0,0)" type="primary"> 确定 </button>
+    <button bindtap="getImage" style="position:fixed;bottom:120rpx;width:250rpx;left:70%;transform:translate3d(-50%,0,0)" type="primary"> 切换图片 </button>
+    <image src="{{returnImage}}"></image>
+</view>

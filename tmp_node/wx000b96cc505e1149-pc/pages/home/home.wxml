@@ -1,0 +1,31 @@
+<view class="menu" style="display: {{!previewing?'block':'none'}};">
+    <scroll-view class="top-nav" scrollX="true">
+        <view bindtap="navItemTap" class="top-btn {{navBtnSelectIdx==itemIdx?'top-hoverd-btn':''}}" data-cid="{{item.cid}}" data-index="{{itemIdx}}" wx:for="{{navItems}}" wx:for-index="itemIdx">{{item.title}}</view>
+    </scroll-view>
+</view>
+<scroll-view bindscroll="scroll" bindscrolltolower="loadMoreEvent" class="container" lowerThreshold="100" scrollTop="{{scrollTop}}" scrollY="true" style="display: {{!previewing?'block':'none'}};">
+    <view class="img-container">
+        <view class="item-group" wx:for="{{layoutList}}" wx:for-index="groupIdx" wx:for-item="group">
+            <image bindtap="showPreview" class="img-item {{!item?'empty':''}}" data-index="{{itemIdx+groupIdx*3}}" mode="aspectFill" src="{{item.imgUrl}}" wx:for="{{group}}" wx:for-index="itemIdx"></image>
+        </view>
+    </view>
+    <view class="load-more-wrap" style="display: {{showLoadMore?'block':'none'}}">
+        <block wx:if="{{hasMore}}">
+            <text class="gif-loading"></text>
+            <text class="loading-text">正在加载更多...</text>
+        </block>
+        <text wx:else>没有了</text>
+    </view>
+</scroll-view>
+<swiper bindtap="dismissPreview" class="swiper-container" current="{{previewIndex}}" duration="400" wx:if="{{previewing}}">
+    <swiper-item wx:for="{{imgList}}">
+        <image bindtouchend="test2" bindtouchstart="test" data-imgUrl="{{item.imgUrl}}" mode="aspectFit" src="{{item.imgUrl}}"></image>
+    </swiper-item>
+</swiper>
+<action-sheet bindchange="dismissActionSheet" hidden="{{!showingActionsSheet}}">
+    <action-sheet-item bindtap="saveImage" class="highlight">下载</action-sheet-item>
+    <action-sheet-item bindtap="collectImage" class="highlight">收藏</action-sheet-item>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>
+<loading bindchange="hideLoading" hidden="{{!showLoading}}">{{loadingMessage}}</loading>
+<toast bindchange="hideToast" duration="1000" hidden="{{!showToast}}">{{toastMessage}}</toast>

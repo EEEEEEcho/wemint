@@ -1,0 +1,53 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/index/shouquan",
+        "pages/index/denglu",
+        "pages/index/newslist",
+        "pages/index/detail",
+        "pages/mine/index",
+        "pages/mine/yuyue",
+        "pages/mine/collect",
+        "pages/mine/record",
+        "pages/mine/resetinfo",
+        "pages/mine/rank",
+        "pages/mine/references",
+        "pages/cars/index",
+        "pages/cars/jingpin",
+        "pages/cars/newcar",
+        "pages/cars/detail"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F8B62C",
+        "navigationBarTitleText": "押车宝",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "pages/img/home1.png",
+                "selectedIconPath": "pages/img/home2.png"
+            },
+            {
+                "pagePath": "pages/cars/index",
+                "text": "车辆列表",
+                "iconPath": "pages/img/cars1.png",
+                "selectedIconPath": "pages/img/cars2.png"
+            },
+            {
+                "pagePath": "pages/mine/index",
+                "text": "个人中心",
+                "iconPath": "pages/img/mine1.png",
+                "selectedIconPath": "pages/img/mine2.png"
+            }
+        ],
+        "color": "#999999",
+        "selectedColor": "#F8B62C",
+        "borderStyle": "white",
+        "backgroundColor": "#fff",
+        "position": "bottom"
+    }
+}

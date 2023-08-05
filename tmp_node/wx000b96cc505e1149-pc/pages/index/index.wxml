@@ -1,0 +1,142 @@
+<view class="allcontent">
+    <view class="title">
+        <view class="userHead">
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="title-usercode">
+            <view class="title-text text-block">
+                <open-data type="userNickName"></open-data>
+            </view>
+            <text class="title-text">ID:{{userId}}</text>
+        </view>
+        <view class="title-right">
+            <view class="title-cash inblock">
+                <image src="../images/cash.png"></image>
+                <view class="title-cash-view">{{cash}}</view>
+            </view>
+            <view class="sline"></view>
+            <view class="title-rpage inblock">
+                <image src="../images/rpage.png"></image>
+                <text class="title-cash-view">0</text>
+            </view>
+        </view>
+    </view>
+    <view bindtap="addCash" class="xm_banner {{startPage.bannerAdNoOff?'bright789_view_show':'bright789_view_hide'}}" data-name="banner">
+        <xm-ad adData="{{xmad.adData}}" bindclick="appoIntView" bindclose="xmadClose" class="xm_component" data-id="{{xmad.ad.banner}}"></xm-ad>
+    </view>
+    <block wx:if="{{startPage.bannerAdNoOff&&startPage.txBannerAdNoOff}}">
+        <ad unitId="adunit-8a1f14cc352ba760"></ad>
+        <image class="bannerAdImg" src="{{startPage.bannerAdImg}}"></image>
+    </block>
+    <image class="bannerAdImg" src="{{startPage.bannerAdImg}}" wx:elif="{{startPage.bannerAdNoOff}}"></image>
+    <ad unitId="adunit-274d20803cf02146" wx:elif="{{startPage.txBannerAdNoOff}}"></ad>
+    <image class="banner" src="{{startPage.banner}}" wx:else></image>
+    <image class="banner2" src="../images/banner2.png"></image>
+    <view class="minilist">
+        <block wx:for="{{applist}}" wx:key="id">
+            <navigator appId="{{item.target}}" bindtap="record" class="loopview" data-appid="{{item.target}}" data-appname="{{item.appName}}" data-event="{{item.type}}" data-id="{{item.id}}" data-path="{{item.path}}" openType="navigate" path="{{item.path}}" style=" background: linear-gradient({{item.color}});" target="miniProgram" wx:if="{{item.type==1}}">
+                <view class="item-head">
+                    <image src="{{item.appimgurl}}"></image>
+                    <view class="item-head-text">
+                        <view class="item-head-text-title">{{item.appName}}</view>
+                        <view class="item-head-text-hint">{{item.apphint}}</view>
+                    </view>
+                </view>
+                <view class="item-button">
+                    <text>{{item.appnum}}{{item.units}}</text>
+                </view>
+            </navigator>
+            <view bindtap="junpPage" class="loopview" data-appname="{{item.appName}}" data-event="{{item.type}}" data-id="{{item.id}}" data-path="{{item.path}}" data-url="{{item.target}}" style=" background: linear-gradient({{item.color}});" wx:elif="{{item.type==2}}">
+                <view class="item-head">
+                    <image src="{{item.appimgurl}}"></image>
+                    <view class="item-head-text">
+                        <view class="item-head-text-title">{{item.appName}}</view>
+                        <view class="item-head-text-hint">{{item.apphint}}</view>
+                    </view>
+                </view>
+                <view class="item-button">
+                    <text>{{item.appnum}}{{item.units}}</text>
+                </view>
+            </view>
+            <button bindtap="JumpCustomerService" class="loop-button" data-appname="{{item.appName}}" data-event="{{item.type}}" data-id="{{item.id}}" data-path="{{item.path}}" data-target="{{item.target}}" openType="contact" sessionFrom="{{item.appsign}}" style="  background: linear-gradient({{item.color}});" wx:elif="{{item.type==3}}">
+                <view class="item-head">
+                    <image src="{{item.appimgurl}}"></image>
+                    <view class="item-head-text">
+                        <view class="item-head-text-title">{{item.appName}}</view>
+                        <view class="item-head-text-hint">{{item.apphint}}</view>
+                    </view>
+                </view>
+                <view class="item-button">
+                    <text>{{item.appnum}}{{item.units}}</text>
+                </view>
+            </button>
+            <block wx:elif="{{item.type==4}}">
+                <view bindtap="openImg" class="loopview" data-appid="{{item.target}}" data-appname="{{item.appName}}" data-event="{{item.type}}" data-id="{{item.id}}" data-target="{{item.target}}" style="  background: linear-gradient({{item.color}});">
+                    <view class="item-head">
+                        <image src="{{item.appimgurl}}"></image>
+                        <view class="item-head-text">
+                            <view class="item-head-text-title">{{item.appName}}</view>
+                            <view class="item-head-text-hint">{{item.apphint}}</view>
+                        </view>
+                    </view>
+                    <view class="item-button">
+                        <text>{{item.appnum}}{{item.units}}</text>
+                    </view>
+                </view>
+                <image src="{{item.target}}" wx:if="{{false}}"></image>
+            </block>
+        </block>
+    </view>
+</view>
+<view class="model" wx:if="{{showModel}}">
+    <view class="model-content">
+        <view class="model-top">
+            <image src="../images/qdjl.png"></image>
+        </view>
+        <view class="model-buttom">
+            <view class="model-buttom-content">
+                <block wx:for="{{qdlist}}">
+                    <view class="mini-content" wx:if="{{index!=6}}">
+                        <view class="mini-date">第{{item.datenum}}天</view>
+                        <view class="mini">
+                            <view class="cash-text">
+                                <view>金币</view>
+                                <image class="cash-text-img" src="../images/cash.png"></image>
+                            </view>
+                            <view class="cash-num">+{{item.cash}}</view>
+                            <view class="mini-model" wx:if="{{index+1<signdays}}">
+                                <image class="mini-model-image" src="../images/checked.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="mini-content2" wx:if="{{index==6}}">
+                        <view class="mini-date">第{{item.datenum}}天</view>
+                        <view class="mini">
+                            <view class="cash-text">金币 </view>
+                            <view class="cash-num">+{{item.cash}}</view>
+                        </view>
+                    </view>
+                </block>
+                <button bindtap="qdjllq" class="model-buttom-btn">领取</button>
+            </view>
+        </view>
+        <image bindtap="hidemodel" class="closeImg" src="../images/close.png"></image>
+    </view>
+</view>
+<view class="startpage" wx:if="{{startPage.operation>1}}">
+    <view class="startpage-content">
+        <view class="startpage-buttom">
+            <view bindtap="previewImage" class="startpage-buttom-content" style="background-size: 100% 100%; background-image: url({{startPage.backgroundImg}})">
+                <image catchtap="closeImage" class="startpage-closeImg" src="{{startPage.closeImg}}"></image>
+                <button catchtap="startPageCloseImage" class="startpage-buttom-btn" wx:if="{{startPage.button!=''}}">{{startPage.button}}</button>
+            </view>
+        </view>
+    </view>
+</view>
+<view bindtap="addCash" class="xm_insert {{startPage.insertAdNoOff?'bright789_view_show':'bright789_view_hide'}}" data-name="insert">
+    <xm-ad adData="{{xmad.adData}}" bindclick="appoIntView" bindclose="xmadClose" class="xm_component" data-id="{{xmad.ad.insert}}"></xm-ad>
+</view>
+<view bindtap="addCash" class="xm_fixed {{startPage.insertAdNoOff?'bright789_view_show':'bright789_view_hide'}}" data-name="fixed">
+    <xm-ad adData="{{xmad.adData}}" bindclick="appoIntView" bindclose="xmadClose" class="xm_component" data-id="{{xmad.ad.fixed}}"></xm-ad>
+</view>
+<web-view src="{{websrc}}" wx:if="{{webview}}"></web-view>

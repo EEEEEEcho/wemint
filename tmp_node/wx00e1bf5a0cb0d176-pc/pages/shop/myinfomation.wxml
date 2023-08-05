@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="portrait border1px">
+        <view class="portrait-tit">头像</view>
+        <view class="portrait-img">
+            <image mode="widthFix" src="{{info.HeadImgUrl}}"></image>
+        </view>
+    </view>
+    <view class="member-name border1px">
+        <view class="memberName">会员名称</view>
+        <view class="member-name-color">{{info.NickName}}</view>
+    </view>
+    <view class="member-name">
+        <view>手机号码</view>
+        <view class="member-name-color">{{info.Mobile}}</view>
+    </view>
+    <view class="panel-mark" wx:if="{{showPanelMark}}"></view>
+    <view class="panel-getUserInfo" wx:if="{{isIOS}}">
+        <view class="panel-title border1px">小程序授权</view>
+        <view class="panel-tips">
+            <view class="allow-tips">
+                <view class="circle"></view>
+                <view class="ebook">请允许当前小程序获取手机号码</view>
+            </view>
+        </view>
+        <view class="btn-groups">
+            <button bindgetphonenumber="getPhoneNumber" bindtap="turnOff" openType="getPhoneNumber" type="primary">允许</button>
+        </view>
+    </view>
+</view>

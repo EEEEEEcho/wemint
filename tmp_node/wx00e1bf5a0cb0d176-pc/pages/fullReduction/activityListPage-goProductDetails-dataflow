@@ -1,0 +1,23 @@
+// \pages/fullReduction/activityListPage goProductDetails Data Flow
+digraph {
+	"1448d615ac754aa482f39c1ebd7cbf46" [label="FunctionCall,
+function name -> goProductDetails,
+param -> t,
+t.,
+" color=blue]
+	aaf996cac8d94d928c8bd155a041c600 [label=VariableDeclarations color=blue]
+	"93d82334fbf7408bb34e913f55e4cd45" [label="VariableDeclarator,
+left -> i,
+right -> t.currentTarget.dataset.productid" color=blue]
+	aaf996cac8d94d928c8bd155a041c600 -> "93d82334fbf7408bb34e913f55e4cd45"
+	"1448d615ac754aa482f39c1ebd7cbf46" -> aaf996cac8d94d928c8bd155a041c600
+	ff4880184c7547c8b68fc700448adc44 [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"4d15881bc12746c9823d8c294395fbb6" [label="Object Properties
+{
+url -> '/pages/shop/productdetail?id=' + i
+}" color=blue]
+	ff4880184c7547c8b68fc700448adc44 -> "4d15881bc12746c9823d8c294395fbb6"
+	"1448d615ac754aa482f39c1ebd7cbf46" -> ff4880184c7547c8b68fc700448adc44
+}

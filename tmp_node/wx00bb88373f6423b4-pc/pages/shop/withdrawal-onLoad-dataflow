@@ -1,0 +1,19 @@
+// \pages/shop/withdrawal onLoad Data Flow
+digraph {
+	"81e443b7d0fc4314a56748f303535714" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"858b3381a3364d278b714c0c2a36d7db" [label=SequenceExpression color=blue]
+	"1e8a6096c4194aec85f0fc30e64a3e3f" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"7b3ac933213a4b8e8bac8f128aee6de4" [label="Object Properties
+{
+}" color=blue]
+	"90477da758d647d896dbcc868dde97cf" [label="ConditionalExpression,
+ conditional list -> t.options.status" color=blue]
+	"7b3ac933213a4b8e8bac8f128aee6de4" -> "90477da758d647d896dbcc868dde97cf"
+	"1e8a6096c4194aec85f0fc30e64a3e3f" -> "7b3ac933213a4b8e8bac8f128aee6de4"
+	"858b3381a3364d278b714c0c2a36d7db" -> "1e8a6096c4194aec85f0fc30e64a3e3f"
+	"81e443b7d0fc4314a56748f303535714" -> "858b3381a3364d278b714c0c2a36d7db"
+}

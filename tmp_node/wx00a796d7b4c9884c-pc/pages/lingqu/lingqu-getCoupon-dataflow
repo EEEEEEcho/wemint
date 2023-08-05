@@ -1,0 +1,22 @@
+// \pages/lingqu/lingqu getCoupon Data Flow
+digraph {
+	a376b02851be44feab96b3f784d953f2 [label="FunctionCall,
+function name -> getCoupon,
+param -> " color=blue]
+	"2ce1d19e8ed5409995026ac70f2b93be" [label=SequenceExpression color=blue]
+	f3fa8158dcb647b6800eda3a40ad3229 [label="CallExpression,
+callee name -> console.log,
+param -> a.data.can,
+" color=blue]
+	"2ce1d19e8ed5409995026ac70f2b93be" -> f3fa8158dcb647b6800eda3a40ad3229
+	"2abb4e1f6cc1483db0bf44395c4deea4" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"7fca017da55c4b58a99063bd124a8aab" [label="Object Properties
+{
+userid -> a.data.userid
+}" color=blue]
+	"2abb4e1f6cc1483db0bf44395c4deea4" -> "7fca017da55c4b58a99063bd124a8aab"
+	"2ce1d19e8ed5409995026ac70f2b93be" -> "2abb4e1f6cc1483db0bf44395c4deea4"
+	a376b02851be44feab96b3f784d953f2 -> "2ce1d19e8ed5409995026ac70f2b93be"
+}

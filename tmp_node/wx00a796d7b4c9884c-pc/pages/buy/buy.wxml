@@ -1,0 +1,71 @@
+<view class="page">
+    <scroll-view scrollY="{{isScroll}}" style="height:{{windowHeight}}px">
+        <block wx:for="{{carts}}" wx:key="item">
+            <view bindtouchend="drawEnd" bindtouchmove="drawMove" bindtouchstart="drawStart" class="order-item" data-index="{{index}}" style="right:{{item.right}}rpx" wx:if="{{item.num>0}}">
+                <view class="content">
+                    <view class="carts-item">
+                        <icon bindtap="bindCheckbox" data-index="{{index}}" size="20" style="float:left; margin:10% 0 0 5%;" type="success_circle" wx:if="{{item.selected}}"></icon>
+                        <icon bindtap="bindCheckbox" data-index="{{index}}" size="20" style="float:left; margin:10% 0 0 5%;" type="circle" wx:else></icon>
+                        <view>
+                            <image class="carts-image" mode="aspectFill" src="{{url}}{{item.picurl}}"></image>
+                        </view>
+                        <view class="carts-text">
+                            <view class="carts-title">{{item.title}}</view>
+                            <view class="carts-biao">
+                                <view class="cast1" wx:for="{{item.attrname}}" wx:for-item="a" wx:key="*this">{{a}}</view>
+                            </view>
+                            <view class="carts-subtitle">
+          ¥{{item.salesprice}}
+          <view class="stepper">
+                                    <text bindtap="bindMinus" class="{{minusStatuses[index]}}" data-cartid="{{item.id}}" data-index="{{index}}">-</text>
+                                    <input bindchange="bindManual" data-cartid="{{item.id}}" data-index="{{index}}" type="number" value="{{item.num}}"></input>
+                                    <text bindtap="bindPlus" class="normal" data-cartid="{{item.id}}" data-index="{{index}}">+</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="delItem" class="remove" data-cartid="{{item.id}}">删除 </view>
+            </view>
+            <view bindtouchend="drawEnd" bindtouchmove="drawMove" bindtouchstart="drawStart" class="order-item" data-index="{{index}}" style="right:{{item.right}}rpx" wx:else>
+                <view class="content">
+                    <view class="carts-item" style="positon:relative;">
+                        <view style="position: absolute;top:0;left: 0;z-index: 1;width: 100%;height: 100%;background: url(../../images/tou.png) no-repeat;background-size: 100% 100%;"></view>
+                        <icon data-index="{{index}}" size="20" style="float:left; margin:10% 0 0 5%;" type="circle"></icon>
+                        <view>
+                            <view style="postion:relative;width:190rpx; float:left;">
+                                <view style="position: absolute;top:10px;left: 10px;z-index: 2;width: 190rpx;height:190rpx;background: url(../../images/wuhuo.png) no-repeat;background-size: 100% 100%; margin:10px 0 0 30px; "></view>
+                                <image class="carts-image" mode="aspectFill" src="{{url}}{{item.picurl}}"></image>
+                            </view>
+                        </view>
+                        <view class="carts-text">
+                            <view class="carts-title">{{item.title}}</view>
+                            <view class="carts-biao">
+                                <view class="cast1" wx:for="{{item.attrname}}" wx:for-item="a" wx:key="*this">{{a}}</view>
+                            </view>
+                            <view class="carts-subtitle">
+          ¥{{item.salesprice}}
+          <view class="stepper">
+                                    <text bindtap="bindMinus" class="{{minusStatuses[index]}}" data-cartid="{{item.id}}" data-index="{{index}}">-</text>
+                                    <input bindchange="bindManual" data-cartid="{{item.id}}" data-index="{{index}}" type="number" value="{{item.num}}"></input>
+                                    <text bindtap="bindPlus" class="normal" data-cartid="{{item.id}}" data-index="{{index}}">+</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="delItem" class="remove" data-cartid="{{item.id}}">删除 </view>
+            </view>
+        </block>
+        <view style="text-align:center; line-height:40px;" wx:if="{{carts.length==0}}">{{msg}}</view>
+    </scroll-view>
+    <view class="carts-footer" hidden="{{hidden_foot}}">
+        <view bindtap="bindSelectAll">
+            <icon size="24" type="success_circle" wx:if="{{selectedAllStatus}}"></icon>
+            <icon size="24" type="circle" wx:else></icon>
+            <text>全选</text>
+            <text class="chengse">{{total}}</text>
+        </view>
+        <view bindtap="bindCheckout" class="button">立即结算</view>
+    </view>
+</view>

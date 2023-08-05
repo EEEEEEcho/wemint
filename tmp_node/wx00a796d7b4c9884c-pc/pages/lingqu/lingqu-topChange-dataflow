@@ -1,0 +1,32 @@
+// \pages/lingqu/lingqu topChange Data Flow
+digraph {
+	eecc6673d1104d57ba957bb348b5fa2d [label="FunctionCall,
+function name -> topChange,
+param -> " color=blue]
+	b40fa7a9b42c41cca05ffa002d406546 [label=SequenceExpression color=blue]
+	"0ad4bae1da734599a26a5f137205dc38" [label="CallExpression,
+callee name -> this.getCoupon,
+param -> " color=blue]
+	"6f0b8ea01cbd429d9e07cafdf9b47bba" [label="FunctionCall,
+function name -> getCoupon,
+param -> " color=blue]
+	"99ada33889c749eeaba02614a717bbde" [label=SequenceExpression color=blue]
+	"27d31f297f5c49ebaa7afa619ae00650" [label="CallExpression,
+callee name -> console.log,
+param -> a.data.can,
+" color=blue]
+	"99ada33889c749eeaba02614a717bbde" -> "27d31f297f5c49ebaa7afa619ae00650"
+	"8e18b1aee97943a09080fe8541b95954" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"46b6688b4caf48af9f6c9d9838642b2b" [label="Object Properties
+{
+userid -> a.data.userid
+}" color=blue]
+	"8e18b1aee97943a09080fe8541b95954" -> "46b6688b4caf48af9f6c9d9838642b2b"
+	"99ada33889c749eeaba02614a717bbde" -> "8e18b1aee97943a09080fe8541b95954"
+	"6f0b8ea01cbd429d9e07cafdf9b47bba" -> "99ada33889c749eeaba02614a717bbde"
+	"0ad4bae1da734599a26a5f137205dc38" -> "6f0b8ea01cbd429d9e07cafdf9b47bba"
+	b40fa7a9b42c41cca05ffa002d406546 -> "0ad4bae1da734599a26a5f137205dc38"
+	eecc6673d1104d57ba957bb348b5fa2d -> b40fa7a9b42c41cca05ffa002d406546
+}

@@ -1,0 +1,50 @@
+<view class="container-card" wx:for="{{forceCards}}">
+    <view class="container">
+        <view class="row">
+            <view class="forceCardName">{{item.vipCardName}}</view>
+            <view class="forceCardPrice">￥{{item.money}}</view>
+        </view>
+        <view class="row">
+            <view class="forceCardValidity">有效期：{{item.effectiveData}}天</view>
+        </view>
+        <view class="row">
+            <view class="useNote">
+                <view class="noteTitle">{{forceTitle}}</view>
+                <ul class="noteList">
+                    <li class="noteLists" wx:for="{{item.vipcardPrerogativeBeans}}" wx:for-index="forceIndex" wx:for-item="forceItem">{{forceIndex+1}}.{{forceItem.content}}</li>
+                </ul>
+                <view class="clear"></view>
+            </view>
+            <view class="clear"></view>
+        </view>
+        <view class="row">
+            <view class="useNote">
+                <view class="noteTitle">{{noteTitle}}</view>
+                <ul class="noteList">
+                    <li class="noteLists" wx:for="{{item.vipcardUse}}" wx:for-index="noteIndex" wx:for-item="noteItem">{{noteIndex+1}}.{{noteItem.content}}</li>
+                </ul>
+                <view class="clear"></view>
+            </view>
+            <view class="clear"></view>
+        </view>
+        <view class="row">
+            <button bindtap="receiveMyCard" class="lqhyk" data-index="{{index}}">购买权益卡</button>
+        </view>
+    </view>
+</view>
+<view class="clear"></view>
+<view class="cover" style="display:{{displ3}}">
+    <view bindtap="back" class="cover1"></view>
+    <view class="cover3">
+        <form reportSubmit bindsubmit="toPay" class="evaluation" data-order-pay-type="W">
+            <button class="evaluation" formType="submit">微信支付</button>
+        </form>
+        <form reportSubmit bindsubmit="toPay" class="evaluation" data-order-pay-type="B">
+            <button class="evaluation" formType="submit">余额支付</button>
+        </form>
+    </view>
+</view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

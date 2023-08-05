@@ -1,0 +1,24 @@
+// \pages/index/takeOut/takeOutSM togBorder1 Data Flow
+digraph {
+	"3e33e0acccb04ff29a1b49a52c3106b7" [label="FunctionCall,
+function name -> togBorder1,
+param -> e.,
+e,
+" color=blue]
+	e8a20433a7eb4c248ed3fa1d22a25ef8 [label=VariableDeclarations color=blue]
+	badb0a8ee9b2451b8e16ea3bc042b8c4 [label="VariableDeclarator,
+left -> r,
+right -> e.currentTarget.dataset.itemIndex" color=blue]
+	e8a20433a7eb4c248ed3fa1d22a25ef8 -> badb0a8ee9b2451b8e16ea3bc042b8c4
+	"3e33e0acccb04ff29a1b49a52c3106b7" -> e8a20433a7eb4c248ed3fa1d22a25ef8
+	"3994e87fea79414782ba967e183507bb" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	b6eb74e5229e42399e06cca1762b1e91 [label="Object Properties
+{
+toView -> 'order' + r
+key -> e.currentTarget.dataset.itemIndex
+}" color=blue]
+	"3994e87fea79414782ba967e183507bb" -> b6eb74e5229e42399e06cca1762b1e91
+	"3e33e0acccb04ff29a1b49a52c3106b7" -> "3994e87fea79414782ba967e183507bb"
+}

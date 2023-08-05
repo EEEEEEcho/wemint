@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "navigate": "/components/navigate/navigate",
+        "order-good": "/components/orderGood/orderGood",
+        "share-group": "/components/shareGroup/shareGroup",
+        "loading-view": "/components/loading/loading",
+        "empty": "/components/emptyView/emptyView"
+    }
+}

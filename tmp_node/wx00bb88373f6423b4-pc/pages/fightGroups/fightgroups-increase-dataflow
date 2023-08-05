@@ -1,0 +1,36 @@
+// \pages/fightGroups/fightgroups increase Data Flow
+digraph {
+	c89faa4e56f44fe5befe344c05a14337 [label="FunctionCall,
+function name -> increase,
+param -> " color=blue]
+	"4def340691654701b0cadc580db58cf6" [label=VariableDeclarations color=blue]
+	"5de22f8caba445bfbc943daaea38f985" [label="VariableDeclarator,
+left -> t,
+right -> this.data.buyCount" color=blue]
+	"4def340691654701b0cadc580db58cf6" -> "5de22f8caba445bfbc943daaea38f985"
+	c89faa4e56f44fe5befe344c05a14337 -> "4def340691654701b0cadc580db58cf6"
+	"6a4235e2a2354870bfcbc34a9e0a829b" [label="If Alternate" color=blue]
+	af08e1d6d2fe494bbd9076a4192c23ad [label=SequenceExpression color=blue]
+	"20cbe520e4ab4cbca120098d02100189" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"58eeeb6f63154db9b8bf7802d3337fcd" [label="Object Properties
+{
+buyCount -> t
+}" color=blue]
+	"20cbe520e4ab4cbca120098d02100189" -> "58eeeb6f63154db9b8bf7802d3337fcd"
+	af08e1d6d2fe494bbd9076a4192c23ad -> "20cbe520e4ab4cbca120098d02100189"
+	"6a4235e2a2354870bfcbc34a9e0a829b" -> af08e1d6d2fe494bbd9076a4192c23ad
+	"4a9db3f1809540739a52cec0c7ac47e3" [label=SequenceExpression color=blue]
+	"60ff408aed364a9dadc043803dd0f64b" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"76cb79abd9984b46a63ef88c278f0696" [label="Object Properties
+{
+buyCount -> t
+}" color=blue]
+	"60ff408aed364a9dadc043803dd0f64b" -> "76cb79abd9984b46a63ef88c278f0696"
+	"4a9db3f1809540739a52cec0c7ac47e3" -> "60ff408aed364a9dadc043803dd0f64b"
+	"6a4235e2a2354870bfcbc34a9e0a829b" -> "4a9db3f1809540739a52cec0c7ac47e3"
+	c89faa4e56f44fe5befe344c05a14337 -> "6a4235e2a2354870bfcbc34a9e0a829b"
+}

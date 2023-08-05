@@ -1,0 +1,41 @@
+// \pages/productlist/productlist goToProductDetail Data Flow
+digraph {
+	"8db3bd2d76f24b189f025e48d6ffd3f4" [label="FunctionCall,
+function name -> goToProductDetail,
+param -> e,
+e.,
+" color=blue]
+	"4887172514ba42c49a8655b9576dd511" [label=VariableDeclarations color=blue]
+	"4b7b8b0de4f24f8f84e01ea61f928b97" [label="VariableDeclarator,
+left -> productid,
+right -> e.currentTarget.dataset.productid" color=blue]
+	"4887172514ba42c49a8655b9576dd511" -> "4b7b8b0de4f24f8f84e01ea61f928b97"
+	"8db3bd2d76f24b189f025e48d6ffd3f4" -> "4887172514ba42c49a8655b9576dd511"
+	fed44fbb550f4038a90562c790f96545 [label=VariableDeclarations color=blue]
+	"80f4390446bd489c8c41ffeb689309c0" [label="VariableDeclarator,
+left -> activeid,
+right -> e.currentTarget.dataset.activeid" color=blue]
+	fed44fbb550f4038a90562c790f96545 -> "80f4390446bd489c8c41ffeb689309c0"
+	"8db3bd2d76f24b189f025e48d6ffd3f4" -> fed44fbb550f4038a90562c790f96545
+	d2e960cdcfc74a61bd7f676aeb83c5ea [label=VariableDeclarations color=blue]
+	"28b28f4059f54736b442640e6792ff69" [label="VariableDeclarator,
+left -> activetype,
+right -> e.currentTarget.dataset.activetype" color=blue]
+	d2e960cdcfc74a61bd7f676aeb83c5ea -> "28b28f4059f54736b442640e6792ff69"
+	"8db3bd2d76f24b189f025e48d6ffd3f4" -> d2e960cdcfc74a61bd7f676aeb83c5ea
+	efc3fd0af64d4ea59e8edfc7defc9ca8 [label=VariableDeclarations color=blue]
+	"5757d5b95ede43cfbc18316f461a18fa" [label="VariableDeclarator,
+left -> toUrl,
+right -> '../productdetail/productdetail?id=' + productid" color=blue]
+	efc3fd0af64d4ea59e8edfc7defc9ca8 -> "5757d5b95ede43cfbc18316f461a18fa"
+	"8db3bd2d76f24b189f025e48d6ffd3f4" -> efc3fd0af64d4ea59e8edfc7defc9ca8
+	"9081efd6e6df4585bd90393e403235a9" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"9d491f5204e143fb96ce74be65ba1e23" [label="Object Properties
+{
+url -> toUrl
+}" color=blue]
+	"9081efd6e6df4585bd90393e403235a9" -> "9d491f5204e143fb96ce74be65ba1e23"
+	"8db3bd2d76f24b189f025e48d6ffd3f4" -> "9081efd6e6df4585bd90393e403235a9"
+}

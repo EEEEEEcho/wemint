@@ -1,0 +1,9 @@
+<view class="container">
+    <text class="m-m dis-block">请选择同城发布类别</text>
+    <view class="flex-box">
+        <view bindtap="chooseOperate" class="release-item" data-index="{{index}}" wx:for="{{implementList}}" wx:key="index">
+            <image src="{{item.src}}" wx:if="{{index!=6||showTop}}"></image>
+            <text wx:if="{{index!=6||showTop}}">{{item.name}}</text>
+        </view>
+    </view>
+</view>

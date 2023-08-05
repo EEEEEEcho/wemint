@@ -1,0 +1,33 @@
+<view class="commend flexColumn" id="goodlist">
+    <view class="options flexRow" id="options">
+        <view bindtap="onClickItem" class="option1 flexRow" data-index="1">
+            <text class="{{isAllBlack?'allActive':'all'}}">综合</text>
+        </view>
+        <view bindtap="onClickItem" class="option2 flexRow" data-index="2">
+            <text class="{{isPriceBlack?'priceActive':'price'}}">价格</text>
+            <view class="updown flexColumn">
+                <image class="upImg" src="{{isUpBlack?'http://oss.shangmian.xin/weixin_applets_icon_up_fill.png':'http://oss.shangmian.xin/weixin_applets_icon_up.png'}}"></image>
+                <image class="downImg" src="{{isDownBlack?'http://oss.shangmian.xin/weixin_applets_icon_down_fill.png':'http://oss.shangmian.xin/weixin_applets_icon_down.png'}}"></image>
+            </view>
+        </view>
+        <text bindtap="onClickItem" class="option3 flexRow {{isNew?'option3Active':'op3'}}" data-index="3">新品</text>
+    </view>
+    <view class="optionsFixed flexRow" style="top: {{navH+status}}px;" wx:if="{{isFixed}}">
+        <view bindtap="onClickItem" class="option1 flexRow" data-index="1">
+            <text class="{{isAllBlack?'allActive':'all'}}">综合</text>
+        </view>
+        <view bindtap="onClickItem" class="option2 flexRow" data-index="2">
+            <text class="{{isPriceBlack?'priceActive':'price'}}">价格</text>
+            <view class="updown flexColumn">
+                <image class="upImg" src="{{isUpBlack?'http://oss.shangmian.xin/weixin_applets_icon_up_fill.png':'http://oss.shangmian.xin/weixin_applets_icon_up.png'}}"></image>
+                <image class="downImg" src="{{isDownBlack?'http://oss.shangmian.xin/weixin_applets_icon_down_fill.png':'http://oss.shangmian.xin/weixin_applets_icon_down.png'}}"></image>
+            </view>
+        </view>
+        <text bindtap="onClickItem" class="option3 flexRow {{isNew?'option3Active':'op3'}}" data-index="3">新品</text>
+    </view>
+    <freeGood goods="{{goodList}}" isCharges="false"></freeGood>
+    <empty iconPath="http://oss.shangmian.xin/weixin_applets_icon_empty_view.png" isShow="{{goodList.length==0}}" textContent="暂时还没有商品"></empty>
+    <view class="loadMoreLayout" wx:if="{{isLoadMore}}">
+        <text class="loadMoreText">加载更多...</text>
+    </view>
+</view>

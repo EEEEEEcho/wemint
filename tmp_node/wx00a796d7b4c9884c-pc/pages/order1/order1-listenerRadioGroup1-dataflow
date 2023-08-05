@@ -1,0 +1,45 @@
+// \pages/order1/order1 listenerRadioGroup1 Data Flow
+digraph {
+	"492dfde2c73c4e8c8d8017ef625ab377" [label="FunctionCall,
+function name -> listenerRadioGroup1,
+param -> t,
+t.,
+" color=blue]
+	"6d2260a3d25a43e0823bcb7324399421" [label="CallExpression,
+callee name -> console.log,
+param -> '点击的是第' + t.detail.value + '个radio',
+" color=blue]
+	"492dfde2c73c4e8c8d8017ef625ab377" -> "6d2260a3d25a43e0823bcb7324399421"
+	"937769ffe19b4357a7b06d25f676033d" [label=VariableDeclarations color=blue]
+	"21e5f584b445478aa8a384de1f3b94a4" [label="VariableDeclarator,
+left -> a,
+right -> t.detail.value" color=blue]
+	"937769ffe19b4357a7b06d25f676033d" -> "21e5f584b445478aa8a384de1f3b94a4"
+	ccb6b01415014b19a46f72da5707ed42 [label="VariableDeclarator,
+left -> o,
+right -> this.data.postmode_info[a].classname" color=blue]
+	"937769ffe19b4357a7b06d25f676033d" -> ccb6b01415014b19a46f72da5707ed42
+	"204e7765120b40dba2c6a312952985dc" [label="VariableDeclarator,
+left -> e,
+right -> this.data.postmode_info[a].id" color=blue]
+	"937769ffe19b4357a7b06d25f676033d" -> "204e7765120b40dba2c6a312952985dc"
+	"492dfde2c73c4e8c8d8017ef625ab377" -> "937769ffe19b4357a7b06d25f676033d"
+	"7703664740734ceda2244f151303ee96" [label=SequenceExpression color=blue]
+	ec29f77b74104481b6c4a4291e1e076d [label="CallExpression,
+callee name -> console.log,
+param -> o,
+" color=blue]
+	"7703664740734ceda2244f151303ee96" -> ec29f77b74104481b6c4a4291e1e076d
+	d12334cf1fae4e7caacd83fea76c696f [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"129ebe585049477499b529e5b299bcc4" [label="Object Properties
+{
+postIndex -> a
+postname -> o
+postId -> e
+}" color=blue]
+	d12334cf1fae4e7caacd83fea76c696f -> "129ebe585049477499b529e5b299bcc4"
+	"7703664740734ceda2244f151303ee96" -> d12334cf1fae4e7caacd83fea76c696f
+	"492dfde2c73c4e8c8d8017ef625ab377" -> "7703664740734ceda2244f151303ee96"
+}

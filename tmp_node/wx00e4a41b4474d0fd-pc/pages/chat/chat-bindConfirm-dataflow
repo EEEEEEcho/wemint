@@ -1,0 +1,26 @@
+// \pages/chat/chat bindConfirm Data Flow
+digraph {
+	"06d5a02c5a724d5d968e94390cb55c80" [label="FunctionCall,
+function name -> bindConfirm,
+param -> " color=blue]
+	b50184dd0c3a4829afe2e138508edec7 [label=VariableDeclarations color=blue]
+	a4179b82c62d4eab8264d9c1d365ee56 [label="VariableDeclarator,
+left -> a,
+right -> this.data.currentMessage" color=blue]
+	b50184dd0c3a4829afe2e138508edec7 -> a4179b82c62d4eab8264d9c1d365ee56
+	"06d5a02c5a724d5d968e94390cb55c80" -> b50184dd0c3a4829afe2e138508edec7
+	b0ef1a4444e142d794b1ca21b9f81d96 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"05864d7047584e61abcb90a891539f5e" [label="CallExpression,
+callee name -> f.onSendMsg,
+param -> a,
+" color=blue]
+	"1cfb155b2f9b4dbc898b8db063aa1fd6" [label="Object Properties
+{
+myselToID -> t.data.adviserId
+}" color=blue]
+	"05864d7047584e61abcb90a891539f5e" -> "1cfb155b2f9b4dbc898b8db063aa1fd6"
+	b0ef1a4444e142d794b1ca21b9f81d96 -> "05864d7047584e61abcb90a891539f5e"
+	"06d5a02c5a724d5d968e94390cb55c80" -> b0ef1a4444e142d794b1ca21b9f81d96
+}

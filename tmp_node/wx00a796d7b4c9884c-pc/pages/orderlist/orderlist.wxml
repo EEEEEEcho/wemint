@@ -1,0 +1,73 @@
+<view class="s_pagebg">
+    <view class="s_head">
+        <view class="os_1" style="width: 15%;">
+            <view bindtap="topChange" class="navig">
+                <view class="{{checkinfo==''?'font2':'font1'}}">全部</view>
+            </view>
+        </view>
+        <view class="os_1">
+            <view bindtap="topChange" class="navig" data-checkinfo="0">
+                <view class="{{checkinfo=='0'?'font2':'font1'}}">待付款</view>
+            </view>
+        </view>
+        <view class="os_1">
+            <view bindtap="topChange" class="navig" data-checkinfo="1">
+                <view class="{{checkinfo=='1'?'font2':'font1'}}">待发货</view>
+            </view>
+        </view>
+        <view class="os_1">
+            <view bindtap="topChange" class="navig" data-checkinfo="2">
+                <view class="{{checkinfo=='2'?'font2':'font1'}}">待收货</view>
+            </view>
+        </view>
+        <view class="os_1">
+            <view bindtap="topChange" class="navig" data-checkinfo="3">
+                <view class="{{checkinfo=='3'?'font2':'font1'}}">已完成</view>
+            </view>
+        </view>
+        <view class="os_1" style="width: 17%;">
+            <view bindtap="topChange" class="navig" data-checkinfo="8">
+                <view class="{{checkinfo=='8'?'font2':'font1'}}">退款/售后</view>
+            </view>
+        </view>
+    </view>
+    <view class="s_box" wx:for="{{order}}" wx:key="*this">
+        <view class="box">
+            <view class="box_bt">{{item.posttime}}<view class="font1">{{item.title}}</view>
+            </view>
+            <view bindtap="orderShow" class="box_1" data-id="{{item.id}}" wx:for="{{item.goodsinfo}}" wx:for-item="g" wx:key="*this">
+                <view class="box_1_img">
+                    <image mode="widthFix" src="{{url}}{{g.gpicurl}}" style="width:80px;"></image>
+                </view>
+                <view class="box_1_bt">{{g.gtitle}}</view>
+                <view class="box_1_con">{{g.attrname1}}<view class="font1">X{{g.num}}</view>
+                </view>
+            </view>
+            <view class="box_2">共{{item.allnum}}件    应付总额：<view class="font1">¥{{item.orderamount}}</view>
+            </view>
+            <view class="box_3" wx:if="{{item.checkinfo==0}}">
+                <view class="box_32">
+                    <view class="navig" wx:if="{{item.paymode==2}}">线下支付</view>
+                    <view bindtap="pay" class="navig" data-sn="{{item.orderlistnum}}" wx:else>去付款</view>
+                </view>
+                <view class="box_31">
+                    <view bindtap="cancel" class="navig" data-id="{{item.id}}">取消</view>
+                </view>
+            </view>
+            <view class="box_3" wx:elif="{{item.checkinfo==2}}">
+                <view class="box_32">
+                    <view bindtap="confirm_goods" class="navig" data-id="{{item.id}}">确认收货</view>
+                </view>
+                <view class="box_31">
+                    <view bindtap="reject" class="navig" data-id="{{item.id}}">申请退货</view>
+                </view>
+            </view>
+            <view class="box_3" wx:elif="{{item.checkinfo==1}}">
+                <view class="box_32">
+                    <view bindtap="refund" class="navig" data-id="{{item.id}}">申请退款</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style="text-align:center; line-height:40px;" wx:if="{{order.length==0}}">暂无数据</view>
+</view>

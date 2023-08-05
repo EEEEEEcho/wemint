@@ -1,0 +1,50 @@
+// \pages/customStars/customStars onRouteDetail Data Flow
+digraph {
+	"3940fc051af9486588b06288484c130f" [label="FunctionCall,
+function name -> onRouteDetail,
+param -> t.,
+t,
+" color=blue]
+	"7689c3714d3342a880acc3c189d813ba" [label=VariableDeclarations color=blue]
+	"8d2ed82d723b47709817be3b0b4ddb0b" [label="VariableDeclarator,
+left -> e,
+right -> '/pages/customDetail/customDetail?customId=' + t.currentTarget.dataset.id" color=blue]
+	"7689c3714d3342a880acc3c189d813ba" -> "8d2ed82d723b47709817be3b0b4ddb0b"
+	"3940fc051af9486588b06288484c130f" -> "7689c3714d3342a880acc3c189d813ba"
+	e838524184e1467da922a1a162f1efbc [label=SequenceExpression color=blue]
+	"04070d7fbb5d4f349df34107f808ffc3" [label="CallExpression,
+callee name -> this.navigateCustom,
+param -> e,
+" color=blue]
+	"1913ba6733aa4f8f887918b44b002b83" [label="FunctionCall,
+function name -> navigateCustom,
+param -> t.,
+t,
+" color=blue]
+	"96e5afaced124337afd842ea088595b3" [label=SequenceExpression color=blue]
+	"21faf55dd6d44058ab97fa7bef89b8f1" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"966d7470f02f4c2db9b241d9a7c0f6c9" [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	"53b7f7a93e074172808ef05680b36339" [label="Object Properties
+{
+url -> t
+}" color=blue]
+	"966d7470f02f4c2db9b241d9a7c0f6c9" -> "53b7f7a93e074172808ef05680b36339"
+	"21faf55dd6d44058ab97fa7bef89b8f1" -> "966d7470f02f4c2db9b241d9a7c0f6c9"
+	"501e0d00525042589bb123403a9892ac" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"54cb21bd2d904104b8c484ae578b0e04" [label="Object Properties
+{
+url -> t
+}" color=blue]
+	"501e0d00525042589bb123403a9892ac" -> "54cb21bd2d904104b8c484ae578b0e04"
+	"21faf55dd6d44058ab97fa7bef89b8f1" -> "501e0d00525042589bb123403a9892ac"
+	"96e5afaced124337afd842ea088595b3" -> "21faf55dd6d44058ab97fa7bef89b8f1"
+	"1913ba6733aa4f8f887918b44b002b83" -> "96e5afaced124337afd842ea088595b3"
+	"04070d7fbb5d4f349df34107f808ffc3" -> "1913ba6733aa4f8f887918b44b002b83"
+	e838524184e1467da922a1a162f1efbc -> "04070d7fbb5d4f349df34107f808ffc3"
+	"3940fc051af9486588b06288484c130f" -> e838524184e1467da922a1a162f1efbc
+}

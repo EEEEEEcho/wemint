@@ -1,0 +1,162 @@
+<view class="main_view" style="height:{{heightFlg}}; overflow:{{overflowFlg}}">
+    <scroll-view>
+        <view class="trends">
+            <view class="float-left">
+                <image class="userinfo-avatar" mode="{{item.mode}}" src="{{userInfo.avatarUrl}}"></image>
+                <view class="loginUser">{{userInfo.nickName}}</view>
+                <view class="clear"></view>
+            </view>
+            <view class="wict">
+                <image bindtap="map" class="wifi map" src="/images/map.png"></image>
+                <image bindtap="wifi" class="wifi" src="/images/wifi.png"></image>
+                <button bindtap="cutUsername" class="cutBtn">
+                    <image class="cut" src="/images/cut.png"></image>
+                </button>
+            </view>
+        </view>
+        <view class="video" wx:if="{{isPlay}}">
+            <video binderror="videoErrorCallback" class="img" id="myVideo" src="{{lunboMovie[0].desktopCycleConfigImgUrl}}"></video>
+        </view>
+        <view class="swiper-container" wx:if="{{!isPlay}}">
+            <swiper autoplay="true" class="swiper" duration="1000" indicatorDots="true" interval="5000">
+                <swiper-item wx:for="{{lunboMovie}}" wx:key="unique">
+                    <image bindtap="toPlay" class="img" src="{{videoCover}}" wx:if="{{item.marks=='0'}}"></image>
+                    <image class="img" src="{{item.desktopCycleConfigImgUrl}}" wx:if="{{item.marks=='1'}}"></image>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="tetradIcon">
+            <view bindtap="destine" class="destine right-line" wx:if="{{yuding=='Y'}}">
+                <image class="destineIcon" src="/images/destine.png"></image>
+                <view class="destineText">预 订</view>
+            </view>
+            <view bindtap="fellin" class="fellin right-line" wx:if="{{paidui=='Y'}}">
+                <image class="fellinIcon" src="/images/fellin.png"></image>
+                <view class="fellinText">排 队</view>
+            </view>
+            <view bindtap="collect" class="collect right-line" wx:if="{{shouyin=='Y'}}">
+                <image class="collectIcon" src="/images/collect.png"></image>
+                <view class="collectText">收 银</view>
+            </view>
+            <view bindtap="takeOut" class="takeout right-line" wx:if="{{waimai=='Y'}}">
+                <image class="takeoutIcon" src="/images/takeout.png"></image>
+                <view class="takeoutText">外 卖</view>
+            </view>
+        </view>
+        <view class="dchyBox">
+            <view class="dchy" style="margin:0 auto;">
+                <view class="order">
+                    <view bindtap="orderBut" class="order_Item1" data-statu="open" wx:if="{{diancan=='Y'}}">
+                        <image class="order_Item_shade1" src="{{dianUrl}}" style="" wx:if="{{dianMenuImgUrl==''||dianMenuImgUrl==null||dianMenuImgUrl=='undefined'||dianMenuImgUrl=='null'||dianMenuImgUrl==undefined}}"></image>
+                        <image class="order_Item_shade1" src="{{dianMenuImgUrl}}" style="" wx:else></image>
+                        <view class="order_Item_shade1 opacity-control position-control">
+                            <view class="order_Item_text1">点 餐</view>
+                            <image class="order_Item_pic1" src="/images/dcpic.png"></image>
+                        </view>
+                    </view>
+                    <view bindtap="member1" class="order_Item2" wx:if="{{huiyuan=='Y'||quanyika=='Y'}}">
+                        <image class="order_Item_shade2" src="{{vipUrl}}" style="" wx:if="{{vipMenuImgUrl==''||vipMenuImgUrl==null||vipMenuImgUrl=='null'||vipMenuImgUrl==undefined||vipMenuImgUrl=='undefined'}}"></image>
+                        <image class="order_Item_shade2" src="{{vipMenuImgUrl}}" style="" wx:else></image>
+                        <view class="order_Item_shade2 position-control opacity-control">
+                            <view class="order_Item_text2">会 员</view>
+                            <image class="order_Item_pic2" src="/images/hypic.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="yhtjs">
+            <view class="yhtjBox">
+                <view class="yhtjTitle">
+                    <view class="yhtjC">优惠推荐
+            <image src="/images/yhtj.png" style="width:80px; height:14px;margin-left:8px;"></image>
+                    </view>
+                </view>
+                <scroll-view scrollX="true" style="margin-top:20px;">
+                    <view class="yhtjSlide" scrollX="true">
+                        <view bindtap="yhtjDetail" class="yhtjSlide_Item" data-id="{{item.id}}" wx:for="{{cutfoods}}" wx:key="key">
+                            <view style="border-radius:6px;width:350rpx;height:234rpx; box-sizing:border-box;">
+                                <image class="yhtjSlide_Item_img" src="{{item.imgUrl}}"></image>
+                            </view>
+                            <view bindtap="yhtjDetail" class="yhtjSlide_Item_shade">
+                                <view class="yhtjSlide_Item_text">{{item.foodName}}</view>
+                                <view class="yhtjSlide_Item_price" wx:if="{{item.priceT!=null&&item.priceT!=''}}">{{item.priceT}}元/例</view>
+                                <view class="yhtjSlide_Item_price" wx:if="{{item.priceT==null||item.priceT==''}}">暂无定价</view>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+        <view class="wntjBox">
+            <view class="wntjTitle">
+                <view class="wntjC">为你推荐
+          <image src="/images/wntj.png" style="width:80px; height:14px;margin-left:8px;"></image>
+                </view>
+            </view>
+        </view>
+        <view class="row bottom10">
+            <view class="left-box">
+                <view>
+                    <view class="wntjpicBox_Item_shade1">
+                        <view class="wntjpicBox_Item_text1">{{wntjName}}</view>
+                    </view>
+                    <view class="img-box180">
+                        <image class="radiu6" src="{{wntjUrls}}" wx:if="{{urls==''||urls==null||urls==undefined||urls=='undefined'}}"></image>
+                        <image bindtap="wntjDetail" class="radiu6" data-specialities-id="{{specialitiesId}}" src="{{urls}}" wx:else></image>
+                    </view>
+                    <view class="wntjpicBox_Item_shade2">
+                        <view class="wntjpicBox_Item_text2">{{wntjName1}}</view>
+                    </view>
+                    <view class="img-box100 top10">
+                        <image class="radiu6-100" src="{{wntjUrls1}}" wx:if="{{urls1==''||urls1==null||urls1==undefined||urls1=='undefined'}}"></image>
+                        <image bindtap="wntjDetail" class="radiu6-100" data-specialities-id="{{specialitiesId1}}" src="{{urls1}}" wx:else></image>
+                    </view>
+                </view>
+            </view>
+            <view class="right-box">
+                <view>
+                    <view class="wntjpicBox_Item_shade3">
+                        <view class="wntjpicBox_Item_text2">{{wntjName2}}</view>
+                    </view>
+                    <view class="img-box100">
+                        <image class="radiu6-100" src="{{wntjUrls2}}" wx:if="{{urls2==''||urls2==null||urls2==undefined||urls2=='undefined'}}"></image>
+                        <image bindtap="wntjDetail" class="radiu6-100" data-specialities-id="{{specialitiesId2}}" src="{{urls2}}" wx:else></image>
+                    </view>
+                    <view class="wntjpicBox_Item_shade4">
+                        <view class="wntjpicBox_Item_text1">{{wntjName3}}</view>
+                    </view>
+                    <view class="img-box180 top10">
+                        <image class="radiu6" src="{{wntjUrls3}}" wx:if="{{urls3==''||urls3==null||urls3==undefined||urls3=='undefined'}}"></image>
+                        <image bindtap="wntjDetail" class="radiu6" data-specialities-id="{{specialitiesId3}}" src="{{urls3}}" wx:else></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<view bindtap="orderBut" class="drawer_screen" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+    <view class="drawer_title">选择点餐方式</view>
+    <view bindtap="saomaDian" class="btn_ok" data-id="{{shouhuodizhi.address_uuid}}" data-statu="close">扫码点餐</view>
+    <view bindtap="zhijieDian" class="btn_ok" data-id="{{shouhuodizhi.address_uuid}}" data-statu="close">直接点餐</view>
+</view>
+<view class="mask" wx:if="{{coverFlg}}">
+    <view class="container-mask">
+        <view class="describe">
+            <text>{{describe==null?'':describe}}</text>
+        </view>
+        <view class="desc">
+            <text class="descd">{{desc==null?'':desc}}</text>
+        </view>
+        <image class="imggo" src="{{homePageimg}}"></image>
+        <view class="brage"></view>
+        <view class="btngo">
+            <image bindtap="go" src="../../images/close-cha.png"></image>
+        </view>
+    </view>
+</view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

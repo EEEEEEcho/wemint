@@ -1,0 +1,23 @@
+// \pages/search/search onInputKeyword Data Flow
+digraph {
+	"2105eb7d52954431b986554191a4d0f0" [label="FunctionCall,
+function name -> onInputKeyword,
+param -> e,
+e.,
+" color=blue]
+	a00e7c547b4947ff910727981b177bd7 [label=VariableDeclarations color=blue]
+	"457e08be5f114294b4dbf3089255cb0f" [label="VariableDeclarator,
+left -> keyword,
+right -> e.detail.value" color=blue]
+	a00e7c547b4947ff910727981b177bd7 -> "457e08be5f114294b4dbf3089255cb0f"
+	"2105eb7d52954431b986554191a4d0f0" -> a00e7c547b4947ff910727981b177bd7
+	"9bd7ccd92b8946a589feb83bc006b03e" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"5e0998fe0e63494e913bcb8695f34e91" [label="Object Properties
+{
+KeyWord -> keyword
+}" color=blue]
+	"9bd7ccd92b8946a589feb83bc006b03e" -> "5e0998fe0e63494e913bcb8695f34e91"
+	"2105eb7d52954431b986554191a4d0f0" -> "9bd7ccd92b8946a589feb83bc006b03e"
+}

@@ -1,0 +1,23 @@
+// \pages/shop/recharge moneyInput Data Flow
+digraph {
+	"29452ccd95da40e1a3816c8986545eab" [label="FunctionCall,
+function name -> moneyInput,
+param -> t,
+t.,
+" color=blue]
+	bb4861e41f8e45588122d492d462c0c1 [label=VariableDeclarations color=blue]
+	c5fdfb84e8b149a79a973fdcfae99031 [label="VariableDeclarator,
+left -> o,
+right -> t.detail.value" color=blue]
+	bb4861e41f8e45588122d492d462c0c1 -> c5fdfb84e8b149a79a973fdcfae99031
+	"29452ccd95da40e1a3816c8986545eab" -> bb4861e41f8e45588122d492d462c0c1
+	"2e7568cb485d4ae5b3cd2122731822f8" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"871b35955ecd462da0ca2072599daa16" [label="Object Properties
+{
+moneyNum -> o
+}" color=blue]
+	"2e7568cb485d4ae5b3cd2122731822f8" -> "871b35955ecd462da0ca2072599daa16"
+	"29452ccd95da40e1a3816c8986545eab" -> "2e7568cb485d4ae5b3cd2122731822f8"
+}

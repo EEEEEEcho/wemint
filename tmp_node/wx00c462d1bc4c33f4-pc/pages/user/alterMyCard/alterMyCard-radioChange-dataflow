@@ -1,0 +1,29 @@
+// \pages/user/alterMyCard/alterMyCard radioChange Data Flow
+digraph {
+	"9c369ee43b204dd3a37fea4324cda598" [label="FunctionCall,
+function name -> radioChange,
+param -> t.,
+t,
+" color=blue]
+	f68f38446ee14b39a61a35781e58e8f1 [label=SequenceExpression color=blue]
+	"736fbfb12057470ab223a800d34ea14f" [label="CallExpression,
+callee name -> console.log,
+param -> t.detail.value,
+" color=blue]
+	f68f38446ee14b39a61a35781e58e8f1 -> "736fbfb12057470ab223a800d34ea14f"
+	e8471af60a7949d4a3562d9eef88c01e [label="CallExpression,
+callee name -> console.log,
+param -> t.detail.value,
+" color=blue]
+	f68f38446ee14b39a61a35781e58e8f1 -> e8471af60a7949d4a3562d9eef88c01e
+	e0610640affd484cbbaabd7aa940a572 [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	a84d1c516123451ab96be24d8d5c344a [label="Object Properties
+{
+sex -> t.detail.value
+}" color=blue]
+	e0610640affd484cbbaabd7aa940a572 -> a84d1c516123451ab96be24d8d5c344a
+	f68f38446ee14b39a61a35781e58e8f1 -> e0610640affd484cbbaabd7aa940a572
+	"9c369ee43b204dd3a37fea4324cda598" -> f68f38446ee14b39a61a35781e58e8f1
+}

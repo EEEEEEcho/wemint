@@ -1,0 +1,74 @@
+.weui-cell__hd span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.weui-cell__hd span.dot_red {
+    background-color: #fef5f4;
+    border: 1px solid #f86057;
+}
+
+.weui-cell__hd span.dot_yellow {
+    background-color: #fffcfa;
+    border: 1px solid #f3a07c;
+}
+
+.weui-cell__hd span.dot_blue {
+    background-color: #eff5ff;
+    border: 1px solid #5394f5;
+}
+
+.weui-cell__hd span.dot_green {
+    background-color: #f0fff6;
+    border: 1px solid #23dc3d;
+}
+
+.tsimg {
+    width: 140rpx;
+    height: 140rpx;
+}
+
+.btnsg {
+    display: flex;
+    justify-content: center;
+}
+
+.btnsg navigator {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 3px;
+    border: 1px solid #f8584f;
+    color: #f8584f;
+    margin: 0 5px;
+}
+
+.btnsg .btn2 {
+    background-color: #f8584f;
+    color: #fff;
+}
+
+.mt40 {
+    margin-top: 40rpx;
+}
+
+.mt50 {
+    margin-top: 50rpx;
+}
+
+.weui-cell__bd {
+    font-weight: 400;
+    font-size: 26rpx;
+    color: #666;
+}
+
+.weui-panel__hd {
+    font-size: 24px;
+    color: #000;
+}
+
+.weui-cell__ft {
+    font-size: 26rpx;
+}

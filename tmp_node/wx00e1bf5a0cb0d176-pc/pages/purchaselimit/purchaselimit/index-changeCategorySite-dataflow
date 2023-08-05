@@ -1,0 +1,58 @@
+// \pages/purchaselimit/purchaselimit/index changeCategorySite Data Flow
+digraph {
+	e572cd0e789d46e2881fcd4a09a4ef17 [label="FunctionCall,
+function name -> changeCategorySite,
+param -> a.,
+a,
+" color=blue]
+	"8326d09b6b8e4347b38f9c90c8fb35bd" [label=VariableDeclarations color=blue]
+	d156e733fe604fe5b24e8418d861576c [label="VariableDeclarator,
+left -> e,
+right -> a.currentTarget.dataset.index" color=blue]
+	"8326d09b6b8e4347b38f9c90c8fb35bd" -> d156e733fe604fe5b24e8418d861576c
+	e572cd0e789d46e2881fcd4a09a4ef17 -> "8326d09b6b8e4347b38f9c90c8fb35bd"
+	"79a67cc506d64c5886b41a390f4c0806" [label="If Alternate" color=blue]
+	ba23dd55f4ba451f979e9dccde4b03f2 [label=VariableDeclarations color=blue]
+	"7144c687c61f45deb504ff4cf7961ad5" [label="VariableDeclarator,
+left -> i,
+right -> a.currentTarget.dataset.id" color=blue]
+	ba23dd55f4ba451f979e9dccde4b03f2 -> "7144c687c61f45deb504ff4cf7961ad5"
+	"79a67cc506d64c5886b41a390f4c0806" -> ba23dd55f4ba451f979e9dccde4b03f2
+	b6ba2355cc7c4026a2f6dae549fea419 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"922292a75160497793aa93ccf1f12274" [label="CallExpression,
+callee name -> r.hasCategoryPro,
+param -> i,
+" color=blue]
+	b6ba2355cc7c4026a2f6dae549fea419 -> "922292a75160497793aa93ccf1f12274"
+	"8520b4ea4b084b5dbfaf1fbf73853853" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	c76113dfff194abcbf9855d47badfcca [label="Object Properties
+{
+url -> '/index.php?c=front/WxApp/SecKill&a=getProductsList&activeId=' + i + '&page=1'
+}" color=blue]
+	"8520b4ea4b084b5dbfaf1fbf73853853" -> c76113dfff194abcbf9855d47badfcca
+	b6ba2355cc7c4026a2f6dae549fea419 -> "8520b4ea4b084b5dbfaf1fbf73853853"
+	"79a67cc506d64c5886b41a390f4c0806" -> b6ba2355cc7c4026a2f6dae549fea419
+	"39495bed00a54801aa753a1774ceb96d" [label=SequenceExpression color=blue]
+	"68910e8550a047df8dd06800c6da73dd" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"3f509c8ea2fd48bfbdddf702edc94d5e" [label="ConditionalExpression,
+ conditional list -> 170 * (e - 2) / 2 + 30" color=blue]
+	"68910e8550a047df8dd06800c6da73dd" -> "3f509c8ea2fd48bfbdddf702edc94d5e"
+	"39495bed00a54801aa753a1774ceb96d" -> "68910e8550a047df8dd06800c6da73dd"
+	"630c3d980b8b4d2b8ac68a3b20bf00e9" [label="CallExpression,
+callee name -> r.setData,
+param -> " color=blue]
+	"6aa9ef83bc414dc481cf81da3d0ddecc" [label="Object Properties
+{
+currentIndex -> e
+}" color=blue]
+	"630c3d980b8b4d2b8ac68a3b20bf00e9" -> "6aa9ef83bc414dc481cf81da3d0ddecc"
+	"39495bed00a54801aa753a1774ceb96d" -> "630c3d980b8b4d2b8ac68a3b20bf00e9"
+	"79a67cc506d64c5886b41a390f4c0806" -> "39495bed00a54801aa753a1774ceb96d"
+	e572cd0e789d46e2881fcd4a09a4ef17 -> "79a67cc506d64c5886b41a390f4c0806"
+}

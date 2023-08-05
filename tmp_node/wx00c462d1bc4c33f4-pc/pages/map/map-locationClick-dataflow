@@ -1,0 +1,35 @@
+// \pages/map/map locationClick Data Flow
+digraph {
+	a7a8aba931a24143944d102007ca452c [label="FunctionCall,
+function name -> locationClick,
+param -> o.,
+o,
+" color=blue]
+	"3b21aa0d83a0444b83a6fb5b0fbfd0d5" [label="CallExpression,
+callee name -> wx.getLocation,
+param -> " color=blue]
+	"8ab2e78143ed4e23acc87c2ce0a460b6" [label="FunctionCall,
+function name -> success,
+param -> o.,
+o,
+" color=blue]
+	"5c179c889a874459803e1a62cae00b35" [label=SequenceExpression color=blue]
+	"5ef4ab6e3f844e43adf28b99c23e57dc" [label="CallExpression,
+callee name -> console.log,
+param -> o,
+" color=blue]
+	"5c179c889a874459803e1a62cae00b35" -> "5ef4ab6e3f844e43adf28b99c23e57dc"
+	"558eca66bcdf49a38ecdb2a96f002458" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	"8044bdbc33e04ef8aae39d33cb773065" [label="Object Properties
+{
+latitude -> o.latitude
+longitude -> o.longitude
+}" color=blue]
+	"558eca66bcdf49a38ecdb2a96f002458" -> "8044bdbc33e04ef8aae39d33cb773065"
+	"5c179c889a874459803e1a62cae00b35" -> "558eca66bcdf49a38ecdb2a96f002458"
+	"8ab2e78143ed4e23acc87c2ce0a460b6" -> "5c179c889a874459803e1a62cae00b35"
+	"3b21aa0d83a0444b83a6fb5b0fbfd0d5" -> "8ab2e78143ed4e23acc87c2ce0a460b6"
+	a7a8aba931a24143944d102007ca452c -> "3b21aa0d83a0444b83a6fb5b0fbfd0d5"
+}

@@ -1,0 +1,14 @@
+// \pages/index/index tiaozhuan Data Flow
+digraph {
+	a57da6b1118f433d9442507ee1a8ea7d [label="FunctionCall,
+function name -> tiaozhuan,
+param -> a,
+a.,
+" color=blue]
+	ad3ddc37339640c681dbb9c3e291f0ac [label=SequenceExpression color=blue]
+	"3745e6493c7b4864b60699865d82a91b" [label="Assignment,
+left -> t.globalData.cid,
+right -> a.currentTarget.dataset.cid" color=blue]
+	ad3ddc37339640c681dbb9c3e291f0ac -> "3745e6493c7b4864b60699865d82a91b"
+	a57da6b1118f433d9442507ee1a8ea7d -> ad3ddc37339640c681dbb9c3e291f0ac
+}

@@ -1,0 +1,37 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view style="margin-top: {{navH+status+10}}px;">
+    <view class="accompanyContain">
+        <view class="escortedPanel">
+            <view catchtap="toDetail" class="escortedList">
+                <view class="eachPanel row">
+                    <image class="avatar" src=""></image>
+                    <view class="information column">
+                        <view class="informationDetail row">
+                            <text class="nickname">王先生</text>
+                            <text class="state">等待到店</text>
+                        </view>
+                        <view class="contact row">
+                            <text class="mobile">13232323232</text>
+                            <text class="datetime">2019-11-11</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="escortedList">
+                <view class="eachPanel row">
+                    <image class="avatar" src=""></image>
+                    <view class="information column">
+                        <view class="informationDetail row">
+                            <text class="nickname">王新生</text>
+                            <text class="stateAlready">完成陪同</text>
+                        </view>
+                        <view class="contact row">
+                            <text class="mobile">13232323232</text>
+                            <text class="datetime">2019-11-11</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

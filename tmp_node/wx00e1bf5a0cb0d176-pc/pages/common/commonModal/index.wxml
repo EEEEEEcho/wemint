@@ -1,0 +1,15 @@
+<view class="modal-wrapper" wx:if="{{modalShow}}">
+    <view bindtap="onCloseModal" class="modal-bg {{animaFlag?'active':''}}"></view>
+    <view class="modal-content {{animaFlag?'active':''}}" style="height: {{contentHeight}}rpx;">
+        <view class="modal-title">
+            <text>{{title}}</text>
+            <text bindtap="onCloseModal" class="iconfont icon-guanbi-copy"></text>
+        </view>
+        <view class="modal-main" style="height: {{mainHeight}}rpx;">
+            <slot name="content"></slot>
+        </view>
+        <view class="modal-footer" wx:if="{{foot}}">
+            <slot name="footer"></slot>
+        </view>
+    </view>
+</view>

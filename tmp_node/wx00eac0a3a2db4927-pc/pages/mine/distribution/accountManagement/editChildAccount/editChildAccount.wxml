@@ -1,0 +1,37 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view style="margin-top: {{navH+status+10}}px;">
+    <view class="addAccountContain">
+        <view class="accountInfomation row">
+            <image class="accountAvatar" mode="aspectFill" src="{{accountInfo.avatar}}"></image>
+            <input bindblur="getInputValue" class="inputName" placeholderClass="placeholderName" value="{{accountInfo.name}}"></input>
+            <text class="profit">分成比例{{accountInfo.moneyRatio}}%</text>
+        </view>
+        <view class="featuresLayout column">
+            <view bindtap="toPage" class="featuresRow row" data-type="手机号码">
+                <text class="featuresLabel">手机号码</text>
+                <text class="featuresLabel2">{{accountInfo.mobile}}</text>
+                <image class="featuresArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+            </view>
+            <view class="lineStyle"></view>
+            <view bindtap="toPage" class="featuresRow row" data-type="分成比例">
+                <text class="featuresLabel">分成比例</text>
+                <text class="featuresLabel2">{{accountInfo.moneyRatio}}%</text>
+                <image class="featuresArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+            </view>
+            <view class="lineStyle"></view>
+            <view bindtap="toPage" class="featuresRow row" data-type="查看订单" data-useruuid="{{accountInfo.userUuid}}">
+                <text class="featuresLabel">查看订单</text>
+                <image class="featuresArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+            </view>
+            <view class="lineStyle"></view>
+            <view bindtap="toPage" class="featuresRow row" data-type="查看客户" data-useruuid="{{accountInfo.userUuid}}">
+                <text class="featuresLabel">查看客户</text>
+                <image class="featuresArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+            </view>
+        </view>
+        <view class="btns row">
+            <view catchtap="deleteDis" class="deleteDis">删除分销</view>
+            <view catchtap="modifierProfit" class="modifierProfit">保存修改</view>
+        </view>
+    </view>
+</view>

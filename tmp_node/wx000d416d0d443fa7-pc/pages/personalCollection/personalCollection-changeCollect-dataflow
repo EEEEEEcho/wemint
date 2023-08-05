@@ -1,0 +1,14 @@
+// \pages/personalCollection/personalCollection changeCollect Data Flow
+digraph {
+	"4c6a9f988aec4f599b65ebc2135fbae8" [label="FunctionCall,
+function name -> changeCollect,
+param -> e.,
+e,
+" color=blue]
+	"06ce984dbf2c44188b6bde8ab90fc807" [label=VariableDeclarations color=blue]
+	c1fd7a1dc7ff44c58b31ba90162a082d [label="VariableDeclarator,
+left -> a,
+right -> e.currentTarget.dataset.id" color=blue]
+	"06ce984dbf2c44188b6bde8ab90fc807" -> c1fd7a1dc7ff44c58b31ba90162a082d
+	"4c6a9f988aec4f599b65ebc2135fbae8" -> "06ce984dbf2c44188b6bde8ab90fc807"
+}

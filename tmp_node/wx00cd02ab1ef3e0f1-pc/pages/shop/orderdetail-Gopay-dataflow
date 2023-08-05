@@ -1,0 +1,62 @@
+// \pages/shop/orderdetail Gopay Data Flow
+digraph {
+	"641d493c3aeb478888ed05a5c3f26321" [label="FunctionCall,
+function name -> Gopay,
+param -> a.,
+a,
+" color=blue]
+	"8eb34c2ef0d145d2a55ff2677c7223a1" [label=VariableDeclarations color=blue]
+	"5398c8f0e0e147c6af9527965bb56907" [label="VariableDeclarator,
+left -> e,
+right -> this.data.curOrderId" color=blue]
+	"8eb34c2ef0d145d2a55ff2677c7223a1" -> "5398c8f0e0e147c6af9527965bb56907"
+	"2425c74c42e94976afc9a088649bd8aa" [label="VariableDeclarator,
+left -> n,
+right -> a.detail.formId" color=blue]
+	"8eb34c2ef0d145d2a55ff2677c7223a1" -> "2425c74c42e94976afc9a088649bd8aa"
+	"641d493c3aeb478888ed05a5c3f26321" -> "8eb34c2ef0d145d2a55ff2677c7223a1"
+	"3b82b9f486494d59a870bbb78d54357b" [label="CallExpression,
+callee name -> console.log,
+param -> n,
+" color=blue]
+	"641d493c3aeb478888ed05a5c3f26321" -> "3b82b9f486494d59a870bbb78d54357b"
+	d23014fff0e04664a032eaa19bba091e [label=VariableDeclarations color=blue]
+	"79b60fb3efb44665b790f3dadf7573cc" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	b458f9af819444448b71577587cf454f [label="FunctionCall,
+function name -> Anonymous Function,
+param -> a.,
+a,
+" color=blue]
+	"08b1309457ce4ecda8007819e33f1252" [label=SequenceExpression color=blue]
+	a485f3ffc4a34f309210cf405f70241d [label="CallExpression,
+callee name -> console.log,
+param -> a,
+" color=blue]
+	"08b1309457ce4ecda8007819e33f1252" -> a485f3ffc4a34f309210cf405f70241d
+	"496e8cf67a0c4c0580f668f99bc5ad60" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	e0f9a4df174e48edb781194432e07124 [label="Object Properties
+{
+OrderID -> a
+}" color=blue]
+	"496e8cf67a0c4c0580f668f99bc5ad60" -> e0f9a4df174e48edb781194432e07124
+	aa49036f8dc54fc0b8ec08fa7f4e318c [label="FunctionCall,
+function name -> success,
+param -> a,
+" color=blue]
+	"496e8cf67a0c4c0580f668f99bc5ad60" -> aa49036f8dc54fc0b8ec08fa7f4e318c
+	"18facc199f5a46d0886b8bebb11dabca" [label="FunctionCall,
+function name -> fail,
+param -> a,
+" color=blue]
+	"496e8cf67a0c4c0580f668f99bc5ad60" -> "18facc199f5a46d0886b8bebb11dabca"
+	"08b1309457ce4ecda8007819e33f1252" -> "496e8cf67a0c4c0580f668f99bc5ad60"
+	b458f9af819444448b71577587cf454f -> "08b1309457ce4ecda8007819e33f1252"
+	"79b60fb3efb44665b790f3dadf7573cc" -> b458f9af819444448b71577587cf454f
+	d23014fff0e04664a032eaa19bba091e -> "79b60fb3efb44665b790f3dadf7573cc"
+	"641d493c3aeb478888ed05a5c3f26321" -> d23014fff0e04664a032eaa19bba091e
+	"641d493c3aeb478888ed05a5c3f26321" -> "73036520220c4477a238692859d0bebd"
+}

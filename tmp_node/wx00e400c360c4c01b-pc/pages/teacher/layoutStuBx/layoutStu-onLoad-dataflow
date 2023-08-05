@@ -1,0 +1,43 @@
+// \pages/teacher/layoutStuBx/layoutStu onLoad Data Flow
+digraph {
+	a7a20ad609d54f1bbdd46346db36699a [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	c4ff0d9275d049c6befc7b0503d457bd [label=SequenceExpression color=blue]
+	"775212c3dd6c416789ee698347a237c8" [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> " color=blue]
+	ef5d0f5eb3d841d3b795554dbc14cd36 [label="FunctionCall,
+function name -> success,
+param -> a.,
+a,
+" color=blue]
+	"1da2f5d88c424cb181f23894ea5d8513" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	"718434490b0846eeb0deaac9ae08029f" [label="Object Properties
+{
+scrollHeight -> a.windowHeight + 400
+}" color=blue]
+	"1da2f5d88c424cb181f23894ea5d8513" -> "718434490b0846eeb0deaac9ae08029f"
+	ef5d0f5eb3d841d3b795554dbc14cd36 -> "1da2f5d88c424cb181f23894ea5d8513"
+	"775212c3dd6c416789ee698347a237c8" -> ef5d0f5eb3d841d3b795554dbc14cd36
+	c4ff0d9275d049c6befc7b0503d457bd -> "775212c3dd6c416789ee698347a237c8"
+	"8da6e9f8fdd4477fb3ef466e00052009" [label="CallExpression,
+callee name -> this.fetchSearchList,
+param -> " color=blue]
+	dc24e71d94e648f09073f7c10df1996e [label="FunctionCall,
+function name -> fetchSearchList,
+param -> " color=blue]
+	"5a3d7e67fe7f48e0a9d17714071473c2" [label="CallExpression,
+callee name -> a,
+param -> t.data.keyword,
+t.data.noIds,
+t.data.searchPageNum,
+t.data.callbackcount,
+" color=blue]
+	dc24e71d94e648f09073f7c10df1996e -> "5a3d7e67fe7f48e0a9d17714071473c2"
+	"8da6e9f8fdd4477fb3ef466e00052009" -> dc24e71d94e648f09073f7c10df1996e
+	c4ff0d9275d049c6befc7b0503d457bd -> "8da6e9f8fdd4477fb3ef466e00052009"
+	a7a20ad609d54f1bbdd46346db36699a -> c4ff0d9275d049c6befc7b0503d457bd
+}

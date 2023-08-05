@@ -1,0 +1,15 @@
+<view class="first-container">
+    <view class="top-center">
+        <image src="https://file.qian-hong.com/xiaochengxu11.png"></image>
+    </view>
+    <view class="bottom-center">
+        <view class="bottom-button">
+            <button bindtap="entryNow" class="shenqing">
+				立即进入
+			</button>
+        </view>
+        <view class="bottom-logo">
+            <image src="/static/images/bottom-logo.png"></image>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,18 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view style="margin-top: {{navH+status+10}}px;">
+    <view class="definite_group">
+        <view class="definite column" wx:for="{{billList}}">
+            <view class="bill row">
+                <text class="bill_title">{{item.remark}}</text>
+                <text class="bill_date">{{definiteDetail.getTime(item.createdAt)}}</text>
+            </view>
+            <view class="bill_money row">
+                <text class="surplus">余额：{{definiteDetail.getBalance(item.balance)}}</text>
+                <text class="deduct" wx:if="{{item.isIncome==0}}">- {{definiteDetail.getBalance(item.amount)}}</text>
+                <text class="deduct" wx:if="{{item.isIncome==1}}">+ {{definiteDetail.getBalance(item.amount)}}</text>
+            </view>
+        </view>
+    </view>
+    <empty iconPath="http://oss.shangmian.xin/weixin_applets_icon_empty_view.png" isShow="{{billList.length==0}}" textContent="没有明细信息"></empty>
+</view>
+<wxs module="definiteDetail" src="definite.wxs" />

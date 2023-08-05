@@ -1,0 +1,17 @@
+// \pages/shop/square inputUserMobile Data Flow
+digraph {
+	"373f2cfa845d4ad18b3214b20f38a75f" [label="FunctionCall,
+function name -> inputUserMobile,
+param -> t,
+t.,
+" color=blue]
+	"4c3510126d644575a65b469baad50218" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	b5d4a8c901d84e168d50b028efcbc3be [label="Object Properties
+{
+Mobile -> t.detail.value
+}" color=blue]
+	"4c3510126d644575a65b469baad50218" -> b5d4a8c901d84e168d50b028efcbc3be
+	"373f2cfa845d4ad18b3214b20f38a75f" -> "4c3510126d644575a65b469baad50218"
+}

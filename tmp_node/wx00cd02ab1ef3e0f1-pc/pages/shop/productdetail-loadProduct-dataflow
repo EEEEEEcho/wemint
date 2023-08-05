@@ -1,0 +1,27 @@
+// \pages/shop/productdetail loadProduct Data Flow
+digraph {
+	"7dc42c80185e4e43b25b9575abec0d76" [label="FunctionCall,
+function name -> loadProduct,
+param -> " color=blue]
+	e8023c07c1824847b99a3b709fd69738 [label="If Alternate" color=blue]
+	f546b825651e4d33a0089b02c1e388cf [label=SequenceExpression color=blue]
+	"721c9a0f2e2f4759802977081f8103d8" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"5639ddcc3a03434697ef97fa9dbcc75a" [label="Assignment,
+left -> e,
+right -> a.data.queryparams.id" color=blue]
+	"721c9a0f2e2f4759802977081f8103d8" -> "5639ddcc3a03434697ef97fa9dbcc75a"
+	f546b825651e4d33a0089b02c1e388cf -> "721c9a0f2e2f4759802977081f8103d8"
+	"8288b1b944b04674a94a39c3814b8fab" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	"72ab41597cdf4cdab56bca01bc263c3d" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/JsonApi&a=getProductInfo&id=' + e
+}" color=blue]
+	"8288b1b944b04674a94a39c3814b8fab" -> "72ab41597cdf4cdab56bca01bc263c3d"
+	f546b825651e4d33a0089b02c1e388cf -> "8288b1b944b04674a94a39c3814b8fab"
+	e8023c07c1824847b99a3b709fd69738 -> f546b825651e4d33a0089b02c1e388cf
+	"7dc42c80185e4e43b25b9575abec0d76" -> e8023c07c1824847b99a3b709fd69738
+}

@@ -1,0 +1,45 @@
+// \pages/noticeList/noticeList goToDetail Data Flow
+digraph {
+	"99c2b03f43b04b76aa83506e3f38d9d7" [label="FunctionCall,
+function name -> goToDetail,
+param -> e,
+e.,
+" color=blue]
+	f110277843d74fffb7528457b4542d67 [label=VariableDeclarations color=blue]
+	"3b935fed918242cea76874c576b1f434" [label="VariableDeclarator,
+left -> t,
+right -> e.target.dataset.url" color=blue]
+	f110277843d74fffb7528457b4542d67 -> "3b935fed918242cea76874c576b1f434"
+	"47c7e66ff9c34b7c801b20543ffa46fe" [label="VariableDeclarator,
+left -> a,
+right -> e.target.dataset.type" color=blue]
+	f110277843d74fffb7528457b4542d67 -> "47c7e66ff9c34b7c801b20543ffa46fe"
+	"99c2b03f43b04b76aa83506e3f38d9d7" -> f110277843d74fffb7528457b4542d67
+	"6084be86da0f4c779da00afbb249bd62" [label="If Alternate" color=blue]
+	"4435647e94364d01ba68f1826aa2ded8" [label=VariableDeclarations color=blue]
+	d2fc8096b45b45b18db2ca5350fce9fa [label="VariableDeclarator,
+left -> n,
+right -> encodeURIComponent" color=blue]
+	"9afecb81e1cb4cc18fc9336fdd218ff1" [label="CallExpression,
+callee name -> encodeURIComponent,
+param -> t,
+" color=blue]
+	d2fc8096b45b45b18db2ca5350fce9fa -> "9afecb81e1cb4cc18fc9336fdd218ff1"
+	"4435647e94364d01ba68f1826aa2ded8" -> d2fc8096b45b45b18db2ca5350fce9fa
+	"6084be86da0f4c779da00afbb249bd62" -> "4435647e94364d01ba68f1826aa2ded8"
+	c0fd46e320cd4fe9a2fe100922d78824 [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"351c2a3942864f44ac498ad2480e2f8c" [label="Object Properties
+{
+url -> '../webView/webView?view=' + encodeURIComponent(n)
+}" color=blue]
+	"1cd292cc96b8468ea5d32e151611f945" [label="CallExpression,
+callee name -> encodeURIComponent,
+param -> n,
+" color=blue]
+	"351c2a3942864f44ac498ad2480e2f8c" -> "1cd292cc96b8468ea5d32e151611f945"
+	c0fd46e320cd4fe9a2fe100922d78824 -> "351c2a3942864f44ac498ad2480e2f8c"
+	"6084be86da0f4c779da00afbb249bd62" -> c0fd46e320cd4fe9a2fe100922d78824
+	"99c2b03f43b04b76aa83506e3f38d9d7" -> "6084be86da0f4c779da00afbb249bd62"
+}

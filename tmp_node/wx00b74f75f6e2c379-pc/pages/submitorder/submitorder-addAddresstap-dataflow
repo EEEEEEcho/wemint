@@ -1,0 +1,20 @@
+// \pages/submitorder/submitorder addAddresstap Data Flow
+digraph {
+	"5397f7c26f4046fdac1938969ca8d88d" [label="FunctionCall,
+function name -> addAddresstap,
+param -> " color=blue]
+	ff6b6c4e3634447c929585197196ebd9 [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	"242a2cf8fa1c4256a9800b7f0dfd12aa" [label="FunctionCall,
+function name -> success,
+param -> " color=blue]
+	"480c9c0d79fe4e5bace8ad6df5fea7f4" [label="If Alternate" color=blue]
+	"21785a81ac33467f8cea1fbdda8e1008" [label="CallExpression,
+callee name -> wx.chooseAddress,
+param -> " color=blue]
+	"480c9c0d79fe4e5bace8ad6df5fea7f4" -> "21785a81ac33467f8cea1fbdda8e1008"
+	"242a2cf8fa1c4256a9800b7f0dfd12aa" -> "480c9c0d79fe4e5bace8ad6df5fea7f4"
+	ff6b6c4e3634447c929585197196ebd9 -> "242a2cf8fa1c4256a9800b7f0dfd12aa"
+	"5397f7c26f4046fdac1938969ca8d88d" -> ff6b6c4e3634447c929585197196ebd9
+}

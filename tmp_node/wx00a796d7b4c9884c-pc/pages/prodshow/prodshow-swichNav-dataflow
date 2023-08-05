@@ -1,0 +1,17 @@
+// \pages/prodshow/prodshow swichNav Data Flow
+digraph {
+	"6f77c86e8bec4c129a71b2ef8a1851ed" [label="FunctionCall,
+function name -> swichNav,
+param -> t,
+t.,
+" color=blue]
+	"1da3e9e5eecc4cc586983cdee5b96463" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"8e6ee508e9334b7d99520b1b6588471e" [label="Object Properties
+{
+currentTab -> t.target.dataset.current
+}" color=blue]
+	"1da3e9e5eecc4cc586983cdee5b96463" -> "8e6ee508e9334b7d99520b1b6588471e"
+	"6f77c86e8bec4c129a71b2ef8a1851ed" -> "1da3e9e5eecc4cc586983cdee5b96463"
+}

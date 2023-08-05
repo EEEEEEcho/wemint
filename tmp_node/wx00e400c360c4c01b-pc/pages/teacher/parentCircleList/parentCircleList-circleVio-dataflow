@@ -1,0 +1,27 @@
+// \pages/teacher/parentCircleList/parentCircleList circleVio Data Flow
+digraph {
+	"24bfb0fd934c4bb09e5e23957cd23b6d" [label="FunctionCall,
+function name -> circleVio,
+param -> " color=blue]
+	"399ccca04cda4ec3a2b0a3526262f63b" [label="CallExpression,
+callee name -> wx.chooseVideo,
+param -> " color=blue]
+	"87e17d1293904bcfae89816417050b43" [label="FunctionCall,
+function name -> success,
+param -> t,
+t.,
+" color=blue]
+	"585b622ae1ed4b3a8a6227c02f45ac2e" [label=SequenceExpression color=blue]
+	ba113d522fd34714b0eb993c87d28d68 [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	b7da608c88bc448b9820ffcc792783b0 [label="Object Properties
+{
+url -> '../parentCircle/parentCircle?vioUrl=' + t.tempFilePath + '&tp=1'
+}" color=blue]
+	ba113d522fd34714b0eb993c87d28d68 -> b7da608c88bc448b9820ffcc792783b0
+	"585b622ae1ed4b3a8a6227c02f45ac2e" -> ba113d522fd34714b0eb993c87d28d68
+	"87e17d1293904bcfae89816417050b43" -> "585b622ae1ed4b3a8a6227c02f45ac2e"
+	"399ccca04cda4ec3a2b0a3526262f63b" -> "87e17d1293904bcfae89816417050b43"
+	"24bfb0fd934c4bb09e5e23957cd23b6d" -> "399ccca04cda4ec3a2b0a3526262f63b"
+}

@@ -1,0 +1,20 @@
+// \pages/address/address addAddress Data Flow
+digraph {
+	"1030858fda714b7aacd4407678160598" [label="FunctionCall,
+function name -> addAddress,
+param -> " color=blue]
+	"47d5411758c0415fa6227a5bd91095de" [label=SequenceExpression color=blue]
+	"2b16a6fa1ef442f4815a6128454e01f8" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"877eed8805654f3991c3b5bd3db0ac6d" [label="Object Properties
+{
+is_first -> this.data.is_first
+rec_name -> this.data.rec_name
+phone -> this.data.phone
+cur_address -> this.data.cur_address
+}" color=blue]
+	"2b16a6fa1ef442f4815a6128454e01f8" -> "877eed8805654f3991c3b5bd3db0ac6d"
+	"47d5411758c0415fa6227a5bd91095de" -> "2b16a6fa1ef442f4815a6128454e01f8"
+	"1030858fda714b7aacd4407678160598" -> "47d5411758c0415fa6227a5bd91095de"
+}

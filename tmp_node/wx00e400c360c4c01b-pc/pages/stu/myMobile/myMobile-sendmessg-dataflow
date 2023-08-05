@@ -1,0 +1,15 @@
+// \pages/stu/myMobile/myMobile sendmessg Data Flow
+digraph {
+	c605ca4ee10646789875fee415cf5436 [label="FunctionCall,
+function name -> sendmessg,
+param -> " color=blue]
+	d0f98abec9fe447aacea7a771439c16e [label="If Alternate" color=blue]
+	cb7ce27097224d5cb4d8bb901ec80e95 [label=SequenceExpression color=blue]
+	b62a00424ac04330b3316a5140ff760e [label="CallExpression,
+callee name -> t,
+param -> a.data.mobile,
+" color=blue]
+	cb7ce27097224d5cb4d8bb901ec80e95 -> b62a00424ac04330b3316a5140ff760e
+	d0f98abec9fe447aacea7a771439c16e -> cb7ce27097224d5cb4d8bb901ec80e95
+	c605ca4ee10646789875fee415cf5436 -> d0f98abec9fe447aacea7a771439c16e
+}

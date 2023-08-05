@@ -1,0 +1,36 @@
+// \pages/cars/index getopenid Data Flow
+digraph {
+	d3dd39f494e04c1f990aa7b5ae7b2139 [label="FunctionCall,
+function name -> getopenid,
+param -> " color=blue]
+	"3ea173635dc3486fa3ac4907baf2f5f8" [label=SequenceExpression color=blue]
+	"646152ffe5b04010ad224340b0a8038a" [label="CallExpression,
+callee name -> wx.login,
+param -> " color=blue]
+	e90df14e751f4dbfabfd93f7a8517c22 [label="FunctionCall,
+function name -> success,
+param -> e.,
+e,
+" color=blue]
+	adce5ac96f4043b7b0af0208c8cbb8d4 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"12e0b3f5acfe4b309fc4b6cded736857" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	c78e74412619489f98d80ecc178b6f03 [label="Object Properties
+{
+js_code -> e.code
+}" color=blue]
+	"12e0b3f5acfe4b309fc4b6cded736857" -> c78e74412619489f98d80ecc178b6f03
+	"36a9936f45764e2b91572c128c446f7a" [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	"12e0b3f5acfe4b309fc4b6cded736857" -> "36a9936f45764e2b91572c128c446f7a"
+	adce5ac96f4043b7b0af0208c8cbb8d4 -> "12e0b3f5acfe4b309fc4b6cded736857"
+	e90df14e751f4dbfabfd93f7a8517c22 -> adce5ac96f4043b7b0af0208c8cbb8d4
+	"646152ffe5b04010ad224340b0a8038a" -> e90df14e751f4dbfabfd93f7a8517c22
+	"3ea173635dc3486fa3ac4907baf2f5f8" -> "646152ffe5b04010ad224340b0a8038a"
+	d3dd39f494e04c1f990aa7b5ae7b2139 -> "3ea173635dc3486fa3ac4907baf2f5f8"
+}

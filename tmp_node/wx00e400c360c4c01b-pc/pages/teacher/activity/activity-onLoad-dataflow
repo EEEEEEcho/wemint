@@ -1,0 +1,27 @@
+// \pages/teacher/activity/activity onLoad Data Flow
+digraph {
+	ef59c698a03041d485b9cffa7f56df9e [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"55a52ea0051348b19b74707787d2e356" [label=SequenceExpression color=blue]
+	bb7d9ec549db4ec996e2adc340292d6c [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> " color=blue]
+	b450c0a7692f4e7495af453c29d19543 [label="FunctionCall,
+function name -> success,
+param -> a.,
+a,
+" color=blue]
+	"3aae4910c7ee4e0d842fc4c15a854cd0" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	c28f9300543f4d85a1cc88c722b6798a [label="Object Properties
+{
+scrollHeight -> a.windowHeight + 700
+}" color=blue]
+	"3aae4910c7ee4e0d842fc4c15a854cd0" -> c28f9300543f4d85a1cc88c722b6798a
+	b450c0a7692f4e7495af453c29d19543 -> "3aae4910c7ee4e0d842fc4c15a854cd0"
+	bb7d9ec549db4ec996e2adc340292d6c -> b450c0a7692f4e7495af453c29d19543
+	"55a52ea0051348b19b74707787d2e356" -> bb7d9ec549db4ec996e2adc340292d6c
+	ef59c698a03041d485b9cffa7f56df9e -> "55a52ea0051348b19b74707787d2e356"
+}

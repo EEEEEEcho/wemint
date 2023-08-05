@@ -1,0 +1,107 @@
+// \pages/houseTypeDetailModule/houseTypeDetailModule priviewPic1 Data Flow
+digraph {
+	"3a160fe2b50c4af1b020c528f71f805f" [label="FunctionCall,
+function name -> priviewPic1,
+param -> e,
+e.,
+" color=blue]
+	"8aa11d780acb4c4fadc9400880f35373" [label=VariableDeclarations color=blue]
+	"885d8468875140158aefa3066ad5d166" [label="VariableDeclarator,
+left -> t,
+right -> this.data.currentTab" color=blue]
+	"8aa11d780acb4c4fadc9400880f35373" -> "885d8468875140158aefa3066ad5d166"
+	"11f6112a8da3413282f155febbc5d486" [label="VariableDeclarator,
+left -> i,
+right -> this.data.tableList" color=blue]
+	"8aa11d780acb4c4fadc9400880f35373" -> "11f6112a8da3413282f155febbc5d486"
+	c2de615656014fe4a7a53c1934bb604c [label="VariableDeclarator,
+left -> r,
+right -> e.currentTarget.dataset.item" color=blue]
+	"8aa11d780acb4c4fadc9400880f35373" -> c2de615656014fe4a7a53c1934bb604c
+	"3a160fe2b50c4af1b020c528f71f805f" -> "8aa11d780acb4c4fadc9400880f35373"
+	b9c03e8e8fb74ee38e6f7514e53772f7 [label="If Alternate" color=blue]
+	a944de5be86b46d1812dbd7f2e7efb90 [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"2fef64af1ed04efa95c9e01e7e64a8b9" [label=SequenceExpression color=blue]
+	"33616c8d0a6a463bbd38a9b921f15faf" [label="Assignment,
+left -> n,
+right -> this.data.currentHardbackList[e.currentTarget.dataset.index].image" color=blue]
+	"2fef64af1ed04efa95c9e01e7e64a8b9" -> "33616c8d0a6a463bbd38a9b921f15faf"
+	cffd98d6f3e14d2181564d26e4b9201c [label="Assignment,
+left -> u,
+right -> this.data.currentHardbackList.map" color=blue]
+	"99f62260c3bb4fd8b9c1a6a08c822297" [label="CallExpression,
+callee name -> this.data.currentHardbackList.map,
+param -> " color=blue]
+	b29d9d708997466fa0459433f71e3dca [label="FunctionCall,
+function name -> Anonymous Function,
+param -> e,
+" color=blue]
+	"99f62260c3bb4fd8b9c1a6a08c822297" -> b29d9d708997466fa0459433f71e3dca
+	cffd98d6f3e14d2181564d26e4b9201c -> "99f62260c3bb4fd8b9c1a6a08c822297"
+	"2fef64af1ed04efa95c9e01e7e64a8b9" -> cffd98d6f3e14d2181564d26e4b9201c
+	a944de5be86b46d1812dbd7f2e7efb90 -> "2fef64af1ed04efa95c9e01e7e64a8b9"
+	"0bd7844affc946e584a3810baad0087b" [label="ConditionalExpression,
+ conditional list -> i[t]" color=blue]
+	"033c090e57e94bc6afc27c2bdc90d49d" [label=SequenceExpression color=blue]
+	"0891803073224a4fbcc5e65d69240ba5" [label="Assignment,
+left -> n,
+right -> this.data.currentLayoutList[e.currentTarget.dataset.index].imageUrl" color=blue]
+	"033c090e57e94bc6afc27c2bdc90d49d" -> "0891803073224a4fbcc5e65d69240ba5"
+	"0fb226f10bf74b8fa88903f7814a761e" [label="Assignment,
+left -> u,
+right -> this.data.currentLayoutList.map" color=blue]
+	"19941b9fa1ff45018372a3747ca89ef0" [label="CallExpression,
+callee name -> this.data.currentLayoutList.map,
+param -> " color=blue]
+	cfdb2e9d828f46cea0d3164a40422f88 [label="FunctionCall,
+function name -> Anonymous Function,
+param -> e,
+" color=blue]
+	"19941b9fa1ff45018372a3747ca89ef0" -> cfdb2e9d828f46cea0d3164a40422f88
+	"0fb226f10bf74b8fa88903f7814a761e" -> "19941b9fa1ff45018372a3747ca89ef0"
+	"033c090e57e94bc6afc27c2bdc90d49d" -> "0fb226f10bf74b8fa88903f7814a761e"
+	"0bd7844affc946e584a3810baad0087b" -> "033c090e57e94bc6afc27c2bdc90d49d"
+	a944de5be86b46d1812dbd7f2e7efb90 -> "0bd7844affc946e584a3810baad0087b"
+	b9c03e8e8fb74ee38e6f7514e53772f7 -> a944de5be86b46d1812dbd7f2e7efb90
+	"6e365e3ca47d43ce9c45d73c939961af" [label=VariableDeclarations color=blue]
+	"830f7572e5c44093ba14861a824b6988" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"67f2b0725b7f4eed9605544b3fa1b7f9" [label="Object Properties
+{
+imageUrl -> n
+}" color=blue]
+	"830f7572e5c44093ba14861a824b6988" -> "67f2b0725b7f4eed9605544b3fa1b7f9"
+	"6e365e3ca47d43ce9c45d73c939961af" -> "830f7572e5c44093ba14861a824b6988"
+	b9c03e8e8fb74ee38e6f7514e53772f7 -> "6e365e3ca47d43ce9c45d73c939961af"
+	ae7342671bff4d13aa480ee43f194945 [label=VariableDeclarations color=blue]
+	"6a0dc9e5b39b493f924c617d9b4619ff" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"74342920ac9945439670c6ec8b0f7ab2" [label="Object Properties
+{
+imageUrl -> n
+}" color=blue]
+	"6a0dc9e5b39b493f924c617d9b4619ff" -> "74342920ac9945439670c6ec8b0f7ab2"
+	ae7342671bff4d13aa480ee43f194945 -> "6a0dc9e5b39b493f924c617d9b4619ff"
+	b9c03e8e8fb74ee38e6f7514e53772f7 -> ae7342671bff4d13aa480ee43f194945
+	c0ab6df14640473b98666f85a47a0c42 [label=SequenceExpression color=blue]
+	"2375cdd74d87416785b419a3ab5b9c6e" [label="CallExpression,
+callee name -> console.log,
+param -> u,
+" color=blue]
+	c0ab6df14640473b98666f85a47a0c42 -> "2375cdd74d87416785b419a3ab5b9c6e"
+	cdda16b84a8c41d1bb9bd695f2c9ccab [label="CallExpression,
+callee name -> wx.previewImage,
+param -> " color=blue]
+	"67ff641ba3d441bf836bf26dbfbe325e" [label="Object Properties
+{
+current -> n
+urls -> u
+}" color=blue]
+	cdda16b84a8c41d1bb9bd695f2c9ccab -> "67ff641ba3d441bf836bf26dbfbe325e"
+	c0ab6df14640473b98666f85a47a0c42 -> cdda16b84a8c41d1bb9bd695f2c9ccab
+	b9c03e8e8fb74ee38e6f7514e53772f7 -> c0ab6df14640473b98666f85a47a0c42
+	"3a160fe2b50c4af1b020c528f71f805f" -> b9c03e8e8fb74ee38e6f7514e53772f7
+}

@@ -1,0 +1,19 @@
+// \pages/customCenter/customCenter onDelete Data Flow
+digraph {
+	"29a0cec6fbb34c439717fd9b9a75c730" [label="FunctionCall,
+function name -> onDelete,
+param -> e,
+e.,
+" color=blue]
+	e4c46fcedad544c2b622f1ad4303ff7a [label=SequenceExpression color=blue]
+	"2bff80e8d32e47f0aa45de14bf325726" [label="CallExpression,
+callee name -> 0, i.trackRequest,
+param -> " color=blue]
+	"62e863e4a41a4fa9978e1e566b1296aa" [label="Object Properties
+{
+customId -> e.currentTarget.dataset.id
+}" color=blue]
+	"2bff80e8d32e47f0aa45de14bf325726" -> "62e863e4a41a4fa9978e1e566b1296aa"
+	e4c46fcedad544c2b622f1ad4303ff7a -> "2bff80e8d32e47f0aa45de14bf325726"
+	"29a0cec6fbb34c439717fd9b9a75c730" -> e4c46fcedad544c2b622f1ad4303ff7a
+}

@@ -1,0 +1,63 @@
+<view class="page-section">
+    <view class="shopcart-t bg-wihte">
+        <view class="shopcart-ck" style="margin-top:0">
+            <icon bindtap="selectAll" color="#ff5722" style="float:left" type="success" wx:if="{{selectAllStatus}}"></icon>
+            <icon bindtap="selectAll" style="float:left" type="circle" wx:else></icon>
+            <view style="margin-left:15rpx;float:left">全选</view>
+        </view>
+        <view bindtap="SwitchEdite" class="shopcart-edite">{{EditeText}}</view>
+    </view>
+    <view class="shopcart-m bg-wihte">
+        <view class="shopcart-m-item {{item.IsValid?'':'shopcart-invalid'}}" hidden="{{item.isDelete}}" wx:for="{{ShopCarts.CartItemInfo}}" wx:key="{{item.SkuID}}">
+            <view class="shopcart-ck {{item.IsValid?'':'ck-txt'}}">
+                <view wx:if="{{item.IsValid}}">
+                    <icon bindtap="selectList" color="#ff5722" data-index="{{index}}" type="success" wx:if="{{item.selected}}"></icon>
+                    <icon bindtap="selectList" data-index="{{index}}" type="circle" wx:else></icon>
+                </view>
+                <view wx:else>失效</view>
+            </view>
+            <view class="shopcart-item-pic ">
+                <image mode="aspectFill " src="{{item.ThumbnailUrl100}} "></image>
+            </view>
+            <view class="shpcart-item-txt " hidden="{{isEdite}}">
+                <view class="shopcart-txt-t ">
+                    <view class="shopcart-txt-name ">{{item.Name}}</view>
+                    <view class="shopcart-txt-saleprice ">￥
+            <text>{{item.MemberPrice}}</text>
+                    </view>
+                </view>
+                <view class="shopcart-txt-b ">
+                    <view class="shpcart-item-skuname ">{{item.SkuContent}}</view>
+                    <view class="shopcart-item-num ">
+                        <view class="txt ">x{{item.Quantity}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class=" shpcart-item-txt shopcart-item-edite " hidden="{{!isEdite&&item.IsValid}}">
+                <view class="shopcart-item-edite-l ">
+                    <view class="shpcart-item-edite-num ">
+                        <view bindtap="MuseNum" class="musenum-l" data-index="{{index}}">-</view>
+                        <input bindconfirm="changeAmount" bindinput="changeAmount" class="m " data-index="{{index}}" type="number" value="{{item.ActQuantity}}"></input>
+                        <view bindtap="AddNum" class="add-r" data-index="{{index}}">+</view>
+                    </view>
+                    <view class="shpcart-item-skuname ">{{item.SkuContent}}</view>
+                </view>
+                <view bindtap="DelCarts" class="shopcart-item-edite-r " data-index="{{index}}">
+                    <text class="iconfont">删除</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="shopcart-b bg-wihte ">
+        <view class="shopcart-total ">
+            <view class="shopcart-total-txt ">总价:</view>
+            <view class="shopcart-total-p ">
+       ￥<text class="saleprice ">{{TotalPrice}}</text>
+            </view>
+      （不含运费）
+    </view>
+        <view bindtap="SettlementShopCart" class="shopcart-buy">
+            <text>结算</text>
+        </view>
+    </view>
+</view>

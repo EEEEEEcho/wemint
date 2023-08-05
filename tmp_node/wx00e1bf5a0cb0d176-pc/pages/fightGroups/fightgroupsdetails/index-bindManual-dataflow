@@ -1,0 +1,23 @@
+// \pages/fightGroups/fightgroupsdetails/index bindManual Data Flow
+digraph {
+	"8685e826dca04750bd80e836214a4f73" [label="FunctionCall,
+function name -> bindManual,
+param -> t,
+t.,
+" color=blue]
+	ab3391a1608849669c7610d43ce91b49 [label=VariableDeclarations color=blue]
+	"6835b160ecba4b6fa8e2b9c080b6e3be" [label="VariableDeclarator,
+left -> a,
+right -> t.detail.value" color=blue]
+	ab3391a1608849669c7610d43ce91b49 -> "6835b160ecba4b6fa8e2b9c080b6e3be"
+	"8685e826dca04750bd80e836214a4f73" -> ab3391a1608849669c7610d43ce91b49
+	b5fdc44f79994db2bfd88596dc49f5ba [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"87fe30d290c041cfbfc3c9b47c76a29c" [label="Object Properties
+{
+buyCount -> a
+}" color=blue]
+	b5fdc44f79994db2bfd88596dc49f5ba -> "87fe30d290c041cfbfc3c9b47c76a29c"
+	"8685e826dca04750bd80e836214a4f73" -> b5fdc44f79994db2bfd88596dc49f5ba
+}

@@ -1,0 +1,90 @@
+.generatePhoto {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    flex-direction: column;
+    display: flex;
+    position: fixed;
+    z-index: 100;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+}
+
+.deleteImage {
+    width: 56rpx;
+    height: 56rpx;
+    margin-left: 5%;
+    margin-top: 7%;
+}
+
+.canvasLayout {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 160rpx;
+}
+
+.canvasContent {
+    width: 80%;
+    height: 135vw;
+    display: flex;
+}
+
+.bottomLayout {
+    width: 100%;
+    height: 160rpx;
+    background: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+}
+
+.shareLayout {
+    flex: 1;
+    height: 160rpx;
+    position: relative;
+}
+
+.shareType {
+    width: 100%;
+    height: 160rpx;
+    position: absolute;
+    opacity: 0;
+}
+
+.imageLayout {
+    width: 100%;
+    height: 160rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.savePhotoLayout {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.savePhoto {
+    width: 76rpx;
+    height: 76rpx;
+}
+
+.saveText {
+    font-size: 24rpx;
+    color: #3f3f3f;
+    padding-top: 3%;
+    letter-spacing: 5rpx;
+}

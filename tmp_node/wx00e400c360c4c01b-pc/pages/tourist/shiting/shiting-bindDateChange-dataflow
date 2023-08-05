@@ -1,0 +1,24 @@
+// \pages/tourist/shiting/shiting bindDateChange Data Flow
+digraph {
+	"9cc0dad9c44e412aa2574502d8b41628" [label="FunctionCall,
+function name -> bindDateChange,
+param -> t,
+t.,
+" color=blue]
+	aa7431e887204f9fb9b5a1ffcae416a3 [label=SequenceExpression color=blue]
+	"9605b4de7d52412b8f7ff43d658b1142" [label="CallExpression,
+callee name -> console.log,
+param -> t.detail.value,
+" color=blue]
+	aa7431e887204f9fb9b5a1ffcae416a3 -> "9605b4de7d52412b8f7ff43d658b1142"
+	"3e21c8721be64053989d45e96b933bd6" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"8367745864b34ee0a87dceb1bf011e40" [label="Object Properties
+{
+birthdy -> t.detail.value
+}" color=blue]
+	"3e21c8721be64053989d45e96b933bd6" -> "8367745864b34ee0a87dceb1bf011e40"
+	aa7431e887204f9fb9b5a1ffcae416a3 -> "3e21c8721be64053989d45e96b933bd6"
+	"9cc0dad9c44e412aa2574502d8b41628" -> aa7431e887204f9fb9b5a1ffcae416a3
+}

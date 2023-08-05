@@ -1,0 +1,7 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "动态",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
+}

@@ -1,0 +1,153 @@
+page {
+    background: #f3f3f3;
+}
+
+.pagebg {
+    padding-bottom: 20%;
+}
+
+.box {
+    width: 93%;
+    float: left;
+    margin: 3% 0 2% 3%;
+    padding: 5px 0;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.box1 {
+    width: 96%;
+    float: left;
+    margin: 2% 0 1% 2%;
+    padding: 5px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box_bt {
+    width: 96%;
+    float: left;
+    padding: 2px 2%;
+    font-size: 16px;
+    color: #222222;
+    line-height: 30px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.box_bt .font1 {
+    float: right;
+    font-size: 16px;
+    color: #222222;
+    line-height: 30px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.box_xin {
+    width: 96%;
+    float: left;
+    padding: 2px 2%;
+    font-size: 15px;
+    color: #666;
+    line-height: 30px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.xuan {
+    padding: 0rpx 0;
+    font-size: 30rpx;
+    width: 40%;
+    float: left;
+}
+
+.x_wenzi {
+    margin: 5px;
+    font-size: 16px;
+    color: #333;
+    line-height: 34px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.o_r {
+    float: right;
+    width: 60%;
+}
+
+.o_r1 {
+    float: right;
+    width: 80px;
+    margin: 0% 4% 2% 2%;
+}
+
+.o_r1 navigator.navig {
+    width: 80px;
+    height: 30px;
+    float: left;
+    font-family: ' Microsoft YaHei';
+    font-size: 15px;
+    color: #666666;
+    line-height: 30px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.o_r1 navigator.navig image {
+    float: left;
+    margin: 5px;
+    width: 25px;
+}
+
+.ord6 {
+    width: 70%;
+    float: left;
+    min-height: 40px;
+    margin: 3% auto 2% 6%;
+    padding: 10px 0;
+    position: fixed;
+    left: 10%;
+    bottom: 10px;
+}
+
+.ord6 .font1 {
+    width: 100%;
+    float: left;
+    height: 40px;
+    font-size: 18px;
+    color: #222222;
+    line-height: 26px;
+    text-align: center;
+    font-weight: normal;
+    padding: 0 0px 0 0;
+}
+
+.ord6 input.opt1 {
+    width: 100%;
+    float: left;
+    height: 40px;
+    font-size: 18px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    font-weight: normal;
+    padding: 0 0px 0 0;
+    background: #9139e1;
+    border: none;
+    border-radius: 10px;
+}
+
+.ord6 .opt1 {
+    width: 100%;
+    float: left;
+    height: 40px;
+    font-size: 18px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    font-weight: normal;
+    padding: 0 0px 0 0;
+    background: #9139e1;
+    border: none;
+    border-radius: 10px;
+}

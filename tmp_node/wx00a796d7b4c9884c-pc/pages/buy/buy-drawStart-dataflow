@@ -1,0 +1,24 @@
+// \pages/buy/buy drawStart Data Flow
+digraph {
+	"2d10d42630114b5e8fb2c4f89c228e30" [label="FunctionCall,
+function name -> drawStart,
+param -> t,
+t.,
+" color=blue]
+	a74e647d34bb42ec94f7d2e127956b26 [label=VariableDeclarations color=blue]
+	"569e14e6d7c0434caf5cfc43f1c57f97" [label="VariableDeclarator,
+left -> a,
+right -> t.touches[0]" color=blue]
+	a74e647d34bb42ec94f7d2e127956b26 -> "569e14e6d7c0434caf5cfc43f1c57f97"
+	"2d10d42630114b5e8fb2c4f89c228e30" -> a74e647d34bb42ec94f7d2e127956b26
+	"0c2e55c09fab4423a574575562e6c888" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	e52fb5205887441088848c471ffd263c [label="Object Properties
+{
+data -> this.data.carts
+startX -> a.clientX
+}" color=blue]
+	"0c2e55c09fab4423a574575562e6c888" -> e52fb5205887441088848c471ffd263c
+	"2d10d42630114b5e8fb2c4f89c228e30" -> "0c2e55c09fab4423a574575562e6c888"
+}

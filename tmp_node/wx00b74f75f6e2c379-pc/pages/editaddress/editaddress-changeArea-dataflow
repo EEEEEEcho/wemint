@@ -1,0 +1,27 @@
+// \pages/editaddress/editaddress changeArea Data Flow
+digraph {
+	"510c0b1d69af433cb98552f403183967" [label="FunctionCall,
+function name -> changeArea,
+param -> e,
+e.,
+" color=blue]
+	d1cdc7ae7dcf43a6a4df6b496409650a [label="Assignment,
+left -> p,
+right -> e.detail.value[0]" color=blue]
+	"510c0b1d69af433cb98552f403183967" -> d1cdc7ae7dcf43a6a4df6b496409650a
+	"99bddd74483e443d8784363a63d938de" [label="Assignment,
+left -> c,
+right -> e.detail.value[1]" color=blue]
+	"510c0b1d69af433cb98552f403183967" -> "99bddd74483e443d8784363a63d938de"
+	"04d414f2343543c9bd9d2977a2bb5a4d" [label="CallExpression,
+callee name -> console.log,
+param -> '省:' + p + '市:' + c + '区:' + d,
+" color=blue]
+	"510c0b1d69af433cb98552f403183967" -> "04d414f2343543c9bd9d2977a2bb5a4d"
+	"668a25effa474a55b9112ea6492c60aa" [label="CallExpression,
+callee name -> that.setAreaData,
+param -> p,
+c,
+" color=blue]
+	"510c0b1d69af433cb98552f403183967" -> "668a25effa474a55b9112ea6492c60aa"
+}

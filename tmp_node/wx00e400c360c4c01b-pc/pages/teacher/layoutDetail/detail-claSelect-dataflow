@@ -1,0 +1,18 @@
+// \pages/teacher/layoutDetail/detail claSelect Data Flow
+digraph {
+	a9f6e60575bb46df91d15e315bb7a995 [label="FunctionCall,
+function name -> claSelect,
+param -> t,
+t.,
+" color=blue]
+	"867ff955bccf471f825fce968151e64a" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"6d73df5c62eb45d7936f90a994b175d4" [label="Object Properties
+{
+}" color=blue]
+	"051413aca34f4ac8b342cdaed4873b69" [label="!this.data.isCheckF" color=blue]
+	"6d73df5c62eb45d7936f90a994b175d4" -> "051413aca34f4ac8b342cdaed4873b69"
+	"867ff955bccf471f825fce968151e64a" -> "6d73df5c62eb45d7936f90a994b175d4"
+	a9f6e60575bb46df91d15e315bb7a995 -> "867ff955bccf471f825fce968151e64a"
+}

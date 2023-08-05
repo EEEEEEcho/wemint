@@ -1,0 +1,131 @@
+<view class="fixedTopBorder"></view>
+<view class="container">
+    <view class="figthgroups">
+        <view class="figthgroups-pro">
+            <view class="figthgroups-pro-fl v-border">
+                <image class="figthgroups-img" mode="widthFix" src="{{baseUrl}}{{product.img_src}}"></image>
+            </view>
+            <view class="figthgroups-pro-fr">
+                <view class="fr-tltle two sizeb colora">{{product.name}}</view>
+                <view class="fr-ren">
+                    <text class="fr-ren-tuan colord sizeb">{{pintuan.pintuan_num}}人团 ：</text>
+                    <text class="fr-ren-pice colord  sizef">￥{{product.sale_price}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="particulars-line"></view>
+        <view class="figthgroups-item">
+            <view class="staus" wx:if="{{pintuan.pintuan_status==3}}">
+                <image src="../../images/pingtuan1.png"></image>
+            </view>
+            <view class="staus" wx:if="{{pintuan.pintuan_status==2}}">
+                <image src="../../images/pingtuan2.png"></image>
+            </view>
+            <view class="user-img">
+                <view class="{{pintuan_user_list.length+empty_pintuan_user.length>=7?'user-img-con2':'user-img-con'}} {{idx==0?'willUse':''}}" wx:for="{{pintuan_user_list}}" wx:for-index="idx">
+                    <text class="iconfont icon-wenhao-copy {{pintuan_user_list.length+empty_pintuan_user.length>=7?'icon-wenhao2':'icon-wenhao'}}" style="display:{{item.user_img!==''?'none':'block'}};"></text>
+                    <image mode="widthFix" src="{{item.user_img}}" style="width:{{pintuan_user_list.length+empty_pintuan_user.length>=7?54:90}}rpx" wx:if="{{item.user_img!=''}}"></image>
+                    <image mode="widthFix" src="../../images/touxiang.jpg" style="width:{{pintuan_user_list.length+empty_pintuan_user.length>=7?54:90}}rpx" wx:else></image>
+                </view>
+                <view class="{{pintuan_user_list.length+empty_pintuan_user.length>=7?'user-img-con2':'user-img-con'}}" wx:for="{{empty_pintuan_user}}">
+                    <text class="iconfont  icon-wenhao-copy {{pintuan_user_list.length+empty_pintuan_user.length>=7?' icon-wenhao2':'icon-wenhao'}}" style="display:{{item.user_img!==''?'none':'block'}};"></text>
+                    <image mode="widthFix" src="{{item.user_img}}" style="width:{{pintuan_user_list.length+empty_pintuan_user.length>=7?54:90}}rpx"></image>
+                </view>
+            </view>
+            <view class="user-title">
+                <view class="user-title-txt sizec" wx:if="{{pintuan.pintuan_status==1}}">还差<text class="colord">{{pintuan.pintuan_num-pintuan.pintuan_user_num}}人</text>成团<text wx:if="{{show}}">，发给小伙伴参团</text>
+                </view>
+                <view class="user-title-txt sizec marint" wx:if="{{pintuan.pintuan_status==3}}">
+                    <view>还差<text>{{pintuan.pintuan_num-pintuan.pintuan_user_num}}人</text>成团，拼团失败</view>
+                    <view class="colord" wx:if="{{show}}">（退款金额将退至您的余额）</view>
+                </view>
+                <view class="user-title-txt sizec marint" wx:if="{{pintuan.pintuan_status==2}}">
+                    <text class="colord" wx:if="{{show}}">拼团成功</text>
+                    <text wx:else>团员已满，拼团成功</text>
+                </view>
+                <view class="user-title-time sizec colorb" style="display:{{pintuan.pintuan_status==3||pintuan.pintuan_status==2?'none':'block'}}">剩余<text class="colord">{{leftTime}}</text>结束
+        </view>
+                <view class=" user-item {{item.UserID==pintuan.create_user_id?'':'showPayment'}}" wx:for="{{pintuan_user_list}}">
+                    <view class="user-item-con">
+                        <view class="img">
+                            <image mode="widthFix" src="{{item.user_img}}" wx:if="{{item.user_img!==''}}"></image>
+                            <image mode="widthFix" src="../../images/touxiang.jpg" wx:else></image>
+                        </view>
+                        <view class="name sizeb colorc one">{{item.user_name}}</view>
+                    </view>
+                    <view class="user-item-time sizea colorc">
+                        <text class="time">{{item.join_time}}</text>
+                        <text class="type" wx:if="{{item.UserID==pintuan.create_user_id}}">开团</text>
+                        <text class="type" wx:else>参团</text>
+                    </view>
+                </view>
+            </view>
+            <view wx:if="{{pintuan.pintuan_status==1}}">
+                <button class="cantuan" data-statu="open" openType="share" wx:if="{{show}}">邀请好友参团</button>
+                <button catchtap="{{!buttonClicked?'buyKaiTuan':''}}" class="cantuan" wx:else>一键参团</button>
+            </view>
+            <view wx:if="{{pintuan.pintuan_status==2}}">
+                <button catchtap="{{!buttonClicked?'goPinTuanProDetail':''}}" class="cantuan" wx:if="{{!show}}">我也要开团</button>
+            </view>
+            <view wx:if="{{pintuan.pintuan_status==3}}">
+                <button class="cantuan cantuanguo" wx:if="{{show}}">拼团失败</button>
+                <button class="cantuan cantuanguo" wx:else>活动已过期/商品已售完</button>
+            </view>
+        </view>
+    </view>
+</view>
+<view bindtap="showModal" class="drawer_screen" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="modal" wx:if="{{showModalStatus}}">
+    11
+</view>
+<include src="/pages/shop/UserReg.wxml"></include>
+<view class="product-attrs {{showMask?'showParam':'hideParam'}}">
+    <view class="product-conTop border1px">
+        <view class="top-left">
+            <view class="img">
+                <image src="{{baseUrl}}{{product.img_src}}"></image>
+            </view>
+            <view class="content">
+                <view class="price">
+                    <text>￥</text>
+                    <text>{{product.sale_price}}</text>
+                </view>
+                <view class="inventory">
+                    <text>库存：</text>
+                    <text>{{product.remain_stock}}</text>
+                    <text>件</text>
+                </view>
+                <view class="hasChoose" wx:if="{{showSku}}">
+                    <text>{{selectValArr.length==0?'请选择规格':'已选  '}}</text>
+                    <text class="message" wx:if="{{selectValArr.length!=0}}">{{selectSkuDes}}</text>
+                </view>
+            </view>
+        </view>
+        <view bindtap="close" class="close">
+            <icon class="closeIcon iconfont icon-guanbi-copy"></icon>
+        </view>
+    </view>
+    <view style="height:336px;">
+        <scroll-view class="paramChoose" lowerThreshold="20" scrollY="true" style="height:250px;">
+            <view class="pro-attrs" data-index="{{index}}" wx:if="{{showSku}}" wx:for="{{attrkeys}}" wx:key="{{item.AttrKeyID}}">
+                <view class="attr-name">{{item.AttrKeyName}}</view>
+                <view class="attr-vals ">
+                    <view bindtap="selectSku" class="attr-val {{attritem.isSelect?'active':''}}  {{attritem.canSelect?'':'no-quantity'}}" data-attrKeyId="{{attritem.AttrKeyID}}" data-attrValId="{{attritem.AttrValID}}" data-attrValName="{{attritem.AttrValName}}" data-canSelect="{{attritem.canSelect}}" data-hasImage="{{item.hasImg}}" wx:for="{{item.attrVals}}" wx:for-index="idx" wx:for-item="attritem" wx:key="{{attritem.AttrValID}}">{{attritem.AttrValName}}</view>
+                </view>
+            </view>
+            <view class="chooseCount">
+                <view class="attr-name">数量</view>
+                <view class="btn">
+                    <view bindtap="decrease" class="decrease {{canClickDes?'normal':'disabled'}}">-</view>
+                    <input bindchange="bindManual" disabled="disabled" type="number" value="{{buyCount}}"></input>
+                    <view bindtap="increase" class="increase {{canClickAdd?'normal':'disabled'}}">+</view>
+                    <view class="xiangou">(每个ID限购{{buyCountLimit}}件)</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view bindtap="sureBuy" class="sureBuy">
+        <view class="sure">确定</view>
+    </view>
+</view>
+<view bindtap="close" class="mask" wx:if="{{showMask}}"></view>

@@ -1,0 +1,3 @@
+<template name="ModuleLine">
+    <view style="border-bottom-style:{{m.Type=='1'?'solid':'dashed'}};border-bottom-color:{{m.Color}};border-bottom-width:{{m.Width*2}}rpx;"></view>
+</template>

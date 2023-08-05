@@ -1,0 +1,36 @@
+<view class="fixedTopBorder"></view>
+<view class="container">
+    <view class="couponGetOver" wx:if="{{list.length==0}}">
+        <image mode="widthFix" src="{{baseUrl}}/images/wxapp/blank_10.png"></image>
+        <text>没有优惠劵</text>
+    </view>
+    <view class="couponCenter" wx:if="{{list.length>0}}">
+        <view class="coupon-item {{item.CanGet==0&&item.Available>0||item.Available<=0?'hideDis':''}}" wx:for="{{list}}" wx:key="*this">
+            <view class="item-head common-corner {{item.CanGet==0&&item.Available>0||item.Available<=0?'noborder':''}}">
+                <view class="item-head-left">
+                    <view class="code-item">
+                        <text class="money-num-text {{item.CanGet==0&&item.Available>0||item.Available<=0?'nocolor':''}}" style="font-size:{{item.Type==0?70:60}}rpx">
+                  {{item.Amount>=10000&&item.Type=='1'?item.Amount/10000:item.Amount-0}}
+                </text>
+                        <text class="unit {{item.CanGet==0&&item.Available>0||item.Available<=0?'nocolor':''}}">
+                  {{item.Amount>=10000&&item.Type=='1'?'万':''}}{{item.Type==0?'折':'元'}}
+                </text>
+                    </view>
+                </view>
+                <view class="item-head-right">
+                    <text class="use-money">{{item.OrderMoney==='0.00'||item.OrderMoney==0?'无使用门槛':'满'+item.OrderMoney-0+'元可用'}} {{item.IsProductLimit==='1'?'指定商品可用':'全场商品可用'}}</text>
+                    <text class="title-text one">{{item.Title}}</text>
+                    <text class="time">有效期至：{{item.timeLimit}}</text>
+                    <text class="time" wx:if="{{item.CanUseWeek}}">限定特定时间段使用</text>
+                </view>
+            </view>
+            <view bindtap="{{!buttonClicked?'M_getCoupon':''}}" class="btn-list" data-couponid="{{item.CouponID}}" data-idxitem="{{index}}" wx:if="{{item.CanGet==1&&item.Available>0}}">
+            立即领取
+          </view>
+        </view>
+    </view>
+</view>
+<include src="/pages/template/popupFromShare.wxml"></include>
+<include src="/pages/template/getUserInfo.wxml"></include>
+<include src="/pages/common/popout/index.wxml"></include>
+<include src="/pages/common/phoneauthorization/index.wxml"></include>

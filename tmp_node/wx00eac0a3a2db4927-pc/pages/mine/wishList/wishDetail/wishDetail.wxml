@@ -1,0 +1,53 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="wish_container" style="margin-top:{{navH+status+10}}px">
+    <view class="wish_panel">
+        <view class="wish_detail">
+            <view class="wish_title row">
+                <text class="wish_name">{{wishDetailList.title}}</text>
+                <text catchtap="editWishName" class="wish_edit" wx:if="{{wishDetailList.isDefault==0}}">编辑</text>
+            </view>
+            <view class="wish_user row">
+                <image class="wish_avatar" src="{{wishDetailList.avatar}}"></image>
+                <text class="wish_username">{{wishDetailList.wishNickname}}</text>
+                <text class="wish_count" wx:if="{{wishDetailList.total!=0}}">{{wishDetailList.total}}件心愿</text>
+            </view>
+            <view bindtap="getGoodDetail" class="favorite" data-wish="{{wish}}" style="margin-bottom:{{index==wishDetailList.goodsList.length-1?150:30}}rpx;" wx:for="{{wishDetailList.goodsList}}" wx:for-item="wish">
+                <image class="favorite_img" lazyLoad="true" mode="aspectFill" src="{{wish.covers[0]}}"></image>
+                <view class="favorite_params">
+                    <view class="favorite_proname">{{wish.title}}</view>
+                    <view class="favorite_proprice">
+                        <text class="newPrice_pre">¥</text>
+                        <text class="newPrice">{{wish.isExemptGoods=='0'?wish.minSalesPrice/100:wish.activityPrice/100}}</text>
+                        <text class="oldPrice_pre">¥</text>
+                        <text class="oldPrice">{{wish.minMarketPrice/100}}</text>
+                    </view>
+                    <view class="favorite_prolabel">
+                        <view class="label1" wx:for="{{wish.tags}}" wx:for-item="tag">{{tag}}</view>
+                    </view>
+                    <view catchtap="cancelWish" class="favorite_probtn" data-index="{{index}}" data-linkuuid="{{wish.linkUuid}}">取消心愿</view>
+                </view>
+            </view>
+            <empty iconPath="http://oss.shangmian.xin/weixin_applets_icon_empty_view.png" isShow="{{wishDetailList.goodsList.length==0}}" textContent="暂时没有心愿商品"></empty>
+        </view>
+    </view>
+    <view class="wishBtns row">
+        <view catchtap="addWish" class="add_wish wish_btn">添加心愿</view>
+        <button class="share_wish wish_btn" openType="share">分享心愿</button>
+    </view>
+    <view class="loadMoreLayout" wx:if="{{isLoadMore}}">
+        <text class="loadMoreText">加载更多...</text>
+    </view>
+</view>
+<loading-view isShow="{{isShowLoad}}"></loading-view>
+<view catchtouchmove="true">
+    <view catchtap="closeWishModel" class="cover_screen {{options?'openEdit':'closeEdit'}}" wx:if="{{isEditWish}}"></view>
+    <view class="showEditModal {{options?'openEdit':'closeEdit'}}" wx:if="{{isEditWish}}">
+        <view class="input_view">
+            <input bindinput="getValue" class="input_css" maxlength="10" placeholder="请编辑您的心愿名称" placeholderClass="placeholder_css" value="{{inputValue}}"></input>
+        </view>
+        <view class="btns row">
+            <text catchtap="deleteWish" class="deleteBtn btn">删除心愿单</text>
+            <text catchtap="getInputValue" class="updateBtn btn">保存修改</text>
+        </view>
+    </view>
+</view>

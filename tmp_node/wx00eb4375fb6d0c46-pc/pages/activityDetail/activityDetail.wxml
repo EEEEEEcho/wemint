@@ -1,0 +1,10 @@
+<view class="big-box" wx:if="{{type!=='5'}}">
+    <view class="other-img">
+        <image class="detail-coupon" src="./../../utils/imgs/coupon{{type}}.png"></image>
+        <image class="detail-rule" src="./../../utils/imgs/detailrule.png"></image>
+    </view>
+    <image bindtap="getCouponFun" class="detail-btn" src="./../../utils/imgs/detailbtn.png"></image>
+</view>
+<view wx:if="{{type=='5'}}">
+    <image class="lt-detail-coupon" src="./../../utils/imgs/ltvip.png"></image>
+</view>

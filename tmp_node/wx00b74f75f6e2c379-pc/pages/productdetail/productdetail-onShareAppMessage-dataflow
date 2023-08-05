@@ -1,0 +1,13 @@
+// \pages/productdetail/productdetail onShareAppMessage Data Flow
+digraph {
+	"61238a56d791487cbbb92080f0db49a8" [label="FunctionCall,
+function name -> onShareAppMessage,
+param -> " color=blue]
+	f8cf1c346cec4149afaa88be184930f9 [label=ReturnExpression color=blue]
+	"7f23f5b31f7548bb93ea68a556af2c35" [label="Object Properties
+{
+title -> that.data.ProductName
+}" color=blue]
+	f8cf1c346cec4149afaa88be184930f9 -> "7f23f5b31f7548bb93ea68a556af2c35"
+	"61238a56d791487cbbb92080f0db49a8" -> f8cf1c346cec4149afaa88be184930f9
+}

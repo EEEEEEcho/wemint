@@ -1,0 +1,11 @@
+// \pages/productlist/productlist onLoad Data Flow
+digraph {
+	e599e69e51d54e7c97f39ae6e42aed53 [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	bc1846fa0b7842d1a5b9a96f1bdc0a24 [label="CallExpression,
+callee name -> that.loadData,
+param -> that,
+" color=blue]
+	e599e69e51d54e7c97f39ae6e42aed53 -> bc1846fa0b7842d1a5b9a96f1bdc0a24
+}

@@ -1,0 +1,25 @@
+// \pages/fightGroups/fightgroups onShareAppMessage Data Flow
+digraph {
+	f11a232df5484bbdadc91d4262ddf0e9 [label="FunctionCall,
+function name -> onShareAppMessage,
+param -> " color=blue]
+	ac58c2ffdda74412b9c2fba7a6156f33 [label="CallExpression,
+callee name -> console.log,
+param -> e.data.pintuan_group_id,
+" color=blue]
+	f11a232df5484bbdadc91d4262ddf0e9 -> ac58c2ffdda74412b9c2fba7a6156f33
+	"62275f7054294229b13fc8b74986a90d" [label=VariableDeclarations color=blue]
+	fbba7d3e92064357b41f85070fc5807a [label="VariableDeclarator,
+left -> s,
+right -> '/pages/fightGroups/fightgroups?pintuan_group_id=' + e.data.pintuan_group_id" color=blue]
+	"62275f7054294229b13fc8b74986a90d" -> fbba7d3e92064357b41f85070fc5807a
+	f11a232df5484bbdadc91d4262ddf0e9 -> "62275f7054294229b13fc8b74986a90d"
+	e8b38bce57ad4cf8a6ee50bec8eba65f [label=ReturnExpression color=blue]
+	bf0b4701c55c4c46b763338fc9c3a284 [label="Object Properties
+{
+title -> e.data.productName
+path -> s
+}" color=blue]
+	e8b38bce57ad4cf8a6ee50bec8eba65f -> bf0b4701c55c4c46b763338fc9c3a284
+	f11a232df5484bbdadc91d4262ddf0e9 -> e8b38bce57ad4cf8a6ee50bec8eba65f
+}

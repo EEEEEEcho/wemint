@@ -1,0 +1,20 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="setting_container" style="margin-top: {{navH+status+10}}px;">
+    <view class="setting_panel panel">
+        <view catchtap="toPage" class="personinfo" data-type="个人信息">
+            <text class="personinfo_txt">个人信息</text>
+            <image class="arrow_right" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+        </view>
+        <view catchtap="toPage" class="delivery last" data-type="收货地址">
+            <text class="delivery_txt">收货地址</text>
+            <image class="arrow_right" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+        </view>
+    </view>
+    <view class="aboutus_panel panel">
+        <view class="version last">
+            <text class="version_txt">版本信息</text>
+            <text class="version_num">V{{version}}</text>
+        </view>
+    </view>
+    <view catchtap="outLogin" class="btn">退出登录</view>
+</view>

@@ -1,0 +1,17 @@
+// \pages/user/dingdan bindChange Data Flow
+digraph {
+	bf794a2f13f64d86b0fe58faeb117685 [label="FunctionCall,
+function name -> bindChange,
+param -> t,
+t.,
+" color=blue]
+	"626cc5e37f0342eea2feb859949a6437" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"32147da8aaf6470d8e1ca79d805947f5" [label="Object Properties
+{
+currentTab -> t.detail.current
+}" color=blue]
+	"626cc5e37f0342eea2feb859949a6437" -> "32147da8aaf6470d8e1ca79d805947f5"
+	bf794a2f13f64d86b0fe58faeb117685 -> "626cc5e37f0342eea2feb859949a6437"
+}

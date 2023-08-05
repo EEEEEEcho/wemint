@@ -1,0 +1,23 @@
+// \pages/detail/index onShareAppMessage Data Flow
+digraph {
+	"6230f9cc60dc4d90a6e1e36dfcca7730" [label="FunctionCall,
+function name -> onShareAppMessage,
+param -> " color=blue]
+	b98e970b00a44efcbd4b28fc0ebebffb [label=ReturnExpression color=blue]
+	a832184bb6e24eb9bef5d58d07a378a4 [label="Object Properties
+{
+}" color=blue]
+	"9706947465ea4b0186be2fcefe36ec0c" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> t,
+t.,
+" color=blue]
+	"34b2a6484ef24404b0f365c6b0c5f6c8" [label="CallExpression,
+callee name -> console.log,
+param -> t,
+" color=blue]
+	"9706947465ea4b0186be2fcefe36ec0c" -> "34b2a6484ef24404b0f365c6b0c5f6c8"
+	a832184bb6e24eb9bef5d58d07a378a4 -> "9706947465ea4b0186be2fcefe36ec0c"
+	b98e970b00a44efcbd4b28fc0ebebffb -> a832184bb6e24eb9bef5d58d07a378a4
+	"6230f9cc60dc4d90a6e1e36dfcca7730" -> b98e970b00a44efcbd4b28fc0ebebffb
+}

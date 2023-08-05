@@ -1,0 +1,183 @@
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80rpx 0;
+    box-sizing: border-box;
+    font-family: microsoft yahei;
+}
+
+.section {
+    padding: 10px 10px 10px 10px;
+}
+
+.section .section_title {
+    color: #f8ac59;
+    font-family: "楷体","楷体_GB2312";
+    font-weight: bold;
+    margin-top: 20rpx;
+}
+
+.title {
+    display: flex;
+    padding-left: 80rpx;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.title2 {
+    display: flex;
+    float: right;
+    padding-left: 80rpx;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.clear {
+    clear: both;
+}
+
+.loginBtnView {
+    width: 100%;
+    height: auto;
+    padding-top: 30px;
+}
+
+.loginBtn {
+    width: 80%;
+    border-radius: 25px;
+    background-color: #E14848;
+    color: #fff;
+}
+
+.loginBtn:active {
+    background-color: #c00;
+    color: #fff;
+}
+
+.margintop5 {
+    background-color: #F0F0F0;
+    height: 5rpx;
+}
+
+.margintop10 {
+    background-color: #F0F0F0;
+    height: 10rpx;
+}
+
+.margintop20 {
+    background-color: #F0F0F0;
+    height: 20rpx;
+}
+
+.margintop100 {
+    background-color: #F0F0F0;
+    height: 100rpx;
+}
+
+.margintop200 {
+    background-color: #F0F0F0;
+    height: 200rpx;
+}
+
+.placeholder-class {
+    color: #cccccc;
+}
+
+.address-add {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-top: 20rpx;
+    z-index: 100;
+}
+
+.Btn {
+    background-color: #E14848;
+    color: #fff;
+}
+
+.Btn:active {
+    background-color: #c00;
+    color: #fff;
+}
+
+.loading {
+    padding: 30rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #cccccc;
+}
+
+.loading:before {
+    display: inline-block;
+    margin-right: 5rpx;
+    vertical-align: middle;
+    content: '';
+    width: 40rpx;
+    height: 40rpx;
+    background-size: contain;
+    animation: rotate 1s linear infinite;
+}
+
+.loading.complete:before {
+    display: none;
+}
+
+.touch-item {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+}
+
+.content {
+    width: 100%;
+    line-height: 22px;
+    margin-right: 0;
+    transition: all 0.4s;
+    transform: translateX(90px);
+    margin-left: -90px;
+}
+
+.del {
+    background-color: orangered;
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transform: translateX(90px);
+    transition: all 0.4s;
+}
+
+.touch-move-active .content,.touch-move-active .del {
+    transform: translateX(0);
+}
+
+.formBtn {
+    width: 100%;
+    border-color: #fff;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formBtn::after {
+    border: none;
+}
+
+.formBtn:active {
+    background: #eeeeee;
+}
+
+.wnr {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

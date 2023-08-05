@@ -1,0 +1,17 @@
+// \pages/recommendedPlan/recommendedPlan change Data Flow
+digraph {
+	"028406be278a4689841739fccc39633d" [label="FunctionCall,
+function name -> change,
+param -> e,
+e.,
+" color=blue]
+	f0d534617c0f437f91d694389af9e7bc [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"741d7716705f476bb9f3d344ba390ef0" [label="Object Properties
+{
+current -> e.detail.current
+}" color=blue]
+	f0d534617c0f437f91d694389af9e7bc -> "741d7716705f476bb9f3d344ba390ef0"
+	"028406be278a4689841739fccc39633d" -> f0d534617c0f437f91d694389af9e7bc
+}

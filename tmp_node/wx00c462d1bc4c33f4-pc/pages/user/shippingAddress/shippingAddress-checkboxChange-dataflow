@@ -1,0 +1,14 @@
+// \pages/user/shippingAddress/shippingAddress checkboxChange Data Flow
+digraph {
+	"15366eb65d0d49699fc006a0a03749a9" [label="FunctionCall,
+function name -> checkboxChange,
+param -> s.,
+s,
+" color=blue]
+	ceff8aede69c4506b0002834192c3f6b [label=VariableDeclarations color=blue]
+	"1f8d9c3e6e244ec18a730e6564248213" [label="VariableDeclarator,
+left -> a,
+right -> s.detail.value.length" color=blue]
+	ceff8aede69c4506b0002834192c3f6b -> "1f8d9c3e6e244ec18a730e6564248213"
+	"15366eb65d0d49699fc006a0a03749a9" -> ceff8aede69c4506b0002834192c3f6b
+}

@@ -1,0 +1,19 @@
+// \pages/my/my powerDrawer Data Flow
+digraph {
+	"44d1e22d5b5a4d9ca7b42de84f4a9969" [label="FunctionCall,
+function name -> powerDrawer,
+param -> t,
+t.,
+" color=blue]
+	"84e02554c5bc4eb3a25c0504f036f399" [label=VariableDeclarations color=blue]
+	"4f27551948504f13b58bb60d5a5947c9" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.statu" color=blue]
+	"84e02554c5bc4eb3a25c0504f036f399" -> "4f27551948504f13b58bb60d5a5947c9"
+	"44d1e22d5b5a4d9ca7b42de84f4a9969" -> "84e02554c5bc4eb3a25c0504f036f399"
+	"26562c8081124cfa89b6af988bd5dfe0" [label="CallExpression,
+callee name -> this.util,
+param -> e,
+" color=blue]
+	"44d1e22d5b5a4d9ca7b42de84f4a9969" -> "26562c8081124cfa89b6af988bd5dfe0"
+}

@@ -1,0 +1,23 @@
+// \pages/myorders/myorders onDeleteOrder Data Flow
+digraph {
+	"08a59d40e6ce4a61b92af4ef7ff74b4d" [label="FunctionCall,
+function name -> onDeleteOrder,
+param -> e,
+e.,
+" color=blue]
+	"3fa18d184c724de28ebaffb13fb8e37a" [label=VariableDeclarations color=blue]
+	"48b198dbcdc04f2da0cd9638d2b37c04" [label="VariableDeclarator,
+left -> i,
+right -> e.target.id" color=blue]
+	"3fa18d184c724de28ebaffb13fb8e37a" -> "48b198dbcdc04f2da0cd9638d2b37c04"
+	"08a59d40e6ce4a61b92af4ef7ff74b4d" -> "3fa18d184c724de28ebaffb13fb8e37a"
+	"0dc67f48cc4c45a99c635273dad09529" [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	"3014290564d845039c8fff9cfbe3c11b" [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	"0dc67f48cc4c45a99c635273dad09529" -> "3014290564d845039c8fff9cfbe3c11b"
+	"08a59d40e6ce4a61b92af4ef7ff74b4d" -> "0dc67f48cc4c45a99c635273dad09529"
+}

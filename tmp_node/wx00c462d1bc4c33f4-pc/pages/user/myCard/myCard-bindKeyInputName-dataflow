@@ -1,0 +1,19 @@
+// \pages/user/myCard/myCard bindKeyInputName Data Flow
+digraph {
+	"437185b15ee747ada8bb14eecb7bec37" [label="FunctionCall,
+function name -> bindKeyInputName,
+param -> t.,
+t,
+" color=blue]
+	"1c92b87c0d6a48e9b523e4f3df819b89" [label=SequenceExpression color=blue]
+	"780cd3bfafba46139127068fee10c79a" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"9131292f3e544f59bb3a271d19c0c501" [label="Object Properties
+{
+userName -> t.detail.value
+}" color=blue]
+	"780cd3bfafba46139127068fee10c79a" -> "9131292f3e544f59bb3a271d19c0c501"
+	"1c92b87c0d6a48e9b523e4f3df819b89" -> "780cd3bfafba46139127068fee10c79a"
+	"437185b15ee747ada8bb14eecb7bec37" -> "1c92b87c0d6a48e9b523e4f3df819b89"
+}

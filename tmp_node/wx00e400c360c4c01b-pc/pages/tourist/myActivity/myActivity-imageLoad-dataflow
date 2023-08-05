@@ -1,0 +1,23 @@
+// \pages/tourist/myActivity/myActivity imageLoad Data Flow
+digraph {
+	fa3b9f228bf34a93820caaf4262c148a [label="FunctionCall,
+function name -> imageLoad,
+param -> a.,
+a,
+" color=blue]
+	d1a70a93ea314fbc875d75fda8d63856 [label=VariableDeclarations color=blue]
+	ec5f941889ac4533a0389706b45778eb [label="VariableDeclarator,
+left -> t,
+right -> 230 / (a.detail.width / a.detail.height)" color=blue]
+	d1a70a93ea314fbc875d75fda8d63856 -> ec5f941889ac4533a0389706b45778eb
+	fa3b9f228bf34a93820caaf4262c148a -> d1a70a93ea314fbc875d75fda8d63856
+	"2f4f74a3e4ed4e359bf76fc4cd1459a6" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"545ff28f50c8466fad395fbe55e56c2c" [label="Object Properties
+{
+imgheight -> t
+}" color=blue]
+	"2f4f74a3e4ed4e359bf76fc4cd1459a6" -> "545ff28f50c8466fad395fbe55e56c2c"
+	fa3b9f228bf34a93820caaf4262c148a -> "2f4f74a3e4ed4e359bf76fc4cd1459a6"
+}

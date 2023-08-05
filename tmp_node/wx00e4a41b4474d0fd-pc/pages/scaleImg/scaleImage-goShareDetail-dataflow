@@ -1,0 +1,15 @@
+// \pages/scaleImg/scaleImage goShareDetail Data Flow
+digraph {
+	"4ec6d518e3cc41519e93722ae70d9ae8" [label="FunctionCall,
+function name -> goShareDetail,
+param -> " color=blue]
+	"0aabdb33f72c46009cb5db919c93c23e" [label="CallExpression,
+callee name -> c.createXcxQrCode,
+param -> " color=blue]
+	"5e2bb6fc459b4201a976050dadc142d0" [label="Object Properties
+{
+type -> this.data.type
+}" color=blue]
+	"0aabdb33f72c46009cb5db919c93c23e" -> "5e2bb6fc459b4201a976050dadc142d0"
+	"4ec6d518e3cc41519e93722ae70d9ae8" -> "0aabdb33f72c46009cb5db919c93c23e"
+}

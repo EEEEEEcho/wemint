@@ -1,0 +1,7 @@
+module.exports = ({
+    getTag: (function(tag) {
+        var label = tag.substring(0, 5);
+        label = label + '...';
+        return (label)
+    }),
+});

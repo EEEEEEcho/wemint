@@ -1,0 +1,28 @@
+// \pages/index/takeOut/takeOutSM bindDesk Data Flow
+digraph {
+	b7869fa3e49e43448c86e17292663941 [label="FunctionCall,
+function name -> bindDesk,
+param -> e.,
+e,
+" color=blue]
+	"017a3c3ad5554493a2e04133d0d2e28e" [label=SequenceExpression color=blue]
+	"50251dd305f8489da63f52a3c6701461" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	f99872cb3bec434bb4c167c46d4cfd6b [label="Object Properties
+{
+deskNum -> e.detail.value
+}" color=blue]
+	"50251dd305f8489da63f52a3c6701461" -> f99872cb3bec434bb4c167c46d4cfd6b
+	"017a3c3ad5554493a2e04133d0d2e28e" -> "50251dd305f8489da63f52a3c6701461"
+	c76c9edecc2e4f27a4d16595a32d86c7 [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	"96e8f0628eb94c05bed4614bb2bddc6d" [label="Object Properties
+{
+data -> e.detail.value
+}" color=blue]
+	c76c9edecc2e4f27a4d16595a32d86c7 -> "96e8f0628eb94c05bed4614bb2bddc6d"
+	"017a3c3ad5554493a2e04133d0d2e28e" -> c76c9edecc2e4f27a4d16595a32d86c7
+	b7869fa3e49e43448c86e17292663941 -> "017a3c3ad5554493a2e04133d0d2e28e"
+}

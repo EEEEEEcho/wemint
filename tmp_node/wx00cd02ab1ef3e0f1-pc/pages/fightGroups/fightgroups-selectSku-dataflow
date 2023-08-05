@@ -1,0 +1,70 @@
+// \pages/fightGroups/fightgroups selectSku Data Flow
+digraph {
+	"3c51c73e19f14185b0db8e7dc566a17a" [label="FunctionCall,
+function name -> selectSku,
+param -> t,
+t.,
+" color=blue]
+	"5a1179ceeb7e4e618cc9451c2ab7091e" [label=VariableDeclarations color=blue]
+	b8994df741744c7781d156523ff49ddd [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.attrvalid" color=blue]
+	"5a1179ceeb7e4e618cc9451c2ab7091e" -> b8994df741744c7781d156523ff49ddd
+	"11d42e09dd5d44b4828fa0f6e5bb9192" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.attrkeyid" color=blue]
+	"5a1179ceeb7e4e618cc9451c2ab7091e" -> "11d42e09dd5d44b4828fa0f6e5bb9192"
+	"8cf3d478dd3b4afa9287ce478002c06c" [label="VariableDeclarator,
+left -> s,
+right -> t.currentTarget.dataset.attrvalname" color=blue]
+	"5a1179ceeb7e4e618cc9451c2ab7091e" -> "8cf3d478dd3b4afa9287ce478002c06c"
+	"03d432e68aed460fada6d73943d4d343" [label="VariableDeclarator,
+left -> r,
+right -> t.currentTarget.dataset.hasimage" color=blue]
+	"5a1179ceeb7e4e618cc9451c2ab7091e" -> "03d432e68aed460fada6d73943d4d343"
+	"0e22d8aa8e5d4de3bd6a174de6167e7f" [label="VariableDeclarator,
+left -> n,
+right -> t.currentTarget.dataset.canselect" color=blue]
+	"5a1179ceeb7e4e618cc9451c2ab7091e" -> "0e22d8aa8e5d4de3bd6a174de6167e7f"
+	"47218d0965574e779177e8d83f84390b" [label="VariableDeclarator,
+left -> i,
+right -> this.minThreeNum" color=blue]
+	"5a1179ceeb7e4e618cc9451c2ab7091e" -> "47218d0965574e779177e8d83f84390b"
+	"3c51c73e19f14185b0db8e7dc566a17a" -> "5a1179ceeb7e4e618cc9451c2ab7091e"
+	"61960790c5ca4bbfa0d6fdb723df13a7" [label="If Alternate" color=blue]
+	"9455d9c55f6e4a21b70bf5abbb6e9908" [label=SequenceExpression color=blue]
+	cfbf0fb7daa2477194cad6a2ee9ee3be [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	e6acaf2126be4b65938ca4367fb55231 [label="CallExpression,
+callee name -> u.sort,
+param -> " color=blue]
+	"1aca5a4a2f454accb864475c86c5fd78" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> t,
+a,
+" color=blue]
+	e6acaf2126be4b65938ca4367fb55231 -> "1aca5a4a2f454accb864475c86c5fd78"
+	cfbf0fb7daa2477194cad6a2ee9ee3be -> e6acaf2126be4b65938ca4367fb55231
+	"9455d9c55f6e4a21b70bf5abbb6e9908" -> cfbf0fb7daa2477194cad6a2ee9ee3be
+	"1d55c239fbf24900a74f88b4e5b7f1b6" [label="CallExpression,
+callee name -> console.log,
+param -> this.data.selectValArr,
+" color=blue]
+	"9455d9c55f6e4a21b70bf5abbb6e9908" -> "1d55c239fbf24900a74f88b4e5b7f1b6"
+	"61960790c5ca4bbfa0d6fdb723df13a7" -> "9455d9c55f6e4a21b70bf5abbb6e9908"
+	ff96eb92d8eb413dbb1ee64b33cb9d18 [label=SequenceExpression color=blue]
+	"3fc59984c8df4978943a33bdbdacece0" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	ca508e7853e64fd9a7c007318342b3f4 [label="Object Properties
+{
+selectValArr -> this.data.selectValArr
+selectSkuDes -> this.data.selectSkuDes
+attrkeys -> this.data.attrkeys
+}" color=blue]
+	"3fc59984c8df4978943a33bdbdacece0" -> ca508e7853e64fd9a7c007318342b3f4
+	ff96eb92d8eb413dbb1ee64b33cb9d18 -> "3fc59984c8df4978943a33bdbdacece0"
+	"61960790c5ca4bbfa0d6fdb723df13a7" -> ff96eb92d8eb413dbb1ee64b33cb9d18
+	"3c51c73e19f14185b0db8e7dc566a17a" -> "61960790c5ca4bbfa0d6fdb723df13a7"
+}

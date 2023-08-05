@@ -1,0 +1,18 @@
+// \pages/detail/index checkAddress Data Flow
+digraph {
+	"119136d612a1465aa082e55bffdf92d1" [label="FunctionCall,
+function name -> checkAddress,
+param -> t,
+t.,
+" color=blue]
+	"3b3c989c1b3e46ef906c9109af00f6a4" [label="CallExpression,
+callee name -> wx.openLocation,
+param -> " color=blue]
+	"8aef8b4f1de64e339cdb83027e210713" [label="Object Properties
+{
+latitude -> t.currentTarget.dataset.latitude
+longitude -> t.currentTarget.dataset.longitude
+}" color=blue]
+	"3b3c989c1b3e46ef906c9109af00f6a4" -> "8aef8b4f1de64e339cdb83027e210713"
+	"119136d612a1465aa082e55bffdf92d1" -> "3b3c989c1b3e46ef906c9109af00f6a4"
+}

@@ -1,0 +1,421 @@
+page {
+    background-color: #f4f4f4;
+}
+
+.container {
+    height: 100%;
+}
+
+.container .condition-show {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.container .condition-show .condition-btn {
+    display: flex;
+    flex: 1;
+}
+
+.container .condition-show .condition-btn .selecttype {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+    color: #333;
+}
+
+.container .condition-show .condition-btn .selecttype view {
+    display: block;
+    width: 16px;
+    height: 12px;
+    position: relative;
+}
+
+.container .condition-show .condition-btn .selecttype view image {
+    position: absolute;
+    width: 8px;
+    height: 5px;
+}
+
+.container .condition-show .condition-btn .selecttype view image:first-child {
+    top: 0;
+}
+
+.container .condition-show .condition-btn .selecttype view image:last-child {
+    bottom: 0;
+}
+
+.container .condition-show .condition-btn .selecttype-after {
+    position: relative;
+}
+
+.container .condition-show .condition-btn .selecttype-after::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 1px;
+    height: 20px;
+    background-color: #ccc;
+}
+
+.container .condition-show .search-btn {
+    display: flex;
+    flex: 0 0 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    text-align: center;
+    line-height: 50px;
+}
+
+.container .condition-show .search-btn image {
+    width: 17px;
+    height: 17px;
+}
+
+.container .search-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    z-index: 2;
+    background-color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+}
+
+.container .search-box .search-inpbtn {
+    display: inline-block;
+    position: relative;
+    width: 90%;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.container .search-box .search-inpbtn input.searchinp {
+    height: 35px;
+    padding-left: 15px;
+    padding-right: 35px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 50px;
+    font-size: 14px;
+    color: #333;
+}
+
+.container .search-box .search-inpbtn .search-icon {
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    right: 0;
+    z-index: 1;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.container .search-box .search-inpbtn .search-icon image {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    position: absolute;
+    top: 2px;
+}
+
+.container .search-box .cancel {
+    width: 10%;
+    padding: 0 10px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    color: #999;
+}
+
+.container .product-list {
+    height: 100%;
+}
+
+.container .product-list .product-introduce {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+}
+
+.container .product-list .product-introduce .collBox {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 12rpx;
+}
+
+.container .product-list .product-introduce .noExit {
+    opacity: .6;
+}
+
+.container .product-list .product-introduce .collBox:last-child {
+    padding-bottom: 110rpx;
+}
+
+.collectionCheckedBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 110rpx;
+}
+
+.container .product-list checkbox-group .checkbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    width: 100%;
+    line-height: 250rpx;
+}
+
+.container .product-list scroll-view {
+    width: 100%;
+    overflow: hidden;
+}
+
+.container .product-list .product-introduce .yearMonth {
+    width: 100%;
+    height: 76rpx;
+    background-color: #f4f4f4;
+    font-size: 24rpx;
+    color: #666;
+    padding: 0 26rpx;
+    line-height: 76rpx;
+}
+
+.container .product-list .product-introduce checkbox-group {
+    display: flex;
+    width: 100%;
+}
+
+.container .product-list .shopBox {
+    display: flex;
+    width: 100%;
+}
+
+.container .product-list .product-introduce image {
+    width: 250rpx;
+    height: 250rpx;
+}
+
+.container .product-list .product-introduce view.introduce-text {
+    flex: 1;
+    padding: 20rpx 26rpx 0px 0;
+    margin-left: 24rpx;
+    box-sizing: border-box;
+}
+
+.container .product-list .product-introduce view.borderTop1px::after {
+    border-top: 1rpx solid #ddd;
+}
+
+.container .product-list .product-introduce view.introduce-text text {
+    display: block;
+}
+
+.container .product-list .product-introduce view.introduce-text .title {
+    font-size: 28rpx;
+    color: #333;
+    line-height: 40rpx;
+    height: 84rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.container .product-list .product-introduce view.introduce-text .desc {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    margin-top: 5px;
+    font-size: 26rpx;
+    color: #999;
+}
+
+.container .product-list .product-introduce view.introduce-text .itemContentBottom {
+    margin-top: 90rpx;
+    font-size: 30rpx;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.container .product-list .product-introduce view.introduce-text .itemContentBottom .img image {
+    width: 96rpx;
+    height: 96rpx;
+}
+
+.container .product-list .product-introduce view.introduce-text .itemContentBottom .theRMB {
+    display: inline-block;
+    font-size: 10px;
+}
+
+.container .product-list .product-introduce view.introduce-text .itemContentBottom .price {
+    display: inline-block;
+}
+
+.container .product-list .footertext {
+    height: 48rpx;
+    line-height: 48rpx;
+    text-align: center;
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 48rpx;
+}
+
+.container .product-list .loading {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+
+.container .product-list .loading text {
+    display: block;
+    animation: myfirst 0.5s;
+    transition: all 0.6s;
+}
+
+.noproducttips {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: #999;
+}
+
+.searchbtn {
+    margin-top: 7px;
+    background-color: white;
+    width: 22px;
+    height: 22px;
+    background-image: url(../../images/search.png-do-not-use-local-path-./pages/shop/collection.wxss&355&20);
+    background-size: 100% 100%;
+}
+
+.searchbtn::after {
+    border: 0;
+}
+
+.container .footnav .border {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container .footnav .edit {
+    width: 280rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+    text-align: center;
+    color: #fff;
+    background-color: #ff7200;
+    font-size: 30rpx;
+}
+
+.container .product-list .tips {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin: 290rpx 0 0;
+}
+
+.container .product-list .tips .img {
+    text-align: center;
+}
+
+.container .product-list .tips image {
+    width: 50%;
+    padding-bottom: 16rpx;
+}
+
+.container .product-list .tips text {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.container .footnav .delete,.container .footnav .complete {
+    width: 250rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.container .footnav .delete {
+    background-color: rgba(255,114,0,0.2);
+    color: #ff7200;
+}
+
+.container .footnav .complete {
+    background-color: #ff7200;
+    color: #fff;
+}
+
+.container .footnav .allCheckedBox {
+    color: #999;
+    font-size: 26rpx;
+    width: 250rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20rpx;
+    box-sizing: border-box;
+}
+
+.allCheckedBoxIcon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60rpx;
+    height: 100%;
+}
+
+.allCheckedBoxIcon checkbox {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.container .footnav {
+    z-index: 100;
+    padding-top: 0;
+}
+
+.container .footnav .borderBox {
+    display: flex;
+}

@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "navigate": "/components/navigate/navigate",
+        "contact-service": "../../components/contactService/contactService",
+        "loading-view": "/components/loading/loading",
+        "empty": "/components/emptyView/emptyView"
+    }
+}

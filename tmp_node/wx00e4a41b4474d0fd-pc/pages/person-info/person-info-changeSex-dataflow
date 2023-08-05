@@ -1,0 +1,41 @@
+// \pages/person-info/person-info changeSex Data Flow
+digraph {
+	"626fc8b086314e26acea007657603a18" [label="FunctionCall,
+function name -> changeSex,
+param -> e,
+e.,
+" color=blue]
+	"7f3fee88d0fe4889b611cd5377d98f85" [label="If Alternate" color=blue]
+	"9d0a9adf5ab9492b974bcc52558bdfbb" [label=VariableDeclarations color=blue]
+	bb46b41e2d144c56b605761bcc6bc965 [label="VariableDeclarator,
+left -> t,
+right -> e.currentTarget.dataset.value" color=blue]
+	"9d0a9adf5ab9492b974bcc52558bdfbb" -> bb46b41e2d144c56b605761bcc6bc965
+	cf30ad2184d64fb99318eee76c348a07 [label="VariableDeclarator,
+left -> n,
+right -> this.data.sexArray" color=blue]
+	"9d0a9adf5ab9492b974bcc52558bdfbb" -> cf30ad2184d64fb99318eee76c348a07
+	"7f3fee88d0fe4889b611cd5377d98f85" -> "9d0a9adf5ab9492b974bcc52558bdfbb"
+	bc1b840e6b354634871e1c2ccce6c894 [label=SequenceExpression color=blue]
+	"36ab218fd26747559007206963d549b8" [label="CallExpression,
+callee name -> n.forEach,
+param -> " color=blue]
+	"8ca5082709b646918a9f421cafec1734" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> e,
+" color=blue]
+	"36ab218fd26747559007206963d549b8" -> "8ca5082709b646918a9f421cafec1734"
+	bc1b840e6b354634871e1c2ccce6c894 -> "36ab218fd26747559007206963d549b8"
+	"228ad2836ad146e5aaed77f55c493f66" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"533216f749d944b6be9aaadaf7960210" [label="Object Properties
+{
+sexArray -> n
+sex -> t
+}" color=blue]
+	"228ad2836ad146e5aaed77f55c493f66" -> "533216f749d944b6be9aaadaf7960210"
+	bc1b840e6b354634871e1c2ccce6c894 -> "228ad2836ad146e5aaed77f55c493f66"
+	"7f3fee88d0fe4889b611cd5377d98f85" -> bc1b840e6b354634871e1c2ccce6c894
+	"626fc8b086314e26acea007657603a18" -> "7f3fee88d0fe4889b611cd5377d98f85"
+}

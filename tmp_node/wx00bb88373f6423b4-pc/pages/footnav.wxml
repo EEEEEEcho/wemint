@@ -1,0 +1,31 @@
+<template name="footnav">
+    <view style="display:none;">
+        <view style="height:98rpx" wx:if="{{!shopcart}}"></view>
+        <view class="footnav" wx:if="{{!shopcart}}">
+            <view class="footnav-item">
+                <navigator hoverClass="none" openType="reLaunch" url="/pages/shop/index">
+                    <text class="iconfont  {{pageurl=='pages/shop/index'?'iconfont_homepage-fi  icon-iconfont_homepage-fi actived':'homepage icon-iconfont_homepage'}}"></text>
+                    <text class=" {{pageurl=='pages/shop/index'?'actived':''}}">首页</text>
+                </navigator>
+            </view>
+            <view class="footnav-item">
+                <navigator hoverClass="none" openType="reLaunch" url="/pages/shop/categoryPage">
+                    <text class="iconfont  {{pageurl=='pages/shop/categoryPage'?'iconfont_product-fil icon-iconfont_product-fil actived':'iconfont_product icon-iconfont_product'}}"></text>
+                    <text class=" {{pageurl=='pages/shop/categoryPage'?'actived':''}}">分类</text>
+                </navigator>
+            </view>
+            <view bindtap="showAmountModal" class="footnav-item">
+                <navigator hoverClass="none" openType="reLaunch" url="/pages/shop/shopcart">
+                    <text class="iconfont  {{pageurl=='pages/shop/shopcart'?'iconfont_cart-fill icon-iconfont_cart-fill actived':'iconfont_cart icon-iconfont_cart'}}"></text>
+                    <text class=" {{pageurl=='pages/shop/shopcart'?'actived':''}}">购物车</text>
+                </navigator>
+            </view>
+            <view class="footnav-item">
+                <navigator hoverClass="none" openType="reLaunch" url="/pages/company/mycenter">
+                    <text class="iconfont  {{pageurl=='pages/company/mycenter'?'iconfont_me-fill icon-iconfont_me-fill actived':'iconfont_me icon-iconfont_me'}}"></text>
+                    <text class=" {{pageurl=='pages/company/mycenter'?'actived':''}}">我的</text>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</template>

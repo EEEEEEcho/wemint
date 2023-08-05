@@ -1,0 +1,20 @@
+<view class="goods">
+    <view bindtap="getGoodDetail" class="good" data-uuid="{{item.goodsUuid}}" wx:for="{{goods}}">
+        <image class="goodImg" lazyLoad="true" mode="aspectFill" src="{{item.covers[0]}}"></image>
+        <view class="goodIntro">
+            <view class="label111">
+                <text class="label11" wx:if="{{item.tags.length>0}}">{{item.tags[0]}}</text>
+                <text class="label12" wx:if="{{item.tags.length>1}}">{{item.tags[1]}}</text>
+            </view>
+            <text class="goodName">{{item.title}}</text>
+            <view class="goodPrice">
+                <text class="commission">佣金:</text>
+                <text class="newPricePre">¥</text>
+                <text class="newPrice">{{item.commission/100}}</text>
+                <text class="priceLabel">价格:</text>
+                <text class="oldPricePre">¥</text>
+                <text class="oldPrice">{{item.minSalesPrice/100}}</text>
+            </view>
+        </view>
+    </view>
+</view>

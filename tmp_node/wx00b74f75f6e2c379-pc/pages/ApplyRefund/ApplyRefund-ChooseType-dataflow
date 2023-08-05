@@ -1,0 +1,32 @@
+// \pages/ApplyRefund/ApplyRefund ChooseType Data Flow
+digraph {
+	"2d9230d344564656af65be9f09d194ac" [label="FunctionCall,
+function name -> ChooseType,
+param -> " color=blue]
+	"77be3e9f538f41d183b4d0ba334dfca2" [label=VariableDeclarations color=blue]
+	"7a8fb8921c0a4163b04e6bfbefe08446" [label="VariableDeclarator,
+left -> typename,
+right -> that.RefundTextList[e.currentTarget.dataset.id]" color=blue]
+	"77be3e9f538f41d183b4d0ba334dfca2" -> "7a8fb8921c0a4163b04e6bfbefe08446"
+	"2d9230d344564656af65be9f09d194ac" -> "77be3e9f538f41d183b4d0ba334dfca2"
+	dd1880a6b6d149eebfce3fa872f22e52 [label=VariableDeclarations color=blue]
+	"3cee84ef95414711b37da0f2acc9af11" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	e56bc951c47b44d28333428b65149baa [label="CallExpression,
+callee name -> GetRefundTypeId,
+param -> typename,
+" color=blue]
+	"3cee84ef95414711b37da0f2acc9af11" -> e56bc951c47b44d28333428b65149baa
+	dd1880a6b6d149eebfce3fa872f22e52 -> "3cee84ef95414711b37da0f2acc9af11"
+	"2d9230d344564656af65be9f09d194ac" -> dd1880a6b6d149eebfce3fa872f22e52
+	eedb7343e2664fd3bd7b58bdb7525e9c [label="CallExpression,
+callee name -> that.setData,
+param -> " color=blue]
+	c524a37f09c3425c998b034d3fe5de35 [label="Object Properties
+{
+RefundTypeText -> typename
+}" color=blue]
+	eedb7343e2664fd3bd7b58bdb7525e9c -> c524a37f09c3425c998b034d3fe5de35
+	"2d9230d344564656af65be9f09d194ac" -> eedb7343e2664fd3bd7b58bdb7525e9c
+}

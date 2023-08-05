@@ -1,0 +1,27 @@
+// \pages/shop/orderdetail goRefundsuc Data Flow
+digraph {
+	"504d1f14f6b1425781f7be990ef487a5" [label="FunctionCall,
+function name -> goRefundsuc,
+param -> t,
+t.,
+" color=blue]
+	fe9e5696f38941e38a8c8196c1e188a1 [label=VariableDeclarations color=blue]
+	"019a6ade14c64f588f52f13f3b7982f9" [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.orderid" color=blue]
+	fe9e5696f38941e38a8c8196c1e188a1 -> "019a6ade14c64f588f52f13f3b7982f9"
+	"9fe49154a5bd415eb7be297b84f8dd1e" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.pkey" color=blue]
+	fe9e5696f38941e38a8c8196c1e188a1 -> "9fe49154a5bd415eb7be297b84f8dd1e"
+	"504d1f14f6b1425781f7be990ef487a5" -> fe9e5696f38941e38a8c8196c1e188a1
+	"525f8cb1a0f74a61acb7278be83e5144" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"9c0ea2c4f31f4a969d0584b361846198" [label="Object Properties
+{
+url -> 'refundsuc?orderid=' + a + '&pkey=' + e
+}" color=blue]
+	"525f8cb1a0f74a61acb7278be83e5144" -> "9c0ea2c4f31f4a969d0584b361846198"
+	"504d1f14f6b1425781f7be990ef487a5" -> "525f8cb1a0f74a61acb7278be83e5144"
+}

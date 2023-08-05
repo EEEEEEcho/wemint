@@ -1,0 +1,28 @@
+// \pages/searchresult/searchresult onReachBottom Data Flow
+digraph {
+	"9f53664115484764967a028126e88908" [label="FunctionCall,
+function name -> onReachBottom,
+param -> " color=blue]
+	a5787eeb5ba347569f7393adbfb73a60 [label=VariableDeclarations color=blue]
+	"4dfa1ec1b37044da80afacb0d4aab97e" [label="VariableDeclarator,
+left -> t,
+right -> a.data.PageIndex + 1" color=blue]
+	a5787eeb5ba347569f7393adbfb73a60 -> "4dfa1ec1b37044da80afacb0d4aab97e"
+	"9f53664115484764967a028126e88908" -> a5787eeb5ba347569f7393adbfb73a60
+	b324afb82e154248ba56dd59aa07122b [label=SequenceExpression color=blue]
+	"28862911d5ab468dab78367b11bb3706" [label="CallExpression,
+callee name -> a.setData,
+param -> " color=blue]
+	"563f1d80386944bd9f4c79da51d53f6b" [label="Object Properties
+{
+PageIndex -> t
+}" color=blue]
+	"28862911d5ab468dab78367b11bb3706" -> "563f1d80386944bd9f4c79da51d53f6b"
+	b324afb82e154248ba56dd59aa07122b -> "28862911d5ab468dab78367b11bb3706"
+	"7e53ffd5ccd641f3be6d76fe6a3493cd" [label="CallExpression,
+callee name -> a.loadData,
+param -> a,
+" color=blue]
+	b324afb82e154248ba56dd59aa07122b -> "7e53ffd5ccd641f3be6d76fe6a3493cd"
+	"9f53664115484764967a028126e88908" -> b324afb82e154248ba56dd59aa07122b
+}

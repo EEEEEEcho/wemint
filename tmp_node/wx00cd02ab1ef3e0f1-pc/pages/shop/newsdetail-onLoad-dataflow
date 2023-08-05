@@ -1,0 +1,42 @@
+// \pages/shop/newsdetail onLoad Data Flow
+digraph {
+	d6e20f20d6474ac8b8e278d1003b93d6 [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"0df407d0c77b4f2dbb390c3ccd6e9c9a" [label=SequenceExpression color=blue]
+	"30970b0a35f24defad77e2d3206cd431" [label="CallExpression,
+callee name -> this.loadNews,
+param -> " color=blue]
+	"4d3bf95468174f12af7f73bc8b3359ba" [label="FunctionCall,
+function name -> loadNews,
+param -> " color=blue]
+	a644717033b6445d839a2bc413df0bf4 [label="If Alternate" color=blue]
+	ba450dd5bd194d72a9d0be2c7c46b215 [label=SequenceExpression color=blue]
+	"44bd86e740df43dfaee88903c8c56965" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"28ba216cc5e64c86aa13ecd575030c53" [label="Assignment,
+left -> t,
+right -> a.data.queryparams.id" color=blue]
+	"44bd86e740df43dfaee88903c8c56965" -> "28ba216cc5e64c86aa13ecd575030c53"
+	ba450dd5bd194d72a9d0be2c7c46b215 -> "44bd86e740df43dfaee88903c8c56965"
+	"7159fdacf3954a33acefc24f5874292d" [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	"69f28559ce094554b337ff46010f9da6" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/JsonApi&a=getNewsInfo&id=' + t + '&prevnext=1&updateHits=1'
+}" color=blue]
+	"7159fdacf3954a33acefc24f5874292d" -> "69f28559ce094554b337ff46010f9da6"
+	"729a03b21216494f8b5927fc07310c15" [label="FunctionCall,
+function name -> success,
+param -> t,
+" color=blue]
+	"7159fdacf3954a33acefc24f5874292d" -> "729a03b21216494f8b5927fc07310c15"
+	ba450dd5bd194d72a9d0be2c7c46b215 -> "7159fdacf3954a33acefc24f5874292d"
+	a644717033b6445d839a2bc413df0bf4 -> ba450dd5bd194d72a9d0be2c7c46b215
+	"4d3bf95468174f12af7f73bc8b3359ba" -> a644717033b6445d839a2bc413df0bf4
+	"30970b0a35f24defad77e2d3206cd431" -> "4d3bf95468174f12af7f73bc8b3359ba"
+	"0df407d0c77b4f2dbb390c3ccd6e9c9a" -> "30970b0a35f24defad77e2d3206cd431"
+	d6e20f20d6474ac8b8e278d1003b93d6 -> "0df407d0c77b4f2dbb390c3ccd6e9c9a"
+}

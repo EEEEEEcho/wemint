@@ -1,0 +1,17 @@
+// \pages/returngoods/returngoods onExpressNoInput Data Flow
+digraph {
+	f00d8aaf822949e7a40d5287f38618d0 [label="FunctionCall,
+function name -> onExpressNoInput,
+param -> t.,
+t,
+" color=blue]
+	ab4231679bed4eefb808db0a212f8dc5 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	bbf6d8b7ecb64e829fca3d3429d13f0c [label="Object Properties
+{
+ExpressNo -> t.detail.value
+}" color=blue]
+	ab4231679bed4eefb808db0a212f8dc5 -> bbf6d8b7ecb64e829fca3d3429d13f0c
+	f00d8aaf822949e7a40d5287f38618d0 -> ab4231679bed4eefb808db0a212f8dc5
+}

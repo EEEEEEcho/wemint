@@ -1,0 +1,23 @@
+// \pages/multiroom/room/room handleIndex Data Flow
+digraph {
+	f351868ae1e84b3f868882fcad8fe8bf [label="FunctionCall,
+function name -> handleIndex,
+param -> t.,
+t,
+" color=blue]
+	dc46718304b849d19184caaecc34c4b1 [label=VariableDeclarations color=blue]
+	b538dc5d17cc4e8889e43d12600f868a [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.index" color=blue]
+	dc46718304b849d19184caaecc34c4b1 -> b538dc5d17cc4e8889e43d12600f868a
+	f351868ae1e84b3f868882fcad8fe8bf -> dc46718304b849d19184caaecc34c4b1
+	"709dfc9f05e3452aac00e97871c93471" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"8364bd5fa7ab4a3eaec0fd321470a89e" [label="Object Properties
+{
+goodIndex -> a
+}" color=blue]
+	"709dfc9f05e3452aac00e97871c93471" -> "8364bd5fa7ab4a3eaec0fd321470a89e"
+	f351868ae1e84b3f868882fcad8fe8bf -> "709dfc9f05e3452aac00e97871c93471"
+}

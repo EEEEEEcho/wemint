@@ -1,0 +1,47 @@
+<myLoading id="myLoading"></myLoading>
+<view class="container">
+    <view class="ws-description">
+        <view class="ws-connect">
+            <button bindtap="wsConnect" class="btn-connect">
+        connect
+      </button>
+            <button bindtap="wsDisConnect" class="btn-disconnect">
+        disconnect
+      </button>
+        </view>
+    </view>
+    <view class="ws-userName">
+        <view>您的用户名称:{{username}}</view>
+    </view>
+    <view class="divide"></view>
+    <view class="sendMessageSingle">
+        <form bindsubmit="singleMsgSend">
+            <p class="singleTitle">和单个人发消息</p>
+            <view class="section userNameMsg">
+                <view class="username">用户名称:</view>
+                <input class="usernameInput" name="usernameInput" placeholder="输入用户名"></input>
+            </view>
+            <view class="section userContentMsg">
+                <view class="userContent">内容:</view>
+                <input class="userContentInput" name="userContentInput" placeholder="输入消息"></input>
+            </view>
+            <button class="sendSingleMsg" formType="submit">Send</button>
+        </form>
+    </view>
+    <view class="divide"></view>
+    <view class="sendMessageGloble">
+        <form bindsubmit="globleMsgSend">
+            <p class="globleTitle">和所有人发消息</p>
+            <view class="globleContentMsg">
+                <view class="globleContent">内容:</view>
+                <input class="globleContentInput" name="globleContentInput" placeholder="输入消息"></input>
+            </view>
+            <button class="sendGlobleMsg" formType="submit">Send</button>
+        </form>
+    </view>
+    <view class="divide"></view>
+    <view class="newsList">
+        <view class="news-title">消息列表</view>
+        <view class="news-content">{{wsMsg}}</view>
+    </view>
+</view>

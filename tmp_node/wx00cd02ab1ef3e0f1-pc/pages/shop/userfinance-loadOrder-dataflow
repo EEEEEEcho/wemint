@@ -1,0 +1,42 @@
+// \pages/shop/userfinance loadOrder Data Flow
+digraph {
+	"1b15a9d6f1924beda91b7267db54b39e" [label="FunctionCall,
+function name -> loadOrder,
+param -> " color=blue]
+	"7cc32d9180bd42eba9d6cb2d7cd51caf" [label="If Alternate" color=blue]
+	"99ad592ec8254da6bff048be914d90ed" [label=VariableDeclarations color=blue]
+	"852f999afb8d49cab7c9cdcc80ef85fe" [label="VariableDeclarator,
+left -> e,
+right -> i.data.recordcount" color=blue]
+	"99ad592ec8254da6bff048be914d90ed" -> "852f999afb8d49cab7c9cdcc80ef85fe"
+	"79d91fd4dc9e413d97c758b7e9802636" [label="VariableDeclarator,
+left -> n,
+right -> i.data.orderlist.length" color=blue]
+	"99ad592ec8254da6bff048be914d90ed" -> "79d91fd4dc9e413d97c758b7e9802636"
+	"7cc32d9180bd42eba9d6cb2d7cd51caf" -> "99ad592ec8254da6bff048be914d90ed"
+	"371b1052b8ad45189883b425215c395e" [label="If Alternate" color=blue]
+	dbfc26e4436f42439c3f1acbf8eabfdb [label=VariableDeclarations color=blue]
+	"6d75a1907c8f4e2e9155500ca0a09d74" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"2ad8476cfa0c4f4b8cda07968bc03830" [label="CallExpression,
+callee name -> Math.ceil,
+param -> n / i.data.pagesize,
+" color=blue]
+	"6d75a1907c8f4e2e9155500ca0a09d74" -> "2ad8476cfa0c4f4b8cda07968bc03830"
+	dbfc26e4436f42439c3f1acbf8eabfdb -> "6d75a1907c8f4e2e9155500ca0a09d74"
+	"371b1052b8ad45189883b425215c395e" -> dbfc26e4436f42439c3f1acbf8eabfdb
+	f93b47ff50fc412a9fc59fe0adf82fc7 [label=SequenceExpression color=blue]
+	"414f0e38fc004fdd866362a46f0d84cf" [label="CallExpression,
+callee name -> a.sendRequest,
+param -> " color=blue]
+	"325d037f1467414b811e27a7d14f8506" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/JsonApi&a=getFinance&page=' + s + '&pagesize=' + i.data.pagesize
+}" color=blue]
+	"414f0e38fc004fdd866362a46f0d84cf" -> "325d037f1467414b811e27a7d14f8506"
+	f93b47ff50fc412a9fc59fe0adf82fc7 -> "414f0e38fc004fdd866362a46f0d84cf"
+	"371b1052b8ad45189883b425215c395e" -> f93b47ff50fc412a9fc59fe0adf82fc7
+	"7cc32d9180bd42eba9d6cb2d7cd51caf" -> "371b1052b8ad45189883b425215c395e"
+	"1b15a9d6f1924beda91b7267db54b39e" -> "7cc32d9180bd42eba9d6cb2d7cd51caf"
+}

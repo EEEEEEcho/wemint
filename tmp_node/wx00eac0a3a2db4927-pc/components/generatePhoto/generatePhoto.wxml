@@ -1,0 +1,20 @@
+<view bindtap="onClose" catchtouchmove="preventTouchMove" class="generatePhoto" style="display:{{isShow?'flex':'none'}};overflow: hidden">
+    <image catchtap="onClose" class="deleteImage" src="http://oss.shangmian.xin/weixin_applets_good_detail_generate_photo_delete.png"></image>
+    <view class="canvasLayout">
+        <canvas canvasId="generateCanvas" class="canvasContent"></canvas>
+    </view>
+    <view catchtap="onBottomLayout" class="bottomLayout">
+        <view catchtap="onShare" class="shareLayout">
+            <view class="imageLayout">
+                <image class="savePhoto" src="http://oss.shangmian.xin/weixin_applets_share_weixin.png"></image>
+                <text class="saveText">分享好友</text>
+            </view>
+            <button class="shareType" openType="share"></button>
+        </view>
+        <view catchtap="onSave" class="savePhotoLayout">
+            <image class="savePhoto" src="http://oss.shangmian.xin/weixin_applets_good_detail_save_photo.png"></image>
+            <text class="saveText">保存图片</text>
+        </view>
+    </view>
+</view>
+<loading-view isShow="{{isShowLoad}}"></loading-view>

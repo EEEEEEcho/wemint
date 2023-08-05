@@ -1,0 +1,91 @@
+page {
+    background: #f4f4f4;
+}
+
+.cash {
+    background: #fff;
+    width: 682rpx;
+    margin-left: 34rpx;
+    border-radius: 24rpx;
+    margin-top: 170rpx;
+}
+
+.change_part {
+    border-bottom: 1rpx solid #eee;
+    padding-top: 30rpx;
+}
+
+.change {
+    height: 120rpx;
+    align-items: center;
+    margin-bottom: 10rpx;
+    margin-left: 22rpx;
+}
+
+.change_title,.canuse_cash {
+    font-size: 28rpx;
+    color: #aeaeb4;
+    margin-left: 30rpx;
+}
+
+.change_unit {
+    font-size: 104rpx;
+    color: #51515c;
+    margin-left: 10rpx;
+}
+
+.change_size {
+    font-size: 80rpx;
+    color: #51515c;
+    height: 100%;
+    line-height: 100%;
+}
+
+.cash_tip {
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 29rpx;
+    padding-bottom: 29rpx;
+}
+
+.attention {
+    align-items: center;
+    margin-top: 10rpx;
+    padding-bottom: 29rpx;
+}
+
+.all {
+    font-size: 28rpx;
+    color: #ed7b43;
+    margin-right: 30rpx;
+}
+
+.tips {
+    font-size: 26rpx;
+    color: #ed7b43;
+    margin-left: 30rpx;
+}
+
+.rate {
+    font-size: 22rpx;
+    color: #aeaeb4;
+    margin-top: 4rpx;
+}
+
+.cash_btn {
+    width: 682rpx;
+    height: 82rpx;
+    margin-left: 34rpx;
+    margin-top: 62rpx;
+}
+
+.btn_txt {
+    text-align: center;
+    width: 682rpx;
+    height: 82rpx;
+    line-height: 82rpx;
+    font-size: 32rpx;
+    color: #fff;
+    border: none;
+    border-radius: 50rpx;
+}

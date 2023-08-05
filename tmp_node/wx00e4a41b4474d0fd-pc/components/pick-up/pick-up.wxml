@@ -1,0 +1,41 @@
+<view bind:tap="onClose" class="container">
+    <view catch:tap="onMenuTap" class="pick-up">
+        <view class="menu-type" wx:if="{{type==='space'}}">
+            <text bind:tap="onSelectSpaceChange" class="menu-type-item {{item.selected?'menu-type--selected':''}}" data-type="{{item.id}}" wx:for="{{spaceTypes}}" wx:key="{{item.id}}">{{item.name}}</text>
+        </view>
+        <view class="pick-list">
+            <view bind:tap="onSelectChange" class="pick-item {{houseTypeSelected&&houseTypeSelected.id===item.id?'pick-item--selected':''}}" data-type="{{item.id}}" wx:if="{{type==='huxing'}}" wx:for="{{houseTypes}}" wx:key="{{item.id}}">
+                <view class="pick-item-media">
+                    <c-img cclass="pick-item-img" mode="aspectFit" src="{{item.chooseImage}}"></c-img>
+                </view>
+                <view class="pick-item-desc">
+                    <view class="nowrap">{{item.name}}</view>
+                    <view style="line-height: 48rpx;margin-top: -10rpx">{{item.area}}㎡</view>
+                </view>
+            </view>
+            <view bind:tap="onSelectSubSpaceChange" class="pick-item {{item.selected?'pick-item--selected':''}}" data-type="{{item.id}}" wx:if="{{type==='space'}}" wx:for="{{spaceSelected.subTypes}}" wx:key="{{item.id}}">
+                <view class="pick-item-media">
+                    <c-img cclass="pick-item-img" mode="aspectFit" src="{{item.thumbnail}}"></c-img>
+                </view>
+                <view class="pick-item-desc nowrap">{{item.name}}</view>
+            </view>
+        </view>
+        <view class="pick-result">
+            <block wx:if="{{type==='huxing'}}">
+        已选择 “户型{{houseTypeSelected.name}}-{{houseTypeSelected.area}}㎡”
+      </block>
+            <block wx:if="{{type==='space'}}">
+        已选择 “
+        <block wx:for="{{spaceNames}}" wx:for-index="idx" wx:key="{{item}}">
+          {{item}}
+          <block wx:if="{{idx<2}}">+</block>
+                </block>
+        ”
+      </block>
+        </view>
+        <view class="pick-bottom operate-step1">
+            <view bind:tap="onPickCancel" class="pick-operate btn-cancel">取消</view>
+            <view bind:tap="onPickSure" class="pick-operate btn-sure">确认</view>
+        </view>
+    </view>
+</view>

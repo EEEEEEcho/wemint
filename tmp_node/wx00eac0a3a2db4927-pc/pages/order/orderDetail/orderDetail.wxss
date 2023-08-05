@@ -1,0 +1,547 @@
+page {
+    background: #f4f4f4;
+}
+
+.orderDetail {
+    width: 100%;
+    align-items: center;
+}
+
+.topLayout {
+    width: 92%;
+    height: 200rpx;
+    border-radius: 20rpx;
+    align-items: center;
+    margin-top: 4%;
+}
+
+.statusTextLayout {
+    flex: 1;
+    margin-left: 13%;
+    margin-right: 4%;
+}
+
+.statusNumberLayout {
+    align-items: center;
+}
+
+.statusNumber {
+    font-size: 25rpx;
+    color: #ffffff;
+    background: #ed7b43;
+    padding: 4rpx 12rpx;
+    border-radius: 12rpx;
+    font-weight: bold;
+    margin-left: 16rpx;
+}
+
+.statusTitle {
+    font-size: 28rpx;
+    color: #ffffff;
+}
+
+.statusRemark {
+    font-size: 28rpx;
+    color: #ffffff;
+    padding-top: 12rpx;
+}
+
+.topShopLogo {
+    width: 150rpx;
+    height: 150rpx;
+    margin-right: 8%;
+    border-radius: 20rpx;
+}
+
+.addressLayout {
+    width: 92%;
+    border-radius: 20rpx;
+    background: #ffffff;
+    margin-top: 4%;
+}
+
+.receiptLayout {
+    align-items: center;
+}
+
+.receipt {
+    font-size: 26rpx;
+    color: #999999;
+    padding: 24rpx;
+}
+
+.receiptName {
+    font-size: 26rpx;
+    color: #999999;
+}
+
+.receiptPhone {
+    font-size: 26rpx;
+    color: #999999;
+    padding-left: 16px;
+}
+
+.receiptAddress {
+    padding-bottom: 24rpx;
+}
+
+.addressLabel {
+    font-size: 26rpx;
+    color: #999999;
+    padding-left: 20rpx;
+}
+
+.addressText {
+    width: 506rpx;
+    font-size: 26rpx;
+    color: #999999;
+    padding-left: 16rpx;
+    padding-right: 24rpx;
+}
+
+.deliveryLabel {
+    font-size: 26rpx;
+    color: #999999;
+    padding-left: 24rpx;
+}
+
+.deliveryDate {
+    width: 370rpx;
+    font-size: 26rpx;
+    color: #999999;
+    padding-left: 16rpx;
+    padding-right: 24rpx;
+}
+
+.deliveryLayout {
+    width: 92%;
+    border-radius: 20rpx;
+    background: #ffffff;
+    margin-top: 4%;
+}
+
+.courierPhone {
+    height: 40rpx;
+    line-height: 40rpx;
+    border-radius: 20rpx;
+    padding: 0rpx 16rpx;
+    font-size: 22rpx;
+    color: #ed7b43;
+    margin-left: auto;
+    margin-right: 24rpx;
+    border: 1px solid #ed7b43;
+}
+
+.freeLayout {
+    width: 92%;
+    border-radius: 20rpx;
+    background: #ffffff;
+    margin-top: 4%;
+}
+
+.freeTitle {
+    flex: 1;
+    padding: 24rpx;
+    font-size: 28rpx;
+    color: #3f3f3f;
+    text-align: center;
+}
+
+.fightGroupLayout {
+    flex: 1;
+    align-items: center;
+}
+
+.fightGroupLabel {
+    font-size: 24rpx;
+    color: #3f3f3f;
+    padding-left: 24rpx;
+    font-weight: bold;
+    margin-right: 16rpx;
+}
+
+.fightGroupAvatar {
+    width: 52rpx;
+    height: 52rpx;
+    border-radius: 26rpx;
+}
+
+.freePeople {
+    color: #3f3f3f;
+    font-size: 26rpx;
+    margin-left: 24rpx;
+}
+
+.shareFreeLayout {
+    margin-left: auto;
+    position: relative;
+    width: 120rpx;
+    height: 40rpx;
+    margin-right: 24rpx;
+}
+
+.shareFree {
+    background: #ed7b43;
+    color: #ffffff;
+    font-size: 21rpx;
+    width: 120rpx;
+    height: 40rpx;
+    border-radius: 20rpx;
+    line-height: 40rpx;
+    text-align: center;
+    position: absolute;
+}
+
+.shareButton {
+    position: absolute;
+    width: 120rpx;
+    height: 40rpx;
+    opacity: 0;
+}
+
+.lotteryTimeLayout {
+    flex: 1;
+    align-items: center;
+    padding: 24rpx;
+}
+
+.lotteryTimeLabel {
+    font-size: 24rpx;
+    color: #3f3f3f;
+    font-weight: bold;
+    margin-right: 16rpx;
+}
+
+.lotteryDate {
+    flex: 1;
+    align-items: center;
+}
+
+.remainder {
+    font-size: 24rpx;
+    color: #3f3f3f;
+    font-weight: bold;
+}
+
+.remainderNumber {
+    font-size: 24rpx;
+    color: #ed7b43;
+    font-weight: bold;
+}
+
+.hourNumber {
+    border-radius: 8rpx;
+    background: #3f3f3f;
+    color: #ffffff;
+    text-align: center;
+    font-size: 22rpx;
+    font-weight: bold;
+    margin-left: 8rpx;
+    padding: 3rpx 6rpx;
+}
+
+.minuteNumber {
+    border-radius: 8rpx;
+    background: #3f3f3f;
+    color: #ffffff;
+    text-align: center;
+    font-size: 22rpx;
+    font-weight: bold;
+    margin-left: 8rpx;
+    padding: 3rpx 6rpx;
+}
+
+.secondNumber {
+    border-radius: 8rpx;
+    background: #3f3f3f;
+    color: #ffffff;
+    text-align: center;
+    font-size: 22rpx;
+    font-weight: bold;
+    margin-left: 8rpx;
+    padding: 3rpx 6rpx;
+}
+
+.colon {
+    font-weight: bold;
+    font-size: 24rpx;
+    color: #3f3f3f;
+    text-align: center;
+    margin-left: 8rpx;
+}
+
+.lotteryStatus {
+    font-size: 24rpx;
+    color: #ed7b43;
+}
+
+.lotteryRemark {
+    font-size: 20rpx;
+    color: #999999;
+    margin-left: auto;
+}
+
+.lotteryNumberLayout {
+    flex: 1;
+    align-items: center;
+    padding: 24rpx;
+}
+
+.lotteryLabel {
+    font-size: 24rpx;
+    color: #3f3f3f;
+    font-weight: bold;
+}
+
+.lotteryNumber {
+    width: 36rpx;
+    height: 36rpx;
+    border-radius: 18rpx;
+    background: #ed7b43;
+    color: #ffffff;
+    text-align: center;
+    margin-left: 24rpx;
+    line-height: 36rpx;
+    font-size: 23rpx;
+}
+
+.lotteryPhone {
+    font-size: 24rpx;
+    color: #51515c;
+    margin-left: auto;
+}
+
+.orderList {
+    width: 92%;
+    margin-top: 4%;
+    background: #ffffff;
+    border-radius: 20rpx;
+}
+
+.shopLayout {
+    padding-top: 24rpx;
+    padding-bottom: 24rpx;
+    align-items: center;
+}
+
+.shopLogo {
+    width: 48rpx;
+    height: 48rpx;
+    border-radius: 8rpx;
+    margin-left: 24rpx;
+}
+
+.shopName {
+    flex: 1;
+    font-size: 26rpx;
+    color: #3f3f3f;
+    font-weight: bold;
+    margin-left: 24rpx;
+}
+
+.statusLayout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+}
+
+.orderDeposit {
+    width: 28rpx;
+    height: 28rpx;
+}
+
+.orderStatus {
+    font-size: 23rpx;
+    color: #ed7b43;
+    margin-left: 16rpx;
+    margin-right: 24rpx;
+}
+
+.remarksLayout {
+    width: 92%;
+    border-radius: 20rpx;
+    background: #ffffff;
+    margin-top: 4%;
+}
+
+.deliveryMethodLayout {
+    align-items: center;
+    padding-top: 24rpx;
+    padding-bottom: 24rpx;
+}
+
+.deliveryMethod {
+    color: #3f3f3f;
+    font-size: 26rpx;
+    padding-left: 24rpx;
+}
+
+.logistics {
+    color: #ed7b43;
+    font-size: 26rpx;
+    margin-left: auto;
+    margin-right: 24rpx;
+}
+
+.promotionLayout {
+    align-items: center;
+    padding-bottom: 24rpx;
+}
+
+.amountLayout {
+    align-items: center;
+    padding-bottom: 24rpx;
+}
+
+.orderAmount {
+    color: #3f3f3f;
+    font-size: 26rpx;
+    padding-left: 24rpx;
+}
+
+.priceValue {
+    color: #3f3f3f;
+    font-size: 26rpx;
+    margin-left: auto;
+    margin-right: 24rpx;
+}
+
+.goodTotalLayout {
+    width: 92%;
+    align-items: center;
+    border-radius: 20rpx;
+    background: #ffffff;
+    margin-top: 4%;
+}
+
+.piece {
+    color: #3f3f3f;
+    font-size: 26rpx;
+    padding: 24rpx;
+}
+
+.totalPay {
+    color: #3f3f3f;
+    font-size: 26rpx;
+    margin-left: auto;
+}
+
+.priceTotal {
+    color: #ed7b43;
+    font-size: 26rpx;
+    margin-right: 24rpx;
+    margin-left: 24rpx;
+}
+
+.finalPayLabel {
+    color: #3f3f3f;
+    font-size: 26rpx;
+    margin-right: 12rpx;
+}
+
+.finalPayFee {
+    color: #ed7b43;
+    font-size: 26rpx;
+    margin-right: 24rpx;
+}
+
+.dataLayout {
+    width: 92%;
+    border-radius: 20rpx;
+    background: #ffffff;
+    margin: 4% 0;
+    padding: 24rpx 0rpx;
+}
+
+.orderNumberLayout {
+    align-items: center;
+    padding: 0rpx 0rpx 0rpx 24rpx;
+}
+
+.orderLabel {
+    font-size: 24rpx;
+    color: #aeaeb4;
+}
+
+.orderNumber {
+    font-size: 24rpx;
+    color: #aeaeb4;
+    padding-left: 8rpx;
+}
+
+.createTimeLayout {
+    align-items: center;
+    padding: 16rpx 0rpx 0rpx 24rpx;
+}
+
+.createTimeLabel {
+    font-size: 24rpx;
+    color: #aeaeb4;
+}
+
+.timeNumber {
+    font-size: 24rpx;
+    color: #aeaeb4;
+    padding-left: 8rpx;
+}
+
+.payForTimeLayout {
+    font-size: 24rpx;
+    color: #aeaeb4;
+    padding: 16rpx 0rpx 0rpx 24rpx;
+}
+
+.payForTimeLabel {
+    font-size: 24rpx;
+    color: #aeaeb4;
+}
+
+.shipLayout {
+    font-size: 24rpx;
+    color: #aeaeb4;
+    padding: 16rpx 0rpx 0rpx 24rpx;
+}
+
+.copyBtn {
+    width: 78rpx;
+    height: 40rpx;
+    font-size: 24rpx;
+    color: #aeaeb4;
+    background: #eeeeee;
+    line-height: 40rpx;
+    text-align: center;
+    border-radius: 20rpx;
+    margin-left: auto;
+    margin-right: 24rpx;
+}
+
+.orderBottom {
+    width: 100%;
+    background: #ffffff;
+    height: 80rpx;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.grayBtn {
+    color: #aeaeb4;
+    font-size: 24rpx;
+    border: 1px solid #aeaeb4;
+    height: 42rpx;
+    line-height: 42rpx;
+    padding: 0rpx 16rpx;
+    border-radius: 21rpx;
+    margin-right: 16rpx;
+}
+
+.yellowBtn {
+    color: #ed7b43;
+    font-size: 24rpx;
+    border: 1px solid #ed7b43;
+    height: 42rpx;
+    line-height: 42rpx;
+    padding: 0rpx 16rpx;
+    border-radius: 21rpx;
+    margin: 0rpx 4% 0rpx 0rpx;
+}

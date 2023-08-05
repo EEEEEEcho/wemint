@@ -1,0 +1,37 @@
+// \pages/index/takeOut/queryOrder/queryOrder bindBeizhu Data Flow
+digraph {
+	cea44db60d90475cad99dfa394f7b932 [label="FunctionCall,
+function name -> bindBeizhu,
+param -> o.,
+o,
+" color=blue]
+	ce9055dea84a47b597738661a1197b76 [label=VariableDeclarations color=blue]
+	"65786f496fbd4628ab89a1c42f603f97" [label="VariableDeclarator,
+left -> t,
+right -> o.detail.value" color=blue]
+	ce9055dea84a47b597738661a1197b76 -> "65786f496fbd4628ab89a1c42f603f97"
+	cea44db60d90475cad99dfa394f7b932 -> ce9055dea84a47b597738661a1197b76
+	"0e9a9717c96f4096b805689f04b61539" [label=SequenceExpression color=blue]
+	f0839fdf96af40dbb025822078ebf02f [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"1d6d94b7178b47148c31c8be462bc11e" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	ebbaed0fb35e42c69758c290726dd337 [label="Object Properties
+{
+dcBeizhu -> t
+}" color=blue]
+	"1d6d94b7178b47148c31c8be462bc11e" -> ebbaed0fb35e42c69758c290726dd337
+	f0839fdf96af40dbb025822078ebf02f -> "1d6d94b7178b47148c31c8be462bc11e"
+	"0e9a9717c96f4096b805689f04b61539" -> f0839fdf96af40dbb025822078ebf02f
+	ab2c5dcd879f4a22bc5fa64b66f263a4 [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	"7a11ef07e2bf4c6f8e822a32e161c1a2" [label="Object Properties
+{
+data -> t
+}" color=blue]
+	ab2c5dcd879f4a22bc5fa64b66f263a4 -> "7a11ef07e2bf4c6f8e822a32e161c1a2"
+	"0e9a9717c96f4096b805689f04b61539" -> ab2c5dcd879f4a22bc5fa64b66f263a4
+	cea44db60d90475cad99dfa394f7b932 -> "0e9a9717c96f4096b805689f04b61539"
+}

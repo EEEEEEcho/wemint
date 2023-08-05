@@ -1,0 +1,24 @@
+// \pages/shouhuo/shouhuo addressDel Data Flow
+digraph {
+	e43b694096c74226a5718eb8495addd9 [label="FunctionCall,
+function name -> addressDel,
+param -> t,
+t.,
+" color=blue]
+	"9453beb07a2648b79ac90839a17b9529" [label="CallExpression,
+callee name -> console.log,
+param -> t.currentTarget.dataset.id,
+" color=blue]
+	e43b694096c74226a5718eb8495addd9 -> "9453beb07a2648b79ac90839a17b9529"
+	"93838ca7c71445d2b47ce7c48e39dff6" [label=SequenceExpression color=blue]
+	"86f991a75c114cffad62bddcf188d859" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	ae9db3dd35384a9493f2a812a9fbfacc [label="Object Properties
+{
+id -> t.currentTarget.dataset.id
+}" color=blue]
+	"86f991a75c114cffad62bddcf188d859" -> ae9db3dd35384a9493f2a812a9fbfacc
+	"93838ca7c71445d2b47ce7c48e39dff6" -> "86f991a75c114cffad62bddcf188d859"
+	e43b694096c74226a5718eb8495addd9 -> "93838ca7c71445d2b47ce7c48e39dff6"
+}

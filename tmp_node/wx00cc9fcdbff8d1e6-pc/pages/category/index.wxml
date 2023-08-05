@@ -1,0 +1,23 @@
+<view class="section">
+    <scroll-view class="left" scrollY="true">
+        <view bindtap="tapType" class="{{item.id==currType?'active':''}}" data-type-id="{{item.id}}" style="font-size:33rpx" wx:for="{{types}}" wx:key="typeId">
+            {{item.name}}
+        </view>
+        <view bindtap="tapType" class="{{item.id==5?'active':''}}" data-type-id="5555" style="font-size:33rpx">
+            题材
+        </view>
+        <view bindtap="tapType" class="{{item.id==6?'active':''}}" data-type-id="6666" style="font-size:33rpx">
+         玉种
+        </view>
+    </scroll-view>
+    <scroll-view class="right" scrollY="true">
+        <view class="typeTree">
+            <view class="{{data.bz_1!='https://wx.nytdjx.cn/Data/'?'brand':'brand1'}}" data-type-id="{{data.bz_1}}" wx:for="{{typeTree}}" wx:for-item="data" wx:key="key">
+                <navigator class="item" url="../listdetail/listdetail?cat_id={{data.id}}&title={{data.name}}&typee={{data.type}}">
+                    <image src="{{data.bz_1}}"></image>
+                    <text>{{data.name}}</text>
+                </navigator>
+            </view>
+        </view>
+    </scroll-view>
+</view>

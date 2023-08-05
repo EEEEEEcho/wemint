@@ -1,0 +1,185 @@
+<view class="yhtjPic">
+    <image class="yhtjImg" src="{{foodSrc}}"></image>
+</view>
+<view class="yhtjBox">
+    <view class="yhtjTitleBox">
+        <view class="yhtjTitle">
+            <view class="yhtj-title">{{yhtjTitle}}</view>
+            <view bindtap="changeSel" class="yhtj-title1" data-index="{{index}}" style="color:{{colors1[index]}}" wx:if="{{food.foodSizeList.length>0}}" wx:for="{{food.foodSizeList}}">({{item.name}})</view>
+        </view>
+        <view class="monthSales">{{monthSales==null?0:monthSales}}</view>
+    </view>
+    <view class="row1">
+        <view class="col-12">
+            <view class="price-tc" wx:if="{{wmFlg}}">
+                <view class="now" wx:if="{{food.foodSizeList.length>0}}">￥{{food.foodSizeList[indx1].discountFlg==1?priceWZ:priceW}}</view>
+                <view class="now" wx:if="{{food.foodSizeList.length==0||food.foodSizeList==null}}">￥{{food.discountFlg==1?food.priceWZ:food.priceW}}</view>
+            </view>
+            <view class="price-tc" wx:else>
+                <view class="now" wx:if="{{food.foodSizeList.length>0}}">￥{{food.foodSizeList[indx1].discountFlg==1?priceTZ:priceT}}</view>
+                <view class="now" wx:if="{{food.foodSizeList.length==0||food.foodSizeList==null}}">￥{{food.discountFlg==1?food.priceTZ:food.priceT}}</view>
+            </view>
+            <view wx:if="{{food.foodSizeList.length==0||food.foodSizeList==null}}">
+                <view bindtap="addCount" class="add-tc" data-food-id="{{food.id}}" data-price="{{wmFlg?food.priceW:food.priceT}}" data-type-id="{{food.typeId}}" wx:if="{{food.foodCount==0||food.foodCount==null||emptyed}}">加入购物车</view>
+                <view class="add-tc1" wx:else>
+                    <view class="cart-decrease">
+                        <view catchtap="addCount" class=" iconfont icon-jiahao1-green guige-add" data-food-id="{{food.id}}" data-price="{{wmFlg?food.discountFlg==0?food.priceW:food.priceWZ:food.discountFlg==0?food.priceT:food.priceTZ}}" data-type-id="{{food.typeId}}"></view>
+                    </view>
+                    <view class="cart-decrease">
+                        <view class="cart-count guige-count">{{food.foodCount==null||food.foodCount==''?0:food.foodCount}}</view>
+                    </view>
+                    <view catchtap="minusCount" class="inner iconfont icon-jianhao guige-decrease" data-food-id="{{food.id}}" data-type-id="{{food.typeId}}" wx:if="{{food.foodCount>0}}"></view>
+                    <view class="clear"></view>
+                </view>
+            </view>
+            <view bindtap="xuanguige" class="cartControl-wrapper addtocart" data-food-count="{{food.foodCount}}" data-food-id="{{food.id}}" data-food-price="{{wmFlg?food.discountFlg==0?food.priceW:food.priceWZ:food.discountFlg==0?food.priceT:food.priceTZ}}" data-food-size="{{food.foodSizeList}}" wx:if="{{food.foodSizeList.length>0}}">选规格</view>
+            <view class="xuanguige cover1" wx:if="{{guige==food.id}}">
+                <view class="guige-box">
+                    <text bindtap="resum" class="resum">x</text>
+                    <view class="gtitle">
+                        <text class="guige-title">{{food.foodName}}</text>
+                    </view>
+                    <view class="gselect">
+                        <text bindtap="selguige" class="guige1" data-food-size="{{sizelist}}" data-foodlist="{{foodList}}" data-foodsizelist="{{food.foodSizeList}}" data-guige-index="{{guigeIndex}}" data-indx="{{guigeIndex}}" style="background-color:{{bgColors[guigeIndex]}};color:{{colors[guigeIndex]}}" wx:for="{{food.foodSizeList}}" wx:for-index="guigeIndex" wx:for-item="sizelist">{{sizelist.name}}</text>
+                        <view class="clear"></view>
+                    </view>
+                    <view class="gbottom" style="margin-top:10px; padding-bottom:10px;" wx:if="{{guigeIndex==indx}}" wx:for="{{food.foodSizeList}}" wx:for-index="guigeIndex" wx:for-item="sizelist">
+                        <view class="guige-price" wx:if="{{wmFlg==true}}">
+                            <view class="now1">￥{{sizelist.discountFlg==0?sizelist.priceW:sizelist.priceWZ}}
+              </view>
+                        </view>
+                        <view class="guige-price" wx:else>
+                            <view class="now">￥{{sizelist.discountFlg==0?sizelist.priceT:sizelist.priceTZ}}
+              </view>
+                        </view>
+                        <view class="guige-jiajian">
+                            <view catchtap="addCount" class=" iconfont icon-jiahao1-green guige-add" data-food-id="{{sizelist.id}}" data-food-size="{{sizelist}}" data-price="{{wmFlg?food.priceW:food.priceT}}" data-type-id="{{food.typeId}}" style="float:right;"></view>
+                            <view class="cart-count guige-count" style="float:right;">{{sizelist.foodSizeCount==null||sizelist.foodSizeCount==''||emptyed?0:sizelist.foodSizeCount}}</view>
+                            <view catchtap="minusCount" class="inner iconfont icon-jianhao guige-decrease" data-food-id="{{sizelist.id}}" data-food-size="{{sizelist}}" data-type-id="{{food.typeId}}" style="float:right" wx:if="{{sizelist.foodSizeCount>0&&!emptyed}}"></view>
+                            <view class="clear"></view>
+                        </view>
+                        <view class="clear"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="spmsBox">
+    <view class="spmsTitle">商品描述</view>
+    <view class="spmsText">{{descriptionText}}</view>
+</view>
+<view class="commodityBox">
+    <view class="commodityScore">
+        <view style="margin-right:10px;">商品评分</view>
+        <view wx:for="{{starurls}}">
+            <image class="xing1" src="{{item.starurl}}"></image>
+        </view>
+    </view>
+    <view class="thumbs">
+        <image bindtap="like" class="like" src="/images/like.png"></image>
+        <view class="likenum">{{food.upCount}}</view>
+        <image bindtap="unlike" class="unlike" src="/images/unlike.png"></image>
+        <view class="unlikenum">{{food.downCount}}</view>
+    </view>
+</view>
+<view class="container buy-foot">
+    <view>
+        <view>
+            <view class="shopCart">
+                <view class="content">
+                    <view class="content-left">
+                        <view class="logo-wrapper">
+                            <view class="logo highlight">
+                                <image bindtap="toggleList" class="notShopping" src="{{cartUrl}}"></image>
+                            </view>
+                            <view class="num" wx:if="{{totalCount>0}}">{{totalCount}}</view>
+                        </view>
+                        <view class="price highlight">￥{{totalPrice==0||totalPrice==null||totalPrice==undefined||totalPrice==''||totalPrice=='undefined'?'0.00':totalPrice}}</view>
+                        <view class="distriFee" wx:if="{{wmFlg}}">另需配送费￥{{distriFeePrice}}</view>
+                    </view>
+                    <view class="content-right" style="background-color:{{bcgcolor}}" wx:if="{{dcFlg}}">
+                        <view bindtap="askFor" class="pay enough" style="color:{{colo}}">
+              {{payDesc}}
+            </view>
+                    </view>
+                    <view class="content-right" style="background-color:{{bcgcolor}}" wx:else>
+                        <view bindtap="askFor" class="pay enough" style="color:{{colo}}">
+              {{payDesc}}
+            </view>
+                    </view>
+                </view>
+                <view class="shopcart-list" style="display:{{cartShow}}">
+                    <view class="list-header">
+                        <view class="title">已选商品</view>
+                        <view bindtap="empty" class="iconfont icon-lajitong0-copy empty" style="color:#fff;">清空购物车</view>
+                    </view>
+                    <view class="list-content">
+                        <scroll-view>
+                            <view class="shopcart-food" wx:for="{{carArray}}">
+                                <text class="name">{{item.name}}</text>
+                                <view class="price" wx:if="{{totalCount>0}}">
+                                    <span>￥{{item.price}}</span>
+                                </view>
+                                <view style="float:right" wx:if="{{totalCount>0}}">
+                                    <view class="cartControl" style="width:80px;">
+                                        <view name="fade">
+                                            <view catchtap="addCount" class=" iconfont icon-jiahao1-green cart-add  item" data-food-id="{{item.foodId}}" data-item-index="{{index}}" data-parentIndex="{{item.parentIndex}}" data-type-id="{{item.typeId}}" style="color:#ffbf21; "></view>
+                                            <view class="cart-count" style="width:32px;text-align:center;font-size:18px;color:#fff;" wx:if="{{item.num>0}}">{{item.num}}</view>
+                                            <view catchtap="minusCount" class="cart-decrease" data-food-id="{{item.foodId}}" data-item-index="{{index}}" data-parent-index="{{item.parentIndex}}" data-type-id="{{item.typeId}}" wx:if="{{item.num>0}}">
+                                                <view class="inner iconfont icon-jianhao" style="color:#555"></view>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </scroll-view>
+                    </view>
+                </view>
+                <view class="cover" style="display:{{cartShow}}"></view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="cover1" style="display:{{disp}}" wx:if="{{dcFlg}}">
+    <view bindtap="resume" class="cover1-1" style="display:{{disp}}" wx:if="{{dcFlg}}"></view>
+    <view class="containerZuohao xiadan-box">
+        <view class="row2">
+            <text class="flex40 writedesk">请填写桌号</text>
+        </view>
+        <view class="row2 row-input">
+            <input bindinput="bindDesk" class="flex40 inputdesk" placeholder=""></input>
+        </view>
+        <view class="row2">
+            <text class="flex0 writedesk">请填写备注</text>
+        </view>
+        <view class="row2 row-input">
+            <input bindinput="bindBeizhu" class="flex70 inputdesk" placeholder=""></input>
+        </view>
+        <view class="row2">
+            <text class="col-12 xiadan-box-descrip">请根据服务员引导填写正确桌号</text>
+        </view>
+        <view class="row2 row-button">
+            <view bindtap="sendOrder" class="flex80 button-xiadan">下 单</view>
+        </view>
+    </view>
+</view>
+<view class="cover1" style="display:{{display}}">
+    <view bindtap="resume" class="cover1-1" style="display:{{display}}"></view>
+    <view class="containers xiadan-box">
+        <view class="row2">
+            <text class="flex80 writedesk">您有未支付订单</text>
+        </view>
+        <view class="row2">
+            <text class="col-12 xiadan-box-descrip">是否继续下单？</text>
+        </view>
+        <view class="row2 row-button1">
+            <view bindtap="resume" class="flex30 button-xiadan1">取 消</view>
+            <view bindtap="chkOrder" class="flex30 button-xiadan">下 单</view>
+        </view>
+    </view>
+</view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

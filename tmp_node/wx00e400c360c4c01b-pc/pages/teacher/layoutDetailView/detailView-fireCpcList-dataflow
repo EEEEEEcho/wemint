@@ -1,0 +1,12 @@
+// \pages/teacher/layoutDetailView/detailView fireCpcList Data Flow
+digraph {
+	e3b734354c5449d2818324a3e85f129a [label="FunctionCall,
+function name -> fireCpcList,
+param -> " color=blue]
+	"98d3715703734a7c8a8400afca7b21ee" [label="CallExpression,
+callee name -> t,
+param -> c.data.ccm_id,
+c.data.class_time,
+" color=blue]
+	e3b734354c5449d2818324a3e85f129a -> "98d3715703734a7c8a8400afca7b21ee"
+}

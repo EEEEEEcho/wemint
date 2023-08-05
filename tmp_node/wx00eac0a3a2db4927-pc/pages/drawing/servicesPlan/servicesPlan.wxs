@@ -1,0 +1,7 @@
+module.exports = ({
+    getPrice: (function(price) {
+        var dis = price / 100;
+        var far = dis.toFixed(2);
+        return (far)
+    }),
+});

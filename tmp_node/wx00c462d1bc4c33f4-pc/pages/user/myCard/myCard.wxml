@@ -1,0 +1,60 @@
+<view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
+<view class="cardBox" style="background-color:{{chengedColor}}">
+    <image src="{{cardInfos.backgroundPicUrl}}" style="width:300px; height:150px; border-radius:10px;"></image>
+    <view style="position:absolute;width:300px; height:150px;z-index:5;top:20px;">
+        <view style="float:left;width:100%;">
+            <view class="cardName">{{cardName}}</view>
+            <view class="viphycard">VIP会员卡</view>
+        </view>
+        <view class="cardNumber">{{cardNumber}}</view>
+    </view>
+</view>
+<view class="addInfo" style="margin-top:34px;">
+    <view class="nameBox">
+        <view class="name">姓 名：</view>
+        <view class="nameInput">
+            <input bindinput="bindKeyInputName" class="weui-input" maxlength="10" placeholder="{{userName}}"></input>
+        </view>
+    </view>
+    <view class="sexBox">
+        <view class="name">性 别：</view>
+        <view class="sexRadio">
+            <radio-group bindchange="radioChange" class="radio-group">
+                <label class="radio" wx:for="{{cartArr}}">
+                    <radio checked="{{item.checked}}" value="{{item.value}}"></radio>{{item.value}}
+        </label>
+            </radio-group>
+        </view>
+    </view>
+    <view class="birthBox">
+        <view class="name">生 日：</view>
+        <view class="birthPicker" style="float:left;">
+            <view class="section">
+                <picker bindchange="bindDateChange" end="{{zuijiao}}" mode="date" start="" value="{{date}}">
+                    <view class="picker" style="color:#fff;font-size:14px;padding-left:8px;">
+            {{date}}
+          </view>
+                </picker>
+            </view>
+        </view>
+    </view>
+    <view class="ageBox">
+        <view class="name">年 龄：</view>
+        <view class="" style="padding-left:8px;float:left;">{{age}}</view>
+    </view>
+    <view class="telBox">
+        <view class="name">电 话：</view>
+        <view class="telInput">
+            <input bindinput="bindKeyInputPhone" class="weui-input" maxlength="13" placeholder="{{tele}}"></input>
+        </view>
+    </view>
+</view>
+<form reportSubmit bindsubmit="receiveMyCard">
+    <button class="lqhyk" formType="submit">领取会员卡</button>
+</form>
+<button bindtap="goToUser" class="lqhyk" wx:if="{{toGotoActive}}">返回主页</button>
+<button bindtap="goToUser" class="lqhyk" wx:if="{{toGoTuanGou}}">返回主页</button>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

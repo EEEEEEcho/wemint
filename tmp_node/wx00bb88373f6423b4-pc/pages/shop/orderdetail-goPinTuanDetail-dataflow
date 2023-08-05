@@ -1,0 +1,19 @@
+// \pages/shop/orderdetail goPinTuanDetail Data Flow
+digraph {
+	dd4975250ac2494cb3100d53da296698 [label="FunctionCall,
+function name -> goPinTuanDetail,
+param -> t,
+t.,
+" color=blue]
+	"53acc9a32c4942acb6b2a9e7dc65f6b6" [label=SequenceExpression color=blue]
+	cc9b2be88e88400ba3ce4455a1f9abf4 [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"1c32b433922b44a5ba0ec051a8464fa8" [label="Object Properties
+{
+url -> '../fightGroups/fightgroups?pintuan_group_id=' + a.data.pintuan_group_id
+}" color=blue]
+	cc9b2be88e88400ba3ce4455a1f9abf4 -> "1c32b433922b44a5ba0ec051a8464fa8"
+	"53acc9a32c4942acb6b2a9e7dc65f6b6" -> cc9b2be88e88400ba3ce4455a1f9abf4
+	dd4975250ac2494cb3100d53da296698 -> "53acc9a32c4942acb6b2a9e7dc65f6b6"
+}

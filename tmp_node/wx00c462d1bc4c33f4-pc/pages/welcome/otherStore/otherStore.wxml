@@ -1,0 +1,69 @@
+<view style="overflow:{{scroFlag}};max-height:100vh">
+    <view class="container city-tab">
+        <view class="row citys">
+            <view class="col-3 clear-padding-both" wx:for="{{spCitys}}" wx:for-item="spitem" wx:key="key">
+                <text bindtap="fushun" class="city" data-cityname="{{spitem.cityName1}}" data-click-index="{{index}}" style="background-color:{{bgColors[index]}};color:{{wordColors[index]}}">{{spitem.cityName1}}</text>
+            </view>
+            <view bindtap="disOther" style="flex:1 1 auto">
+                <text class="city-ot" style="background-color:{{bgColor}};color:{{wordColor}}">{{othercity}}<text class="iconfont icon-jiantouarrow483"></text>
+                </text>
+            </view>
+        </view>
+    </view>
+    <view class="tab-stores">
+        <view bindtap="gotoIndex" class="container li" data-store-info="{{item}}" data-store-info-delivery-price="{{item.storeInfoDeliveryPrice}}" data-store-name="{{item.storeInfoName}}" data-storeuid="{{item.storeInfoStoreId}}" wx:for="{{stores}}">
+            <view class="row height80">
+                <view class="flex40 clear-padding-right">
+                    <image class="store-img" src="{{item.storeInfoHeadImgUrl}}"></image>
+                </view>
+                <view class="flex60 clear-padding-left flex">
+                    <view class="contr-height">
+                        <text class="store-name">{{item.storeInfoName}}</text>
+                        <text class="store-dis">{{item.distance==null||item.distance==undefined||item.distance>=10000||item.distance==''||item.distance=='0'?'无距离信息':item.distance+'km'}}</text>
+                    </view>
+                    <view>
+                        <text class="store-point">评分</text>
+                        <view wx:for="{{starurls[index]}}" wx:key="id">
+                            <image class="xing" src="{{item.starurl}}"></image>
+                        </view>
+                    </view>
+                    <view>
+                        <text class="store-shoptime">营业时间：{{item.storeInfoBusinessStartTime}}-{{item.storeInfoBusinessEndTime}}</text>
+                    </view>
+                    <view>
+                        <text class="store-position">{{item.storeInfoAddress}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="cover" style="display:{{disFlag}}">
+    <view class="container city-tab guding">
+        <view class="row citys">
+            <view class="col-3"></view>
+            <view class="col-3"></view>
+            <view class="col-3"></view>
+            <view bindtap="resume" class="col-3 clear-padding-both otColor">
+                <text class="city-ot1">{{othercity}}<text class="iconfont icon-jiantouarrow483"></text>
+                </text>
+            </view>
+        </view>
+        <view class="row">
+            <view class="col-3"></view>
+            <view class="col-3"></view>
+            <view class="col-3"></view>
+            <view class="col-3 clear-padding-both">
+                <text class="city-ot2"></text>
+            </view>
+        </view>
+    </view>
+    <view class="container city-tab guding1">
+        <view class="citys citys1">
+            <view class="col-3 control-text" style="float:left;width:25%;" wx:for="{{citys}}" wx:key="key">
+                <text bindtap="area" class="city1" data-cityname="{{item.cityName1}}">{{item.cityName1}}</text>
+            </view>
+            <view class="clear"></view>
+        </view>
+    </view>
+</view>

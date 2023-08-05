@@ -1,0 +1,96 @@
+{
+    "pages": [
+        "pages/shop/index",
+        "pages/shop/shopcart",
+        "pages/shop/productdetail",
+        "pages/shop/productlist",
+        "pages/shop/square",
+        "pages/shop/userorder",
+        "pages/shop/userfinance",
+        "pages/shop/orderdetail",
+        "pages/shop/refundreson",
+        "pages/shop/kuaidi100",
+        "pages/company/mycenter",
+        "pages/company/mycoupon",
+        "pages/shop/collection",
+        "pages/shop/searchPage",
+        "pages/shop/categoryPage",
+        "pages/shop/myinfomation",
+        "pages/shop/customer-service",
+        "pages/shop/integral",
+        "pages/shop/fenxiao",
+        "pages/shop/distribution",
+        "pages/shop/commissionsource",
+        "pages/shop/refundswuliu",
+        "pages/shop/record",
+        "pages/shop/qrcode",
+        "pages/shop/refund",
+        "pages/shop/balance",
+        "pages/shop/recharge",
+        "pages/shop/withdrawal",
+        "pages/shop/team",
+        "pages/shop/refundsuc",
+        "pages/shop/teamContent",
+        "pages/shop/chooseBank",
+        "pages/shop/refundfail",
+        "pages/shop/filtrate",
+        "pages/shop/mymember",
+        "pages/shop/beDistribution",
+        "pages/shop/browseRecord",
+        "pages/fightGroups/productdetail",
+        "pages/fightGroups/fightgroups",
+        "pages/fightGroups/jigsawpuzzle",
+        "pages/order/square",
+        "pages/fightGroups/regulations",
+        "pages/purchaseLimit/purchaseLimit",
+        "pages/purchaseLimit/productdetail",
+        "pages/shop/newslist",
+        "pages/shop/newsdetail",
+        "pages/purchaseLimitOrder/square",
+        "pages/purchaseLimitOrder/orderDetail",
+        "pages/shop/categoryPage_tabbar",
+        "pages/shop/shopcart_tabbar",
+        "pages/company/mycenter_tabbar",
+        "pages/webview/webview"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#000000",
+        "backgroundTextStyle": "light",
+        "enablePullDownRefresh": false,
+        "navigationBarTitleText": "摆线针轮减速机"
+    },
+    "tabBar": {
+        "backgroundColor": "#ffffff",
+        "color": "#999999",
+        "selectedColor": null,
+        "list": [
+            {
+                "pagePath": "pages/shop/index",
+                "text": "首页",
+                "iconPath": "images/tarbaricons/2018010416344225d483.png",
+                "selectedIconPath": "images/tarbaricons/2018010416344225d483.png"
+            },
+            {
+                "pagePath": "pages/shop/categoryPage_tabbar",
+                "text": "全部分类",
+                "iconPath": "images/tarbaricons/201801041710581d0026.png",
+                "selectedIconPath": "images/tarbaricons/201801041710581d0026.png"
+            },
+            {
+                "pagePath": "pages/shop/shopcart_tabbar",
+                "text": "购物车",
+                "iconPath": "images/tarbaricons/201801041634411863cb.png",
+                "selectedIconPath": "images/tarbaricons/201801041634411863cb.png"
+            },
+            {
+                "pagePath": "pages/company/mycenter_tabbar",
+                "text": "我的",
+                "iconPath": "images/tarbaricons/20180104163441ddb782.png",
+                "selectedIconPath": "images/tarbaricons/20180104163441ddb782.png"
+            }
+        ]
+    },
+    "debug": true
+}

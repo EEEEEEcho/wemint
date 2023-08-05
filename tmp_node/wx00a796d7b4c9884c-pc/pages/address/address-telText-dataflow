@@ -1,0 +1,24 @@
+// \pages/address/address telText Data Flow
+digraph {
+	"88024ad6bda5424181b784dbf1e9e826" [label="FunctionCall,
+function name -> telText,
+param -> t,
+t.,
+" color=blue]
+	da54ef2c1e7147f6aa4c08324a8d0cb5 [label=SequenceExpression color=blue]
+	"20f9af9fdcaf4fabb537d3a36f78220a" [label="CallExpression,
+callee name -> console.log,
+param -> t.detail.value,
+" color=blue]
+	da54ef2c1e7147f6aa4c08324a8d0cb5 -> "20f9af9fdcaf4fabb537d3a36f78220a"
+	"597a9408a0ed45c289802306d94fadb1" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	e0df80b9121445ecbbb60ab1c51a9e19 [label="Object Properties
+{
+phone -> t.detail.value
+}" color=blue]
+	"597a9408a0ed45c289802306d94fadb1" -> e0df80b9121445ecbbb60ab1c51a9e19
+	da54ef2c1e7147f6aa4c08324a8d0cb5 -> "597a9408a0ed45c289802306d94fadb1"
+	"88024ad6bda5424181b784dbf1e9e826" -> da54ef2c1e7147f6aa4c08324a8d0cb5
+}

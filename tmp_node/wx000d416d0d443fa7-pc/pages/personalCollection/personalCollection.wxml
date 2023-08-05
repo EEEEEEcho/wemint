@@ -1,0 +1,25 @@
+<view class="container">
+    <view class="fs_12 noCollect" wx:if="{{isEmpty}}">
+        <view class="fc_mgray">您还没有收藏店铺</view>
+        <view bindtap="toIndex" class="toShopList fs_18">随便逛逛</view>
+    </view>
+    <view bindtap="toShop" class="collect" data-shopid="{{item.shop_id}}" data-shoptoken="{{item.shop_token}}" wx:if="{{!isEmpty}}" wx:for="{{userCollect}}">
+        <view class="widC_90 collectItem">
+            <view class="collectLeft">
+                <image src="{{item.logo_path}}"></image>
+            </view>
+            <view class="fs_12 fc_lgray collectMid">
+                <view class="fb fs_14 fc_black">{{item.shop_name}}</view>
+                <icon class="iconfont icon-five-star fc_main shopStar" wx:for="{{item.shopFullStar}}"></icon>
+                <icon class="iconfont icon-bankexing fc_main shopStar" wx:for="{{item.shopHarfStar}}"></icon>
+                <icon class="iconfont icon-icon-test fc_main shopStar" wx:for="{{item.shopNoStar}}"></icon>
+                <view class="minPrice">起送<text class="fc_purple">￥{{item.min_price}}</text>
+                </view>
+            </view>
+            <view catchtap="changeCollect" class="collectBtn" data-id="{{item.collection_id}}">
+                <icon class="iconfont icon-shoucang fs_22 {{item.collection_type==1?'fc_main':'fc_lgray'}}"></icon>
+                <view class="fs_12 collectText">收藏</view>
+            </view>
+        </view>
+    </view>
+</view>

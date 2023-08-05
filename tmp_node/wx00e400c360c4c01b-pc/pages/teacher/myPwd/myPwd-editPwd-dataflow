@@ -1,0 +1,22 @@
+// \pages/teacher/myPwd/myPwd editPwd Data Flow
+digraph {
+	e17f91d78db14b9f8a7e96e472a647bf [label="FunctionCall,
+function name -> editPwd,
+param -> " color=blue]
+	d391e968d4894b27b7dd6c041a1f9f58 [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"18f281a35a0a4ba185e9a4a55612834c" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"54074f42c3ad4b83abc1b4e3f09aec3b" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"61057e1e04d440baacc4ebb598b26d2b" [label="Object Properties
+{
+tId -> e.data.id
+pwd -> e.data.pwdNew
+}" color=blue]
+	"54074f42c3ad4b83abc1b4e3f09aec3b" -> "61057e1e04d440baacc4ebb598b26d2b"
+	"18f281a35a0a4ba185e9a4a55612834c" -> "54074f42c3ad4b83abc1b4e3f09aec3b"
+	d391e968d4894b27b7dd6c041a1f9f58 -> "18f281a35a0a4ba185e9a4a55612834c"
+	e17f91d78db14b9f8a7e96e472a647bf -> d391e968d4894b27b7dd6c041a1f9f58
+}

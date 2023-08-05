@@ -1,0 +1,15 @@
+// \pages/fightGroups/square/index getFreightByAddr Data Flow
+digraph {
+	c13e381e8ed94c9b94be9ec7ac0b24ae [label="FunctionCall,
+function name -> getFreightByAddr,
+param -> " color=blue]
+	"3b3e9f66955146ccbcef2914893697ac" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	cdde0691f44849ab8554fb1de14442e8 [label="Object Properties
+{
+url -> '/index.php?c=front/WxApp/pintuan&a=deliveryFee&district_id=' + e + '&products_str=' + this.data.squareInfo.product_id + '|' + this.data.queryparams.pintuan_product_num + '&ActivityID=' + a.data.ActivityID
+}" color=blue]
+	"3b3e9f66955146ccbcef2914893697ac" -> cdde0691f44849ab8554fb1de14442e8
+	c13e381e8ed94c9b94be9ec7ac0b24ae -> "3b3e9f66955146ccbcef2914893697ac"
+}

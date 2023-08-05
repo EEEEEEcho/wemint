@@ -1,0 +1,84 @@
+.personalHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20rpx;
+    background-color: #ff9800;
+    color: white;
+}
+
+.personalHeaderBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.userHeadImg {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 120rpx;
+    overflow: hidden;
+}
+
+.userInfo {
+    margin-left: 20rpx;
+}
+
+.personalCard {
+    display: flex;
+    align-items: center;
+    border-top: 1rpx solid rgba(9,9,9,.1);
+    border-bottom: 1rpx solid #ff9800;
+}
+
+.personalCardItem:nth-child(2) {
+    border-left: 1rpx solid rgba(9,9,9,.1);
+    border-right: 1rpx solid rgba(9,9,9,.1);
+}
+
+.personalCardItem {
+    width: 33.3%;
+    text-align: center;
+    margin: 10rpx 0;
+}
+
+.personalCardItem view {
+    margin: 10rpx 0;
+}
+
+.myClassItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-bottom: 1rpx solid rgba(9,9,9,.1);
+}
+
+.itemIcon {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+    border-radius: 40rpx;
+    overflow: hidden;
+    background-color: #ff9800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.itemIcon icon {
+    height: 40rpx;
+    font-size: 18px;
+    color: white;
+}
+
+.itemName {
+    display: flex;
+    align-items: center;
+}
+
+.myClass:nth-child(5) {
+    margin-top: 15rpx;
+    border-top: 1rpx solid rgba(9,9,9,.1);
+}

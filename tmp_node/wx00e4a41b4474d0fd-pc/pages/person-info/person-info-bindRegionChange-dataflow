@@ -1,0 +1,23 @@
+// \pages/person-info/person-info bindRegionChange Data Flow
+digraph {
+	"733d764fa01e4cf691c85624c5562055" [label="FunctionCall,
+function name -> bindRegionChange,
+param -> e,
+e.,
+" color=blue]
+	c8cba19803b646ba81eb62a063816bb1 [label=VariableDeclarations color=blue]
+	c3498e606d7c40f1af3358eb2af4a57d [label="VariableDeclarator,
+left -> t,
+right -> e.detail.value" color=blue]
+	c8cba19803b646ba81eb62a063816bb1 -> c3498e606d7c40f1af3358eb2af4a57d
+	"733d764fa01e4cf691c85624c5562055" -> c8cba19803b646ba81eb62a063816bb1
+	"2878f07083814709a95631bb3f239087" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	d263b8566f5747d49a63d1b2e7ffeebd [label="Object Properties
+{
+region -> t
+}" color=blue]
+	"2878f07083814709a95631bb3f239087" -> d263b8566f5747d49a63d1b2e7ffeebd
+	"733d764fa01e4cf691c85624c5562055" -> "2878f07083814709a95631bb3f239087"
+}

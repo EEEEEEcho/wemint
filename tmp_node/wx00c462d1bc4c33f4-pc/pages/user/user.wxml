@@ -1,0 +1,158 @@
+<view class="weui-loadmore" wx:if="{{isRefreshing}}">
+    <view class="weui-loadmore-tips">小程序技术支持2.3.3</view>
+    <view class="weui-loadmore-tips">
+沈阳众德润科技有限公司</view>
+    <view class="weui-loadmore-tips">咨询电话：024-31284032</view>
+</view>
+<view style="display:flex;">
+    <view class="userInfo">
+        <image class="userhead" src="{{userInfo.avatarUrl}}"></image>
+        <view class="vipname">
+            <text class="loginUser">{{wechatUserNickName}}</text>
+            <view class="vip" style="color:{{vipColor}}">VIP会员</view>
+        </view>
+    </view>
+    <view bindtap="getNotice" class="userInfoImgBox">
+        <image class="userInfoImg" src="/images/user_info.png"></image>
+        <text class="userInfoText" wx:if="{{noticeCount>0}}">{{noticeCount}}</text>
+    </view>
+</view>
+<view class="userpour">
+    <view class="userpour_coun1">
+        <view class="coun_box1">
+            <view class="coun_text1">
+                <em class="coun_data1">{{filters.toFix(wechatUserStoreIntegeal*1)==null||filters.toFix(wechatUserStoreIntegeal*1)==''?0:filters.toFix(wechatUserStoreIntegeal*1)}}</em>
+                <em class="coun_data2">分</em>
+            </view>
+            <view class="coun_text2">积分</view>
+        </view>
+    </view>
+    <view class="split-line"></view>
+    <view bindtap="checkCash" class="userpour_coun1">
+        <view class="coun_box2">
+            <view class="coun_text3">
+                <em class="coun_data11">{{wechatUserStoreBalance==null||wechatUserStoreBalance==''?0:wechatUserStoreBalance}}</em>
+                <em class="coun_data22">元</em>
+            </view>
+            <view class="coun_text4">余额</view>
+        </view>
+    </view>
+    <view class="split-line"></view>
+    <view class="userpour_coun1">
+        <view bindtap="checkCoupon" class="coun_box2">
+            <view class="coun_text5">
+                <em class="coun_data111">{{receiveConfigNum==null||receiveConfigNum==''?0:receiveConfigNum}}</em>
+                <em class="coun_data222">张</em>
+            </view>
+            <view class="coun_text6">优惠券</view>
+        </view>
+    </view>
+</view>
+<view bindtap="changeToggle" class="li" data-index="5" wx:if="{{forceShowFlg=='Y'}}">
+    <view class="wid84">
+        <view class="left-border"></view>
+        <view class="left hyk">权益卡</view>
+    </view>
+    <view class="right">
+        <text class="iconfont {{selectedFlag[5]&&isExistenceForce&&forceUseFlg=='Y'?'icon-jiantouarrow483':'icon-angle-up-copy'}}"></text>
+    </view>
+</view>
+<view hidden="{{!selectedFlag[5]||!isExistenceForce||forceUseFlg!='Y'}}">
+    <view bindtap="receiveForceCard" class="li bg-gray">
+        <view class="nav-two">我的权益卡</view>
+    </view>
+</view>
+<view bindtap="changeToggle" class="li" data-index="0" wx:if="{{vipShowFlg=='Y'}}">
+    <view class="wid84">
+        <view class="left-border"></view>
+        <view class="left hyk">会员卡</view>
+    </view>
+    <view class="right">
+        <text class="iconfont {{selectedFlag[0]&&isExistenceVip&&vipUseFlg=='Y'?'icon-jiantouarrow483':'icon-angle-up-copy'}}"></text>
+    </view>
+</view>
+<view hidden="{{!selectedFlag[0]||!isExistenceVip||vipUseFlg!='Y'}}">
+    <view bindtap="myCard" class="li bg-gray">
+        <view class="nav-two">我的会员卡</view>
+    </view>
+    <view bindtap="alterMyCard" class="li bg-gray" style="border-bottom:1px #666 solid;">
+        <view class="nav-two">修改个人信息</view>
+    </view>
+</view>
+<view bindtap="changeToggle" class="li" data-index="1" wx:if="{{vipShowFlg=='Y'}}">
+    <view class="wid84">
+        <view class="left-border"></view>
+        <view class="left yhq">优惠券</view>
+    </view>
+    <view class="right">
+        <text class="iconfont {{selectedFlag[1]?'icon-jiantouarrow483':'icon-angle-up-copy'}}"></text>
+    </view>
+</view>
+<view hidden="{{!selectedFlag[1]}}">
+    <view bindtap="checkCoupon" class="li bg-gray">
+        <view class="nav-two">我的优惠券</view>
+    </view>
+    <view bindtap="couponsCenter" class="li bg-gray">
+        <view class="nav-two">领券中心</view>
+    </view>
+</view>
+<view bindtap="changeToggle" class="li" data-index="2">
+    <view class="wid84">
+        <view class="left-border"></view>
+        <view class="left sjxx">商家信息</view>
+    </view>
+    <view class="right">
+        <text class="iconfont {{selectedFlag[2]?'icon-jiantouarrow483':'icon-angle-up-copy'}}"></text>
+    </view>
+</view>
+<view hidden="{{!selectedFlag[2]}}">
+    <view bindtap="comment" class="li bg-gray">
+        <view class="nav-two">顾客点评</view>
+    </view>
+    <view bindtap="shopNotice" class="li bg-gray">
+        <view class="nav-two">店铺公告</view>
+    </view>
+</view>
+<view bindtap="shippingAddress" class="address" data-index="3" wx:if="{{vipShowFlg=='Y'}}">
+    <view class="wid84">
+        <view class="left-border"></view>
+        <view class="left shdz">收货地址</view>
+    </view>
+    <view class="right">
+        <image src="/images/arrow_up.png" style="width:12px;height:12px;"></image>
+    </view>
+</view>
+<view bindtap="changeToggle" class="li" data-index="7" wx:if="{{shakeShowFlg=='Y'}}">
+    <view class="wid84">
+        <view class="left-border"></view>
+        <view class="left lxwm">摇一摇</view>
+    </view>
+</view>
+<view bindtap="changeToggle" class="li" data-index="4">
+    <view class="wid84">
+        <view class="left-border"></view>
+        <view class="left lxwm">联系我们</view>
+    </view>
+    <view class="right">
+        <text class="iconfont {{selectedFlag[4]?'icon-jiantouarrow483':'icon-angle-up-copy'}}"></text>
+    </view>
+</view>
+<view hidden="{{!selectedFlag[4]}}">
+    <view class="li bg-gray contact-contain">
+        <view class="contact-title">联系人</view>
+        <view class="contact-text">{{contactName}}</view>
+    </view>
+    <view class="li bg-gray contact-contain">
+        <view class="contact-title">电话</view>
+        <view class="contact-text">{{contactTel}}</view>
+    </view>
+    <view class="li bg-gray contact-contain">
+        <view class="contact-title">地址</view>
+        <view class="contact-text">{{contactAddr}}</view>
+    </view>
+</view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>
+<wxs module="filters" src="../../addmu.wxs" />

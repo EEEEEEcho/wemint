@@ -1,0 +1,33 @@
+// \pages/order/pay createProductOrderByWX Data Flow
+digraph {
+	de5639b0ccab4353b9e1e2969fe5ee45 [label="FunctionCall,
+function name -> createProductOrderByWX,
+param -> t,
+t.,
+" color=blue]
+	c85f4e3c74b54415a0ee9b6b3bdac856 [label=SequenceExpression color=blue]
+	"93f408b8db394274bc26d8fea1b0508d" [label="CallExpression,
+callee name -> this.createProductOrder,
+param -> " color=blue]
+	"3cb3aca8d3ff4a968ff3c87f6a77f9b2" [label="FunctionCall,
+function name -> createProductOrder,
+param -> " color=blue]
+	"596a9242ec9d4901bcc50d1f9d63d7c3" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"013bb4647f6143e4b010dcf36dd7ca43" [label="Object Properties
+{
+uid -> a.data.userId
+cart_id -> a.data.cartId
+type -> a.data.paytype
+aid -> a.data.addrId
+remark -> a.data.remark
+price -> a.data.total
+vid -> a.data.vid
+}" color=blue]
+	"596a9242ec9d4901bcc50d1f9d63d7c3" -> "013bb4647f6143e4b010dcf36dd7ca43"
+	"3cb3aca8d3ff4a968ff3c87f6a77f9b2" -> "596a9242ec9d4901bcc50d1f9d63d7c3"
+	"93f408b8db394274bc26d8fea1b0508d" -> "3cb3aca8d3ff4a968ff3c87f6a77f9b2"
+	c85f4e3c74b54415a0ee9b6b3bdac856 -> "93f408b8db394274bc26d8fea1b0508d"
+	de5639b0ccab4353b9e1e2969fe5ee45 -> c85f4e3c74b54415a0ee9b6b3bdac856
+}

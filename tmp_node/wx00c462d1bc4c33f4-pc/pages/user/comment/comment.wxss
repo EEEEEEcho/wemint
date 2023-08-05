@@ -1,0 +1,155 @@
+.gkdp {
+    padding-bottom: 10px;
+}
+
+.gkdpBox {
+    margin-top: 20px;
+    width: 94%;
+}
+
+.gkdpC {
+    color: #fff;
+    border-left: 4px #ffbf00 solid;
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+.gkdp_img {
+    width: 150px;
+    height: 16px;
+}
+
+.scorebox {
+    background: #555;
+    border-radius: 8px;
+    width: 94%;
+    height: 90px;
+    margin: 10px auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.degree {
+    padding-left: 14px;
+    margin-top: 18px;
+}
+
+.grade {
+    text-align: center;
+    color: #ffbf21;
+    font-size: 20px;
+}
+
+.scoreText {
+    color: #ccc;
+    padding-top: 4px;
+    font-size: 16px;
+}
+
+.scoreLine {
+    background: #777;
+    width: 1px;
+    height: 40px;
+    margin-top: 24px;
+}
+
+.variety,.serve,.ambient {
+    margin-top: 18px;
+}
+
+.dispatching {
+    padding-right: 14px;
+    margin-top: 18px;
+}
+
+.wdw {
+    box-sizing: border-box;
+    height: 40px;
+    float: left;
+    margin-top: 14px;
+    width: 50px;
+}
+
+.plbox {
+    border-bottom: 1px #666 solid;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    height: 78px;
+}
+
+.plbox:nth-last-child(1) {
+    margin-bottom: 2px;
+}
+
+.avtar {
+    box-sizing: border-box;
+    border-radius: 100%;
+    border: 1px #fff solid;
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+
+.avxt {
+    float: left;
+    box-sizing: border-box;
+}
+
+.username {
+    color: #999;
+    font-size: 14px;
+    padding-left: 16px;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 24px;
+    line-height: 24px;
+}
+
+.wdwd {
+    float: left;
+    width: 16px;
+    height: 15px;
+    padding-left: 5px;
+}
+
+.start {
+    padding-left: 16px;
+}
+
+.wd {
+    float: left;
+    width: 50%;
+}
+
+.date {
+    font-size: 14px;
+    color: #999;
+    float: right;
+    box-sizing: border-box;
+    line-height: 25px;
+    width: calc(50% - 55px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.textbox {
+    padding-left: 15px;
+    float: left;
+    width: calc(100% - 60px);
+    box-sizing: border-box;
+    height: 24px;
+    line-height: 24px;
+}
+
+.discuss {
+    color: #999;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

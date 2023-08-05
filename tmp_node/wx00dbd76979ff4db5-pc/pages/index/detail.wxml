@@ -1,0 +1,7 @@
+<import src="../../wxParse/wxParse.wxml"></import>
+<view class="k40"></view>
+<view class="title">{{list.title}}</view>
+<view class="time">{{list.update_time}}</view>
+<view class="cont">
+    <rich-text nodes="{{nodes}}"></rich-text>
+</view>

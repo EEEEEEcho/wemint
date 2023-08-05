@@ -1,0 +1,82 @@
+<view class="fixedTopBorder"></view>
+<view class="container">
+    <view class="navbar border1px">
+        <text bindtap="switchNavbar" class="item {{currentTab=='1'?'active':''}}" data-idx="1" data-use="0">未使用</text>
+        <text bindtap="switchNavbar" class="item {{currentTab=='2'?'active':''}}" data-idx="2" data-use="1">已使用</text>
+        <text bindtap="switchNavbar" class="item {{currentTab=='3'?'active':''}}" data-idx="3" data-use="2">已过期</text>
+    </view>
+    <view class="coupon-list">
+        <scroll-view class="coupon1" lowerThreshold="20" scrollY="true" style="height:{{scrollHeight}}rpx;display:{{currentTab=='1'?'block':'none'}}" xw:if="item.Status == 1">
+            <view class="couponGetOver" wx:if="{{mylist.length==0}}">
+                <image mode="widthFix" src="../../images/blank_10.png"></image>
+                <text>没有优惠劵</text>
+            </view>
+            <view class="coupon-item" wx:for="{{mylist}}" wx:key="*this">
+                <view class="item-title {{item.Status==1||item.Expired==1?'used':''}}">
+                    <view class="code">{{item.Amount}}<text>{{item.Type==0?'折':'元'}}</text>
+                    </view>
+                    <view class="title">
+                        <text class="title-coupon">{{item.Type==0?'折扣券':'现金券'}}</text>
+                        <text class="title-tit">{{item.Title}}</text>
+                    </view>
+                </view>
+                <view class="coupon-time">
+                    <view class="jine">
+                        <text>订单满{{item.OrderMoney}}元可使用</text>
+                        <text class="time">有效期至：{{item.ExTime}}</text>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <scroll-view class="coupon1" lowerThreshold="20" scrollY="true" style="height:{{scrollHeight}}rpx;display:{{currentTab=='2'?'block':'none'}}" xw:if="item.Status == 1">
+            <view class="couponGetOver" wx:if="{{mylist.length==0}}">
+                <image mode="widthFix" src="../../images/blank_10.png"></image>
+                <text>亲,没有使用的优惠券</text>
+            </view>
+            <view class="coupon-item " wx:for="{{mylist}}" wx:key="*this">
+                <view class="item-title {{item.Status==1||item.Expired==1?'used':''}}">
+                    <view class="code">{{item.Amount}}<text>{{item.Type==0?'折':'元'}}</text>
+                    </view>
+                    <view class="title">
+                        <text class="title-coupon">{{item.Type==0?'折扣券':'现金券'}}</text>
+                        <text class="title-tit">{{item.Title}}</text>
+                    </view>
+                    <view class="title-img">
+                        <image mode="widthFix" src="../../images/couponstate_11.png"></image>
+                    </view>
+                </view>
+                <view class="coupon-time">
+                    <view class="jine">
+                        <text>满{{item.OrderMoney}}元使用</text>
+                        <text class="time">有效期至：{{item.ExTime}}</text>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <scroll-view xw:else class="coupon1" lowerThreshold="20" scrollY="true" style="height:{{scrollHeight}}rpx;display:{{currentTab=='3'?'block':'none'}}">
+            <view class="couponGetOver" wx:if="{{mylist.length==0}}">
+                <image mode="widthFix" src="../../images/blank_10.png"></image>
+                <text>亲,没有过期的优惠券</text>
+            </view>
+            <view class="coupon-item" wx:for="{{mylist}}" wx:key="*this">
+                <view class="item-title {{item.Status==1||item.Expired==1?'used':''}}">
+                    <view class="code">{{item.Amount}}<text>{{item.Type==0?'折':'元'}}</text>
+                    </view>
+                    <view class="title">
+                        <text class="title-coupon">{{item.Type==0?'折扣券':'现金券'}}</text>
+                        <text class="title-tit">{{item.Title}}</text>
+                    </view>
+                    <view class="title-img">
+                        <image mode="widthFix" src="../../images/couponstate_07.png"></image>
+                    </view>
+                </view>
+                <view class="coupon-time">
+                    <view class="jine">
+                        <text>满{{item.OrderMoney}}元使用</text>
+                        <text class="time">有效期至：{{item.ExTime}}</text>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

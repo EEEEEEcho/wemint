@@ -1,0 +1,26 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="orderList column" style="margin-top: {{navH+status+10}}px;">
+    <view bindtap="toPage" class="itemLayout column" data-index="{{index}}" data-type="订单详情" wx:for="{{orderList}}" wx:for-item="dataItem" wx:key="index">
+        <view class="shopLayout row">
+            <image class="shopLogo" lazyLoad="true" mode="aspectFill" src="{{dataItem.shopLogo}}"></image>
+            <text class="shopName" wx:if="{{dataItem.shopName!=null}}">{{dataItem.shopName}}</text>
+            <view class="statusLayout">
+                <image class="deposit" src="http://oss.shangmian.xin/weixin_applets_order_deposit.png" wx:if="{{goodType==1&&dataItem.payType==2}}"></image>
+                <text class="status">{{orderFilter.getStatus(dataItem)}}</text>
+            </view>
+        </view>
+        <view class="lineStyle"></view>
+        <order-good good="{{item}}" wx:for="{{dataItem.goods}}"></order-good>
+        <view class="totalLayout row">
+            <view class="goodNumber">{{orderFilter.getNumPrice(dataItem)}}</view>
+        </view>
+        <view class="itemBottom row">
+            <text class="seeDetail">查看详情</text>
+            <text catchtap="onGrayClick" class="grayButton" data-good="{{dataItem}}" data-index="{{index}}" wx:if="{{orderFilter.isGrayShow(dataItem)}}">{{orderFilter.getGrayText(dataItem)}}</text>
+            <text catchtap="onRedClick" class="redButton" data-good="{{dataItem}}" data-index="{{index}}" wx:if="{{orderFilter.isRedShow(dataItem,goodType)}}">{{orderFilter.getRedText(dataItem,goodType)}}</text>
+        </view>
+    </view>
+    <empty iconPath="http://oss.shangmian.xin/weixin_applets_icon_order_empty_view.png" isShow="{{orderList.length==0}}" textContent="暂无订单数据"></empty>
+</view>
+<loading-view isShow="{{isShowLoad}}"></loading-view>
+<wxs module="orderFilter" src="orderList.wxs" />

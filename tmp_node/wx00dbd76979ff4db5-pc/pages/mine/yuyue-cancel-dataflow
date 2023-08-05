@@ -1,0 +1,28 @@
+// \pages/mine/yuyue cancel Data Flow
+digraph {
+	"214b8a5e492d4bafb6b40b37bb071535" [label="FunctionCall,
+function name -> cancel,
+param -> t.,
+t,
+" color=blue]
+	c7f5cd730eaa4174a6ff7305aef245db [label=VariableDeclarations color=blue]
+	"82d2a3338d984e17a59b16f2983bc37b" [label="VariableDeclarator,
+left -> o,
+right -> t.currentTarget.dataset.id" color=blue]
+	c7f5cd730eaa4174a6ff7305aef245db -> "82d2a3338d984e17a59b16f2983bc37b"
+	"214b8a5e492d4bafb6b40b37bb071535" -> c7f5cd730eaa4174a6ff7305aef245db
+	"0a016da50cbd4347884f4254605d3a2f" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"4af7ad19c1f2489caf5f377bbce77d73" [label="Object Properties
+{
+id -> o
+}" color=blue]
+	"0a016da50cbd4347884f4254605d3a2f" -> "4af7ad19c1f2489caf5f377bbce77d73"
+	e056938d88eb4e45b4d6d2e6b909d3b9 [label="FunctionCall,
+function name -> success,
+param -> t,
+" color=blue]
+	"0a016da50cbd4347884f4254605d3a2f" -> e056938d88eb4e45b4d6d2e6b909d3b9
+	"214b8a5e492d4bafb6b40b37bb071535" -> "0a016da50cbd4347884f4254605d3a2f"
+}

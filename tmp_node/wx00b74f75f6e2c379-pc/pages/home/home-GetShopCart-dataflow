@@ -1,0 +1,12 @@
+// \pages/home/home GetShopCart Data Flow
+digraph {
+	d2607b5aa2754061bd2a248e0e866ec3 [label="FunctionCall,
+function name -> GetShopCart,
+param -> " color=blue]
+	"6eefff8e63664717bcb68ae82fb0b47b" [label=VariableDeclarations color=blue]
+	a6cc9a0e3d784f2b8885b8962b6491c8 [label="VariableDeclarator,
+left -> tempshopcart,
+right -> that.data.choiceProducts" color=blue]
+	"6eefff8e63664717bcb68ae82fb0b47b" -> a6cc9a0e3d784f2b8885b8962b6491c8
+	d2607b5aa2754061bd2a248e0e866ec3 -> "6eefff8e63664717bcb68ae82fb0b47b"
+}

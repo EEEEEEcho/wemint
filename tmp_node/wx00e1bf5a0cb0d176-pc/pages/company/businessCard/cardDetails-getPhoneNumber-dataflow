@@ -1,0 +1,28 @@
+// \pages/company/businessCard/cardDetails getPhoneNumber Data Flow
+digraph {
+	e2507d677f7a4ef585e23e0adab7d13b [label="FunctionCall,
+function name -> getPhoneNumber,
+param -> " color=blue]
+	bc588bd2c5654c2b998a61fbc33adba0 [label="If Alternate" color=blue]
+	a6f04580b3384787a7cb4a004f49f17c [label=SequenceExpression color=blue]
+	"170aff24ee2e4c1981a3e7bdd60185ba" [label="ConditionalExpression,
+ conditional list -> s.getphone" color=blue]
+	efb7a9cb3e4a4cc19672bee6eb3feeb5 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"9e91170149c34246a424d2b55bd4f06c" [label=SequenceExpression color=blue]
+	c035a887d0d94f69b333698b07883d41 [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	a9a9ed514a9845399b4d1cc5e4b51342 [label="Object Properties
+{
+url -> '/pages/businesscard/chatdialogue/index?UserID=' + s.data.BusinssUserID + '&SiteID=' + s.data.cardsiteID + '&BusinessCardID=' + (s.data.optionsobj.BusinessCardID ? s.data.optionsobj.BusinessCardID : s.data.optionsobj.cid) + '&OtherName=' + s.data.BusinssCardName
+}" color=blue]
+	c035a887d0d94f69b333698b07883d41 -> a9a9ed514a9845399b4d1cc5e4b51342
+	"9e91170149c34246a424d2b55bd4f06c" -> c035a887d0d94f69b333698b07883d41
+	efb7a9cb3e4a4cc19672bee6eb3feeb5 -> "9e91170149c34246a424d2b55bd4f06c"
+	"170aff24ee2e4c1981a3e7bdd60185ba" -> efb7a9cb3e4a4cc19672bee6eb3feeb5
+	a6f04580b3384787a7cb4a004f49f17c -> "170aff24ee2e4c1981a3e7bdd60185ba"
+	bc588bd2c5654c2b998a61fbc33adba0 -> a6f04580b3384787a7cb4a004f49f17c
+	e2507d677f7a4ef585e23e0adab7d13b -> bc588bd2c5654c2b998a61fbc33adba0
+}

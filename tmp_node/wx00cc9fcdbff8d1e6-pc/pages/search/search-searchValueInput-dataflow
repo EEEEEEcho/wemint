@@ -1,0 +1,25 @@
+// \pages/search/search searchValueInput Data Flow
+digraph {
+	"6eea1f8d58784c5490d94a369bfebd6a" [label="FunctionCall,
+function name -> searchValueInput,
+param -> t,
+t.,
+" color=blue]
+	"686b942c145b49c4bd4e1b65b1f1118a" [label=VariableDeclarations color=blue]
+	f5eb894482ef4a9aa2dc3472d4c1e2ac [label="VariableDeclarator,
+left -> a,
+right -> t.detail.value" color=blue]
+	"686b942c145b49c4bd4e1b65b1f1118a" -> f5eb894482ef4a9aa2dc3472d4c1e2ac
+	"6eea1f8d58784c5490d94a369bfebd6a" -> "686b942c145b49c4bd4e1b65b1f1118a"
+	"35ac0beaabce4f3090e3f4a2079457c0" [label=SequenceExpression color=blue]
+	"0c91c1c463db4b52a227062fb97e8bd7" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"5ce150056e1f4968b9d62d9e41b65d64" [label="Object Properties
+{
+searchValue -> a
+}" color=blue]
+	"0c91c1c463db4b52a227062fb97e8bd7" -> "5ce150056e1f4968b9d62d9e41b65d64"
+	"35ac0beaabce4f3090e3f4a2079457c0" -> "0c91c1c463db4b52a227062fb97e8bd7"
+	"6eea1f8d58784c5490d94a369bfebd6a" -> "35ac0beaabce4f3090e3f4a2079457c0"
+}

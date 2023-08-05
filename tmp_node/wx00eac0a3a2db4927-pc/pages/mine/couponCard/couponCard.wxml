@@ -1,0 +1,9 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="couponCard column" style="margin-top: {{navH+status}}px;">
+    <view class="topLayout row">
+        <text bindtap="changTab" class="couponText" data-index="0" style="background:{{selectTab===0?'#ed7b43':'#ffffff'}};color:{{selectTab===0?'#ffffff':'#51515c'}}">劵</text>
+        <text bindtap="changTab" class="cardText" data-index="1" style="background:{{selectTab===1?'#ed7b43':'#ffffff'}};color:{{selectTab===1?'#ffffff':'#51515c'}}">卡</text>
+    </view>
+</view>
+<coupon id="coupon" style="display:{{selectTab==0?'flex':'none'}}"></coupon>
+<card id="card" style="display:{{selectTab==1?'flex':'none'}}"></card>

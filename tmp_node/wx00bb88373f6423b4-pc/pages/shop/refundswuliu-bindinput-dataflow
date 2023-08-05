@@ -1,0 +1,63 @@
+// \pages/shop/refundswuliu bindinput Data Flow
+digraph {
+	fe454c1a8c6f4c43aca2b96d5318c576 [label="FunctionCall,
+function name -> bindinput,
+param -> e,
+e.,
+" color=blue]
+	e41a9c3b974e4efabd3350da76c644e2 [label=VariableDeclarations color=blue]
+	"2263f7f7765748368e92398af3a895de" [label="VariableDeclarator,
+left -> t,
+right -> e.detail.value" color=blue]
+	e41a9c3b974e4efabd3350da76c644e2 -> "2263f7f7765748368e92398af3a895de"
+	fe454c1a8c6f4c43aca2b96d5318c576 -> e41a9c3b974e4efabd3350da76c644e2
+	daa294ad56ba40868d70959a1dfc90be [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"90b62ff0fb0b468e9a77cc2ac3433c23" [label="ConditionalExpression,
+ conditional list -> this.setData,this.setData" color=blue]
+	"07c5d109bebb49dd8944f83ad79ae1ae" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	e9f5d42221db41b58c39ba3f368aa6ba [label="Object Properties
+{
+currentInpOne -> t
+}" color=blue]
+	"07c5d109bebb49dd8944f83ad79ae1ae" -> e9f5d42221db41b58c39ba3f368aa6ba
+	"90b62ff0fb0b468e9a77cc2ac3433c23" -> "07c5d109bebb49dd8944f83ad79ae1ae"
+	ea01e1bbd9cf4bd288eaeb2d34144f68 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"779a342bd125414aadc63d3b53049f22" [label="Object Properties
+{
+logistics -> t
+}" color=blue]
+	ea01e1bbd9cf4bd288eaeb2d34144f68 -> "779a342bd125414aadc63d3b53049f22"
+	"90b62ff0fb0b468e9a77cc2ac3433c23" -> ea01e1bbd9cf4bd288eaeb2d34144f68
+	daa294ad56ba40868d70959a1dfc90be -> "90b62ff0fb0b468e9a77cc2ac3433c23"
+	"4f530537e8a244a9876da96e57c10cd7" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"66e0ef99bf3749b097ed01e4143e3dd4" [label="ConditionalExpression,
+ conditional list -> this.setData,this.setData" color=blue]
+	"480248bf24ee4b9e85e8813a1531a573" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	e3a10444dd05495e9ba16426a7744236 [label="Object Properties
+{
+currentInpTwo -> t
+}" color=blue]
+	"480248bf24ee4b9e85e8813a1531a573" -> e3a10444dd05495e9ba16426a7744236
+	"66e0ef99bf3749b097ed01e4143e3dd4" -> "480248bf24ee4b9e85e8813a1531a573"
+	f600b498579c41ba827cc9f65d667480 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"71de92b027714e1e9c6212ac6e32e47f" [label="Object Properties
+{
+currentInpTwo -> t
+}" color=blue]
+	f600b498579c41ba827cc9f65d667480 -> "71de92b027714e1e9c6212ac6e32e47f"
+	"66e0ef99bf3749b097ed01e4143e3dd4" -> f600b498579c41ba827cc9f65d667480
+	"4f530537e8a244a9876da96e57c10cd7" -> "66e0ef99bf3749b097ed01e4143e3dd4"
+	daa294ad56ba40868d70959a1dfc90be -> "4f530537e8a244a9876da96e57c10cd7"
+	fe454c1a8c6f4c43aca2b96d5318c576 -> daa294ad56ba40868d70959a1dfc90be
+}

@@ -1,0 +1,17 @@
+// \pages/stu/activityPay/activityPay inputMobile Data Flow
+digraph {
+	fe35375b60744905b96d3c6f379263e6 [label="FunctionCall,
+function name -> inputMobile,
+param -> a.,
+a,
+" color=blue]
+	"4a9a2897065342ec939a2980cc994002" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"8f4aeef51b6945c3874347d552b45803" [label="Object Properties
+{
+mobile -> a.detail.value
+}" color=blue]
+	"4a9a2897065342ec939a2980cc994002" -> "8f4aeef51b6945c3874347d552b45803"
+	fe35375b60744905b96d3c6f379263e6 -> "4a9a2897065342ec939a2980cc994002"
+}

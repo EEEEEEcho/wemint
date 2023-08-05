@@ -1,0 +1,21 @@
+// \pages/shop/productdetail addToCart Data Flow
+digraph {
+	"84ebd35f96854bc9b92abe184b8ac56a" [label="FunctionCall,
+function name -> addToCart,
+param -> " color=blue]
+	bdc74d729a6b407fb0018a9f7895cbb7 [label="If Alternate" color=blue]
+	"04827fcd9fb74b11ba5c4186141e05f0" [label=VariableDeclarations color=blue]
+	f3a6ea4760514ddc9b726df115a11520 [label="VariableDeclarator,
+left -> a,
+right -> t.data.cartnum" color=blue]
+	"04827fcd9fb74b11ba5c4186141e05f0" -> f3a6ea4760514ddc9b726df115a11520
+	bdc74d729a6b407fb0018a9f7895cbb7 -> "04827fcd9fb74b11ba5c4186141e05f0"
+	"24db0155435843eb816ec67789947b8e" [label="CallExpression,
+callee name -> e.addProcuctToCart,
+param -> this.data.productInfo.ProductID,
+this.data.SkuID,
+this.data.count,
+" color=blue]
+	bdc74d729a6b407fb0018a9f7895cbb7 -> "24db0155435843eb816ec67789947b8e"
+	"84ebd35f96854bc9b92abe184b8ac56a" -> bdc74d729a6b407fb0018a9f7895cbb7
+}

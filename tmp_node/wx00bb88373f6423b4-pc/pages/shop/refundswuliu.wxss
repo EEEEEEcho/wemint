@@ -1,0 +1,116 @@
+page {
+    background-color: #fff;
+}
+
+.container {
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+.container .imgbox {
+    margin: 10px;
+}
+
+.container .imgbox image {
+    width: 100%;
+}
+
+.hheng {
+    background: #f2f2f2;
+    height: 20rpx;
+}
+
+.tuikuang-text {
+    height: 88rpx;
+    background: #fef3dd;
+    text-align: center;
+    line-height: 88rpx;
+    color: #ff7200;
+    font-size: 30rpx;
+}
+
+.icon-iconfont_select-acti1 {
+    color: #ff7200;
+    padding-right: 10rpx;
+}
+
+.address-title {
+    font-size: 30rpx;
+    color: #ff7200;
+    padding: 30rpx 26rpx 26rpx;
+}
+
+.icon-iconfont_location {
+    font-size: 32rpx;
+    margin-right: 18rpx;
+    margin-top: 18rpx;
+}
+
+.tuikuang-address {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    padding: 0 26rpx 40rpx;
+}
+
+.address-text {
+    font-size: 28rpx;
+    color: #333;
+}
+
+.name {
+    padding-right: 30rpx;
+}
+
+.deail {
+    font-size: 24rpx;
+    color: #333;
+    padding-top: 13rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.logistics {
+    height: 96rpx;
+    font-size: 28rpx;
+    color: #333;
+    line-height: 96rpx;
+    text-align: center;
+}
+
+.logistics-item {
+    display: flex;
+    flex-direction: row;
+    height: 88rpx;
+    padding: 0 26rpx;
+    line-height: 88rpx;
+}
+
+.logistics-item input {
+    width: 70%;
+    height: 88rpx;
+    color: #ccc;
+}
+
+.submit {
+    height: 96rpx;
+    border-radius: 0;
+    border: 0;
+    background: #d2d2d2;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    color: #fff;
+}
+
+.active {
+    background: #ff7200;
+}
+
+.submit::after {
+    content: '';
+    border: 0!important;
+}

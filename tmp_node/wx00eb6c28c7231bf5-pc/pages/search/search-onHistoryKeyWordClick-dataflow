@@ -1,0 +1,88 @@
+// \pages/search/search onHistoryKeyWordClick Data Flow
+digraph {
+	"402be7df8b2e4e748f719dff201c4bb9" [label="FunctionCall,
+function name -> onHistoryKeyWordClick,
+param -> e,
+e.,
+" color=blue]
+	"600fcaad27b8454a95c8a0fe5fa37255" [label=VariableDeclarations color=blue]
+	"160171716025404ca6f4a4442761a645" [label="VariableDeclarator,
+left -> t,
+right -> e.currentTarget.dataset.keyword" color=blue]
+	"600fcaad27b8454a95c8a0fe5fa37255" -> "160171716025404ca6f4a4442761a645"
+	"402be7df8b2e4e748f719dff201c4bb9" -> "600fcaad27b8454a95c8a0fe5fa37255"
+	"9756784a66b0452f952e1fa6ebbfb063" [label="CallExpression,
+callee name -> this.gotoSearch,
+param -> t,
+" color=blue]
+	"4b2e9263dd734c71a14c52f295b13355" [label="FunctionCall,
+function name -> gotoSearch,
+param -> e,
+e.,
+" color=blue]
+	"55bfa1931beb49ce965370716557d575" [label="If Alternate" color=blue]
+	f4c374683c224f6e8567088b083eab4e [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	ba513db185fb41d2beac0f3b8bbb75b8 [label="Object Properties
+{
+data -> e
+}" color=blue]
+	f4c374683c224f6e8567088b083eab4e -> ba513db185fb41d2beac0f3b8bbb75b8
+	"55bfa1931beb49ce965370716557d575" -> f4c374683c224f6e8567088b083eab4e
+	"43a04e20a93747bbb95de868e7fc0bcd" [label=SequenceExpression color=blue]
+	"69699f8106de41df8f2cf607b7d41978" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	bbddf66a26a243eea0235b82d0044073 [label="-None" color=blue]
+	b4c38b28903c40898cbd87da88d52679 [label="CallExpression,
+callee name -> o.join(',').indexOf,
+param -> e,
+" color=blue]
+	bbddf66a26a243eea0235b82d0044073 -> b4c38b28903c40898cbd87da88d52679
+	"69699f8106de41df8f2cf607b7d41978" -> bbddf66a26a243eea0235b82d0044073
+	"2d66881ce3bc4e53a84fefe1eff110a3" [label="CallExpression,
+callee name -> o.push,
+param -> e,
+" color=blue]
+	"69699f8106de41df8f2cf607b7d41978" -> "2d66881ce3bc4e53a84fefe1eff110a3"
+	"43a04e20a93747bbb95de868e7fc0bcd" -> "69699f8106de41df8f2cf607b7d41978"
+	"55bfa1931beb49ce965370716557d575" -> "43a04e20a93747bbb95de868e7fc0bcd"
+	"9d8cfb3a78624308a7d8a8fcd26f47c7" [label=VariableDeclarations color=blue]
+	d2ccb72602f647079043887f63fcbdca [label="VariableDeclarator,
+left -> a,
+right -> t.data.GoToUrl + '?keyword=' + e" color=blue]
+	"9d8cfb3a78624308a7d8a8fcd26f47c7" -> d2ccb72602f647079043887f63fcbdca
+	"55bfa1931beb49ce965370716557d575" -> "9d8cfb3a78624308a7d8a8fcd26f47c7"
+	b7929e37378d466193e3a376cff6a155 [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	de974480977e40bc819fed0673add5db [label=SequenceExpression color=blue]
+	"919757dda07043c2b120b0ff27fd2677" [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	"957f3a8df72e4856ab3e5aa8a2149b20" [label="Object Properties
+{
+url -> a
+}" color=blue]
+	"919757dda07043c2b120b0ff27fd2677" -> "957f3a8df72e4856ab3e5aa8a2149b20"
+	de974480977e40bc819fed0673add5db -> "919757dda07043c2b120b0ff27fd2677"
+	b7929e37378d466193e3a376cff6a155 -> de974480977e40bc819fed0673add5db
+	b6cf4f8b70b14f03b8850762456346e9 [label="CallExpression,
+callee name -> wx.switchTab,
+param -> " color=blue]
+	"87acf39f8f6f4367b6fc54460c0deecb" [label="Object Properties
+{
+url -> a
+}" color=blue]
+	b6cf4f8b70b14f03b8850762456346e9 -> "87acf39f8f6f4367b6fc54460c0deecb"
+	be8f199a16044b6c906618cf00c05283 [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	b6cf4f8b70b14f03b8850762456346e9 -> be8f199a16044b6c906618cf00c05283
+	b7929e37378d466193e3a376cff6a155 -> b6cf4f8b70b14f03b8850762456346e9
+	"55bfa1931beb49ce965370716557d575" -> b7929e37378d466193e3a376cff6a155
+	"4b2e9263dd734c71a14c52f295b13355" -> "55bfa1931beb49ce965370716557d575"
+	"9756784a66b0452f952e1fa6ebbfb063" -> "4b2e9263dd734c71a14c52f295b13355"
+	"402be7df8b2e4e748f719dff201c4bb9" -> "9756784a66b0452f952e1fa6ebbfb063"
+}

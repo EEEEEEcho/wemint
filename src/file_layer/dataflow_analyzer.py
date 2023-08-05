@@ -1,18 +1,9 @@
 from loguru import logger
 from bs4 import BeautifulSoup
 from utils.page_data import PageData
-from pojo.miniprogram import MiniProgram
-from utils import utils
 import strategy.trace_variable_strategy as tvs
-import file_layer.taint_analyzer as ja
 import utils.painter as painter
 import os
-import copy
-
-
-# analyzed_tag = {
-#     'input'
-# }
 
 
 def find_event_element(xml_path: str):

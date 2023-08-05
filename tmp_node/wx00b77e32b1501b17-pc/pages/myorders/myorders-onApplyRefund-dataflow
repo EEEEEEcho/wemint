@@ -1,0 +1,23 @@
+// \pages/myorders/myorders onApplyRefund Data Flow
+digraph {
+	"249bcafcf2d04a2ea26f4b50a3547582" [label="FunctionCall,
+function name -> onApplyRefund,
+param -> e,
+e.,
+" color=blue]
+	b198b66fd3d647d09a9d9a29eb8a5b3a [label=VariableDeclarations color=blue]
+	"5bdd32d0a5944c2da5474d93486e1769" [label="VariableDeclarator,
+left -> i,
+right -> e.target.id" color=blue]
+	b198b66fd3d647d09a9d9a29eb8a5b3a -> "5bdd32d0a5944c2da5474d93486e1769"
+	"249bcafcf2d04a2ea26f4b50a3547582" -> b198b66fd3d647d09a9d9a29eb8a5b3a
+	ce6f05f1a2aa4a15b9e9d2e72fcbef48 [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	c7efae5fea6c47869bee0bc2df8114ae [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	ce6f05f1a2aa4a15b9e9d2e72fcbef48 -> c7efae5fea6c47869bee0bc2df8114ae
+	"249bcafcf2d04a2ea26f4b50a3547582" -> ce6f05f1a2aa4a15b9e9d2e72fcbef48
+}

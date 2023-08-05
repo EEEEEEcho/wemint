@@ -1,0 +1,44 @@
+// \pages/multiroom/room/room exit Data Flow
+digraph {
+	"26583fa17ea144a1a8d260f8068cc015" [label="FunctionCall,
+function name -> exit,
+param -> " color=blue]
+	"6e855ebdec6b4aef9c0501362971ec54" [label="If Alternate" color=blue]
+	"92c03f40efbe4239b4b567ae84890f34" [label=VariableDeclarations color=blue]
+	"926c9d80584845689718403e098f090e" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	e96d5c4c7fff4413ae19eb8448778cfd [label="CallExpression,
+callee name -> Math.floor,
+param -> (t.data.endTime - t.data.startTime) / 1000,
+" color=blue]
+	"926c9d80584845689718403e098f090e" -> e96d5c4c7fff4413ae19eb8448778cfd
+	"92c03f40efbe4239b4b567ae84890f34" -> "926c9d80584845689718403e098f090e"
+	"6e855ebdec6b4aef9c0501362971ec54" -> "92c03f40efbe4239b4b567ae84890f34"
+	"26583fa17ea144a1a8d260f8068cc015" -> "6e855ebdec6b4aef9c0501362971ec54"
+	"964d994cc7f64462ab67ae947e2251dd" [label=VariableDeclarations color=blue]
+	d3b1ad423bbf4fcda031e8084f167024 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	b545389730124f4c96af9394d3cc9c1a [label="Object Properties
+{
+}" color=blue]
+	"2e9f62cb6f2449739fa75c601d88288f" [label="ConditionalExpression,
+ conditional list -> t.formatDate" color=blue]
+	b545389730124f4c96af9394d3cc9c1a -> "2e9f62cb6f2449739fa75c601d88288f"
+	"0cfe9ba8b5a943cbaa2edbbccaf20637" [label="ConditionalExpression,
+ conditional list -> t.formatDate" color=blue]
+	b545389730124f4c96af9394d3cc9c1a -> "0cfe9ba8b5a943cbaa2edbbccaf20637"
+	d3b1ad423bbf4fcda031e8084f167024 -> b545389730124f4c96af9394d3cc9c1a
+	"964d994cc7f64462ab67ae947e2251dd" -> d3b1ad423bbf4fcda031e8084f167024
+	"26583fa17ea144a1a8d260f8068cc015" -> "964d994cc7f64462ab67ae947e2251dd"
+	ed8f7a5637764f579555766ea1299f2f [label=SequenceExpression color=blue]
+	b8ce7917651e4d36a95afab4110b9f48 [label="CallExpression,
+callee name -> console.log,
+param -> this.data.evaluateFlag,
+t.data.endTime,
+t.data.startTime,
+" color=blue]
+	ed8f7a5637764f579555766ea1299f2f -> b8ce7917651e4d36a95afab4110b9f48
+	"26583fa17ea144a1a8d260f8068cc015" -> ed8f7a5637764f579555766ea1299f2f
+}

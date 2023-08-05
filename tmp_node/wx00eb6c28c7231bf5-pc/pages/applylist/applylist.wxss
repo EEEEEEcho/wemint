@@ -1,0 +1,132 @@
+page {
+    background: #f5f5f5;
+    border-top: 1rpx solid #e0e0e0;
+    color: #212121;
+}
+
+.font-arial {
+    font-family: Arial;
+}
+
+.applylist {
+    overflow: hidden;
+}
+
+.applylist .item {
+    margin-top: 24rpx;
+    overflow: hidden;
+    font-size: 28rpx;
+}
+
+.item .hd {
+    height: 92rpx;
+    line-height: 92rpx;
+    background: #fff;
+    overflow: hidden;
+    padding: 0 24rpx;
+}
+
+.item .hd .num {
+    float: left;
+}
+
+.item .hd .state {
+    float: right;
+    color: #ff5722;
+}
+
+.item .bd {
+    background: #f9f9f9;
+    padding: 16rpx 24rpx;
+    overflow: hidden;
+}
+
+.item .bd .comm {
+    overflow: hidden;
+    padding: 16rpx 0;
+    border-bottom: 1rpx solid #e0e0e0;
+}
+
+.item .bd .comm:last-child {
+    border-bottom: 0;
+}
+
+.item .bd .pic {
+    float: left;
+    width: 130rpx;
+    border: 1rpx solid #e0e0e0;
+    margin-right: 18rpx;
+}
+
+.item .bd .pic image {
+    width: 128rpx;
+    height: 128rpx;
+}
+
+.item .bd .info {
+    float: left;
+    width: 400rpx;
+    margin-right: 18rpx;
+}
+
+.item .bd .info .name {
+    height: 70rpx;
+    line-height: 35rpx;
+    overflow: hidden;
+}
+
+.item .bd .info .para {
+    margin-top: 18rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+    color: #747474;
+}
+
+.item .bd .price {
+    float: right;
+    width: 120rpx;
+    height: 70rpx;
+    line-height: 35rpx;
+    overflow: hidden;
+    text-align: right;
+}
+
+.item .fd {
+    background: #fff;
+    overflow: hidden;
+}
+
+.item .fd .money {
+    text-align: right;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 24rpx;
+    border-bottom: 1rpx solid #e0e0e0;
+}
+
+.item .fd .trade {
+    color: #747474;
+    margin-right: 20rpx;
+}
+
+.item .fd .refund {
+    color: #424242;
+}
+
+.item .fd .operate {
+    height: 64rpx;
+    padding: 24rpx;
+    text-align: right;
+}
+
+.operate .btn-apply {
+    border: 1rpx solid #ff5722;
+    background: #fff;
+    width: 120rpx;
+    height: 62rpx;
+    color: #ff5722;
+    float: right;
+    line-height: 62rpx;
+    font-size: 28rpx;
+}

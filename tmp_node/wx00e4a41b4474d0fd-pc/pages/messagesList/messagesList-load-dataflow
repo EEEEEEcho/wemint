@@ -1,0 +1,15 @@
+// \pages/messagesList/messagesList load Data Flow
+digraph {
+	cf784cadaab44c1cb4873eccdad44a41 [label="FunctionCall,
+function name -> load,
+param -> e,
+e.,
+" color=blue]
+	b86f69028f6f4951830f4131c35abdaa [label=SequenceExpression color=blue]
+	"1518bbb343e649f2bb377fd51ecdac19" [label="CallExpression,
+callee name -> console.log,
+param -> e,
+" color=blue]
+	b86f69028f6f4951830f4131c35abdaa -> "1518bbb343e649f2bb377fd51ecdac19"
+	cf784cadaab44c1cb4873eccdad44a41 -> b86f69028f6f4951830f4131c35abdaa
+}

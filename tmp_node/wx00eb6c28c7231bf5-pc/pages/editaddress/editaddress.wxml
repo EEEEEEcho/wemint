@@ -1,0 +1,38 @@
+<view class="loginpassword borderbott0m">
+    <text>收货人:</text>
+    <input bindinput="bindShipToTap" maxlength="-1" placeholder="请填写收货人姓名" type="text" value="{{addressData.ShipTo}}"></input>
+</view>
+<view class="loginpassword borderbott0m">
+    <text>联系电话:</text>
+    <input bindinput="bindCellPhoneTap" maxlength="-1" placeholder="请填写联系方式" type="text" value="{{addressData.CellPhone}}"></input>
+</view>
+<view class="loginpassword borderbott0m">
+    <text>所在地区:</text>
+    <text bindtap="bindFullAddressTap" class="regionname" maxlength="-1">{{FullRegionName}}</text>
+</view>
+<view class="loginpasstext borderbott0m">
+    <text>详细地址:</text>
+    <textarea bindinput="bindAddressTap" placeholder="请输入小区、楼号门牌号等信息" value="{{addressData.Address}}"></textarea>
+</view>
+<view class="xinzheng">
+    <button bindtap="bindSaveTapTap">保存</button>
+</view>
+<view class="distpicker {{showDistpicker?'':'hidden'}}" wx:if="{{showDistpicker}}">
+    <view class="distpicker-btn">
+        <view bindtap="distpickerCancel" class="distpicker-cancel-btn">取消</view>
+        <view bindtap="distpickerSure" class="distpicker-sure-btn">确定</view>
+    </view>
+    <picker-view bindchange="changeArea" class="distpicker-content" indicatorStyle="height: 40px;" value="{{value}}">
+        <picker-view-column>
+            <view class="area-item" wx:for="{{provinceName}}" wx:key="province">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view class="area-item" wx:for="{{cityName}}" wx:key="city">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view class="area-item" wx:for="{{districtName}}" wx:key="district">{{item}}</view>
+        </picker-view-column>
+    </picker-view>
+</view>
+<view catchtap="distpickerCancel" class="mask" hidden="{{!showDistpicker}}"></view>
+<view class="message {{showMessage?'fade-in':''}}" hidden="{{!showMessage}}">{{messageContent}}</view>

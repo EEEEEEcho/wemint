@@ -1,0 +1,26 @@
+<template name="ModuleSlide">
+    <swiper autoplay="true" circular="true" duration="200" indicatorDots="{{m.Links.length<=1?'':'true'}}" interval="5000" style="height:{{extendMethod.calHeight(m.HeightPercent,globaldata.sysInfo.windowWidth,m.PaddingLR)}}px;" wx:if="{{m.ShowType==0}}">
+        <swiper-item bindtap="navTo" data-linkid="{{item.LinkID}}" data-linktype="{{item.LinkType}}" wx:for="{{m.Links}}" wx:key="index">
+            <image bindload="M_slideImgLoad" class="slide-image" data-moduleid="{{m.ModuleID}}" src="{{globaldata.appGlobalData.siteBaseUrl}}{{item.Image}}" style="width:100%;height:100%;" wx:if="{{item.Image}}"></image>
+            <view style="text-align:center;line-height:200px;background:#eee;border:1px solid #ddd;" wx:else>
+                广告图片
+            </view>
+        </swiper-item>
+    </swiper>
+    <view wx:if="{{m.ShowType==1}}">
+        <view bindtap="navTo" class="item-image" data-linkid="{{item.LinkID}}" data-linktype="{{item.LinkType}}" wx:for="{{m.Links}}" wx:key="index">
+            <image mode="widthFix" src="{{globaldata.appGlobalData.siteBaseUrl}}{{item.Image}}" style="width:100%;" wx:if="{{item.Image}}"></image>
+            <view style="text-align:center;line-height:200px;background:#eee;border:1px solid #ddd;" wx:else>
+                广告图片
+            </view>
+        </view>
+    </view>
+</template>
+<wxs module="extendMethod">
+var calHeight = (function(heightPercent, width, ispaddinglr) {
+    return (width - (ispaddinglr ? 20 : 0)) * heightPercent / 100
+});
+module.exports = ({
+    calHeight: calHeight,
+});
+</wxs>

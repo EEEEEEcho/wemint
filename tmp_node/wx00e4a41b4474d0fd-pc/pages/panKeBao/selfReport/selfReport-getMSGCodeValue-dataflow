@@ -1,0 +1,23 @@
+// \pages/panKeBao/selfReport/selfReport getMSGCodeValue Data Flow
+digraph {
+	"7bd09848a40142bf92c2ba0599993732" [label="FunctionCall,
+function name -> getMSGCodeValue,
+param -> e,
+e.,
+" color=blue]
+	a1f10e1d8fe3447f9cf64a867b03517f [label=VariableDeclarations color=blue]
+	"8cbd4c39ddbf43c1b8544c6955639e69" [label="VariableDeclarator,
+left -> t,
+right -> e.detail.value" color=blue]
+	a1f10e1d8fe3447f9cf64a867b03517f -> "8cbd4c39ddbf43c1b8544c6955639e69"
+	"7bd09848a40142bf92c2ba0599993732" -> a1f10e1d8fe3447f9cf64a867b03517f
+	"74221bae65bc43c4aa7ead90cf8c26c9" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"0c39d5878c174cbda20a1a49d4a22e38" [label="Object Properties
+{
+msgCode -> t
+}" color=blue]
+	"74221bae65bc43c4aa7ead90cf8c26c9" -> "0c39d5878c174cbda20a1a49d4a22e38"
+	"7bd09848a40142bf92c2ba0599993732" -> "74221bae65bc43c4aa7ead90cf8c26c9"
+}

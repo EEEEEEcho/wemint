@@ -1,0 +1,23 @@
+// \pages/cars/jingpin detail Data Flow
+digraph {
+	"1e39e8fcaa0440929fb92396e89dc55a" [label="FunctionCall,
+function name -> detail,
+param -> a.,
+a,
+" color=blue]
+	"37878ab72f3347cda0a1cadc9718c5b4" [label=VariableDeclarations color=blue]
+	"09a509f64ccd40caa219b47f9cae1745" [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.id" color=blue]
+	"37878ab72f3347cda0a1cadc9718c5b4" -> "09a509f64ccd40caa219b47f9cae1745"
+	"1e39e8fcaa0440929fb92396e89dc55a" -> "37878ab72f3347cda0a1cadc9718c5b4"
+	"14a0b1a598bf4610ab3eb6b76460add4" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	fbad6c66ba8544c6a96393df973fd1fc [label="Object Properties
+{
+url -> '/pages/cars/detail?id=' + t
+}" color=blue]
+	"14a0b1a598bf4610ab3eb6b76460add4" -> fbad6c66ba8544c6a96393df973fd1fc
+	"1e39e8fcaa0440929fb92396e89dc55a" -> "14a0b1a598bf4610ab3eb6b76460add4"
+}

@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "navigate": "/components/navigate/navigate",
+        "order-good": "/components/orderGood/orderGood",
+        "loading-view": "/components/loading/loading",
+        "empty": "/components/emptyView/emptyView"
+    },
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 300
+}

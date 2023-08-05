@@ -1,0 +1,16 @@
+// \pages/person/person submit Data Flow
+digraph {
+	"9c4ab6117ad248bdb602d9f9858a543c" [label="FunctionCall,
+function name -> submit,
+param -> " color=blue]
+	a470e1c0c57a4884aa3dfa5133e257e2 [label=VariableDeclarations color=blue]
+	"08317e5ce5684a5fb134c7da213cb11e" [label="VariableDeclarator,
+left -> a,
+right -> t.data.mobile" color=blue]
+	a470e1c0c57a4884aa3dfa5133e257e2 -> "08317e5ce5684a5fb134c7da213cb11e"
+	"7d1e30b893264af8ad708f140bbb8fa9" [label="VariableDeclarator,
+left -> o,
+right -> t.data.code" color=blue]
+	a470e1c0c57a4884aa3dfa5133e257e2 -> "7d1e30b893264af8ad708f140bbb8fa9"
+	"9c4ab6117ad248bdb602d9f9858a543c" -> a470e1c0c57a4884aa3dfa5133e257e2
+}

@@ -1,0 +1,17 @@
+// \pages/tourist/activityPay/activityPay inputMobile Data Flow
+digraph {
+	"6c69fa7c168f4a4daedafa680fbaf880" [label="FunctionCall,
+function name -> inputMobile,
+param -> e,
+e.,
+" color=blue]
+	"784bd78156514e3891335433250ea219" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	a7fea2c145684c0dad01e00ff0d9ce94 [label="Object Properties
+{
+mobile -> e.detail.value
+}" color=blue]
+	"784bd78156514e3891335433250ea219" -> a7fea2c145684c0dad01e00ff0d9ce94
+	"6c69fa7c168f4a4daedafa680fbaf880" -> "784bd78156514e3891335433250ea219"
+}

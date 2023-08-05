@@ -1,0 +1,18 @@
+<view class="container">
+    <view class="userinfoimage borderbott0m">
+        <image backgroundSize="cover" class="userinfo-image" src="/images/logo.jpg"></image>
+    </view>
+    <view class="loginpassword borderbott0m">
+        <text>账号:</text>
+        <input bindinput="bindUserNameInput" maxlength="20" name="username" placeholder="请输入用户命/邮箱/手机" type="text"></input>
+    </view>
+    <view class="loginpassword borderbott0m">
+        <text>密码:</text>
+        <input password bindinput="bindPwdInput" maxlength="20" name="password" placeholder="请输入密码"></input>
+    </view>
+    <view class="tjiaoname">
+        <button bindtap="loginbyUser" class="other-button-hover" disabled="{{disabled}}"> 登录 </button>
+        <button bindgetuserinfo="onGotUserInfo" lang="zh_CN" openType="getUserInfo" type="primary">微信信任登录</button>
+        <button bindtap="quickLogin" hidden="true" type="primary"> 微信信任登录 </button>
+    </view>
+</view>

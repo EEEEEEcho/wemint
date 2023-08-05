@@ -1,0 +1,4 @@
+<include src="distribution-inc.wxml"></include>
+<include src="beDistribution-inc.wxml"></include>
+<include src="/pages/common/phoneauthorization/index.wxml"></include>
+<include src="/pages/common/popout/index.wxml"></include>

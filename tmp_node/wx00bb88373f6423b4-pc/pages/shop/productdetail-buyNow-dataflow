@@ -1,0 +1,35 @@
+// \pages/shop/productdetail buyNow Data Flow
+digraph {
+	"032b4f4504564a019dc1f28104f5ae4c" [label="FunctionCall,
+function name -> buyNow,
+param -> " color=blue]
+	"70c8bb1d198d4d8e889e5a446095f59f" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"8ee0d39f95d3441cb324030afedd7e46" [label=SequenceExpression color=blue]
+	"0ab3494606f04e08b71b8ec1e84b67f5" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"21c7393784fd4a36b29ede1a7b1f8a24" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"285f542577924b169d3e731d5db4271d" [label="CallExpression,
+callee name -> e.addProcuctToCart,
+param -> this.data.productInfo.ProductID,
+this.data.SkuID,
+this.data.count,
+" color=blue]
+	"21c7393784fd4a36b29ede1a7b1f8a24" -> "285f542577924b169d3e731d5db4271d"
+	"0ab3494606f04e08b71b8ec1e84b67f5" -> "21c7393784fd4a36b29ede1a7b1f8a24"
+	fb4ab35c17904273b9e593635690204a [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"096a6cc268f54437af1229d3bc57150e" [label="CallExpression,
+callee name -> e.addProcuctToCart,
+param -> this.data.productInfo.ProductID,
+this.data.SkuID,
+this.data.count,
+" color=blue]
+	fb4ab35c17904273b9e593635690204a -> "096a6cc268f54437af1229d3bc57150e"
+	"0ab3494606f04e08b71b8ec1e84b67f5" -> fb4ab35c17904273b9e593635690204a
+	"8ee0d39f95d3441cb324030afedd7e46" -> "0ab3494606f04e08b71b8ec1e84b67f5"
+	"70c8bb1d198d4d8e889e5a446095f59f" -> "8ee0d39f95d3441cb324030afedd7e46"
+	"032b4f4504564a019dc1f28104f5ae4c" -> "70c8bb1d198d4d8e889e5a446095f59f"
+}

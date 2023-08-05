@@ -1,0 +1,363 @@
+.scroll {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+}
+
+.scroll .like {
+    position: absolute;
+    font-size: 20rpx;
+    right: 20rpx;
+    bottom: 30rpx;
+    color: red;
+}
+
+.btnBox {
+    position: absolute;
+    right: 30rpx;
+    top: 30rpx;
+    z-index: 9;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.tuji_shouye {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.tuji_share {
+    width: 60rpx;
+    height: 60rpx;
+    margin-left: 20rpx;
+}
+
+.shareOptions {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.3);
+    z-index: 200;
+}
+
+.boxCon {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background: #fff;
+    z-index: 10;
+    vertical-align: middle;
+}
+
+.shareType {
+    display: inline-block;
+    margin: 64rpx 0;
+    vertical-align: middle;
+    background: transparent;
+    line-height: 1.5;
+}
+
+.shareword {
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #272A34;
+    letter-spacing: 0;
+    line-height: 30rpx;
+}
+
+.shareType i {
+    display: inline-block;
+    width: 35rpx;
+    height: 40rpx;
+    background: url("https://dm.static.elab-plus.com/tfb_icon_foot/download_img.png")no-repeat center center/100% 100%;
+}
+
+.haoyou {
+    margin-left: 180rpx;
+}
+
+.haoyou i {
+    width: 50rpx;
+    height: 40rpx;
+    background-image: url("https://dm.static.elab-plus.com/tfb_icon_foot/share_img.png");
+}
+
+.likeView {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 315rpx;
+    right: 30rpx;
+    color: white;
+    font-size: 22rpx;
+    z-index: 9;
+}
+
+.unread-form {
+    width: 590rpx;
+    height: 60rpx;
+}
+
+.unread-form .btn {
+    position: relative;
+    width: 590rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 20rpx;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: nowrap;
+    background-color: transparent;
+    overflow: visible;
+    padding: 0rpx;
+    margin: 0rpx;
+    border-radius: 0rpx;
+    text-align: left;
+}
+
+button::after {
+    border: none;
+}
+
+.imView {
+    box-sizing: border-box;
+    position: absolute;
+    width: 590rpx;
+    height: 60rpx;
+    left: 30rpx;
+    bottom: 300rpx;
+    background-color: transparent;
+    z-index: 9;
+    text-align: left;
+}
+
+.imView-bg {
+    box-sizing: border-box;
+    position: absolute;
+    width: 750rpx;
+    height: 150rpx;
+    left: 0rpx;
+    bottom: 260rpx;
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,#1A1B20 100%);
+    z-index: 8;
+}
+
+.edit_icon {
+    position: absolute;
+    top: 0rpx;
+    left: 0rpx;
+    width: 60rpx;
+    height: 60rpx;
+    display: inline-block;
+    vertical-align: middle;
+    z-index: 2;
+}
+
+.backView {
+    display: block;
+    position: absolute;
+    border-radius: 45rpx;
+    top: 0rpx;
+    left: 0rpx;
+    width: 590rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    opacity: 0.2;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.edit_word {
+    display: block;
+    position: absolute;
+    color: #FFFFFF;
+    top: 0rpx;
+    padding-left: 80rpx;
+    width: 590rpx;
+    height: 60rpx;
+    font-size: 20rpx;
+    line-height: 60rpx;
+    opacity: 0.4;
+    box-sizing: border-box;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.sfimg {
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    transform-origin: center;
+}
+
+.imgItem {
+    width: 100%;
+    height: calc(100vh - 320rpx);
+}
+
+.container {
+    height: calc(100vh - 100rpx);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+}
+
+.container.isFullScreen {
+    height: calc(100vh - 140rpx);
+}
+
+.scrollMsgItem {
+    height: 100%;
+    width: 100%;
+}
+
+.swip-desc {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    height: 260rpx;
+    color: #fff;
+    background: rgb(27,29,36);
+}
+
+.swip-desc-back {
+    top: 0rpx;
+    left: 0rpx;
+    background: rgb(27,29,36);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.swip-desc .swip-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx 20rpx 0rpx 20rpx;
+    color: #fff;
+    font-size: 32rpx;
+    z-index: 9;
+}
+
+.swip-desc .swip-text {
+    position: absolute;
+    padding: 20rpx;
+    color: #fff;
+    opacity: 0.49;
+    font-size: 22rpx;
+    line-height: 22rpx;
+    z-index: 9;
+}
+
+.swip-tab {
+    background: #474952;
+    height: 100rpx;
+    z-index: 20;
+}
+
+.swip-tab .top {
+    height: 100rpx;
+    padding-top: 14rpx;
+    padding-left: 20rpx;
+    padding-right: 0rpx;
+    box-sizing: border-box;
+}
+
+.swip-tab .tab-box {
+    float: left;
+    margin-right: 40rpx;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    height: 68rpx;
+    font-size: 28rpx;
+    background: #272a34;
+    color: #939499;
+    text-align: center;
+    line-height: 64rpx;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+}
+
+.swip-tab .tab-box:last-child {
+    margin-right: 0rpx;
+}
+
+.chosed {
+    background-image: linear-gradient(-270deg,#6294A6 0%,#3A4A80 100%);
+    border: 2px solid #FFFFFF;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn1 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.49;
+    }
+}
+
+@keyframes fadeIn1 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.49;
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 1s both;
+}
+
+.fadeIn1 {
+    animation: fadeIn1 1s both;
+}
+
+.fadeOut {
+    opacity: 0!important;
+}
+
+.noindex {
+    width: 145rpx;
+    height: 80rpx;
+}

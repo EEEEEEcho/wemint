@@ -1,0 +1,15 @@
+// \pages/shop/square getFreightByAddr Data Flow
+digraph {
+	"7787733116e34eaabd84bd566fc08010" [label="FunctionCall,
+function name -> getFreightByAddr,
+param -> " color=blue]
+	"4fceee292dbb4083936a74b474a24e9b" [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	e420c70c73814802a8f993d46f14370d [label="Object Properties
+{
+url -> '/index.php?c=front/WxApp/ShopApi&a=calShopCartFreightMoney&district=' + t + '&pkeys=' + a.queryparams.pkeys
+}" color=blue]
+	"4fceee292dbb4083936a74b474a24e9b" -> e420c70c73814802a8f993d46f14370d
+	"7787733116e34eaabd84bd566fc08010" -> "4fceee292dbb4083936a74b474a24e9b"
+}

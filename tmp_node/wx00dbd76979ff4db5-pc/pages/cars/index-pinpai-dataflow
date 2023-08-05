@@ -1,0 +1,31 @@
+// \pages/cars/index pinpai Data Flow
+digraph {
+	f9cbf666bb964812855d486272d6ccc2 [label="FunctionCall,
+function name -> pinpai,
+param -> a.,
+a,
+" color=blue]
+	"795b5331654246c69df939372a983313" [label="CallExpression,
+callee name -> console.log,
+param -> a,
+" color=blue]
+	f9cbf666bb964812855d486272d6ccc2 -> "795b5331654246c69df939372a983313"
+	d6e6fb6009024b4b98e59b58d09436e9 [label=VariableDeclarations color=blue]
+	f057e29151d3422384434e0dd603716f [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.pinpai" color=blue]
+	d6e6fb6009024b4b98e59b58d09436e9 -> f057e29151d3422384434e0dd603716f
+	f9cbf666bb964812855d486272d6ccc2 -> d6e6fb6009024b4b98e59b58d09436e9
+	"77f1c8312b6248ffaad0e25649314347" [label="ConditionalExpression,
+ conditional list -> this.setData,this.setData" color=blue]
+	"2af3d442a0534310933c33226f36bc4b" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	e2ca8495b04b48189c6b3d7ee0e46113 [label="Object Properties
+{
+pinpai -> t
+}" color=blue]
+	"2af3d442a0534310933c33226f36bc4b" -> e2ca8495b04b48189c6b3d7ee0e46113
+	"77f1c8312b6248ffaad0e25649314347" -> "2af3d442a0534310933c33226f36bc4b"
+	f9cbf666bb964812855d486272d6ccc2 -> "77f1c8312b6248ffaad0e25649314347"
+}

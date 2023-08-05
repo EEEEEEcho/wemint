@@ -1,0 +1,4 @@
+.help {
+    padding: 10rpx;
+    color: black;
+}

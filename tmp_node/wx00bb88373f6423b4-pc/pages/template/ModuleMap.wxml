@@ -1,0 +1,26 @@
+<template name="ModuleMap">
+    <view class="layout-101">
+        <map showLocation bindtap="onClickMap" data-addr="{{m.Addr}}" data-lat="{{m.Latitude}}" data-lng="{{m.Longitude}}" data-title="{{m.Title}}" latitude="{{m.Latitude}}" longitude="{{m.Longitude}}" markers="{{map.getMarkers(m.Longitude,m.Latitude,m.Title)}}" scale="15" style="width: 100%; height: {{m.Height*2}}rpx;overflow:hidden;"></map>
+    </view>
+</template>
+<wxs module="map">
+var getMarkers = (function(longitude, latitude, markerName) {
+    return ([({
+        id: 0,
+        latitude: latitude,
+        longitude: longitude,
+        callout: ({
+            display: 'ALWAYS',
+            content: markerName,
+            padding: 8,
+            bgColor: 'white',
+            color: '#000',
+            fontSize: 14,
+            textAlign: 'center',
+        }),
+    })])
+});
+module.exports = ({
+    getMarkers: getMarkers,
+});
+</wxs>

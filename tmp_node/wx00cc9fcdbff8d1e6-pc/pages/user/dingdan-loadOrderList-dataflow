@@ -1,0 +1,16 @@
+// \pages/user/dingdan loadOrderList Data Flow
+digraph {
+	d37f1ce6a361435fb50589d51a8f62d7 [label="FunctionCall,
+function name -> loadOrderList,
+param -> " color=blue]
+	"239f1e7b19664e70b02226d40c58507d" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	a771f0b53e8d4dfeaa6b02f1a5907d85 [label="Object Properties
+{
+order_type -> e.data.isStatus
+page -> e.data.page
+}" color=blue]
+	"239f1e7b19664e70b02226d40c58507d" -> a771f0b53e8d4dfeaa6b02f1a5907d85
+	d37f1ce6a361435fb50589d51a8f62d7 -> "239f1e7b19664e70b02226d40c58507d"
+}

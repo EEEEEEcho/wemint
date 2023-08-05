@@ -1,0 +1,11 @@
+<view class="show_product">
+    <scroll-view scrollX class="scroll-view_H">
+        <view class="product {{index===productList.length-1?'product_last':''}}" wx:for="{{productList}}">
+            <view class="pro">
+                <image class="pro_img" lazyLoad="true" mode="aspectFill" src="{{item.img}}"></image>
+                <text class="pro_title">{{item.title}}</text>
+                <text class="pro_title2">{{item.title2}}</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>

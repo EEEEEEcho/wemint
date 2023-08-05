@@ -1,0 +1,5 @@
+<view class="popupFromShare" wx:if="{{showPopupFromShare==1}}">
+    <view catchtap="goToHomeIndex" class="goToIndex">
+        <image class="homeBtn" src="/pages/template/images/homepage.png"></image>
+    </view>
+</view>

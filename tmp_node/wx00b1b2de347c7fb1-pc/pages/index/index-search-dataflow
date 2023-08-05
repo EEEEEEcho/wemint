@@ -1,0 +1,21 @@
+// \pages/index/index search Data Flow
+digraph {
+	"550291e9b4f84f709ab77806072337bd" [label="FunctionCall,
+function name -> search,
+param -> a,
+a.,
+" color=blue]
+	e1a1d27d35714139b44b7a3149489e44 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	dc884b21145448d9b907e3c597f851c7 [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"6097979fa7f5411ab14d66060ee45f9f" [label="Object Properties
+{
+url -> '/pages/list/index?word=' + a.detail.value
+}" color=blue]
+	dc884b21145448d9b907e3c597f851c7 -> "6097979fa7f5411ab14d66060ee45f9f"
+	e1a1d27d35714139b44b7a3149489e44 -> dc884b21145448d9b907e3c597f851c7
+	"550291e9b4f84f709ab77806072337bd" -> e1a1d27d35714139b44b7a3149489e44
+}

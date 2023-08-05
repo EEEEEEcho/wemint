@@ -1,0 +1,20 @@
+<view class="page-section">
+    <view class="counp-pic">
+        <image src="../../images/coupdetail-back.jpg" style="width:702rpx;height:256rpx;"></image>
+        <view class="counpinfo">
+            <view class="counp-title">{{CouponName}}</view>
+            <view class="counp-price">
+                <view class="price-icon">￥</view>
+                <text>{{Price}}</text>
+            </view>
+            <view class="counp-area">{{CanUseProducts}}</view>
+        </view>
+        <view class="counp-des">
+            <view class="coupon-txt">{{LimitText}}</view>
+            <view class="coupon-txt">{{CouponsDate}}</view>
+        </view>
+    </view>
+    <view class="btn">
+        <button bindtap="GetCoupon" class="btn_coup" type="default">领取</button>
+    </view>
+</view>

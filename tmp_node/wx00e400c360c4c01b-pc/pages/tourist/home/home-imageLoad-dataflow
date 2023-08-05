@@ -1,0 +1,23 @@
+// \pages/tourist/home/home imageLoad Data Flow
+digraph {
+	"6c8fb0bb6cfd4f5c8b376924bbf3bf07" [label="FunctionCall,
+function name -> imageLoad,
+param -> a.,
+a,
+" color=blue]
+	"74d114c78b7145a9b11e5ae74b3ca1f7" [label=VariableDeclarations color=blue]
+	"6939b566067e4579a4c70cf36f6844b1" [label="VariableDeclarator,
+left -> t,
+right -> 230 / (a.detail.width / a.detail.height)" color=blue]
+	"74d114c78b7145a9b11e5ae74b3ca1f7" -> "6939b566067e4579a4c70cf36f6844b1"
+	"6c8fb0bb6cfd4f5c8b376924bbf3bf07" -> "74d114c78b7145a9b11e5ae74b3ca1f7"
+	"0765786973ce4a0f971bf6d9eeb3f6c7" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	b86515e5fd43482baf60f4d02491d4b8 [label="Object Properties
+{
+imgheight -> t
+}" color=blue]
+	"0765786973ce4a0f971bf6d9eeb3f6c7" -> b86515e5fd43482baf60f4d02491d4b8
+	"6c8fb0bb6cfd4f5c8b376924bbf3bf07" -> "0765786973ce4a0f971bf6d9eeb3f6c7"
+}

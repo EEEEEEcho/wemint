@@ -1,0 +1,169 @@
+<view class="bindTel white_bgColor" wx:if="{{!isAuth}}">
+    <view class="noTel">绑定手机号立即点购外卖</view>
+    <view bindtap="toBindTel" class="bindTelBtn">立即绑定</view>
+</view>
+<view class="container" wx:if="{{isAuth}}">
+    <view class="white_bgColor sureInfo" wx:for="{{goods}}">
+        <view class="sureInfoSection">
+            <view class="goodsImg">
+                <image src="{{item.goods_path}}"></image>
+            </view>
+            <view class="fs_12 goodsName">{{item.goods_name}}<text wx:if="{{item.goods_attr_name==undefined||item.goods_attr_name==''?false:true}}">({{item.goods_attr_name}})</text> x{{item.goods_sum}}</view>
+            <view class="fs_14 fc_red">￥{{item.price}}</view>
+        </view>
+    </view>
+    <view class="white_bgColor address bd_bottom">
+        <view bindtap="getUserInfo" class="userInfo" wx:if="{{isUserInfo==0?true:false}}">
+            <view class="fs_14 fc_lgray setAds">请设置收货地址</view>
+        </view>
+        <view white_bgColor bindtap="getUserInfo" class="userInfo" wx:else>
+            <view class="userTel fs_14">
+                <icon class="iconfont icon-lianxifangshi fs_14"></icon>{{userInfo.userName}}/{{userInfo.userTel}}</view>
+            <view class="localInfo fs_14 fc_lgray">
+                <icon class="iconfont icon-dizhi fs_14 fc_mgray"></icon>{{userInfo.userAddress}}</view>
+            <view class="arrRight">
+                <icon class=""></icon>
+            </view>
+        </view>
+    </view>
+    <view class="white_bgColor postRule fs_14">
+        <view class="postTime fs_14">
+            <view wx:if="{{delivery==3?true:false}}">{{wayArray[wayIndex]}}<text class="hide">：</text>
+            </view>
+            <view wx:elif="{{delivery==2?true:false}}">{{wayArray[wayIndex]}}<text class="hide">：</text>
+            </view>
+            <view class="getWay" wx:else>
+                <picker bindchange="chooseWay" class="chooseGetWay" range="{{wayArray}}" value="{{wayIndex}}">{{wayArray[wayIndex]}}<icon class="iconfont icon-xiangxiajiantou"></icon>
+                </picker>
+            </view>
+            <picker bindchange="chooseDay" class="fc_lgray chooseDay" range="{{dayArray}}" value="{{dayIndex}}">{{dayArray[dayIndex]}}
+        <icon class="iconfont icon-xiangxiajiantou"></icon>
+            </picker>
+            <picker bindchange="chooseTime" class="chooseTime fc_lgray" range="{{dayIndex==0?todayTime:time}}" value="{{chooseTime}}">
+                <text wx:if="{{!hadChooseTime}}">{{chooseTime}}</text>
+                <text wx:if="{{hadChooseTime}}">{{chooseTime}}</text>
+                <icon class="iconfont icon-xiangxiajiantou"></icon>
+            </picker>
+        </view>
+        <view class="arrRight">
+            <icon></icon>
+        </view>
+        <view class="note">备注：<text bindtap="toInputNote" class="fc_lgray">{{defaultNote}}</text>
+            <icon></icon>
+        </view>
+        <view class="payWay" wx:if="{{hadOnline||hadMember||hadCash}}">
+            <view>支付：</view>
+            <view bindtap="choosePayWay" class="{{pay=='在线支付'?'payOn':'payNo'}}" data-pay="在线支付" wx:if="{{hadOnline}}">在线支付</view>
+            <view bindtap="choosePayWay" class="{{pay=='会员支付'?'payOn':'payNo'}}" data-pay="会员支付" wx:if="{{hadMember}}">会员支付</view>
+            <view bindtap="choosePayWay" class="{{pay=='货到付款'?'payOn':'payNo'}}" data-pay="货到付款" wx:if="{{hadCash}}">货到付款</view>
+        </view>
+    </view>
+    <view class="white_bgColor allGoodsPrice fs_12 bd_top">小计：<text class="fc_red fb">￥{{goodsPriceSum}}</text>
+    </view>
+    <view class="white_bgColor fs_14 payBox" hidden="{{pay=='在线支付'?false:true}}">
+        <view class="fs_12 costSum">
+            <view class="costSumItem" wx:if="{{online.addition.config_id==0?false:true}}">
+                <view>附加：</view>
+                <view class="fc_red right">+{{online.addition.price}}</view>
+            </view>
+            <view class="costSumItem" wx:if="{{fee==0?fasle:true}}">
+                <view>配送：</view>
+                <view class="fc_red right">+{{fee}}</view>
+            </view>
+            <view class="costSumItem" wx:if="{{online.discount.config_id==0?false:true}}">
+                <view>优惠：</view>
+                <view class="fc_green right">-{{online.discount.price}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="white_bgColor fs_14 payBox" hidden="{{pay=='会员支付'?false:true}}">
+        <view class="fs_12 memberMoney">
+            <view>会员余额：<text class="rigth fc_red">￥{{card.money==undefined?0:card.money}}</text>
+            </view>
+            <view wx:if="{{card.money<finalPrice||card.money==undefined?true:false}}">会员余额不足！</view>
+        </view>
+        <view class="fs_12 costSum">
+            <view class="costSumItem" wx:if="{{member.addition.config_id==0?false:true}}">
+                <view>附加：</view>
+                <view class="fc_red right">+{{member.addition.price}}</view>
+            </view>
+            <view class="costSumItem" wx:if="{{fee==0?fasle:true}}">
+                <view>配送：</view>
+                <view class="fc_red right">+{{fee}}</view>
+            </view>
+            <view class="costSumItem" wx:if="{{member.discount.config_id==0?false:true}}">
+                <view>优惠：</view>
+                <view class="fc_green right">-{{member.discount.price}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="white_bgColor fs_14 payBox" hidden="{{pay=='货到付款'?false:true}}">
+        <view class="fs_12 costSum">
+            <view class="costSumItem" wx:if="{{cash.addition.config_id==0?false:true}}">
+                <view>附加：</view>
+                <view class="fc_red right">+{{cash.addition.price}}</view>
+            </view>
+            <view class="costSumItem" wx:if="{{fee==0?fasle:true}}">
+                <view>配送：</view>
+                <view class="fc_red right">+{{fee}}</view>
+            </view>
+            <view class="costSumItem" wx:if="{{cash.discount.config_id==0?false:true}}">
+                <view>优惠：</view>
+                <view class="fc_green right">-{{cash.discount.price}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="white_bgColor fs_12 priceCount">
+        <view wx:if="{{pack==0?false:true}}">打包：<text class="fc_red right">+{{pack}}</text>
+        </view>
+        <view wx:if="{{isTicket}}">
+      抵扣：代金券<image bindtap="showCard" class="ticketImg" src="../../images/deduction_icon.png"></image>
+            <text class="right fc_green">-{{useTicket.ticket_money}}</text>
+        </view>
+        <view class="fs_14">合计：<text class="fc_red fs_16 fb">￥{{finalPrice}}</text>
+        </view>
+    </view>
+    <view bindtap="submitOrder" class="submit">提交订单</view>
+    <view bindtap="closeNote" class="maskLayer" wx:if="{{isNote==1?true:false}}">
+        <view catchtap="hanleTap" class="noteBox">
+            <view class="noteTitle fs_16">备注内容</view>
+            <form bindsubmit="inputNote">
+                <textarea class="noteSection fs_12" name="textarea" placeholder="" value="{{note}}"></textarea>
+                <view class="inputBtn">
+                    <button bindtap="closeNote">取消</button>
+                    <button formType="submit"> 完成 </button>
+                </view>
+            </form>
+        </view>
+    </view>
+    <view bindtap="closeCard" class="maskLayer" wx:if="{{isCard==1?true:false}}">
+        <view catchtap="handleTap" class="main_bgColor ticket">
+            <view bindtap="chooseTicket" class="white_bgColor ticketInfo" data-logid="0">
+                <view>不使用抵扣卷</view>
+                <view>
+                    <icon color="{{useTicket.log_id==0?'#ff9800':'gray'}}" size="18" type="success"></icon>
+                </view>
+                <view class="circleTop"></view>
+                <view class="circleBottom"></view>
+                <view class="line"></view>
+            </view>
+            <view bindtap="chooseTicket" class="white_bgColor ticketInfo" data-logid="{{item.log_id}}" wx:for="{{ticket}}">
+                <view class="fs_12 ticketPrice">
+                    <view class="fc_red fb">
+            ￥{{item.ticket_money}}
+          </view>
+                    <view class="ticketName">
+                        <view class="fb">满{{item.full_price}}可用</view>
+                        <view class="fc_lgray">有效期至：{{item.dead_time}}</view>
+                    </view>
+                </view>
+                <view>
+                    <icon color="{{useTicket.log_id==item.log_id?'#ff9800':'gray'}}" size="18" type="success"></icon>
+                </view>
+                <view class="circleTop"></view>
+                <view class="circleBottom"></view>
+                <view class="line"></view>
+            </view>
+        </view>
+    </view>
+</view>

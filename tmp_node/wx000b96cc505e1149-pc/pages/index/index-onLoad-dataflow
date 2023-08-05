@@ -1,0 +1,51 @@
+// \pages/index/index onLoad Data Flow
+digraph {
+	"5b350d28cde04caa92a265b990134ecd" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"343d5e9c81084234b9a63e2f32dc4b18" [label=VariableDeclarations color=blue]
+	f256991e813b4a49ad2e92805e15e7e8 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"38afe8c96b5a4d1c81c548cdc448935e" [label="FunctionCall,
+function name -> loginwx,
+param -> mode.,
+err,
+mode,
+err.,
+" color=blue]
+	"31e3136c1f5b4161bd03e1520f8fe61f" [label="CallExpression,
+callee name -> wx.login,
+param -> " color=blue]
+	"0d5b80ae716f4b1e98868807b456da94" [label="FunctionCall,
+function name -> success,
+param -> res.,
+res,
+" color=blue]
+	"8c0b5c753c9244d8a8c47ee78fadc63a" [label="CallExpression,
+callee name -> console.log,
+param -> res.code,
+" color=blue]
+	"0d5b80ae716f4b1e98868807b456da94" -> "8c0b5c753c9244d8a8c47ee78fadc63a"
+	"0ec8be5924e940369a97a1d7c73320a1" [label="If Alternate" color=blue]
+	"075d305232ee4abebbbae44ceb7a12c0" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"5f54aea8b00442f99c3f1e470388abd9" [label="Object Properties
+{
+url -> config.ppbaseDomain + '/user/getUserOppenId.json?loginCode=' + res.code + '&appsign=' + config.appsign
+}" color=blue]
+	"075d305232ee4abebbbae44ceb7a12c0" -> "5f54aea8b00442f99c3f1e470388abd9"
+	"0ec8be5924e940369a97a1d7c73320a1" -> "075d305232ee4abebbbae44ceb7a12c0"
+	"040e6f6372fb453dae3af4bb846c970d" [label="CallExpression,
+callee name -> console.log,
+param -> '获取用户登录态失败\uFF01' + res.errMsg,
+" color=blue]
+	"0ec8be5924e940369a97a1d7c73320a1" -> "040e6f6372fb453dae3af4bb846c970d"
+	"0d5b80ae716f4b1e98868807b456da94" -> "0ec8be5924e940369a97a1d7c73320a1"
+	"31e3136c1f5b4161bd03e1520f8fe61f" -> "0d5b80ae716f4b1e98868807b456da94"
+	"38afe8c96b5a4d1c81c548cdc448935e" -> "31e3136c1f5b4161bd03e1520f8fe61f"
+	f256991e813b4a49ad2e92805e15e7e8 -> "38afe8c96b5a4d1c81c548cdc448935e"
+	"343d5e9c81084234b9a63e2f32dc4b18" -> f256991e813b4a49ad2e92805e15e7e8
+	"5b350d28cde04caa92a265b990134ecd" -> "343d5e9c81084234b9a63e2f32dc4b18"
+}

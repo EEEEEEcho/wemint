@@ -1,0 +1,17 @@
+// \pages/buy/buy getCart Data Flow
+digraph {
+	"10dad7e362d74a448f3f655a28cd8593" [label="FunctionCall,
+function name -> getCart,
+param -> " color=blue]
+	bd1dfd64ebef42f1a9a1901b386197a5 [label=SequenceExpression color=blue]
+	"3027fa7470ac404d8ec48dca0cb62c00" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"356b3b9f47ca475b8d401b4856a716ed" [label="Object Properties
+{
+url -> t.page.url + '/wx/shopcart.php?act=list&userid=' + a.data.userid
+}" color=blue]
+	"3027fa7470ac404d8ec48dca0cb62c00" -> "356b3b9f47ca475b8d401b4856a716ed"
+	bd1dfd64ebef42f1a9a1901b386197a5 -> "3027fa7470ac404d8ec48dca0cb62c00"
+	"10dad7e362d74a448f3f655a28cd8593" -> bd1dfd64ebef42f1a9a1901b386197a5
+}

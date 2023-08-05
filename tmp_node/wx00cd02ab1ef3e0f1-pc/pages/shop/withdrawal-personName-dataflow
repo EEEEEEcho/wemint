@@ -1,0 +1,31 @@
+// \pages/shop/withdrawal personName Data Flow
+digraph {
+	e1c101934fa44046827ea102f2ae4220 [label="FunctionCall,
+function name -> personName,
+param -> a.,
+a,
+" color=blue]
+	"267bb149e29b46899bf75af877e6b460" [label=VariableDeclarations color=blue]
+	"37b60bc7554e45e9b8efd1c7038a9fff" [label="VariableDeclarator,
+left -> e,
+right -> a.detail.value" color=blue]
+	"267bb149e29b46899bf75af877e6b460" -> "37b60bc7554e45e9b8efd1c7038a9fff"
+	e1c101934fa44046827ea102f2ae4220 -> "267bb149e29b46899bf75af877e6b460"
+	"962219d06e674a9a9d1135c8c0c1ac45" [label=SequenceExpression color=blue]
+	a377951ad8ea4e58824c0851c6068607 [label="ConditionalExpression,
+ conditional list -> this.setData,this.setData" color=blue]
+	"3ce604bac118426aa83054cdbb5dd383" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"669cbcaa5c494ac3b0d54d97a5699765" [label="Object Properties
+{
+personName -> e
+}" color=blue]
+	"3ce604bac118426aa83054cdbb5dd383" -> "669cbcaa5c494ac3b0d54d97a5699765"
+	a377951ad8ea4e58824c0851c6068607 -> "3ce604bac118426aa83054cdbb5dd383"
+	"962219d06e674a9a9d1135c8c0c1ac45" -> a377951ad8ea4e58824c0851c6068607
+	"51f4f6400dae4a238759b96c05dbd57c" [label="ConditionalExpression,
+ conditional list -> this.setData,this.setData" color=blue]
+	"962219d06e674a9a9d1135c8c0c1ac45" -> "51f4f6400dae4a238759b96c05dbd57c"
+	e1c101934fa44046827ea102f2ae4220 -> "962219d06e674a9a9d1135c8c0c1ac45"
+}

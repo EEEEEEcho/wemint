@@ -1,0 +1,21 @@
+// \pages/shop/productdetail shareHfive Data Flow
+digraph {
+	"456cedd120b44cc281d45aca25e6bf7e" [label="FunctionCall,
+function name -> shareHfive,
+param -> " color=blue]
+	"686c4ca894cd4da48488ecc9ccb5c7f1" [label=VariableDeclarations color=blue]
+	"7d3f9fcd9a544bc3876d80f6381bce6c" [label="VariableDeclarator,
+left -> a,
+right -> t.data.productInfo.BigImages.split" color=blue]
+	"686c4ca894cd4da48488ecc9ccb5c7f1" -> "7d3f9fcd9a544bc3876d80f6381bce6c"
+	"456cedd120b44cc281d45aca25e6bf7e" -> "686c4ca894cd4da48488ecc9ccb5c7f1"
+	"3037ac2a358f47afab4463c436ac0498" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"6dcf9b1ec10d4b2682991f1d76dac5eb" [label="Object Properties
+{
+url -> './poster?productId=' + t.data.productInfo.ProductID + '&name=' + t.data.productInfo.Name + '&price=' + t.data.productInfo.Price + '&productImg=' + a[0] + '&SiteID=' + t.data.productInfo.SiteID + '&proType=0'
+}" color=blue]
+	"3037ac2a358f47afab4463c436ac0498" -> "6dcf9b1ec10d4b2682991f1d76dac5eb"
+	"456cedd120b44cc281d45aca25e6bf7e" -> "3037ac2a358f47afab4463c436ac0498"
+}

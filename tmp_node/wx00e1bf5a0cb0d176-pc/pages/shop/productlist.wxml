@@ -1,0 +1,114 @@
+<import src="/pages/footnav.wxml"></import>
+<view class="container">
+    <view class="{{onSearch?'hidden':'show'}}">
+        <view class="search-product">
+            <form bindsubmit="onSearchSubmit">
+                <view bindtap="onFocus" class="searchinp {{queryparams.keyword?'':'placeholder-style'}}" confirmType="search" type="text">{{queryparams.keyword?queryparams.keyword:'请输入你想搜索的商品'}}</view>
+                <view class="searchimg">
+                    <text class="iconfont iconfont_search icon-iconfont_search"></text>
+                </view>
+            </form>
+        </view>
+        <view class="topBar">
+            <view bindtap="onSortChange" class="topBarItem" data-condition="MoRen">
+                <text class="{{sortItem=='MoRen'?'isactived':''}}">默认排序</text>
+            </view>
+            <view bindtap="onSortChange" class="topBarItem" data-condition="SalesCount">
+                <text class="{{sortItem=='SalesCount'?'isactived':''}}">销量</text>
+            </view>
+            <view bindtap="onSortChange" class="topBarItem" data-condition="RenQi">
+                <text class="{{sortItem=='Hits'?'isactived':''}}">人气</text>
+            </view>
+            <view bindtap="onSortChange" class="topBarItem" data-condition="Price" style="padding-right:22rpx ">
+                <text class="{{sortItem=='Price'?'isactived':''}}">价格</text>
+                <view class="sortIcon {{timestaus==false?'timestaus':''}}">
+                    <text class="iconfont iconfont_xiangshang icon-iconfont_xiangshang {{!priceupflag?'actived':''}}"></text>
+                    <text class="iconfont iconfont_xiangxia icon-iconfont_xiangxia {{!pricedownflag?'actived':''}}"></text>
+                </view>
+            </view>
+            <view bindtap="showAndHideSelect" class="topBarItem topBarItemLast" wx:if="{{timestaus}}">
+                <text class="title {{sortItem=='Category'?'isactived':''}}">筛选</text>
+                <text class="iconfont icon-shaixuan {{sortItem=='Category'?'isactived':''}}"></text>
+            </view>
+        </view>
+        <view class="noproducttips" style="display:{{hasproduct?'none':'block'}} ">
+            <view class="noproduct" style="display:flex;margin-top:200rpx;">
+                <image mode="widthFix" src="{{baseUrl}}/images/wxapp/blank_9.png" style="height: 70%;width:70%"></image>
+                <text>对不起,没有找到您要的商品</text>
+            </view>
+        </view>
+        <view class="coupon-text border1px borderTop1px" wx:if="{{queryparams.couponId}}">
+            <text>以下商品适用于</text>
+            <text class="coupon-info">{{couponInfo}}</text>
+            <text>优惠券</text>
+        </view>
+        <view class="products {{queryparams.couponId?'showCoupon':''}} " style="display:{{hasproduct?'block':'none'}}">
+            <view class="productList ">
+                <view catchtap="{{!buttonClicked?'goProductDetails':''}}" class="productItem" data-fullState="{{item.IsFullReduction}}" data-idx="{{index}}" data-productid="{{item.ProductID}}" wx:for="{{productlist}}" wx:key="index">
+                    <image mode="aspectFit" src="{{baseUrl}}{{item.ImgSmall}}" style="width:100%;"></image>
+                    <view class="groupDiscount flexBox flexAlign flexJustify" wx:if="{{item.IsFullReduction&&item.IsFullReduction==1}}">满额优惠</view>
+                    <view class="info">
+                        <text class="proTitle">{{item.Name}}</text>
+                        <view class="address">{{item.ProDesc==''?'暂无商品描述':item.ProDesc}}</view>
+                        <view class="MarketPrice">
+                            <text wx:if="{{item.IsLimitedDiscount==1}}">￥{{item.MarketPrice}}</text>
+                        </view>
+                        <view class="botMsg">
+                            <text class="price">￥{{item.Price}}</text>
+                            <text class="label-box" wx:if="{{item.IsLimitedDiscount==1}}">折扣</text>
+                            <text class="buys">{{item.SalesCount}}人付款</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="noMore" hidden="{{productlist.length!=recordcount}}" style="margin-top:{{productlist.length<=2?500:0}}rpx">
+                <view class="line"></view>
+                <text class="text">没有更多</text>
+                <view class="line"></view>
+            </view>
+        </view>
+        <template is="footnav" data="{{pageurl:pageurl}}" wx:if="{{showNav}}"></template>
+    </view>
+    <view class="{{isshow==true?'show':'hidden'}}" style="position:relative;top:{{topHeight}}px;height:{{categoryListHeight}}px;left:0;width:100%;z-index:{{!isshow?-1:2}}">
+        <scroll-view class="category {{isshow==true?'show':'hidden'}}" scrollY="true" style="height:{{categoryListHeight}}px">
+            <view class="categoryItem" wx:for="{{classlist}}" wx:key="index">
+                <view bindtap="showClassProducts" class="categoryBar" data-classid="{{item.ClassID}}">
+                    <text class="categoryTitle">{{item.Name}}</text>
+                    <view class="titleRight">
+                        <text class="categoryAll">全部 </text>
+                        <text class="iconfont iconfont_arrow-right .icon-iconfont_arrow-right"></text>
+                    </view>
+                </view>
+                <view class="categoryContent">
+                    <view bindtap="showClassProducts" class="categoryContentItem" data-classid="{{i.ClassID}}" wx:for="{{item.sublist}}" wx:for-item="i" wx:key="idx">{{i.Name}}</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view bindtap="closeMask" class="mask {{isshow?'show':'hidden'}}"></view>
+    <view class="select">
+        <view bindtap="showAndHideSelect" class="selectMask {{isSelect?'showSelectMask':''}}" wx:if="{{isSelect}}"></view>
+        <view class="selectList {{isSelect?'showSelectList':''}}">
+            <view style="height:{{selectScrollHeight}}px">
+                <scroll-view scrollY="true" style="height:{{selectScrollHeight}}px">
+                    <view style="padding:0 26rpx" wx:for="{{selectList}}" wx:for-index="indexnum" wx:key="index">
+                        <view class="selectTitleBar">
+                            <text class="selectTitle">{{item.FilterName}}</text>
+                        </view>
+                        <view class="selectContent">
+                            <view bindtap="selectFilter" class="selectItem {{i.selecting?'selected':''}}" data-filterValue="{{i.FilterValue}}" data-indexFlag="{{indexFlag}}" data-indexp="{{indexnum}}" data-selectidx="{{i.ValueID}}" wx:for="{{item.list}}" wx:for-index="indexFlag" wx:for-item="i" wx:key="idx">{{i.FilterValue}}</view>
+                        </view>
+                        <view class="borderline"></view>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="bottomBtn">
+                <view bindtap="cancelActived" class="resetBtn" data-selectidx="0">重置</view>
+                <view bindtap="filterPro" class="sureBtn">确认</view>
+            </view>
+        </view>
+    </view>
+</view>
+<include src="/pages/template/popupFromShare.wxml"></include>
+<include src="/pages/common/popout/index.wxml"></include>
+<include src="/pages/common/phoneauthorization/index.wxml"></include>

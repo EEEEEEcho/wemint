@@ -1,0 +1,10 @@
+// \pages/position/position moveToLocation Data Flow
+digraph {
+	"730acfe0f8c44bc08a09468073413b78" [label="FunctionCall,
+function name -> moveToLocation,
+param -> " color=blue]
+	"96b2e19d0e004b6da0e7478b99979ef1" [label="CallExpression,
+callee name -> wx.chooseLocation,
+param -> " color=blue]
+	"730acfe0f8c44bc08a09468073413b78" -> "96b2e19d0e004b6da0e7478b99979ef1"
+}

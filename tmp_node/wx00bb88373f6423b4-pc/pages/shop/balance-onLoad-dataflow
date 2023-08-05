@@ -1,0 +1,28 @@
+// \pages/shop/balance onLoad Data Flow
+digraph {
+	"5ffc8cbcfad6477dbf37db571f1abdd6" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	fc7c4f939c24436a86b6ebe5bbc5199d [label=SequenceExpression color=blue]
+	ada7a59a1382457eb0642b4bd327b31c [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> " color=blue]
+	a9d40987c40545479dba8ab88717ac7a [label="FunctionCall,
+function name -> success,
+param -> a,
+a.,
+" color=blue]
+	"1a185588a67846cdbddb725ef33ea294" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"6c67812996764ea8a9ad3e5a2f9f7671" [label="Object Properties
+{
+imgWidth -> (a.windowWidth - 39) / 2
+scrollHeight -> a.windowHeight - 40 - 48
+}" color=blue]
+	"1a185588a67846cdbddb725ef33ea294" -> "6c67812996764ea8a9ad3e5a2f9f7671"
+	a9d40987c40545479dba8ab88717ac7a -> "1a185588a67846cdbddb725ef33ea294"
+	ada7a59a1382457eb0642b4bd327b31c -> a9d40987c40545479dba8ab88717ac7a
+	fc7c4f939c24436a86b6ebe5bbc5199d -> ada7a59a1382457eb0642b4bd327b31c
+	"5ffc8cbcfad6477dbf37db571f1abdd6" -> fc7c4f939c24436a86b6ebe5bbc5199d
+}

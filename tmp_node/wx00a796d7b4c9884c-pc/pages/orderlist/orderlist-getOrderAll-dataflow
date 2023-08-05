@@ -1,0 +1,22 @@
+// \pages/orderlist/orderlist getOrderAll Data Flow
+digraph {
+	"19b1e3bc25d54321bd363cf334e85269" [label="FunctionCall,
+function name -> getOrderAll,
+param -> " color=blue]
+	f5b24a72c76d430bb89f52927dd9eaf1 [label=SequenceExpression color=blue]
+	fad9120763cc4e4a80b0aac09f393752 [label="CallExpression,
+callee name -> console.log,
+param -> t.data.checkinfo,
+" color=blue]
+	f5b24a72c76d430bb89f52927dd9eaf1 -> fad9120763cc4e4a80b0aac09f393752
+	"201ec68ed82b4e508b348d4b373545c9" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"4365553bd4ac4136a50561681863cb7a" [label="Object Properties
+{
+userid -> t.data.userid
+}" color=blue]
+	"201ec68ed82b4e508b348d4b373545c9" -> "4365553bd4ac4136a50561681863cb7a"
+	f5b24a72c76d430bb89f52927dd9eaf1 -> "201ec68ed82b4e508b348d4b373545c9"
+	"19b1e3bc25d54321bd363cf334e85269" -> f5b24a72c76d430bb89f52927dd9eaf1
+}

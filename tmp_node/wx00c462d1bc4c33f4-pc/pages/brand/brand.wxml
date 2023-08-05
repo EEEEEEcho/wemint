@@ -1,0 +1,27 @@
+<import src="../wxParse/wxParse.wxml"></import>
+<scroll-view>
+    <view class="brandDetailBox">
+        <image class="logoImg" mode="aspectFill" src="{{storeInfoHeadImgUrl}}"></image>
+        <view class="storeInfo">
+            <view class="storeName">{{storeInfoName}}</view>
+            <view class="storeTel">咨询热线：{{storeInfoTelephoneNum==null?'':storeInfoTelephoneNum}}</view>
+            <view class="storeAddress">店铺地址：{{storeInfoAddress}}</view>
+        </view>
+    </view>
+    <view class="brandSlideBox">
+        <scroll-view scrollX="true" style="margin-top:20px;">
+            <view class="brandSlide" scrollX="true">
+                <view class="brandSlide_Item" wx:for="{{brandSlideUrls}}" wx:key="id">
+                    <image bindtap="changeMainImgFn2" class="brandSlide_Item_img" data-id="{{item.id}}" src="{{item.imgurl}}"></image>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="brandIntroBox">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+    </view>
+</scroll-view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

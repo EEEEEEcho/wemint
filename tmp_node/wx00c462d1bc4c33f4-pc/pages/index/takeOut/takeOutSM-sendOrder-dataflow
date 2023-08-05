@@ -1,0 +1,22 @@
+// \pages/index/takeOut/takeOutSM sendOrder Data Flow
+digraph {
+	"49d3338067c547cd8e0fc56eb40a9e1e" [label="FunctionCall,
+function name -> sendOrder,
+param -> e.,
+e,
+a,
+a.,
+" color=blue]
+	"365de2eb913b4edd810d9ffcd3063837" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"56d3aec3115e489195eb9903e2e1b8c7" [label="CallExpression,
+callee name -> wx.getStorage,
+param -> " color=blue]
+	"6bab9cf954a146ea91198ebc66d648dd" [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	"56d3aec3115e489195eb9903e2e1b8c7" -> "6bab9cf954a146ea91198ebc66d648dd"
+	"365de2eb913b4edd810d9ffcd3063837" -> "56d3aec3115e489195eb9903e2e1b8c7"
+	"49d3338067c547cd8e0fc56eb40a9e1e" -> "365de2eb913b4edd810d9ffcd3063837"
+}

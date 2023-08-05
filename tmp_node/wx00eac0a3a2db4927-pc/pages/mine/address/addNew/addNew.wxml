@@ -1,0 +1,26 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="newAddress_container" style="margin-top: {{navH+status+10}}px;">
+    <view class="form">
+        <view catchtap="getFocus" class="name" data-type="name">
+            <text class="text_style" wx:if="{{!isShowNameInput}}">{{placeholder.name}}</text>
+            <input bindblur="bindGetName" class="consignee" focus="true" name="name" placeholderClass="placeholder" value="{{address.name}}" wx:else></input>
+        </view>
+        <view catchtap="getFocus" class="tel" data-type="tel">
+            <text class="text_style" wx:if="{{!isShowTelInput}}">{{placeholder.tel}}</text>
+            <input bindblur="bindGetTel" class="telephone" focus="true" name="tel" placeholderClass="placeholder" type="number" value="{{address.tel}}" wx:else></input>
+        </view>
+        <view class="address">
+            <picker bindchange="bindRegionChange" customItem="{{customItem}}" mode="region" value="{{region}}">
+                <view class="address_picker">
+                    <view class="picker">{{region[0]}} {{region[1]}} {{region[2]}}</view>
+                    <image class="picker_img" src="http://oss.shangmian.xin/weixin_applets_icon_down_fill.png"></image>
+                </view>
+            </picker>
+        </view>
+        <view catchtap="getFocus" class="detail" data-type="detail">
+            <text class="text_style" wx:if="{{!isShowDetailInput}}">{{placeholder.detail}}</text>
+            <input bindblur="bindGetDetail" class="detail_address" focus="true" name="detail" placeholderClass="placeholder" value="{{address.detail}}" wx:else></input>
+        </view>
+        <view bindtap="addAddress" class="addBtn">创建</view>
+    </view>
+</view>

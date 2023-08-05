@@ -1,0 +1,74 @@
+// \pages/shop/collection loadProduct Data Flow
+digraph {
+	bd35a493de624df99683dd9ee83887ee [label="FunctionCall,
+function name -> loadProduct,
+param -> " color=blue]
+	"7e3c608b26ac4c70b631fb1037089b25" [label="If Alternate" color=blue]
+	ddfd5945bf5b411e8a5f72003112e0db [label=VariableDeclarations color=blue]
+	"5b2224d9f1d9478584d9131d97ddd9bc" [label="VariableDeclarator,
+left -> o,
+right -> a.data.total" color=blue]
+	ddfd5945bf5b411e8a5f72003112e0db -> "5b2224d9f1d9478584d9131d97ddd9bc"
+	"7e3c608b26ac4c70b631fb1037089b25" -> ddfd5945bf5b411e8a5f72003112e0db
+	"4f2784ce8af44fb497133dc83b768575" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"7d2232048af44033af5e0e3b409801e5" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"0414ab2f33174296a9fbb0998c9b7ca0" [label="Assignment,
+left -> a.data.recordcount,
+right -> o" color=blue]
+	"7d2232048af44033af5e0e3b409801e5" -> "0414ab2f33174296a9fbb0998c9b7ca0"
+	"4f2784ce8af44fb497133dc83b768575" -> "7d2232048af44033af5e0e3b409801e5"
+	"7e3c608b26ac4c70b631fb1037089b25" -> "4f2784ce8af44fb497133dc83b768575"
+	"98922622571a449583336c4404307689" [label=VariableDeclarations color=blue]
+	"7dfc44b25c3c4be2ae79740af6be6355" [label="VariableDeclarator,
+left -> s,
+right -> a.data.recordcount" color=blue]
+	"98922622571a449583336c4404307689" -> "7dfc44b25c3c4be2ae79740af6be6355"
+	"50e0c6c821cf490aaa18a3177e0e89f2" [label="VariableDeclarator,
+left -> l,
+right -> a.data.productlist.length" color=blue]
+	"98922622571a449583336c4404307689" -> "50e0c6c821cf490aaa18a3177e0e89f2"
+	"7e3c608b26ac4c70b631fb1037089b25" -> "98922622571a449583336c4404307689"
+	dfbefc96336e4039834b0f4612cf659f [label="If Alternate" color=blue]
+	"27a46b02c4fd4abd99a9db6ed629ba51" [label=VariableDeclarations color=blue]
+	"716a37ef8eb540ccb73e7a0909ea0fec" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"96281d95f49a41a1b8e94b2ffeeb627d" [label="CallExpression,
+callee name -> Math.ceil,
+param -> l / a.data.pagesize,
+" color=blue]
+	"716a37ef8eb540ccb73e7a0909ea0fec" -> "96281d95f49a41a1b8e94b2ffeeb627d"
+	"27a46b02c4fd4abd99a9db6ed629ba51" -> "716a37ef8eb540ccb73e7a0909ea0fec"
+	b8951f91b7ca45e8aa7300d98567593e [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"4e3281c22bf443cd8810c31c3b15ba83" [label="ConditionalExpression,
+ conditional list -> a.data.queryparams.keyword" color=blue]
+	b8951f91b7ca45e8aa7300d98567593e -> "4e3281c22bf443cd8810c31c3b15ba83"
+	"27a46b02c4fd4abd99a9db6ed629ba51" -> b8951f91b7ca45e8aa7300d98567593e
+	dfbefc96336e4039834b0f4612cf659f -> "27a46b02c4fd4abd99a9db6ed629ba51"
+	"87bb95153efb410c84105f6b8c23d153" [label=SequenceExpression color=blue]
+	c2eb3f3126784cd9891d247ff2c91cd4 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"73de6c333cf54bd1af8bc22a205545dc" [label="Assignment,
+left -> n,
+right -> '&sortcol=' + a.data.sortcol + '&sort=' + a.data.sort" color=blue]
+	c2eb3f3126784cd9891d247ff2c91cd4 -> "73de6c333cf54bd1af8bc22a205545dc"
+	"87bb95153efb410c84105f6b8c23d153" -> c2eb3f3126784cd9891d247ff2c91cd4
+	f1b5086c76dc447ab9dc3378f650cc8d [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	"46140f875df3443d9a5b7d38f0d6fc86" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=getProductCollList&key=' + c + '&page=' + i + '&pagesize=' + a.data.pagesize + n
+}" color=blue]
+	f1b5086c76dc447ab9dc3378f650cc8d -> "46140f875df3443d9a5b7d38f0d6fc86"
+	"87bb95153efb410c84105f6b8c23d153" -> f1b5086c76dc447ab9dc3378f650cc8d
+	dfbefc96336e4039834b0f4612cf659f -> "87bb95153efb410c84105f6b8c23d153"
+	"7e3c608b26ac4c70b631fb1037089b25" -> dfbefc96336e4039834b0f4612cf659f
+	bd35a493de624df99683dd9ee83887ee -> "7e3c608b26ac4c70b631fb1037089b25"
+}

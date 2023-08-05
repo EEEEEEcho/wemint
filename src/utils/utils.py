@@ -1,5 +1,3 @@
-import collections
-import random
 from loguru import logger
 import config as config
 import os

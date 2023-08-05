@@ -1,0 +1,98 @@
+<view style="overflow: hidden">
+    <view class="search-product">
+        <form class="formSearch">
+            <view bindtap="onFocus" class="searchinp" style="color:#999;font-size:28rpx">搜索您要的商品</view>
+            <view class="searchimg">
+                <text class="iconfont iconfont_search icon-iconfont_search"></text>
+            </view>
+        </form>
+    </view>
+    <view class="container-box">
+        <view class="nothing" wx:if="{{classlist==''}}">
+            <view class="nothing-img">
+                <image mode="widthFix" src="{{baseUrl}}/images/wxapp/blank_9.png"></image>
+            </view>
+            <view class="nothing-title">暂无分类</view>
+        </view>
+        <view class="classTabList" style="height:{{tabHeight}}px" wx:if="{{tabShowFlag&&classlist!=''}}">
+            <scroll-view scrollY scrollTop="{{tabScrollTop}}" scrollWithAnimation="{{true}}" style="height:{{tabHeight}}px">
+                <view style="padding-bottom: 100rpx;">
+                    <view bindtap="onClassChange" class="classTabItem {{classid==item.ClassID?'isSelected':''}}" data-classid="{{item.ClassID}}" data-idx="{{idx}}" style="line-height:{{item.Name.length>=5?'':30}}rpx;" wx:for="{{classlist}}" wx:for-index="idx" wx:key="idx">
+                        <text class="itemName">{{item.Name}}</text>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="first-classify" style="height:{{tabHeight}}px;" wx:if="{{!tabShowFlag&&classlist!=''}}">
+            <scroll-view scrollY enableBackToTop="true" scrollTop="{{scrollTop}}" style="height:{{tabHeight}}px;">
+                <view class="box-content">
+                    <view catchtap="{{!buttonClicked?'showClassProducts':''}}" class="commodity" data-classid="{{item.ClassID}}" data-classname="{{item.Name}}" wx:for="{{classlist}}" wx:key="index">
+                        <view class="commodity-img">
+                            <image src="{{baseUrl}}{{item.Image}}" wx:if="{{item.Image}}"></image>
+                            <image src="{{baseUrl}}/images/wxapp/product.jpg" wx:else></image>
+                        </view>
+                        <view class="commodity-name">
+                            <text>{{item.Name}}</text>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="second-classify" style="height:{{tabHeight}}px;width:{{tabWidth}}px;" wx:if="{{tabShowFlag&&classlist!=''}}">
+            <scroll-view scrollY enableBackToTop="true" scrollTop="{{scrollTop}}" style="height:{{tabHeight}}px;">
+                <view catchtap="{{!buttonClicked?'showClassProducts':''}}" class="onlyOne" data-classid="{{newList.ClassID}}" data-classname="{{newList.Name}}" wx:if="{{onlyOneFlag}}">
+                    <view class="porduct">
+                        <view class="product-box" wx:if="{{newList.Image}}">
+                            <image src="{{baseUrl}}{{newList.Image}}"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="haveTwo" wx:if="{{haveTwoFlag}}">
+                    <view catchtap="{{!buttonClicked?'showClassProducts':''}}" class="firstClassifyImg" data-classid="{{firstID}}" data-classname="{{firstName}}" wx:if="{{firstClassifyImg}}">
+                        <image src="{{baseUrl}}{{firstClassifyImg}}"></image>
+                    </view>
+                    <view class="itemName">
+                        <view class="line"></view>
+                        <text>{{title}}</text>
+                        <view class="line"></view>
+                    </view>
+                    <view class="product-box">
+                        <view catchtap="{{!buttonClicked?'showClassProducts':''}}" class="product" data-classid="{{item.ClassID}}" data-classname="{{item.Name}}" wx:for="{{newList}}" wx:key="index">
+                            <image src="{{baseUrl}}{{item.Image}}" wx:if="{{item.Image}}"></image>
+                            <image src="{{baseUrl}}/images/wxapp/product.jpg" wx:else></image>
+                            <view class="productName">{{item.itemName}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="haveThree" wx:if="{{haveThreeFlag}}">
+                    <view catchtap="{{!buttonClicked?'showClassProducts':''}}" class="firstClassifyImg" data-classid="{{firstID}}" data-classname="{{firstName}}" wx:if="{{firstClassifyImg}}">
+                        <image src="{{baseUrl}}{{firstClassifyImg}}"></image>
+                    </view>
+                    <view class="classify-box">
+                        <view class="item-box" wx:for="{{newList}}" wx:key="index">
+                            <view class="itemName">
+                                <view class="line"></view>
+                                <text>{{item.secondName}}</text>
+                                <view class="line"></view>
+                            </view>
+                            <view class="product-onecss" wx:if="{{item.sublist!=null}}">
+                                <view catchtap="{{!buttonClicked?'showClassProducts':''}}" class="product" data-classid="{{product.ClassID}}" data-classname="{{product.Name}}" wx:for="{{item.sublist}}" wx:for-item="product" wx:key="index">
+                                    <image src="{{baseUrl}}{{product.Image}}" wx:if="{{product.Image}}"></image>
+                                    <image src="{{baseUrl}}/images/wxapp/product.jpg" wx:else></image>
+                                    <view class="product-name">{{product.thirdName}}</view>
+                                </view>
+                            </view>
+                            <view catchtap="{{!buttonClicked?'showClassProducts':''}}" class="product-twocss" data-classid="{{item.ClassID}}" data-classname="{{item.Name}}" wx:if="{{item.sublist==null}}">
+                                <view class="product-twocss-box">
+                                    <image src="{{baseUrl}}{{item.Image}}" wx:if="{{item.Image}}"></image>
+                                    <image src="{{baseUrl}}/images/wxapp/product.jpg" wx:else></image>
+                                    <view class="product-name">{{item.itemName}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

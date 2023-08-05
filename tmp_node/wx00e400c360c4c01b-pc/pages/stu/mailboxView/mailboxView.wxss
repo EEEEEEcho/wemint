@@ -1,0 +1,18 @@
+@import "../mailboxWrite/mailboxWrite.wxss";
+
+.mvTitle {
+    display: flex;
+    font-size: 50rpx;
+    font-weight: 500;
+    background-color: #fff;
+    padding-top: 30rpx;
+    padding-bottom: 10rpx;
+}
+
+.mvTime {
+    color: #cccccc;
+}
+
+.mvContent {
+    color: #cccccc;
+}

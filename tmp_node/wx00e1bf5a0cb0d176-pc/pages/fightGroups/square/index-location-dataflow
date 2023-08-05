@@ -1,0 +1,42 @@
+// \pages/fightGroups/square/index location Data Flow
+digraph {
+	ace332634e9246208941ac6e9b39f826 [label="FunctionCall,
+function name -> location,
+param -> t,
+t.,
+" color=blue]
+	"00c5bc2538854ae3adf64cac0c9bd344" [label=VariableDeclarations color=blue]
+	c52b98cd758c4140afac423a8c96dcc9 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"3f67f33d86734a419d771623e94c0c2e" [label="CallExpression,
+callee name -> Number,
+param -> t.currentTarget.dataset.item.Lantitude,
+" color=blue]
+	c52b98cd758c4140afac423a8c96dcc9 -> "3f67f33d86734a419d771623e94c0c2e"
+	"00c5bc2538854ae3adf64cac0c9bd344" -> c52b98cd758c4140afac423a8c96dcc9
+	ab7ac20ed329480fad4e0d1b1f03d46e [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"8625b24ce9c44043a7ccc50fd7d14979" [label="CallExpression,
+callee name -> Number,
+param -> t.currentTarget.dataset.item.Longtitude,
+" color=blue]
+	ab7ac20ed329480fad4e0d1b1f03d46e -> "8625b24ce9c44043a7ccc50fd7d14979"
+	"00c5bc2538854ae3adf64cac0c9bd344" -> ab7ac20ed329480fad4e0d1b1f03d46e
+	ace332634e9246208941ac6e9b39f826 -> "00c5bc2538854ae3adf64cac0c9bd344"
+	"7608313680ac4bc887528ca839bf4729" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"8be38130622f459bb01f00870e127b05" [label="CallExpression,
+callee name -> wx.openLocation,
+param -> " color=blue]
+	c04de757b422440daddf1d3535a6879b [label="Object Properties
+{
+name -> t.currentTarget.dataset.item.Name
+address -> t.currentTarget.dataset.item.Address
+}" color=blue]
+	"8be38130622f459bb01f00870e127b05" -> c04de757b422440daddf1d3535a6879b
+	"7608313680ac4bc887528ca839bf4729" -> "8be38130622f459bb01f00870e127b05"
+	ace332634e9246208941ac6e9b39f826 -> "7608313680ac4bc887528ca839bf4729"
+}

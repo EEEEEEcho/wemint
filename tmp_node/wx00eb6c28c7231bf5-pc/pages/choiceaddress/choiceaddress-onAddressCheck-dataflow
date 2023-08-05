@@ -1,0 +1,28 @@
+// \pages/choiceaddress/choiceaddress onAddressCheck Data Flow
+digraph {
+	"1451b54305004f089c2e3e512f8f0577" [label="FunctionCall,
+function name -> onAddressCheck,
+param -> d,
+d.,
+" color=blue]
+	f338fa724e024580861f707214f93660 [label="CallExpression,
+callee name -> console.log,
+param -> d,
+" color=blue]
+	"1451b54305004f089c2e3e512f8f0577" -> f338fa724e024580861f707214f93660
+	"4b204a9826994f57b3bcacb656a7ce37" [label=VariableDeclarations color=blue]
+	"19ed707fba5545f98938a08083001fd8" [label="VariableDeclarator,
+left -> t,
+right -> d.detail.value" color=blue]
+	"4b204a9826994f57b3bcacb656a7ce37" -> "19ed707fba5545f98938a08083001fd8"
+	"1451b54305004f089c2e3e512f8f0577" -> "4b204a9826994f57b3bcacb656a7ce37"
+	c35463c184c1473d8f149a16a597f5a5 [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	ff5c784b35bb4985af45bbc5c8678fad [label="Object Properties
+{
+url -> '../submitorder/submitorder?productsku=' + this.data.ProductSku + '&buyamount=' + this.data.BuyAmount + '&frompage=' + this.data.FromPage + '&countdownid=' + this.data.CountdownId + '&shipaddressid=' + t
+}" color=blue]
+	c35463c184c1473d8f149a16a597f5a5 -> ff5c784b35bb4985af45bbc5c8678fad
+	"1451b54305004f089c2e3e512f8f0577" -> c35463c184c1473d8f149a16a597f5a5
+}

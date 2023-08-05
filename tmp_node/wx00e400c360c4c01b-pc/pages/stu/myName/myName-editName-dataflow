@@ -1,0 +1,19 @@
+// \pages/stu/myName/myName editName Data Flow
+digraph {
+	ab34f664bdf746b69e571ac75633ce68 [label="FunctionCall,
+function name -> editName,
+param -> " color=blue]
+	"8cef78760f7f4946a8cb3afbaab583c5" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	e7c78a4596c24476950813e0760fa962 [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	c760b92458df43208be17bdf45695d0c [label="Object Properties
+{
+cpcId -> e.data.id
+name -> e.data.name
+}" color=blue]
+	e7c78a4596c24476950813e0760fa962 -> c760b92458df43208be17bdf45695d0c
+	"8cef78760f7f4946a8cb3afbaab583c5" -> e7c78a4596c24476950813e0760fa962
+	ab34f664bdf746b69e571ac75633ce68 -> "8cef78760f7f4946a8cb3afbaab583c5"
+}

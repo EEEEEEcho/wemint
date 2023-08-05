@@ -1,0 +1,14 @@
+<scroll-view bindscrolltolower="bindDownLoad" scrollY="true" style="height:{{scrollHeight}}px;">
+    <view class="bestview">
+        <view class="textview">
+            <text class="text">我的下载</text>
+        </view>
+        <view class="falseimgview" style="display:{{dispaly}};">
+            <image class="falseimg" src="../../images/tabBar/2.jpg"></image>
+        </view>
+        <view bindtap="test" class="imgview">
+            <image bindtap="previewImg" class="img" data-index="{{index}}" mode="aspectFill" src="{{item}}" wx:for="{{imglist}}"></image>
+        </view>
+    </view>
+</scroll-view>
+<toast bindchange="hideToast" duration="1000" hidden="{{!showToast}}">{{toastMessage}}</toast>

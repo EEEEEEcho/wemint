@@ -1,0 +1,26 @@
+// \pages/panKeBao/selfReport/selfReport userPhone Data Flow
+digraph {
+	"59c4dc51eda54458b584f0dea17b34b2" [label="FunctionCall,
+function name -> userPhone,
+param -> e,
+e.,
+" color=blue]
+	"59963d81e7294d59be908d91073d9630" [label=VariableDeclarations color=blue]
+	"3f60821c43bd442190f74deca9327a38" [label="VariableDeclarator,
+left -> t,
+right -> e.detail.value" color=blue]
+	"59963d81e7294d59be908d91073d9630" -> "3f60821c43bd442190f74deca9327a38"
+	"59c4dc51eda54458b584f0dea17b34b2" -> "59963d81e7294d59be908d91073d9630"
+	"43807017798943099fad457047833658" [label="ConditionalExpression,
+ conditional list -> this.setData" color=blue]
+	"6228b645d6134deea9c63bdec5e792c9" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	ce62a7b43075445dad468625800f948f [label="Object Properties
+{
+phoneNum -> t
+}" color=blue]
+	"6228b645d6134deea9c63bdec5e792c9" -> ce62a7b43075445dad468625800f948f
+	"43807017798943099fad457047833658" -> "6228b645d6134deea9c63bdec5e792c9"
+	"59c4dc51eda54458b584f0dea17b34b2" -> "43807017798943099fad457047833658"
+}

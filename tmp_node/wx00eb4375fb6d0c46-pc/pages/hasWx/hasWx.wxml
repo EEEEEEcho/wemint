@@ -1,0 +1,1 @@
+<web-view src="{{projectUrl}}/wallet/userDepositCard/noAppid/wx287cfabc90b0d32c?smallOpenId={{openId}}&time={{time}}"></web-view>

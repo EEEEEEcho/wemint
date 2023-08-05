@@ -1,0 +1,22 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view style="margin-top: {{navH+status+10}}px;">
+    <view class="card">
+        <view bindtap="onDetail" class="cardItem" style="opacity:{{card.isMark?0.7:1}}" wx:for="{{cardList}}" wx:for-item="card" wx:key="index">
+            <image class="cardBg" src="http://oss.shangmian.xin/weixin_applets_card_brown_bg.png" wx:if="{{index%2===0}}"></image>
+            <image class="cardBg" src="http://oss.shangmian.xin/weixin_applets_card_blue_bg.png" wx:if="{{index%2===1}}"></image>
+            <view class="cardContent">
+                <view class="cardTitleLayout">
+                    <text class="cardTitle">{{card.title}}</text>
+                    <text class="cardRemark">{{card.instructions}}</text>
+                </view>
+                <text class="effectiveTime">有效期{{useDiscount.getDay(card.expirationTime)}}天</text>
+            </view>
+            <view class="check_image">
+                <image bindtap="onSelect" class="check_img" data-index="{{index}}" src="{{card.isSelect?'http://oss.shangmian.xin/weixin_applets_mine_checked_red_fill.png':'http://oss.shangmian.xin/weixin_applets_mine_checked_none_fill.png'}}"></image>
+            </view>
+        </view>
+    </view>
+    <empty iconPath="http://oss.shangmian.xin/weixin_applets_icon_empty_view.png" isShow="{{cardList.length==0}}" textContent="暂时还没有可用折扣卡"></empty>
+    <view bindtap="onNotUse" class="cancel">不使用折扣卡</view>
+</view>
+<wxs module="useDiscount" src="useDiscount.wxs" />

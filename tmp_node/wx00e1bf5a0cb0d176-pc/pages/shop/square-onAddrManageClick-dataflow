@@ -1,0 +1,85 @@
+// \pages/shop/square onAddrManageClick Data Flow
+digraph {
+	b88c711241264307b7cdbb3f58fbbb98 [label="FunctionCall,
+function name -> onAddrManageClick,
+param -> " color=blue]
+	"5b826d48b0124ee1861db533485247df" [label=VariableDeclarations color=blue]
+	d6cef6a645284e5a8e75bef068ecfe3e [label="VariableDeclarator,
+left -> a,
+right -> e.cityPicker.getDistrictCodeByName" color=blue]
+	"5b826d48b0124ee1861db533485247df" -> d6cef6a645284e5a8e75bef068ecfe3e
+	b88c711241264307b7cdbb3f58fbbb98 -> "5b826d48b0124ee1861db533485247df"
+	"15b9615d7cf84f8189066dd76aa5dd01" [label=SequenceExpression color=blue]
+	b65019ebb7fa4d6487fd02e16296488e [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	dac16265d2474458b5422947f39a2407 [label="Object Properties
+{
+districtAddr -> a
+}" color=blue]
+	b65019ebb7fa4d6487fd02e16296488e -> dac16265d2474458b5422947f39a2407
+	"15b9615d7cf84f8189066dd76aa5dd01" -> b65019ebb7fa4d6487fd02e16296488e
+	a0be49703b2c45d4b8010d92479e211d [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	a70c8ec3f0b04f9aaed7a73b6ac861fd [label="CallExpression,
+callee name -> this.getCityWideFreight,
+param -> " color=blue]
+	"6daed490e9b9444cbd6cb60f94367b25" [label="FunctionCall,
+function name -> getCityWideFreight,
+param -> " color=blue]
+	dd5b7f94c6354c699061c1166cdf5bde [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	c58e6a52cfc14e35bb6acda1edd2508c [label="ConditionalExpression,
+ conditional list -> this.defaultStores,this.isdefaultStores" color=blue]
+	f65deac35b3b4989b70868df1e873943 [label="CallExpression,
+callee name -> this.defaultStores,
+param -> " color=blue]
+	"5868456792c440a499ee0dbc6fbcc278" [label="FunctionCall,
+function name -> defaultStores,
+param -> " color=blue]
+	ae567b2bdcab4fc6b93ca09fd9cffe54 [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	fd26dd92f3ab453c8e1737a43fb2dd97 [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=enableCityDistribution&addressId=' + s + '&storeId=' + o + '&cargo_price=' + i.data.getPriceInfo.ordermoney
+}" color=blue]
+	ae567b2bdcab4fc6b93ca09fd9cffe54 -> fd26dd92f3ab453c8e1737a43fb2dd97
+	"5868456792c440a499ee0dbc6fbcc278" -> ae567b2bdcab4fc6b93ca09fd9cffe54
+	f65deac35b3b4989b70868df1e873943 -> "5868456792c440a499ee0dbc6fbcc278"
+	c58e6a52cfc14e35bb6acda1edd2508c -> f65deac35b3b4989b70868df1e873943
+	f443f676190d4b398f883e8f85ae4de7 [label="CallExpression,
+callee name -> this.isdefaultStores,
+param -> " color=blue]
+	"6d5f5ee4ff79498cab9058b64bc17659" [label="FunctionCall,
+function name -> isdefaultStores,
+param -> " color=blue]
+	"732561c515b6459dbbaaaaf2378a8b98" [label=VariableDeclarations color=blue]
+	"781aba277c95420087b8d1be1ec418b7" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"4a8d90653de941ff9b972168ca9a8fd5" [label="ConditionalExpression,
+ conditional list -> a.data.defaultAddr.ID" color=blue]
+	"781aba277c95420087b8d1be1ec418b7" -> "4a8d90653de941ff9b972168ca9a8fd5"
+	"732561c515b6459dbbaaaaf2378a8b98" -> "781aba277c95420087b8d1be1ec418b7"
+	"6d5f5ee4ff79498cab9058b64bc17659" -> "732561c515b6459dbbaaaaf2378a8b98"
+	d9ea5e7d82aa452e828f6a09f5e49529 [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	"2f89858b0a244a3d9039fce870cd253d" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=getCityDistributionStore&addressId=' + i + '&cargo_price=' + a.data.getPriceInfo.ordermoney
+}" color=blue]
+	d9ea5e7d82aa452e828f6a09f5e49529 -> "2f89858b0a244a3d9039fce870cd253d"
+	"6d5f5ee4ff79498cab9058b64bc17659" -> d9ea5e7d82aa452e828f6a09f5e49529
+	f443f676190d4b398f883e8f85ae4de7 -> "6d5f5ee4ff79498cab9058b64bc17659"
+	c58e6a52cfc14e35bb6acda1edd2508c -> f443f676190d4b398f883e8f85ae4de7
+	dd5b7f94c6354c699061c1166cdf5bde -> c58e6a52cfc14e35bb6acda1edd2508c
+	"6daed490e9b9444cbd6cb60f94367b25" -> dd5b7f94c6354c699061c1166cdf5bde
+	a70c8ec3f0b04f9aaed7a73b6ac861fd -> "6daed490e9b9444cbd6cb60f94367b25"
+	a0be49703b2c45d4b8010d92479e211d -> a70c8ec3f0b04f9aaed7a73b6ac861fd
+	"15b9615d7cf84f8189066dd76aa5dd01" -> a0be49703b2c45d4b8010d92479e211d
+	b88c711241264307b7cdbb3f58fbbb98 -> "15b9615d7cf84f8189066dd76aa5dd01"
+}

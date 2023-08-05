@@ -1,0 +1,19 @@
+// \pages/houseTypeDetail/houseTypeDetail tabVr Data Flow
+digraph {
+	"13b176c98b434228af25f4a6511a1129" [label="FunctionCall,
+function name -> tabVr,
+param -> " color=blue]
+	d2ee086a91984bfdb6b8afc7edb6a770 [label="If Alternate" color=blue]
+	"763bed62c82d465cbcdda4befaa44b26" [label=VariableDeclarations color=blue]
+	"8367659405554a429ede4356bdbf4802" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	fcd12126615e4e8ca66ad9544ccd5365 [label="Object Properties
+{
+houseType -> this.data.active
+}" color=blue]
+	"8367659405554a429ede4356bdbf4802" -> fcd12126615e4e8ca66ad9544ccd5365
+	"763bed62c82d465cbcdda4befaa44b26" -> "8367659405554a429ede4356bdbf4802"
+	d2ee086a91984bfdb6b8afc7edb6a770 -> "763bed62c82d465cbcdda4befaa44b26"
+	"13b176c98b434228af25f4a6511a1129" -> d2ee086a91984bfdb6b8afc7edb6a770
+}

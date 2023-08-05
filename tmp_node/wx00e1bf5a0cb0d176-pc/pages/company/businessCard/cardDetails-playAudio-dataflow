@@ -1,0 +1,36 @@
+// \pages/company/businessCard/cardDetails playAudio Data Flow
+digraph {
+	d89335fb004c47b29e224def988e5596 [label="FunctionCall,
+function name -> playAudio,
+param -> " color=blue]
+	"76b3a2e5fe1c475cbd66633ac18c2300" [label="If Alternate" color=blue]
+	c6328a2661aa484d8ebc522264c3c1ec [label="If Alternate" color=blue]
+	bc1536478e394e0e819285de652073b6 [label=VariableDeclarations color=blue]
+	"8d84ccb51dde4fe79ffcc5d359805e1e" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"79b4af48f0534194a8a637894d05f3f5" [label="Object Properties
+{
+}" color=blue]
+	d843c883d69141aa86c7e715e699a974 [label="ConditionalExpression,
+ conditional list -> t.data.optionsobj.BusinessCardID,t.data.optionsobj.cid" color=blue]
+	"79b4af48f0534194a8a637894d05f3f5" -> d843c883d69141aa86c7e715e699a974
+	"6111ede59e044213a8e8d1821514cc3d" [label="ConditionalExpression,
+ conditional list -> t.data.optionsobj.BusinessCardID,t.data.optionsobj.cid" color=blue]
+	"79b4af48f0534194a8a637894d05f3f5" -> "6111ede59e044213a8e8d1821514cc3d"
+	"8d84ccb51dde4fe79ffcc5d359805e1e" -> "79b4af48f0534194a8a637894d05f3f5"
+	bc1536478e394e0e819285de652073b6 -> "8d84ccb51dde4fe79ffcc5d359805e1e"
+	c6328a2661aa484d8ebc522264c3c1ec -> bc1536478e394e0e819285de652073b6
+	"76b3a2e5fe1c475cbd66633ac18c2300" -> c6328a2661aa484d8ebc522264c3c1ec
+	d2582ecadd394ea4be64c8e1d7fe889a [label=SequenceExpression color=blue]
+	f8dcf323d599442788aa7c8edc7c04c9 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	bd34310553a2438b8d61f8f32e4363b1 [label="Assignment,
+left -> t.myaudio.src,
+right -> t.data.baseUrl + t.data.Recording" color=blue]
+	f8dcf323d599442788aa7c8edc7c04c9 -> bd34310553a2438b8d61f8f32e4363b1
+	d2582ecadd394ea4be64c8e1d7fe889a -> f8dcf323d599442788aa7c8edc7c04c9
+	"76b3a2e5fe1c475cbd66633ac18c2300" -> d2582ecadd394ea4be64c8e1d7fe889a
+	d89335fb004c47b29e224def988e5596 -> "76b3a2e5fe1c475cbd66633ac18c2300"
+}

@@ -1,0 +1,182 @@
+.cover_screen {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: #fff;
+    opacity: 0.3;
+}
+
+.distribution {
+    width: 100%;
+    align-items: center;
+}
+
+.topLayout {
+    width: 92%;
+    align-items: center;
+}
+
+.leftLabel {
+    font-size: 38rpx;
+    color: #51515c;
+    font-weight: bold;
+    letter-spacing: 4rpx;
+}
+
+.nickName {
+    font-size: 26rpx;
+    color: #aeaeb4;
+    margin-left: auto;
+}
+
+.avatar {
+    width: 48rpx;
+    height: 48rpx;
+    border-radius: 24rpx;
+    margin-left: 12rpx;
+}
+
+.incomeLayout {
+    width: 92%;
+    position: relative;
+    margin-top: 4%;
+    height: 0;
+    padding-bottom: 46%;
+}
+
+.incomeBg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.incomeContent {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.estimateText {
+    font-size: 28rpx;
+    color: #ffffff;
+    margin: 7% 0 0 7%;
+    letter-spacing: 3rpx;
+}
+
+.incomeCenter {
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.incomeMoney {
+    font-size: 66rpx;
+    color: #ffffff;
+    letter-spacing: 6rpx;
+    margin-top: 2%;
+}
+
+.incomeSuffix {
+    font-size: 26rpx;
+    color: #ffffff;
+    padding: 0rpx 0rpx 12rpx 12rpx;
+}
+
+.statisticsLayout {
+    width: 100%;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.statisticsFlex {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.accessImage {
+    width: 25rpx;
+    height: 25rpx;
+}
+
+.accessText {
+    font-size: 22rpx;
+    color: #ffffff;
+    margin-left: 12rpx;
+    letter-spacing: 1rpx;
+}
+
+.statisticNumber {
+    width: 100%;
+    align-items: center;
+    margin-top: 3rpx;
+}
+
+.numberText {
+    flex: 1;
+    font-size: 22rpx;
+    color: #ffffff;
+    letter-spacing: 1rpx;
+    text-align: center;
+    padding-left: 25rpx;
+}
+
+.service {
+    width: 92%;
+    font-size: 35rpx;
+    color: #51515c;
+    font-weight: bold;
+    letter-spacing: 5rpx;
+    margin: 4% 0;
+}
+
+.featuresLayout {
+    width: 92%;
+    border-radius: 20rpx;
+    box-shadow: 0rpx 0rpx 16rpx #f0f0f0;
+    background: #ffffff;
+}
+
+.module {
+    margin: 40rpx 0;
+}
+
+.featuresRow {
+    width: 100%;
+    align-items: center;
+}
+
+.featuresImage {
+    width: 36rpx;
+    height: 36rpx;
+    margin-left: 32rpx;
+}
+
+.featuresLabel {
+    font-size: 28rpx;
+    color: #51515c;
+    padding: 24rpx;
+}
+
+.featuresNumber {
+    width: 36rpx;
+    height: 28rpx;
+    background: #f44341;
+    margin-left: auto;
+    margin-right: 24rpx;
+    font-size: 18rpx;
+    color: #ffffff;
+    text-align: center;
+    line-height: 28rpx;
+    border-radius: 14rpx;
+}
+
+.featuresArrow {
+    width: 14rpx;
+    height: 24rpx;
+    margin-left: auto;
+    margin-right: 28rpx;
+}

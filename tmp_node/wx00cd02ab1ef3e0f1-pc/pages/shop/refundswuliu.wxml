@@ -1,0 +1,29 @@
+<view class="container">
+    <form bindsubmit="fromsubmit">
+        <view class="tuikuang">
+            <view class="tuikuang-text">
+                <text class="iconfont icon-iconfont_select-acti1"></text>商家同意退款</view>
+            <view class="address-title">退货地址</view>
+            <view class="tuikuang-address">
+                <view class="iconfont icon-iconfont_location"></view>
+                <view class="address">
+                    <view class="address-text">
+                        <text class="name">{{businessinfo.ReturnContact}}</text>
+                        <text class="phone">{{businessinfo.ReturnMobile}}</text>
+                    </view>
+                    <view class="deail">{{businessinfo.ReturnAddress}}</view>
+                </view>
+            </view>
+            <view class="hheng"></view>
+            <view></view>
+            <view class="logistics border1px">已退货请填写物流信息</view>
+            <view class="logistics-item border1px">物流公司：<input bindinput="bindinput" data-currentInp="1" name="tracking" placeholder="填写物流公司名称" type="text" value="{{businessinfo.Logistics}}"></input>
+            </view>
+            <view class="logistics-item border1px">物流单号：<input bindinput="bindinput" data-currentInp="2" name="logistics" placeholder="填写物流单号" type="text" value="{{businessinfo.Tracking}}"></input>
+            </view>
+            <input name="orderid" style="display:none" type="text" value="{{businessinfo.orderid}}"></input>
+            <input name="pkey" style="display:none" type="text" value="{{businessinfo.pkey}}"></input>
+            <button class=" submit {{currentInpOne.length&&currentInpTwo.length?'active':''}} " disabled="{{!currentInpOne.length||!currentInpTwo.length}}" formType="submit">提交</button>
+        </view>
+    </form>
+</view>

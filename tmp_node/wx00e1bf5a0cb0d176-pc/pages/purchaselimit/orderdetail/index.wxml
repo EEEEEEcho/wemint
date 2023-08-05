@@ -1,0 +1,167 @@
+<view class="container" wx:if="{!otherSuccessFlag}}">
+    <form bindsubmit="Gopay" reportSubmit="true">
+        <view class="orderinfo-img">
+            <view>
+	      {{orderinfo.Status}}
+	      <text style="font-size:20rpx;color:#fff;position:relative;top:-10rpx;left:10rpx" wx:if="{{orderinfo.Status=='等待买家收货'||orderinfo.Status=='等待卖家发货'}}">
+	        秒杀
+	      </text>
+                <view style="font-size:22rpx;color:#fff;" wx:if="{{orderinfo.Status=='未付款'}}">
+	        {{intervalTime.minutes}}分{{intervalTime.seconds}}秒后取消订单
+	      </view>
+            </view>
+            <view class="orderinfo-imgs" wx:if="{{orderinfo.Status=='未付款'}}">
+                <image src="{{baseUrl}}/orderdetail_03.png"></image>
+            </view>
+            <view class="orderinfo-imgs" wx:if="{{orderinfo.Status=='等待买家收货'}}">
+                <image src="{{baseUrl}}/images/wxapp/orderdetail_07.png"></image>
+            </view>
+            <view class="orderinfo-imgs" wx:if="{{orderinfo.Status=='等待卖家发货'}}">
+                <image src="{{baseUrl}}/images/wxapp/orderdetail_05.png"></image>
+            </view>
+            <view class="orderinfo-imgs" wx:if="{{orderinfo.Status=='已完成'}}">
+                <image src="{{baseUrl}}/images/wxapp/orderdetail_09.png"></image>
+            </view>
+        </view>
+        <view class="address" wx:if="{{!pickUpFlag}}">
+            <view class="iconfont icon-iconfont_location"></view>
+            <view class="address-tit">
+                <view class="address-tit-s">
+                    <text class="tit">{{orderinfo.Contact}}</text>
+                    <text class="tit-s">{{orderinfo.Mobile}}</text>
+                </view>
+                <view class="address-tit-c">{{orderinfo.Address}}</view>
+            </view>
+        </view>
+        <view class="pickup-info" wx:if="{{pickUpFlag}}">
+            <view class="pickup-baseinfo">
+                <view class="pickup-person">
+                    <text class="pickup-title">取货人：</text>
+                    <text class="pickup-name">{{pickUserName}}</text>
+                    <text class="cutline"></text>
+                    <text>{{pickUserPhone}}</text>
+                </view>
+                <view class="pickup-time">
+                    <text class="pickup-title">取货时间：</text>
+                    <text>{{orderinfo.OrderInfo.PickupTime}}</text>
+                </view>
+            </view>
+            <view class="line" style="height: 20rpx;background: #f4f4f4;"></view>
+            <view class="pickup-address">
+                <view class="pickstroe">
+                    <view class="store-left">
+                        <view class="pickup-title">取货门店：</view>
+                        <view>{{orderinfo.OrderInfo.PickupStoreName}}</view>
+                    </view>
+                    <view class="store-right" wx:if="{{orderinfo.OrderInfo.DistanceFromStore!=NAN}}">
+                        <view>
+	            {{orderinfo.OrderInfo.DistanceFromStore>1?orderinfo.OrderInfo.DistanceFromStore:orderinfo.OrderInfo.DistanceFromStore*1000}}
+	          </view>
+                        <view>{{orderinfo.OrderInfo.DistanceFromStore>1?'km':'m'}}</view>
+                    </view>
+                </view>
+                <view class="pickup-address-info">
+                    <view class="address-title">取货地址：</view>
+                    <view class="pickupAddress">{{orderinfo.OrderInfo.PickupAddress}}</view>
+                </view>
+            </view>
+            <view class="btngroups" wx:if="{{!pickupInfoHide}}">
+                <view class="btns border1px">
+                    <view catchtap="call" class="tpl">
+                        <text class="iconfont icon-nbbPhone1"></text>
+                        <text>联系商家</text>
+                    </view>
+                    <view catchtap="navigation" class="dizhi">
+                        <text class="iconfont icon-dizhi"></text>
+                        <text>导航到店</text>
+                    </view>
+                </view>
+            </view>
+            <view class="qrcode" wx:if="{{orderinfo.Status!=='已完成'&&!pickupInfoHide&&removeCotainer}}">
+                <canvas canvasId="myCanvas" catchtap="magnify" data-src="{{pickupImg}}" style="width: {{canvasWidth}}px;height: {{canvasHeight}}px;"></canvas>
+                <view catchtap="saveImageToPhotosAlbum" class="save">保存到相册</view>
+            </view>
+        </view>
+        <view class="line" style="height: 20rpx;background: #f4f4f4;"></view>
+        <view class="order-list" wx:for="{{orderinfo.ProductList}}" wx:for-index="idx" wx:key="id">
+            <view class="order-list-item">
+                <view class="pro-img">
+                    <image mode="widthFix" src="{{baseUrl}}/comdata/{{siteID}}/product/{{item.Image}}"></image>
+                </view>
+                <view class="protext  {{orderinfo.ProductList.length-1!=idx?'border1px':''}}">
+                    <view class="pro-name">{{item.ProductName}}</view>
+                    <view class="pro-jiange">
+                        <text class="guige">{{item.ProAttrStr}}</text>
+                        <text class="chima">x{{item.ProductNum}}</text>
+                    </view>
+                    <view class="pro-Price">
+                        <text class="selling-price">￥{{item.ProductPrice}}</text>
+                        <text class="market-value">￥{{item.MarketPrice}}</text>
+                    </view>
+                    <view bindtap="goRefunds" class="refund-status" data-orderid="{{orderinfo.OrderID}}" data-pkey="{{item.Pkey}}" style="display:{{orderinfo.Status=='未付款'||orderinfo.groupp_Status==1||orderinfo.Status=='交易关闭'?'none ':'block'}}" wx:if="{{!item.hasrefunds}}">
+                        <text>退款</text>
+                    </view>
+                    <view bindtap="goRefundsWuliu" class="refund-status" data-orderid="{{orderinfo.OrderID}}" data-pkey="{{item.Pkey}}" wx:elif="{{item.RefundStatus==3}}">
+                        <text>去退货</text>
+                    </view>
+                    <view wx:elif="{{item.hasrefunds}}">
+                        <view class="refund-status" wx:if="{{item.RefundStatus==0}}">
+                            <text bindtap="" data-orderid="{{orderinfo.OrderID}}" data-pkey="{{item.Pkey}}">售后申请中</text>
+                        </view>
+                        <view bindtap="goRefundsuc" class="refund-status" data-orderid="{{orderinfo.OrderID}}" data-pkey="{{item.Pkey}}" wx:elif="{{item.RefundStatus==1}}">
+                            <text>退款成功</text>
+                        </view>
+                        <view bindtap="goRefundsuc" class="refund-status" data-orderid="{{orderinfo.OrderID}}" data-pkey="{{item.Pkey}}" wx:elif="{{item.RefundStatus==2}}">
+                            <text>退款失败</text>
+                        </view>
+                        <view class="refund-status" wx:elif="{{item.RefundStatus==3}}">
+                            <text type="defaule">去退货</text>
+                        </view>
+                        <view class="refund-status" wx:elif="{{item.RefundStatus==4}}">
+                            <text bindtap="" data-orderid="{{orderinfo.OrderID}}" data-pkey="{{item.Pkey}}" type="defaule">
+	              等待退款
+	            </text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view style="height:20rpx;background:#f4f4f4"></view>
+        <view class="order-details">
+            <view class="orders-item border1px">
+                <text class="orders-tit">
+                    <text>买家留言 :</text>
+                </text>
+                <text class="color">{{orderinfo.OrderInfo.Remark}}</text>
+            </view>
+            <view class="orders-item border1px">
+                <text class="orders-tit">
+                    <text>快递运费 :</text>
+                </text>
+                <text class="orders-tit-item">
+	        ￥{{orderinfo.OrderInfo.FreightMoney!==''&&orderinfo.OrderInfo.FreightMoney!==null?orderinfo.OrderInfo.FreightMoney:'0.00'}}
+	      </text>
+            </view>
+            <view class="orders-item border1px">
+                <text class="orders-tit">
+                    <text>实际付费(含运费) :</text>
+                </text>
+                <text class="orders-tit-item">￥{{orderinfo.OrderInfo.countmoney}}</text>
+            </view>
+        </view>
+        <view class="order-number">
+            <view>订单编号：{{orderinfo.OrderID}}</view>
+            <view>交易码：42586338899654899</view>
+            <view>创建时间：{{orderinfo.OrderInfo.CrTime}}</view>
+            <view>成交时间：{{orderinfo.OrderInfo.PayTime==null?'':orderinfo.OrderInfo.PayTime}}</view>
+        </view>
+        <view class="button-item" wx:if="{{orderinfo.Status=='未付款'}}">
+            <view bindtap="showPaymentPlug" class="other-button-item other-button-color" data-orderid="{{orderinfo.OrderID}}" type="defaule">
+	      去付款
+	    </view>
+        </view>
+        <include src="/pages/common/paymenttype.wxml"></include>
+    </form>
+</view>
+<include src="/pages/common/paymentresult.wxml"></include>
+<include src="/pages/template/floatLayer.wxml"></include>

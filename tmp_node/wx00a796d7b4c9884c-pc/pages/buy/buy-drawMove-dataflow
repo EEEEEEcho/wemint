@@ -1,0 +1,41 @@
+// \pages/buy/buy drawMove Data Flow
+digraph {
+	"153ad0b9733c488cbba754772a1daee5" [label="FunctionCall,
+function name -> drawMove,
+param -> " color=blue]
+	be1da763f9a148f2a05bb46492fbcc6c [label=VariableDeclarations color=blue]
+	fc68e99ae40249799a8aa5d49db521fb [label="VariableDeclarator,
+left -> s,
+right -> this.data.startX - a.clientX" color=blue]
+	be1da763f9a148f2a05bb46492fbcc6c -> fc68e99ae40249799a8aa5d49db521fb
+	"153ad0b9733c488cbba754772a1daee5" -> be1da763f9a148f2a05bb46492fbcc6c
+	"378f40f1de304d64a41892ae7c28d411" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"3552b22ccbbb4c778c9b81c11594d9cc" [label=SequenceExpression color=blue]
+	"2561413d1010438c901b82cbb7e941d7" [label="Assignment,
+left -> e.right,
+right -> s" color=blue]
+	"3552b22ccbbb4c778c9b81c11594d9cc" -> "2561413d1010438c901b82cbb7e941d7"
+	"5dd054ab415e437393f9fc5624541140" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	cb2de8f5c6fe491a8de26c42c1021258 [label="Object Properties
+{
+carts -> this.data.carts
+}" color=blue]
+	"5dd054ab415e437393f9fc5624541140" -> cb2de8f5c6fe491a8de26c42c1021258
+	"3552b22ccbbb4c778c9b81c11594d9cc" -> "5dd054ab415e437393f9fc5624541140"
+	"378f40f1de304d64a41892ae7c28d411" -> "3552b22ccbbb4c778c9b81c11594d9cc"
+	"9f7fc8239d404199b2df0dbf38fd0f30" [label=SequenceExpression color=blue]
+	a6d78bc1af3f48ddbf0a00381f8ea4ee [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"776ea45b9e9e41a4ad348e7abdc3eeae" [label="Object Properties
+{
+carts -> this.data.carts
+}" color=blue]
+	a6d78bc1af3f48ddbf0a00381f8ea4ee -> "776ea45b9e9e41a4ad348e7abdc3eeae"
+	"9f7fc8239d404199b2df0dbf38fd0f30" -> a6d78bc1af3f48ddbf0a00381f8ea4ee
+	"378f40f1de304d64a41892ae7c28d411" -> "9f7fc8239d404199b2df0dbf38fd0f30"
+	"153ad0b9733c488cbba754772a1daee5" -> "378f40f1de304d64a41892ae7c28d411"
+}

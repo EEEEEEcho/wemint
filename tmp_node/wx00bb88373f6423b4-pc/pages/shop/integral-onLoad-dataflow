@@ -1,0 +1,58 @@
+// \pages/shop/integral onLoad Data Flow
+digraph {
+	ea94b5524746421daf88ca741e486e8e [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	ca4136a0c41047478e9997b653e8e354 [label=SequenceExpression color=blue]
+	"6a69b67575464e4a9389c1ced6389b15" [label="CallExpression,
+callee name -> this.loadIntegral,
+param -> " color=blue]
+	d82a7cffee9546c880d6651721aaedba [label="FunctionCall,
+function name -> loadIntegral,
+param -> " color=blue]
+	"49366f3ab7424392b3c1543f26f2e92d" [label="If Alternate" color=blue]
+	"5e57e1407d60449d9ef3d270bafd89b2" [label=VariableDeclarations color=blue]
+	"0cec2ab1acf44f3cbbdef0398f2e4a06" [label="VariableDeclarator,
+left -> n,
+right -> a.data.total" color=blue]
+	"5e57e1407d60449d9ef3d270bafd89b2" -> "0cec2ab1acf44f3cbbdef0398f2e4a06"
+	"49366f3ab7424392b3c1543f26f2e92d" -> "5e57e1407d60449d9ef3d270bafd89b2"
+	"9d48ba2823264b368238e94ffe9525d6" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"88b237a8c684499183566c876f7558e9" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"32568f7bea6648b9aeb78027576f990c" [label="Assignment,
+left -> a.data.recordcount,
+right -> n" color=blue]
+	"88b237a8c684499183566c876f7558e9" -> "32568f7bea6648b9aeb78027576f990c"
+	"9d48ba2823264b368238e94ffe9525d6" -> "88b237a8c684499183566c876f7558e9"
+	"49366f3ab7424392b3c1543f26f2e92d" -> "9d48ba2823264b368238e94ffe9525d6"
+	e195b86054474b99850ae8f405d525db [label=VariableDeclarations color=blue]
+	"60c42467b4bc4a3ea1ee4dd98a79fce9" [label="VariableDeclarator,
+left -> i,
+right -> a.data.recordcount" color=blue]
+	e195b86054474b99850ae8f405d525db -> "60c42467b4bc4a3ea1ee4dd98a79fce9"
+	"694cb08081864185a33ad4dbfd0e8d79" [label="VariableDeclarator,
+left -> s,
+right -> a.data.integralInfo.length" color=blue]
+	e195b86054474b99850ae8f405d525db -> "694cb08081864185a33ad4dbfd0e8d79"
+	"49366f3ab7424392b3c1543f26f2e92d" -> e195b86054474b99850ae8f405d525db
+	"9b0af2b5c43546b5861f60d550979a7e" [label="If Alternate" color=blue]
+	"71de07934a0541c79fbcb92fb4621a81" [label=VariableDeclarations color=blue]
+	"413eb9bbdb184c76b0b21b7e433ba0a7" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"137902c1e51b412ab5a6ded349594542" [label="CallExpression,
+callee name -> Math.ceil,
+param -> s / a.data.pagesize,
+" color=blue]
+	"413eb9bbdb184c76b0b21b7e433ba0a7" -> "137902c1e51b412ab5a6ded349594542"
+	"71de07934a0541c79fbcb92fb4621a81" -> "413eb9bbdb184c76b0b21b7e433ba0a7"
+	"9b0af2b5c43546b5861f60d550979a7e" -> "71de07934a0541c79fbcb92fb4621a81"
+	"49366f3ab7424392b3c1543f26f2e92d" -> "9b0af2b5c43546b5861f60d550979a7e"
+	d82a7cffee9546c880d6651721aaedba -> "49366f3ab7424392b3c1543f26f2e92d"
+	"6a69b67575464e4a9389c1ced6389b15" -> d82a7cffee9546c880d6651721aaedba
+	ca4136a0c41047478e9997b653e8e354 -> "6a69b67575464e4a9389c1ced6389b15"
+	ea94b5524746421daf88ca741e486e8e -> ca4136a0c41047478e9997b653e8e354
+}

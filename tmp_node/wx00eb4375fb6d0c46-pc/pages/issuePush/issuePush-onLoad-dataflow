@@ -1,0 +1,27 @@
+// \pages/issuePush/issuePush onLoad Data Flow
+digraph {
+	bf04fa7a927e4e558279853a43fe14fd [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"8faad86bc17d49329168324f0d848cdd" [label=SequenceExpression color=blue]
+	"6a540b632b7547e2891d8266a65662ef" [label="CallExpression,
+callee name -> this.getCouponMsg,
+param -> " color=blue]
+	"39efb0df94e34133b7922a6527a07d64" [label="FunctionCall,
+function name -> getCouponMsg,
+param -> " color=blue]
+	"32a671aee70542bd9514b522abcc5c54" [label=VariableDeclarations color=blue]
+	c85262155b7d4fdd9ad2f8aeab771495 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"93b6f1236b7648ebb86c1657a5818abf" [label="Object Properties
+{
+couponsId -> this.data.couponsId
+}" color=blue]
+	c85262155b7d4fdd9ad2f8aeab771495 -> "93b6f1236b7648ebb86c1657a5818abf"
+	"32a671aee70542bd9514b522abcc5c54" -> c85262155b7d4fdd9ad2f8aeab771495
+	"39efb0df94e34133b7922a6527a07d64" -> "32a671aee70542bd9514b522abcc5c54"
+	"6a540b632b7547e2891d8266a65662ef" -> "39efb0df94e34133b7922a6527a07d64"
+	"8faad86bc17d49329168324f0d848cdd" -> "6a540b632b7547e2891d8266a65662ef"
+	bf04fa7a927e4e558279853a43fe14fd -> "8faad86bc17d49329168324f0d848cdd"
+}

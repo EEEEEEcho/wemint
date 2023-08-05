@@ -1,0 +1,35 @@
+// \pages/searchresult/searchresult onSortClick Data Flow
+digraph {
+	de26e2ce2c0d46deabd2a3f7730b8ac3 [label="FunctionCall,
+function name -> onSortClick,
+param -> a,
+a.,
+" color=blue]
+	e637aeaf1ea14aaba6a84d2536b75058 [label=VariableDeclarations color=blue]
+	"62b991734e9045eaa75361b5bc9fd8c5" [label="VariableDeclarator,
+left -> e,
+right -> a.target.dataset.sortby" color=blue]
+	e637aeaf1ea14aaba6a84d2536b75058 -> "62b991734e9045eaa75361b5bc9fd8c5"
+	"22e043e3c89643da9bba8bbc46a6821d" [label="VariableDeclarator,
+left -> o,
+right -> a.currentTarget.dataset.num" color=blue]
+	e637aeaf1ea14aaba6a84d2536b75058 -> "22e043e3c89643da9bba8bbc46a6821d"
+	de26e2ce2c0d46deabd2a3f7730b8ac3 -> e637aeaf1ea14aaba6a84d2536b75058
+	b4827a181f574a39940a954b7eb759e4 [label=SequenceExpression color=blue]
+	"964a5b34ef6b4d919470358b51c9f919" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	dfbc488b29aa435ca3cfa98791ac236e [label="Object Properties
+{
+SortBy -> e
+Num -> o
+}" color=blue]
+	"964a5b34ef6b4d919470358b51c9f919" -> dfbc488b29aa435ca3cfa98791ac236e
+	b4827a181f574a39940a954b7eb759e4 -> "964a5b34ef6b4d919470358b51c9f919"
+	"5b331c22d379446291b4e440aa0071f5" [label="CallExpression,
+callee name -> t.loadData,
+param -> t,
+" color=blue]
+	b4827a181f574a39940a954b7eb759e4 -> "5b331c22d379446291b4e440aa0071f5"
+	de26e2ce2c0d46deabd2a3f7730b8ac3 -> b4827a181f574a39940a954b7eb759e4
+}

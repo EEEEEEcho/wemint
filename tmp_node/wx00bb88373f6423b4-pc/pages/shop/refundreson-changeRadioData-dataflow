@@ -1,0 +1,17 @@
+// \pages/shop/refundreson changeRadioData Data Flow
+digraph {
+	b089754727ac41149d585f3cc94b1cf0 [label="FunctionCall,
+function name -> changeRadioData,
+param -> a,
+a.,
+" color=blue]
+	"98b6580f25154d2e929b0418ce09b8ac" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	e025544767054c97875b7c5a79fa8cd4 [label="Object Properties
+{
+radioFlag -> '1' === a.currentTarget.dataset.index
+}" color=blue]
+	"98b6580f25154d2e929b0418ce09b8ac" -> e025544767054c97875b7c5a79fa8cd4
+	b089754727ac41149d585f3cc94b1cf0 -> "98b6580f25154d2e929b0418ce09b8ac"
+}

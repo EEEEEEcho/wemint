@@ -1,0 +1,16 @@
+// \pages/shop/square receive Data Flow
+digraph {
+	"16ce6f7384c54035896afdfd5d087fee" [label="FunctionCall,
+function name -> receive,
+param -> " color=blue]
+	"24db98f873b84a7c9b1cce0844c4ba4b" [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	cc377707ca12495eaa4096c09c8395f9 [label="Object Properties
+{
+payGiftToken -> t.data.payParam.payToken
+orderID -> t.data.payParam.id
+}" color=blue]
+	"24db98f873b84a7c9b1cce0844c4ba4b" -> cc377707ca12495eaa4096c09c8395f9
+	"16ce6f7384c54035896afdfd5d087fee" -> "24db98f873b84a7c9b1cce0844c4ba4b"
+}

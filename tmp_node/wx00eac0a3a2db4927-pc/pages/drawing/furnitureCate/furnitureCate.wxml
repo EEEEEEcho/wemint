@@ -1,0 +1,37 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="furnitureCateContain" style="margin-top: {{navH+status}}px">
+    <view class="showProduct">
+        <scroll-view scrollX class="scrollViewH">
+            <view bindtap="chooseFirst" class="tab" data-index="{{index}}" style="margin-right: {{index===styleList.length-1?'':'20'}}rpx;" wx:for="{{styleList}}">
+                <text class="swiper {{firstActive===index?'swipertabSelect':'swiperTab'}}">{{item.name}}</text>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="showCate">
+        <scroll-view scrollX class="scrollViewH">
+            <view bindtap="chooseSecond" class="tab" data-drawingUuid="{{item.drawingUuid}}" data-index="{{index}}" data-packageUuid="{{item.packageUuid}}" style="margin-right: {{index===styleList.length-1?'':'20'}}rpx;" wx:for="{{styleList[firstActive].packages}}">
+                <text class="swiper {{secondActive===index?'swipertabSelect':'swiperTab'}}">{{item.name}}</text>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="show3DView">
+        <image class="view_back" src="http://oss.shangmian.xin/weixin_applets_icon_3d_back.png"></image>
+    </view>
+    <view class="spaceView row">
+        <view class="headline column">
+            <text class="showView">空间3D场景展示</text>
+            <text class="get3DView">点击图片查看空间3D实景</text>
+        </view>
+        <image catchtap="toPage" class="servicesPlan" data-type="servicesPlan" src="http://oss.shangmian.xin/weixin_applets_icon_services_plan.png"></image>
+        <image catchtap="toPage" class="relatedProduct" data-type="relatedProduct" src="http://oss.shangmian.xin/weixin_applets_icon_related_product.png"></image>
+    </view>
+    <view class="viewRadioPanel">
+        <view class="viewRadio" style="margin-bottom:{{index==drawContent.length-1?'80':'30'}}rpx;" wx:for="{{drawContent}}" wx:for-item="data">
+            <image class="labelImage" lazyLoad="true" mode="aspectFill" src="{{data.images[0]}}"></image>
+            <image catchtap="toView" class="radioImage" data-url="{{data.url}}" src="http://oss.shangmian.xin/weixin_applets_icon_video_img.png"></image>
+            <view class="label labelBtn" wx:if="{{data.goodsCount!=0}}">{{data.name}}商品</view>
+            <view catchtap="previewImages" class="labelBtn {{data.goodsCount!=0?'tuce':'label'}}" data-viewIndex="{{index}}" wx:if="{{data.images.length>1}}">{{data.name}}图册</view>
+        </view>
+    </view>
+</view>
+<loading-view isShow="{{isShowLoad}}"></loading-view>

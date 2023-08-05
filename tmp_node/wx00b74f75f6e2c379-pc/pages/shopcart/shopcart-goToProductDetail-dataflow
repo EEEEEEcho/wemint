@@ -1,0 +1,25 @@
+// \pages/shopcart/shopcart goToProductDetail Data Flow
+digraph {
+	ad4b778e8ecc40a1b26ac4764d0871cd [label="FunctionCall,
+function name -> goToProductDetail,
+param -> e,
+e.,
+" color=blue]
+	cf0858780672443fb0e7b093b1944a93 [label=VariableDeclarations color=blue]
+	"4e08363ac56d46f9bea752d0f5b76b87" [label="VariableDeclarator,
+left -> productid,
+right -> e.currentTarget.dataset.productid" color=blue]
+	cf0858780672443fb0e7b093b1944a93 -> "4e08363ac56d46f9bea752d0f5b76b87"
+	ad4b778e8ecc40a1b26ac4764d0871cd -> cf0858780672443fb0e7b093b1944a93
+	"7d80f0d36eb04314a6b15d052099cd2c" [label="If Alternate" color=blue]
+	"88cc9092becf423e8d084f5acb685bd8" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	af17655a95b6415696c078a4650a66bc [label="Object Properties
+{
+url -> '../productdetail/productdetail?id=' + productid
+}" color=blue]
+	"88cc9092becf423e8d084f5acb685bd8" -> af17655a95b6415696c078a4650a66bc
+	"7d80f0d36eb04314a6b15d052099cd2c" -> "88cc9092becf423e8d084f5acb685bd8"
+	ad4b778e8ecc40a1b26ac4764d0871cd -> "7d80f0d36eb04314a6b15d052099cd2c"
+}

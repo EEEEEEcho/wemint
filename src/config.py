@@ -21,9 +21,9 @@ DB_CONFIG = {
     'passwd': 'XpQde!@',
     'db': 'taint_db',
     'charset': 'utf8',
-    'maxconnections': 10,  # 连接池允许的最大连接数
-    'mincached': 4,  # 初始化时连接池中至少创建的空闲的连接，0表示不创建
-    'maxcached': 0,  # 连接池中最多闲置的连接，0表示不限制，连接使用完成后的空闲连接保留数。
-    'maxusage': 5,  # 每个连接最多被重复使用的次数，None表示不限制
-    'blocking': True  # 连接池中如果没有可用连接后是否阻塞等待，
+    'maxconnections': 10,
+    'mincached': 4,
+    'maxcached': 0,
+    'maxusage': 5,
+    'blocking': True
 }

@@ -1,0 +1,29 @@
+// \pages/stu/switchAccount/switchAccount editAppointment Data Flow
+digraph {
+	"2d90836d72db4cada4be708beb1c4132" [label="FunctionCall,
+function name -> editAppointment,
+param -> n.,
+n,
+" color=blue]
+	"3b890cb1e04e4b6fb0fbecbf8d67d4fc" [label=VariableDeclarations color=blue]
+	"8b22c53218164c9382df282d493a999c" [label="VariableDeclarator,
+left -> o,
+right -> n.target.dataset.id" color=blue]
+	"3b890cb1e04e4b6fb0fbecbf8d67d4fc" -> "8b22c53218164c9382df282d493a999c"
+	"7c3aa68e73d14ba1858d4a82d4810c0a" [label="VariableDeclarator,
+left -> i,
+right -> n.target.dataset.index" color=blue]
+	"3b890cb1e04e4b6fb0fbecbf8d67d4fc" -> "7c3aa68e73d14ba1858d4a82d4810c0a"
+	"2d90836d72db4cada4be708beb1c4132" -> "3b890cb1e04e4b6fb0fbecbf8d67d4fc"
+	b3aa1ac731114a0ba33931dd1e625d37 [label=SequenceExpression color=blue]
+	"3669852260784a53b2fb778add63cdb7" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	d3dd9dc6f41a450caac4e60ffe6375af [label="Object Properties
+{
+id -> o
+}" color=blue]
+	"3669852260784a53b2fb778add63cdb7" -> d3dd9dc6f41a450caac4e60ffe6375af
+	b3aa1ac731114a0ba33931dd1e625d37 -> "3669852260784a53b2fb778add63cdb7"
+	"2d90836d72db4cada4be708beb1c4132" -> b3aa1ac731114a0ba33931dd1e625d37
+}

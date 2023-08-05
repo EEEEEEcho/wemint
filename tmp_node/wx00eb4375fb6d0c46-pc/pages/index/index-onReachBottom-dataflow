@@ -1,0 +1,14 @@
+// \pages/index/index onReachBottom Data Flow
+digraph {
+	aa824c74d883433eac0e67ed107fcf99 [label="FunctionCall,
+function name -> onReachBottom,
+param -> " color=blue]
+	"58b5a5baef2b4c149a0949695ad28b88" [label=SequenceExpression color=blue]
+	b3f83efd88a34792a6a3c4afeaf55533 [label="CallExpression,
+callee name -> this.getRecommend,
+param -> this.data._num,
+this.data.orgtype,
+" color=blue]
+	"58b5a5baef2b4c149a0949695ad28b88" -> b3f83efd88a34792a6a3c4afeaf55533
+	aa824c74d883433eac0e67ed107fcf99 -> "58b5a5baef2b4c149a0949695ad28b88"
+}

@@ -1,0 +1,12 @@
+@import "UserReg.wxss";
+
+page {
+    background-color: #ffffff;
+}
+
+.homeWrapper {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+@import "../template/modules.wxss";

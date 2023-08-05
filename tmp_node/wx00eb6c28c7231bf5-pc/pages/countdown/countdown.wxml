@@ -1,0 +1,31 @@
+<view class="page-section  bg-white">
+    <view class="countdown-banner">
+        <image mode="aspectFill" src="../../images/countdown-banner.jpg"></image>
+    </view>
+    <view class="countdown-list">
+        <view class="countdown" wx:for="{{CountDownList}}" wx:for-index="idx">
+            <view class="info">
+                <view class="countdown-info-pic">
+                    <image mode="aspectFill" src="{{item.ThumbnailUrl160}}"></image>
+                </view>
+                <view class="countdow-info-txt">
+                    <view class="countdow-info-name">{{item.ProductName}}</view>
+                    <view class="countdow-info-b">
+                        <view class="saleprice">
+                            <view class="price">￥
+                  <text>{{item.CountDownPrice}}</text>
+                            </view>
+                            <view class="oldprice">￥
+                  <text>{{item.SalePrice}}</text>
+                            </view>
+                        </view>
+                        <view bindtap="BuyCountDown" class="countdown-btn {{item.CountDownType=='1'?'countdow-start':''}}" data-id="{{item.CountDownId}}">
+                            <text>{{item.CountDownType==1?'即将开始':'立即抢购'}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<include src="../common/footer.wxml"></include>

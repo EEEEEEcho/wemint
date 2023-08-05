@@ -1,0 +1,48 @@
+page {
+    background: #f4f4f4;
+}
+
+.nickname {
+    background: #fff;
+    width: 750rpx;
+    height: 88rpx;
+    margin-top: 50rpx;
+}
+
+.text_style {
+    width: 700rpx;
+    color: #aeaeb4;
+    font-size: 28rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    margin-left: 31rpx;
+}
+
+.name {
+    color: #333;
+    font-size: 28rpx;
+    height: 88rpx;
+    margin-left: 31rpx;
+}
+
+.keep {
+    background: #1cac19;
+    text-align: center;
+    height: 88rpx;
+    line-height: 88rpx;
+    color: #fff;
+    margin-top: 20rpx;
+}
+
+.btn {
+    width: 682rpx;
+    height: 88rpx;
+    border-radius: 50rpx;
+    font-size: 36rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 88rpx;
+    background: #51515c;
+    margin-left: 34rpx;
+    margin-top: 50rpx;
+}

@@ -1,0 +1,38 @@
+// \pages/home/home bindSearchAction Data Flow
+digraph {
+	"580000ae52ee464c974b0cdad285ecd8" [label="FunctionCall,
+function name -> bindSearchAction,
+param -> t,
+t.,
+" color=blue]
+	da0ce4a3fc26497e99f6278dbbd56cf6 [label=VariableDeclarations color=blue]
+	"63ce1d87ee9b4d54970af01678c6e237" [label="VariableDeclarator,
+left -> a,
+right -> this.data.keyword" color=blue]
+	da0ce4a3fc26497e99f6278dbbd56cf6 -> "63ce1d87ee9b4d54970af01678c6e237"
+	"580000ae52ee464c974b0cdad285ecd8" -> da0ce4a3fc26497e99f6278dbbd56cf6
+	"80bfb503373448c18c62ae24ebaf499e" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	e26a11492f0246a88da1b9a5d4aa63f6 [label=SequenceExpression color=blue]
+	"2f70408d27be45f193ed13b7601c9a26" [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	"73550e4eb3ea4a9e886e4a3ec8a2b360" [label="Object Properties
+{
+data -> a
+}" color=blue]
+	"2f70408d27be45f193ed13b7601c9a26" -> "73550e4eb3ea4a9e886e4a3ec8a2b360"
+	e26a11492f0246a88da1b9a5d4aa63f6 -> "2f70408d27be45f193ed13b7601c9a26"
+	"13a724abc12b4236a9e737cfc38261d2" [label="CallExpression,
+callee name -> wx.switchTab,
+param -> " color=blue]
+	d5d95a9400f14faea25e7f2a23e1f59b [label="FunctionCall,
+function name -> success,
+param -> t,
+" color=blue]
+	"13a724abc12b4236a9e737cfc38261d2" -> d5d95a9400f14faea25e7f2a23e1f59b
+	e26a11492f0246a88da1b9a5d4aa63f6 -> "13a724abc12b4236a9e737cfc38261d2"
+	"80bfb503373448c18c62ae24ebaf499e" -> e26a11492f0246a88da1b9a5d4aa63f6
+	"580000ae52ee464c974b0cdad285ecd8" -> "80bfb503373448c18c62ae24ebaf499e"
+}

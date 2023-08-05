@@ -1,0 +1,21 @@
+// \pages/company/mycenter toCardDetail Data Flow
+digraph {
+	"3db6f64b549a41419d9678f46ffb3adb" [label="FunctionCall,
+function name -> toCardDetail,
+param -> " color=blue]
+	"461d0168c25c42f4b94d27fc1e02ae65" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	bf0b1b23150040dda923d016a1a26138 [label=SequenceExpression color=blue]
+	"2e5d0dcc615b48e2a2de3ffff27f6e11" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"6c8bf0e505484d74b0fa07820dcf9863" [label="Object Properties
+{
+url -> '/pages/businesscard/workbench/index?BusinessCardID=' + a.data.allInfo.businessCrdInfo.BusinessCardID + '&SiteID=' + e.globalData.baseInfo.SiteID
+}" color=blue]
+	"2e5d0dcc615b48e2a2de3ffff27f6e11" -> "6c8bf0e505484d74b0fa07820dcf9863"
+	bf0b1b23150040dda923d016a1a26138 -> "2e5d0dcc615b48e2a2de3ffff27f6e11"
+	"461d0168c25c42f4b94d27fc1e02ae65" -> bf0b1b23150040dda923d016a1a26138
+	"3db6f64b549a41419d9678f46ffb3adb" -> "461d0168c25c42f4b94d27fc1e02ae65"
+}

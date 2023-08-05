@@ -1,0 +1,12 @@
+<view class="bill-box">
+    <view class="bill-detail" wx:for="{{billList}}" wx:key="{{ index }}">
+        <view>
+            <view class="shop-name">{{item.subbranchName}}</view>
+            <view class="pay-time">{{timeFormat.format(item.createTime)}}</view>
+        </view>
+        <view>
+      {{item.amount}}元
+    </view>
+    </view>
+</view>
+<wxs module="timeFormat" src="../../../utils/timeFormat.wxs" />

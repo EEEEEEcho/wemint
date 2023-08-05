@@ -1,0 +1,8 @@
+<view class="showHelloText" style="top:{{navigateStatusContainerHeight}};" wx:if="{{showHelloText}}">
+  欢迎回来，{{showHelloText}}
+</view>
+<view class="showSecondImg" style="top:{{navigateStatusContainerHeight}};" wx:if="{{showSecondLoginToast}}">
+    <image bindtap="closeSecondTipBox" class="showSecondImgIcon" src="https://dm.static.elab-plus.com/wepy_pro/index/close-icon.png"></image>
+    <image class="showSecondImage" src="https://dm.static.elab-plus.com/wepy_pro/index/addToXcx.png"></image>
+</view>
+<moduleViewCP id="moduleViewCP" navbar="{{navbar}}" pvCurPageName="{{pvCurPageName}}" pvCurPageParams="{{currentPageParams}}" showInfoModel="{{showInfoModel}}" showPhoneModel="{{showPhoneModel}}" unReadMsgNumber="{{unReadMsgNumber}}"></moduleViewCP>

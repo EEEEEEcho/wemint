@@ -1,0 +1,19 @@
+// \pages/coupon/coupon bingExpiredTap Data Flow
+digraph {
+	"0e174c87327a4b43a4613bbd8f9b9448" [label="FunctionCall,
+function name -> bingExpiredTap,
+param -> o,
+o.,
+" color=blue]
+	d49bd4fcc0a5443796f950fb6a8579da [label=SequenceExpression color=blue]
+	"5ffce3c660384ff0bd71fe0290a3df29" [label="CallExpression,
+callee name -> e.getOpenId,
+param -> " color=blue]
+	d678307741984212af9c8fd56ea9dd1d [label="FunctionCall,
+function name -> Anonymous Function,
+param -> o,
+" color=blue]
+	"5ffce3c660384ff0bd71fe0290a3df29" -> d678307741984212af9c8fd56ea9dd1d
+	d49bd4fcc0a5443796f950fb6a8579da -> "5ffce3c660384ff0bd71fe0290a3df29"
+	"0e174c87327a4b43a4613bbd8f9b9448" -> d49bd4fcc0a5443796f950fb6a8579da
+}

@@ -1,0 +1,23 @@
+// \pages/stu/book/book imageLoad Data Flow
+digraph {
+	e1316c487f0b423394c1601172881246 [label="FunctionCall,
+function name -> imageLoad,
+param -> a.,
+a,
+" color=blue]
+	"52a912c22ab44bcab2808cc3a55353c6" [label=VariableDeclarations color=blue]
+	f03138c14246491a84f4a9dac183bc82 [label="VariableDeclarator,
+left -> t,
+right -> 180 / (a.detail.width / a.detail.height)" color=blue]
+	"52a912c22ab44bcab2808cc3a55353c6" -> f03138c14246491a84f4a9dac183bc82
+	e1316c487f0b423394c1601172881246 -> "52a912c22ab44bcab2808cc3a55353c6"
+	c5400afc0c364283bdb32ef4bf5718ab [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	b3c7b938b6264fe7a409e80b650583f0 [label="Object Properties
+{
+imgheight -> t
+}" color=blue]
+	c5400afc0c364283bdb32ef4bf5718ab -> b3c7b938b6264fe7a409e80b650583f0
+	e1316c487f0b423394c1601172881246 -> c5400afc0c364283bdb32ef4bf5718ab
+}

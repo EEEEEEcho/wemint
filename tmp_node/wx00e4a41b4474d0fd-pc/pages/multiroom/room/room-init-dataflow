@@ -1,0 +1,19 @@
+// \pages/multiroom/room/room init Data Flow
+digraph {
+	"4758f242dd67443091e0f4321a4f7bb0" [label="FunctionCall,
+function name -> init,
+param -> " color=blue]
+	bf41bb2ec1ef4443904da44478d9f59c [label=SequenceExpression color=blue]
+	c40fea2ef8b24b6e8f1fcce2cd23af1c [label="CallExpression,
+callee name -> a.setData,
+param -> " color=blue]
+	"5846dcb0cf0043ac96a4c05678cbf790" [label="Object Properties
+{
+roomID -> a.data.roomID
+roomname -> a.data.roomname
+username -> a.data.username
+}" color=blue]
+	c40fea2ef8b24b6e8f1fcce2cd23af1c -> "5846dcb0cf0043ac96a4c05678cbf790"
+	bf41bb2ec1ef4443904da44478d9f59c -> c40fea2ef8b24b6e8f1fcce2cd23af1c
+	"4758f242dd67443091e0f4321a4f7bb0" -> bf41bb2ec1ef4443904da44478d9f59c
+}

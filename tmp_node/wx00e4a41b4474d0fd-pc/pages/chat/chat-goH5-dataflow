@@ -1,0 +1,58 @@
+// \pages/chat/chat goH5 Data Flow
+digraph {
+	"2da619549214401ead5486192ea9d523" [label="FunctionCall,
+function name -> goH5,
+param -> e,
+e.,
+" color=blue]
+	aecebdce0ffb4c169642865ae5b4f17b [label=SequenceExpression color=blue]
+	a781f457152c44029c5668386463bebd [label="CallExpression,
+callee name -> wx.setStorageSync,
+param -> e.currentTarget.dataset.url,
+" color=blue]
+	aecebdce0ffb4c169642865ae5b4f17b -> a781f457152c44029c5668386463bebd
+	"6a4d88e439b342beb30e6f507185755d" [label="CallExpression,
+callee name -> console.log,
+param -> e.currentTarget.dataset.url,
+" color=blue]
+	aecebdce0ffb4c169642865ae5b4f17b -> "6a4d88e439b342beb30e6f507185755d"
+	ab2c46f8120745c5a828a4b964999ba9 [label="CallExpression,
+callee name -> console.log,
+param -> " color=blue]
+	"8b51bd94e3fd4d0bbafb35ebb45da731" [label="CallExpression,
+callee name -> decodeURI,
+param -> e.currentTarget.dataset.url,
+" color=blue]
+	ab2c46f8120745c5a828a4b964999ba9 -> "8b51bd94e3fd4d0bbafb35ebb45da731"
+	aecebdce0ffb4c169642865ae5b4f17b -> ab2c46f8120745c5a828a4b964999ba9
+	e066b6a13d1f42bd9e32c31e4a79e3e9 [label="CallExpression,
+callee name -> console.log,
+param -> encodeURIComponent,
+" color=blue]
+	e2809383110b497991e2feb8e5d1335a [label="CallExpression,
+callee name -> encodeURIComponent,
+param -> e.currentTarget.dataset.url,
+" color=blue]
+	e066b6a13d1f42bd9e32c31e4a79e3e9 -> e2809383110b497991e2feb8e5d1335a
+	aecebdce0ffb4c169642865ae5b4f17b -> e066b6a13d1f42bd9e32c31e4a79e3e9
+	"79e53f19c02b4cd4ac5c2c3ba5cc66c5" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	fb37c7f1fcb84ac0a02c97542b6c0574 [label="Object Properties
+{
+url -> '../webView/webView?view=' + encodeURIComponent(e.currentTarget.dataset.url)
+}" color=blue]
+	ce21030664d64895841094c2695fe636 [label="CallExpression,
+callee name -> encodeURIComponent,
+param -> e.currentTarget.dataset.url,
+" color=blue]
+	fb37c7f1fcb84ac0a02c97542b6c0574 -> ce21030664d64895841094c2695fe636
+	"79e53f19c02b4cd4ac5c2c3ba5cc66c5" -> fb37c7f1fcb84ac0a02c97542b6c0574
+	c74ca6503e584693bafb413287010be9 [label="FunctionCall,
+function name -> fail,
+param -> e,
+" color=blue]
+	"79e53f19c02b4cd4ac5c2c3ba5cc66c5" -> c74ca6503e584693bafb413287010be9
+	aecebdce0ffb4c169642865ae5b4f17b -> "79e53f19c02b4cd4ac5c2c3ba5cc66c5"
+	"2da619549214401ead5486192ea9d523" -> aecebdce0ffb4c169642865ae5b4f17b
+}

@@ -1,0 +1,32 @@
+// \pages/user/myCard/myCard receiveMyCard Data Flow
+digraph {
+	"7136df9760dd4fb68ef465ceed4e633c" [label="FunctionCall,
+function name -> receiveMyCard,
+param -> t.,
+t,
+" color=blue]
+	"2b8fb134b89d46f1b483145362807b6a" [label=VariableDeclarations color=blue]
+	ee2bb21357384bd1973d50f59fdf8b1a [label="VariableDeclarator,
+left -> a,
+right -> t.detail.formId" color=blue]
+	"2b8fb134b89d46f1b483145362807b6a" -> ee2bb21357384bd1973d50f59fdf8b1a
+	"7136df9760dd4fb68ef465ceed4e633c" -> "2b8fb134b89d46f1b483145362807b6a"
+	"391b4d8dac334cb4b51722bbb712144c" [label="CallExpression,
+callee name -> console.log,
+param -> a,
+" color=blue]
+	"7136df9760dd4fb68ef465ceed4e633c" -> "391b4d8dac334cb4b51722bbb712144c"
+	b465afa748df45a9bcd7d41de6475ecc [label="If Alternate" color=blue]
+	"8f07b87b67624d67a024a3268cccc451" [label=SequenceExpression color=blue]
+	"3da037deafd4485390941b8cc11caa2c" [label="CallExpression,
+callee name -> wx.getStorage,
+param -> " color=blue]
+	baf10b7fe0d14754bf089d00eb292217 [label="FunctionCall,
+function name -> success,
+param -> t,
+" color=blue]
+	"3da037deafd4485390941b8cc11caa2c" -> baf10b7fe0d14754bf089d00eb292217
+	"8f07b87b67624d67a024a3268cccc451" -> "3da037deafd4485390941b8cc11caa2c"
+	b465afa748df45a9bcd7d41de6475ecc -> "8f07b87b67624d67a024a3268cccc451"
+	"7136df9760dd4fb68ef465ceed4e633c" -> b465afa748df45a9bcd7d41de6475ecc
+}

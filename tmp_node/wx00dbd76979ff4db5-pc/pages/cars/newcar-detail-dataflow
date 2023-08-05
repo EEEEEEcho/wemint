@@ -1,0 +1,23 @@
+// \pages/cars/newcar detail Data Flow
+digraph {
+	"1b3c38b8d69e42829aae51941ef79542" [label="FunctionCall,
+function name -> detail,
+param -> a.,
+a,
+" color=blue]
+	a39904f854b849b4a0e191a07e762002 [label=VariableDeclarations color=blue]
+	a7509a3e172e45628197164f4dcf98da [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.id" color=blue]
+	a39904f854b849b4a0e191a07e762002 -> a7509a3e172e45628197164f4dcf98da
+	"1b3c38b8d69e42829aae51941ef79542" -> a39904f854b849b4a0e191a07e762002
+	bc518033f3a04d07a13ee54c4c4aae04 [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	f64d1287295e404eb983351a05c4bb5c [label="Object Properties
+{
+url -> '/pages/cars/detail?id=' + t
+}" color=blue]
+	bc518033f3a04d07a13ee54c4c4aae04 -> f64d1287295e404eb983351a05c4bb5c
+	"1b3c38b8d69e42829aae51941ef79542" -> bc518033f3a04d07a13ee54c4c4aae04
+}

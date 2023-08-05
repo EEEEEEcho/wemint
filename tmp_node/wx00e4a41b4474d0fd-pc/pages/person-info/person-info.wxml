@@ -1,0 +1,40 @@
+<myLoading id="myLoading"></myLoading>
+<view class="container">
+    <view class="title">为了我们能给您提供更贴心的服务,请填写以下信息</view>
+    <view class="form-item">
+		昵称
+		<input autoFocus bindblur="bindBlur" bindinput="bindKeyInput" class="input" placeholder="不超过15个字"></input>
+        <view class="checkbox">
+            <view bind:tap="changeSex" class="checkbox-item" data-value="{{item.value}}" wx:for="{{sexArray}}" wx:key="item.value">
+                <image class="select-icon" mode="scaleToFill" src="{{cdn}}/select.png" wx:if="{{item.selected}}"></image>
+                <image class="select-icon" mode="scaleToFill" src="{{cdn}}/un_select.png" wx:else></image>
+				{{item.text}}
+			</view>
+        </view>
+    </view>
+    <view class="form-item">
+        <text class="label">年龄</text>
+        <picker bindchange="changeAge" class="picker" range="{{ageArray}}" value="{{ageIndex}}">
+            <view class="picker placeholder" wx:if="{{ageIndex===55&&age===0}}">请选择</view>
+            <view class="picker" wx:else>
+		      {{ageArray[ageIndex]}}
+		    </view>
+        </picker>
+        <image class="select_icon" mode="scaleToFill" src="{{cdn}}/select_icon.png"></image>
+    </view>
+    <view class="form-item">
+        <text class="label">所在地</text>
+        <picker bindchange="bindRegionChange" class="picker" mode="region" value="{{region}}">
+            <view class="picker" wx:if="{{region.length}}">
+		      {{region[0]}} {{region[1]}}
+		    </view>
+            <view class="picker placeholder" wx:else>
+		    	请选择
+		    </view>
+        </picker>
+        <image class="select_icon" mode="scaleToFill" src="{{cdn}}/select_icon.png"></image>
+    </view>
+</view>
+<view bind:tap="onSave" class="bottom {{name&&age&&sex!==''&&region.length?'enable':'disable'}}">
+  保存为我的信息
+</view>

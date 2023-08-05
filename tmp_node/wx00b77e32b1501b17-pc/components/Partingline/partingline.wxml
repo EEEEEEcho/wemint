@@ -1,0 +1,1 @@
+<view style="margin-top:{{pageData.Height}}px; margin-bottom:{{pageData.Height}}px; border-bottom: 1px {{pageData.LineType}} {{pageData.BorderColor}}"></view>

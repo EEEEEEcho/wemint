@@ -1,0 +1,17 @@
+// \pages/index/index suo Data Flow
+digraph {
+	"2a73bbf623bc4cfda8396ba4c7845fd9" [label="FunctionCall,
+function name -> suo,
+param -> t,
+t.,
+" color=blue]
+	"8cebbbeabfb2438a8d3109214ae55425" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	b97a91742ffd440ab5a9216011e0de76 [label="FunctionCall,
+function name -> success,
+param -> t,
+" color=blue]
+	"8cebbbeabfb2438a8d3109214ae55425" -> b97a91742ffd440ab5a9216011e0de76
+	"2a73bbf623bc4cfda8396ba4c7845fd9" -> "8cebbbeabfb2438a8d3109214ae55425"
+}

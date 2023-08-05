@@ -1,0 +1,42 @@
+@import "../../login/login.wxss";
+
+.common-list .header {
+    padding: 0rpx 0;
+    color: #AAA;
+    font-size: 30rpx;
+    padding-bottom: 20rpx;
+    display: flex;
+    background-color: #fff;
+    width: 100%;
+}
+
+.common-list .header .icon {
+    top: 20rpx;
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.item-select {
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 30rpx;
+    margin-left: 20rpx;
+}
+
+.item-select_text {
+    margin-top: 30rpx;
+    margin-left: 20rpx;
+}
+
+.item-allselect {
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 20rpx;
+}
+
+.item-image {
+    width: 80rpx;
+    height: 80rpx;
+    margin: 10rpx;
+    border-radius: 50%;
+}

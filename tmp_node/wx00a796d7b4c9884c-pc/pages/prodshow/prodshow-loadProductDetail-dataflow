@@ -1,0 +1,34 @@
+// \pages/prodshow/prodshow loadProductDetail Data Flow
+digraph {
+	d6b61c6793cf49e6b37fc83c672d5c9f [label="FunctionCall,
+function name -> loadProductDetail,
+param -> " color=blue]
+	cae85f9230ed42e7b9313d15a00e20e5 [label=SequenceExpression color=blue]
+	d6e138dd2b834532a284c18093557173 [label="CallExpression,
+callee name -> console.log,
+param -> a.data.userid,
+" color=blue]
+	cae85f9230ed42e7b9313d15a00e20e5 -> d6e138dd2b834532a284c18093557173
+	c17adfd04f20474f9c24f395aa7b17f5 [label="CallExpression,
+callee name -> console.log,
+param -> a.data.id,
+" color=blue]
+	cae85f9230ed42e7b9313d15a00e20e5 -> c17adfd04f20474f9c24f395aa7b17f5
+	"4539cc1c495d43aca3465ff2d116f4d7" [label="CallExpression,
+callee name -> console.log,
+param -> a.data.cid,
+" color=blue]
+	cae85f9230ed42e7b9313d15a00e20e5 -> "4539cc1c495d43aca3465ff2d116f4d7"
+	"0078843bb88b4e7ca88a51aad453b0ce" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"6e8e52023f8c45009cbab4be26a3a5c5" [label="Object Properties
+{
+userid -> a.data.userid
+id -> a.data.id
+cid -> a.data.cid
+}" color=blue]
+	"0078843bb88b4e7ca88a51aad453b0ce" -> "6e8e52023f8c45009cbab4be26a3a5c5"
+	cae85f9230ed42e7b9313d15a00e20e5 -> "0078843bb88b4e7ca88a51aad453b0ce"
+	d6b61c6793cf49e6b37fc83c672d5c9f -> cae85f9230ed42e7b9313d15a00e20e5
+}

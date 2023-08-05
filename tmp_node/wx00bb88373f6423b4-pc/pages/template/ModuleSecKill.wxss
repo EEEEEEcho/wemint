@@ -1,0 +1,342 @@
+.ModuleSecKill {
+    background: #fff;
+    position: relative;
+}
+
+.ModuleSecKill .layout-101 .activity-top .pintuan_top_bg {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.ModuleSecKill .layout-101 .activity-content {
+    margin-top: 96rpx;
+}
+
+.sec_activity_item_only {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.activity-con-txt {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.ModuleSecKill .layout-101 .activity-txt {
+    margin-right: 20rpx;
+    display: flex;
+    align-items: center;
+}
+
+.ModuleSecKill .layout-101 .icon-weituangou {
+    font-size: 44rpx;
+    color: #ff4c5b;
+    padding-right: 16rpx;
+    display: inline-block;
+}
+
+.ModuleSecKill .layout-101 .activity-txt .colord {
+    width: 54rpx;
+    height: 54rpx;
+    font-size: 32rpx;
+    display: inline-block;
+    border: 1px solid #ffb297;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 54rpx;
+    margin-right: 6rpx;
+}
+
+.ModuleSecKill .layout-101 .activity-con {
+    height: 40rpx;
+    line-height: 40rpx;
+    position: relative;
+    z-index: 2;
+    top: 66rpx;
+    left: 216rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.ModuleSecKill .layout-101 .activity-con .icon-iconfont_arrow-right {
+    padding-left: 9rpx;
+    color: #999;
+    position: absolute;
+    top: 55%;
+    transform: translate(0,-50%);
+}
+
+.ModuleSecKill .layout-101 .activity-img image {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.ModuleSecKill .layout-101 .activity-img {
+    margin-bottom: 20rpx;
+    height: 300rpx;
+    overflow: hidden;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_con {
+    width: 100%;
+    overflow: hidden;
+}
+
+.ModuleSecKill .layout-101 .activity_sec_tit {
+    padding: 0 26rpx;
+    background: #fff;
+    margin-top: 26rpx;
+    position: relative;
+}
+
+.ModuleSecKill .layout-101 .activity-con-sec .activity-con-txt {
+    color: #999;
+    font-size: 24rpx;
+    display: inline-block;
+}
+
+.ModuleSecKill .layout-101 .activity-con-sec .activity-con-txt .time {
+    font-size: 24rpx;
+    color: #fff;
+    display: inline-block;
+    width: 42rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    text-align: center;
+    background: #333;
+    border-radius: 4rpx;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item:nth-child(2n+1) {
+    border-right: 1rpx solid #ddd;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item {
+    padding: 20rpx 26rpx 20rpx 20rpx;
+    border-top: 1rpx solid #ddd;
+    box-sizing: border-box;
+    margin-top: 2rpx;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item .sec_info {
+    box-sizing: border-box;
+    float: left;
+    width: 53%;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item .sec_info .sec_info_name {
+    font-size: 26rpx;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 12rpx;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item .sec_info .sec_info_price {
+    color: #ff4c5b;
+    font-size: 22rpx;
+    font-weight: 600;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item .sec_info .sec_info_price .price_num {
+    font-size: 30rpx;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item .sec_info .sell_progress {
+    position: absolute;
+    bottom: 20rpx;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item .sec_info .sell_progress .sell_text {
+    color: #999;
+    font-size: 22rpx;
+    display: inline-block;
+    margin-bottom: 10rpx;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item .sec_info .sell_progress .sell_progress_wrapper {
+    background-color: #e9e9e9;
+    border-radius: 10rpx;
+    height: 10rpx;
+    width: 160rpx;
+    position: relative;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item .sec_info .sell_progress .sell_progress_wrapper .sell_progress_box {
+    border-radius: 10rpx;
+    height: 10rpx;
+    background: linear-gradient(to right,#fc8127 0%,#fe2869 100%);
+    position: absolute;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item .sec_info .nobegin {
+    width: 150rpx;
+    height: 46rpx;
+    border-radius: 23rpx;
+    background-color: #ffedee;
+    color: #ff4c5b;
+    font-size: 24rpx;
+    position: absolute;
+    bottom: 20rpx;
+    line-height: 46rpx;
+    text-align: center;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item .sec_info .noamount {
+    width: 150rpx;
+    height: 46rpx;
+    border-radius: 23rpx;
+    background-color: #bcbcbc;
+    color: #fff;
+    font-size: 24rpx;
+    position: absolute;
+    bottom: 20rpx;
+    line-height: 46rpx;
+    text-align: center;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item .sec_imgbox {
+    width: 147rpx;
+    height: 147rpx;
+    margin-left: 6rpx;
+    float: right;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item .sec_imgbox image {
+    width: 147rpx;
+    height: 147rpx;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_con_only {
+    padding: 20rpx 76rpx 30rpx 76rpx;
+    background-color: #fff;
+    clear: both;
+    zoom: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_con_only .sec_activity_item_only .sec_info_only {
+    box-sizing: border-box;
+    float: left;
+    width: 50%;
+    padding-top: 28rpx;
+    padding-bottom: 24rpx;
+    display: block;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_con_only .sec_activity_item_only .sec_info_only .sec_info_name_only {
+    font-size: 30rpx;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 14rpx;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_con_only .sec_activity_item_only .sec_info_only .sec_info_price_only {
+    color: #ff4c5b;
+    font-size: 28rpx;
+    margin-bottom: 2rpx;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_con_only .sec_activity_item_only .sec_info_only .sec_info_price_only .price_num_only {
+    font-size: 36rpx;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_con_only .sec_activity_item_only .sec_info_only .sell_progress_only {
+    margin-bottom: 14rpx;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_con_only .sec_activity_item_only .sec_info_only .sell_progress_only .sell_progress_wrapper_only {
+    background-color: #e9e9e9;
+    border-radius: 5rpx;
+    height: 10rpx;
+    width: 160rpx;
+    position: relative;
+    display: inline-block;
+    left: 14rpx;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_con_only .sec_activity_item_only .sec_info_only .sell_progress_box_only {
+    border-radius: 5rpx;
+    height: 10rpx;
+    background: linear-gradient(to right,#fc8127 0%,#fe2869 100%);
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_con_only .sec_activity_item_only .sec_info_only .sell_text_only {
+    color: #999;
+    font-size: 22rpx;
+    display: inline-block;
+    margin-bottom: 10rpx;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item_only .sec_info_only .nobegin_only {
+    width: 240rpx;
+    height: 66rpx;
+    border-radius: 80rpx;
+    background-color: #ffedee;
+    color: #ff4c5b;
+    font-size: 28rpx;
+    line-height: 66rpx;
+    text-align: center;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item_only .sec_info_only .noamount_only {
+    width: 240rpx;
+    height: 66rpx;
+    border-radius: 80rpx;
+    background-color: #bcbcbc;
+    color: #fff;
+    font-size: 28rpx;
+    line-height: 66rpx;
+    text-align: center;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_item_only .sec_info_only .ing_only {
+    width: 240rpx;
+    height: 66rpx;
+    border-radius: 80rpx;
+    background-color: #ff4c5b;
+    color: #fff;
+    font-size: 28rpx;
+    line-height: 66rpx;
+    text-align: center;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_con_only .sec_activity_item_only .sec_imgbox_only {
+    width: 280rpx;
+    height: 280rpx;
+    margin-left: 6rpx;
+    float: right;
+    display: block;
+}
+
+.ModuleSecKill .layout-101 .sec_activity_con_only .sec_activity_item_only .sec_imgbox_only image {
+    width: 280rpx;
+    height: 280rpx;
+}
+
+.sec_activity_item_only {
+    zoom: 1;
+}
+
+.clear {
+    clear: both;
+}

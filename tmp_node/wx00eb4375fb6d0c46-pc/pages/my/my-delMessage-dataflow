@@ -1,0 +1,24 @@
+// \pages/my/my delMessage Data Flow
+digraph {
+	d7cda0979ad348e08d9be24343a7d3ac [label="FunctionCall,
+function name -> delMessage,
+param -> a.,
+a,
+" color=blue]
+	ad0a7d7d4508478eaa6dc16ee4ea3d0d [label="CallExpression,
+callee name -> console.log,
+param -> a.detail.val,
+" color=blue]
+	d7cda0979ad348e08d9be24343a7d3ac -> ad0a7d7d4508478eaa6dc16ee4ea3d0d
+	"4a1fd7e694844ab6b3b1c5deeebea3a3" [label=VariableDeclarations color=blue]
+	"2385f3e975a5415aa93a2fcb4370f19e" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	fd567dfcc2924280ab14239b864b94f1 [label="Object Properties
+{
+messageNoticeId -> a.detail.val
+}" color=blue]
+	"2385f3e975a5415aa93a2fcb4370f19e" -> fd567dfcc2924280ab14239b864b94f1
+	"4a1fd7e694844ab6b3b1c5deeebea3a3" -> "2385f3e975a5415aa93a2fcb4370f19e"
+	d7cda0979ad348e08d9be24343a7d3ac -> "4a1fd7e694844ab6b3b1c5deeebea3a3"
+}

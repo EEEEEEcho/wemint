@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "企业资讯",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "yz-button": "../../components/button/index"
+    }
+}

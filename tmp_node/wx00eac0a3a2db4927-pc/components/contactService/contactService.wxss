@@ -1,0 +1,165 @@
+.model_bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.5);
+}
+
+.model_content_bg {
+    display: flex;
+    flex-direction: column;
+    height: 912rpx;
+    width: 629rpx;
+    position: fixed;
+    top: 220rpx;
+    left: 61rpx;
+    border-radius: 24rpx;
+    background: #fff;
+    overflow: hidden;
+    z-index: 1001;
+    align-items: center;
+}
+
+.model_title {
+    text-align: center;
+    font-size: 42rpx;
+    color: #51515c;
+    margin-top: 55rpx;
+}
+
+.model_img {
+    width: 523rpx;
+    height: 369rpx;
+    margin-top: 67rpx;
+}
+
+.text_layout {
+    margin-top: 6rpx;
+}
+
+.text1 {
+    margin-top: 60rpx;
+    color: #51515c;
+}
+
+.text_num {
+    color: #ed7b43;
+}
+
+.model_text {
+    letter-spacing: 2rpx;
+    text-align: center;
+    font-size: 28rpx;
+}
+
+.model_btn {
+    margin-top: 70rpx;
+    border: 0;
+    background: #51515c;
+    border-radius: 50rpx;
+    color: #fff;
+    width: 442rpx;
+    text-align: center;
+    height: 88rpx;
+    font-size: 36rpx;
+    line-height: 88rpx;
+}
+
+@-webkit-keyframes slideUp {
+    from {
+        transform: translateY(1000rpx);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(1000rpx);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes slideDown {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(1000rpx);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(1000rpx);
+    }
+}
+
+.slideUp {
+    animation: slideUp 0.3s ease-in-out both;
+}
+
+.slideDown {
+    animation: slideDown 0.3s ease-in-out both;
+}
+
+@-webkit-keyframes showMask {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+@keyframes showMask {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+@-webkit-keyframes hideMask {
+    from {
+        opacity: 0.8;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes hideMask {
+    from {
+        opacity: 0.8;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.showMask {
+    animation: showMask 0.3s ease-in-out both;
+}
+
+.hideMask {
+    animation: hideMask 0.3s ease-in-out both;
+}

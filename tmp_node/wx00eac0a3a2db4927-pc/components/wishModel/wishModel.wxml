@@ -1,0 +1,33 @@
+<view catchtouchmove="true" wx:if="{{isShowWishModel}}">
+    <view catchtap="closeWishModel" class="modelMask {{options?'showMask':'hideMask'}}"></view>
+    <view class="modelContainer flexColumn {{options?'slideUp':'slideDown'}}">
+        <view class="wish_detail">
+            <text class="wish_name">心愿单</text>
+            <view class="wish_user flexRow">
+                <image class="wish_avatar" src="{{wishInfo.avatar}}"></image>
+                <text class="wish_username">{{wishInfo.nickname}}:</text>
+                <text class="wish_share">分享给您一个心愿</text>
+                <text class="wish_count">{{total}}件心愿</text>
+            </view>
+        </view>
+        <scroll-view scrollY bindscrolltolower="onBindToLower" class="modelContent flexColumn">
+            <view bindtap="getGoodDetail" class="model_panel flexRow" data-wish="{{item}}" style="margin-top: {{index===0?16:0}}rpx;margin-bottom: {{index===wishListData.length-1?160:32}}rpx" wx:for="{{wishListData}}" wx:key="index">
+                <image class="favorite_img" lazyLoad="true" mode="aspectFill" src="{{item.covers[0]}}"></image>
+                <view class="favorite_params">
+                    <view class="favorite_proname">{{item.title}}</view>
+                    <view class="favorite_proprice">
+                        <text class="newPrice_pre">¥</text>
+                        <text class="newPrice">{{item.isExemptGoods=='0'?item.minSalesPrice/100:item.activityPrice/100}}</text>
+                        <text class="oldPrice_pre">¥</text>
+                        <text class="oldPrice">{{item.minMarketPrice/100}}</text>
+                    </view>
+                    <view class="favorite_prolabel">
+                        <view class="label1" wx:if="{{item.tags.length>0}}">{{item.tags[0]}}</view>
+                        <view class="label1" wx:if="{{item.tags.length>1}}">{{item.tags[1]}}</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view bindtap="finished" class="addBtn">添加到我的心愿单</view>
+    </view>
+</view>

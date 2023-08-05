@@ -1,0 +1,22 @@
+// \pages/stu/mailbox/mailbox backLoad Data Flow
+digraph {
+	"80d90a77194646619e9dddbabfb54ce9" [label="FunctionCall,
+function name -> backLoad,
+param -> " color=blue]
+	bccc452d9c984e61b47a556ccc9be47d [label=SequenceExpression color=blue]
+	"6aed4e21b38b4402b5a537535a30ba5d" [label="CallExpression,
+callee name -> this.fetchSearchList,
+param -> " color=blue]
+	"36bc82427e134b00b3a7b17d55dfba29" [label="FunctionCall,
+function name -> fetchSearchList,
+param -> " color=blue]
+	"6fc3e4ecd70c4ceea790a3c078dccb2d" [label="CallExpression,
+callee name -> a,
+param -> t.data.searchPageNum,
+t.data.callbackcount,
+" color=blue]
+	"36bc82427e134b00b3a7b17d55dfba29" -> "6fc3e4ecd70c4ceea790a3c078dccb2d"
+	"6aed4e21b38b4402b5a537535a30ba5d" -> "36bc82427e134b00b3a7b17d55dfba29"
+	bccc452d9c984e61b47a556ccc9be47d -> "6aed4e21b38b4402b5a537535a30ba5d"
+	"80d90a77194646619e9dddbabfb54ce9" -> bccc452d9c984e61b47a556ccc9be47d
+}

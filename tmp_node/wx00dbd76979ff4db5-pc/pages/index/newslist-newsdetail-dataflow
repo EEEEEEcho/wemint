@@ -1,0 +1,23 @@
+// \pages/index/newslist newsdetail Data Flow
+digraph {
+	"5ab99c17fe874e55be5feca51065fe42" [label="FunctionCall,
+function name -> newsdetail,
+param -> a.,
+a,
+" color=blue]
+	"0a1ee2ca4ace402580827ae464a3c1e4" [label=VariableDeclarations color=blue]
+	"4ba26b00027945ad83e391b658788fc7" [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.id" color=blue]
+	"0a1ee2ca4ace402580827ae464a3c1e4" -> "4ba26b00027945ad83e391b658788fc7"
+	"5ab99c17fe874e55be5feca51065fe42" -> "0a1ee2ca4ace402580827ae464a3c1e4"
+	"955c91eede3542a2bc2cc7b7c9788318" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"3410e0f254f140ca90f4b498c73909b4" [label="Object Properties
+{
+url -> '/pages/index/detail?id=' + t
+}" color=blue]
+	"955c91eede3542a2bc2cc7b7c9788318" -> "3410e0f254f140ca90f4b498c73909b4"
+	"5ab99c17fe874e55be5feca51065fe42" -> "955c91eede3542a2bc2cc7b7c9788318"
+}

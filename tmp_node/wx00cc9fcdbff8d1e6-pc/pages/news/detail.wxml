@@ -1,0 +1,9 @@
+<import src="../../wxParse/wxParse.wxml"></import>
+<view class="neirong">
+    <view class="art-header">
+        <view class="art-title">{{itemData.title}}</view>
+    </view>
+    <view class="art-content">
+        <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+    </view>
+</view>

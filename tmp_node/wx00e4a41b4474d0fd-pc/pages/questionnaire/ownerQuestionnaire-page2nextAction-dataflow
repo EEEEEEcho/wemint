@@ -1,0 +1,48 @@
+// \pages/questionnaire/ownerQuestionnaire page2nextAction Data Flow
+digraph {
+	"4af1bad47f24491096fa178e46275a8a" [label="FunctionCall,
+function name -> page2nextAction,
+param -> e,
+e.,
+" color=blue]
+	a756feeb5a0c4adea51079b066ec42d4 [label=SequenceExpression color=blue]
+	f0cdeb58351841ddb514e920edf8278f [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"041203b2943f41fd956ee2e604e9afa2" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"20756a15fa75494cbeea04a7b77234ca" [label=SequenceExpression color=blue]
+	a6e8024702504a5c829a7fb986bb1668 [label="CallExpression,
+callee name -> wx.setStorageSync,
+param -> this.data.currentRoom,
+" color=blue]
+	"20756a15fa75494cbeea04a7b77234ca" -> a6e8024702504a5c829a7fb986bb1668
+	e6fc1177d1cf428087fe5c5ce437e12e [label="CallExpression,
+callee name -> wx.setStorageSync,
+param -> this.data.currentName,
+" color=blue]
+	"20756a15fa75494cbeea04a7b77234ca" -> e6fc1177d1cf428087fe5c5ce437e12e
+	"2265e3d71c764122871270d72831208e" [label="CallExpression,
+callee name -> this.clk_2cmina_156,
+param -> " color=blue]
+	d4ccf86deb674f2993e7b86ad2b9c3ec [label="FunctionCall,
+function name -> clk_2cmina_156,
+param -> " color=blue]
+	c52ba028cd3a4956bfce883e0a74b6b0 [label=VariableDeclarations color=blue]
+	"9db3aeaed7494995a3ec27bac661cc87" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"378d6402cc2e4f3bbc7fd282d3d15c6c" [label="Object Properties
+{
+currentRoom -> this.data.currentRoom
+currentName -> this.data.currentName
+}" color=blue]
+	"9db3aeaed7494995a3ec27bac661cc87" -> "378d6402cc2e4f3bbc7fd282d3d15c6c"
+	c52ba028cd3a4956bfce883e0a74b6b0 -> "9db3aeaed7494995a3ec27bac661cc87"
+	d4ccf86deb674f2993e7b86ad2b9c3ec -> c52ba028cd3a4956bfce883e0a74b6b0
+	"2265e3d71c764122871270d72831208e" -> d4ccf86deb674f2993e7b86ad2b9c3ec
+	"20756a15fa75494cbeea04a7b77234ca" -> "2265e3d71c764122871270d72831208e"
+	"041203b2943f41fd956ee2e604e9afa2" -> "20756a15fa75494cbeea04a7b77234ca"
+	f0cdeb58351841ddb514e920edf8278f -> "041203b2943f41fd956ee2e604e9afa2"
+	a756feeb5a0c4adea51079b066ec42d4 -> f0cdeb58351841ddb514e920edf8278f
+	"4af1bad47f24491096fa178e46275a8a" -> a756feeb5a0c4adea51079b066ec42d4
+}

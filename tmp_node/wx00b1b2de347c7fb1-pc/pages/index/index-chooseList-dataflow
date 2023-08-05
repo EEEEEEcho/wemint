@@ -1,0 +1,27 @@
+// \pages/index/index chooseList Data Flow
+digraph {
+	"14939a3d31974d6f87d5af322280428a" [label="FunctionCall,
+function name -> chooseList,
+param -> a,
+a.,
+" color=blue]
+	"9ae4fd0d255649e78d132aef952a20fe" [label="If Alternate" color=blue]
+	"826bce73d70245babcaaf91ac8028e9c" [label=VariableDeclarations color=blue]
+	"07aeedfa20c349d2a2828d2bceb3bd51" [label="VariableDeclarator,
+left -> e,
+right -> a.currentTarget.dataset.openId" color=blue]
+	"826bce73d70245babcaaf91ac8028e9c" -> "07aeedfa20c349d2a2828d2bceb3bd51"
+	"1af902a6d84444e493859305e114b4f0" [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.index" color=blue]
+	"826bce73d70245babcaaf91ac8028e9c" -> "1af902a6d84444e493859305e114b4f0"
+	"8b12485318b8456a8dffbb52363ba85e" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	c9d083c53db3473ea11c16a0ddcd8338 [label="ConditionalExpression,
+ conditional list -> '/pages/list/index?openId=' + e,'/pages/list/index?index=' + t" color=blue]
+	"8b12485318b8456a8dffbb52363ba85e" -> c9d083c53db3473ea11c16a0ddcd8338
+	"826bce73d70245babcaaf91ac8028e9c" -> "8b12485318b8456a8dffbb52363ba85e"
+	"9ae4fd0d255649e78d132aef952a20fe" -> "826bce73d70245babcaaf91ac8028e9c"
+	"14939a3d31974d6f87d5af322280428a" -> "9ae4fd0d255649e78d132aef952a20fe"
+}

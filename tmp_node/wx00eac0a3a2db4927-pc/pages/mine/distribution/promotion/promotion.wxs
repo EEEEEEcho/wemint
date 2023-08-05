@@ -1,0 +1,47 @@
+module.exports = ({
+    getStatus: (function(item) {
+        var data;
+        switch (item.status) {
+            case 0:
+                data = '无效';
+                break;
+            case 1:
+                data = '等待付款';
+                break;
+            case 2:
+                data = '支付成功';
+                break;
+            case 3:
+                if (item.isRefund != 0) {
+                    data = '退款中'
+                } else {
+                    data = '待发货'
+                };
+                break;
+            case 4:
+                if (item.isRefund != 0) {
+                    data = '退款中'
+                } else {
+                    data = '待收货'
+                };
+                break;
+            case 5:
+                if (item.isRefund != 0) {
+                    data = '退款中'
+                } else {
+                    data = '待评价'
+                };
+                break;
+            case 6:
+                data = '交易完成';
+                break;
+        };
+        return (data)
+    }),
+    getMobile: (function(mobile) {
+        if (mobile != '') {
+            mobile = mobile.substring(0, 3) + '****' + mobile.substring(7, 11)
+        };
+        return (mobile)
+    }),
+});

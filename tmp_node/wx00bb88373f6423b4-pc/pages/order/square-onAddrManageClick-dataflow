@@ -1,0 +1,19 @@
+// \pages/order/square onAddrManageClick Data Flow
+digraph {
+	"0e7d32bba117433a8cbb648e2263d847" [label="FunctionCall,
+function name -> onAddrManageClick,
+param -> " color=blue]
+	"66211b4d4e1545ce993c7a1df431ac53" [label=VariableDeclarations color=blue]
+	"089300e5a8f3416d97dde5f049afdc31" [label="VariableDeclarator,
+left -> e,
+right -> a.cityPicker.getDistrictCodeByName" color=blue]
+	"66211b4d4e1545ce993c7a1df431ac53" -> "089300e5a8f3416d97dde5f049afdc31"
+	"0e7d32bba117433a8cbb648e2263d847" -> "66211b4d4e1545ce993c7a1df431ac53"
+	da50fd5a45cc4733a0e4b0a7cefc45c0 [label=SequenceExpression color=blue]
+	"3405846f5d254e3bbcbb03c91d0fdbf1" [label="CallExpression,
+callee name -> a.getFreightByAddr,
+param -> e,
+" color=blue]
+	da50fd5a45cc4733a0e4b0a7cefc45c0 -> "3405846f5d254e3bbcbb03c91d0fdbf1"
+	"0e7d32bba117433a8cbb648e2263d847" -> da50fd5a45cc4733a0e4b0a7cefc45c0
+}

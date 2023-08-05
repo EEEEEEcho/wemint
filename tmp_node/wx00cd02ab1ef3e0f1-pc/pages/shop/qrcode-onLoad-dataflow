@@ -1,0 +1,64 @@
+// \pages/shop/qrcode onLoad Data Flow
+digraph {
+	"330d6010b7b94af081e3f7266af3aa61" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	edb1999c90504f3c8b34086e0991d84a [label=SequenceExpression color=blue]
+	"7b3d5bcb7fb54dd4a255402dda73fa39" [label="CallExpression,
+callee name -> this.getWindowInfo,
+param -> " color=blue]
+	f2aa357ac9bc438381fecdc367b0c6e9 [label="FunctionCall,
+function name -> getWindowInfo,
+param -> " color=blue]
+	"344da5b48c8a48139d3e002843ecddd0" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"177bc8beedcf43e6ac677121c06f795b" [label="Object Properties
+{
+windowHeight -> wx.getSystemInfoSync().windowHeight
+leftDis -> (wx.getSystemInfoSync().windowWidth - 320) / 2
+}" color=blue]
+	"344da5b48c8a48139d3e002843ecddd0" -> "177bc8beedcf43e6ac677121c06f795b"
+	f2aa357ac9bc438381fecdc367b0c6e9 -> "344da5b48c8a48139d3e002843ecddd0"
+	"7b3d5bcb7fb54dd4a255402dda73fa39" -> f2aa357ac9bc438381fecdc367b0c6e9
+	edb1999c90504f3c8b34086e0991d84a -> "7b3d5bcb7fb54dd4a255402dda73fa39"
+	"855566fee0c4462b856d72aa55669a96" [label="CallExpression,
+callee name -> this.getQrcode,
+param -> " color=blue]
+	"00ac91fc407744889b49b4709982ddbf" [label="FunctionCall,
+function name -> getQrcode,
+param -> " color=blue]
+	e2aa414ed6c643c48642a402c2ea2c70 [label=VariableDeclarations color=blue]
+	"180712fb71e441d28585357bd4e29b4a" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	ee2eade2391f418fbb53ff1c42380291 [label="Object Properties
+{
+userID -> o.data.userID
+}" color=blue]
+	aeb22779dde04af399fa61330f970184 [label="FunctionCall,
+function name -> success,
+param -> t,
+t.,
+" color=blue]
+	c6a926f132ea488fa2c8eccac6f79bbb [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"25ac83273abd47d69b7eefad3d090086" [label="CallExpression,
+callee name -> o.setData,
+param -> " color=blue]
+	"6721dbdc80ab4ea2b89b1d3f2d2ec0e3" [label="Object Properties
+{
+bg_src -> e.globalData.siteBaseUrl + t.info.bg_img_url
+}" color=blue]
+	"25ac83273abd47d69b7eefad3d090086" -> "6721dbdc80ab4ea2b89b1d3f2d2ec0e3"
+	c6a926f132ea488fa2c8eccac6f79bbb -> "25ac83273abd47d69b7eefad3d090086"
+	aeb22779dde04af399fa61330f970184 -> c6a926f132ea488fa2c8eccac6f79bbb
+	ee2eade2391f418fbb53ff1c42380291 -> aeb22779dde04af399fa61330f970184
+	"180712fb71e441d28585357bd4e29b4a" -> ee2eade2391f418fbb53ff1c42380291
+	e2aa414ed6c643c48642a402c2ea2c70 -> "180712fb71e441d28585357bd4e29b4a"
+	"00ac91fc407744889b49b4709982ddbf" -> e2aa414ed6c643c48642a402c2ea2c70
+	"855566fee0c4462b856d72aa55669a96" -> "00ac91fc407744889b49b4709982ddbf"
+	edb1999c90504f3c8b34086e0991d84a -> "855566fee0c4462b856d72aa55669a96"
+	"330d6010b7b94af081e3f7266af3aa61" -> edb1999c90504f3c8b34086e0991d84a
+}

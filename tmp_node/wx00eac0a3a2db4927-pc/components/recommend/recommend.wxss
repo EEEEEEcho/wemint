@@ -1,0 +1,250 @@
+page {
+    background-color: #fff;
+}
+
+.overflow {
+    overflow: auto;
+}
+
+.index_container {
+    position: relative;
+}
+
+.searchbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #fff;
+    width: 120rpx;
+    height: 50rpx;
+    border-radius: 36rpx;
+    background: #fff;
+    position: absolute;
+    top: 32rpx;
+    right: 34rpx;
+    transition: all 0.5s;
+}
+
+.searchbar2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #fff;
+    width: 662rpx;
+    height: 56rpx;
+    margin: 30rpx 44rpx;
+    border-radius: 50rpx;
+    background: #fff;
+}
+
+.searchbarTransition {
+    width: 280rpx;
+}
+
+.search-img2 {
+    width: 27rpx;
+    height: 28rpx;
+    margin-left: 27rpx;
+    color: #fff;
+}
+
+.placeholder {
+    margin-left: 8rpx;
+    font-size: 26rpx;
+    color: #51515c;
+}
+
+.placeholderClass {
+    margin-left: 12rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #ccc;
+}
+
+.tabbar-title {
+    margin-left: 34rpx;
+    line-height: 40rpx;
+    margin-top: 32rpx;
+}
+
+.title {
+    color: #7f7f86;
+    font-size: 28rpx;
+    margin-right: 40rpx;
+}
+
+.selected-title {
+    font-size: 50rpx;
+    color: #51515c;
+    margin-right: 40rpx;
+    font-weight: bold;
+    letter-spacing: 2rpx;
+}
+
+.activityImage {
+    width: 682rpx;
+    margin: 0 34rpx;
+    height: 720rpx;
+    border-radius: 30rpx;
+}
+
+.theme {
+    color: #fff;
+    font-size: 28rpx;
+    font-weight: bold;
+    text-align: center;
+    width: 682rpx;
+    margin: 40rpx 34rpx;
+    letter-spacing: 2rpx;
+}
+
+.swiper_images {
+    margin: 0 34rpx;
+    height: 600rpx;
+    border-radius: 30rpx;
+    overflow: hidden;
+    position: relative;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+.swiperImg {
+    width: 682rpx;
+    height: 600rpx;
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 30rpx;
+}
+
+.dots {
+    position: absolute;
+    right: 30rpx;
+    bottom: 20rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    margin: 0 8rpx;
+    width: 26rpx;
+    height: 6rpx;
+    background: #aeaeb4;
+    transition: all 0.6s;
+}
+
+.active {
+    width: 26rpx;
+    height: 6rpx;
+    background: #fff;
+}
+
+.commendTitle {
+    width: 90%;
+    margin-left: 4%;
+    text-align: center;
+    display: inline-block;
+    margin-top: 21rpx;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #51515c;
+}
+
+.indexFixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.homeFree {
+    width: 682rpx;
+    height: 260rpx;
+    margin-left: 34rpx;
+    margin-bottom: 16rpx;
+    border-radius: 26rpx;
+}
+
+.physicalStore {
+    width: 682rpx;
+    height: 236rpx;
+    margin-left: 34rpx;
+    border-radius: 26rpx;
+    background: #ed7b43;
+    margin-bottom: 16rpx;
+}
+
+.bgImage {
+    width: 750rpx;
+    height: 1423rpx;
+    position: absolute;
+    z-index: -1;
+}
+
+.categories {
+    width: 662rpx;
+    margin: 0 44rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.emptyView {
+    content: "";
+    width: 150rpx;
+}
+
+.eachCate {
+    width: 150rpx;
+    padding-bottom: 30rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cateImage {
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 24rpx;
+    background: #eee;
+}
+
+.catename {
+    font-size: 24rpx;
+    color: #51515c;
+    margin-top: 10rpx;
+}
+
+.categoryList {
+    width: 682rpx;
+    height: 435rpx;
+    margin-left: 34rpx;
+    margin-bottom: 30rpx;
+}
+
+.category-info {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    height: 180rpx;
+    width: 25%;
+    margin-bottom: 10rpx;
+}
+
+.category-image {
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 24rpx;
+    background: #eee;
+}
+
+.category-text {
+    font-size: 24rpx;
+    color: #51515c;
+    margin-top: 10rpx;
+}

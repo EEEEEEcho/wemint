@@ -1,0 +1,26 @@
+// \pages/order/downline submitPayInfo Data Flow
+digraph {
+	"3bdadadc01944b7b93e9f7603b00a7c1" [label="FunctionCall,
+function name -> submitPayInfo,
+param -> " color=blue]
+	f20e9fc3957a4559bf7e7156a275b75d [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"9a286fd39ac848b6b8ed0176b954811b" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	f50f363c716e4367a202937aed0ee19d [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	dd255ec734e94bd1bf0345a91c694e33 [label="Object Properties
+{
+orderId -> t.data.orderId
+payBankName -> t.data.payBankName
+payAccountName -> t.data.payAccountName
+payMethod -> t.data.payMethod
+payNo -> t.data.payNo
+payRemark -> t.data.payRemark
+}" color=blue]
+	f50f363c716e4367a202937aed0ee19d -> dd255ec734e94bd1bf0345a91c694e33
+	"9a286fd39ac848b6b8ed0176b954811b" -> f50f363c716e4367a202937aed0ee19d
+	f20e9fc3957a4559bf7e7156a275b75d -> "9a286fd39ac848b6b8ed0176b954811b"
+	"3bdadadc01944b7b93e9f7603b00a7c1" -> f20e9fc3957a4559bf7e7156a275b75d
+}

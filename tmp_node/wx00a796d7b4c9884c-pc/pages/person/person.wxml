@@ -1,0 +1,7 @@
+<view class="p_serv">
+    <view class="h3">您的手机号：</view>
+    <input bindinput="mobileInput" class="inp1" disabled="{{style}}" placeholder="请输入您的手机号" type="number" value="{{mobile}}"></input>
+    <input bindinput="codeInput" class="inp11" disabled="{{style}}" hidden="{{hidden}}" placeholder="请输入验证码" type="number" value=""></input>
+    <button bindtap="send_sms" class="inp12" disabled="{{disabled}}" hidden="{{hidden}}">{{msg}}</button>
+</view>
+<button bindtap="submit" class="inp2" hidden="{{hidden}}">提交</button>

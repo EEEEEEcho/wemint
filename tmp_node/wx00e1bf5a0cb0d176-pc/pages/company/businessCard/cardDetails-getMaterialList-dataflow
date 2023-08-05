@@ -1,0 +1,23 @@
+// \pages/company/businessCard/cardDetails getMaterialList Data Flow
+digraph {
+	"8c92edd22a8e40b986cee439569b1e0c" [label="FunctionCall,
+function name -> getMaterialList,
+param -> " color=blue]
+	"5c507d7e3c364b659e60e6942a94195c" [label=SequenceExpression color=blue]
+	"296edbf7cfd14d9d924bf73ea34edbf1" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	eeee89b16c464ec7a064f08dfdf29553 [label=SequenceExpression color=blue]
+	"21053b85a18540a9b11d14e05cd2538c" [label="CallExpression,
+callee name -> a.sendRequest,
+param -> " color=blue]
+	b9b6a6cc6162474394b599ebde1d5347 [label="Object Properties
+{
+url -> '/index.php?c=Front/Material/Material&a=getMaterialList&page=' + s.data.productPage + '&tagID=' + i + '&userID='
+}" color=blue]
+	"21053b85a18540a9b11d14e05cd2538c" -> b9b6a6cc6162474394b599ebde1d5347
+	eeee89b16c464ec7a064f08dfdf29553 -> "21053b85a18540a9b11d14e05cd2538c"
+	"296edbf7cfd14d9d924bf73ea34edbf1" -> eeee89b16c464ec7a064f08dfdf29553
+	"5c507d7e3c364b659e60e6942a94195c" -> "296edbf7cfd14d9d924bf73ea34edbf1"
+	"8c92edd22a8e40b986cee439569b1e0c" -> "5c507d7e3c364b659e60e6942a94195c"
+}

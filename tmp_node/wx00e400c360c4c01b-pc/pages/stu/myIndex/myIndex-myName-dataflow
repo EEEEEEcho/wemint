@@ -1,0 +1,27 @@
+// \pages/stu/myIndex/myIndex myName Data Flow
+digraph {
+	"8a7988f86e8d430db3b4a3b0fa37ac35" [label="FunctionCall,
+function name -> myName,
+param -> a.,
+a,
+" color=blue]
+	f5a48236bd4b4141a4bc945d08ee31a8 [label=VariableDeclarations color=blue]
+	"6c0dfb15df7449219d945edf032e3df5" [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.id" color=blue]
+	f5a48236bd4b4141a4bc945d08ee31a8 -> "6c0dfb15df7449219d945edf032e3df5"
+	fb0be32141c04b2698be174cf023ebdb [label="VariableDeclarator,
+left -> e,
+right -> a.currentTarget.dataset.name" color=blue]
+	f5a48236bd4b4141a4bc945d08ee31a8 -> fb0be32141c04b2698be174cf023ebdb
+	"8a7988f86e8d430db3b4a3b0fa37ac35" -> f5a48236bd4b4141a4bc945d08ee31a8
+	"2a0c8e0d8553492c81d03d7b43ef4ff5" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	fd60a9305234492c8a52dc749f931719 [label="Object Properties
+{
+url -> '../myName/myName?id=' + t + '&name=' + e
+}" color=blue]
+	"2a0c8e0d8553492c81d03d7b43ef4ff5" -> fd60a9305234492c8a52dc749f931719
+	"8a7988f86e8d430db3b4a3b0fa37ac35" -> "2a0c8e0d8553492c81d03d7b43ef4ff5"
+}

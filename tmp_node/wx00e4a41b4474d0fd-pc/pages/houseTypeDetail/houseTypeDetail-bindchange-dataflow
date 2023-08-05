@@ -1,0 +1,17 @@
+// \pages/houseTypeDetail/houseTypeDetail bindchange Data Flow
+digraph {
+	d8ef87b47fac486993ea69290a7dc0f5 [label="FunctionCall,
+function name -> bindchange,
+param -> e,
+e.,
+" color=blue]
+	"3847f3b63bf1487b8f716103ab301e87" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"2b856d42cfde452daf9e63eccefde360" [label="Object Properties
+{
+current -> e.detail.current
+}" color=blue]
+	"3847f3b63bf1487b8f716103ab301e87" -> "2b856d42cfde452daf9e63eccefde360"
+	d8ef87b47fac486993ea69290a7dc0f5 -> "3847f3b63bf1487b8f716103ab301e87"
+}

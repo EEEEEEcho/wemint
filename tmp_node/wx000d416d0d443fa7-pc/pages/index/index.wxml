@@ -1,0 +1,69 @@
+<view class="container listContainer" wx:if="{{isShowReally}}">
+    <view class="headerContainer">
+        <view bindtap="setLocation" class="headerLocation">
+            <view>{{nowLocal}}</view>
+            <view wx:if="{{hasEll}}">...</view>
+        </view>
+        <navigator class="headerSearch" url="../search/search">
+            <icon type="search"></icon>按店名、商品名搜索
+    </navigator>
+    </view>
+    <swiper autoplay="{{autoplay}}" class="bannner" duration="{{duration}}" indicatorActiveColor="white" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+        <swiper-item wx:for="{{imgUrls}}">
+            <image class="slide-image" data-bannerId="{{item.banner_id}}" height="150" src="{{item.banner_pic}}" width="355"></image>
+        </swiper-item>
+    </swiper>
+    <view bindtouchend="moveNavigate" bindtouchmove="moveNavigate" class="categoryList white_bgColor" data-numArea="{{nowNavPage}}">
+        <view catchtap="navigationLink" class="categoryItem {{navigateAreaNum>=1?'categoryNo':''}}" data-navSortId="{{item.nav_sort_id}}" data-navType="{{item.nav_type}}" wx:for="{{category}}">
+            <image mode="scaleToFill" src="{{item.nav_pic}}"></image>
+            <view>{{item.nav_name}}</view>
+        </view>
+    </view>
+    <view class="navPoint white_bgColor" wx:if="{{navigateAreaNum<=1?false:true}}">
+        <view class="{{nowNavPage==idx?'pointOn':'pointNo'}}" wx:for="{{allCategory}}" wx:for-index="idx"></view>
+    </view>
+    <view class="topNotice" wx:if="{{!noTopNotice}}">
+        <image src="../../images/horn.png"></image>
+        <view class="marquee_container" style="--marqueeWidth--:{{-marquee.width}}em">
+            <view class="marquee_text" style="animation-duration: {{marquee.width/4+5}}s">{{marquee.text}}</view>
+        </view>
+    </view>
+    <view class="forYou {{noTopNotice==true?'noNotice':''}} white_bgColor" wx:if="{{advertiseName==''||advertiseName==undefined?false:true}}">—{{advertiseName}}—</view>
+    <view class="advertise white_bgColor" data-id="{{item.advertise_id}}">
+        <view class="advertiseItem{{item.advertise_type}}" wx:for="{{advertise}}">
+            <image mode="scaleToFill" src="{{item.advertise_pic}}"></image>
+        </view>
+    </view>
+    <view class="white_bgColor crossShopList" wx:if="{{recommend.preferred_sort_id==0||preferred_shop.length<=0?false:true}}">
+        <view class="preferredDesc">
+            <text class="crossName">{{crossName}}</text>
+            <view bindtap="navigationLink" class="fs_12 fc_lgray crossMore" data-navSortId="{{moreId}}" data-navType="2">更多<icon class="iconfont icon-youjiantou fs_12"></icon>
+            </view>
+        </view>
+        <view class="crossShopItemBox">
+            <view bindtap="toShop" class="crossShopItem" data-shopid="{{item.shop_id}}" data-shoptoken="{{item.shop_token}}" wx:for="{{preferred_shop}}">
+                <image src="{{item.logo_path}}"></image>
+                <view class="fs_16 ovhtext crossShopItemName">{{item.shop_name}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="screen fc_dgray white_bgColor">
+        <view class="{{_sort==1?'recommendNo':'recommendOn'}}" wx:if="{{i.is_on==1?true:false}}" wx:for="{{recommend}}" wx:for-index="idx" wx:for-item="i">
+            <view class="recommendItem {{i.name==nowName?'fc_main':''}}" data-sort="{{_sort}}">
+                <view bindtap="sendSortArg" data-sortType="{{i.name}}">{{i.name}}</view>
+                <icon class="iconfont {{_sort==1?'icon-xiangxiajiantou':'icon-xiangshangjiantou'}} {{i.is_array==1?'sortOn':'sortNo'}}"></icon>
+            </view>
+            <view bindtap="sendSortArg" class="{{_sort==1?'sortHide':'sortShow'}} {{item=='综合排序'?'firstSort':''}}" data-sortType="{{item}}" wx:if="{{i.is_array==1?true:false}}" wx:for="{{i.array}}">{{item}}</view>
+        </view>
+    </view>
+    <list sortList="{{sortList}}"></list>
+</view>
+<view class="elseContainer" wx:if="{{isShowHypocrisy}}">
+    <image class="elseBannerImg" src="../../images/elseImages/banner.png"></image>
+    <view class="elseSort">
+        <view bindtap="toSortList" class="elseSortItem" data-num="{{index}}" wx:for="{{elseSort}}">
+            <image class="elseSortItemImg" src="{{item.src}}"></image>
+            <view class="elseSortItemName">{{item.name}}</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,17 @@
+// \pages/issue/issue checkCoupon Data Flow
+digraph {
+	f42559d584624486a7c99c92973a8b27 [label="FunctionCall,
+function name -> checkCoupon,
+param -> o,
+o.,
+" color=blue]
+	"46b3a6f68a89407cb382b72356141109" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"8c906cd4917b46dbb34a35b69964b501" [label="Object Properties
+{
+couponsId -> o.currentTarget.dataset.coupon
+}" color=blue]
+	"46b3a6f68a89407cb382b72356141109" -> "8c906cd4917b46dbb34a35b69964b501"
+	f42559d584624486a7c99c92973a8b27 -> "46b3a6f68a89407cb382b72356141109"
+}

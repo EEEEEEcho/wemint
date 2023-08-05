@@ -1,0 +1,24 @@
+// \pages/shop/refundreson getRadioData Data Flow
+digraph {
+	"3806e0cebd7948efbd0d9521e07b677b" [label="FunctionCall,
+function name -> getRadioData,
+param -> e.,
+e,
+" color=blue]
+	e4686f0d5cf4420f8db27fce26aa4e20 [label=SequenceExpression color=blue]
+	d6bcf14423cd4706ab166cae598625d7 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	be9781be7f8447d4927ae1e127a8eb22 [label="Object Properties
+{
+radioFlag -> '0' == e.detail.value
+}" color=blue]
+	d6bcf14423cd4706ab166cae598625d7 -> be9781be7f8447d4927ae1e127a8eb22
+	e4686f0d5cf4420f8db27fce26aa4e20 -> d6bcf14423cd4706ab166cae598625d7
+	"20505519dd3f454baa30aca85347e104" [label="CallExpression,
+callee name -> console.log,
+param -> e.detail.value,
+" color=blue]
+	e4686f0d5cf4420f8db27fce26aa4e20 -> "20505519dd3f454baa30aca85347e104"
+	"3806e0cebd7948efbd0d9521e07b677b" -> e4686f0d5cf4420f8db27fce26aa4e20
+}

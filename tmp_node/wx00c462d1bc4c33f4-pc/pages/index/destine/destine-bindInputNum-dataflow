@@ -1,0 +1,19 @@
+// \pages/index/destine/destine bindInputNum Data Flow
+digraph {
+	f600a76c7b2147ed93a73c0ccebc32fb [label="FunctionCall,
+function name -> bindInputNum,
+param -> t.,
+t,
+" color=blue]
+	e91aead76f23411e9ed3c5187853de58 [label=SequenceExpression color=blue]
+	bf530f15ec52455eba6e70da019fa17f [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	ce078b7fb045463aa39c34dc76fbfd46 [label="Object Properties
+{
+personNum -> t.detail.value
+}" color=blue]
+	bf530f15ec52455eba6e70da019fa17f -> ce078b7fb045463aa39c34dc76fbfd46
+	e91aead76f23411e9ed3c5187853de58 -> bf530f15ec52455eba6e70da019fa17f
+	f600a76c7b2147ed93a73c0ccebc32fb -> e91aead76f23411e9ed3c5187853de58
+}

@@ -1,0 +1,40 @@
+<navigate cartPage="{{cartPage}}" isShareJump="{{isShareJump}}"></navigate>
+<view class="shop column" style="margin-top: {{navH+status}}px">
+    <view class="topLayout column">
+        <view class="shopDetail">
+            <image class="shopBg" mode="aspectFill" src="{{shopInfo.scenesImages[0]}}"></image>
+            <view class="shopMaskBg"></view>
+            <image class="shopLogo" lazyLoad="true" mode="aspectFill" src="{{shopInfo.logo}}"></image>
+            <text class="shopName">{{shopInfo.name}}</text>
+            <view>
+                <text class="shareIt">分享</text>
+                <button class="btn" openType="share"></button>
+            </view>
+        </view>
+        <view class="addressLayout row">
+            <image class="addressLabel" src="http://oss.shangmian.xin/weixin_applets_shop_address.png"></image>
+            <text class="addressText">{{shopInfo.address}}</text>
+            <view bindtap="onNavigation" class="navigationLayout row">
+                <image class="navigationLabel" src="http://oss.shangmian.xin/weixin_applets_shop_navigation.png"></image>
+                <text class="navigationText">一键导航</text>
+            </view>
+        </view>
+        <view class="line"></view>
+        <view class="shopInfoLayout row">
+            <image class="addressLabel" src="http://oss.shangmian.xin/weixin_applets_shop_safety.png"></image>
+            <view class="shopInfoCenter column">
+                <text class="shopPhone">{{shopInfo.phone}}</text>
+                <text class="shopSafe">尚免保护您的隐私安全</text>
+            </view>
+            <view bindtap="callPhone" class="navigationLayout row">
+                <image class="navigationLabel" src="http://oss.shangmian.xin/weixin_applets_shop_phone.png"></image>
+                <text class="navigationText">联系商家</text>
+            </view>
+        </view>
+    </view>
+    <shop-tab bind:onItemClick="onItemClick"></shop-tab>
+</view>
+<shop-home images="{{shopInfo.banners}}" shopBeauty="{{shopInfo.scenesImages}}" style="display:{{tabIndex==0?'flex':'none'}}"></shop-home>
+<goods-list id="goodsList" isClassify="{{isClassify}}" isComplex="{{isComplex}}" isGrade="{{isGrade}}" isPrice="{{isPrice}}" shopUuid="{{shopUuid}}" style="display:{{tabIndex==1?'flex':'none'}}"></goods-list>
+<get-phone isShow="{{isShowUserInfo}}" sceneData="{{sceneData}}"></get-phone>
+<loading-view isShow="{{isShowLoad}}"></loading-view>

@@ -1,0 +1,107 @@
+<view class="s_page">
+    <view animation="{{animationData}}" class="index_model" wx:if="{{showModalStatus}}">
+        <view bindtap="powerDrawer" class="i" data-statu="close" wx:if="{{showModalStatus}}"></view>
+        <view class="index_model_section">
+            <view class="index_model_title">您还未登录</view>
+            <view class="index_model_text">请先登录在进行操作</view>
+            <image mode="widthFix" src="../../images/fei.png" style="width:60%;"></image>
+            <view class="index_model_block">
+                <button bindtap="powerDrawer" class="index_model_btu" data-statu="close" wx:if="{{showModalStatus}}">暂不登录</button>
+                <button bindgetuserinfo="bindGetUserInfo" class="index_model_btu1" openType="getUserInfo">立即登录</button>
+            </view>
+        </view>
+    </view>
+    <view class="page">
+        <view class="s_toux_bg">
+            <view class="s_toux_img">
+                <image mode="widthFix" src="../../images/tx_topbg.jpg" style="width:100%;"></image>
+            </view>
+            <view class="s_toux_tx">
+                <image mode="widthFix" src="{{userInfo.avatarUrl}}" style="width:100px;" wx:if="{{userInfo.avatarUrl}}"></image>
+                <image mode="widthFix" src="../../images/avatar.png" style="width:100px;" wx:else></image>
+                <view class="font1" wx:if="{{userInfo.nickName}}">{{userInfo.nickName}}</view>
+                <view bindtap="powerDrawer" class="font1" data-statu="open" wx:else>点击登录</view>
+            </view>
+        </view>
+        <view class="ord3">
+            <view class="fl_l">
+                <view class="bt_desc fl_l">我的订单 <navigator class="navig" url="../orderlist/orderlist">
+                        <view class="font1">查看全部</view>
+                    </navigator>
+                </view>
+            </view>
+            <view class="odmax">
+                <view class="od_1">
+                    <navigator class="navig" url="../orderlist/orderlist?checkinfo=0">
+                        <image mode="widthFix" src="../../images/x_01.png" style="width:40px;"></image>
+                        <view class="font1">待付款</view>
+                    </navigator>
+                </view>
+                <view class="od_1">
+                    <navigator class="navig" url="../orderlist/orderlist?checkinfo=1">
+                        <image mode="widthFix" src="../../images/x_02.png" style="width:40px;"></image>
+                        <view class="font1">待发货</view>
+                    </navigator>
+                </view>
+                <view class="od_1">
+                    <navigator class="navig" url="../orderlist/orderlist?checkinfo=2">
+                        <image mode="widthFix" src="../../images/x_03.png" style="width:40px;"></image>
+                        <view class="font1">待收货</view>
+                    </navigator>
+                </view>
+                <view class="od_1">
+                    <navigator class="navig" url="../orderlist/orderlist?checkinfo=3">
+                        <image mode="widthFix" src="../../images/x_04.png" style="width:40px;"></image>
+                        <view class="font1">已完成</view>
+                    </navigator>
+                </view>
+                <view class="od_1">
+                    <navigator class="navig" url="../orderlist/orderlist?checkinfo=8">
+                        <image mode="widthFix" src="../../images/x_05.png" style="width:40px;"></image>
+                        <view class="font1">售后</view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+        <view class="fl_l">
+            <view class="bt_desc fl_l">我的服务  </view>
+        </view>
+        <view class="o_box">
+            <view class="o_serv">
+                <view class="o_serv_1">
+                    <navigator class="navig" url="../collect/collect">
+                        <image mode="widthFix" src="../../images/z_05.png" style="width:30px;"></image>
+                        <view class="font1">我的收藏</view>
+                    </navigator>
+                </view>
+                <view class="o_serv_1">
+                    <navigator class="navig" url="../shouhuo/shouhuo?type='my'">
+                        <image mode="widthFix" src="../../images/z_01.png" style="width:30px;"></image>
+                        <view class="font1">地址管理</view>
+                    </navigator>
+                </view>
+                <view class="o_serv_1">
+                    <navigator class="navig" url="../coupon/coupon">
+                        <image mode="widthFix" src="../../images/z_02.png" style="width:30px;"></image>
+                        <view class="font1">我的优惠券</view>
+                    </navigator>
+                </view>
+                <view class="o_serv_1">
+                    <navigator class="navig" url="../lingqu/lingqu">
+                        <image mode="widthFix" src="../../images/z_03.png" style="width:30px;"></image>
+                        <view class="font1">领取优惠券</view>
+                    </navigator>
+                </view>
+            </view>
+            <view class="o_serv">
+                <view class="o_serv_2">
+                    <navigator class="navig">
+                        <button class="font1" openType="contact">
+                            <image mode="widthFix" src="../../images/z_04.png" style="width:30px;"></image>
+       联系客服</button>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

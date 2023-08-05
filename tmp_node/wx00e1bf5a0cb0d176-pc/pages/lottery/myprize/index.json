@@ -1,0 +1,10 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "我的奖品",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "popus": "/pages/common/lotterypopus/lotterypopus"
+    }
+}

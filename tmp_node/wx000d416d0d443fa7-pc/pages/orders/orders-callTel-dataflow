@@ -1,0 +1,17 @@
+// \pages/orders/orders callTel Data Flow
+digraph {
+	"3c323fcca8d347f3b68cf1e9a595af26" [label="FunctionCall,
+function name -> callTel,
+param -> e.,
+e,
+" color=blue]
+	"8c3c43a811004b6eb3c8cc6627dc86c8" [label="CallExpression,
+callee name -> wx.makePhoneCall,
+param -> " color=blue]
+	"24c42d14aedf4f11bea1547234b40c85" [label="Object Properties
+{
+phoneNumber -> t.data.nowShopTel
+}" color=blue]
+	"8c3c43a811004b6eb3c8cc6627dc86c8" -> "24c42d14aedf4f11bea1547234b40c85"
+	"3c323fcca8d347f3b68cf1e9a595af26" -> "8c3c43a811004b6eb3c8cc6627dc86c8"
+}

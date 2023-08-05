@@ -1,0 +1,16 @@
+// \pages/order1/order1 getOrder Data Flow
+digraph {
+	"43280625a98648b18319628078a6d85a" [label="FunctionCall,
+function name -> getOrder,
+param -> " color=blue]
+	"4e70d7ace8ac46d195148a15e44cdd01" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	b8cb89b45e6a4667b6c12d0349b7282d [label="Object Properties
+{
+id -> a.data.cartId
+userid -> a.data.userid
+}" color=blue]
+	"4e70d7ace8ac46d195148a15e44cdd01" -> b8cb89b45e6a4667b6c12d0349b7282d
+	"43280625a98648b18319628078a6d85a" -> "4e70d7ace8ac46d195148a15e44cdd01"
+}

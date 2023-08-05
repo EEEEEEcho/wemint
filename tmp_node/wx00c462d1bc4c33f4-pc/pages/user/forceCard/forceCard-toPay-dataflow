@@ -1,0 +1,30 @@
+// \pages/user/forceCard/forceCard toPay Data Flow
+digraph {
+	"65a4eb78395741d7b30a3cba63824269" [label="FunctionCall,
+function name -> toPay,
+param -> a,
+a.,
+" color=blue]
+	"6612fb13e5fb44718c17b73f9b952a4b" [label=VariableDeclarations color=blue]
+	e8ca37067cf24dda9cc1fde21aef23f2 [label="VariableDeclarator,
+left -> o,
+right -> a.detail.formId" color=blue]
+	"6612fb13e5fb44718c17b73f9b952a4b" -> e8ca37067cf24dda9cc1fde21aef23f2
+	"65a4eb78395741d7b30a3cba63824269" -> "6612fb13e5fb44718c17b73f9b952a4b"
+	f271cc95374c46a7914b81af9a7b5fdc [label=SequenceExpression color=blue]
+	ce417d0ad5874b698916240f380ed973 [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	d84a42bab5664236be039d4daa08cd38 [label="Object Properties
+{
+formId -> o
+}" color=blue]
+	ce417d0ad5874b698916240f380ed973 -> d84a42bab5664236be039d4daa08cd38
+	f271cc95374c46a7914b81af9a7b5fdc -> ce417d0ad5874b698916240f380ed973
+	c22bfd3d64154cc3b397410276507364 [label="CallExpression,
+callee name -> console.log,
+param -> o,
+" color=blue]
+	f271cc95374c46a7914b81af9a7b5fdc -> c22bfd3d64154cc3b397410276507364
+	"65a4eb78395741d7b30a3cba63824269" -> f271cc95374c46a7914b81af9a7b5fdc
+}

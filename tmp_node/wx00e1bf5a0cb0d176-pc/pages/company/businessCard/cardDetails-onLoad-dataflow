@@ -1,0 +1,36 @@
+// \pages/company/businessCard/cardDetails onLoad Data Flow
+digraph {
+	"00a6f56243e5464ba3fcfdc2d7434274" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	d76b6ce2ec494722b7b64650b9f07513 [label=SequenceExpression color=blue]
+	"3c162f09f7254ea6b1fec541729c52b1" [label="ConditionalExpression,
+ conditional list -> s.setData" color=blue]
+	aba54c75b2ed4582aeea8b725bc8190c [label="ConditionalExpression,
+ conditional list -> s.setData,s.getSiteId" color=blue]
+	"3c162f09f7254ea6b1fec541729c52b1" -> aba54c75b2ed4582aeea8b725bc8190c
+	d76b6ce2ec494722b7b64650b9f07513 -> "3c162f09f7254ea6b1fec541729c52b1"
+	"8784253246824512ba2b96fba07ac3d4" [label="CallExpression,
+callee name -> a.registerGlobalFunctions,
+param -> s,
+" color=blue]
+	d76b6ce2ec494722b7b64650b9f07513 -> "8784253246824512ba2b96fba07ac3d4"
+	"563606a3d3e44c7f908e3dde0e1d7c2e" [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> " color=blue]
+	"686a6ffe1d02490c89257ed19fab3893" [label="FunctionCall,
+function name -> success,
+param -> a.,
+a,
+" color=blue]
+	"29239481950546ce81a95a8aa841ffb2" [label=SequenceExpression color=blue]
+	"6c4aea77e54046959e6c41facd8bedbd" [label="CallExpression,
+callee name -> wx.setStorageSync,
+param -> a,
+" color=blue]
+	"29239481950546ce81a95a8aa841ffb2" -> "6c4aea77e54046959e6c41facd8bedbd"
+	"686a6ffe1d02490c89257ed19fab3893" -> "29239481950546ce81a95a8aa841ffb2"
+	"563606a3d3e44c7f908e3dde0e1d7c2e" -> "686a6ffe1d02490c89257ed19fab3893"
+	d76b6ce2ec494722b7b64650b9f07513 -> "563606a3d3e44c7f908e3dde0e1d7c2e"
+	"00a6f56243e5464ba3fcfdc2d7434274" -> d76b6ce2ec494722b7b64650b9f07513
+}

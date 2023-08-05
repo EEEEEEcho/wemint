@@ -1,0 +1,58 @@
+// \pages/shop/searchPage searchAgain Data Flow
+digraph {
+	dedabd968dad4f6083e436ea0d3f7148 [label="FunctionCall,
+function name -> searchAgain,
+param -> e.,
+e,
+" color=blue]
+	"61dd3d10cb0c4341a6ef8a055f398fcb" [label="CallExpression,
+callee name -> this.getShuTingData,
+param -> e.currentTarget.dataset.value,
+" color=blue]
+	"24d397ba3b9040019ac6da941812f641" [label="FunctionCall,
+function name -> getShuTingData,
+param -> t,
+t.,
+" color=blue]
+	"2e81b8d5dc854ec594c55fe7169077af" [label=SequenceExpression color=blue]
+	"663af1a9fd9f46d794025fba2b47ef92" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"6b3f17e66aa44c24b0900563f8364db7" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"2276bdd252f44ad2851f0fa4e094b6df" [label=SequenceExpression color=blue]
+	"63bddd3ec2b446dba9d10ab15992a559" [label="CallExpression,
+callee name -> a[a.length - 2].setData,
+param -> " color=blue]
+	"0c3b470f8a16427ba7252019805b24d8" [label="CallExpression,
+callee name -> e,
+param -> t,
+" color=blue]
+	"63bddd3ec2b446dba9d10ab15992a559" -> "0c3b470f8a16427ba7252019805b24d8"
+	"2276bdd252f44ad2851f0fa4e094b6df" -> "63bddd3ec2b446dba9d10ab15992a559"
+	"6b3f17e66aa44c24b0900563f8364db7" -> "2276bdd252f44ad2851f0fa4e094b6df"
+	e8f1fc2b4eb5427db5e93bb9910e62e8 [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	"8d377e982d7346e9895c743891c3fe53" [label="Object Properties
+{
+url -> 'productlist?keyword=' + t
+}" color=blue]
+	e8f1fc2b4eb5427db5e93bb9910e62e8 -> "8d377e982d7346e9895c743891c3fe53"
+	"6b3f17e66aa44c24b0900563f8364db7" -> e8f1fc2b4eb5427db5e93bb9910e62e8
+	"663af1a9fd9f46d794025fba2b47ef92" -> "6b3f17e66aa44c24b0900563f8364db7"
+	"3a19357d148f4dd9a277f830f15bf3c0" [label=SequenceExpression color=blue]
+	a23c0ffd162d4baaa4bc792be4219385 [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	ddd03b7d1bd6407fa9a1d79471974249 [label="Object Properties
+{
+url -> 'productlist?keyword=' + t + '&ToBySearch=1'
+}" color=blue]
+	a23c0ffd162d4baaa4bc792be4219385 -> ddd03b7d1bd6407fa9a1d79471974249
+	"3a19357d148f4dd9a277f830f15bf3c0" -> a23c0ffd162d4baaa4bc792be4219385
+	"663af1a9fd9f46d794025fba2b47ef92" -> "3a19357d148f4dd9a277f830f15bf3c0"
+	"2e81b8d5dc854ec594c55fe7169077af" -> "663af1a9fd9f46d794025fba2b47ef92"
+	"24d397ba3b9040019ac6da941812f641" -> "2e81b8d5dc854ec594c55fe7169077af"
+	"61dd3d10cb0c4341a6ef8a055f398fcb" -> "24d397ba3b9040019ac6da941812f641"
+	dedabd968dad4f6083e436ea0d3f7148 -> "61dd3d10cb0c4341a6ef8a055f398fcb"
+}

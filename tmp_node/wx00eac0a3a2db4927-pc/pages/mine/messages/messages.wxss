@@ -1,0 +1,100 @@
+page {
+    background-color: #fff;
+}
+
+.messages_container {
+    position: relative;
+}
+
+.panel {
+    box-shadow: 0rpx 0rpx 16rpx #f0f0f0;
+    width: 682rpx;
+    border-radius: 24rpx;
+    display: flex;
+    flex-direction: column;
+    margin-left: 34rpx;
+}
+
+.message_panel {
+    height: 362rpx;
+}
+
+.service_panel {
+    margin-top: 40rpx;
+    height: 120rpx;
+}
+
+.notify_message,.delivery_message,.service_message {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    height: 120rpx;
+}
+
+.last {
+    border-bottom: none;
+}
+
+.notify,.delivery,.service {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.notify_img,.delivery_img,.service_img {
+    width: 80rpx;
+    height: 80rpx;
+    margin-right: 18rpx;
+    margin-left: 34rpx;
+}
+
+.notify_txt,.delivery_txt,.service_txt {
+    font-size: 28rpx;
+    color: #3f3f3f;
+}
+
+.arrow_right {
+    width: 14rpx;
+    height: 24rpx;
+    margin-right: 30rpx;
+}
+
+.message {
+    position: relative;
+}
+
+.red {
+    width: 32rpx;
+    height: 24rpx;
+    position: relative;
+    margin-right: 30rpx;
+}
+
+.red_back {
+    width: 32rpx;
+    height: 24rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.num {
+    width: 32rpx;
+    height: 24rpx;
+    text-align: center;
+    font-size: 18rpx;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.message_num1 {
+    left: 12rpx;
+}
+
+.message_num2 {
+    left: 6rpx;
+}

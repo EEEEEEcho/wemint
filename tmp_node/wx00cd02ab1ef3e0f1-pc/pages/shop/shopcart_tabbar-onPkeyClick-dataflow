@@ -1,0 +1,18 @@
+// \pages/shop/shopcart_tabbar onPkeyClick Data Flow
+digraph {
+	"64efd231bc2248239b38b907c37f5a9e" [label="FunctionCall,
+function name -> onPkeyClick,
+param -> t,
+t.,
+" color=blue]
+	"9d588e3603e044f99f34a374da4fd918" [label=VariableDeclarations color=blue]
+	"2268412dc5284b45a0ca21091cb31b63" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.pkey" color=blue]
+	"9d588e3603e044f99f34a374da4fd918" -> "2268412dc5284b45a0ca21091cb31b63"
+	cd1cce73e524410688abda3f777356f3 [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.flagitem" color=blue]
+	"9d588e3603e044f99f34a374da4fd918" -> cd1cce73e524410688abda3f777356f3
+	"64efd231bc2248239b38b907c37f5a9e" -> "9d588e3603e044f99f34a374da4fd918"
+}

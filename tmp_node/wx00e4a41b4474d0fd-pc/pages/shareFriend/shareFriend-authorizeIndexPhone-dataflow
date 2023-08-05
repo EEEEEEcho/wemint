@@ -1,0 +1,12 @@
+// \pages/shareFriend/shareFriend authorizeIndexPhone Data Flow
+digraph {
+	"652ae4a4ad434b2b86253e6010e805cb" [label="FunctionCall,
+function name -> authorizeIndexPhone,
+param -> " color=blue]
+	fc90786de46a4f26b43d8f047d20958f [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"6584d1836c5b48ebba40892210d5a74f" [label="ConditionalExpression,
+ conditional list -> t.setData" color=blue]
+	fc90786de46a4f26b43d8f047d20958f -> "6584d1836c5b48ebba40892210d5a74f"
+	"652ae4a4ad434b2b86253e6010e805cb" -> fc90786de46a4f26b43d8f047d20958f
+}

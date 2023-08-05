@@ -1,0 +1,51 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/orderRemark/orderRemark",
+        "pages/elseSortList/elseSortList",
+        "pages/sureOrder/sureOrder",
+        "pages/bindTel/bindTel",
+        "pages/shopDetail/shopDetail",
+        "pages/shopList/shopList",
+        "pages/search/search",
+        "pages/orders/orders",
+        "pages/orderDetail/orderDetail",
+        "pages/personalCenter/personalCenter",
+        "pages/chargeMoney/chargeMoney",
+        "pages/vouchers/vouchers",
+        "pages/personalCollection/personalCollection",
+        "pages/personalIntegral/personalIntegral",
+        "pages/searchRes/searchRes"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#ff9800",
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "",
+        "backgroundColor": "#eeeeee",
+        "backgroundTextStyle": "light",
+        "enablePullDownRefresh": false,
+        "onReachBottomDistance": "0"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/首页 (1).png",
+                "selectedIconPath": "images/首页.png"
+            },
+            {
+                "pagePath": "pages/orders/orders",
+                "text": "订单",
+                "iconPath": "images/订单 (1).png",
+                "selectedIconPath": "images/订单.png"
+            },
+            {
+                "pagePath": "pages/personalCenter/personalCenter",
+                "text": "我的",
+                "iconPath": "images/个人中心 (1).png",
+                "selectedIconPath": "images/个人中心.png"
+            }
+        ]
+    }
+}

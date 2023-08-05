@@ -1,0 +1,56 @@
+<view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
+<view class="cardBox" style="background-color:{{chengedColor}}">
+    <image src="{{cardInfos.backgroundPicUrl}}" style="width:300px; height:150px; border-radius:10px;"></image>
+    <view style="position:absolute;width:300px; height:150px;z-index:5;top:20px;">
+        <view style="float:left;width:100%;">
+            <view class="cardName">{{cardInfo.cardName}}</view>
+            <view class="viphycard">VIP会员卡</view>
+        </view>
+        <view class="cardNumber">{{cardInfo.wechatUserStoreCardNum}}</view>
+    </view>
+</view>
+<view class="addInfo">
+    <view class="nameBox">
+        <view class="name">姓 名：</view>
+        <view class="telInput">
+            <input bindinput="bindKeyInput" class="weui-input" maxlength="20" placeholder="" value="{{cardInfo.wechatUserName}}"></input>
+        </view>
+    </view>
+    <view class="nameBox">
+        <view class="name">性 别：</view>
+        <view class="telInput">
+            <radio-group bindchange="radioChange" class="radio-group">
+                <label class="radio" wx:for="{{items}}">
+                    <radio checked="{{item.checked}}" value="{{item.value}}"></radio>{{item.value}}
+        </label>
+            </radio-group>
+        </view>
+    </view>
+    <view class="nameBox">
+        <view class="name">生 日：</view>
+        <view class="telInput" style="float:left;">
+            <view class="section">
+                <picker bindchange="bindDateChange" end="{{zuijiao}}" mode="date" start="" value="{{date}}">
+                    <view class="picker" style="color:#fff;font-size:14px;padding-left:8px;">
+            {{date}}
+          </view>
+                </picker>
+            </view>
+        </view>
+    </view>
+    <view class="nameBox">
+        <view class="name">年 龄：</view>
+        <view class="telInput" style="padding-left:8px;float:left;color:#fff;">{{age}}</view>
+    </view>
+    <view class="nameBox">
+        <view class="name">电 话：</view>
+        <view class="telInput">
+            <input bindinput="bindKeyInput1" class="weui-input" maxlength="11" placeholder="" value="{{cardInfo.wechatUserPhoneNum}}"></input>
+        </view>
+    </view>
+</view>
+<button bindtap="waitReceipt" class="saveInfo">保存信息</button>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

@@ -1,0 +1,385 @@
+<view catchtouchmove="{{check>0?'move':''}}">
+    <view class="shaixuan">
+        <view class="k10"></view>
+        <view class="shaixuan-list">
+            <view bindtap="check" class="shaixuan-list-item" data-check="1" style="color:#{{check==1?'FFB200':'999'}}">热门<image class="xiajiatou" src="/pages/img/down{{check==1?'2':'1'}}.png"></image>
+            </view>
+            <view bindtap="check" class="shaixuan-list-item" data-check="2" style="color:#{{check==2?'FFB200':'999'}}">品牌<image class="xiajiatou" src="/pages/img/down{{check==2?'2':'1'}}.png"></image>
+            </view>
+            <view bindtap="check" class="shaixuan-list-item" data-check="3" style="color:#{{check==3?'FFB200':'999'}}">价格<image class="xiajiatou" src="/pages/img/down{{check==3?'2':'1'}}.png"></image>
+            </view>
+            <view bindtap="check" class="shaixuan-list-item" data-check="4" style="color:#{{check==4?'FFB200':'999'}}">更多<image class="xiajiatou" src="/pages/img/down{{check==4?'2':'1'}}.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="menu" wx:if="{{check>0}}">
+        <scroll-view scrollY class="menu-list" style="height:{{windowHeight-140}}px;" wx:if="{{check==1}}">
+            <view bindtap="hot" class="menu-list-item" data-hot="1">
+                <view class="menu-list-item-l" style="color:#{{hot==1?'FFB200':''}}">最新上架</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{hot==1?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{hot==1?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="hot" class="menu-list-item" data-hot="2">
+                <view class="menu-list-item-l" style="color:#{{hot==2?'FFB200':''}}">价格最低</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{hot==2?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{hot==2?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="hot" class="menu-list-item" data-hot="3">
+                <view class="menu-list-item-l" style="color:#{{hot==3?'FFB200':''}}">价格最高</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{hot==3?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{hot==3?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="hot" class="menu-list-item" data-hot="4">
+                <view class="menu-list-item-l" style="color:#{{hot==4?'FFB200':''}}">里程最短</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{hot==4?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{hot==4?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="hot" class="menu-list-item" data-hot="5">
+                <view class="menu-list-item-l" style="color:#{{hot==5?'FFB200':''}}">车龄最短</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{hot==5?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{hot==5?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <scroll-view scrollY class="menu-list" style="height:{{windowHeight-140}}px;" wx:if="{{check==2}}">
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="不限">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='不限'?'FFB200':''}}">不限</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='不限'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='不限'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="奥迪">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='奥迪'?'FFB200':''}}">奥迪</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='奥迪'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='奥迪'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="保时捷">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='保时捷'?'FFB200':''}}">保时捷</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='保时捷'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='保时捷'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="奔驰">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='奔驰'?'FFB200':''}}">奔驰</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='奔驰'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='奔驰'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="宝马">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='宝马'?'FFB200':''}}">宝马</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='宝马'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='宝马'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="别克">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='别克'?'FFB200':''}}">别克</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='别克'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='别克'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="本田">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='本田'?'FFB200':''}}">本田</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='本田'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='本田'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="大众">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='大众'?'FFB200':''}}">大众</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='大众'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='大众'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="丰田">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='丰田'?'FFB200':''}}">丰田</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='丰田'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='丰田'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="福特">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='福特'?'FFB200':''}}">福特</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='福特'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='福特'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="路虎">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='路虎'?'FFB200':''}}">路虎</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='路虎'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='路虎'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="MINI">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='MINI'?'FFB200':''}}">MINI</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='MINI'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='MINI'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="马自达">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='马自达'?'FFB200':''}}">马自达</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='马自达'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='马自达'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="起亚">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='起亚'?'FFB200':''}}">起亚</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='起亚'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='起亚'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="日产">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='日产'?'FFB200':''}}">日产</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='日产'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='日产'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="三菱">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='三菱'?'FFB200':''}}">三菱</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='三菱'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='三菱'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="雪佛兰">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='雪佛兰'?'FFB200':''}}">雪佛兰</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='雪佛兰'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='雪佛兰'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="现代">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='现代'?'FFB200':''}}">现代</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='现代'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='现代'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="pinpai" class="menu-list-item" data-pinpai="中华">
+                <view class="menu-list-item-l" style="color:#{{pinpai=='中华'?'FFB200':''}}">中华</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{pinpai=='中华'?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{pinpai=='中华'?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <scroll-view scrollY class="menu-list" style="height:{{windowHeight-140}}px;" wx:if="{{check==3}}">
+            <view bindtap="jiage" class="menu-list-item" data-jiage="-1">
+                <view class="menu-list-item-l" style="color:#{{jiage==-1?'FFB200':''}}">不限</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{jiage==-1?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{jiage==-1?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="jiage" class="menu-list-item" data-jiage="1">
+                <view class="menu-list-item-l" style="color:#{{jiage==1?'FFB200':''}}">5万以内</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{jiage==1?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{jiage==1?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="jiage" class="menu-list-item" data-jiage="2">
+                <view class="menu-list-item-l" style="color:#{{jiage==2?'FFB200':''}}">5~8万</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{jiage==2?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{jiage==2?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="jiage" class="menu-list-item" data-jiage="3">
+                <view class="menu-list-item-l" style="color:#{{jiage==3?'FFB200':''}}">8~10万</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{jiage==3?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{jiage==3?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="jiage" class="menu-list-item" data-jiage="4">
+                <view class="menu-list-item-l" style="color:#{{jiage==4?'FFB200':''}}">10~15万</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{jiage==4?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{jiage==4?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="jiage" class="menu-list-item" data-jiage="5">
+                <view class="menu-list-item-l" style="color:#{{jiage==5?'FFB200':''}}">15~20万</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{jiage==5?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{jiage==5?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="jiage" class="menu-list-item" data-jiage="6">
+                <view class="menu-list-item-l" style="color:#{{jiage==6?'FFB200':''}}">20~30万</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{jiage==6?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{jiage==6?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="jiage" class="menu-list-item" data-jiage="7">
+                <view class="menu-list-item-l" style="color:#{{jiage==7?'FFB200':''}}">30~50万</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{jiage==7?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{jiage==7?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="jiage" class="menu-list-item" data-jiage="8">
+                <view class="menu-list-item-l" style="color:#{{jiage==8?'FFB200':''}}">50~80万</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{jiage==8?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{jiage==8?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="jiage" class="menu-list-item" data-jiage="9">
+                <view class="menu-list-item-l" style="color:#{{jiage==9?'FFB200':''}}">80~100万</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{jiage==9?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{jiage==9?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="jiage" class="menu-list-item" data-jiage="10">
+                <view class="menu-list-item-l" style="color:#{{jiage==10?'FFB200':''}}">100万以上</view>
+                <view class="menu-list-item-r">
+                    <view class="pick" style="border: 2rpx solid #{{jiage==10?'FFB200':'D2D2D2'}};">
+                        <icon class="img" color="#FFB200" size="18" type="{{jiage==10?'success_no_circle':''}}"></icon>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="menu-list" style="overflow-y: scroll;height:{{windowHeight-140}}px;" wx:if="{{check==4}}">
+            <view class="menu-list-item">
+                <view class="menu-list-item-l2">车型</view>
+                <view class="menu-list-item-r2">
+                    <picker bindchange="chexing" class="picker-style" range="{{cx}}" value="{{cxindex}}">
+              {{chexing}}
+            </picker>
+                    <image class="right" src="/pages/img/right.png"></image>
+                </view>
+            </view>
+            <view class="menu-list-item">
+                <view class="menu-list-item-l2">车龄</view>
+                <view class="menu-list-item-r2">
+                    <picker bindchange="cheling" class="picker-style" range="{{cl}}" value="{{clindex}}">
+              {{cheling}}
+            </picker>
+                    <image class="right" src="/pages/img/right.png"></image>
+                </view>
+            </view>
+            <view class="menu-list-item">
+                <view class="menu-list-item-l2">变速箱</view>
+                <view class="menu-list-item-r2">
+                    <picker bindchange="biansuxiang" class="picker-style" range="{{bsx}}" value="{{bsxindex}}">
+              {{biansuxiang}}
+            </picker>
+                    <image class="right" src="/pages/img/right.png"></image>
+                </view>
+            </view>
+            <view class="menu-list-item">
+                <view class="menu-list-item-l2">排量</view>
+                <view class="menu-list-item-r2">
+                    <picker bindchange="pailiang" class="picker-style" range="{{pl}}" value="{{plindex}}">
+              {{pailiang}}
+            </picker>
+                    <image class="right" src="/pages/img/right.png"></image>
+                </view>
+            </view>
+            <view class="menu-list-item">
+                <view class="menu-list-item-l2">排放标准</view>
+                <view class="menu-list-item-r2">
+                    <picker bindchange="paifangbiaozhun" class="picker-style" range="{{pfbz}}" value="{{pfbzindex}}">
+              {{paifang}}
+            </picker>
+                    <image class="right" src="/pages/img/right.png"></image>
+                </view>
+            </view>
+            <view class="menu-list-item">
+                <view class="menu-list-item-l2">车身颜色</view>
+                <view class="menu-list-item-r2">
+                    <picker bindchange="color" class="picker-style" range="{{ys}}" value="{{colorindex}}">
+              {{color}}
+            </picker>
+                    <image class="right" src="/pages/img/right.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="menu-list">
+            <view class="k30"></view>
+            <view bindtap="search" class="btn" data-check="0">确定</view>
+            <view class="k30"></view>
+        </view>
+        <view bindtap="check" class="menu-shadow" data-check="0" style="height:{{20}}px;"></view>
+    </view>
+    <view class="k80"></view>
+    <view bindtap="detail" class="goods-list" data-id="{{item.id}}" wx:for="{{list}}" wx:key="k1">
+        <view class="goods-list-item">
+            <view class="k40"></view>
+            <view class="goods-list-item-l">
+                <image class="img" mode="aspectfill" src="{{path}}{{item.img}}"></image>
+            </view>
+            <view class="goods-list-item-r">
+                <view class="goods-name">{{item.title}}</view>
+                <view class="goods-desc" wx:if="{{item.ticket_status==0}}">{{item.date}}上架/售罄</view>
+                <view class="goods-desc" wx:if="{{item.ticket_status==1}}">{{item.date}}上架/在售</view>
+                <view class="goods-desc" wx:if="{{item.ticket_status==2}}">{{item.date}}上架/交易中</view>
+                <view class="goods-price">
+                    <view class="goods-price-l">{{item.price}}万</view>
+                    <view class="goods-price-r">已有{{item.yuyueshu}}人预约</view>
+                </view>
+            </view>
+            <view class="k40"></view>
+        </view>
+    </view>
+</view>

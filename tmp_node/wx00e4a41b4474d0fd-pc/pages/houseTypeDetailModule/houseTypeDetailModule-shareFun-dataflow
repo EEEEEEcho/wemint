@@ -1,0 +1,41 @@
+// \pages/houseTypeDetailModule/houseTypeDetailModule shareFun Data Flow
+digraph {
+	"490b1d36d8fa41039b6d218ce8ab87c3" [label="FunctionCall,
+function name -> shareFun,
+param -> " color=blue]
+	de5b3c8c2ac2487d8b93a531b78caf08 [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	e1bc36ef43ac4b94985d4b892a2ea30a [label="CallExpression,
+callee name -> this.goShareDetail,
+param -> " color=blue]
+	ce50d84b7faa46bd9063b22cbc4439a8 [label="FunctionCall,
+function name -> goShareDetail,
+param -> " color=blue]
+	"7e3fd1751c6043bab1202bdba3f02a7d" [label=SequenceExpression color=blue]
+	b59bf0740e164034ba9f783232d4bd22 [label="CallExpression,
+callee name -> u.createXcxQrCode,
+param -> " color=blue]
+	f9f2439486274ae99fce216953cb26bb [label="Object Properties
+{
+currentIndex -> this.data.currentIndex
+currentName -> this.data.currentName
+id -> this.data.active
+buildingId -> this.data.buildingId
+}" color=blue]
+	b59bf0740e164034ba9f783232d4bd22 -> f9f2439486274ae99fce216953cb26bb
+	"9699814a58d441408d672367714313c3" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> t,
+" color=blue]
+	b59bf0740e164034ba9f783232d4bd22 -> "9699814a58d441408d672367714313c3"
+	"6cd7fd4b281c43c39ee4b1a2e59e7b36" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> e,
+" color=blue]
+	b59bf0740e164034ba9f783232d4bd22 -> "6cd7fd4b281c43c39ee4b1a2e59e7b36"
+	"7e3fd1751c6043bab1202bdba3f02a7d" -> b59bf0740e164034ba9f783232d4bd22
+	ce50d84b7faa46bd9063b22cbc4439a8 -> "7e3fd1751c6043bab1202bdba3f02a7d"
+	e1bc36ef43ac4b94985d4b892a2ea30a -> ce50d84b7faa46bd9063b22cbc4439a8
+	de5b3c8c2ac2487d8b93a531b78caf08 -> e1bc36ef43ac4b94985d4b892a2ea30a
+	"490b1d36d8fa41039b6d218ce8ab87c3" -> de5b3c8c2ac2487d8b93a531b78caf08
+}

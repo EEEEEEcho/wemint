@@ -1,0 +1,23 @@
+// \pages/order1/order1 setModalStatus1 Data Flow
+digraph {
+	"408851695a5e42cb88029518f70ffce3" [label="FunctionCall,
+function name -> setModalStatus1,
+param -> t,
+t.,
+" color=blue]
+	"67da5e69522e43be93eca9e6310e6efb" [label=SequenceExpression color=blue]
+	"3930c565786a40bc81d7c8d5f4417bc5" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	f7bfc327f4f845d68d3118f526949829 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"9f4e62566e7e4ac686011cec3ac1a1c2" [label="Object Properties
+{
+btntype -> t.currentTarget.dataset.type
+}" color=blue]
+	f7bfc327f4f845d68d3118f526949829 -> "9f4e62566e7e4ac686011cec3ac1a1c2"
+	"3930c565786a40bc81d7c8d5f4417bc5" -> f7bfc327f4f845d68d3118f526949829
+	"67da5e69522e43be93eca9e6310e6efb" -> "3930c565786a40bc81d7c8d5f4417bc5"
+	"408851695a5e42cb88029518f70ffce3" -> "67da5e69522e43be93eca9e6310e6efb"
+}

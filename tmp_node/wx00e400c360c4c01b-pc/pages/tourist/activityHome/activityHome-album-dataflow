@@ -1,0 +1,15 @@
+// \pages/tourist/activityHome/activityHome album Data Flow
+digraph {
+	"24f249923c40421ab4da8d6b5c363ab6" [label="FunctionCall,
+function name -> album,
+param -> a.,
+a,
+" color=blue]
+	"5eec10d3b32447dcbca9ce6a4299e10d" [label=SequenceExpression color=blue]
+	e750faf10acd46f3adeaf49f72294267 [label="CallExpression,
+callee name -> t.collectFomrId,
+param -> a.detail.formId,
+" color=blue]
+	"5eec10d3b32447dcbca9ce6a4299e10d" -> e750faf10acd46f3adeaf49f72294267
+	"24f249923c40421ab4da8d6b5c363ab6" -> "5eec10d3b32447dcbca9ce6a4299e10d"
+}

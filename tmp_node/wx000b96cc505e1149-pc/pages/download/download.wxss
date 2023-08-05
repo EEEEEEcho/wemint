@@ -1,0 +1,47 @@
+page {
+    background-color: #FFFFFF;
+}
+
+.bestview {
+    width: 98%;
+    height: 100%;
+    margin: auto;
+}
+
+.textview {
+    margin-top: 8px;
+    background: #73C5FF;
+    height: 29px;
+    padding-top: 4px;
+}
+
+.text {
+    font-size: 0.9em;
+    color: #FFFFFF;
+    font-family: “Microsoft YaHei”!important;
+    padding-left: 146px;
+}
+
+.falseimgview {
+    margin-top: 8px;
+    width: 100%;
+    height: 100%;
+    background: #E3DCE5;
+}
+
+.falseimg {
+    width: 100%;
+    height: 50%;
+    margin-top: 64px;
+}
+
+.imgview {
+    margin-top: 8px;
+    width: 100%;
+}
+
+.img {
+    width: 6.36rem;
+    height: 7.66rem;
+    padding-left: 2px;
+}

@@ -1,0 +1,37 @@
+module.exports = ({
+    getTag: (function(tag) {
+        var label = tag.substring(0, 5);
+        label = label + '...';
+        return (label)
+    }),
+    getDrawNum: (function(drawNum) {
+        var data;
+        switch (drawNum) {
+            case 2:
+                data = '二';
+                break;
+            case 3:
+                data = '三';
+                break;
+            case 4:
+                data = '四';
+                break;
+            case 5:
+                data = '五';
+                break;
+            case 6:
+                data = '六';
+                break;
+            case 7:
+                data = '七';
+                break;
+            case 8:
+                data = '八';
+                break;
+            case 9:
+                data = '九';
+                break;
+        };
+        return (data)
+    }),
+});

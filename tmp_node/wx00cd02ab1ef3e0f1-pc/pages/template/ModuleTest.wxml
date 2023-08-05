@@ -1,0 +1,3 @@
+<template name="ModuleTest">
+    <view>这里测试模块 {{m.TestData}}</view>
+</template>

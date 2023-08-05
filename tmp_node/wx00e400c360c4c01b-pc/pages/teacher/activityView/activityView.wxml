@@ -1,0 +1,50 @@
+<import src="../../../wxParse/wxParse.wxml"></import>
+<view class="margintop5"></view>
+<view class="book">
+    <view class="section">
+        <view class="scatitle">{{model.title}}</view>
+        <view class="scatext">
+       活动地点：{{model.activity_address}}
+      </view>
+        <view class="scatext">
+       活动时间：{{model.star_time}} - {{model.end_time}}
+      </view>
+        <view class="scatext">
+       活动汇报：{{model.report_content}}
+      </view>
+        <view class="scatext">
+       备注：{{model.remark}}
+      </view>
+        <view class="scatext">队长：{{model.captainStr}}</view>
+        <view class="scatext">队长：{{model.teammateStr}}</view>
+    </view>
+</view>
+<view class="margintop20"></view>
+<view class="bookListContent">已有<text class="bookListState">{{model.cpcList.length}}</text>位同学报名</view>
+<view class="margintop5"></view>
+<view class="book">
+    <view class="section">
+        <view wx:for="{{model.cpcList}}" wx:for-index="idx" wx:key="car">
+            <view class="cart_container">
+                <image class="item-image" src="{{item.icon}}"></image>
+                <view class="column">
+                    <text class="column_title">{{item.cpc_name}}
+            <text style="color:#f8ac59" wx:if="{{item.is_audition==1}}">(潜在学员)</text>
+                    </text>
+                </view>
+                <view class="column_bir">{{item.birthday}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="book">
+    <view class="section">
+        <view class="scatext">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+        </view>
+    </view>
+</view>
+<view style="padding-bottom: 100rpx;"></view>
+<view class="address-add">
+    <button bindtap="activityReport" class="Btn" size="default"> 汇  报 </button>
+</view>

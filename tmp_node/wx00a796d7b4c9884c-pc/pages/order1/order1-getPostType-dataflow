@@ -1,0 +1,20 @@
+// \pages/order1/order1 getPostType Data Flow
+digraph {
+	"0c74ac8cc99a47c8ab5b3509f503cb27" [label="FunctionCall,
+function name -> getPostType,
+param -> " color=blue]
+	"9604ceb1230e49a78524b7dcb6b9e2ee" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	a838fa2562fa401097317b41c31cc9d3 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"72c52ff1b7be436fb8c07ff3f5132e9b" [label="Object Properties
+{
+postIndex1 -> this.data.postIndex
+postname1 -> this.data.postname
+postId1 -> this.data.postId
+}" color=blue]
+	a838fa2562fa401097317b41c31cc9d3 -> "72c52ff1b7be436fb8c07ff3f5132e9b"
+	"9604ceb1230e49a78524b7dcb6b9e2ee" -> a838fa2562fa401097317b41c31cc9d3
+	"0c74ac8cc99a47c8ab5b3509f503cb27" -> "9604ceb1230e49a78524b7dcb6b9e2ee"
+}

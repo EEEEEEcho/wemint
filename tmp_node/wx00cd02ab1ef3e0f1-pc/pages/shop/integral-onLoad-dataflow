@@ -1,0 +1,75 @@
+// \pages/shop/integral onLoad Data Flow
+digraph {
+	"2c6b26cfc288426fb26becea0a05a82c" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	edf2fdd1b45a49baa8f5d445c0de3c39 [label=SequenceExpression color=blue]
+	c0bcbae9cc7242998e3bbcd384db5ec4 [label="CallExpression,
+callee name -> this.loadIntegral,
+param -> " color=blue]
+	a00b8fec2c90462cb3c2cd6d00609a82 [label="FunctionCall,
+function name -> loadIntegral,
+param -> " color=blue]
+	"0905540563fd4ca79f6e379e171fd385" [label="If Alternate" color=blue]
+	c319cf5ec3754652b577a808745fe7d6 [label=VariableDeclarations color=blue]
+	b594028c82fe4eae99ae2e4e204d06c3 [label="VariableDeclarator,
+left -> n,
+right -> a.data.total" color=blue]
+	c319cf5ec3754652b577a808745fe7d6 -> b594028c82fe4eae99ae2e4e204d06c3
+	"0905540563fd4ca79f6e379e171fd385" -> c319cf5ec3754652b577a808745fe7d6
+	e192fc201b774044bebcbe031931409d [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"5b71ef49391c42ad8deb911b696cc7a7" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"3730b074a1e6416b81e6d63ddcbed2f1" [label="Assignment,
+left -> a.data.recordcount,
+right -> n" color=blue]
+	"5b71ef49391c42ad8deb911b696cc7a7" -> "3730b074a1e6416b81e6d63ddcbed2f1"
+	e192fc201b774044bebcbe031931409d -> "5b71ef49391c42ad8deb911b696cc7a7"
+	"0905540563fd4ca79f6e379e171fd385" -> e192fc201b774044bebcbe031931409d
+	"8b0f4fcab13f483cbd3e9a818b7fdcc3" [label=VariableDeclarations color=blue]
+	acb755cb1e89489fa020373213519e56 [label="VariableDeclarator,
+left -> i,
+right -> a.data.recordcount" color=blue]
+	"8b0f4fcab13f483cbd3e9a818b7fdcc3" -> acb755cb1e89489fa020373213519e56
+	"2e1109714d774d02861258c6a5ab9922" [label="VariableDeclarator,
+left -> s,
+right -> a.data.integralInfo.length" color=blue]
+	"8b0f4fcab13f483cbd3e9a818b7fdcc3" -> "2e1109714d774d02861258c6a5ab9922"
+	"0905540563fd4ca79f6e379e171fd385" -> "8b0f4fcab13f483cbd3e9a818b7fdcc3"
+	"44fced9d4d2b4c5a8baee1c8139cf2a1" [label="If Alternate" color=blue]
+	"4ae0cb5a399c4847883b1d4a38af95bc" [label=VariableDeclarations color=blue]
+	"1041bf1d9bbb4bcd981767a869e37c9c" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"7727b43c80784d7c836a687b66a2f225" [label="CallExpression,
+callee name -> Math.ceil,
+param -> s / a.data.pagesize,
+" color=blue]
+	"1041bf1d9bbb4bcd981767a869e37c9c" -> "7727b43c80784d7c836a687b66a2f225"
+	"4ae0cb5a399c4847883b1d4a38af95bc" -> "1041bf1d9bbb4bcd981767a869e37c9c"
+	"44fced9d4d2b4c5a8baee1c8139cf2a1" -> "4ae0cb5a399c4847883b1d4a38af95bc"
+	"0905540563fd4ca79f6e379e171fd385" -> "44fced9d4d2b4c5a8baee1c8139cf2a1"
+	a00b8fec2c90462cb3c2cd6d00609a82 -> "0905540563fd4ca79f6e379e171fd385"
+	c0bcbae9cc7242998e3bbcd384db5ec4 -> a00b8fec2c90462cb3c2cd6d00609a82
+	edf2fdd1b45a49baa8f5d445c0de3c39 -> c0bcbae9cc7242998e3bbcd384db5ec4
+	"8b0472b22d674f5b8cd1b96073aaabf9" [label="CallExpression,
+callee name -> this.getScrollHeight,
+param -> " color=blue]
+	d3ae00b4a7e6435aa19d50896187d25b [label="FunctionCall,
+function name -> getScrollHeight,
+param -> " color=blue]
+	b43986583b3447b48da7ca4158b852ff [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"6e0c1e7ed2774171a18118bc4a81b42f" [label="Object Properties
+{
+scrollHeight -> wx.getSystemInfoSync().windowHeight
+}" color=blue]
+	b43986583b3447b48da7ca4158b852ff -> "6e0c1e7ed2774171a18118bc4a81b42f"
+	d3ae00b4a7e6435aa19d50896187d25b -> b43986583b3447b48da7ca4158b852ff
+	"8b0472b22d674f5b8cd1b96073aaabf9" -> d3ae00b4a7e6435aa19d50896187d25b
+	edf2fdd1b45a49baa8f5d445c0de3c39 -> "8b0472b22d674f5b8cd1b96073aaabf9"
+	"2c6b26cfc288426fb26becea0a05a82c" -> edf2fdd1b45a49baa8f5d445c0de3c39
+}

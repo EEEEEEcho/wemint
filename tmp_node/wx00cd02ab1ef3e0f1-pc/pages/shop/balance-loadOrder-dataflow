@@ -1,0 +1,42 @@
+// \pages/shop/balance loadOrder Data Flow
+digraph {
+	"61258ce5d16d49d0aa770844c2b38687" [label="FunctionCall,
+function name -> loadOrder,
+param -> " color=blue]
+	"5f41543a9da04351b39678c71274e597" [label="If Alternate" color=blue]
+	b74d98f88a304e4f983d1405724320ff [label=VariableDeclarations color=blue]
+	"12e5a16b425f4636bf8c4327d9bb50ab" [label="VariableDeclarator,
+left -> i,
+right -> e.data.recordcount" color=blue]
+	b74d98f88a304e4f983d1405724320ff -> "12e5a16b425f4636bf8c4327d9bb50ab"
+	b1a7021835b64c50af47d5ec3a8d8711 [label="VariableDeclarator,
+left -> o,
+right -> e.data.orderlist.length" color=blue]
+	b74d98f88a304e4f983d1405724320ff -> b1a7021835b64c50af47d5ec3a8d8711
+	"5f41543a9da04351b39678c71274e597" -> b74d98f88a304e4f983d1405724320ff
+	f71741b2aab5488b952b2c8f2a8ab50a [label="If Alternate" color=blue]
+	eccbe5d7fad2428583ae6139bbcd7e52 [label=VariableDeclarations color=blue]
+	"0a285df35f4146699c45fedaca95379d" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"989606ffeff946a895119a41a7481cbb" [label="CallExpression,
+callee name -> Math.ceil,
+param -> o / e.data.pagesize,
+" color=blue]
+	"0a285df35f4146699c45fedaca95379d" -> "989606ffeff946a895119a41a7481cbb"
+	eccbe5d7fad2428583ae6139bbcd7e52 -> "0a285df35f4146699c45fedaca95379d"
+	f71741b2aab5488b952b2c8f2a8ab50a -> eccbe5d7fad2428583ae6139bbcd7e52
+	"40bb5d7859af45b498b0d90325f41628" [label=SequenceExpression color=blue]
+	f9eaaba79c92407aaf59ecf19e64f860 [label="CallExpression,
+callee name -> a.sendRequest,
+param -> " color=blue]
+	"7f8dc75dab894c3fb6fa0d97c2626d0a" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=getFinance&page=' + s + '&pagesize=' + e.data.pagesize
+}" color=blue]
+	f9eaaba79c92407aaf59ecf19e64f860 -> "7f8dc75dab894c3fb6fa0d97c2626d0a"
+	"40bb5d7859af45b498b0d90325f41628" -> f9eaaba79c92407aaf59ecf19e64f860
+	f71741b2aab5488b952b2c8f2a8ab50a -> "40bb5d7859af45b498b0d90325f41628"
+	"5f41543a9da04351b39678c71274e597" -> f71741b2aab5488b952b2c8f2a8ab50a
+	"61258ce5d16d49d0aa770844c2b38687" -> "5f41543a9da04351b39678c71274e597"
+}

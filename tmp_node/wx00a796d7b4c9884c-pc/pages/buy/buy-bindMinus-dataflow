@@ -1,0 +1,72 @@
+// \pages/buy/buy bindMinus Data Flow
+digraph {
+	f3095eba9e1a4612950a806a6a774d71 [label="FunctionCall,
+function name -> bindMinus,
+param -> t,
+t.,
+" color=blue]
+	"4541f5fe19ba4a549addd9fcfe1f98d9" [label=VariableDeclarations color=blue]
+	c61aacae9cd6420d8902c2a7b07a3029 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	e47b3bb3b72743ee85a7c9fcfab4f22d [label="CallExpression,
+callee name -> parseInt,
+param -> t.currentTarget.dataset.index,
+" color=blue]
+	c61aacae9cd6420d8902c2a7b07a3029 -> e47b3bb3b72743ee85a7c9fcfab4f22d
+	"4541f5fe19ba4a549addd9fcfe1f98d9" -> c61aacae9cd6420d8902c2a7b07a3029
+	"45ad8656ef7b4a2fb4ce1555f3c71234" [label="VariableDeclarator,
+left -> e,
+right -> this.data.carts[a].num" color=blue]
+	"4541f5fe19ba4a549addd9fcfe1f98d9" -> "45ad8656ef7b4a2fb4ce1555f3c71234"
+	f3095eba9e1a4612950a806a6a774d71 -> "4541f5fe19ba4a549addd9fcfe1f98d9"
+	"57e7c20d584b4b3d82f5acd124ae61ac" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"4176ef19fbd34dc48d5ae752c957f12a" [label="Assignment,
+left -> e,
+right -> e" color=blue]
+	"57e7c20d584b4b3d82f5acd124ae61ac" -> "4176ef19fbd34dc48d5ae752c957f12a"
+	b06551ed1c8b488ca30e323134800eb7 [label=SequenceExpression color=blue]
+	a36e5b4e12eb4cdc855244806a82d4c1 [label="UpdateExpression,
+identifier -> e,
+operate -> --" color=blue]
+	b06551ed1c8b488ca30e323134800eb7 -> a36e5b4e12eb4cdc855244806a82d4c1
+	e5388875a35f425fbe5a446e4f302a83 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	ade9722f3ff74b53940e7a50ae84e76b [label="Object Properties
+{
+num -> e
+}" color=blue]
+	e5388875a35f425fbe5a446e4f302a83 -> ade9722f3ff74b53940e7a50ae84e76b
+	b06551ed1c8b488ca30e323134800eb7 -> e5388875a35f425fbe5a446e4f302a83
+	"4210c2cf86244fef9b9f4184c895854f" [label="Assignment,
+left -> this.data.carts[a].num,
+right -> e" color=blue]
+	b06551ed1c8b488ca30e323134800eb7 -> "4210c2cf86244fef9b9f4184c895854f"
+	"923d7b4a24b44ec1b2c9989832d11ac2" [label="CallExpression,
+callee name -> console.log,
+param -> this.data.num,
+" color=blue]
+	b06551ed1c8b488ca30e323134800eb7 -> "923d7b4a24b44ec1b2c9989832d11ac2"
+	aed40115ba654afd815e89b25c7a42f2 [label="CallExpression,
+callee name -> this.numUpdate,
+param -> " color=blue]
+	c079e8af07c241b0a9235e8562adfaf9 [label="FunctionCall,
+function name -> numUpdate,
+param -> " color=blue]
+	"2dfee64a93414dfb926f6f84e244c2c6" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"6de99658732447bfa270def5b5516163" [label="Object Properties
+{
+num -> e.data.num
+id -> e.data.cart_id
+}" color=blue]
+	"2dfee64a93414dfb926f6f84e244c2c6" -> "6de99658732447bfa270def5b5516163"
+	c079e8af07c241b0a9235e8562adfaf9 -> "2dfee64a93414dfb926f6f84e244c2c6"
+	aed40115ba654afd815e89b25c7a42f2 -> c079e8af07c241b0a9235e8562adfaf9
+	b06551ed1c8b488ca30e323134800eb7 -> aed40115ba654afd815e89b25c7a42f2
+	"57e7c20d584b4b3d82f5acd124ae61ac" -> b06551ed1c8b488ca30e323134800eb7
+	f3095eba9e1a4612950a806a6a774d71 -> "57e7c20d584b4b3d82f5acd124ae61ac"
+}

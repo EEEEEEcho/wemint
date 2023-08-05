@@ -1,0 +1,348 @@
+@import "../../components/picker_datetime.wxss";
+
+@import "../shop/AddrManage.wxss";
+
+@import "../shop/UserReg.wxss";
+
+page {
+    background-color: #f4f4f4;
+}
+
+.person-info {
+    height: 350rpx;
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.person-info image {
+    width: 100%;
+}
+
+.person-img {
+    position: relative;
+    width: 156rpx;
+    margin: 0 auto;
+}
+
+.personimg {
+    width: 100%;
+    height: 350rpx;
+    position: relative;
+}
+
+.person-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    margin: 0 auto;
+}
+
+.person-img image {
+    max-width: 100%;
+    width: 156rpx;
+    height: 156rpx;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    background: rgba(255,255,255,0.5);
+}
+
+.person-img .person-img-item {
+    width: 52rpx;
+    height: 52rpx;
+    background: #333;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    font-size: 24rpx;
+    text-align: center;
+    line-height: 52rpx;
+}
+
+.person-text {
+    text-align: center;
+    display: block;
+    font-size: 32rpx;
+    color: #333;
+}
+
+.person-member {
+    width: 260rpx;
+    height: 44rpx;
+    border-radius: 22rpx;
+    background: rgba(255,255,255,.1);
+    margin: 16rpx auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.person-member .icon-boshimao {
+    font-size: 26rpx;
+    margin-right: 10rpx;
+}
+
+.person-member .member {
+    font-size: 22rpx;
+    color: #fff;
+}
+
+.person-member text {
+    color: #fff;
+}
+
+.data-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20rpx;
+}
+
+.data-item navigator {
+    padding: 0rpx 26rpx;
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex: 1;
+    height: 100rpx;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rightIcon {
+    position: absolute;
+    right: 26rpx;
+    top: 50%;
+    margin-top: -11rpx;
+    margin-right: 0;
+}
+
+.data-list .data-item .data-name {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.data-list-state {
+    height: 158rpx;
+    display: flex;
+    background: #fff;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+.data-list-state .state {
+    flex: 1;
+    position: relative;
+}
+
+.nuber {
+    position: absolute;
+    right: 20%;
+    top: 0;
+    width: 32rpx;
+    height: 32rpx;
+    background: #ff4c5b;
+    border-radius: 50%;
+    line-height: 32rpx;
+    text-align: center;
+    font-size: 22rpx;
+    color: #fff;
+}
+
+.nuber.active {
+    display: none;
+}
+
+.data-list-state .state-icon,.data-list-state .state-tit,.data-list-other .other-icon,.data-list-other .other-tit {
+    display: block;
+    text-align: center;
+}
+
+.data-list-state .state-icon {
+    font-size: 56rpx;
+    color: #ff940c;
+}
+
+.data-list-state .state-tit,.data-list-other .other-tit {
+    font-size: 24rpx;
+    color: #666;
+    margin-top: 10rpx;
+}
+
+.data-list-other {
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    height: 375rpx;
+    justify-content: center;
+}
+
+.data-list-other .other {
+    height: 187.5rpx;
+    position: relative;
+    flex: 25%;
+}
+
+.data-list-other .other:first-child:before {
+    content: "";
+    position: initial;
+    height: 0;
+    border-left: 0;
+}
+
+.data-list-other .other:before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    border-left: 1px solid #ddd;
+    transform-origin: 0 0;
+    transform: scale(0.5,0.5);
+    box-sizing: border-box;
+}
+
+.other-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.data-list-other .other-icon {
+    color: #81b22b;
+    font-size: 56rpx;
+}
+
+.data-list-other .other-tit {
+    width: 140rpx;
+}
+
+.data-list-other .icon-iconfont_favorite-se {
+    color: #ffb400;
+}
+
+.data-list-other .icon-iconfont_coupon-sec {
+    color: #ff4c5b;
+}
+
+.data-list-other .icon-iconfont_location {
+    color: #81b22b;
+}
+
+.data-list-other .icon-iconfont_money {
+    color: #3D97DD;
+}
+
+.data-list-other .icon-jifen {
+    color: #EB4727;
+}
+
+.data-list-other .icon-liulanjilu {
+    color: #6278cf;
+    font-size: 56rpx;
+}
+
+.couponnum {
+    font-size: 30rpx;
+    color: #999;
+    padding-right: 10rpx;
+}
+
+.icon-you {
+    font-size: 30rpx;
+    color: #999;
+}
+
+.container .distribution-box {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.container .distribution-box .distribution-title {
+    height: 96rpx;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.container .distribution-box .distribution-title .distribution-icon {
+    font-size: 48rpx;
+    color: #ff4c5b;
+    margin-right: 14rpx;
+}
+
+.container .distribution-box .distribution-title text {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.container .distribution-box .distribution-content {
+    margin-top: 64rpx;
+    padding: 0 26rpx;
+}
+
+.container .distribution-box .distribution-content .con-msg {
+    display: flex;
+}
+
+.container .distribution-box .distribution-content .con-msg .msg-left,.container .distribution-box .distribution-content .con-msg .msg-right {
+    width: 50%;
+    text-align: center;
+}
+
+.container .distribution-box .distribution-content .con-msg .msg-left .population,.container .distribution-box .distribution-content .con-msg .msg-right .commission {
+    position: relative;
+    width: 100%;
+}
+
+.container .distribution-box .distribution-content .con-msg .num {
+    font-size: 50rpx;
+    color: #ff4c5b;
+    line-height: 50rpx;
+}
+
+.container .distribution-box .distribution-content .con-msg .people,.container .distribution-box .distribution-content .con-msg .money {
+    font-size: 22rpx;
+    color: #ff4c5b;
+    position: absolute;
+    top: 8rpx;
+    margin-left: 10rpx;
+    line-height: 22rpx;
+}
+
+.container .distribution-box .distribution-content .con-msg .msg-left .pop-name,.container .distribution-box .distribution-content .con-msg .msg-right .commission-name {
+    font-size: 26rpx;
+    color: #666;
+    margin-top: 30rpx;
+    margin-left: 16rpx;
+    line-height: 26rpx;
+}
+
+.container .distribution-box .distribution-content .commission-center {
+    margin-top: 62rpx;
+    margin-bottom: 30rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.container .distribution-box .distribution-content .commission-center .center {
+    font-size: 26rpx;
+    width: 234rpx;
+    height: 70rpx;
+    border-radius: 35rpx;
+    color: #ff4c5b;
+    line-height: 70rpx;
+    text-align: center;
+    border: 1px solid #ff4c5b;
+}

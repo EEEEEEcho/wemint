@@ -1,0 +1,53 @@
+// \pages/user/dingdan payOrderByWechat Data Flow
+digraph {
+	b3977937b22c4eaa94e65562fddaac2f [label="FunctionCall,
+function name -> payOrderByWechat,
+param -> e,
+e.,
+" color=blue]
+	"341dd82fb96a49f7817291a1f1062a5b" [label=VariableDeclarations color=blue]
+	e8328451021b46e4bd73e645367b0d53 [label="VariableDeclarator,
+left -> a,
+right -> e.currentTarget.dataset.orderId" color=blue]
+	"341dd82fb96a49f7817291a1f1062a5b" -> e8328451021b46e4bd73e645367b0d53
+	"36ae9a52bf6646bbb7eb27dfdb506b19" [label="VariableDeclarator,
+left -> r,
+right -> e.currentTarget.dataset.ordersn" color=blue]
+	"341dd82fb96a49f7817291a1f1062a5b" -> "36ae9a52bf6646bbb7eb27dfdb506b19"
+	b3977937b22c4eaa94e65562fddaac2f -> "341dd82fb96a49f7817291a1f1062a5b"
+	"583ef3dcd6df4fa4b3a255a35c8b32c7" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"4b7853fc3efe47a6922b423ced7d7739" [label="Object Properties
+{
+order_id -> a
+order_sn -> r
+}" color=blue]
+	"583ef3dcd6df4fa4b3a255a35c8b32c7" -> "4b7853fc3efe47a6922b423ced7d7739"
+	a94d7a0420b24085af69c1fadfef37ec [label="FunctionCall,
+function name -> success,
+param -> " color=blue]
+	c3fa63e7bce04ca294fe61bb6e3e4052 [label="If Alternate" color=blue]
+	e8ec93889d1743e48023b2025fc1a067 [label="CallExpression,
+callee name -> wx.requestPayment,
+param -> " color=blue]
+	eaaca029977c4339846345be7cdbf14f [label="FunctionCall,
+function name -> fail,
+param -> t,
+t.,
+" color=blue]
+	"7b720d741e82458ba94326a58794f89f" [label="CallExpression,
+callee name -> wx.showToast,
+param -> " color=blue]
+	b1ffa2eb28f64df3a0643e214c47c963 [label="Object Properties
+{
+title -> t
+}" color=blue]
+	"7b720d741e82458ba94326a58794f89f" -> b1ffa2eb28f64df3a0643e214c47c963
+	eaaca029977c4339846345be7cdbf14f -> "7b720d741e82458ba94326a58794f89f"
+	e8ec93889d1743e48023b2025fc1a067 -> eaaca029977c4339846345be7cdbf14f
+	c3fa63e7bce04ca294fe61bb6e3e4052 -> e8ec93889d1743e48023b2025fc1a067
+	a94d7a0420b24085af69c1fadfef37ec -> c3fa63e7bce04ca294fe61bb6e3e4052
+	"583ef3dcd6df4fa4b3a255a35c8b32c7" -> a94d7a0420b24085af69c1fadfef37ec
+	b3977937b22c4eaa94e65562fddaac2f -> "583ef3dcd6df4fa4b3a255a35c8b32c7"
+}

@@ -1,0 +1,16 @@
+<view class="detailIntroBox" wx:for="{{infos}}" wx:key="key">
+    <view class="IntroTitle">{{item.foodName}}</view>
+    <view class="editableGraphic">
+        <image class="setMealImg" mode="aspectFill" src="{{item.imgName}}"></image>
+        <view class="IntroTextbox">
+            <text class="IntroText">{{item.introduce}}</text>
+        </view>
+        <view class="setMealTextBox">
+            <text class="setMealText">{{item.masterials}}</text>
+        </view>
+    </view>
+</view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

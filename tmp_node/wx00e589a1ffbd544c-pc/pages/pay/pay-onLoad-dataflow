@@ -1,0 +1,53 @@
+// \pages/pay/pay onLoad Data Flow
+digraph {
+	fc59270ba6334afab3d7b9b057e231fb [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"4f88c672094646d788f5d31174515b62" [label=SequenceExpression color=blue]
+	d4035c1b78a04bf7beb5811a06a3e17b [label="CallExpression,
+callee name -> wx.login,
+param -> " color=blue]
+	fe479d0575ae4f7c88eb2484442bd673 [label="FunctionCall,
+function name -> success,
+param -> e.,
+e,
+" color=blue]
+	"4de031faaabf469b96539c2602fc6c70" [label=SequenceExpression color=blue]
+	"2540e15545ad474ba9d1547b41103bd4" [label="CallExpression,
+callee name -> console.log,
+param -> e,
+" color=blue]
+	"4de031faaabf469b96539c2602fc6c70" -> "2540e15545ad474ba9d1547b41103bd4"
+	ae02c20472624069821b09ce545f9a95 [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"10e3cfc1b2464fb09462fcb1892cc6ea" [label="Object Properties
+{
+code -> e.code
+}" color=blue]
+	ae02c20472624069821b09ce545f9a95 -> "10e3cfc1b2464fb09462fcb1892cc6ea"
+	"97d854088b1e45f79a99d562dfd26f45" [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	ceb6508e95fa46f58be464b34532681f [label=SequenceExpression color=blue]
+	ea4720a46b6a498484de60483d4d1e42 [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"9e9aced9591e476e9fdfbc9ba6007124" [label="FunctionCall,
+function name -> success,
+param -> " color=blue]
+	"758c7fc42ce142fabaa42638180f7139" [label="CallExpression,
+callee name -> wx.requestPayment,
+param -> " color=blue]
+	"9e9aced9591e476e9fdfbc9ba6007124" -> "758c7fc42ce142fabaa42638180f7139"
+	ea4720a46b6a498484de60483d4d1e42 -> "9e9aced9591e476e9fdfbc9ba6007124"
+	ceb6508e95fa46f58be464b34532681f -> ea4720a46b6a498484de60483d4d1e42
+	"97d854088b1e45f79a99d562dfd26f45" -> ceb6508e95fa46f58be464b34532681f
+	ae02c20472624069821b09ce545f9a95 -> "97d854088b1e45f79a99d562dfd26f45"
+	"4de031faaabf469b96539c2602fc6c70" -> ae02c20472624069821b09ce545f9a95
+	fe479d0575ae4f7c88eb2484442bd673 -> "4de031faaabf469b96539c2602fc6c70"
+	d4035c1b78a04bf7beb5811a06a3e17b -> fe479d0575ae4f7c88eb2484442bd673
+	"4f88c672094646d788f5d31174515b62" -> d4035c1b78a04bf7beb5811a06a3e17b
+	fc59270ba6334afab3d7b9b057e231fb -> "4f88c672094646d788f5d31174515b62"
+}

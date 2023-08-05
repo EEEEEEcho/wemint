@@ -1,0 +1,15 @@
+// \pages/purchaselimit/purchaselimit/index getScrollHeight Data Flow
+digraph {
+	"0fda5c26e42b433fb32d49bc8ab26cff" [label="FunctionCall,
+function name -> getScrollHeight,
+param -> " color=blue]
+	"4d2e61fc0f55476397651e7ca258c5f1" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	f3e582bb0c164c038bb052f0863d08a6 [label="Object Properties
+{
+scrollHeight -> wx.getSystemInfoSync().windowHeight
+}" color=blue]
+	"4d2e61fc0f55476397651e7ca258c5f1" -> f3e582bb0c164c038bb052f0863d08a6
+	"0fda5c26e42b433fb32d49bc8ab26cff" -> "4d2e61fc0f55476397651e7ca258c5f1"
+}

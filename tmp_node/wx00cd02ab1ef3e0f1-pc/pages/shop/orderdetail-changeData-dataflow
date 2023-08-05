@@ -1,0 +1,40 @@
+// \pages/shop/orderdetail changeData Data Flow
+digraph {
+	"075e7a734df94030a4b66ce01a1bb48c" [label="FunctionCall,
+function name -> changeData,
+param -> " color=blue]
+	aceee2953741466b8c4116916e401276 [label="CallExpression,
+callee name -> this.loadOrder,
+param -> " color=blue]
+	"814d4473197d487db8f1dc7129383fd0" [label="FunctionCall,
+function name -> loadOrder,
+param -> " color=blue]
+	"533dbd79ecce4605900283a26a1777d3" [label="If Alternate" color=blue]
+	"67401599c0d24c938b17fa7f713fba8e" [label=SequenceExpression color=blue]
+	"68f289ee0a1b43f7b6c0cb8e840af630" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"2b2ec28bdfcb4212964dd9e76527a1ba" [label="Assignment,
+left -> e,
+right -> a.data.queryparams.id" color=blue]
+	"68f289ee0a1b43f7b6c0cb8e840af630" -> "2b2ec28bdfcb4212964dd9e76527a1ba"
+	"67401599c0d24c938b17fa7f713fba8e" -> "68f289ee0a1b43f7b6c0cb8e840af630"
+	bbc889ab34fd4dfcbdb1b5036daea7b0 [label="CallExpression,
+callee name -> console.log,
+param -> e,
+" color=blue]
+	"67401599c0d24c938b17fa7f713fba8e" -> bbc889ab34fd4dfcbdb1b5036daea7b0
+	"2342720f705a4fc6a62e6c623b5e700c" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	e0eb8a19513d443f95e96d1a21a0b471 [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=OrderDetail&ID=' + e
+}" color=blue]
+	"2342720f705a4fc6a62e6c623b5e700c" -> e0eb8a19513d443f95e96d1a21a0b471
+	"67401599c0d24c938b17fa7f713fba8e" -> "2342720f705a4fc6a62e6c623b5e700c"
+	"533dbd79ecce4605900283a26a1777d3" -> "67401599c0d24c938b17fa7f713fba8e"
+	"814d4473197d487db8f1dc7129383fd0" -> "533dbd79ecce4605900283a26a1777d3"
+	aceee2953741466b8c4116916e401276 -> "814d4473197d487db8f1dc7129383fd0"
+	"075e7a734df94030a4b66ce01a1bb48c" -> aceee2953741466b8c4116916e401276
+}

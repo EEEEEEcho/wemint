@@ -1,0 +1,12 @@
+// \pages/company/mycenter goDistribution Data Flow
+digraph {
+	fe96509853bc42de99dd502a04950672 [label="FunctionCall,
+function name -> goDistribution,
+param -> " color=blue]
+	"474b41369fcc4370af494a529e34d108" [label=VariableDeclarations color=blue]
+	"1290efdaa2cd4a008d7d83d9eac26f77" [label="VariableDeclarator,
+left -> t,
+right -> e.data.userType" color=blue]
+	"474b41369fcc4370af494a529e34d108" -> "1290efdaa2cd4a008d7d83d9eac26f77"
+	fe96509853bc42de99dd502a04950672 -> "474b41369fcc4370af494a529e34d108"
+}

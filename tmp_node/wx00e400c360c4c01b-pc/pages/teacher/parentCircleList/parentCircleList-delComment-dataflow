@@ -1,0 +1,28 @@
+// \pages/teacher/parentCircleList/parentCircleList delComment Data Flow
+digraph {
+	a0c7b3e85ef74704bad40556e6643b94 [label="FunctionCall,
+function name -> delComment,
+param -> e,
+e.,
+" color=blue]
+	eef7c68844544bfd819845f93f492d12 [label=VariableDeclarations color=blue]
+	c8908c26c9de4d2d914b12ce26cae4e7 [label="VariableDeclarator,
+left -> a,
+right -> t.data.delCommentId" color=blue]
+	eef7c68844544bfd819845f93f492d12 -> c8908c26c9de4d2d914b12ce26cae4e7
+	a0c7b3e85ef74704bad40556e6643b94 -> eef7c68844544bfd819845f93f492d12
+	"0f177924e629495d843cd36f23230fc2" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	c3b2b75c16694683b9209f6205617916 [label="Object Properties
+{
+cId -> a
+}" color=blue]
+	"0f177924e629495d843cd36f23230fc2" -> c3b2b75c16694683b9209f6205617916
+	"0ae41cc3ffdc462daf0ebe97cbed3593" [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	"0f177924e629495d843cd36f23230fc2" -> "0ae41cc3ffdc462daf0ebe97cbed3593"
+	a0c7b3e85ef74704bad40556e6643b94 -> "0f177924e629495d843cd36f23230fc2"
+}

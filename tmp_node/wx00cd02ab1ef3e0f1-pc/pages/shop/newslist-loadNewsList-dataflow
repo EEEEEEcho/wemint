@@ -1,0 +1,57 @@
+// \pages/shop/newslist loadNewsList Data Flow
+digraph {
+	"9eef457795b2457ea1dee6f280b99446" [label="FunctionCall,
+function name -> loadNewsList,
+param -> " color=blue]
+	"59d163b469dc405b9cd337ded2d13bd2" [label="If Alternate" color=blue]
+	f8b6516edc9e4ad1bef0f3a0ef5f13ab [label=VariableDeclarations color=blue]
+	"11a2ea973c8b41a9b1609114fdc4f4b6" [label="VariableDeclarator,
+left -> e,
+right -> a.data.recordcount" color=blue]
+	f8b6516edc9e4ad1bef0f3a0ef5f13ab -> "11a2ea973c8b41a9b1609114fdc4f4b6"
+	dd2ae82d8d8b497aa1003b6e49150de5 [label="VariableDeclarator,
+left -> i,
+right -> a.data.newslist.length" color=blue]
+	f8b6516edc9e4ad1bef0f3a0ef5f13ab -> dd2ae82d8d8b497aa1003b6e49150de5
+	"59d163b469dc405b9cd337ded2d13bd2" -> f8b6516edc9e4ad1bef0f3a0ef5f13ab
+	"334d166a336443d7a04325da0ec2805f" [label="If Alternate" color=blue]
+	"93b50a2f9330442fbb6783421e4ae35c" [label=VariableDeclarations color=blue]
+	f17565478c7745a4b95fdb7a4495a53d [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	d99d3dc47c42455b8946c92c0d9f0371 [label="CallExpression,
+callee name -> Math.ceil,
+param -> i / a.data.pagesize,
+" color=blue]
+	f17565478c7745a4b95fdb7a4495a53d -> d99d3dc47c42455b8946c92c0d9f0371
+	"93b50a2f9330442fbb6783421e4ae35c" -> f17565478c7745a4b95fdb7a4495a53d
+	"4f3fed9f53454f50820354fb78549644" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"059dabdc75dd4df2812248e81d5babeb" [label="ConditionalExpression,
+ conditional list -> a.data.queryparams.keyword" color=blue]
+	"4f3fed9f53454f50820354fb78549644" -> "059dabdc75dd4df2812248e81d5babeb"
+	"93b50a2f9330442fbb6783421e4ae35c" -> "4f3fed9f53454f50820354fb78549644"
+	"334d166a336443d7a04325da0ec2805f" -> "93b50a2f9330442fbb6783421e4ae35c"
+	f40f9d74e94a48d6b654e26b71d0601a [label=SequenceExpression color=blue]
+	c5c800fb0ba94844816714eda52e5c99 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"15d5f130b722482ca572acf7c25c66c8" [label="Assignment,
+left -> o,
+right -> '&sortcol=' + a.data.sortcol + '&sort=' + a.data.sort" color=blue]
+	c5c800fb0ba94844816714eda52e5c99 -> "15d5f130b722482ca572acf7c25c66c8"
+	f40f9d74e94a48d6b654e26b71d0601a -> c5c800fb0ba94844816714eda52e5c99
+	"6227b91876a94a8ca425d2fa942b5d39" [label="CallExpression,
+callee name -> s.sendRequest,
+param -> " color=blue]
+	"77ce8fe7f88448bea2b147ca976ec326" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/JsonApi&a=getnewslist&keyword=' + n + '&page=' + l + '&pagesize=' + a.data.pagesize + o + '&classid=' + a.data.classid
+}" color=blue]
+	"6227b91876a94a8ca425d2fa942b5d39" -> "77ce8fe7f88448bea2b147ca976ec326"
+	f40f9d74e94a48d6b654e26b71d0601a -> "6227b91876a94a8ca425d2fa942b5d39"
+	"334d166a336443d7a04325da0ec2805f" -> f40f9d74e94a48d6b654e26b71d0601a
+	"59d163b469dc405b9cd337ded2d13bd2" -> "334d166a336443d7a04325da0ec2805f"
+	"9eef457795b2457ea1dee6f280b99446" -> "59d163b469dc405b9cd337ded2d13bd2"
+}

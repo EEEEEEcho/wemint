@@ -1,0 +1,29 @@
+// \pages/orderlist/orderlist reject Data Flow
+digraph {
+	a6a9b8b36ce545ac813b70649e8a349b [label="FunctionCall,
+function name -> reject,
+param -> t,
+t.,
+" color=blue]
+	dc712e61ff034100a2b9455c20670004 [label=SequenceExpression color=blue]
+	befb95a43e404e5c9132a936115257e3 [label="CallExpression,
+callee name -> o.setData,
+param -> " color=blue]
+	e80b6fb093674321a9d2facde3bf4bc0 [label="Object Properties
+{
+orderid -> t.currentTarget.dataset.id
+}" color=blue]
+	befb95a43e404e5c9132a936115257e3 -> e80b6fb093674321a9d2facde3bf4bc0
+	dc712e61ff034100a2b9455c20670004 -> befb95a43e404e5c9132a936115257e3
+	"919c9f8726744d76b05e393d9fc0bfde" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	fc392b3eefd04f558fe9fcceced08395 [label="Object Properties
+{
+orderid -> o.data.orderid
+userid -> o.data.userid
+}" color=blue]
+	"919c9f8726744d76b05e393d9fc0bfde" -> fc392b3eefd04f558fe9fcceced08395
+	dc712e61ff034100a2b9455c20670004 -> "919c9f8726744d76b05e393d9fc0bfde"
+	a6a9b8b36ce545ac813b70649e8a349b -> dc712e61ff034100a2b9455c20670004
+}

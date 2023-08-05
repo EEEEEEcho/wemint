@@ -1,0 +1,23 @@
+// \pages/tourist/album/album showModal Data Flow
+digraph {
+	"44eb54a5d235406090d2f7036c650aad" [label="FunctionCall,
+function name -> showModal,
+param -> a.,
+a,
+" color=blue]
+	cc9c9b1d543949f3bc39aec18d77271e [label=VariableDeclarations color=blue]
+	e9b2f97421a84ff9aeb3b414729f80d4 [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.src" color=blue]
+	cc9c9b1d543949f3bc39aec18d77271e -> e9b2f97421a84ff9aeb3b414729f80d4
+	"44eb54a5d235406090d2f7036c650aad" -> cc9c9b1d543949f3bc39aec18d77271e
+	"4dc4bfb696b7461eb8078fd6a9ffccf3" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	af65b34384c4403eb988b3c05064ff74 [label="Object Properties
+{
+url -> '../../teacher/parentCircleListVio/parentCircleListVio?videoUrl=' + t
+}" color=blue]
+	"4dc4bfb696b7461eb8078fd6a9ffccf3" -> af65b34384c4403eb988b3c05064ff74
+	"44eb54a5d235406090d2f7036c650aad" -> "4dc4bfb696b7461eb8078fd6a9ffccf3"
+}

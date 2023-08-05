@@ -1,0 +1,44 @@
+// \pages/stu/order/order onLoad Data Flow
+digraph {
+	"61bac114c442497faf26e26bcd925d3b" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"6f04edbdbcc04271b9464cb5f4da3475" [label=SequenceExpression color=blue]
+	b5a284521bd6470a91d831ea8b2882f1 [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> " color=blue]
+	"13471febbd69484ba683f7aaff9df892" [label="FunctionCall,
+function name -> success,
+param -> a.,
+a,
+" color=blue]
+	"2292ac0216454897ab08933cfcca0878" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	"3e95239d141e439f89fc792e18dcea91" [label="Object Properties
+{
+winWidth -> a.windowWidth
+winHeight -> a.windowHeight
+scrollHeight -> a.windowHeight + 500
+}" color=blue]
+	"2292ac0216454897ab08933cfcca0878" -> "3e95239d141e439f89fc792e18dcea91"
+	"13471febbd69484ba683f7aaff9df892" -> "2292ac0216454897ab08933cfcca0878"
+	b5a284521bd6470a91d831ea8b2882f1 -> "13471febbd69484ba683f7aaff9df892"
+	"6f04edbdbcc04271b9464cb5f4da3475" -> b5a284521bd6470a91d831ea8b2882f1
+	afc164e18c1546ec9f075213ba475a00 [label="CallExpression,
+callee name -> this.fetchSearchList,
+param -> " color=blue]
+	"34787d9596f84eed9979b83e97dab943" [label="FunctionCall,
+function name -> fetchSearchList,
+param -> " color=blue]
+	"6e05ba4e176f4998939b5a54f4ad41a1" [label="CallExpression,
+callee name -> a,
+param -> t.data.currentTab,
+t.data.searchPageNum,
+t.data.callbackcount,
+" color=blue]
+	"34787d9596f84eed9979b83e97dab943" -> "6e05ba4e176f4998939b5a54f4ad41a1"
+	afc164e18c1546ec9f075213ba475a00 -> "34787d9596f84eed9979b83e97dab943"
+	"6f04edbdbcc04271b9464cb5f4da3475" -> afc164e18c1546ec9f075213ba475a00
+	"61bac114c442497faf26e26bcd925d3b" -> "6f04edbdbcc04271b9464cb5f4da3475"
+}

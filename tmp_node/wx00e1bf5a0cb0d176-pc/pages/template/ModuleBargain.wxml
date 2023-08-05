@@ -1,0 +1,55 @@
+<template name="ModuleBargain">
+    <view class="layout-101" wx:if="{{m.ActivityBase.activityTime!='0'}}">
+        <view class="activityTitle">
+            <view class="activityTitleTop flexBox flexAlign flexJustify">
+                <image class="activityTitleRotate" mode="widthFix" src="/pages/template/images/ModuleFullReduction/activity-title-img.png"></image>
+                <text catchtap="navTo" class="activityFontName" data-linkid="{{m.ActivityID}}" data-linknorepeat="1" data-linktype="BargainList" style="{{m.ActivityBase.Title.length<=10?'font-size:18px':m.ActivityBase.Title.length>15?'font-size:13px':'font-size:15px'}}">{{m.ActivityBase.title}}</text>
+                <image mode="widthFix" src="/pages/template/images/ModuleFullReduction/activity-title-img.png"></image>
+            </view>
+            <view class="activityTime flexBox flexAlign flexJustify">
+                <view catchtap="navTo" class="activity-con-txt" data-linkid="{{m.ActivityID}}" data-linknorepeat="1" data-linktype="BargainList">
+                    <view class="activityRules">活动剩余</view>
+                    <view class="shi">{{m.ActivityBase.activityDay}}</view>
+                    <view class="activityDay">天</view>
+                    <view class="shi">{{m.ActivityBase.activityHour}}</view>
+                    <view class="colon">:</view>
+                    <view class="shi">{{m.ActivityBase.activityMinute}}</view>
+                    <view class="colon">:</view>
+                    <view class="shi">{{m.ActivityBase.activitySecond}}</view>
+                </view>
+                <view catchtap="navTo" class="iconfont icon-qianwang-copy" data-linkid="{{m.ActivityID}}" data-linknorepeat="1" data-linktype="BargainList" style="margin-left:16rpx;"></view>
+            </view>
+        </view>
+        <view class="groupBooking flexBox flexJustifyBetween">
+            <view catchtap="navTo" class="groupProItem flexDirectionColumn" data-linkdata="{{ModuleBargain.getDetailNavData(m.ActivityID,item.ID)}}" data-linkid="{{item.ProductID}}" data-linknorepeat="1" data-linktype="BargainProDetail" wx:for="{{m.ActivityProductList}}" wx:key="item.ProductID">
+                <view class="activityItemImgBox flexBox flexAlign flexJustify">
+                    <image class="groupProItemImage" mode="aspectFit" src="{{globaldata.appGlobalData.siteBaseUrl}}{{item.ImgSmall}}"></image>
+                </view>
+                <view class="groupProMain">
+                    <view class="groupProTitle overflow1">{{item.Name}}</view>
+                    <view class="flexBox flexJustifyBetween groupProPriceAndbuy">
+                        <view class="groupProMoney">
+                            <text class="groupProPrice">￥{{item.Price}}</text>
+                        </view>
+                        <view class="flexBox flexJustify flexAlign">
+                            <view class="goGroup">
+                                <text style="font-size:24rpx;">立即砍价</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<wxs module="ModuleBargain">
+var getDetailNavData = (function(ActivityID, ID) {
+    var navData = ({});
+    navData.activityId = ActivityID;
+    navData.id = ID;
+    return (JSON.stringify(navData))
+});
+module.exports = ({
+    getDetailNavData: getDetailNavData,
+});
+</wxs>

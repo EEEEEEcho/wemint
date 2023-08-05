@@ -1,0 +1,13 @@
+// \pages/index/takeOut/takeOut minusCount Data Flow
+digraph {
+	"069c711acdba4d5e96107329facf1bfa" [label="FunctionCall,
+function name -> minusCount,
+param -> o.,
+o,
+" color=blue]
+	"02211627f3a94f98812627d66069e1f4" [label="CallExpression,
+callee name -> e.setFoodInfo,
+param -> o,
+" color=blue]
+	"069c711acdba4d5e96107329facf1bfa" -> "02211627f3a94f98812627d66069e1f4"
+}

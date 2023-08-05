@@ -1,0 +1,17 @@
+// \pages/shop/userfinance onShow Data Flow
+digraph {
+	dbe7dd9427c94dbc860cdfa91eb5b9dc [label="FunctionCall,
+function name -> onShow,
+param -> " color=blue]
+	"0ee43db979f9401e9083f67957fea57e" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"9bc886e1b06345728fdc2bf69658e765" [label="Object Properties
+{
+}" color=blue]
+	"06f89d6b1f2d4143a79175cb2562025b" [label="ConditionalExpression,
+ conditional list -> a.options.statu" color=blue]
+	"9bc886e1b06345728fdc2bf69658e765" -> "06f89d6b1f2d4143a79175cb2562025b"
+	"0ee43db979f9401e9083f67957fea57e" -> "9bc886e1b06345728fdc2bf69658e765"
+	dbe7dd9427c94dbc860cdfa91eb5b9dc -> "0ee43db979f9401e9083f67957fea57e"
+}

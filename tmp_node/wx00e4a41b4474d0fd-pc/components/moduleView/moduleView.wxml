@@ -1,0 +1,385 @@
+<view catchtouchmove="ture" class="mask3" wx:if="{{showPhoneView}}"></view>
+<view class="mask2" wx:if="{{showPhoneModel||showInfoModel}}"></view>
+<view class="showPhoneView" wx:if="{{showPhoneView}}">
+    <view style="width:100%;height:100%;border:1px solid #fff;padding:60rpx 30rpx 30rpx 30rpx;box-sizing:border-box">
+        <view class="titleView">
+            <image src="https://dm.static.elab-plus.com/wepy_pro/index/yes-icon.png"></image>
+            您已完成留电订阅
+        </view>
+        <view class="titleWord">
+            置业顾问会第一时间联系您，您还可发起在线咨询，直接了解项目最新信息。
+        </view>
+    </view>
+</view>
+<myLoading id="myLoading"></myLoading>
+<authView bindafterPhoneHandle="afterPhoneHandle" bindafterUserHandle="afterUserHandle" id="authView" showInfoModel="{{showInfoModel}}" showPhoneModel="{{showPhoneModel}}"></authView>
+<scroll-view class="gjcontainer" wx:if="{{InitFlag=='0'}}">
+    <view class="myload" style="background:transparent;color:rgba(0,0,0,0.5);">
+        <view class="spinner" style="background-color:rgba(0,0,0,0.3);"></view>
+        <view>正在加载中...</view>
+    </view>
+</scroll-view>
+<navbar bind:FloatCpClk="navigateFucFromNav" bind:cityCpClk="navigateToCityFromNav" data="{{navbar}}"></navbar>
+<scroll-view bindscroll="scrollExp" class="container" id="container" scrollIntoView="{{toView}}" scrollTop="{{scrollTop}}" scrollWithAnimation="true" scrollY="{{!showPhoneModel&&!showInfoModel&&scrollAble&&!userContentShow}}" style="{{currentPageData.backgroundSetting_s}};background-image:{{currentPageData.backgroundSetting.backgroundImg?'url('+currentPageData.backgroundSetting.backgroundImg+')':''}};height:{{navigateHasPadding?'calc(100vh - '+navigateStatusContainerHeight+')':'100vh'}};" wx:if="{{InitFlag=='1'}}">
+    <view class="area" data-index="{{index}}" data-type="{{area.type}}" id="{{area.areaStyle.burialName}}" wx:if="{{area.show&&area.permission}}" wx:for="{{currentPageData.arealist}}" wx:for-item="area" wx:key="index">
+        <view id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}}" wx:if="{{area.type=='3-1'}}">
+            <swiper autoplay="{{area.swiperOption.autoplay?true:false}}" bindchange="horizonSwipeChange" circular="true" current="0" data-data="{{area.imagesList}}" duration="{{area.swiperOption.speed}}" indicatorDots="true" interval="{{area.swiperOption.autoplay.delay}}" style="width:{{area.areaStyle.width}};height:{{area.areaStyle.height}}">
+                <swiper-item bindtap="jumpCheck" data-clickLength="{{area.imagesList.length}}" data-clickValue="{{index}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+item.burialName}}" data-expand="{{item.houseOption}}" data-functype="1" data-id="{{item.type==4?initData.momentModule.contentList[0].id:''}}" data-jumplink="{{item.link}}" data-jumptype="{{item.type}}" data-jumpvalue="{{item.value}}" wx:for="{{area.imagesList}}" wx:key="item">
+                    <c-img cclass="slide-image" mode="aspectFill" src="{{item.imageUrl}}"></c-img>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}}" wx:if="{{area.type=='3-2'}}">
+            <swiper autoplay="{{area.swiperOption.autoplay?true:false}}" circular="true" duration="{{area.swiperOption.speed}}" interval="{{area.swiperOption.autoplay.delay}}" style="width:{{area.areaStyle.width}};height:{{area.areaStyle.height}}" vertical="true">
+                <swiper-item catchtouchmove="catchTouchMove" wx:for="{{area.moduleList}}" wx:key="item">
+                    <view bindtap="jumpCheck" class="module" data-clickLength="{{area.moduleList.length}}" data-clickValue="{{index}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+item.moduleStyle.burialName}}" data-expand="{{item.jump.houseOption}}" data-functype="1" data-id="{{item.jump.type==4?initData.momentModule.contentList[0].id:''}}" data-jumplink="{{item.jump.link}}" data-jumptype="{{item.jump.type}}" data-jumpvalue="{{item.jump.value}}" style="width:{{area.areaStyle.width}};height:{{area.areaStyle.height}};overflow:{{area.areaStyle.overflow}};position:relative">
+                        <c-img cStyle="{{item.moduleStyle_s}}" mode="aspectFill" src="{{item.moduleStyle.imageUrl}}" wx:if="{{item.moduleStyle.imageUrl}}"></c-img>
+                        <view style="{{area.unifyTitleObj.titleStyle_s}}" wx:if="{{item.titleObj.hasTitle=='true'}}">
+                            <span wx:if="{{area.unifyTitleObj.type=='1'||area.unifyTitleObj.type=='4'}}">{{item.titleObj.titleText||area.unifyTitleObj.titleText||''}}</span>
+                            <i style="{{area.unifyTitleObj.iconStyle_s}}" wx:if="{{area.unifyTitleObj.type=='2'||area.unifyTitleObj.type=='3'||area.unifyTitleObj.type=='4'}}"></i>
+                            <span wx:if="{{area.unifyTitleObj.type=='3'}}">{{item.titleObj.titleText||area.unifyTitleObj.titleText||''}}</span>
+                        </view>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}}" wx:if="{{area.type=='3-6'}}">
+            <i style="{{area.unifyTitleObj.iconStyle_s}}" wx:if="{{area.unifyTitleObj.type=='3'}}"></i>
+            <swiper autoplay="{{area.swiperOption.autoplay?true:false}}" bindchange="change1" circular="true" data-tableidx="{{index}}" duration="{{area.swiperOption.speed}}" interval="{{area.swiperOption.autoplay.delay}}" style="{{area.unifyTitleObj.titleStyle_s}}" vertical="true">
+                <swiper-item catchtouchmove="catchTouchMove" class="{{isIos13&&index1!=0&&tableList[index]!=index1?'height0':''}}" wx:for="{{area.moduleList}}" wx:for-index="index1" wx:key="item">
+                    <view bindtap="jumpCheck" class="module" data-clickLength="{{area.moduleList.length}}" data-clickValue="{{index1}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+item.moduleStyle.burialName}}" data-expand="{{item.jump.houseOption}}" data-functype="1" data-id="{{item.jump.type==4?initData.momentModule.contentList[0].id:''}}" data-jumplink="{{item.jump.link}}" data-jumptype="{{item.jump.type}}" data-jumpvalue="{{item.jump.value}}">
+                        <c-img cStyle="{{item.moduleStyle_s}}" mode="aspectFill" src="{{item.moduleStyle.imageUrl}}" wx:if="{{item.moduleStyle.imageUrl}}"></c-img>
+                        <view class="gapRow" style="width:{{area.unifyTitleObj.titleStyle.width}};height:{{area.unifyTitleObj.titleStyle.height}};overflow:hidden;justify-content:{{area.unifyTitleObj.titleStyle['justify-content']}};" wx:if="{{item.titleObj.hasTitle=='true'}}">
+                            <div class="ellipsis">{{item.titleObj.titleText||area.unifyTitleObj.titleText||''}}
+                                </div>
+                        </view>
+                    </view>
+                </swiper-item>
+            </swiper>
+            <view class="gap" style="top:{{area.unifyTitleObj.titleStyle.top}};height:{{area.unifyTitleObj.titleStyle.height}};left:{{gapLeft}}"></view>
+            <view bindtap="jumpCheck" class="module" data-clickLength="{{1}}" data-clickValue="{{0}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_diduan'}}" data-expand="{{area.projectSet.jump.houseOption}}" data-functype="1" data-id="{{area.projectSet.jump.type==4?initData.momentModule.contentList[0].id:''}}" data-jumplink="{{area.projectSet.jump.link}}" data-jumptype="{{area.projectSet.jump.type}}" data-jumpvalue="{{area.projectSet.jump.value}}" style="{{area.projectSet.titleStyle_s}}">
+                <span wx:if="{{area.projectSet.type=='1'||area.projectSet.type=='4'}}">{{area.projectSet.titleText||''}}</span>
+                <i style="{{area.projectSet.iconStyle_s}}" wx:if="{{area.projectSet.type=='2'||area.projectSet.type=='3'||area.projectSet.type=='4'}}"></i>
+                <span wx:if="{{area.projectSet.type=='3'}}">{{area.projectSet.titleText||''}}</span>
+            </view>
+        </view>
+        <view id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}}" wx:if="{{area.type=='3-3'||area.type=='3-5'||area.type=='3-9'}}">
+            <view style="{{area.tabsStyle_s}}">
+                <view bindtap="swichNav" data-clickLength="2" data-clickValue="0" data-clickid="{{area.type}}" data-clkName="{{area.tabsLeftStyle.text}}" data-id="0" data-tableidx="{{index}}" style="{{area.tabsLeftStyle_s}};border-top:{{tableList[index]=='0'?'solid 1px '+area.tabsStyle.color:''}};border-right:{{tableList[index]=='0'?'solid 1px '+area.tabsStyle.color:''}};border-bottom-width:{{tableList[index]=='0'?'0px':''}};border-bottom:{{tableList[index]=='0'?'':'solid 1px '+area.tabsStyle.color}};border-right-width:{{tableList[index]=='0'?'1px':''}};background-color:{{tableList[index]=='0'?area.tabsLeftStyle['background-color']:area.tabsRightStyle['background-color']}};color:{{tableList[index]=='0'?area.tabsLeftStyle['color']:area.tabsRightStyle['color']}}">
+                    {{area.tabsLeftStyle.text}}
+                </view>
+                <view bindtap="swichNav" data-clickLength="2" data-clickValue="{{'1'}}" data-clickid="{{area.type}}" data-clkName="{{area.tabsRightStyle.text}}" data-id="1" data-tableidx="{{index}}" style="{{area.tabsRightStyle_s}};border-top:{{tableList[index]=='1'?'solid 1px '+area.tabsStyle.color:''}};border-left:{{tableList[index]=='1'?'solid 1px '+area.tabsStyle.color:''}};border-bottom-width:{{tableList[index]=='1'?'0px':''}};border-bottom:{{tableList[index]=='1'?'':'solid 1px '+area.tabsStyle.color}};border-left-width:{{tableList[index]=='1'?'1px':''}};background-color:{{tableList[index]=='1'?area.tabsLeftStyle['background-color']:area.tabsRightStyle['background-color']}};color:{{tableList[index]=='1'?area.tabsLeftStyle['color']:area.tabsRightStyle['color']}}">
+                    {{area.tabsRightStyle.text}}
+                </view>
+            </view>
+            <swiper autoplay="{{area.swiperOption.autoplay?true:false}}" bindchange="change" current="{{tableList[index]}}" data-mdata="{{area}}" data-tableidx="{{index}}" interval="{{area.swiperOption.autoplay.delay}}" style="{{area.swiperStyle_s}}margin:0 auto;">
+                <swiper-item>
+                    <view bindtap="jumpCheck" class="module" data-clickLength="{{area.moduleLeftList.length+area.moduleRightList.length}}" data-clickValue="{{index}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+item.moduleStyle.burialName}}" data-expand="{{item.jump.houseOption}}" data-functype="1" data-id="{{item.jump.type==4?initData.momentModule.contentList[0].id:''}}" data-jumplink="{{item.jump.link}}" data-jumptype="{{item.jump.type}}" data-jumpvalue="{{item.jump.value}}" wx:for="{{area.moduleLeftList}}" wx:key="item">
+                        <c-img cStyle="{{item.moduleStyle_s}}" mode="aspectFill" src="{{item.moduleStyle.imageUrl}}" wx:if="{{item.moduleStyle.imageUrl}}"></c-img>
+                        <view style="{{item.titleObj.titleStyle_s}}" wx:if="{{item.titleObj.hasTitle=='true'}}">
+                            {{item.titleObj.titleText}}
+                        </view>
+                        <view class="liveCount" style="width:{{item.moduleStyle.width}};left:{{item.moduleStyle.left}};top:{{item.moduleStyle.top}}" wx:if="{{item.jump.type==2&&item.jump.value==1&&goodSet.effectSet==1}}">
+                            {{initData.effectModule.likeCount&&initData.effectModule.likeCount>0?initData.effectModule.likeCount+'人点赞':''}}
+                        </view>
+                        <view class="liveCount" style="width:{{item.moduleStyle.width}};left:{{item.moduleStyle.left}};top:{{item.moduleStyle.top}}" wx:if="{{item.jump.type==2&&item.jump.value==2&&goodSet.sampleSet==1}}">
+                            {{initData.sampleModule.likeCount&&initData.sampleModule.likeCount>0?initData.sampleModule.likeCount+'人点赞':''}}
+                        </view>
+                        <view class="liveCount" style="width:{{item.moduleStyle.width}};left:{{item.moduleStyle.left}};top:{{item.moduleStyle.top}}" wx:if="{{item.jump.type==2&&item.jump.value==3&&goodSet.realitySet==1}}">
+                            {{initData.realityModule.likeCount&&initData.realityModule.likeCount>0?initData.realityModule.likeCount+'人点赞':''}}
+                        </view>
+                        <view class="liveCount" style="width:{{item.moduleStyle.width}};left:{{item.moduleStyle.left}};top:{{item.moduleStyle.top}}" wx:if="{{item.jump.type==2&&item.jump.value==4&&goodSet.matchSet==1}}">
+                            {{initData.matchModule.likeCount&&initData.matchModule.likeCount>0?initData.matchModule.likeCount+'人点赞':''}}
+                        </view>
+                        <view class="liveCount" style="width:{{item.moduleStyle.width}};left:{{item.moduleStyle.left}};top:{{item.moduleStyle.top}}" wx:if="{{item.jump.type==4}}">
+                            {{initData.momentModule.viewCount?initData.momentModule.viewCount>0?initData.momentModule.viewCount+'人看过':'':''}}
+                        </view>
+                    </view>
+                </swiper-item>
+                <swiper-item>
+                    <view bindtap="jumpCheck" class="module" data-clickLength="{{area.moduleLeftList.length+area.moduleRightList.length}}" data-clickValue="{{area.moduleLeftList.length+index}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+item.moduleStyle.burialName}}" data-expand="{{item.jump.houseOption}}" data-functype="1" data-id="{{item.jump.type==4?initData.momentModule.contentList[0].id:''}}" data-jumplink="{{item.jump.link}}" data-jumptype="{{item.jump.type}}" data-jumpvalue="{{item.jump.value}}" wx:for="{{area.moduleRightList}}" wx:key="item">
+                        <c-img cStyle="{{item.moduleStyle_s}}" mode="aspectFill" src="{{item.moduleStyle.imageUrl}}" wx:if="{{item.moduleStyle.imageUrl}}"></c-img>
+                        <view style="{{item.titleObj.titleStyle_s}}" wx:if="{{item.titleObj.hasTitle=='true'}}">
+                            {{item.titleObj.titleText}}
+                        </view>
+                        <view class="liveCount" style="width:{{item.moduleStyle.width}};left:{{item.moduleStyle.left}};top:{{item.moduleStyle.top}}" wx:if="{{item.jump.type==2&&item.jump.value==1&&goodSet.effectSet==1}}">
+                            {{initData.effectModule.likeCount&&initData.effectModule.likeCount>0?initData.effectModule.likeCount+'人点赞':''}}
+                        </view>
+                        <view class="liveCount" style="width:{{item.moduleStyle.width}};left:{{item.moduleStyle.left}};top:{{item.moduleStyle.top}}" wx:if="{{item.jump.type==2&&item.jump.value==2&&goodSet.sampleSet==1}}">
+                            {{initData.sampleModule.likeCount&&initData.sampleModule.likeCount>0?initData.sampleModule.likeCount+'人点赞':''}}
+                        </view>
+                        <view class="liveCount" style="width:{{item.moduleStyle.width}};left:{{item.moduleStyle.left}};top:{{item.moduleStyle.top}}" wx:if="{{item.jump.type==2&&item.jump.value==3&&goodSet.realitySet==1}}">
+                            {{initData.realityModule.likeCount&&initData.realityModule.likeCount>0?initData.realityModule.likeCount+'人点赞':''}}
+                        </view>
+                        <view class="liveCount" style="width:{{item.moduleStyle.width}};left:{{item.moduleStyle.left}};top:{{item.moduleStyle.top}}" wx:if="{{item.jump.type==2&&item.jump.value==4&&goodSet.matchSet==1}}">
+                            {{initData.matchModule.likeCount&&initData.matchModule.likeCount>0?initData.matchModule.likeCount+'人点赞':''}}
+                        </view>
+                        <view class="liveCount" style="width:{{item.moduleStyle.width}};left:{{item.moduleStyle.left}};top:{{item.moduleStyle.top}}" wx:if="{{item.jump.type==4}}">
+                            {{initData.momentModule.viewCount?initData.momentModule.viewCount>0?initData.momentModule.viewCount+'人看过':'':''}}
+                        </view>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}}" wx:if="{{area.type=='3-4'}}">
+            <view style="{{area.tabsStyle_s}}">
+                <view style="{{area.areaTitleObj.titleStyle_s}}" wx:if="{{area.areaTitleObj.type!='0'}}">
+                    <span wx:if="{{area.areaTitleObj.type=='1'||area.areaTitleObj.type=='4'}}">{{area.areaTitleObj.titleText}}</span>
+                    <view style="{{area.areaTitleObj.iconStyle_s}}" wx:if="{{area.areaTitleObj.type=='2'||area.areaTitleObj.type=='3'||area.areaTitleObj.type=='4'}}"></view>
+                    <span wx:if="{{area.areaTitleObj.type=='3'}}">{{area.areaTitleObj.titleText}}</span>
+                </view>
+                <view bindtap="jumpCheck" data-clickLength="{{1}}" data-clickValue="{{0}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName}}_more" data-expand="{{area.areaMoreObj.moreJump.houseOption}}" data-functype="1" data-id="{{area.areaMoreObj.moreJump.type==4?initData.momentModule.contentList[0].id:''}}" data-jumplink="{{area.areaMoreObj.moreJump.link}}" data-jumptype="{{area.areaMoreObj.moreJump.type}}" data-jumpvalue="{{area.areaMoreObj.moreJump.value}}" style="{{area.areaMoreObj.moreStyle_s}}" wx:if="{{area.areaMoreObj.show=='true'}}">
+                    {{area.areaMoreObj.moreText}}
+                </view>
+                <view style="{{area.areaDescribeObj.describeStyle_s}}" wx:if="{{area.areaDescribeObj.show=='true'}}">
+                    {{area.areaDescribeObj.describeText}}
+                </view>
+            </view>
+            <swiper autoplay="{{area.swiperOption.autoplay?true:false}}" circular="true" interval="{{area.swiperOption.autoplay.delay}}" nextMargin="{{area.swiperStyle.nextMargin}}" style="{{area.swiperStyle_s}}">
+                <swiper-item wx:for="{{area.moduleList}}" wx:for-item="module" wx:key="index">
+                    <view bindtap="jumpCheck" class="module" data-clickLength="{{area.moduleList.length}}" data-clickValue="{{index}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+module.moduleStyle.burialName}}" data-expand="{{module.jump.houseOption}}" data-functype="1" data-id="{{module.jump.type==4?initData.momentModule.contentList[0].id:''}}" data-jumplink="{{module.jump.link}}" data-jumptype="{{module.jump.type}}" data-jumpvalue="{{module.jump.value}}" style="width:{{module.moduleStyle.slidewidth}};height:{{module.moduleStyle.height}}">
+                        <c-img cStyle="{{module.moduleStyle_s}}" mode="aspectFill" src="{{module.moduleStyle.imageUrl}}" wx:if="{{module.moduleStyle.imageUrl}}"></c-img>
+                        <view style="{{area.unifyTitleObj.titleStyle_s}}" wx:if="{{module.titleObj.hasTitle=='true'}}">
+                            <span wx:if="{{area.unifyTitleObj.type=='1'||area.unifyTitleObj.type=='4'}}">{{module.titleObj.titleText||area.unifyTitleObj.titleText||''}}</span>
+                            <view style="{{area.unifyTitleObj.iconStyle_s}}" wx:if="{{area.unifyTitleObj.type=='2'||area.unifyTitleObj.type=='3'||area.unifyTitleObj.type=='4'}}"></view>
+                            <span wx:if="{{area.unifyTitleObj.type=='3'}}">{{module.titleObj.titleText||area.unifyTitleObj.titleText||''}}</span>
+                        </view>
+                        <view class="liveCount" style="width:{{module.moduleStyle.width}};left:{{module.moduleStyle.left}};top:{{module.moduleStyle.top}}" wx:if="{{module.jump.type==2&&module.jump.value==1&&goodSet.effectSet==1}}">
+                                {{initData.effectModule.likeCount&&initData.effectModule.likeCount>0?initData.effectModule.likeCount+'人点赞':''}}
+                            </view>
+                        <view class="liveCount" style="width:{{module.moduleStyle.width}};left:{{module.moduleStyle.left}};top:{{module.moduleStyle.top}}" wx:if="{{module.jump.type==2&&module.jump.value==2&&goodSet.sampleSet==1}}">
+                                {{initData.sampleModule.likeCount&&initData.sampleModule.likeCount>0?initData.sampleModule.likeCount+'人点赞':''}}
+                            </view>
+                        <view class="liveCount" style="width:{{module.moduleStyle.width}};left:{{module.moduleStyle.left}};top:{{module.moduleStyle.top}}" wx:if="{{module.jump.type==2&&module.jump.value==3&&goodSet.realitySet==1}}">
+                                {{initData.realityModule.likeCount&&initData.realityModule.likeCount>0?initData.realityModule.likeCount+'人点赞':''}}
+                            </view>
+                        <view class="liveCount" style="width:{{module.moduleStyle.width}};left:{{module.moduleStyle.left}};top:{{module.moduleStyle.top}}" wx:if="{{module.jump.type==2&&module.jump.value==4&&goodSet.matchSet==1}}">
+                                {{initData.matchModule.likeCount&&initData.matchModule.likeCount>0?initData.matchModule.likeCount+'人点赞':''}}
+                            </view>
+                        <view class="liveCount" style="width:{{module.moduleStyle.width}};left:{{module.moduleStyle.left}};top:{{module.moduleStyle.top}}" wx:if="{{module.jump.type==4}}">
+                                {{initData.momentModule.viewCount?initData.momentModule.viewCount>0?initData.momentModule.viewCount+'人看过':'':''}}
+                            </view>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}}" wx:if="{{area.type=='1-1'||area.type=='1-2'||area.type=='1-3'||area.type=='1-4'||area.type=='1-5'||area.type=='2-1'||area.type=='2-2'||area.type=='2-3'||area.type=='2-4'}}">
+            <view style="{{area.areaTitleObj.titleStyle_s}}" wx:if="{{area.areaTitleObj.type!='0'}}">
+                <span wx:if="{{area.areaTitleObj.type=='1'||area.areaTitleObj.type=='4'}}">{{area.areaTitleObj.titleText}}</span>
+                <view style="{{area.areaTitleObj.iconStyle_s}}" wx:if="{{area.areaTitleObj.type=='2'||area.areaTitleObj.type=='3'||area.areaTitleObj.type=='4'}}"></view>
+                <span wx:if="{{area.areaTitleObj.type=='3'}}">{{area.areaTitleObj.titleText}}</span>
+            </view>
+            <view bindtap="jumpCheck" data-clickLength="{{1}}" data-clickValue="{{0}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName}}_more" data-expand="{{area.areaMoreObj.moreJump.houseOption}}" data-functype="1" data-id="{{area.areaMoreObj.moreJump.type==4?initData.momentModule.contentList[0].id:''}}" data-jumplink="{{area.areaMoreObj.moreJump.link}}" data-jumptype="{{area.areaMoreObj.moreJump.type}}" data-jumpvalue="{{area.areaMoreObj.moreJump.value}}" style="{{area.areaMoreObj.moreStyle_s}}" wx:if="{{area.areaMoreObj.show=='true'}}">
+                {{area.areaMoreObj.moreText}}
+            </view>
+            <view style="{{area.areaDescribeObj.describeStyle_s}}" wx:if="{{area.areaDescribeObj.show=='true'}}">
+                {{area.areaDescribeObj.describeText}}
+            </view>
+            <view bindtap="jumpCheck" class="module" data-clickLength="{{area.moduleList.length}}" data-clickValue="{{index}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+module.moduleStyle.burialName}}" data-expand="{{module.jump.houseOption}}" data-functype="1" data-id="{{module.jump.type==4?initData.momentModule.contentList[0].id:''}}" data-jumplink="{{module.jump.link}}" data-jumptype="{{module.jump.type}}" data-jumpvalue="{{module.jump.value}}" wx:for="{{area.moduleList}}" wx:for-item="module" wx:key="index">
+                <view wx:if="{{module.moduleStyle.height==''}}">
+                    <c-img cStyle="{{module.moduleStyle_s}}" mode="widthFix" src="{{module.moduleStyle.imageUrl}}" wx:if="{{module.moduleStyle.imageUrl}}"></c-img>
+                </view>
+                <view wx:else>
+                    <c-img cStyle="{{module.moduleStyle_s}}" mode="aspectFill" src="{{module.moduleStyle.imageUrl}}" wx:if="{{module.moduleStyle.imageUrl}}"></c-img>
+                </view>
+                <view style="{{module.titleObj.titleStyle_s}}" wx:if="{{module.titleObj.hasTitle=='true'}}">
+                    {{module.titleObj.titleText}}
+                </view>
+                <view class="liveCount" style="width:{{module.moduleStyle.width}};left:{{module.moduleStyle.left}};top:{{module.moduleStyle.top}}" wx:if="{{module.jump.type==2&&module.jump.value==1&&goodSet.effectSet==1}}">
+                    {{initData.effectModule.likeCount&&initData.effectModule.likeCount>0?initData.effectModule.likeCount+'人点赞':''}}
+                </view>
+                <view class="liveCount" style="width:{{module.moduleStyle.width}};left:{{module.moduleStyle.left}};top:{{module.moduleStyle.top}}" wx:if="{{module.jump.type==2&&module.jump.value==2&&goodSet.sampleSet==1}}">
+                    {{initData.sampleModule.likeCount&&initData.sampleModule.likeCount>0?initData.sampleModule.likeCount+'人点赞':''}}
+                </view>
+                <view class="liveCount" style="width:{{module.moduleStyle.width}};left:{{module.moduleStyle.left}};top:{{module.moduleStyle.top}}" wx:if="{{module.jump.type==2&&module.jump.value==3&&goodSet.realitySet==1}}">
+                    {{initData.realityModule.likeCount&&initData.realityModule.likeCount>0?initData.realityModule.likeCount+'人点赞':''}}
+                </view>
+                <view class="liveCount" style="width:{{module.moduleStyle.width}};left:{{module.moduleStyle.left}};top:{{module.moduleStyle.top}}" wx:if="{{module.jump.type==2&&module.jump.value==4&&goodSet.matchSet==1}}">
+                    {{initData.matchModule.likeCount&&initData.matchModule.likeCount>0?initData.matchModule.likeCount+'人点赞':''}}
+                </view>
+                <view class="liveCount" style="width:{{module.moduleStyle.width}};left:{{module.moduleStyle.left}};top:{{module.moduleStyle.top}}" wx:if="{{module.jump.type==4}}">
+                    {{initData.momentModule.viewCount?initData.momentModule.viewCount>0?initData.momentModule.viewCount+'人看过':'':''}}
+                </view>
+            </view>
+        </view>
+        <view id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}}" wx:if="{{area.type=='4-4'&&showVisitCard==true}}">
+            <view style="{{area.areaTitleObj.titleStyle_s}}" wx:if="{{area.areaTitleObj.type!='0'}}">
+                <span wx:if="{{area.areaTitleObj.type=='1'||area.areaTitleObj.type=='4'}}">{{area.areaTitleObj.titleText}}</span>
+                <view style="{{area.areaTitleObj.iconStyle_s}}" wx:if="{{area.areaTitleObj.type=='2'||area.areaTitleObj.type=='3'||area.areaTitleObj.type=='4'}}"></view>
+                <span wx:if="{{area.areaTitleObj.type=='3'}}">{{area.areaTitleObj.titleText}}</span>
+            </view>
+            <view bindtap="jumpCheck" data-clickLength="{{1}}" data-clickValue="{{0}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName}}_more" data-expand="{{area.areaMoreObj.moreJump.houseOption}}" data-functype="1" data-id="{{area.areaMoreObj.moreJump.type==4?initData.momentModule.contentList[0].id:''}}" data-jumplink="{{area.areaMoreObj.moreJump.link}}" data-jumptype="{{area.areaMoreObj.moreJump.type}}" data-jumpvalue="{{area.areaMoreObj.moreJump.value}}" style="{{area.areaMoreObj.moreStyle_s}}" wx:if="{{area.areaMoreObj.show=='true'}}">
+                {{area.areaMoreObj.moreText}}
+            </view>
+            <view style="{{area.areaDescribeObj.describeStyle_s}}" wx:if="{{area.areaDescribeObj.show=='true'}}">
+                {{area.areaDescribeObj.describeText}}
+            </view>
+            <button bindgetuserinfo="getUserInfoByVisit" bindtap="goVisitCard" class="module" data-clickLength="{{area.btnList.length}}" data-clickValue="{{index}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+btnObj.burialName}}" data-type="{{index}}" openType="{{globalUserShowFlag?'getUserInfo':''}}" style="{{btnObj.style1_s}}" wx:if="{{btnObj.show=='true'}}" wx:for="{{area.btnList}}" wx:for-item="btnObj" wx:key="index">
+                <span wx:if="{{btnObj.type=='1'||btnObj.type=='4'}}">{{btnObj.btnText||''}}</span>
+                <view style="{{btnObj.iconStyle_s}}" wx:if="{{btnObj.type=='4'||btnObj.type=='2'||btnObj.type=='3'}}"></view>
+                <span wx:if="{{btnObj.type=='3'}}">{{btnObj.btnText||''}}</span>
+            </button>
+        </view>
+        <view id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}}" wx:if="{{area.type=='4-1'}}">
+            <view style="{{area.borderObj.show=='true'?area.borderObj.btnStyle_s:''}}">
+                <view style="{{area.areaTitleObj.titleStyle_s}}">
+                    <view>{{area.areaTitleObj.titleText}}</view>
+                </view>
+                <view style="{{area.areaDescribeObj.describeStyle_s}}">
+                    {{area.areaDescribeObj.describeText}}
+                </view>
+                <view wx:if="{{area.styleObj.type=='3'}}">
+                    <view bindtap="shareFunc" class="btnObj" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+btnObj.burialName}}" data-type="{{index}}" style="{{btnObj.style3_s}};background:none;display:block" wx:if="{{btnObj.show=='true'}}" wx:for="{{area.btnList}}" wx:for-item="btnObj" wx:key="index">
+                        <button bindgetuserinfo="getUserInfo" openType="{{index==0?'share':index==1?globalUserShowFlag?'getUserInfo':'':''}}" style="width:{{btnObj['style'+area.styleObj.type].height}};height:{{btnObj['style'+area.styleObj.type].height}};background-color:{{btnObj['style'+area.styleObj.type]['background-color']}};border-radius:100%;text-align:'center';">
+                            <view style="{{btnObj.iconStyle_s}};position:absolute;top:50%;float:right;transform: translate(-50%, -50%);"></view>
+                        </button>
+                        <span>{{btnObj.btnText||''}}</span>
+                    </view>
+                </view>
+                <view wx:else>
+                    <button bindgetuserinfo="getUserInfo" bindtap="shareFunc" class="btnObj" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+btnObj.burialName}}" data-functype="3" data-test="{{globalUserShowFlag?'getUserInfo':'www'}}" data-type="{{index}}" openType="{{index==0?'share':index==1&&globalUserShowFlag?'getUserInfo':'www'}}" style="{{btnObj['style'+area.styleObj.type+'_s']}}padding-left:0rpx;padding-right:0rpx;background-color:{{btnObj['style'+area.styleObj.type].width=='100%'?'transparent':btnObj['style'+area.styleObj.type]['background-color']}}" wx:if="{{btnObj.show=='true'}}" wx:for="{{area.btnList}}" wx:for-item="btnObj" wx:key="index">
+                        <span style="white-space:nowrap;text-decoration:{{btnObj['style'+area.styleObj.type].width=='100%'&&index==2?'underline':'none'}};" wx:if="{{btnObj.type=='1'||btnObj.type=='4'}}">{{btnObj.btnText||''}}</span>
+                        <view style="{{btnObj.iconStyle_s}}" wx:if="{{btnObj.type=='4'||btnObj.type=='2'||btnObj.type=='3'}}"></view>
+                        <span wx:if="{{btnObj.type=='3'}}">{{btnObj.btnText||''}}</span>
+                    </button>
+                </view>
+            </view>
+        </view>
+        <view id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}};height:auto;background-color:{{area.color2}};padding:27px 40px" wx:if="{{area.type=='4-2'&&showLiudianBox}}">
+            <view class="phone phoneAuthorize">
+                <view class="title" style="color: {{area.color1}}" wx:if="{{!showAgree}}">
+                    是否同意我们主动联系您？
+                </view>
+                <view class="word" style="color: {{area.color1}}" wx:if="{{showAgree}}">
+                    <text>谢谢，我们将在第一时间联系您 ！</text>
+                </view>
+                <button bindgetphonenumber="getPhoneNumber" bindtap="agree" class="btn alright" data-clickLength="{{2}}" data-clickValue="{{1}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName}}" openType="{{showLiudian?'getPhoneNumber':''}}" style="{{area.btnStyle_s}};background-color:{{area.color3}};color:{{area.color4}}" wx:if="{{!showAgree}}">
+                    好的
+                </button>
+            </view>
+        </view>
+        <view style="{{area.areaStyle_s}};{{area.btnStyle.fillet=='true'?'border-radius:4px':null}}" wx:if="{{area.type=='4-5'}}">
+            <view style="{{area.areaTitleObj.titleStyle_s}}" wx:if="{{area.areaTitleObj.type!='0'&&!showAgree}}">
+                <span wx:if="{{area.areaTitleObj.type=='1'||area.areaTitleObj.type=='4'}}">{{area.areaTitleObj.titleText}}</span>
+                <i style="{{area.areaTitleObj.iconStyle_s}}" wx:if="{{area.areaTitleObj.type=='2'||area.areaTitleObj.type=='3'||area.areaTitleObj.type=='4'}}"></i>
+                <span wx:if="{{area.areaTitleObj.type=='3'}}">{{area.areaTitleObj.titleText}}</span>
+            </view>
+            <button bindgetphonenumber="getPhoneNumber" bindtap="agree" openType="{{showLiudian?'getPhoneNumber':''}}" style="{{area.btnStyle_s}}" wx:if="{{area.btnStyle_s&&!showAgree}}">
+                {{area.btnStyle.btnText}}
+            </button>
+            <view style="width:100%;height:100%;overflow:hidden;" wx:if="{{showAgree}}">
+                <view style="margin-top:96rpx;margin-left:68rpx;display:flex;align-items:center">
+                    <image src="https://dm.static.elab-plus.com/miniProgram/longhua/yeslogo.png" style="width:40rpx;height:40rpx"></image>
+                    <text style="color:#fff;font-size:36rpx;margin-left:14rpx;font-weight:600">感谢订阅！</text>
+                </view>
+                <view style="font-size:26rpx;color:#fff;margin-top:20rpx;margin-left:68rpx">感谢订阅，我们会为您及时推送项目最新动态。</view>
+            </view>
+        </view>
+        <view id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}}" wx:if="{{area.type=='5-1'}}">
+            <swipeUnit bind:swipeItemClk="swipeItemClk" bind:swipeTouchEvent="swipeTouchFuc" bind:touchEventHandle="swipeUnitScrollHandle" id="swipeUnit" pvCurPageName="{{pvCurPageName}}"></swipeUnit>
+        </view>
+        <view id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}};overflow:visible" wx:if="{{area.type=='5-2'&&!area.areaStyle.needAlign}}">
+            <view bindtap="jumpCheck" class="module" data-clickLength="{{area.moduleList.length}}" data-clickValue="{{index}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+module.moduleStyle.burialName}}" data-expand="{{module.jump.houseOption}}" data-functype="{{area.areaStyle.jumpType&&area.areaStyle.jumpType>2?'6':area.areaStyle.jumpType&&area.areaStyle.jumpType>1?'4':'1'}}" data-id="" data-jumplink="{{module.jump.link}}" data-jumptype="{{module.jump.type}}" data-jumpvalue="{{module.jump.value}}" wx:for="{{area.moduleList}}" wx:for-item="module" wx:key="index">
+                <form bindsubmit="formSubmit" class="unread-form" data-type="{{area.areaStyle.jumpType==2?false:true}}" reportSubmit="true" style="height:100%">
+                    <button formType="submit" style="{{module.moduleStyle_s}};background:transparent;border-radius: 0;">
+                        <view wx:if="{{module.moduleStyle.height==''}}">
+                            <c-img cStyle="{{module.moduleStyle_s}}" mode="widthFix" src="{{module.moduleStyle.imageUrl}}" wx:if="{{module.moduleStyle.imageUrl}}"></c-img>
+                        </view>
+                        <view wx:else>
+                            <c-img cStyle="{{module.moduleStyle_s}}" mode="aspectFill" src="{{module.moduleStyle.imageUrl}}" wx:if="{{module.moduleStyle.imageUrl}}"></c-img>
+                        </view>
+                    </button>
+                </form>
+                <view style="{{module.titleObj.titleStyle_s}}position:relative;overflow:visible" wx:if="{{module.titleObj.hasTitle=='true'}}">
+                    {{module.titleObj.titleText}}
+                    <view style="{{module.titleObj.titleStyle_s}}top:12px;font-size:8px;left:0px" wx:if="{{area.areaStyle.jumpType==3&&area.areaStyle.showTip==1}}">已有{{videoChatCount}}人体验</view>
+                </view>
+                <view style="{{module.titleObj.iconStyle_s}};position:absolute;overflow:visible" wx:if="{{module.titleObj.hasIcon=='true'}}">
+                    <view class="newRed2" wx:if="{{area.areaStyle.jumpType==2&&(unReadMsgNumber>0||unReadMsgNumber=='99+')}}">{{unReadMsgNumber}}
+                        </view>
+                </view>
+            </view>
+        </view>
+        <view id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}}" wx:if="{{area.type=='5-3'}}">
+            <view bindtap="shareFunc" class="" data-clickLength="{{area.moduleList.length}}" data-clickValue="{{index}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+item.moduleStyle.burialName}}" data-expand="{{item.jump.houseOption}}" data-functype="3" data-id="" data-jumplink="{{item.jump.link}}" data-jumptype="{{item.jump.type}}" data-jumpvalue="{{item.jump.value}}" data-type="0" style="{{area.moduleStyle}}" wx:for="{{area.moduleList}}" wx:key="item">
+                <button class="button" openType="share">
+                    <image src="{{item.moduleStyle.imageUrl}}" style="{{item.moduleStyle_s}}" wx:if="{{item.moduleStyle.imageUrl}}"></image>
+                    <view style="{{item.titleObj.titleStyle_s}}" wx:if="{{item.titleObj.hasTitle=='true'}}">
+                        {{item.titleObj.titleText||''}}
+                    </view>
+                    <i style="{{item.titleObj.iconStyle_s}}" wx:if="{{item.titleObj.hasIcon=='true'}}"></i>
+                </button>
+            </view>
+        </view>
+        <view id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}}" wx:if="{{area.type=='5-4'&&!area.areaStyle.needAlign}}">
+            <view bindtap="jumpCheck" class="" data-clickLength="{{area.moduleList.length}}" data-clickValue="{{index}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+item.moduleStyle.burialName}}" data-functype="1" data-id="" data-jumplink="{{item.jump.link}}" data-jumptype="9" data-jumpvalue="{{item.jump.value}}" wx:for="{{area.moduleList}}" wx:key="item">
+                <image src="{{item.moduleStyle.imageUrl}}" style="{{item.moduleStyle_s}}" wx:if="{{item.moduleStyle.imageUrl}}"></image>
+                <view style="{{item.titleObj.titleStyle_s}};display: block;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;" wx:if="{{item.titleObj.hasTitle=='true'}}">
+                    {{currentSelectCity.length>0?currentSelectCity:item.titleObj.titleText}}
+                </view>
+                <i style="{{item.titleObj.iconStyle_s}}" wx:if="{{item.titleObj.hasIcon=='true'}}"></i>
+                <image class="icon_xiala" src="https://dm.static.elab-plus.com/miniprogram/xiala.png"></image>
+            </view>
+        </view>
+        <view class="swipeView" id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}}" wx:if="{{area.type=='5-5'}}">
+            <block wx:for="{{productModuleObjectList[area.productMarkIdx].moduleList}}" wx:key="item">
+                <view bindtap="productViewItemClk" class="itemView {{'itemView'+index+'_productMarkIdx'+area.productMarkIdx}}" data-clickLength="{{productModuleObjectList[area.productMarkIdx].moduleList.length}}" data-clickValue="{{index}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+item.moduleStyle.burialName}}" data-expand="{{item.jump.houseOption}}" data-functype="1" data-index="{{index}}" data-jumplink="{{item.jump.link}}" data-jumptype="{{item.jump.type}}" data-jumpvalue="{{item.jump.value}}" data-markidx="{{area.productMarkIdx}}" id="{{'itemView'+index+'_productMarkIdx'+area.productMarkIdx}}" wx:if="{{item.hasShow}}">
+                    <image mode="aspectFill" src="{{item.imgUrl}}" style="{{productModuleObjectList[area.productMarkIdx]?productModuleObjectList[area.productMarkIdx].moduleList[index].moduleStyle_s:''}}"></image>
+                    <view class="backView"></view>
+                    <view style="{{productModuleObjectList[area.productMarkIdx]?productModuleObjectList[area.productMarkIdx].moduleList[index].titleObj.titleStyle_s:''}};text-shadow: 0 0 2px rgba(0,0,0,0.74);" wx:if="{{productModuleObjectList[area.productMarkIdx].moduleList[index].titleObj.hasTitle=='true'}}">
+                        {{item.CN_name}}
+                    </view>
+                </view>
+                <view class="product-view" id="{{'product'+index}}" style="height:{{item.productListHeight}}rpx;}">
+                    <view class="product-list" style="background-color:{{productModuleObjectList[area.productMarkIdx].unifyTitleObj.moduleSecondtitleBgColor}}">
+                        <view bindtap="jumpCheck" class="product-item" data-clickLength="{{item.productList.length}}" data-clickValue="{{productIndex}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+subtitle.burialName}}" data-expand="{{subtitle.jump.houseOption}}" data-functype="1" data-jumplink="{{subtitle.jump.link}}" data-jumptype="{{subtitle.jump.type}}" data-jumpvalue="{{subtitle.jump.value}}" wx:for="{{item.productList}}" wx:for-index="productIndex" wx:for-item="subtitle" wx:key="subtitle">
+                            <view style="{{subtitle.titleObj.titleStyle_s}}" wx:if="{{subtitle.titleObj.hasSubTitle=='true'}}">{{subtitle.titleObj.titleText}}
+                                </view>
+                            <view style="{{subtitle.titleObj.descStyle_s}}" wx:if="{{subtitle.titleObj.hasSubDes=='true'}}">{{subtitle.titleObj.descText}}
+                                </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}}" wx:if="{{area.type=='5-6'&&showTableBar}}">
+            <view bindtap="navigateTable" class="" data-clickLength="{{area.moduleList.length}}" data-clickValue="{{index}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+item.moduleStyle.burialName}}" data-expand="{{item.jump.houseOption}}" data-id="" data-jumplink="{{item.jump.link}}" data-jumptype="{{item.jump.type}}" data-jumpvalue="{{item.jump.value}}" wx:for="{{area.moduleList}}" wx:key="item">
+                <image src="{{item.moduleStyle.imageUrl}}" style="{{item.moduleStyle_s}}" wx:if="{{item.moduleStyle.imageUrl}}"></image>
+                <view style="{{item.titleObj.titleStyle_s}};color:{{!pageId&&index==0||item.jump.value==pageId?item.titleObj.titleStyle['color']:item.titleObj.titleStyle['uncolor']}};font-size:{{!pageId&&index==0||item.jump.value==pageId?item.titleObj.titleStyle_s['font-size']:item.titleObj.titleStyle_s['unfont-size']}};" wx:if="{{item.titleObj.hasTitle=='true'}}">
+                    {{item.titleObj.titleText||''}}
+                </view>
+                <i style="{{item.titleObj.iconStyle_s}};background-image:{{!pageId&&index==0||item.jump.value==pageId?item.titleObj.iconStyle['background-image']:item.titleObj.iconStyle['unbackground-image']}};"></i>
+            </view>
+        </view>
+        <view class="phoneBody {{viewScroll?'phoneBodyActive':''}}" id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}}" wx:if="{{area.type=='5-7'}}">
+            <view bindtap="navigateMakePhone" class="" data-clickLength="{{area.moduleList.length}}" data-clickValue="{{index}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+item.moduleStyle.burialName}}" data-expand="{{item.jump.houseOption}}" data-id="" data-jumplink="{{item.jump.link}}" data-jumptype="{{item.jump.type}}" data-jumpvalue="{{item.jump.value}}" data-phone="{{area.phoneNumber}}" wx:for="{{area.moduleList}}" wx:key="item">
+                <image src="{{item.moduleStyle.imageUrl}}" style="{{item.moduleStyle_s}}" wx:if="{{item.moduleStyle.imageUrl}}"></image>
+                <view style="{{item.titleObj.titleStyle_s}};" wx:if="{{item.titleObj.hasTitle=='true'}}">
+                    {{item.titleObj.titleText||''}}
+                </view>
+                <i style="{{item.titleObj.iconStyle_s}};"></i>
+            </view>
+        </view>
+        <view bindtap="jumpCheck" class="bottomModule" data-clickLength="{{1}}" data-clickValue="{{0}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName}}" data-functype="4" wx:if="{{area.type=='4-3'}}">
+            <view id="{{'view_'+area.type+'_'+index}}" style="{{area.areaStyle_s}}" wx:if="{{area.type=='4-3'}}">
+                <form bindsubmit="formSubmit" class="unread-form" reportSubmit="true">
+                    <button formType="submit" style="{{area.areaTitleObj.titleStyle_s}} background-color:transparent;overflow:visible" wx:if="{{area.areaTitleObj}}">
+                        <view style="{{area.areaTitleObj.iconStyle_s}}" wx:if="{{area.areaTitleObj.iconStyle.show=='true'}}"></view>
+                        <view class="newRed" style="width:{{unReadMsgNumber>10?'20px':'16px'}};height:{{unReadMsgNumber>10?'20px':'16px'}};line-height:{{unReadMsgNumber>10?'20px':'16px'}}" wx:if="{{unReadMsgNumber>0||unReadMsgNumber=='99+'}}">{{unReadMsgNumber}}
+                        </view>
+                        <span style="padding-left:12rpx;">{{area.areaTitleObj.titleText}}</span>
+                    </button>
+                </form>
+            </view>
+            <form bindsubmit="formSubmit" class="unread-form" reportSubmit="true">
+                <view wx:if="{{area.type=='4-3'}}">
+                    <view id="{{'view_'+area.type+'_'+index}}" style="{{bottomStyle}}" wx:if="{{deviceInfor=='iPhone X'}}"></view>
+                </view>
+            </form>
+        </view>
+    </view>
+    <view class="empty-box" style="height:{{correctBottom}}" wx:if="{{showIMEmpty}}"></view>
+    <view bindtap="jumpCheck" class="notice_icon" data-functype="5" wx:if="{{showNotice}}">
+        <image src="../../image/wepy_pro/icon_news.png"></image>
+    </view>
+</scroll-view>

@@ -1,0 +1,33 @@
+// \pages/sureOrder/sureOrder onLoad Data Flow
+digraph {
+	fd4721822cc7402eb0832bc5549b001a [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"43f0581f411d4a809a00695febbf4490" [label=SequenceExpression color=blue]
+	d09c8f601dbc46ffab6be4340ac91b32 [label="CallExpression,
+callee name -> this.initOrderInfo,
+param -> " color=blue]
+	f35ce64bb3e8401ab566e15c4e5981e9 [label="FunctionCall,
+function name -> initOrderInfo,
+param -> " color=blue]
+	"5abb547bae00426dbfcd9ed2bf701158" [label=VariableDeclarations color=blue]
+	"3a7c46c5e9844903b576f680917ae726" [label="VariableDeclarator,
+left -> r,
+right -> this.data.isUserInfo" color=blue]
+	"5abb547bae00426dbfcd9ed2bf701158" -> "3a7c46c5e9844903b576f680917ae726"
+	f35ce64bb3e8401ab566e15c4e5981e9 -> "5abb547bae00426dbfcd9ed2bf701158"
+	"203263912c7b46a08d963da5dfe259f8" [label=VariableDeclarations color=blue]
+	"69b133427b054f0796fe71c1aa91cfd9" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"1faee1a74d4547b492906c18db6725e5" [label="Object Properties
+{
+isUserInfo -> r
+}" color=blue]
+	"69b133427b054f0796fe71c1aa91cfd9" -> "1faee1a74d4547b492906c18db6725e5"
+	"203263912c7b46a08d963da5dfe259f8" -> "69b133427b054f0796fe71c1aa91cfd9"
+	f35ce64bb3e8401ab566e15c4e5981e9 -> "203263912c7b46a08d963da5dfe259f8"
+	d09c8f601dbc46ffab6be4340ac91b32 -> f35ce64bb3e8401ab566e15c4e5981e9
+	"43f0581f411d4a809a00695febbf4490" -> d09c8f601dbc46ffab6be4340ac91b32
+	fd4721822cc7402eb0832bc5549b001a -> "43f0581f411d4a809a00695febbf4490"
+}

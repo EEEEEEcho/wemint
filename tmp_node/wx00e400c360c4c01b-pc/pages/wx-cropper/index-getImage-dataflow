@@ -1,0 +1,27 @@
+// \pages/wx-cropper/index getImage Data Flow
+digraph {
+	b5e84d32e0bc49ccadd6fcc5e503958a [label="FunctionCall,
+function name -> getImage,
+param -> " color=blue]
+	"3f5e1fcb37564ed98d816f0631cef755" [label="CallExpression,
+callee name -> wx.chooseImage,
+param -> " color=blue]
+	"6995bb30f3354a729c404b0457f70d90" [label="FunctionCall,
+function name -> success,
+param -> a.,
+a,
+" color=blue]
+	f36cf599b5984dd78a9ef1805ca7c131 [label=SequenceExpression color=blue]
+	a9b773d6943445e6ad4a5934e8ba1847 [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	a22dbef24781407bab0d886009a969f8 [label="Object Properties
+{
+imageSrc -> a.tempFilePaths[0]
+}" color=blue]
+	a9b773d6943445e6ad4a5934e8ba1847 -> a22dbef24781407bab0d886009a969f8
+	f36cf599b5984dd78a9ef1805ca7c131 -> a9b773d6943445e6ad4a5934e8ba1847
+	"6995bb30f3354a729c404b0457f70d90" -> f36cf599b5984dd78a9ef1805ca7c131
+	"3f5e1fcb37564ed98d816f0631cef755" -> "6995bb30f3354a729c404b0457f70d90"
+	b5e84d32e0bc49ccadd6fcc5e503958a -> "3f5e1fcb37564ed98d816f0631cef755"
+}

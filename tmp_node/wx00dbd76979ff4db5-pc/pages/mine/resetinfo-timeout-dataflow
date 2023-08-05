@@ -1,0 +1,18 @@
+// \pages/mine/resetinfo timeout Data Flow
+digraph {
+	f7f023af40804b79a764a71cfa2a618f [label="FunctionCall,
+function name -> timeout,
+param -> " color=blue]
+	"66e256629d8f47d799fb3c9fc3b02bcb" [label=SequenceExpression color=blue]
+	"914fee84d40940bb819db50f6c94baba" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	a82d7b88d2ab4946a668528d4dd616d7 [label="Object Properties
+{
+text -> t.data.second
+second -> t.data.second - 1
+}" color=blue]
+	"914fee84d40940bb819db50f6c94baba" -> a82d7b88d2ab4946a668528d4dd616d7
+	"66e256629d8f47d799fb3c9fc3b02bcb" -> "914fee84d40940bb819db50f6c94baba"
+	f7f023af40804b79a764a71cfa2a618f -> "66e256629d8f47d799fb3c9fc3b02bcb"
+}

@@ -1,0 +1,13 @@
+// \pages/houseDIY/houseDIY onShareAppMessage Data Flow
+digraph {
+	"552663e24d954f78a0e50a4fcff4023f" [label="FunctionCall,
+function name -> onShareAppMessage,
+param -> " color=blue]
+	"42119b0d57a74895860a703aa4f019c8" [label=ReturnExpression color=blue]
+	a2a379f0ddf5421886be7a8d8b7aa054 [label="Object Properties
+{
+path -> '/pages/houseDIY/houseDIY?shareToken=' + l.globalData.shareToken + '&houseType=' + this.data.houseType + '&houseTypeId=' + this.data.houseTypeId + '&from=share&rooms=' + this.data.index + '&halls=' + this.data.hallIndex
+}" color=blue]
+	"42119b0d57a74895860a703aa4f019c8" -> a2a379f0ddf5421886be7a8d8b7aa054
+	"552663e24d954f78a0e50a4fcff4023f" -> "42119b0d57a74895860a703aa4f019c8"
+}

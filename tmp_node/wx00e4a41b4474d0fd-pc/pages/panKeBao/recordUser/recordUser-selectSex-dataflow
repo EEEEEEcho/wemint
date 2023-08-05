@@ -1,0 +1,17 @@
+// \pages/panKeBao/recordUser/recordUser selectSex Data Flow
+digraph {
+	de8e2bde16ab48ecac6829b894efd59f [label="FunctionCall,
+function name -> selectSex,
+param -> e,
+e.,
+" color=blue]
+	fb812fe37264465b9da2e7c59c1d1614 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	e50b30c94ebb423b95a349278b404983 [label="Object Properties
+{
+selectSexType -> e.detail.value
+}" color=blue]
+	fb812fe37264465b9da2e7c59c1d1614 -> e50b30c94ebb423b95a349278b404983
+	de8e2bde16ab48ecac6829b894efd59f -> fb812fe37264465b9da2e7c59c1d1614
+}

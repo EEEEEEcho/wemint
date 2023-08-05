@@ -1,0 +1,20 @@
+// \pages/prodlist/prodlist getGoods Data Flow
+digraph {
+	"7e35f115a1fa4f5e9742b2b39c65821f" [label="FunctionCall,
+function name -> getGoods,
+param -> " color=blue]
+	c2374343a1a44ab5b1d09641afa10f9f [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"60cb45118e9e460692d1ef2340089392" [label="Object Properties
+{
+ordername -> e.data.ordername
+ordersort -> e.data.ordersort
+flag -> e.data.flag
+cid -> e.data.cid
+num -> e.data.num
+page -> e.data.page
+}" color=blue]
+	c2374343a1a44ab5b1d09641afa10f9f -> "60cb45118e9e460692d1ef2340089392"
+	"7e35f115a1fa4f5e9742b2b39c65821f" -> c2374343a1a44ab5b1d09641afa10f9f
+}

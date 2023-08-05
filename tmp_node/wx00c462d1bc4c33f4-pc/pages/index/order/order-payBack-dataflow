@@ -1,0 +1,61 @@
+// \pages/index/order/order payBack Data Flow
+digraph {
+	e578bbdc9dff44bc9a61fc05b5dc658f [label="FunctionCall,
+function name -> payBack,
+param -> r.,
+r,
+" color=blue]
+	fc9fcadda6c04a6d9393a9c2e54b3fae [label=VariableDeclarations color=blue]
+	b4197a07c9764b268396c10c90793d6f [label="VariableDeclarator,
+left -> a,
+right -> r.currentTarget.dataset.id" color=blue]
+	fc9fcadda6c04a6d9393a9c2e54b3fae -> b4197a07c9764b268396c10c90793d6f
+	a6612b0b4f8e4e73adc844f83b45a83b [label="VariableDeclarator,
+left -> o,
+right -> r.currentTarget.dataset.currentTab" color=blue]
+	fc9fcadda6c04a6d9393a9c2e54b3fae -> a6612b0b4f8e4e73adc844f83b45a83b
+	e578bbdc9dff44bc9a61fc05b5dc658f -> fc9fcadda6c04a6d9393a9c2e54b3fae
+	"9da3b45bd0354b4594976fb2242823a7" [label="If Alternate" color=blue]
+	"9dc308f6eeb54217a418db0ae86f3feb" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"75a4757f326f4e27a8b2d967ed9fe1fb" [label="Object Properties
+{
+orderId -> a
+}" color=blue]
+	"9dc308f6eeb54217a418db0ae86f3feb" -> "75a4757f326f4e27a8b2d967ed9fe1fb"
+	"9da3b45bd0354b4594976fb2242823a7" -> "9dc308f6eeb54217a418db0ae86f3feb"
+	"12dfecdf24ae4e2da40426f4ea8ee248" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"1cdade73741a47499fc62a474d7c2bfe" [label="Object Properties
+{
+orderId -> a
+}" color=blue]
+	"12dfecdf24ae4e2da40426f4ea8ee248" -> "1cdade73741a47499fc62a474d7c2bfe"
+	"9da3b45bd0354b4594976fb2242823a7" -> "12dfecdf24ae4e2da40426f4ea8ee248"
+	"92fdd144073e48cd8a63982c5c72488a" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"51d00c54eaa84a83b9ee89e11f3b5656" [label="Object Properties
+{
+orderId -> a
+}" color=blue]
+	"92fdd144073e48cd8a63982c5c72488a" -> "51d00c54eaa84a83b9ee89e11f3b5656"
+	"9da3b45bd0354b4594976fb2242823a7" -> "92fdd144073e48cd8a63982c5c72488a"
+	e578bbdc9dff44bc9a61fc05b5dc658f -> "9da3b45bd0354b4594976fb2242823a7"
+	"580dd9f4993f4c289391ab81ae8eb49f" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"2f2b5336d11f487d9fd3955da30468c8" [label="Object Properties
+{
+id -> a
+}" color=blue]
+	"580dd9f4993f4c289391ab81ae8eb49f" -> "2f2b5336d11f487d9fd3955da30468c8"
+	"96d6bf308bfe435da8d446314c23b6cd" [label="FunctionCall,
+function name -> success,
+param -> r,
+" color=blue]
+	"580dd9f4993f4c289391ab81ae8eb49f" -> "96d6bf308bfe435da8d446314c23b6cd"
+	e578bbdc9dff44bc9a61fc05b5dc658f -> "580dd9f4993f4c289391ab81ae8eb49f"
+}

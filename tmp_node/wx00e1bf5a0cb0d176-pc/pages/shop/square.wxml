@@ -1,0 +1,414 @@
+<view class="fixedTopBorder"></view>
+<view class="container" wx:if="{{!otherSuccessFlag}}">
+    <form bindsubmit="onOrderSubmit" reportSubmit="true">
+        <view class="pickuptype" style="display:{{squareInfo.DeliveryMethod.length>1?'flex':'none'}}" wx:if="{{munblock}}">
+            <view class="chooseWay {{showpeisong?'two':'swe'}}" wx:if="{{showEnableExpress}}">
+                <view bindtap="changePickupType" class="pickuptype-item {{pickupType===1?'active':''}}" data-type="1">物流配送</view>
+            </view>
+            <view class="chooseWay {{showpeisong?'two':'swe'}}" wx:if="{{showPickupType}}">
+                <view bindtap="changePickupType" class="pickuptype-item {{pickupType===2?'active':''}}" data-type="2">到店自提</view>
+            </view>
+            <view class="chooseWay {{showpeisong?'two':'swe'}}" wx:if="{{isShowCityDistribution}}">
+                <view bindtap="changePickupType" class="pickuptype-item {{pickupType===3?'active':''}}" data-type="3">同城配送</view>
+            </view>
+        </view>
+        <view class="addrinfo {{pickupType==3?'border1px':''}}" wx:if="{{pickupType==1||pickupType==3}}">
+            <view class="warm-tips borderTop1px" wx:if="{{showExpressWarmTips&&squareInfo.Express.EnableExpressTips&&pickupType==1}}">
+                <text class="iconfont icon-tixing"></text>
+                <text class="tips-content">温馨提示：{{squareInfo.Express.EnableExpressTips}}</text>
+                <text catchtap="closeWarmTips" class="iconfont icon-guanbi-copy" data-typeway="1"></text>
+            </view>
+            <view class="warm-tips borderTop1px" wx:if="{{showCityWarmTips&&squareInfo.CityDistribution.CityDistributionTips&&pickupType==3}}">
+                <text class="iconfont icon-tixing"></text>
+                <text class="tips-content">温馨提示：{{squareInfo.CityDistribution.CityDistributionTips}}</text>
+                <text catchtap="closeWarmTips" class="iconfont icon-guanbi-copy" data-typeway="3"></text>
+            </view>
+            <image src="{{baseUrl}}/images/wxapp/line.png" style="width:100%;height:6px;display: block;"></image>
+            <view bindtap="showAddrManage" class="addr-msg" wx:if="{{defaultAddr}}">
+                <view class="addr-manage-header-msg">
+                    <text class="iconPlace iconfont icon-iconfont_location"></text>
+                    <view class="addr-manage-content">
+                        <view class="nameAndTel">
+                            <text class="realName">{{defaultAddr.RealName}}</text>
+                            <text class="contactNumber">{{defaultAddr.ContactNumber}}</text>
+                        </view>
+                        <view class="placeText placeTextWidth">{{defaultAddr.CombinedAddress}}</view>
+                    </view>
+                    <text class="iconfont icon-iconfont_arrow-right iconsize goPlace"></text>
+                </view>
+                <view class="lbsinfo-notice" wx:if="{{pickupType===3&&(cityDistribution===false||store.enableDistribution===false)}}">
+                    <view class="lbs-tips">
+                        <text class="iconfont icon-notice"></text>
+                        <text>所选区域超出配送范围，请重新选址或选址其他配送方式</text>
+                    </view>
+                </view>
+                <view class="lbsinfo-notice" wx:if="{{pickupType===3&&storecontent.set_id===null}}">
+                    <view class="lbs-tips">
+                        <text class="iconfont icon-notice"></text>
+                        <text>该门店暂不支持同城配送</text>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="showAddrManage" class="addPlace" wx:if="{{!defaultAddr}}">
+                <text class="addBtn iconfont icon-jia"></text>添加收货地址</view>
+        </view>
+        <view bindtap="boxShowModal" class="select-time-list" wx:if="{{pickupType==3}}">
+            <view>
+                <text class="iconfont icon-shijian" style="margin-right:16rpx;"></text>
+                <text>{{selectId.childId==0&&!distributionText.flag?'立即送出':'指定时间'}}</text>
+                <text class="text-hits">{{distributionText.nameText}}</text>
+            </view>
+            <text class="iconfont icon-iconfont_arrow-right iconsize goPlace" style="font-size:24rpx;"></text>
+        </view>
+        <view style="height:20rpx;background:#f4f4f4" wx:if="{{!squareInfo.ShopPickupPs&&pickupType==2}}"></view>
+        <view class="lbsinfo" wx:if="{{showPickupType&&pickupType==2}}">
+            <view class="lbs-tips" wx:if="{{squareInfo.ShopPickupPs&&showStoreWarmTips}}">
+                <text class="iconfont icon-tixing"></text>
+                <text class="tips-content">温馨提示：{{squareInfo.ShopPickupPs}}</text>
+                <text catchtap="closeWarmTips" class="iconfont icon-guanbi-copy" data-typeway="2"></text>
+            </view>
+            <view class="formData {{!showStoreWarmTips?'borderTop1px':''}}">
+                <view bindtap="changeShowLbsShop" class="pickup-shop border1px item-data">
+                    <text class="titleName">取货门店</text>
+                    <button bindopensetting="getOpenData" class="local-btn-box" openType="openSetting" wx:if="{{!selectStoreFlag}}"></button>
+                    <view class="rightSelect">
+                        <view class="{{LbsShopName?'textColor':''}} fontText">
+              {{LbsShopName?LbsShopName:'选择门店'}}
+            </view>
+                        <text class="iconfont icon-iconfont_arrow-right"></text>
+                    </view>
+                </view>
+                <view bindtap="showTimeSelector" class="pickup-time item-data">
+                    <text class="titleName">取货时间</text>
+                    <view class="rightSelect">
+                        <view class="{{PickupTime?'textColor':''}} fontText">
+              {{PickupTime?PickupTime:'选择时间'}}
+            </view>
+                        <text class="iconfont icon-iconfont_arrow-right"></text>
+                    </view>
+                </view>
+            </view>
+            <view style="height:20rpx;background:#f4f4f4"></view>
+            <view class="formData">
+                <view class="item-data border1px">
+                    <text class="titleName">真实姓名：</text>
+                    <view class="rightSelect">
+                        <input bindinput="inputUserName" class="input-contact" name="Contact" placeholder="请输入真实姓名" type="text" value="{{NickName}}"></input>
+                    </view>
+                </view>
+                <view class="item-data">
+                    <text class="titleName">取货人手机号码：</text>
+                    <view class="rightSelect">
+                        <input bindinput="inputUserMobile" class="input-mobile" maxlength="11" name="Mobile" placeholder="请输入取货人手机号码" type="number" value="{{Mobile}}"></input>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view style="height:20rpx;background:#f4f4f4"></view>
+        <view catchtap="closemask" class="lbsshop-mask" style="display:{{showLbsShop?'block':'none'}}"></view>
+        <view class="lbsshop-ctnr" style="display:{{showLbsShop?'block':'none'}}">
+            <view class="lbsshop-title">选择门店</view>
+            <view class="meidian" wx:if="{{lbsList.length==0}}">
+                <image class="img" src="{{baseUrl}}/images/wxapp/blank_23.png"></image>
+                <view class="nomendiantext">暂无取货门店哦~</view>
+            </view>
+            <scroll-view bindscrolltolower="onlbsListScroll" lowerThreshold="20" scrollY="true" style="max-height: 726rpx;" wx:if="{{lbsList.length>0}}">
+                <radio-group name="LbsID">
+                    <label bindtap="onLbsShopChange" class="lbsshop-item" data-lbsid="{{item.Id}}" data-lbsidx="-1" data-lbsname="{{item.Name}}" wx:for="{{lbsList}}" wx:key="Id">
+                        <view class="lbsshop-radio-ctnr">
+                            <radio checked="{{item.Name===LbsShopName}}" class="lbsradio" color="#ff7200" type="radio" value="{{item.Id}}"></radio>
+                            <icon class="iconText" color="{{item.Name===LbsShopName?'#ff7200':'#ddd'}}" size="20" type="{{item.Name===LbsShopName?'success':'circle'}}"></icon>
+                        </view>
+                        <view class="lbsshop-info-ctnr">
+                            <view class="lbsshop-top">
+                                <view class="lbsshop-name">{{item.Name}}</view>
+                                <view class="distance" wx:if="{{item.distance!=NAN}}">
+                                    <view class="address_list_range" wx:if="{{item.distance<=10}}">{{item.distance>1?item.distance+'km':item.distance*1000+'m'}}</view>
+                                    <view class="address_list_range" wx:if="{{item.distance>10}}">>10km</view>
+                                </view>
+                            </view>
+                            <view class="lbsshop-addr">
+                                <text class="iconfont icon-dizhi"></text>
+                                <text class="address">{{item.Address}}</text>
+                            </view>
+                            <view class="lbsshop-foot">
+                                <view class="lbsshop-tpl">
+                                    <text class="iconfont icon-nbbPhone1"></text>
+                                    <text>{{item.Mobile}}</text>
+                                </view>
+                                <view catchtap="location" class="checkmap" data-item="{{item}}">
+                                    <text class="iconfont icon-iconfont_location"></text>
+                                    <text>查看地图</text>
+                                </view>
+                            </view>
+                        </view>
+                    </label>
+                </radio-group>
+            </scroll-view>
+        </view>
+        <include src="/components/picker_datetime.wxml"></include>
+        <view class="store" wx:if="{{pickupType===3&&(cityDistribution||store.enableDistribution&&store.storeInfo)}}">
+            <view class="store-top">
+                <view class="store-title">
+                    <text class="dis_in iconfont icon-kaidian name_icon"></text>
+          配送门店
+        </view>
+            </view>
+            <view bindtap="toposition" class="store-content">
+                <view class="store-img">
+                    <image mode="widthFix" src="{{SiteLogo}}"></image>
+                </view>
+                <view class="store-st">
+                    <view class="store-con store-magin" wx:if="{{StoreSetting=='1'}}">
+                        <view>{{options.Name}}</view>
+                        <view wx:if="{{options.distance<10}}">{{options.distance>=1?options.distance+'km':options.distance*1000+'m'}}</view>
+                        <view wx:if="{{options.distance>10}}">>10m</view>
+                    </view>
+                    <view class="store-con store-magin" wx:else>
+                        <view>{{storecontent.Name}}</view>
+                        <view wx:if="{{storecontent.distance<10}}">{{storecontent.distance>1?storecontent.distance+'km':storecontent.distance*1000+'m'}}</view>
+                        <view style="visibility:hidden;" wx:if="{{storecontent.distance>10}}">>10m</view>
+                    </view>
+                    <view class="store-con">
+                        <view wx:if="{{StoreSetting=='1'}}">{{options.start_address}}</view>
+                        <view wx:else>{{storeArr}}</view>
+                        <text class="iconfont icon-iconfont_arrow-right iconsize goPlace" style="font-size:24rpx; color:#666"></text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view style="height:20rpx;background:#f4f4f4" wx:if="{{pickupType==3&&options.Name}}"></view>
+        <view class="product-list border1px" wx:if="{{goodInfo.goods.discount.length>0}}" wx:for="{{goodInfo.goods.discount}}" wx:for-index="discountindex" wx:for-item="discountitem" wx:key="discountPkey">
+            <view class="product-item">
+                <view class="col1">
+                    <image class="image" mode="aspectFit" src="{{baseUrl}}{{discountitem.image}}"></image>
+                </view>
+                <view class="col2 {{index!=goodInfo.length-1?'border1px':''}}">
+                    <view class="name">{{discountitem.productName}}</view>
+                    <view class="norms">
+                        <text wx:if="{{discountitem.productNorms}}">规格：{{discountitem.productNorms}}</text>
+                        <view class="itemNum">x{{discountitem.amount}}</view>
+                    </view>
+                    <view class="price">￥{{discountitem.price}}</view>
+                </view>
+            </view>
+        </view>
+        <view style="height:20rpx;background:#f4f4f4" wx:if="{{goodInfo.goods.discount.length>0&&fullRadioFlag}}"></view>
+        <view class="product-list border1px" wx:if="{{goodInfo.goods.normal.length>0}}" wx:for="{{goodInfo.goods.normal}}" wx:key="Pkey">
+            <view class="product-item">
+                <view class="col1">
+                    <image class="image" mode="aspectFit" src="{{baseUrl}}{{item.image}}"></image>
+                </view>
+                <view class="col2 {{index!=goodInfo.length-1?'border1px':''}}">
+                    <view class="name">{{item.productName}}</view>
+                    <view class="norms">
+                        <text wx:if="{{item.productNorms}}">规格：{{item.productNorms}}</text>
+                        <view class="itemNum">x{{item.amount}}</view>
+                    </view>
+                    <view class="price">￥{{item.price}}</view>
+                </view>
+            </view>
+        </view>
+        <view style="height:20rpx;background:#f4f4f4" wx:if="{{goodInfo.goods.normal.length>0&&fullRadioFlag}}"></view>
+        <block wx:if="{{goodInfo.goods.fullreduction.length>0}}" wx:for="{{goodInfo.goods.fullreduction}}" wx:for-index="fullindex" wx:for-item="fullitem" wx:key="fullindex">
+            <view class="product-list" wx:for="{{goodInfo.goods.fullreduction[fullindex]}}" wx:for-index="findex" wx:for-item="fitem" wx:key="findex">
+                <view class="full-item">
+                    <view class="fullreduction border1px" wx:if="{{fitem.Tips!=''&&fullRadioFlag&&findex==0}}">
+                        <view class="speLeft">
+                            <text class="fullicon">{{fitem.PromotionsType==0?'免邮':fitem.PromotionsType==1?'满减':'满送'}}</text>
+                            <view class="fulltitle">{{fitem.Tips}}
+                  <text style="font-size:24rpx;color:#ff7200;" wx:if="{{disableCoupon}}">（优惠券已赠完）</text>
+                                <text style="font-size:24rpx;color:#ff7200;" wx:if="{{disableProduct}}">（赠品已赠完）</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="product-item {{fitem.gift&&fitem.goods_list.length-1==index?'border1px':''}}">
+                        <view class="col1">
+                            <image class="image" mode="aspectFit" src="{{baseUrl}}{{fitem.image}}"></image>
+                        </view>
+                        <view class="col2 {{index!=fitem.length-1?'border1px':''}}">
+                            <view class="name">{{fitem.productName}}</view>
+                            <view class="norms">
+                                <text wx:if="{{fitem.productNorms}}">规格：{{fitem.productNorms}}</text>
+                                <view class="fitem.amount">x{{fitem.amount}}</view>
+                            </view>
+                            <view class="price">
+                                <text>￥{{fitem.price-0}}</text>
+                                <text class="MarketPrice" wx:if="{{item.limitFlag}}">￥{{fitem.MarketPrice-0}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="product-item" style="position:relative;opacity:{{disableProduct?'0.4':'1'}}" wx:if="{{fitem.PromotionsType=='2'&&fitem.gift&&fitem.gift.giftType=='2'&&fullRadioFlag&&findex==goodInfo.goods.fullreduction[fullindex].length-1}}">
+                        <view class="col1">
+                            <image class="image" mode="aspectFit" src="{{baseUrl}}{{fitem.gift.largess.productImage}}"></image>
+                            <text class="full-free-product" style="background:{{disableProduct?'#000':'#ff923a'}}">{{disableProduct?'已赠完':'赠品'}}</text>
+                        </view>
+                        <view class="col2 {{index!=fullitem.goods.length-1?'border1px':''}}">
+                            <view class="name">{{fitem.gift.largess.productName}}</view>
+                            <view class="norms">
+                                <text wx:if="{{fitem.gift.largess.sku}}">规格：{{fitem.gift.largess.sku}}</text>
+                                <view class="itemNum">x1</view>
+                            </view>
+                            <view class="price">￥0</view>
+                        </view>
+                    </view>
+                    <view></view>
+                    <view class="couponCenter" style="color:{{disableCoupon?'#c0c0c0':'#ff923a'}}" wx:if="{{fitem.PromotionsType=='2'&&fitem.gift&&fitem.gift.giftType==1&&findex==goodInfo.goods.fullreduction[fullindex].length-1&&couponTitleText.ItemID===-1}}">
+                        <view class="coupon-left" style="background:{{disableCoupon?'#f4f4f4':'#fff3e7'}};">
+                            <text class="borderr1px" style="border-right:{{disableCoupon?'2rpx dashed #c0c0c0':'2rpx dashed #ff923a'}}"></text>
+                            <text class="full-free-product" wx:if="{{disableCoupon}}">已赠完</text>
+                            <view class="coupon-left-content" style="padding-top:{{disableCoupon?'46rpx;':'36rpx;'}}">
+                                <text class="fare-number">{{fitem.gift.coupon.Type==='0'?fitem.gift.coupon.Amount/10:fitem.gift.coupon.Amount}}</text>{{fitem.gift.coupon.Type==='0'?'折':'元'}}
+                  <text class="fare-condition" style="margin-left:10rpx;">满{{fitem.gift.coupon.OrderMoney}}元可使用</text>
+                                <view class="fare-date" style="margin-top:10rpx;">有效期至：{{fitem.gift.coupon.EndTime}}</view>
+                            </view>
+                        </view>
+                        <view class="coupon-right" style="background:{{disableCoupon?'#f4f4f4':'#fff3e7'}};">
+                            <view class="free-right">赠品</view>
+                            <view>{{fitem.gift.coupon.Type==='0'?'折扣券':'现金券'}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <view style="height:20rpx;background:#f4f4f4"></view>
+        <view class="memoinfo border1px">
+            <text class="memoinfoTitle">买家留言：</text>
+            <input class="memo" disabled="{{showLbsShop||textareaFlag||paymentPlugShow||showModalStatusFlag}}" name="Memo" placeholder="请输入你的留言..." style="opacity:{{showLbsShop||textareaFlag||paymentPlugShow?0:1}};color:{{showLbsShop||textareaFlag||paymentPlugShow?'transparent':'#333'}};display:{{showModalStatusFlag||showLbsShop||textareaFlag||paymentPlugShow||showTimeChoose?'none':'block'}};"></input>
+        </view>
+        <view style="height:20rpx;background:#f4f4f4"></view>
+        <radio-group class="radio-group" wx:if="{{fullActiveFlag}}">
+            <label class="fullreduct-item border1px">
+                <view class="fullreduct-radio-ctnr">
+                    <radio bindtap="chooseFullReduct" checked="{{fullRadioFlag}}" class="radioItem" color="#ff7200" type="radio" value="0"></radio>
+                    <image class="{{fullRadioFlag?'full-circle':'empty-circle'}}" src="{{fullRadioFlag?'../../images/select.png':'../../images/noselect.png'}}" style="width:36rpx;height:36rpx;"></image>
+          满减优惠
+        </view>
+                <view class="fullreduct-info-ctnr">
+                    <view class="fullreduct-title" style="font-size: 28rpx;">-￥{{fullReductMoney}}</view>
+                </view>
+            </label>
+        </radio-group>
+        <radio-group class="radio-group" style="display:{{couplist.length>0?'block':'none'}}">
+            <label bindtap="showCouponinfoPlug" class="fullreduct-item border1px">
+                <view class="fullreduct-radio-ctnr">
+                    <radio checked="{{couponTitleText.ItemID!==-1}}" class="radioItem" color="#ff7200" type="radio" value="0"></radio>
+                    <image class="{{couponTitleText.ItemID!==-1?'full-circle':'empty-circle'}}" src="{{couponTitleText.ItemID!==-1?'../../images/select.png':'../../images/noselect.png'}}" style="width:36rpx;height:36rpx;"></image>
+          优惠券（{{couplist.length}}张可用）
+        </view>
+                <view class="fullreduct-info-ctnr">
+                    <view class="fullreduct-title rightIconBox" style="font-size: 28rpx;">
+                        <text class="rightIconBoxText" wx:if="{{couplist&&couplist.length>0}}">{{couponTitleText.Title?couponTitleText.Title:'不使用优惠券'}}</text>
+                        <text class="icon-iconfont_arrow-right rightIcon iconfont"></text>
+                    </view>
+                </view>
+            </label>
+        </radio-group>
+        <view class="jifeninfo border1px" style="display:{{!autopoint&&getPriceInfo.point>0?'flex':'none'}}">
+            <view wx:if="{{autopoint}}">已经使用 {{getPriceInfo.point||0}} 积分抵扣 {{getPriceInfo.pointMoney||0}} 元</view>
+            <view wx:else>
+                <text class="jifentext">积分</text>可抵扣
+        <text class="jifennum">{{getPriceInfo.point||0}}</text>积分，抵扣
+        <text class="jifennum">{{getPriceInfo.pointMoney||0}}</text>元
+        <checkbox-group bindchange="getIntegralSelec" class="integralSelec" name="UseJiFen" wx:if="{{squareInfo.AutomaticPointsDeduction!='1'}}">
+                    <checkbox bindtap="onUseJiFenChange" checked="{{integralFlag}}" class="integralSelecitem" data-value="{{UseJiFen}}" value="1"></checkbox>
+                    <icon color="{{integralFlag?'#FF7200':'#ccc'}}" size="20" type="{{integralFlag?'success':'circle'}}"></icon>
+                </checkbox-group>
+            </view>
+        </view>
+        <view class="subtotal">
+            <text class="subtotalnum">共{{goodInfo.goodsNums||0}}件商品，小计：</text>
+            <text class="allMoney">￥{{smallPlan||0}}</text>
+        </view>
+        <view style="height:20rpx;background:#f4f4f4"></view>
+        <view class="freightinfo border1px" style="display:{{defaultAddr&&pickupType===1?'flex':'none'}};font-size:26rpx">
+            <text>运费：</text>
+            <text>￥{{getPriceInfo.freight||0}}</text>
+        </view>
+        <view class="freightinfo border1px" style="display:{{defaultAddr&&pickupType===3?'flex':'none'}};font-size:26rpx">
+            <text>包装费：</text>
+            <text>￥{{packetMoney||0}}</text>
+        </view>
+        <view class="freightinfo border1px" style="display:{{defaultAddr&&pickupType===3?'flex':'none'}};font-size:26rpx">
+            <text>配送费：</text>
+            <text>￥{{feeNum||0}}</text>
+        </view>
+        <view style="height:80rpx;background:#f4f4f4"></view>
+        <view animation="{{animationDataBg}}" class="select-t-bgs" wx:if="{{showModalStatus}}"></view>
+        <view animation="{{animationData}}" class="some-city-time-select" wx:if="{{showModalStatus}}">
+            <view catchtap="hideModal" class="select-t-bg"></view>
+            <view class="select-t-main">
+                <view class="select-list-s">
+                    <view class="left-t-menu">
+                        <view catchtap="changeDays" class="item-day {{selectIndex==1?'active':''}}" data-id="1">今天（{{currentWeek}}）</view>
+                        <view catchtap="changeDays" class="item-day {{selectIndex==2?'active':''}}" data-id="2">明天（{{torrWeek}}）</view>
+                    </view>
+                    <view class="right-t-list">
+                        <scroll-view scrollY style="height: 512rpx;">
+                            <view catchtap="getTimeData" class="item-time {{index===currentTimeIndex?'active':''}}" data-index="{{index}}" wx:for="{{dateList}}" wx:key="index">{{item.name}}</view>
+                        </scroll-view>
+                    </view>
+                </view>
+                <view catchtap="hideModal" class="cancel-time-select borderTop1px">取消</view>
+            </view>
+        </view>
+        <view class="couponinfo-plug" wx:if="{{couponinfoFlag}}">
+            <view bindtap="showCouponinfoPlug" class="couponinfo-plugBg"></view>
+            <view class="couponinfo-plug-content">
+                <view class="couponinfo-topHeader">
+                    <text>优惠券</text>
+                    <text bindtap="showCouponinfoPlug" class="iconfont closePlug icon-guanbi-copy"></text>
+                </view>
+                <scroll-view scrollY style="height: 744rpx;">
+                    <radio-group name="CouponID">
+                        <label bindtap="onCouponChange" class="coupon-item border1px" data-amount="0" data-idx="-1" data-itemid="0" data-type="0">
+                            <view class="coupon-info-ctnr">
+                                <view class="coupon-title" style="font-size: 28rpx;">不使用优惠券</view>
+                            </view>
+                            <view class="coupon-radio-ctnr">
+                                <radio checked="{{couponTitleText.ItemID===-1}}" class="radioItem" color="#ff7200" type="radio" value="0"></radio>
+                                <icon class="iconText" color="{{couponTitleText.ItemID===-1?'#ff7200':'#ddd'}}" size="20" type="{{couponTitleText.ItemID===-1?'success':'circle'}}"></icon>
+                            </view>
+                        </label>
+                        <label bindtap="onCouponChange" class="coupon-item border1px" data-amount="{{item.Amount}}" data-idx="{{idx}}" data-itemid="{{item.ItemID}}" data-type="{{item.Type}}" wx:for="{{couplist}}" wx:for-index="idx" wx:key="ItemID">
+                            <view class="couponinfoItemLeft">
+                                <view class="numText">
+                                    <view style="display:inline-block;">
+                    {{item.Type==='0'?item.Amount/10:item.Amount}} {{item.Type==='0'?'折':'元'}}
+                  </view>
+                                    <view style="display:inline-block;margin-left:50rpx;">
+                    {{item.Type==='0'?'折扣券':'现金券'}}
+                  </view>
+                                </view>
+                                <view class="coupon-info-ctnr">
+                                    <view class="coupon-title">{{item.OrderMoney==='0'||item.OrderMoney==='0.00'?'无限制使用':'订单满'+item.OrderMoney+'元可使用'}}</view>
+                                    <view class="coupon-expire">过期时间：{{item.ExTime}}</view>
+                                </view>
+                            </view>
+                            <view class="coupon-radio-ctnr">
+                                <radio checked="{{couponTitleText.ItemID===item.ItemID}}" class="radioItem" color="#ff7200" type="radio" value="{{item.ItemID}}"></radio>
+                                <icon class="iconText" color="{{couponTitleText.ItemID===item.ItemID?'#ff7200':'#ddd'}}" size="20" type="{{couponTitleText.ItemID===item.ItemID?'success':'circle'}}"></icon>
+                            </view>
+                        </label>
+                    </radio-group>
+                </scroll-view>
+            </view>
+        </view>
+        <view class="suminfo" style="display:{{hasproduct?'block':'none'}}; ">
+            <view class="suminfo-submit">
+                <text bindtap="showPaymentPlug" class="submitText">提交订单</text>
+            </view>
+            <view class="suminfo-desc">
+                <view class="total-desc">
+                    <text class="total-title">合计：</text>
+                    <text class="total-money">￥{{orderPrice||0}}</text>
+                </view>
+                <view class="save-money" wx:if="{{!integralFlag&&getPriceInfo.spareMoney!='0'&&getPriceInfo.spareMoney!='0.00'||integralFlag&&tosavemoney!='0'&&getPriceInfo.spareMoney+getPriceInfo.pointMoney!='0.00'}}">( 已省：￥{{tosavemoney}})</view>
+            </view>
+        </view>
+        <include src="/pages/common/paymenttype.wxml"></include>
+    </form>
+</view>
+<view style="height:98rpx;"></view>
+<include src="/pages/common/payComplete.wxml"></include>
+<include src="/pages/template/getUserInfo.wxml"></include>

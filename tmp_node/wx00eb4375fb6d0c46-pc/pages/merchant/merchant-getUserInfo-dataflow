@@ -1,0 +1,21 @@
+// \pages/merchant/merchant getUserInfo Data Flow
+digraph {
+	"68371cc616aa4d0bab3f001956a5c822" [label="FunctionCall,
+function name -> getUserInfo,
+param -> n.,
+n,
+" color=blue]
+	"3a2b356e302c44cfae45c2c59ce8040b" [label=SequenceExpression color=blue]
+	ccc08593929e4b9195187c1c8a554b26 [label="CallExpression,
+callee name -> console.log,
+param -> n,
+" color=blue]
+	"3a2b356e302c44cfae45c2c59ce8040b" -> ccc08593929e4b9195187c1c8a554b26
+	"68371cc616aa4d0bab3f001956a5c822" -> "3a2b356e302c44cfae45c2c59ce8040b"
+	"350745b7e1ed4730bb55ea3326b92914" [label=SequenceExpression color=blue]
+	c1b67df88e0248c9a0ca38d324e70c66 [label="Assignment,
+left -> e.globalData.userInfo,
+right -> n.detail.userInfo" color=blue]
+	"350745b7e1ed4730bb55ea3326b92914" -> c1b67df88e0248c9a0ca38d324e70c66
+	"68371cc616aa4d0bab3f001956a5c822" -> "350745b7e1ed4730bb55ea3326b92914"
+}

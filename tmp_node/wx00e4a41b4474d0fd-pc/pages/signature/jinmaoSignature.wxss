@@ -1,0 +1,60 @@
+page {
+    background-color: white;
+}
+
+.main {
+    width: 750rpx;
+    height: 2892rpx;
+    position: relative;
+    overflow: hidden;
+}
+
+.scroller {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.backImage {
+    width: 100%;
+}
+
+.canvas,.coverView {
+    position: absolute;
+    bottom: 283rpx;
+    width: 630rpx;
+    height: 290rpx;
+    left: 50%;
+    margin-left: -312rpx;
+}
+
+.btn {
+    width: 148rpx;
+    height: 62rpx;
+    bottom: 165rpx;
+    position: absolute;
+}
+
+.submitBtn {
+    background-image: url('https://dm.static.elab-plus.com/JinmaoQ/signSubmit.png');
+    background-size: 100% 100%;
+    left: 35%;
+    margin-left: -74rpx;
+}
+
+.clearBtn {
+    background-image: url('https://dm.static.elab-plus.com/JinmaoQ/signClear.png');
+    background-size: 100% 100%;
+    right: 35%;
+    margin-right: -74rpx;
+}
+
+.customCanvas {
+    top: 0;
+    width: 750px;
+    height: 2892px;
+    left: 1000px;
+    position: absolute;
+}

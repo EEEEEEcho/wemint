@@ -1,0 +1,22 @@
+// \pages/address/address bindAddAddressTap Data Flow
+digraph {
+	"6a1b6f2879d841c0bb0f792273d5a48e" [label="FunctionCall,
+function name -> bindAddAddressTap,
+param -> e,
+e.,
+" color=blue]
+	"40ec70607d8d40bd965622b15e8799f2" [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	"45c2b8a92b3848d6a27dca403bd08ee5" [label="FunctionCall,
+function name -> success,
+param -> " color=blue]
+	b5625c27ae994d968646b4e1ec3465a1 [label="If Alternate" color=blue]
+	f73219d739754f5fbe36d23834379f23 [label="CallExpression,
+callee name -> wx.chooseAddress,
+param -> " color=blue]
+	b5625c27ae994d968646b4e1ec3465a1 -> f73219d739754f5fbe36d23834379f23
+	"45c2b8a92b3848d6a27dca403bd08ee5" -> b5625c27ae994d968646b4e1ec3465a1
+	"40ec70607d8d40bd965622b15e8799f2" -> "45c2b8a92b3848d6a27dca403bd08ee5"
+	"6a1b6f2879d841c0bb0f792273d5a48e" -> "40ec70607d8d40bd965622b15e8799f2"
+}

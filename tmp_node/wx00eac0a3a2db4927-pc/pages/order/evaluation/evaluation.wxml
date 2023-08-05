@@ -1,0 +1,46 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="evaluation" style="margin-top: {{navH+status}}px">
+    <view class="product_panel column">
+        <view class="row" wx:for="{{detailInfo.goods}}" wx:key="index">
+            <view class="product_image">
+                <image class="product_img" lazyLoad="true" mode="aspectFill" src="{{item.coversArray[0]}}"></image>
+            </view>
+            <view class="product row">
+                <view class="column" style="flex: 1">
+                    <text class="product_name">{{item.title}}</text>
+                    <text class="product_type" wx:if="{{dataIndex<2}}" wx:for="{{item.propertiesArray}}" wx:for-index="dataIndex">{{evaluationFilter.getProperty(item)}}</text>
+                </view>
+                <view class="column">
+                    <text class="sales_price">¥{{item.salesPrice/100}}</text>
+                    <text class="sales_total">X{{item.total}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="content_txt">
+            <textarea bindinput="bindInput" class="textarea" maxlength="600" placeholder="写点评论吧" placeholderClass="placeholder"></textarea>
+        </view>
+        <view class="upload_images">
+            <view class="upload row">
+                <view class="uploadLayout" wx:for="{{uploadImage}}" wx:key="index">
+                    <image class="uploaded_img" mode="aspectFill" src="{{item}}"></image>
+                    <image bindtap="deleteImage" class="uploadDelete" data-index="{{index}}" src="http://oss.shangmian.xin/weixin_applets_icon_image_delete.png"></image>
+                </view>
+                <image bindtap="chooseImage" class="upload_img" src="http://oss.shangmian.xin/weixin_applets_order_camera.png" wx:if="{{uploadImage.length<9}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="erector_evaluation">
+        <view class="erector_header row">
+            <image class="erector_logo" src="http://oss.shangmian.xin/weixin_applets_order_installer.png"></image>
+            <text class="erector_title">安装工评价</text>
+        </view>
+        <view class="question_layout" wx:for="{{questions}}" wx:for-item="dataItem">
+            <view class="erector_question">{{dataItem.title}}</view>
+            <view class="erector_answer row">
+                <text bindtap="checkedAnswer" class="answer {{item.isCheck?'checked':''}}" data-answer-index="{{answerIndex}}" data-question-index="{{index}}" wx:for="{{dataItem.answers}}" wx:for-index="answerIndex">{{item.name}}</text>
+            </view>
+        </view>
+    </view>
+    <view bindtap="submitData" class="submit_evaluation">提交</view>
+</view>
+<wxs module="evaluationFilter" src="evaluation.wxs" />

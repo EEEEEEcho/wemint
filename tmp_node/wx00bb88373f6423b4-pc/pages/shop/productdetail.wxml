@@ -1,0 +1,213 @@
+<view class="fixedTopBorder"></view>
+<import src="/components/wxParse/wxParse.wxml"></import>
+<view class="container {{flag4?'conHeight':''}} {{flag?'conHeight2':''}}">
+    <swiper autoplay="{{videoshow?flase:true}}" bindchange="videoguanbi" circular="true" duration="200" indicatorDots="{{productImgs.length<=1?'':true}}" interval="5000" style="height:{{bannerHeight}}px">
+        <view wx:if="{{videoshow}}">
+            <view class="ProVideoDiv" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);position:absolute;z-index:100;">
+                <video autoplay="true" bindended="videoguanbi" src="{{productInfo.Video}}" style="position:absolute;height:100%;width:100%;"></video>
+                <i bindtap="videoguanbi" class="iconfont icon-guanbi-copy" style="position:absolute;right:5px;top:5px;font-size:20px;color:rgba(255,255,255,0.8)"></i>
+            </view>
+        </view>
+        <swiper-item wx:for="{{productImgs}}" wx:key="index">
+            <view wx:if="{{index==0&&productInfo.Video!=''&&productInfo.Video!=null}}">
+                <i bindtap="videobofang" class="m-iconfont m-icon-bofang videobofang"></i>
+            </view>
+            <image bindload="onBannerImgLoad" class="slide-image" data-index="{{index}}" mode="widthFix" src="{{item}}"></image>
+        </swiper-item>
+    </swiper>
+    <view class="particulars-text">
+        <text class="particulars-title">{{productInfo.Name}}</text>
+        <text class="desc">{{productInfo.ProDesc}}</text>
+        <view class="productprice">
+            <view class="prices">
+                <text class="price">
+                    <text hidden="{{!hasPrice}}">￥</text>
+                    <text>{{PriceShow}}</text>
+                </text>
+                <text class="oldprice protext">
+                    <text>{{productInfo.MarketPrice}}</text>
+                </text>
+            </view>
+            <view class="expAndSales">
+                <text class="expressage protext">
+                    <text class="protext">运费：</text>
+                    <text>{{productInfo.FreightMoney}}</text>
+                </text>
+                <text class="sales-volume protext">
+                    <text class="protext">月销</text>
+                    <text>{{productInfo.SalesCount}}</text>
+                    <text class="protext">笔</text>
+                </text>
+            </view>
+        </view>
+    </view>
+    <view bindtap="discount" class="discount" wx:if="{{list.length>0}}">
+        <view class="disLeft">
+            <icon class="iconfont icon-iconfont_coupon disIcon"></icon>
+            <text class="title">优惠券</text>
+        </view>
+        <icon class="iconfont icon-iconfont_arrow-right iconsize"></icon>
+    </view>
+    <view bindtap="choose" class="specification" wx:if="{{attrs.length>0}}">
+        <view class="speLeft">
+            <text class="titChoose">{{selectedAttrNames?'已选':'请选择规格'}}</text>
+            <text>{{selectedAttrNames}}</text>
+        </view>
+        <icon class="iconfont icon-iconfont_arrow-right iconsize"></icon>
+    </view>
+    <view class="line" wx:if="{{attrs.length>0}}"></view>
+    <view class="discountList {{flag4?'showParam':'hideParam'}}">
+        <view class="dis-top">
+            <view class="dis-title">优惠券</view>
+            <view bindtap="close" class="markClose">
+                <icon class="closeIcon iconfont icon-guanbi-copy"></icon>
+            </view>
+        </view>
+        <scroll-view bindscrolltolower="onListScroll" class="coupon2" lowerThreshold="20" scrollY="true" style="height:100%">
+            <view class="coupon-item border1px" wx:for="{{list}}" wx:key="*this">
+                <view class="item-title {{item.CanGet==1&&item.Available>0?'notget':''}} {{item.CanGet==0?'getJuan':''}} {{item.Available<=0?'getJuanHui':''}}">
+                    <view class="title">
+                        <view>
+                            <text class="titleText">{{item.amount}}{{item.Type==0?'折':'元'}}</text>
+                            <text class="titleMoney">{{item.Type==0?'折扣券':'现金券'}}</text>
+                        </view>
+                    </view>
+                    <view class="intro">
+                        <view wx:if="{{item.OrderMoney!=0}}">订单满{{item.OrderMoney}}元可使用</view>
+                        <view wx:if="{{item.OrderMoney==0}}">不限金额可使用</view>
+                    </view>
+                    <view class="coupon-time">
+                        <view class="time">使用期限：{{item.EndTimeType==0?item.beginTime:''}} {{item.EndTimeType==0?'-':''}} {{item.timeLimit}}</view>
+                    </view>
+                </view>
+                <view class="button">
+                    <view catchtap="{{!buttonClicked?'getCoupon':''}}" class="getbtn" data-couponid="{{item.CouponID}}" wx:if="{{item.CanGet==1&&item.Available>0}}">领取</view>
+                    <view class="hasGet" wx:if="{{item.CanGet==0&&item.Available>0}}">已领取</view>
+                    <view class="hasGet" wx:elif="{{item.Available<=0}}">已领完</view>
+                </view>
+            </view>
+            <view class="couponGetOver" wx:if="{{list.length==0}}">
+                <image mode="widthFix" src="{{baseUrl}}/images/wxapp/blank_15.png"></image>
+                <view>暂无优惠卷可领取</view>
+            </view>
+        </scroll-view>
+    </view>
+    <view bindtap="close" class="mark {{flag?'showMark':''}}"></view>
+    <view bindtap="close" class="mark {{flag4?'showMark':''}}"></view>
+    <view class="product-attrs {{flag?'showParam':'hideParam'}}">
+        <view class="product-conTop border1px">
+            <view class="top-left">
+                <view class="img">
+                    <image src="{{attrImg?attrImg:proImg}}"></image>
+                </view>
+                <view class="content">
+                    <view class="price">
+                        <text hidden="{{!hasPrice}}">￥</text>
+                        <text>{{PriceShow2?PriceShow2:PriceShow}}</text>
+                    </view>
+                    <view class="inventory">
+                        <text>库存：</text>
+                        <text>{{ProductQuantity}}</text>
+                        <text>件</text>
+                    </view>
+                    <view class="hasChoose" wx:if="{{productInfo.Attrs.length>0}}">
+                        <text>{{selectedAttrNames?'已选：':'请选择规格'}}</text>
+                        <text class="message">{{selectedAttrNames}}</text>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="close" class="close">
+                <icon class="closeIcon iconfont icon-guanbi-copy"></icon>
+            </view>
+        </view>
+        <scroll-view class="paramChoose" lowerThreshold="20" scrollY="true" style="height: {{productInfo.Attrs.length>=2?'672rpx':'650rpx'}}">
+            <view class="pro-attrs" data-index="{{index}}" wx:for="{{attrs}}" wx:key="AttrKeyID">
+                <view class="attr-name">{{item.AttrKeyName}}</view>
+                <view class="attr-vals">
+                    <view catchtap="onAttrChange" class="attr-val {{attr.getActive(selectedAttrs,attritem.AttrKeyID,attritem.AttrValID,idx)}} {{attr.getDisabled(attritem.AttrValID,noQuantityList)}}" data-attrkeyid="{{attritem.AttrKeyID}}" data-attrvalid="{{attritem.AttrValID}}" wx:for="{{item.AttrVals}}" wx:for-index="idx" wx:for-item="attritem" wx:key="AttrValID">{{attritem.AttrValName}}</view>
+                </view>
+            </view>
+            <view class="{{productInfo.Attrs.length>=1?'chooseCounts':''}} chooseCount">
+                <view class="attr-name">数量</view>
+                <view class="btn">
+                    <view bindtap="decrease" class="decrease {{minusStatus}}">-</view>
+                    <input bindchange="bindManual" disabled="true" type="number" value="{{count}}"></input>
+                    <view bindtap="increase" class="increase {{canNoClick}} normal">+</view>
+                    <view class="xiangou" wx:if="{{productInfo.BuyLimit>=1}}">（限购：{{productInfo.BuyLimit}}件）</view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="chooseBuy" style="{{!isAgentClient?'':'display:block;width:100%'}}" wx:if="{{flag}}">
+            <view bindtap="addToCart" class="addToCart" wx:if="{{!isAgentClient}}">加入购物车</view>
+            <view bindtap="buyNow" class="buyNow" style="{{!isAgentClient?'':'width:100%'}}">立即购买</view>
+        </view>
+        <view bindtap="addToCart" class="sureBuy" wx:if="{{flag2}}">
+            <view class="sure">确定</view>
+        </view>
+        <view bindtap="buyNow" class="sureBuy" wx:if="{{flag3}}">
+            <view class="sure">确定</view>
+        </view>
+    </view>
+    <view class="particulars-page">
+        <view class="particulars-title border1px">
+            <text bindtap="navbarTap" class="item {{currentTab==0?'active':''}}" data-idx="0">商品详情</text>
+            <text bindtap="navbarTap" class="item {{currentTab==1?'active':''}}" data-idx="1">产品参数</text>
+        </view>
+        <view class="particulars-content" hidden="{{currentTab!=0}}">
+            <template is="wxParse" data="{{wxParseData:DetailInfo.nodes}}"></template>
+        </view>
+        <view class="product-parameter " hidden="{{currentTab!=1}}">
+            <view wx:if="{{productInfo.ParamList.length!=0}}">
+                <view class="paramList border1px" wx:for="{{productInfo.ParamList}}" wx:key="ID">
+                    <view class="pro-name">{{item.Name}}</view>
+                    <view class="pro-content">{{item.Value}}</view>
+                </view>
+            </view>
+            <view class="noParam" wx:if="{{productInfo.ParamList.length==0}}">
+                <text>暂无参数</text>
+            </view>
+        </view>
+    </view>
+    <view class="footnav">
+        <view class="footLeft">
+            <view>
+                <view catchtap="{{collection?'CanleCollection':'AddCollection'}}" class="favorite" data-ProID="{{productInfo.ProductID}}">
+                    <icon class="iconfont {{collection?'icon-iconfont_favorite-fi':'icon-iconfont_favorite'}}  favorIcon {{collection?'collected':''}}"></icon>
+                    <text>收藏</text>
+                </view>
+            </view>
+            <view catchtap="shopCart" class="shopCar">
+                <icon class="iconfont icon-iconfont_cart cartIcon"></icon>
+                <text>购物车</text>
+                <view class="num" wx:if="{{cartnum!=0&&cartnum<100}}">{{cartnum}}</view>
+                <view class="num2" wx:if="{{cartnum!=0&&cartnum>=100}}"></view>
+            </view>
+        </view>
+        <view class="footMiddle">
+            <view bindtap="addToshopCart" class="addToCart">加入购物车</view>
+        </view>
+        <view class="footRight">
+            <view bindtap="buyNow2" class="buyNow">立即购买</view>
+        </view>
+    </view>
+</view>
+<include src="UserReg.wxml"></include>
+<include src="/pages/template/floatLayer.wxml"></include>
+<wxs module="attr">
+var getActive = (function(selectedAttrs, curAttrKeyID, curAttrValID, index) {
+    var active = '';
+    if (!selectedAttrs && index == 0) active = 'active';
+    else if (selectedAttrs && selectedAttrs[((nt_0 = (curAttrKeyID), null == nt_0 ? undefined : 'Number' === nt_0.constructor ? nt_0 : "" + nt_0))] == curAttrValID) active = 'active';;
+    return (active)
+});
+module.exports.getActive = getActive;
+var getDisabled = (function(curAttrValID, noQuantityList) {
+    if (!noQuantityList) return;;
+    var disabled = '';
+    for (var i = 0; i < noQuantityList.length; i++) {
+        if (noQuantityList[((nt_1 = (i), null == nt_1 ? undefined : 'Number' === nt_1.constructor ? nt_1 : "" + nt_1))].AttrValID == curAttrValID) disabled = 'no-quantity';
+    };
+    return (disabled)
+});
+module.exports.getDisabled = getDisabled;
+</wxs>

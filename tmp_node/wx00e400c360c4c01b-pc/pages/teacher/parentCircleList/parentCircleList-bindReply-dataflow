@@ -1,0 +1,73 @@
+// \pages/teacher/parentCircleList/parentCircleList bindReply Data Flow
+digraph {
+	b783283d0e2c4d0b88a420ef7cb453f7 [label="FunctionCall,
+function name -> bindReply,
+param -> e,
+e.,
+" color=blue]
+	"5bddf98e63a64974a718cdf59249cf17" [label=VariableDeclarations color=blue]
+	f3edbd0779704f2cb17b0bf536975d72 [label="VariableDeclarator,
+left -> a,
+right -> e.currentTarget.dataset.index" color=blue]
+	"5bddf98e63a64974a718cdf59249cf17" -> f3edbd0779704f2cb17b0bf536975d72
+	"28e99b31879d41e4bf67ce9d94722240" [label="VariableDeclarator,
+left -> i,
+right -> e.currentTarget.dataset.cpccIndex" color=blue]
+	"5bddf98e63a64974a718cdf59249cf17" -> "28e99b31879d41e4bf67ce9d94722240"
+	"1a50ff4364e94fa6a7e817f11ffaaa3b" [label="VariableDeclarator,
+left -> c,
+right -> e.currentTarget.dataset.circle_id" color=blue]
+	"5bddf98e63a64974a718cdf59249cf17" -> "1a50ff4364e94fa6a7e817f11ffaaa3b"
+	f779bdc15b274503baf016092097f1ff [label="VariableDeclarator,
+left -> n,
+right -> e.currentTarget.dataset.parent_id" color=blue]
+	"5bddf98e63a64974a718cdf59249cf17" -> f779bdc15b274503baf016092097f1ff
+	"51414aafbfbb46bfa45b6fd5534084db" [label="VariableDeclarator,
+left -> r,
+right -> e.currentTarget.dataset.parent_tid" color=blue]
+	"5bddf98e63a64974a718cdf59249cf17" -> "51414aafbfbb46bfa45b6fd5534084db"
+	"4c00b94e51954f959a1c9cba09bde439" [label="VariableDeclarator,
+left -> o,
+right -> e.currentTarget.dataset.cid" color=blue]
+	"5bddf98e63a64974a718cdf59249cf17" -> "4c00b94e51954f959a1c9cba09bde439"
+	ee5966eac7aa4d9f9abd5ec2457c52da [label="VariableDeclarator,
+left -> s,
+right -> e.currentTarget.dataset.parent_name" color=blue]
+	"5bddf98e63a64974a718cdf59249cf17" -> ee5966eac7aa4d9f9abd5ec2457c52da
+	b783283d0e2c4d0b88a420ef7cb453f7 -> "5bddf98e63a64974a718cdf59249cf17"
+	"70561c374fbe40c5bbbcb765a7eec583" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"780b4182b2464b32ae26742056244647" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"481f2721428d42dca1a7fbeaf091e637" [label="Object Properties
+{
+delCommentId -> o
+delCirclIndex -> a
+dexCommentIndex -> i
+}" color=blue]
+	"780b4182b2464b32ae26742056244647" -> "481f2721428d42dca1a7fbeaf091e637"
+	"70561c374fbe40c5bbbcb765a7eec583" -> "780b4182b2464b32ae26742056244647"
+	"541882d0ad41415e8f247071311e2c01" [label=SequenceExpression color=blue]
+	"9ce3c937fdd647f3a1804f5ad90f2580" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"6fda0753a9f24e1caea8c27d890e91b8" [label="ConditionalExpression,
+ conditional list -> '回复 ' + s" color=blue]
+	"9ce3c937fdd647f3a1804f5ad90f2580" -> "6fda0753a9f24e1caea8c27d890e91b8"
+	"541882d0ad41415e8f247071311e2c01" -> "9ce3c937fdd647f3a1804f5ad90f2580"
+	"7e23d79dc64b4802862a455afbb8d50a" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	ff54e3c263e24256bc7bb00a669371f3 [label="Object Properties
+{
+releaseIndex -> a
+releaseCircle_id -> c
+releaseParent_id -> n
+releaseText -> s
+}" color=blue]
+	"7e23d79dc64b4802862a455afbb8d50a" -> ff54e3c263e24256bc7bb00a669371f3
+	"541882d0ad41415e8f247071311e2c01" -> "7e23d79dc64b4802862a455afbb8d50a"
+	"70561c374fbe40c5bbbcb765a7eec583" -> "541882d0ad41415e8f247071311e2c01"
+	b783283d0e2c4d0b88a420ef7cb453f7 -> "70561c374fbe40c5bbbcb765a7eec583"
+}

@@ -1,0 +1,18 @@
+// \pages/comment/comment AddComments Data Flow
+digraph {
+	"78ac0ff0524148b9bdb68771dafd5cc4" [label="FunctionCall,
+function name -> AddComments,
+param -> " color=blue]
+	"76d6a1aedd234ae6a0d73c2fd93cf62d" [label=VariableDeclarations color=blue]
+	"171e7b49fa544fcaa5b389dc4a0bd9fe" [label="VariableDeclarator,
+left -> tempconmment,
+right -> that.data.ScoreGrade" color=blue]
+	"76d6a1aedd234ae6a0d73c2fd93cf62d" -> "171e7b49fa544fcaa5b389dc4a0bd9fe"
+	"78ac0ff0524148b9bdb68771dafd5cc4" -> "76d6a1aedd234ae6a0d73c2fd93cf62d"
+	"6d3e7634b34342459f848461e5c1c8e6" [label=VariableDeclarations color=blue]
+	"26cf24d1c1144dcf8b6ef02bddd387ff" [label="VariableDeclarator,
+left -> uploadimg,
+right -> that.data.uploadImg" color=blue]
+	"6d3e7634b34342459f848461e5c1c8e6" -> "26cf24d1c1144dcf8b6ef02bddd387ff"
+	"78ac0ff0524148b9bdb68771dafd5cc4" -> "6d3e7634b34342459f848461e5c1c8e6"
+}

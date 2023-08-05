@@ -1,0 +1,40 @@
+<view class="max1">
+    <view class="search">
+        <button class="cjjz">
+            <image src="../../images/seac1.png"></image>
+        </button>
+        <input bindinput="searchInp" placeholder="请输入关键词" type="text" value=""></input>
+    </view>
+</view>
+<view class="lists">
+    <view class="lists_1">
+        <navigator class="navig" hoverClass="none" openType="switchTab" url="../prod/prod">
+            <view class="font1">尿裤湿巾</view>
+        </navigator>
+    </view>
+    <view class="lists_1">
+        <navigator class="navig" hoverClass="none" openType="switchTab" url="../prod/prod">
+            <view class="font1">奶粉</view>
+        </navigator>
+    </view>
+    <view class="lists_1">
+        <navigator class="navig" hoverClass="none" openType="switchTab" url="../prod/prod">
+            <view class="font1">营养辅食</view>
+        </navigator>
+    </view>
+    <view class="lists_1">
+        <navigator class="navig" hoverClass="none" openType="switchTab" url="../prod/prod">
+            <view class="font1">口水巾</view>
+        </navigator>
+    </view>
+    <view class="lists_1">
+        <navigator class="navig" hoverClass="none" openType="switchTab" url="../prod/prod">
+            <view class="font1">防溢乳垫</view>
+        </navigator>
+    </view>
+    <view class="lists_1">
+        <navigator class="navig" hoverClass="none" openType="switchTab" url="../prod/prod">
+            <view class="font1">贝亲奶瓶</view>
+        </navigator>
+    </view>
+</view>

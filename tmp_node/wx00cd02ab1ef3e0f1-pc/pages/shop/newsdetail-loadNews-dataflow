@@ -1,0 +1,27 @@
+// \pages/shop/newsdetail loadNews Data Flow
+digraph {
+	"7cd41fc9d8a54f6484c677280ce4d727" [label="FunctionCall,
+function name -> loadNews,
+param -> " color=blue]
+	"148af1bd39a04e85a194690b4ffcbb43" [label="If Alternate" color=blue]
+	"4fddf8182143424bacc045d511457ba0" [label=SequenceExpression color=blue]
+	"102148ec2d464dfd9ca04c8885f1bd35" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"55d54389737f4789846c8eac4184d4da" [label="Assignment,
+left -> t,
+right -> a.data.queryparams.id" color=blue]
+	"102148ec2d464dfd9ca04c8885f1bd35" -> "55d54389737f4789846c8eac4184d4da"
+	"4fddf8182143424bacc045d511457ba0" -> "102148ec2d464dfd9ca04c8885f1bd35"
+	d9723ef64e0c448d8c4d130605f53c12 [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	ee30e7acce0f42f59e930ff51150cf0d [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/JsonApi&a=getNewsInfo&id=' + t + '&prevnext=1&updateHits=1'
+}" color=blue]
+	d9723ef64e0c448d8c4d130605f53c12 -> ee30e7acce0f42f59e930ff51150cf0d
+	"4fddf8182143424bacc045d511457ba0" -> d9723ef64e0c448d8c4d130605f53c12
+	"148af1bd39a04e85a194690b4ffcbb43" -> "4fddf8182143424bacc045d511457ba0"
+	"7cd41fc9d8a54f6484c677280ce4d727" -> "148af1bd39a04e85a194690b4ffcbb43"
+}

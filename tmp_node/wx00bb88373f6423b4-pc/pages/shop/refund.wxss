@@ -1,0 +1,113 @@
+page {
+    background-color: #fff;
+}
+
+.container {
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+.shekuai {
+    height: 20rpx;
+    background: #f2f2f2;
+}
+
+.statustxt {
+    padding: 40rpx 26rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.statustxt .statustxt-orderid {
+    padding-top: 20rpx;
+}
+
+.tit,.orderid {
+    padding-left: 20rpx;
+}
+
+.tit {
+    color: #ff7200;
+}
+
+.tits {
+    padding-left: 10rpx;
+    color: #ff7200;
+}
+
+.balance {
+    width: 138rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    text-align: center;
+    font-size: 18rpx;
+    color: #333;
+    border: 1px solid #666;
+    margin-left: 8rpx;
+    display: inline-block;
+    margin-top: -5rpx;
+}
+
+.refund {
+    padding: 40rpx 26rpx 0;
+}
+
+.refund .refund-title {
+    font-size: 28rpx;
+    color: #333;
+}
+
+.refund .refund-item {
+    height: 88rpx;
+    background: #f9f9f9;
+    border-radius: 5rpx;
+    font-size: 26rpx;
+    color: #999;
+    line-height: 88rpx;
+    padding: 0 20rpx;
+    margin-top: 20rpx;
+}
+
+.orderids {
+    color: #ff7200;
+    font-size: 24rpx;
+    padding-right: 5rpx;
+    display: inline-block;
+}
+
+.torderid {
+    color: #999;
+}
+
+.refunds-buttom {
+    height: 96rpx;
+    line-height: 96rpx;
+    background: #ff7200;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 36rpx;
+}
+
+.coupon-item {
+    width: 200rpx;
+    display: inline-block;
+    margin-bottom: 26rpx;
+    height: 200rpx;
+    overflow: hidden;
+    margin-right: 26rpx;
+    border-radius: 8rpx;
+    background: #f5f5f5;
+    float: left;
+}
+
+.img-img {
+    display: inline-block;
+    margin: 26rpx;
+}
+
+.coupon-item image {
+    width: 100%;
+}

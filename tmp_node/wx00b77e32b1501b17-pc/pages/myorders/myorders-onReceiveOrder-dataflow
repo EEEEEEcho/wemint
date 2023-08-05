@@ -1,0 +1,23 @@
+// \pages/myorders/myorders onReceiveOrder Data Flow
+digraph {
+	ef52214087ab4483a888ea46be70b157 [label="FunctionCall,
+function name -> onReceiveOrder,
+param -> e,
+e.,
+" color=blue]
+	c3ceddede32644dbbc35ad82318a7be8 [label=VariableDeclarations color=blue]
+	"2362b55163d745468879602eff1f5a7f" [label="VariableDeclarator,
+left -> i,
+right -> e.target.id" color=blue]
+	c3ceddede32644dbbc35ad82318a7be8 -> "2362b55163d745468879602eff1f5a7f"
+	ef52214087ab4483a888ea46be70b157 -> c3ceddede32644dbbc35ad82318a7be8
+	"2bf5b20735704ace8c6bd3bf2564a23d" [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	"4b847fb3f878409ebac4d5e691e90727" [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	"2bf5b20735704ace8c6bd3bf2564a23d" -> "4b847fb3f878409ebac4d5e691e90727"
+	ef52214087ab4483a888ea46be70b157 -> "2bf5b20735704ace8c6bd3bf2564a23d"
+}

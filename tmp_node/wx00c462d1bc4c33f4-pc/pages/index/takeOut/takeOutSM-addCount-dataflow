@@ -1,0 +1,13 @@
+// \pages/index/takeOut/takeOutSM addCount Data Flow
+digraph {
+	"0b0e118a7c424f00b8baeb32ce34c3b3" [label="FunctionCall,
+function name -> addCount,
+param -> e.,
+e,
+" color=blue]
+	"5f36a5a71da1487a868405117dc88b21" [label="CallExpression,
+callee name -> t.setFoodInfo,
+param -> e,
+" color=blue]
+	"0b0e118a7c424f00b8baeb32ce34c3b3" -> "5f36a5a71da1487a868405117dc88b21"
+}

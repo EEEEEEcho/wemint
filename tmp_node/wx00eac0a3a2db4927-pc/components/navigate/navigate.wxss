@@ -1,0 +1,118 @@
+.nav {
+    position: relative;
+    z-index: 100;
+}
+
+.status {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pos-icon {
+    margin-left: 34rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+.pos-icon-img {
+    width: 28rpx;
+    height: 36rpx;
+    margin-right: 10rpx;
+    margin-top: 6rpx;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    width: 114rpx;
+    height: 90%;
+}
+
+.back-arrow {
+    width: 36rpx;
+    height: 36rpx;
+    margin-left: 34rpx;
+}
+
+.homeStyle {
+    font-size: 26rpx;
+    color: #51515c;
+    font-weight: bold;
+}
+
+.textStyle {
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 30%;
+    margin-left: auto;
+    font-size: 36rpx;
+    color: #51515c;
+    letter-spacing: 2rpx;
+    width: 300rpx;
+}
+
+.manage_txt {
+    display: flex;
+    align-items: center;
+    padding: 0rpx 34rpx;
+    height: 100%;
+}
+
+.manage {
+    font-size: 26rpx;
+    color: #51515c;
+}
+
+.searchbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 70rpx;
+    border-radius: 35rpx;
+    background: #f4f4f4;
+}
+
+.loupe {
+    width: 36rpx;
+    height: 36rpx;
+    margin-left: 24rpx;
+    margin-right: 16rpx;
+}
+
+.camera {
+    width: 46rpx;
+    height: 34rpx;
+    margin-right: 24rpx;
+}
+
+.placeholder {
+    font-size: 26rpx;
+    color: #cccccc;
+    width: 270rpx;
+}
+
+.loupe_txt {
+    font-size: 26rpx;
+    color: #51515c;
+    width: 250rpx;
+    height: 40rpx;
+    margin-right: 14rpx;
+}
+
+.header-img1 {
+    width: 40rpx;
+    height: 40rpx;
+}

@@ -1,0 +1,37 @@
+<view class="margintop5"></view>
+<view class="section">
+    <view class="cart_container">
+        <image class="item-image" src="{{cpc.icon}}"></image>
+        <view class="column">
+            <text class="column_title">{{cpc.cpc_name}}</text>
+        </view>
+        <view class="column_bir">{{cpc.birthday}}</view>
+        <view class="column_ccm">{{ccm_name}}</view>
+    </view>
+    <view class="cart_container">
+        <text class="column_ccm">入学日期：{{cpc.signup_time}}</text>
+    </view>
+    <view class="clear"></view>
+    <view class="section_title">课程包 </view>
+    <view class="classBag">
+        <view class="htl">购买日期</view>
+        <view class="htl">购买总课时</view>
+        <view class="htl">剩余总课时</view>
+    </view>
+    <view class="classBag" wx:for="{{csccbList}}" wx:for-index="idx" wx:key="csccb">
+        <view class="text">{{item.createtime}}</view>
+        <view class="text">{{item.signing_classhour+item.complimentary_classhour}}</view>
+        <view class="text">{{item.remaining_classhour+item.remaining_complimentary_classhour}}</view>
+    </view>
+    <view class="section_title">上课主题记录 </view>
+    <view class="classBag">
+        <view class="htl">上课日期</view>
+        <view class="htl">课程主题</view>
+        <view class="htl">上课老师</view>
+    </view>
+    <view class="classBag" wx:for="{{cpctrList}}" wx:for-index="idx" wx:key="cpctr">
+        <view class="text">{{item.class_time}}</view>
+        <view class="text">{{item.theme_name}}</view>
+        <view class="text">{{item.teacher_name}}</view>
+    </view>
+</view>

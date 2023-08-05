@@ -1,0 +1,82 @@
+// \pages/shop/collection onSortChange Data Flow
+digraph {
+	"5d985af7147d4aefafd4729a5d651960" [label="FunctionCall,
+function name -> onSortChange,
+param -> " color=blue]
+	"78377b869b32447a9acf4a87a971bf43" [label="CallExpression,
+callee name -> this.loadProduct,
+param -> " color=blue]
+	"69915f93114f4ff3a29dae68ea1c6572" [label="FunctionCall,
+function name -> loadProduct,
+param -> " color=blue]
+	"9df4dccdb10043e88a7f0cde70c03029" [label="If Alternate" color=blue]
+	"9e957eea117e40fa9de3f490ad45ce8d" [label=VariableDeclarations color=blue]
+	e64f6bf68d2647d5be8d96e7b1b9649e [label="VariableDeclarator,
+left -> o,
+right -> a.data.total" color=blue]
+	"9e957eea117e40fa9de3f490ad45ce8d" -> e64f6bf68d2647d5be8d96e7b1b9649e
+	"9df4dccdb10043e88a7f0cde70c03029" -> "9e957eea117e40fa9de3f490ad45ce8d"
+	"794634c0fe0d48e086fcdd6ed8855a9d" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"01f9087b491f46cfb6c53270a4a565ea" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"83ff74a86d7b42d1a7942af3bef37aef" [label="Assignment,
+left -> a.data.recordcount,
+right -> o" color=blue]
+	"01f9087b491f46cfb6c53270a4a565ea" -> "83ff74a86d7b42d1a7942af3bef37aef"
+	"794634c0fe0d48e086fcdd6ed8855a9d" -> "01f9087b491f46cfb6c53270a4a565ea"
+	"9df4dccdb10043e88a7f0cde70c03029" -> "794634c0fe0d48e086fcdd6ed8855a9d"
+	d796d14ce60e444cb50a8a277a1b1506 [label=VariableDeclarations color=blue]
+	"15d02ba6b3854949a8a39d1f417fdf9b" [label="VariableDeclarator,
+left -> s,
+right -> a.data.recordcount" color=blue]
+	d796d14ce60e444cb50a8a277a1b1506 -> "15d02ba6b3854949a8a39d1f417fdf9b"
+	"9a3d4ac48511413387f0d8b6dd19085b" [label="VariableDeclarator,
+left -> l,
+right -> a.data.productlist.length" color=blue]
+	d796d14ce60e444cb50a8a277a1b1506 -> "9a3d4ac48511413387f0d8b6dd19085b"
+	"9df4dccdb10043e88a7f0cde70c03029" -> d796d14ce60e444cb50a8a277a1b1506
+	a2fd179394bc404090d5fc8dccfa0fae [label="If Alternate" color=blue]
+	fbb15cf5cc804d8ca00d97961dedb68a [label=VariableDeclarations color=blue]
+	"0543eafba875445e97cb16a8a02965ed" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	d807dfc384aa4a7f9ad383eac7d248b3 [label="CallExpression,
+callee name -> Math.ceil,
+param -> l / a.data.pagesize,
+" color=blue]
+	"0543eafba875445e97cb16a8a02965ed" -> d807dfc384aa4a7f9ad383eac7d248b3
+	fbb15cf5cc804d8ca00d97961dedb68a -> "0543eafba875445e97cb16a8a02965ed"
+	"64f85c17b9284f4f8f450adc15f764c7" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	e4cb294ad1104925a84422ff5f94a1de [label="ConditionalExpression,
+ conditional list -> a.data.queryparams.keyword" color=blue]
+	"64f85c17b9284f4f8f450adc15f764c7" -> e4cb294ad1104925a84422ff5f94a1de
+	fbb15cf5cc804d8ca00d97961dedb68a -> "64f85c17b9284f4f8f450adc15f764c7"
+	a2fd179394bc404090d5fc8dccfa0fae -> fbb15cf5cc804d8ca00d97961dedb68a
+	"87c07111293d4235b02938e08ad6b129" [label=SequenceExpression color=blue]
+	d9995d1172d54037af55fe360f6f00c2 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"902efe64a9b847978be84a45b02ac2ed" [label="Assignment,
+left -> n,
+right -> '&sortcol=' + a.data.sortcol + '&sort=' + a.data.sort" color=blue]
+	d9995d1172d54037af55fe360f6f00c2 -> "902efe64a9b847978be84a45b02ac2ed"
+	"87c07111293d4235b02938e08ad6b129" -> d9995d1172d54037af55fe360f6f00c2
+	"595dfece93d54caaa69e23ed0585907a" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	ad617b6b9f5443b095c79206325992ba [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=getProductCollList&key=' + c + '&page=' + i + '&pagesize=' + a.data.pagesize + n
+}" color=blue]
+	"595dfece93d54caaa69e23ed0585907a" -> ad617b6b9f5443b095c79206325992ba
+	"87c07111293d4235b02938e08ad6b129" -> "595dfece93d54caaa69e23ed0585907a"
+	a2fd179394bc404090d5fc8dccfa0fae -> "87c07111293d4235b02938e08ad6b129"
+	"9df4dccdb10043e88a7f0cde70c03029" -> a2fd179394bc404090d5fc8dccfa0fae
+	"69915f93114f4ff3a29dae68ea1c6572" -> "9df4dccdb10043e88a7f0cde70c03029"
+	"78377b869b32447a9acf4a87a971bf43" -> "69915f93114f4ff3a29dae68ea1c6572"
+	"5d985af7147d4aefafd4729a5d651960" -> "78377b869b32447a9acf4a87a971bf43"
+}

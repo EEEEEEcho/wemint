@@ -1,0 +1,283 @@
+view {
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    box-sizing: border-box;
+    display: block;
+}
+
+.row {
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 20px;
+}
+
+.col {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    box-sizing: border-box;
+}
+
+.flex20 {
+    width: 20%;
+    flex: 0 0 20%;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    box-sizing: border-box;
+}
+
+.col-3 {
+    padding-left: 5px;
+    padding-right: 5px;
+    box-sizing: border-box;
+}
+
+.col-4 {
+    width: 33.3%;
+    flex: 0 0 33.3%;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    box-sizing: border-box;
+}
+
+.col-6 {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    box-sizing: border-box;
+}
+
+.col-8 {
+    width: 66.6%;
+    flex: 0 0 66.6%;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    box-sizing: border-box;
+}
+
+.flex40 {
+    width: 30%;
+    flex: 0 0 30%;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    box-sizing: border-box;
+}
+
+.flex60 {
+    width: 70%;
+    flex: 0 0 70%;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    box-sizing: border-box;
+}
+
+.flex80 {
+    width: 80%;
+    flex: 0 0 80%;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    box-sizing: border-box;
+}
+
+.col-12 {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    box-sizing: border-box;
+}
+
+.xing {
+    width: 16px;
+    height: 15px;
+    float: left;
+    margin-top: 2px;
+}
+
+.citys {
+    text-align: center;
+    color: #ddd;
+    line-height: 50px;
+}
+
+.city-tab {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.city,.city1,.city-ot,.city-ot1,.city-ot2 {
+    border-radius: 15px;
+    background-color: #555;
+    width: 70px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    line-height: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.city-ot {
+    float: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.city1 {
+    margin-top: 10px;
+    background-color: #444;
+}
+
+.city1:hover {
+    color: gold;
+}
+
+.city-ot1 {
+    border-radius: 15px 15px 0 0;
+    float: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.city-ot2 {
+    border-radius: 0;
+    height: 10px;
+    margin-top: 0;
+    float: right;
+}
+
+text {
+    font-size: 16px;
+}
+
+.leftbar {
+    width: 100%;
+    border-right: 1px solid #efefef;
+    text-align: center;
+}
+
+.rightbar {
+    width: 100%;
+    text-align: center;
+}
+
+.store-img {
+    width: 80px;
+    height: 80px;
+}
+
+.tab-stores {
+    margin-top: 20px;
+    display: block;
+}
+
+.li {
+    padding: 15px 0;
+    border-bottom: 1px solid #666;
+    color: #777;
+    box-sizing: border-box;
+    height: 110px;
+}
+
+.store-name {
+    color: #cbcbcb;
+    font-size: 16px;
+    line-height: 20px;
+    width: 300rpx;
+    float: left;
+}
+
+.size15 {
+    font-size: 15px;
+}
+
+.store-dis {
+    color: #cbcbcb;
+    float: right;
+    font-size: 15px;
+    line-height: 20px;
+    height: 20px;
+}
+
+.store-point {
+    float: left;
+    margin-right: 10px;
+    line-height: 20px;
+    font-size: 15px;
+}
+
+.store-shoptime {
+    display: block;
+    line-height: 20px;
+    font-size: 15px;
+}
+
+.store-position {
+    display: block;
+    font-size: 15px;
+    line-height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.guding {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.guding1 {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 10;
+}
+
+.cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.4);
+    width: 100vw;
+    height: 100vh;
+}
+
+.citys1 {
+    background-color: #555;
+    padding-bottom: 15px;
+    border-radius: 10px 0 10px 10px;
+}
+
+.otColor {
+    color: gold;
+    max-width: 25%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.control-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.contr-height {
+    line-height: 20px;
+    box-sizing: border-box;
+}
+
+.height80 {
+    height: 80px;
+}

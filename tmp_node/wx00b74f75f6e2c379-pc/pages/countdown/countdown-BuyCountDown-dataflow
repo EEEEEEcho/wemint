@@ -1,0 +1,23 @@
+// \pages/countdown/countdown BuyCountDown Data Flow
+digraph {
+	"425639cc7c7246a08d50c77c4123895f" [label="FunctionCall,
+function name -> BuyCountDown,
+param -> e,
+e.,
+" color=blue]
+	d662405d603c47f986eca6514454560e [label=VariableDeclarations color=blue]
+	d4c3bc83606e499f9945b1c977de06d3 [label="VariableDeclarator,
+left -> countdownId,
+right -> e.currentTarget.dataset.id" color=blue]
+	d662405d603c47f986eca6514454560e -> d4c3bc83606e499f9945b1c977de06d3
+	"425639cc7c7246a08d50c77c4123895f" -> d662405d603c47f986eca6514454560e
+	"1a822bb903974bff8da5032e4202809c" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	e2be9c200e734d32b18191aa40ed4ceb [label="Object Properties
+{
+url -> '../countdowndetail/countdowndetail?id=' + countdownId
+}" color=blue]
+	"1a822bb903974bff8da5032e4202809c" -> e2be9c200e734d32b18191aa40ed4ceb
+	"425639cc7c7246a08d50c77c4123895f" -> "1a822bb903974bff8da5032e4202809c"
+}

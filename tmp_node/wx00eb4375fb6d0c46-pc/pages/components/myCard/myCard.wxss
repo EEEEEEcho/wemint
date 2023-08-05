@@ -1,0 +1,69 @@
+.card-box {
+    padding-right: 30rpx;
+    padding-left: 30rpx;
+    margin-bottom: 10rpx;
+}
+
+.card-detail {
+    position: relative;
+    text-align: center;
+    margin-bottom: 15rpx;
+}
+
+.card-box image {
+    width: 95%;
+    height: 270rpx;
+}
+
+.banlance-text {
+    font-size: 35rpx;
+    letter-spacing: 5rpx;
+}
+
+.card-text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    color: #fff;
+    width: 100%;
+}
+
+.shop-type {
+    font-size: 20rpx;
+    letter-spacing: 3rpx;
+    text-align: left;
+}
+
+.recharge {
+    background-color: #fff;
+    color: #fbaf00;
+    border-radius: 20px;
+    padding: 0 20rpx;
+    font-size: 35rpx;
+    letter-spacing: 5rpx;
+}
+
+.banlance {
+    letter-spacing: 7rpx;
+    font-size: 45rpx;
+}
+
+.shop-name {
+    letter-spacing: 5rpx;
+    font-size: 40rpx;
+    font-weight: 600;
+    text-align: left;
+}
+
+.card-shop {
+    padding: 20rpx 50rpx 0;
+}
+
+.card-tip {
+    text-align: right;
+    font-size: 25rpx;
+    padding: 0 30rpx 20rpx;
+}

@@ -1,0 +1,23 @@
+// \pages/stu/activity/activity view Data Flow
+digraph {
+	d61fcbdb402942eabde177ffb6e6e13a [label="FunctionCall,
+function name -> view,
+param -> a.,
+a,
+" color=blue]
+	"6b96c662022d40bcbba506d692e53ffd" [label=VariableDeclarations color=blue]
+	"6a467a1df04249a18eb8770f2e4be0fd" [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.id" color=blue]
+	"6b96c662022d40bcbba506d692e53ffd" -> "6a467a1df04249a18eb8770f2e4be0fd"
+	d61fcbdb402942eabde177ffb6e6e13a -> "6b96c662022d40bcbba506d692e53ffd"
+	e3be88680a9349ac83c6d4f9897c7ca9 [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	df87b7bfe5664c839b45bd81cc081078 [label="Object Properties
+{
+url -> '../activityView/activityView?id=' + t + '&isPay=0'
+}" color=blue]
+	e3be88680a9349ac83c6d4f9897c7ca9 -> df87b7bfe5664c839b45bd81cc081078
+	d61fcbdb402942eabde177ffb6e6e13a -> e3be88680a9349ac83c6d4f9897c7ca9
+}

@@ -1,0 +1,16 @@
+<view class="container">
+    <view class="portrait border1px">
+        <view class="portrait-tit">头像</view>
+        <view class="portrait-img">
+            <image mode="widthFix" src="{{info.HeadImgUrl}}"></image>
+        </view>
+    </view>
+    <view class="member-name border1px">
+        <view class="memberName">会员名称</view>
+        <view class="member-name-color">{{info.NickName}}</view>
+    </view>
+    <view class="member-name">
+        <view>手机号码</view>
+        <view class="member-name-color">{{info.Mobile}}</view>
+    </view>
+</view>

@@ -1,0 +1,186 @@
+.customform {
+    background: white;
+    padding: 6px 0;
+}
+
+.form-submitbtn {
+    text-align: center;
+}
+
+.form-submitbtn button {
+    width: 100px;
+}
+
+.form-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.field-require {
+    color: red;
+    margin-left: 5px;
+}
+
+.field-data picker {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.field-item {
+    position: relative;
+    display: flex;
+    height: 96rpx;
+    margin-bottom: 20rpx;
+    border: 1rpx solid #ddd;
+    border-radius: 6rpx;
+    z-index: 1;
+}
+
+.field-name {
+    padding-left: 30rpx;
+    font-size: 28rpx;
+    line-height: 96rpx;
+    color: #333;
+    flex: 0 0 20%;
+}
+
+.field-data {
+    font-size: 28rpx;
+    color: #666;
+    flex: 1;
+    position: relative;
+}
+
+.field-data .field-selector {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0 20rpx;
+    height: 96rpx;
+    line-height: 96rpx;
+}
+
+.field-type-1 input {
+    line-height: 96rpx;
+    height: 96rpx;
+    font-size: 28rpx;
+    color: #666;
+}
+
+.field-item.field-type-2 {
+    height: 225rpx;
+}
+
+.field-type-2 textarea {
+    width: 100%;
+    height: 225rpx;
+    padding: 32rpx 10rpx 10rpx 0rpx;
+    font-size: 28rpx;
+    color: #666;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+.field-item.field-type-5 {
+    display: block;
+    height: auto;
+}
+
+.field-type-5 .field-name {
+    height: 96rpx;
+    padding-left: 30rpx;
+    line-height: 96rpx;
+    font-size: 28rpx;
+    color: #333;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.field-type-5 .field-data {
+    font-size: 28rpx;
+    color: #333;
+    display: block;
+    box-sizing: border-box;
+    flex: none;
+}
+
+.field-type-5 checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.field-type-5 checkbox-group label {
+    flex: 0 0 30%;
+    padding-left: 20rpx;
+    padding-bottom: 30rpx;
+}
+
+.field-item.field-type-3 {
+    display: block;
+    height: auto;
+}
+
+.field-type-3 .field-name {
+    height: 96rpx;
+    padding-left: 30rpx;
+    line-height: 96rpx;
+    font-size: 28rpx;
+    color: #333;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.field-type-3 .field-data {
+    font-size: 28rpx;
+    color: #333;
+    display: block;
+    box-sizing: border-box;
+    flex: none;
+}
+
+.field-type-3 radio-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.field-type-3 radio-group label {
+    flex: 0 0 30%;
+    padding-left: 20rpx;
+    padding-bottom: 30rpx;
+}
+
+.field-type-4 .field-data .field-selected-item {
+    height: 96rpx;
+    line-height: 96rpx;
+    color: #666;
+    padding-left: 10rpx;
+}
+
+.field-type-7 .field-data .field-selected-area {
+    height: 96rpx;
+    line-height: 96rpx;
+    color: #666;
+}
+
+.field-type-8 .field-data .field-selected-date,.field-type-8 .field-data .field-selected-time {
+    height: 96rpx;
+    line-height: 96rpx;
+    color: #666;
+}
+
+.form-submitbtn button {
+    display: block;
+    margin-top: 50rpx;
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: white;
+    background-color: #4ec0e6;
+    border: none;
+    font-size: 28rpx;
+    border-radius: 10rpx;
+}

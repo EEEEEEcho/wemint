@@ -1,0 +1,17 @@
+// \pages/productlist/productlist bindKeyWordInput Data Flow
+digraph {
+	"1da020b0929e41419af3b7b92d4a1c5c" [label="FunctionCall,
+function name -> bindKeyWordInput,
+param -> a,
+a.,
+" color=blue]
+	e16c2071305e41b287afd5ad9f2b5bb3 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	ec1736025d3848c39e56b3350247625f [label="Object Properties
+{
+KeyWord -> a.detail.value
+}" color=blue]
+	e16c2071305e41b287afd5ad9f2b5bb3 -> ec1736025d3848c39e56b3350247625f
+	"1da020b0929e41419af3b7b92d4a1c5c" -> e16c2071305e41b287afd5ad9f2b5bb3
+}

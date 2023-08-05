@@ -1,0 +1,20 @@
+// \pages/login/login loginbyUser Data Flow
+digraph {
+	ec6abd331d694c4ca838ef94e18bdb03 [label="FunctionCall,
+function name -> loginbyUser,
+param -> e,
+e.,
+" color=blue]
+	c1f50df3e5f345f98d9719cb81cdaa6c [label=VariableDeclarations color=blue]
+	"72a3a88faad04ee6a28f59aafb0e6a21" [label="VariableDeclarator,
+left -> uname,
+right -> this.data.userName" color=blue]
+	c1f50df3e5f345f98d9719cb81cdaa6c -> "72a3a88faad04ee6a28f59aafb0e6a21"
+	ec6abd331d694c4ca838ef94e18bdb03 -> c1f50df3e5f345f98d9719cb81cdaa6c
+	"1047f779a6a14fd68cfe3c815e33a38c" [label=VariableDeclarations color=blue]
+	"3944e84b91854e8fa9bfcf9d0c46cb56" [label="VariableDeclarator,
+left -> pwd,
+right -> this.data.password" color=blue]
+	"1047f779a6a14fd68cfe3c815e33a38c" -> "3944e84b91854e8fa9bfcf9d0c46cb56"
+	ec6abd331d694c4ca838ef94e18bdb03 -> "1047f779a6a14fd68cfe3c815e33a38c"
+}

@@ -1,0 +1,27 @@
+// \pages/buy/buy onShow Data Flow
+digraph {
+	"516b134369b9438cab93a9099e591ed5" [label="FunctionCall,
+function name -> onShow,
+param -> " color=blue]
+	"60fb39d6939f47fa9147c7a35e50f977" [label=SequenceExpression color=blue]
+	"50f8e15eb51f4fa5a6ebd27a053c25ad" [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> " color=blue]
+	"8c8f6f12fdd14c78bef175890f0d4454" [label="FunctionCall,
+function name -> success,
+param -> t,
+t.,
+" color=blue]
+	"2750c3cc44a441df8eda9fcef2d050e5" [label="CallExpression,
+callee name -> a.setData,
+param -> " color=blue]
+	"752afc291da94c4c943f585325514073" [label="Object Properties
+{
+windowHeight -> t.windowHeight
+}" color=blue]
+	"2750c3cc44a441df8eda9fcef2d050e5" -> "752afc291da94c4c943f585325514073"
+	"8c8f6f12fdd14c78bef175890f0d4454" -> "2750c3cc44a441df8eda9fcef2d050e5"
+	"50f8e15eb51f4fa5a6ebd27a053c25ad" -> "8c8f6f12fdd14c78bef175890f0d4454"
+	"60fb39d6939f47fa9147c7a35e50f977" -> "50f8e15eb51f4fa5a6ebd27a053c25ad"
+	"516b134369b9438cab93a9099e591ed5" -> "60fb39d6939f47fa9147c7a35e50f977"
+}

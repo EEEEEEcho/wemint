@@ -1,0 +1,42 @@
+<view class="page">
+    <checkbox-group bindchange="changeDeductible" class="weui-cells checkbox_box {{beusedPay?'cardbox':''}}">
+        <view class="weui-cell" style="padding: 1.5rem 0; {{beusedPay?'border-bottom: 1px dashed #e0e0e0;':''}}">
+            <view class="weui-cell__bd tc {{beusedPay?'card-top':''}} ">
+                <view>实付金额</view>
+                <view class="text-red mt5">
+                    <span class="fs26">￥</span>
+                    <b class="fs40">{{orderMoney}}</b>
+                </view>
+            </view>
+        </view>
+    </checkbox-group>
+    <view class="btn-area">
+        <view bindtap="gopay" class="btn-primary">去付款</view>
+    </view>
+</view>
+<view class="popup" wx:if="{{popin}}">
+    <view bindtap="changePopin" class="weui-mask"></view>
+    <view class="popuo-conent">
+        <view class="weui-panel">
+            <span bindtap="changePopin" class="close_popup"></span>
+            <view class="weui-panel__hd after-left__0">
+                <view>支付方式</view>
+            </view>
+            <view class="weui-panel__bd">
+                <radio-group class="weui-cells mt0 weui-cells_radio">
+                    <label bindtap="changePaytype" class="weui-cell weui-check__label" data-paylog="{{item.PayLog}}" data-payname="{{item.PayName}}" for="x{{item.PayTypeID}}" id="{{item.PayTypeID}}" wx:for="{{paymentList}}">
+                        <view class="weui-cell__hd">
+                            <image class="hd_icon" src="{{item.PayLog}}"></image>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="fs11">{{item.PayName}}</view>
+                        </view>
+                        <view class="weui-cell__ft">
+                            <radio color="#f8584f" id="x{{item.PayTypeID}}"></radio>
+                        </view>
+                    </label>
+                </radio-group>
+            </view>
+        </view>
+    </view>
+</view>

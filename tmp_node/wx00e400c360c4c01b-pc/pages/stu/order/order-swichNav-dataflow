@@ -1,0 +1,17 @@
+// \pages/stu/order/order swichNav Data Flow
+digraph {
+	"728e62536f3542ddae202cf9bdbb87c6" [label="FunctionCall,
+function name -> swichNav,
+param -> a.,
+a,
+" color=blue]
+	ab52ec38e0e8455781d77c997eca9b4d [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	fb01f63a448048b69890bf2b4f41b3d2 [label="Object Properties
+{
+currentTab -> a.target.dataset.current
+}" color=blue]
+	ab52ec38e0e8455781d77c997eca9b4d -> fb01f63a448048b69890bf2b4f41b3d2
+	"728e62536f3542ddae202cf9bdbb87c6" -> ab52ec38e0e8455781d77c997eca9b4d
+}

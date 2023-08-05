@@ -1,0 +1,23 @@
+// \pages/shop/withdrawal inputPrice Data Flow
+digraph {
+	"33b9d6b06b1b4192af6371d81e29d867" [label="FunctionCall,
+function name -> inputPrice,
+param -> a.,
+a,
+" color=blue]
+	"0733aa359e1e47a2ab41dc376bf86cb8" [label=VariableDeclarations color=blue]
+	"51f9df2e27da4599a4497d3238e78786" [label="VariableDeclarator,
+left -> e,
+right -> a.detail.value" color=blue]
+	"0733aa359e1e47a2ab41dc376bf86cb8" -> "51f9df2e27da4599a4497d3238e78786"
+	"33b9d6b06b1b4192af6371d81e29d867" -> "0733aa359e1e47a2ab41dc376bf86cb8"
+	a75d4c2f58194e23bbe559a852a95772 [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	"6fc0eab5ae1140a5b697386ceabe4866" [label="Object Properties
+{
+moneyNum -> a.detail.value
+}" color=blue]
+	a75d4c2f58194e23bbe559a852a95772 -> "6fc0eab5ae1140a5b697386ceabe4866"
+	"33b9d6b06b1b4192af6371d81e29d867" -> a75d4c2f58194e23bbe559a852a95772
+}

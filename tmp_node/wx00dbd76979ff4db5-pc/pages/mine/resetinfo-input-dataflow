@@ -1,0 +1,17 @@
+// \pages/mine/resetinfo input Data Flow
+digraph {
+	"1a10a57c738d4af7a88dd16a68166343" [label="FunctionCall,
+function name -> input,
+param -> t.,
+t,
+" color=blue]
+	"4730b4f04a26466ea17e5dbbc22ba8e8" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"2ea3dd781e894f6abf0bef3ff8b31f0d" [label="Object Properties
+{
+phone -> t.detail.value
+}" color=blue]
+	"4730b4f04a26466ea17e5dbbc22ba8e8" -> "2ea3dd781e894f6abf0bef3ff8b31f0d"
+	"1a10a57c738d4af7a88dd16a68166343" -> "4730b4f04a26466ea17e5dbbc22ba8e8"
+}

@@ -1,0 +1,17 @@
+// \pages/login/login phoneInput Data Flow
+digraph {
+	"6a12f035ef04457f96c932401846531f" [label="FunctionCall,
+function name -> phoneInput,
+param -> a.,
+a,
+" color=blue]
+	adb01c0ffb844817a4d204a96a8a7c3e [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	a5a1fc158b5f40a88e554e2519e2b379 [label="Object Properties
+{
+phone -> a.detail.value
+}" color=blue]
+	adb01c0ffb844817a4d204a96a8a7c3e -> a5a1fc158b5f40a88e554e2519e2b379
+	"6a12f035ef04457f96c932401846531f" -> adb01c0ffb844817a4d204a96a8a7c3e
+}

@@ -1,0 +1,9 @@
+{
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "惠圈",
+    "navigationStyle": "default",
+    "backgroundColor": "#FFFFFF",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
+}

@@ -1,0 +1,17 @@
+// \pages/shop/productdetail onBannerImgLoad Data Flow
+digraph {
+	"1b16ad3688fe42a7810eff2d4534675c" [label="FunctionCall,
+function name -> onBannerImgLoad,
+param -> t,
+t.,
+" color=blue]
+	"3bd06c4302c64cbf857b85597ab51381" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	c7b1dc84476b4670a6bb5ccb06e4e685 [label="Object Properties
+{
+bannerHeight -> wx.getSystemInfoSync().windowWidth
+}" color=blue]
+	"3bd06c4302c64cbf857b85597ab51381" -> c7b1dc84476b4670a6bb5ccb06e4e685
+	"1b16ad3688fe42a7810eff2d4534675c" -> "3bd06c4302c64cbf857b85597ab51381"
+}

@@ -1,0 +1,22 @@
+// \pages/chat/chat sendAutoQuestion Data Flow
+digraph {
+	a3928bbd118a44809d6f92318fdd9a52 [label="FunctionCall,
+function name -> sendAutoQuestion,
+param -> e,
+e.,
+" color=blue]
+	ecc2c6cc41af426ab2165487832ef991 [label="CallExpression,
+callee name -> f.onSendMsg,
+param -> " color=blue]
+	b5ea7d13a4ff4f3ebf6064fa214b1788 [label="Object Properties
+{
+myselToID -> t.data.adviserId
+}" color=blue]
+	ecc2c6cc41af426ab2165487832ef991 -> b5ea7d13a4ff4f3ebf6064fa214b1788
+	"853752710b5a4d2788a74bf778d9c2ae" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> e,
+" color=blue]
+	ecc2c6cc41af426ab2165487832ef991 -> "853752710b5a4d2788a74bf778d9c2ae"
+	a3928bbd118a44809d6f92318fdd9a52 -> ecc2c6cc41af426ab2165487832ef991
+}

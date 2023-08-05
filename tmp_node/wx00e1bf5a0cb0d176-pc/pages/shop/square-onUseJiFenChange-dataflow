@@ -1,0 +1,37 @@
+// \pages/shop/square onUseJiFenChange Data Flow
+digraph {
+	add59158588d4bdb99759df1596d4b69 [label="FunctionCall,
+function name -> onUseJiFenChange,
+param -> t,
+t.,
+" color=blue]
+	c0944b46a19e4c3e85c3193c5161039b [label=SequenceExpression color=blue]
+	"2f9d47835a494b309f85c0c800aca7fa" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"5750c8f73b574ef3a291a38a12e29ad9" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"57c600d64011419b919b621581049aea" [label="ConditionalExpression,
+ conditional list -> (100 * e.data.getPriceInfo.orderMoney + 100 * e.data.packetMoney + 100 * e.data.feeNum - 100 * e.data.getPriceInfo.pointMoney) / 100,(100 * e.data.getPriceInfo.orderMoney + 100 * e.data.packetMoney + 100 * e.data.feeNum) / 100" color=blue]
+	"5750c8f73b574ef3a291a38a12e29ad9" -> "57c600d64011419b919b621581049aea"
+	"6b1160d023ba459bbc8848ad838fc8cc" [label="ConditionalExpression,
+ conditional list -> (100 * e.data.getPriceInfo.orderMoney + 100 * e.data.getPriceInfo.freight - 100 * e.data.getPriceInfo.pointMoney) / 100,(100 * e.data.getPriceInfo.orderMoney + 100 * e.data.getPriceInfo.freight) / 100" color=blue]
+	"5750c8f73b574ef3a291a38a12e29ad9" -> "6b1160d023ba459bbc8848ad838fc8cc"
+	"2f9d47835a494b309f85c0c800aca7fa" -> "5750c8f73b574ef3a291a38a12e29ad9"
+	c0944b46a19e4c3e85c3193c5161039b -> "2f9d47835a494b309f85c0c800aca7fa"
+	add59158588d4bdb99759df1596d4b69 -> c0944b46a19e4c3e85c3193c5161039b
+	"327f6a2fdb4f4d2097ccfd9a55b4da0e" [label=VariableDeclarations color=blue]
+	"798d3d09b89a43e39592857fcdff7e25" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"4680bb95d37a4f53b8497639850d53ce" [label="ConditionalExpression,
+ conditional list -> e.data.getPriceInfo.spareMoney" color=blue]
+	"941f142c878049e296c80d2516cef4be" [label="CallExpression,
+callee name -> parseFloat,
+param -> e.data.getPriceInfo.spareMoney + e.data.getPriceInfo.pointMoney,
+" color=blue]
+	"4680bb95d37a4f53b8497639850d53ce" -> "941f142c878049e296c80d2516cef4be"
+	"798d3d09b89a43e39592857fcdff7e25" -> "4680bb95d37a4f53b8497639850d53ce"
+	"327f6a2fdb4f4d2097ccfd9a55b4da0e" -> "798d3d09b89a43e39592857fcdff7e25"
+	add59158588d4bdb99759df1596d4b69 -> "327f6a2fdb4f4d2097ccfd9a55b4da0e"
+}

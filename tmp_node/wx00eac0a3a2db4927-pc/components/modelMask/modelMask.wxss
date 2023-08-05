@@ -1,0 +1,268 @@
+@-webkit-keyframes slideUp {
+    from {
+        transform: translateY(1000rpx);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(1000rpx);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes slideDown {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(1000rpx);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(1000rpx);
+    }
+}
+
+.slideUp {
+    animation: slideUp 0.4s ease-in both;
+}
+
+.slideDown {
+    animation: slideDown 0.4s ease-in both;
+}
+
+@-webkit-keyframes showMask {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes showMask {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes hideMask {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes hideMask {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.showMask {
+    animation: showMask 0.4s ease-in-out both;
+}
+
+.hideMask {
+    animation: hideMask 0.4s ease-in-out both;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.modelMask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+    background: rgba(0,0,0,0.5);
+}
+
+.modelContainer {
+    border-top-left-radius: 24rpx;
+    border-top-right-radius: 24rpx;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    background: #ffffff;
+    align-items: center;
+}
+
+.model_title {
+    width: 100%;
+    color: #51515c;
+    text-align: center;
+    font-size: 42rpx;
+    padding: 32rpx 0 16rpx 0;
+}
+
+.modelContent {
+    flex: 1;
+    width: 100%;
+}
+
+.model_panel {
+    width: 92%;
+    box-shadow: 2rpx 2rpx 10rpx 2rpx #efeeee;
+    border-radius: 20rpx;
+    padding-bottom: 27rpx;
+    margin-left: 4%;
+}
+
+.hr {
+    border-bottom: 1rpx solid #eee;
+    margin-top: 30rpx;
+    margin-bottom: 25rpx;
+}
+
+.shop_info,.shop_position,.shop_contact {
+    align-items: center;
+    margin-left: 30rpx;
+    margin-right: 23rpx;
+}
+
+.shop_info {
+    justify-content: space-between;
+    margin-top: 45rpx;
+}
+
+.shop {
+    align-items: center;
+}
+
+.shop_img {
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 16rpx;
+}
+
+.shop_name {
+    width: 450rpx;
+    font-size: 36rpx;
+    color: #51515c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.nav {
+    align-items: center;
+    width: 110rpx;
+    height: 44rpx;
+    border-radius: 24rpx;
+    background: #51515c;
+}
+
+.nav_img {
+    width: 22rpx;
+    height: 24rpx;
+    margin-left: 18rpx;
+    margin-right: 4rpx;
+}
+
+.nav_txt {
+    font-size: 24rpx;
+    color: #fff;
+}
+
+.pos_img {
+    width: 22rpx;
+    height: 28rpx;
+    margin-right: 13rpx;
+}
+
+.distance_txt {
+    font-size: 26rpx;
+    color: #51515c;
+    margin-left: auto;
+}
+
+.distance_img {
+    width: 26rpx;
+    height: 26rpx;
+    margin-left: 8rpx;
+}
+
+.pos_txt,.tel {
+    font-size: 26rpx;
+    color: #aeaeb4;
+}
+
+.pos_txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    width: 480rpx;
+}
+
+.shop_position {
+    margin-top: 17rpx;
+}
+
+.shop_contact {
+    justify-content: space-between;
+    margin-bottom: 33rpx;
+    margin-top: 24rpx;
+}
+
+.tel_img {
+    width: 24rpx;
+    height: 28rpx;
+    margin-right: 10rpx;
+}
+
+.tel_txt {
+    width: 125rpx;
+    height: 48rpx;
+    border-radius: 24rpx;
+    color: #ffffff;
+    font-size: 23rpx;
+    text-align: center;
+    line-height: 48rpx;
+    background: #aeaeb4;
+}

@@ -1,0 +1,58 @@
+// \pages/shop/record navbarTap Data Flow
+digraph {
+	"31aadfce614042238b8ea8859edc1d7a" [label="FunctionCall,
+function name -> navbarTap,
+param -> " color=blue]
+	"623a585eaa2a404f9a96099b6c2e1920" [label=SequenceExpression color=blue]
+	"57c95b60d7354f9d8a542c9b2e87b1c4" [label="CallExpression,
+callee name -> this.loadRecord,
+param -> " color=blue]
+	"1b6f4eb910cf4b2ebb61692ee8fd09be" [label="FunctionCall,
+function name -> loadRecord,
+param -> " color=blue]
+	"9ecacdd67e54423eb1212f4c5e1ee46a" [label="If Alternate" color=blue]
+	"491144b414424a3794efdb3aa04216c3" [label=VariableDeclarations color=blue]
+	a2e36b09b59e476b8c0c341d7a7eb7cb [label="VariableDeclarator,
+left -> i,
+right -> e.data.total" color=blue]
+	"491144b414424a3794efdb3aa04216c3" -> a2e36b09b59e476b8c0c341d7a7eb7cb
+	"9ecacdd67e54423eb1212f4c5e1ee46a" -> "491144b414424a3794efdb3aa04216c3"
+	b1f1fe641faa4df0a1412526f1d53373 [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"75cd8c00c222492baa112c5a4767b90f" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"9d54e70722514e95ad4637ee800c40be" [label="Assignment,
+left -> e.data.recordcount,
+right -> i" color=blue]
+	"75cd8c00c222492baa112c5a4767b90f" -> "9d54e70722514e95ad4637ee800c40be"
+	b1f1fe641faa4df0a1412526f1d53373 -> "75cd8c00c222492baa112c5a4767b90f"
+	"9ecacdd67e54423eb1212f4c5e1ee46a" -> b1f1fe641faa4df0a1412526f1d53373
+	f8d8559118794eb0ae836417d820352d [label=VariableDeclarations color=blue]
+	"6364ce57d88c42ff94331c118d88eeab" [label="VariableDeclarator,
+left -> o,
+right -> e.data.recordcount" color=blue]
+	f8d8559118794eb0ae836417d820352d -> "6364ce57d88c42ff94331c118d88eeab"
+	cbc624724b654f298b0812a375fc9d08 [label="VariableDeclarator,
+left -> n,
+right -> e.data.List.length" color=blue]
+	f8d8559118794eb0ae836417d820352d -> cbc624724b654f298b0812a375fc9d08
+	"9ecacdd67e54423eb1212f4c5e1ee46a" -> f8d8559118794eb0ae836417d820352d
+	"4f16f97c083549ae8a4aeb2c36badd56" [label="If Alternate" color=blue]
+	"4376d689f5f444abbcbac6eb55519024" [label=VariableDeclarations color=blue]
+	b935bf53f1384f9cb323bf787f1077c3 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	def89159f3374a56bfa779a90d2ed3a7 [label="CallExpression,
+callee name -> Math.ceil,
+param -> n / e.data.pagesize,
+" color=blue]
+	b935bf53f1384f9cb323bf787f1077c3 -> def89159f3374a56bfa779a90d2ed3a7
+	"4376d689f5f444abbcbac6eb55519024" -> b935bf53f1384f9cb323bf787f1077c3
+	"4f16f97c083549ae8a4aeb2c36badd56" -> "4376d689f5f444abbcbac6eb55519024"
+	"9ecacdd67e54423eb1212f4c5e1ee46a" -> "4f16f97c083549ae8a4aeb2c36badd56"
+	"1b6f4eb910cf4b2ebb61692ee8fd09be" -> "9ecacdd67e54423eb1212f4c5e1ee46a"
+	"57c95b60d7354f9d8a542c9b2e87b1c4" -> "1b6f4eb910cf4b2ebb61692ee8fd09be"
+	"623a585eaa2a404f9a96099b6c2e1920" -> "57c95b60d7354f9d8a542c9b2e87b1c4"
+	"31aadfce614042238b8ea8859edc1d7a" -> "623a585eaa2a404f9a96099b6c2e1920"
+}

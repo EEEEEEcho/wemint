@@ -1,0 +1,19 @@
+// \pages/teacher/cpcList/cpcList wxSearchInput Data Flow
+digraph {
+	"95776e7b5543449aa493319d6f38a779" [label="FunctionCall,
+function name -> wxSearchInput,
+param -> a.,
+a,
+" color=blue]
+	"4e2ce09843314b139dfb9a1b6471cf9e" [label=SequenceExpression color=blue]
+	ca61ba1d3c86457290bd68b8510c9711 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"2718969427a84b9b85750693a61ebb29" [label="Object Properties
+{
+keyword -> a.detail.value
+}" color=blue]
+	ca61ba1d3c86457290bd68b8510c9711 -> "2718969427a84b9b85750693a61ebb29"
+	"4e2ce09843314b139dfb9a1b6471cf9e" -> ca61ba1d3c86457290bd68b8510c9711
+	"95776e7b5543449aa493319d6f38a779" -> "4e2ce09843314b139dfb9a1b6471cf9e"
+}

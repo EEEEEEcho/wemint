@@ -1,0 +1,28 @@
+// \pages/address/address getAddress Data Flow
+digraph {
+	"75fd263b42554bab95f6c815deaf12a0" [label="FunctionCall,
+function name -> getAddress,
+param -> " color=blue]
+	"72b6d55c095c4528a05789adc17f3354" [label=SequenceExpression color=blue]
+	"9ed3e494906b44b0b73452824315b06f" [label="CallExpression,
+callee name -> console.log,
+param -> a.data.id,
+" color=blue]
+	"72b6d55c095c4528a05789adc17f3354" -> "9ed3e494906b44b0b73452824315b06f"
+	"544abdae2527401c9e21c7ac2b0e87d1" [label="CallExpression,
+callee name -> console.log,
+param -> a.data.userid,
+" color=blue]
+	"72b6d55c095c4528a05789adc17f3354" -> "544abdae2527401c9e21c7ac2b0e87d1"
+	ed1019e7a0774767818ebd0aa67ab0f0 [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"72dbbbc83c294213b497d89880dc8e0a" [label="Object Properties
+{
+userid -> a.data.userid
+id -> a.data.id
+}" color=blue]
+	ed1019e7a0774767818ebd0aa67ab0f0 -> "72dbbbc83c294213b497d89880dc8e0a"
+	"72b6d55c095c4528a05789adc17f3354" -> ed1019e7a0774767818ebd0aa67ab0f0
+	"75fd263b42554bab95f6c815deaf12a0" -> "72b6d55c095c4528a05789adc17f3354"
+}

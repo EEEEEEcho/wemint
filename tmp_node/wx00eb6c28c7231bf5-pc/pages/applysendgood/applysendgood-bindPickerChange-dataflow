@@ -1,0 +1,14 @@
+// \pages/applysendgood/applysendgood bindPickerChange Data Flow
+digraph {
+	"5609b5785aa34acbaa94a4265e427572" [label="FunctionCall,
+function name -> bindPickerChange,
+param -> e,
+e.,
+" color=blue]
+	"1e1591b57da7412da09c1ce7f3d9113e" [label=VariableDeclarations color=blue]
+	"4cdb806c079b4361be14d620900e7a95" [label="VariableDeclarator,
+left -> n,
+right -> e.detail.value" color=blue]
+	"1e1591b57da7412da09c1ce7f3d9113e" -> "4cdb806c079b4361be14d620900e7a95"
+	"5609b5785aa34acbaa94a4265e427572" -> "1e1591b57da7412da09c1ce7f3d9113e"
+}

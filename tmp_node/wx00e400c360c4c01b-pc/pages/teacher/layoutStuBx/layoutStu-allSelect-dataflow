@@ -1,0 +1,19 @@
+// \pages/teacher/layoutStuBx/layoutStu allSelect Data Flow
+digraph {
+	b750d7c5d8f44017b0e8b0dad32540ac [label="FunctionCall,
+function name -> allSelect,
+param -> a.,
+a,
+" color=blue]
+	"51142ddb2189498e87e10d4419e0230a" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"6f2c4fd85ceb40708380d9cca9a71a9f" [label="Object Properties
+{
+carts -> this.data.carts
+}" color=blue]
+	"0bf1ca9dbb5749a980c378663c3a0e46" [label="!this.data.isAllSelect" color=blue]
+	"6f2c4fd85ceb40708380d9cca9a71a9f" -> "0bf1ca9dbb5749a980c378663c3a0e46"
+	"51142ddb2189498e87e10d4419e0230a" -> "6f2c4fd85ceb40708380d9cca9a71a9f"
+	b750d7c5d8f44017b0e8b0dad32540ac -> "51142ddb2189498e87e10d4419e0230a"
+}

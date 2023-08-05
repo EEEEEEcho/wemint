@@ -1,0 +1,19 @@
+// \pages/lingqu/lingqu addCoupon Data Flow
+digraph {
+	"58826efa5ba44ae3b0df77d3e7331823" [label="FunctionCall,
+function name -> addCoupon,
+param -> a,
+a.,
+" color=blue]
+	"5e749bee346d436ea7d05eb806c1434e" [label=SequenceExpression color=blue]
+	"54cd963b54ba4a1f81b26f47b62bbe8b" [label="CallExpression,
+callee name -> o.setData,
+param -> " color=blue]
+	"759aed8dfbed47bbbe4a3158557b275b" [label="Object Properties
+{
+id -> a.currentTarget.dataset.id
+}" color=blue]
+	"54cd963b54ba4a1f81b26f47b62bbe8b" -> "759aed8dfbed47bbbe4a3158557b275b"
+	"5e749bee346d436ea7d05eb806c1434e" -> "54cd963b54ba4a1f81b26f47b62bbe8b"
+	"58826efa5ba44ae3b0df77d3e7331823" -> "5e749bee346d436ea7d05eb806c1434e"
+}

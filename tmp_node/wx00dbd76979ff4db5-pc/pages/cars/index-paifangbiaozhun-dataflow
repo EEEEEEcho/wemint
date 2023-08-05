@@ -1,0 +1,34 @@
+// \pages/cars/index paifangbiaozhun Data Flow
+digraph {
+	a28d4b6160cc4207a603c8a8d6550ddc [label="FunctionCall,
+function name -> paifangbiaozhun,
+param -> a.,
+a,
+" color=blue]
+	"75d7168278fa41059c2dd064374a6f35" [label=SequenceExpression color=blue]
+	"367957750a4e4865bf7af9d2a3ba5dc7" [label="CallExpression,
+callee name -> console.log,
+param -> a,
+" color=blue]
+	"75d7168278fa41059c2dd064374a6f35" -> "367957750a4e4865bf7af9d2a3ba5dc7"
+	"279aced150604ac3ba281c724490a3af" [label="CallExpression,
+callee name -> console.log,
+param -> a.detail.value,
+" color=blue]
+	"75d7168278fa41059c2dd064374a6f35" -> "279aced150604ac3ba281c724490a3af"
+	"30871f7b526b453db819d620bd2807a0" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"8c85d31dfe8c4419b4dc81c3851836f7" [label="Object Properties
+{
+pfbzindex -> a.detail.value
+}" color=blue]
+	"30871f7b526b453db819d620bd2807a0" -> "8c85d31dfe8c4419b4dc81c3851836f7"
+	"75d7168278fa41059c2dd064374a6f35" -> "30871f7b526b453db819d620bd2807a0"
+	"13a99da9e0fd42958d2dc059927f5395" [label="CallExpression,
+callee name -> console.log,
+param -> this.data.paifang,
+" color=blue]
+	"75d7168278fa41059c2dd064374a6f35" -> "13a99da9e0fd42958d2dc059927f5395"
+	a28d4b6160cc4207a603c8a8d6550ddc -> "75d7168278fa41059c2dd064374a6f35"
+}

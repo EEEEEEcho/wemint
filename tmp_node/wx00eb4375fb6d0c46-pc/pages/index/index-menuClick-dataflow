@@ -1,0 +1,55 @@
+// \pages/index/index menuClick Data Flow
+digraph {
+	b277dc98d9ae44b9ba1513076298e9b3 [label="FunctionCall,
+function name -> menuClick,
+param -> t.,
+t,
+" color=blue]
+	"57b69c3ffb0945f48a3fe6450ab03493" [label=SequenceExpression color=blue]
+	"84cf6c1c9da945b181c1a8cda73c38b4" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	c177d97ae82c493f89cc260b10b9f641 [label="Object Properties
+{
+_num -> t.target.dataset.num
+tabActive -> t.target.dataset.tabactive
+orgtype -> t.target.dataset.orgtype
+}" color=blue]
+	"84cf6c1c9da945b181c1a8cda73c38b4" -> c177d97ae82c493f89cc260b10b9f641
+	"57b69c3ffb0945f48a3fe6450ab03493" -> "84cf6c1c9da945b181c1a8cda73c38b4"
+	"86c47c2b87d845baabb1dbc8d8d6d802" [label="CallExpression,
+callee name -> this.getRecommend,
+param -> t.target.dataset.num,
+this.data.longitude,
+this.data.latitude,
+t.target.dataset.orgtype,
+" color=blue]
+	"3e3745ce9a834d488aff73e7e7c6085a" [label="FunctionCall,
+function name -> getRecommend,
+param -> s.,
+o.,
+i,
+n.,
+s,
+i.,
+o,
+n,
+" color=blue]
+	"8c6d2311b5484d769a176593cbfc21de" [label=VariableDeclarations color=blue]
+	"4ed71e96ddbc4d3f8bfc258baf8f6796" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"5a3f7f9e6d074e3a91c5fb1308905940" [label="Object Properties
+{
+longitude -> n
+latitude -> i
+orgType -> s
+merchantType -> o
+}" color=blue]
+	"4ed71e96ddbc4d3f8bfc258baf8f6796" -> "5a3f7f9e6d074e3a91c5fb1308905940"
+	"8c6d2311b5484d769a176593cbfc21de" -> "4ed71e96ddbc4d3f8bfc258baf8f6796"
+	"3e3745ce9a834d488aff73e7e7c6085a" -> "8c6d2311b5484d769a176593cbfc21de"
+	"86c47c2b87d845baabb1dbc8d8d6d802" -> "3e3745ce9a834d488aff73e7e7c6085a"
+	"57b69c3ffb0945f48a3fe6450ab03493" -> "86c47c2b87d845baabb1dbc8d8d6d802"
+	b277dc98d9ae44b9ba1513076298e9b3 -> "57b69c3ffb0945f48a3fe6450ab03493"
+}

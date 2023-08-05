@@ -1,0 +1,499 @@
+.canvasView {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.model {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0rpx;
+    top: 0rpx;
+    background-color: #272A34;
+    z-index: 101;
+}
+
+.model .modelmain {
+    width: 630rpx;
+    margin: 20rpx auto;
+    border-radius: 9rpx;
+    font-size: 0rpx;
+    text-align: center;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.whiteBg {
+    height: calc(100vh - 100rpx - 30rpx);
+}
+
+.otherBg {
+    margin-bottom: 0rpx;
+    height: calc(100vh - 100rpx - 30rpx - 50rpx);
+}
+
+.img-box {
+    border-radius: 9rpx;
+}
+
+.canvas {
+    position: relative;
+    left: 0rpx;
+    top: 110vh;
+    background: #FFFFFF;
+    border-radius: 9rpx;
+    margin-bottom: 200rpx;
+}
+
+.cardImg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 9rpx;
+    box-shadow: 0 0 20rpx 0 rgba(0,0,0,0.10);
+}
+
+.cardImg.rotate {
+    transform-origin: 315rpx 315rpx;
+    transform: rotate(90deg);
+}
+
+.dots {
+    position: fixed;
+    width: 100%;
+    height: 50rpx;
+    line-height: 50rpx;
+    left: 0rpx;
+    bottom: 110rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.dots .text {
+    font-size: 20rpx;
+    color: #FFFFFF;
+    margin-right: 40rpx;
+}
+
+.dots .dot {
+    width: 21rpx;
+    height: 21rpx;
+    border-radius: 50%;
+    opacity: .3;
+    background: #FFFFFF;
+    margin-left: 10rpx;
+}
+
+.dots .dot.active {
+    width: 25rpx!important;
+    height: 25rpx!important;
+    opacity: 0.8!important;
+}
+
+.Pic {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0rpx;
+    top: 0rpx;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 102;
+}
+
+.Picmodel {
+    position: absolute;
+    width: 80vw;
+    left: 10vw;
+    top: 20vh;
+    border-radius: 20rpx;
+    background-color: white;
+    z-index: 102;
+}
+
+.Picmodel .modelTitle {
+    width: 100%;
+    padding: 20rpx 0rpx;
+    font-size: 40rpx;
+    text-align: center;
+    color: block;
+    border-bottom: 1rpx solid rgb(237,237,237);
+}
+
+.Picmodel .modelBody {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 50rpx 50rpx;
+    text-align: center;
+    color: rgb(178,178,178);
+    font-size: 30rpx;
+    border-bottom: 1rpx solid rgb(237,237,237);
+}
+
+.Picmodel .btns {
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+.Picmodel .btns .agree {
+    border-width: 0px;
+    color: rgb(26,172,25);
+    width: 50%;
+}
+
+.Picmodel .btns .cancel {
+    width: 50%;
+    border-width: 0px;
+    color: #000;
+}
+
+.model-btn-1 {
+    position: fixed;
+    background: #FFFFFF;
+    width: 100%;
+    height: 100rpx;
+    left: 0rpx;
+    bottom: 0rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 101;
+    padding: 15rpx 40rpx;
+    box-sizing: border-box;
+}
+
+.model-btn-1 .reselect {
+    font-size: 0rpx;
+    text-align: center;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.model-btn-1 .reselect .icon {
+    width: 40rpx;
+    height: 36rpx;
+}
+
+.model-btn-1 .reselect .word {
+    font-size: 22rpx;
+    color: #121212;
+    margin-left: 15rpx;
+}
+
+.model-btn-1 .addborder {
+    color: #121212;
+    font-size: 0rpx;
+    text-align: center;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.model-btn-1 .addborder.active {
+    color: #5370FF;
+}
+
+.model-btn-1 .addborder .icon {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.model-btn-1 .addborder .word {
+    font-size: 22rpx;
+    margin-left: 15rpx;
+}
+
+.model-btn-1 .saveimg {
+    background: #5370FF;
+    border-radius: 16rpx;
+    width: 236rpx;
+    font-size: 30rpx;
+    color: #FFFFFF;
+    height: 72rpx;
+    line-height: 72rpx;
+    text-align: center;
+}
+
+.model-btn-1 .button {
+    background: #5370FF;
+    border-radius: 16rpx;
+    width: 236rpx;
+    font-size: 30rpx;
+    color: #FFFFFF;
+    height: 72rpx;
+    line-height: 72rpx;
+    text-align: center;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.model-btn-2 {
+    position: fixed;
+    width: 100%;
+    height: 100rpx;
+    left: 0rpx;
+    bottom: 0rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 101;
+    box-sizing: border-box;
+    background: #5370FF;
+    font-size: 30rpx;
+    color: white;
+}
+
+.model-btn-2 .model-btn-2-btn {
+    background: #5370FF;
+    width: 100%;
+    height: 100rpx;
+    font-size: 30rpx;
+    color: white;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    border: none;
+    padding: 0;
+    margin: 0;
+    z-index: 101;
+}
+
+.customize {
+    position: absolute;
+    right: 0rpx;
+    top: 30rpx;
+    width: 148rpx;
+    height: 60rpx;
+}
+
+.inputWord {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0rpx;
+    left: 0rpx;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.inputWord .mainContent {
+    position: relative;
+    box-sizing: border-box;
+    width: 630rpx;
+    height: 454rpx;
+    background: #FFFFFF;
+    border-radius: 10rpx;
+    padding: 50rpx 30rpx;
+    margin-top: -300rpx;
+}
+
+.inputWord .mainContent .title {
+    font-size: 36rpx;
+    color: #3C3C3C;
+    letter-spacing: 0;
+    height: 40rpx;
+    line-height: 40rpx;
+    font-weight: bold;
+}
+
+.inputWord .mainContent .seTitle {
+    position: absolute;
+    right: 60rpx;
+    top: 250rpx;
+    font-size: 22rpx;
+    color: rgba(0,0,0,0.5);
+    letter-spacing: 0;
+    height: 20rpx;
+    line-height: 20rpx;
+}
+
+.inputWord .mainContent .textarea {
+    width: 100%;
+    height: 174rpx;
+    opacity: 0.5;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    margin-top: 30rpx;
+    text-align: left;
+    padding: 20rpx;
+    font-size: 30rpx;
+    color: #3C3C3C;
+    border: 1rpx solid #D5D5D5;
+    border-radius: 6rpx;
+}
+
+.inputWord .mainContent .btnlist {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30rpx;
+}
+
+.inputWord .mainContent .btnlist .sharebtn {
+    width: 200rpx;
+    height: 80rpx;
+    color: white;
+    border-radius: 16rpx;
+    font-size: 30rpx;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 80rpx;
+}
+
+.myload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(235,237,239);
+    z-index: 10;
+    position: absolute;
+    height: 180rpx;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,0.8);
+    text-align: center;
+    font-size: 24rpx;
+    padding: 30rpx;
+    border-radius: 10rpx;
+    box-sizing: border-box;
+}
+
+.myload .spinner {
+    display: inline-block;
+    margin-bottom: 20rpx;
+    width: 30rpx;
+    height: 30rpx;
+    background-color: white;
+    animation: rotateplane 1.5s infinite ease-in-out;
+}
+
+@-webkit-keyframes rotateplane {
+    0% {
+        -webkit-transform: perspective(30rpx);
+    }
+
+    50% {
+        -webkit-transform: perspective(30rpx) rotateY(180deg);
+    }
+
+    100% {
+        -webkit-transform: perspective(30rpx) rotateY(180deg) rotateX(180deg);
+    }
+}
+
+@keyframes rotateplane {
+    0% {
+        transform: perspective(30rpx) rotateX(0deg) rotateY(0deg);
+    }
+
+    50% {
+        transform: perspective(30rpx) rotateX(-180.1deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: perspective(30rpx) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}
+
+.tmpBg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0rpx;
+    top: 0rpx;
+    text-align: center;
+    font-size: 0rpx;
+    box-sizing: border-box;
+}
+
+.tmpBg .BgImage {
+    width: 630rpx;
+    height: 1022rpx;
+}
+
+.showPhoneView {
+    position: absolute;
+    color: white;
+    z-index: 101;
+    width: 610rpx;
+    left: 70rpx;
+    top: 300rpx;
+    text-align: center;
+    font-size: 32rpx;
+    padding: 60rpx 43rpx;
+    box-sizing: border-box;
+}
+
+.showPhoneView .backView {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0rpx;
+    top: 0rpx;
+    opacity: 0.9;
+    background: #363636;
+    border-radius: 16rpx;
+    z-index: 1;
+}
+
+.showPhoneView .titleWord {
+    position: relative;
+    z-index: 2;
+}
+
+.showPhoneView .btnList {
+    position: relative;
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40rpx;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.showPhoneView .btnList .im_btn {
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: nowrap;
+    background-color: transparent;
+    overflow: visible;
+    font-size: 30rpx;
+    border-radius: 16rpx;
+}
+
+.showPhoneView .btnList .im_btn1 {
+    color: white;
+    background: #5370FF;
+}
+
+button::after {
+    border: none;
+}

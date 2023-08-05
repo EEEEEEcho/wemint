@@ -1,0 +1,17 @@
+<view class="swiper-box">
+    <swiper autoplay="{{autoplay}}" duration="{{duration}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}" wx:if="{{pageData.ShowWay=='Carousel'}}">
+        <swiper-item wx:for="{{items}}">
+            <navigator url="{{item.Link}}">
+                <image class="slide-image" mode="widthFix" src="{{item.Img}}"></image>
+            </navigator>
+        </swiper-item>  mode="widthFix"  mode="widthFix"
+       111188WEE
+  </swiper>
+    <view wx:if="{{pageData.ShowWay=='Tile'}}">
+        <view class="itembox" wx:for="{{items}}">
+            <navigator url="{{item.Link}}">
+                <image class="slide-image" mode="widthFix" src="{{item.Img}}"></image>
+            </navigator>
+        </view>
+    </view>
+</view>

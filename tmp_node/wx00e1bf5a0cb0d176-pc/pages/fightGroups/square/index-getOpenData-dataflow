@@ -1,0 +1,21 @@
+// \pages/fightGroups/square/index getOpenData Data Flow
+digraph {
+	"0c8680fb38ad4d03991c7b010ba3e8b2" [label="FunctionCall,
+function name -> getOpenData,
+param -> t,
+t.,
+" color=blue]
+	"2da668c40f6b4468930813b7ce88380f" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	f9c859a9102947b58a2be9b7b890f957 [label="Object Properties
+{
+}" color=blue]
+	"0eb1bc6368794f8baa9c7beafdaf6195" [label="CallExpression,
+callee name -> Boolean,
+param -> t.detail.authSetting['scope.userLocation'],
+" color=blue]
+	f9c859a9102947b58a2be9b7b890f957 -> "0eb1bc6368794f8baa9c7beafdaf6195"
+	"2da668c40f6b4468930813b7ce88380f" -> f9c859a9102947b58a2be9b7b890f957
+	"0c8680fb38ad4d03991c7b010ba3e8b2" -> "2da668c40f6b4468930813b7ce88380f"
+}

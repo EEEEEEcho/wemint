@@ -1,0 +1,50 @@
+// \pages/shop/refund onLoad Data Flow
+digraph {
+	d8d71c0134704eb79c55d9d6a6cf54cd [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	e0d1e9fdf8204572862d7ce4a9c6689c [label=SequenceExpression color=blue]
+	ca4b3e9b9cd04c73a2698e5ff56e6fec [label="CallExpression,
+callee name -> this.loadrefundsreson,
+param -> " color=blue]
+	"508fcc55f5d4479586f7ff18f3199fdf" [label="FunctionCall,
+function name -> loadrefundsreson,
+param -> " color=blue]
+	"5005de2128524914a9a381812ea5e241" [label="If Alternate" color=blue]
+	f9c6bc6877874e14b71af1bf7a10b8ed [label=SequenceExpression color=blue]
+	"3c1de99210c04329b8b9f65e0bf6626c" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	b58b4398e6594e048052109b051c6047 [label="Assignment,
+left -> s,
+right -> t.data.queryparams.orderid" color=blue]
+	"3c1de99210c04329b8b9f65e0bf6626c" -> b58b4398e6594e048052109b051c6047
+	f9c6bc6877874e14b71af1bf7a10b8ed -> "3c1de99210c04329b8b9f65e0bf6626c"
+	"64d83174f082416391206de355d0d1bc" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"621f8ae646114bc489b4ea82d4bb3493" [label="Assignment,
+left -> a,
+right -> t.data.queryparams.pkey" color=blue]
+	"64d83174f082416391206de355d0d1bc" -> "621f8ae646114bc489b4ea82d4bb3493"
+	f9c6bc6877874e14b71af1bf7a10b8ed -> "64d83174f082416391206de355d0d1bc"
+	"32020ad52a4440fdba5ba7dd93df797d" [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	"03f50a0adb28445daf772c709158bc8e" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=rdetail&orderid=' + s + '&pkey=' + a
+}" color=blue]
+	"32020ad52a4440fdba5ba7dd93df797d" -> "03f50a0adb28445daf772c709158bc8e"
+	a93f0dda30f04611a44dd12eccf60cf7 [label="FunctionCall,
+function name -> success,
+param -> s,
+" color=blue]
+	"32020ad52a4440fdba5ba7dd93df797d" -> a93f0dda30f04611a44dd12eccf60cf7
+	f9c6bc6877874e14b71af1bf7a10b8ed -> "32020ad52a4440fdba5ba7dd93df797d"
+	"5005de2128524914a9a381812ea5e241" -> f9c6bc6877874e14b71af1bf7a10b8ed
+	"508fcc55f5d4479586f7ff18f3199fdf" -> "5005de2128524914a9a381812ea5e241"
+	ca4b3e9b9cd04c73a2698e5ff56e6fec -> "508fcc55f5d4479586f7ff18f3199fdf"
+	e0d1e9fdf8204572862d7ce4a9c6689c -> ca4b3e9b9cd04c73a2698e5ff56e6fec
+	d8d71c0134704eb79c55d9d6a6cf54cd -> e0d1e9fdf8204572862d7ce4a9c6689c
+}

@@ -1,0 +1,27 @@
+// \pages/stu/myIndex/myIndex myMobile Data Flow
+digraph {
+	ae7bd945de024baab8eb3c402a511157 [label="FunctionCall,
+function name -> myMobile,
+param -> a.,
+a,
+" color=blue]
+	"652f4692f220452885a42549a762bdbf" [label=VariableDeclarations color=blue]
+	"8e82fe177e63440ca28486eaf93e44c0" [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.id" color=blue]
+	"652f4692f220452885a42549a762bdbf" -> "8e82fe177e63440ca28486eaf93e44c0"
+	a508d7d6976849bcb0d384ba42874121 [label="VariableDeclarator,
+left -> e,
+right -> a.currentTarget.dataset.mobile" color=blue]
+	"652f4692f220452885a42549a762bdbf" -> a508d7d6976849bcb0d384ba42874121
+	ae7bd945de024baab8eb3c402a511157 -> "652f4692f220452885a42549a762bdbf"
+	"9a20882902a64eb1a035712dd11e98dd" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"99405c7659204cc284125b163f3e7e85" [label="Object Properties
+{
+url -> '../myMobile/myMobile?id=' + t + '&mobile=' + e
+}" color=blue]
+	"9a20882902a64eb1a035712dd11e98dd" -> "99405c7659204cc284125b163f3e7e85"
+	ae7bd945de024baab8eb3c402a511157 -> "9a20882902a64eb1a035712dd11e98dd"
+}

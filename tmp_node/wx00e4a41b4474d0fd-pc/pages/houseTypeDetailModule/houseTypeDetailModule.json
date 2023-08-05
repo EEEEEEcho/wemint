@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "IMView": "../../components/IMViewComponent/IMViewComponent",
+        "authView": "../../components/authHandle/authHandle",
+        "myLoading": "../../components/globalLoad/globalLoad",
+        "navbar": "/components/navbar/navbar",
+        "c-img": "../components/indexImg/indexImg"
+    }
+}

@@ -1,0 +1,49 @@
+// \pages/houseTypeDetail/houseTypeDetail checkOutHouse Data Flow
+digraph {
+	"4fff2d81026d40139954f3173c57fcee" [label="FunctionCall,
+function name -> checkOutHouse,
+param -> e,
+e.,
+" color=blue]
+	"7e133461cf5342b09ddf8d49b41cfffe" [label=VariableDeclarations color=blue]
+	e71c3c50b53141c0bb9b259f0bc6303f [label="VariableDeclarator,
+left -> a,
+right -> e.currentTarget.dataset.id" color=blue]
+	"7e133461cf5342b09ddf8d49b41cfffe" -> e71c3c50b53141c0bb9b259f0bc6303f
+	"9a547ccca7a44783a0e1e7a0b3436986" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"40cd6682b7044757ba755543330b020b" [label="Object Properties
+{
+houseType -> a
+}" color=blue]
+	"9a547ccca7a44783a0e1e7a0b3436986" -> "40cd6682b7044757ba755543330b020b"
+	"7e133461cf5342b09ddf8d49b41cfffe" -> "9a547ccca7a44783a0e1e7a0b3436986"
+	"4fff2d81026d40139954f3173c57fcee" -> "7e133461cf5342b09ddf8d49b41cfffe"
+	b384f377ff0448f18f4cd2cefab76b7f [label=VariableDeclarations color=blue]
+	a5745f100b784c6eab2bea986facb1a1 [label="VariableDeclarator,
+left -> i,
+right -> e.target.dataset.index" color=blue]
+	b384f377ff0448f18f4cd2cefab76b7f -> a5745f100b784c6eab2bea986facb1a1
+	"4fff2d81026d40139954f3173c57fcee" -> b384f377ff0448f18f4cd2cefab76b7f
+	"42085d74c0c34d15a85628a766a85da4" [label="Assignment,
+left -> this.data.currentIndex,
+right -> i" color=blue]
+	"4fff2d81026d40139954f3173c57fcee" -> "42085d74c0c34d15a85628a766a85da4"
+	b270e6ae9c60407fa59afbad3da439da [label=SequenceExpression color=blue]
+	"5793e77e457d4f59addfb482fbb83aa6" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"816bfd3734ce4f4da62b3eef0fb81124" [label="Object Properties
+{
+active -> e.target.dataset.id
+}" color=blue]
+	"5793e77e457d4f59addfb482fbb83aa6" -> "816bfd3734ce4f4da62b3eef0fb81124"
+	b270e6ae9c60407fa59afbad3da439da -> "5793e77e457d4f59addfb482fbb83aa6"
+	ecd293713224416c9f0b9196eaa5e30a [label="CallExpression,
+callee name -> this.queryHouseImageRecommend,
+param -> a,
+" color=blue]
+	b270e6ae9c60407fa59afbad3da439da -> ecd293713224416c9f0b9196eaa5e30a
+	"4fff2d81026d40139954f3173c57fcee" -> b270e6ae9c60407fa59afbad3da439da
+}

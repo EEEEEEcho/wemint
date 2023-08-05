@@ -1,0 +1,25 @@
+// \pages/buy/buy onLoad Data Flow
+digraph {
+	ce3618558c9b469faf3f9d2e8d2f6183 [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"59f54d5b4da64ebeb72d5c91303b9c4c" [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> " color=blue]
+	"082af762ae454400b932591aad2e7d05" [label="FunctionCall,
+function name -> success,
+param -> t,
+t.,
+" color=blue]
+	d9d4eea7cb3245648644704503ab5c5c [label="CallExpression,
+callee name -> a.setData,
+param -> " color=blue]
+	f1f3b311c162456398e8c746e26191d1 [label="Object Properties
+{
+windowHeight -> t.windowHeight
+}" color=blue]
+	d9d4eea7cb3245648644704503ab5c5c -> f1f3b311c162456398e8c746e26191d1
+	"082af762ae454400b932591aad2e7d05" -> d9d4eea7cb3245648644704503ab5c5c
+	"59f54d5b4da64ebeb72d5c91303b9c4c" -> "082af762ae454400b932591aad2e7d05"
+	ce3618558c9b469faf3f9d2e8d2f6183 -> "59f54d5b4da64ebeb72d5c91303b9c4c"
+}

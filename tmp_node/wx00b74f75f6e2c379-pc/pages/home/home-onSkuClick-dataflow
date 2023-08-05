@@ -1,0 +1,43 @@
+// \pages/home/home onSkuClick Data Flow
+digraph {
+	"96ae26eb0be348689698d36755193023" [label="FunctionCall,
+function name -> onSkuClick,
+param -> e,
+e.,
+" color=blue]
+	"9641b972907c4afa9a21f5f038890f80" [label=VariableDeclarations color=blue]
+	aa89117d495b43b0bf13161e5c056994 [label="VariableDeclarator,
+left -> index,
+right -> e.target.dataset.indexcount" color=blue]
+	"9641b972907c4afa9a21f5f038890f80" -> aa89117d495b43b0bf13161e5c056994
+	"96ae26eb0be348689698d36755193023" -> "9641b972907c4afa9a21f5f038890f80"
+	dea7e42a42ca4ebabe33138a6efae5bf [label=VariableDeclarations color=blue]
+	c54201a5feb249f598b9f41181f8b690 [label="VariableDeclarator,
+left -> valueid,
+right -> e.target.id" color=blue]
+	dea7e42a42ca4ebabe33138a6efae5bf -> c54201a5feb249f598b9f41181f8b690
+	"96ae26eb0be348689698d36755193023" -> dea7e42a42ca4ebabe33138a6efae5bf
+	ff885c145ae340eaa1a066ea8b00dd50 [label=VariableDeclarations color=blue]
+	"9f13447bb23344fb80edafd89ceb24ec" [label="VariableDeclarator,
+left -> value,
+right -> e.target.dataset.skuvalue" color=blue]
+	ff885c145ae340eaa1a066ea8b00dd50 -> "9f13447bb23344fb80edafd89ceb24ec"
+	"96ae26eb0be348689698d36755193023" -> ff885c145ae340eaa1a066ea8b00dd50
+	a56610c8c6ba418ab46382f40ecc7adc [label="Assignment,
+left -> selInfo.ValueId,
+right -> valueid" color=blue]
+	"96ae26eb0be348689698d36755193023" -> a56610c8c6ba418ab46382f40ecc7adc
+	"69d8e649a3ef4b1db81522c9fead10a9" [label="Assignment,
+left -> selInfo.Value,
+right -> value" color=blue]
+	"96ae26eb0be348689698d36755193023" -> "69d8e649a3ef4b1db81522c9fead10a9"
+	eaed7c8a958041bc8555480b05bce6e3 [label="CallExpression,
+callee name -> this.data.CurrentProduct.Skus.forEach,
+param -> " color=blue]
+	"925b54081edc42398d236bc2b2da9985" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> index,
+" color=blue]
+	eaed7c8a958041bc8555480b05bce6e3 -> "925b54081edc42398d236bc2b2da9985"
+	"96ae26eb0be348689698d36755193023" -> eaed7c8a958041bc8555480b05bce6e3
+}

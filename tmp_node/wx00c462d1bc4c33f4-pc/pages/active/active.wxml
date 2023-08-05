@@ -1,0 +1,30 @@
+<view class="weui-loadmore" wx:if="{{isRefreshing}}">
+    <view class="weui-loadmore-tips">小程序技术支持</view>
+    <view class="weui-loadmore-tips">
+沈阳众德润科技有限公司</view>
+    <view class="weui-loadmore-tips">咨询电话：024-31284032</view>
+</view>
+<view bindtap="close" class="close" wx:if="{{saoma==true}}">返 回</view>
+<view class="container" wx:if="{{!hasShake&&!noShake}}">
+    <image class="shakePhone" src="{{shakeBackUrl}}" style="animation:{{shake}}"></image>
+</view>
+<view class="cover">
+    <image class="shakeBottom" src="{{shakeBottomUrl}}"></image>
+</view>
+<view class="container" wx:if="{{hasShake}}">
+    <image class="shakePhone" src="{{hasShakeUrl}}"></image>
+    <view class="description">{{prizeInfo}}</view>
+    <view bindtap="confirm" class="confirm">{{confirm}}</view>
+</view>
+<view class="container" wx:if="{{noShake}}">
+    <image class="shakePhone" src="{{noShakeUrl}}"></image>
+    <view class="description">{{prizeInfo}}</view>
+    <view bindtap="confirm" class="confirm">{{confirm}}</view>
+</view>
+<view class="shouquan" wx:if="{{jiazaizhong}}">
+    <image class="shakeCover_img" src="{{wntjUrls}}"></image>
+</view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

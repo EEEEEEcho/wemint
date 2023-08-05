@@ -1,0 +1,13 @@
+// \pages/countdowndetail/countdowndetail onShareAppMessage Data Flow
+digraph {
+	c0930f15fb734239897d0c3fb8d21bfc [label="FunctionCall,
+function name -> onShareAppMessage,
+param -> " color=blue]
+	fea3ef72cc5f418692109b4b0be49833 [label=ReturnExpression color=blue]
+	a015541be45c4f6f90abc059ef034609 [label="Object Properties
+{
+title -> '限时抢购' + that.data.ProductName
+}" color=blue]
+	fea3ef72cc5f418692109b4b0be49833 -> a015541be45c4f6f90abc059ef034609
+	c0930f15fb734239897d0c3fb8d21bfc -> fea3ef72cc5f418692109b4b0be49833
+}

@@ -1,0 +1,15 @@
+// \pages/company/businessCard/cardDetails initData Data Flow
+digraph {
+	"86b35ce795a64234a5a2bb1e5c70efc8" [label="FunctionCall,
+function name -> initData,
+param -> " color=blue]
+	"6e58f0a055534642bea95f8947b4093a" [label=SequenceExpression color=blue]
+	"9ccde03cd02c4f0a96b20f4ecadcff18" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	ca15f05820ed436f84ffd5095621744c [label="ConditionalExpression,
+ conditional list -> e.loadData" color=blue]
+	"9ccde03cd02c4f0a96b20f4ecadcff18" -> ca15f05820ed436f84ffd5095621744c
+	"6e58f0a055534642bea95f8947b4093a" -> "9ccde03cd02c4f0a96b20f4ecadcff18"
+	"86b35ce795a64234a5a2bb1e5c70efc8" -> "6e58f0a055534642bea95f8947b4093a"
+}

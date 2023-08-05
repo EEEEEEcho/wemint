@@ -1,0 +1,153 @@
+page {
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.container .header-nav {
+    height: 96rpx;
+    line-height: 96rpx;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    font-size: 30rpx;
+    color: #666;
+    position: relative;
+    border-bottom: 1rpx solid #ddd;
+}
+
+.container .header-nav .record-line {
+    height: 55rpx;
+    width: 1rpx;
+    background-color: #ddd;
+    position: absolute;
+    left: 50%;
+    top: 22rpx;
+}
+
+.container .header-nav .item {
+    position: relative;
+    flex: 0 0 17%;
+    text-align: center;
+    width: 50%;
+    font-size: 30rpx;
+}
+
+.container .header-nav .active {
+    color: #ff7200;
+}
+
+.container .header-nav .active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 4rpx;
+    background: #ff7200;
+}
+
+.container .finance-img {
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 32rpx;
+    color: #666;
+    padding-top: 20rpx;
+}
+
+.container .finance-img image {
+    width: 50%;
+}
+
+.container .record-box .yearMonth {
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 0 26rpx;
+    font-size: 26rpx;
+    color: #999;
+}
+
+.container .record-box .record-content {
+    background-color: #fff;
+    padding: 0 26rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 130rpx;
+}
+
+.container .record-box .record-content:last-child::after {
+    border-bottom: none;
+}
+
+.container .record-box .record-content .con-left .leftTop {
+    font-size: 30rpx;
+    line-height: 30rpx;
+    color: #333;
+    margin-bottom: 16rpx;
+}
+
+.container .record-box .record-content .con-left .leftBottom {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.leftBottom .date {
+    margin-right: 18rpx;
+}
+
+.container .record-box .record-content .con-right .money {
+    font-size: 32rpx;
+    line-height: 32rpx;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 16rpx;
+}
+
+.container .record-box .record-content .con-right .withdrawaling {
+    font-size: 22rpx;
+    line-height: 22rpx;
+    color: #ff7200;
+    text-align: right;
+}
+
+.container .record-box .record-content .con-right .withdrawaling .done {
+    font-size: 22rpx;
+    line-height: 22rpx;
+    color: #999;
+    text-align: right;
+}
+
+.noMore {
+    display: flex;
+    flex-direction: row;
+    width: 284rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 0 auto;
+    padding-left: 32rpx;
+    margin-bottom: 34rpx;
+}
+
+.noMore .line {
+    width: 56rpx;
+    height: 2rpx;
+    background-color: #bbb;
+    position: relative;
+    top: 40rpx;
+}
+
+.noMore .text {
+    color: #bbb;
+    font-size: 22rpx;
+    margin: 0 20rpx;
+}

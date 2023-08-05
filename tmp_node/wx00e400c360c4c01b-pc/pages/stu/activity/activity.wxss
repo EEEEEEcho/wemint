@@ -1,0 +1,38 @@
+.bookList {
+    display: flex;
+    justify-content: center;
+    height: 130rpx;
+    margin-top: 20rpx;
+    padding: 10rpx 10rpx 10rpx 10rpx;
+}
+
+.bookListImg {
+    width: 25%;
+}
+
+.bookListContent {
+    width: 75%;
+    padding-left: 40rpx;
+}
+
+.bookListContent .lable {
+    font-size: 35rpx;
+    color: #3C3C3C;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bookListContent .text {
+    font-size: 30rpx;
+    color: #9D9D9D;
+    padding-top: 15rpx;
+}
+
+.bookListState {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    font-size: 30rpx;
+    color: red;
+}

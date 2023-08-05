@@ -1,0 +1,17 @@
+// \pages/customSign/customSign verifyCode Data Flow
+digraph {
+	"3f0c094635984345b4ed65ad8998a925" [label="FunctionCall,
+function name -> verifyCode,
+param -> e,
+e.,
+" color=blue]
+	e47af695bfe447aaaec3e6a8194b6d8d [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"35ddfaf3b39a465490e4816d2d2e01d5" [label="Object Properties
+{
+verifyCode -> e.detail.value
+}" color=blue]
+	e47af695bfe447aaaec3e6a8194b6d8d -> "35ddfaf3b39a465490e4816d2d2e01d5"
+	"3f0c094635984345b4ed65ad8998a925" -> e47af695bfe447aaaec3e6a8194b6d8d
+}

@@ -1,0 +1,23 @@
+// \pages/tourist/myActivity/myActivity view Data Flow
+digraph {
+	"9d6545c7b76f48d49952ba94f7429383" [label="FunctionCall,
+function name -> view,
+param -> a.,
+a,
+" color=blue]
+	"30368c3568b34bb5b053902bc69c3af3" [label=VariableDeclarations color=blue]
+	c906b355ff924658945917517d67b0a6 [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.id" color=blue]
+	"30368c3568b34bb5b053902bc69c3af3" -> c906b355ff924658945917517d67b0a6
+	"9d6545c7b76f48d49952ba94f7429383" -> "30368c3568b34bb5b053902bc69c3af3"
+	b16bbd0d4f294c569c7eb5abd7620c09 [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"0257bba4ae71408693b5d594eeed1d3a" [label="Object Properties
+{
+url -> '../activityView/activityView?id=' + t + '&isPay=1'
+}" color=blue]
+	b16bbd0d4f294c569c7eb5abd7620c09 -> "0257bba4ae71408693b5d594eeed1d3a"
+	"9d6545c7b76f48d49952ba94f7429383" -> b16bbd0d4f294c569c7eb5abd7620c09
+}

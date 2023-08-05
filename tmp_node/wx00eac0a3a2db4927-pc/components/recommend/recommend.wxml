@@ -1,0 +1,24 @@
+<view class="index_container overflow" id="recom" style="margin-top: {{navH+status+10}}px;">
+    <image class="bgImage" lazyLoad="true" src="{{uiData.bgImage.image}}"></image>
+    <view catchtap="toSearch" class="searchbar2">
+        <image class="search-img2" src="http://oss.shangmian.xin/weixin_applets_icon_black_searchbar.png"></image>
+        <text class="placeholderClass">搜索品牌/单品/风格</text>
+    </view>
+    <view class="swiper_images">
+        <swiper circular autoplay="true" bindanimationfinish="swiperChange" class="swiperImg" current="{{currentSwiper}}" interval="3000">
+            <swiper-item bindtap="jumpToPage" data-url="{{item.url}}" data-urlSchema="{{item.urlSchema}}" wx:for="{{uiData.carousel}}" wx:key="{{index}}">
+                <image class="slide-image" lazyLoad="true" mode="widthFill" src="{{item.cover}}" width="100%"></image>
+            </swiper-item>
+        </swiper>
+        <view class="dots">
+            <view class="dot {{index==currentSwiper?' active':''}}" wx:for="{{uiData.carousel}}"></view>
+        </view>
+    </view>
+    <view class="theme">CLASSIFICATION</view>
+    <modules-list modulesData="{{modulesData}}" uiData="{{uiData}}"></modules-list>
+    <image catchtap="onFreeList" class="homeFree" data-free="{{uiData.bottomBanners[0]}}" mode="scaleToFill" src="{{uiData.bottomBanners[0].image}}"></image>
+    <text class="commendTitle">尚免推荐</text>
+    <goods-list id="goodList" isComplex="{{isComplex}}" isGrade="{{isGrade}}" isIndexRecommend="{{isIndexRecommend}}" isPrice="{{isPrice}}"></goods-list>
+</view>
+<loading-view isShow="{{isShowLoad}}"></loading-view>
+<contact-service binddismissConcatModal="dismissConcatModal" isShowContactService="{{isShowContactService}}"></contact-service>

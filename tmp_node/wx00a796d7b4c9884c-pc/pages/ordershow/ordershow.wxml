@@ -1,0 +1,76 @@
+<view class="pagebt">
+    <view class="s_page_bg">
+        <view class="s_page_img">
+            <image mode="widthFix" src="../../images/xz_bg.jpg" style="width:100%;"></image>
+        </view>
+        <view class="s_page_tx">
+            <image mode="widthFix" src="../../images/fkuan.png" style="width:30px;"></image>
+            <view class="font1" wx:if="{{order.checkinfo==0}}">待付款</view>
+            <view class="font1" wx:elif="{{order.checkinfo==1}}">待发货</view>
+            <view class="font1" wx:elif="{{order.checkinfo==2}}">待收货</view>
+            <view class="font1" wx:elif="{{order.checkinfo==3}}">已完成</view>
+            <view class="font1" wx:elif="{{order.checkinfo==4}}">申请退货中</view>
+            <view class="font1" wx:elif="{{order.checkinfo==5}}">申请退款中</view>
+            <view class="font1" wx:elif="{{order.checkinfo==6}}">已退款</view>
+            <view class="font1" wx:elif="{{order.checkinfo==7}}">已退货</view>
+            <view class="font1" wx:elif="{{order.checkinfo==-1}}">已取消</view>
+            <view class="font1" wx:else>无效订单</view>
+        </view>
+    </view>
+    <view class="ord1">
+        <view class="ord1_tu">
+            <image mode="widthFix" src="../../images/dzhi.png" style="width:30px;"></image>
+        </view>
+        <view class="ord1_bt">{{order.rec_name}}  {{order.phone}}</view>
+        <view class="ord1_con">{{order.cur_address}}</view>
+    </view>
+    <view class="ord2">
+        <view class="{{index==goods.length-1?'ord2_2':'ord2_1'}}" wx:for="{{goods}}" wx:key="*this">
+            <view class="ord2_1_img">
+                <image mode="widthFix" src="{{url}}{{item.gpicurl}}" style="width:80px;"></image>
+            </view>
+            <view class="ord2_bt">{{item.gtitle}}</view>
+            <view class="ord2_con">{{item.attrname}}</view>
+            <view class="ord2_jia">¥{{item.price}}<view class="font1">X{{item.num}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="ord4 tc">
+        <view class="fl_l">
+            <view class="drawer_desc fl_l">我要留言</view>
+        </view>
+        <view class="ord4_tab">{{order.buyremark}}</view>
+    </view>
+    <view class="ord5">
+        <view class="ord5_desc fl_l">商品金额 <view class="font1">¥{{totalprice}}</view>
+        </view>
+        <view class="ord5_desc fl_l">运费 <view class="font1">+¥{{order.cost}}</view>
+        </view>
+        <view class="ord5_desc fl_l">优惠 <view class="font1">-¥{{order.quan}}</view>
+        </view>
+        <view class="ord6_desc fl_l">应付款 <view class="font1">¥{{order.orderamount}}</view>
+        </view>
+    </view>
+    <view class="xs_foot" wx:if="{{order.checkinfo==0}}">
+        <view class="xs_2">
+            <view class="navig" wx:if="{{order.paymode==2}}">线下支付</view>
+            <view bindtap="pay" class="navig" data-sn="{{order.orderlistnum}}" wx:else>去支付</view>
+        </view>
+        <view class="xs_1">
+            <view bindtap="cancel" class="navig" data-id="{{order.id}}">取消</view>
+        </view>
+    </view>
+    <view class="xs_foot" wx:elif="{{order.checkinfo==2}}">
+        <view class="xs_2">
+            <view bindtap="confirm_goods" class="navig" data-id="{{order.id}}">确认收货</view>
+        </view>
+        <view class="xs_1">
+            <view bindtap="reject" class="navig" data-id="{{order.id}}">申请退货</view>
+        </view>
+    </view>
+    <view class="xs_foot" wx:elif="{{order.checkinfo==1}}">
+        <view class="xs_2">
+            <view bindtap="refund" class="navig" data-id="{{order.id}}">申请退款</view>
+        </view>
+    </view>
+</view>

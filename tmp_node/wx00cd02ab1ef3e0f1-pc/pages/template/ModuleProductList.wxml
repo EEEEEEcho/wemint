@@ -1,0 +1,146 @@
+<template name="ModuleProductList-layout-104">
+    <view class="pro-item-wrapper {{layoutFun.isCard(m.ShowStyle)}}">
+        <view bindtap="navTo" class="pro-item" data-linkid="{{item.ProductID}}" data-linktype="ProductDetail" wx:for="{{m.ProList}}" wx:key="ProductID">
+            <view class="proWrapper flexDirectionColumn flexBox boxSizingBox">
+                <view class="pro-img-wrapper flexBox flexAlign flexJustify">
+                    <image class="pro-img" mode="aspectFit" src="{{globaldata.appGlobalData.siteBaseUrl}}{{item.ImgUrl}}"></image>
+                    <view class="dump"></view>
+                </view>
+                <view class="proTextMain flex1 boxSizingBox {{m.ShowItems.length>0?'':'no-data'}}">
+                    <view class="pro-name overflowAutos" wx:if="{{layoutFun.hasItem(m.ShowItems,'name')}}">
+            {{item.Name}}
+          </view>
+                    <view class="proTextMainCon flexBox flexJustifyBetween flexAlign">
+                        <view class="pro-main flexBox flexAlign">
+                            <view class="pro-price" wx:if="{{layoutFun.hasItem(m.ShowItems,'price')}}">
+                ￥{{item.Price}}
+              </view>
+                            <view class="pro-market-price" wx:if="{{layoutFun.hasItem(m.ShowItems,'market_price')}}">
+                ￥{{item.MarketPrice}}
+              </view>
+                        </view>
+                        <view class="pro-params" wx:if="{{layoutFun.hasItem(m.ShowItems,'sold')}}">
+              月销 {{item.SalesCount}} 笔
+            </view>
+                    </view>
+                </view>
+            </view>
+            <view class="pro-buybtn flexBox flexJustify flexAlign" wx:if="{{false}}">
+                <i class="m-iconfont pro-buybtn-icon {{layoutFun.buyBtnStyle(m.BuyBtnStyle)}}"></i>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="ModuleProductList-layout-103">
+    <view class="pro-item-wrapper flexBox">
+        <scroll-view scrollX class="scroll-view_H" style="width: 100%">
+            <view bindtap="navTo" class="pro-item boxSizingBox" data-linkid="{{item.ProductID}}" data-linktype="ProductDetail" wx:for="{{m.ProList}}" wx:key="ProductID">
+                <view class="proWrapper flexBox flexDirectionColumn boxSizingBox">
+                    <image class="pro-img" src="{{globaldata.appGlobalData.siteBaseUrl}}{{item.ImgUrl}}"></image>
+                    <view class="proTextMain boxSizingBox {{m.ShowItems.length>0?'':'no-data'}}">
+                        <view class="pro-name" wx:if="{{layoutFun.hasItem(m.ShowItems,'name')}}">{{item.Name}}</view>
+                        <view class="pro-params" wx:if="{{layoutFun.hasItem(m.ShowItems,'sold')}}">月销 {{item.SalesCount}} 笔</view>
+                        <view class="pro-market-price" wx:if="{{layoutFun.hasItem(m.ShowItems,'market_price')}}">￥{{item.MarketPrice}}</view>
+                        <view class="pro-price" wx:if="{{layoutFun.hasItem(m.ShowItems,'price')}}">￥{{item.Price}}</view>
+                    </view>
+                </view>
+                <view class="pro-buybtn flexBox flexJustify flexAlign" wx:if="{{false}}">
+                    <i class="m-iconfont pro-buybtn-icon {{layoutFun.buyBtnStyle(m.BuyBtnStyle)}}"></i>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</template>
+<template name="ModuleProductList-layout-102">
+    <view class="pro-item-wrapper flexBox {{layoutFun.isCard(m.ShowStyle)}}">
+        <view class="pro-item boxSizingBox" wx:for="{{m.ProList}}" wx:key="ProductID">
+            <view bindtap="navTo" class="proWrapper flexBox flexDirectionColumn boxSizingBox" data-linkid="{{item.ProductID}}" data-linktype="ProductDetail">
+                <view class="pro-img-wrapper flexBox flexAlign flexJustify">
+                    <image class="pro-img" src="{{globaldata.appGlobalData.siteBaseUrl}}{{item.ImgUrl}}"></image>
+                </view>
+                <view class="proTextMain boxSizingBox {{m.ShowItems.length>0?'':'no-data'}}">
+                    <view class="pro-name overflowAutos" wx:if="{{layoutFun.hasItem(m.ShowItems,'name')}}">
+            {{item.Name}}
+          </view>
+                    <view class="pro-market-price" wx:if="{{layoutFun.hasItem(m.ShowItems,'market_price')}}">
+            ￥{{item.MarketPrice}}
+          </view>
+                    <view class="proText flexBox flexJustifyBetween flexAlign">
+                        <view class="pro-price" wx:if="{{layoutFun.hasItem(m.ShowItems,'price')}}">
+              ￥{{item.Price}}
+            </view>
+                        <view class="pro-params" wx:if="{{layoutFun.hasItem(m.ShowItems,'sold')}}">
+              月销 {{item.SalesCount}} 笔
+            </view>
+                    </view>
+                </view>
+                <view class="pro-buybtn flexBox flexJustify flexAlign" wx:if="{{false}}">
+                    <i class="m-iconfont pro-buybtn-icon {{layoutFun.buyBtnStyle(m.BuyBtnStyle)}}"></i>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="ModuleProductList-layout-101">
+    <view class="pro-item-wrapper {{layoutFun.isCard(m.ShowStyle)}}">
+        <view class="pro-item" wx:for="{{m.ProList}}" wx:key="ProductID">
+            <view bindtap="navTo" class="proWrapper flexBox flexDirectionRow boxSizingBox" data-linkid="{{item.ProductID}}" data-linktype="ProductDetail">
+                <view class="pro-img-wrapper flexBox flexAlign flexJustify">
+                    <image class="pro-img" src="{{globaldata.appGlobalData.siteBaseUrl}}{{item.ImgUrl}}"></image>
+                </view>
+                <view class="proTextMain flex1 boxSizingBox">
+                    <view class="pro-name " wx:if="{{layoutFun.hasItem(m.ShowItems,'name')}}">
+            {{item.Name}}
+          </view>
+                    <view class="pro-market-price" wx:if="{{layoutFun.hasItem(m.ShowItems,'market_price')}}">
+            ￥{{item.MarketPrice}}
+          </view>
+                    <view class=" flexBox flexJustifyBetween flexAlign">
+                        <view class="pro-price" wx:if="{{layoutFun.hasItem(m.ShowItems,'price')}}">
+              ￥{{item.Price}}
+            </view>
+                        <view class="pro-params" wx:if="{{layoutFun.hasItem(m.ShowItems,'sold')}}">
+              月销 {{item.SalesCount}} 笔
+            </view>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="navTo" class="pro-buybtn flexBox flexJustify flexAlign" data-linkid="{{item.ProductID}}" data-linktype="ProductList" wx:if="{{false}}">
+                <i class="m-iconfont pro-buybtn-icon {{layoutFun.buyBtnStyle(m.BuyBtnStyle)}}"></i>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="ModuleProductList">
+    <view class="layout-{{m.Layout}}">
+        <template is="ModuleProductList-layout-{{m.Layout}}" data="{{m:m,globaldata:globaldata}}"></template>
+    </view>
+</template>
+<wxs module="layoutFun">
+var isCard = (function(showType) {
+    return (showType == 1 ? "card" : "")
+});
+var hasItem = (function(items, val) {
+    return (items.indexOf(val) > -1)
+});
+var buyBtnStyle = (function(val) {
+    if (val == 3) return ("m-icon-iconfont_cart");
+    else return ("m-icon-iconfont_cart-fill")
+});
+var getSwiperGroupNum = (function(numPerGroup, numCount) {
+    var numList = [];
+    if (numCount == 0) numList;;
+    if (numPerGroup <= 0) numPerGroup = 1;;
+    var groupNum = Math.ceil(numCount / numPerGroup);
+    for (var i = 0; i < groupNum; i++) {
+        numList.push(i)
+    };
+    return (numList)
+});
+module.exports = ({
+    isCard: isCard,
+    hasItem: hasItem,
+    buyBtnStyle: buyBtnStyle,
+    getSwiperGroupNum: getSwiperGroupNum,
+});
+</wxs>

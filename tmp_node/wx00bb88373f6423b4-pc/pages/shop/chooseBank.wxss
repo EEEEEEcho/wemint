@@ -1,0 +1,45 @@
+page {
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.container .bankbox {
+    height: 96rpx;
+    line-height: 96rpx;
+    padding: 0 26rpx;
+    background-color: #fff;
+}
+
+.container .bankbox .bankName {
+    height: 96rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .bankbox .bankName .bank-left {
+    height: 96rpx;
+    display: flex;
+    align-items: center;
+}
+
+.container .bankbox .bankName .bank-left image {
+    height: 60rpx;
+    width: 60rpx;
+    margin-right: 10rpx;
+}
+
+.container .bankbox .bankName text {
+    font-size: 30rpx;
+    color: #666;
+}
+
+.container .bankbox .bankName .bank-right {
+    font-size: 32rpx;
+    color: #ff7200;
+}

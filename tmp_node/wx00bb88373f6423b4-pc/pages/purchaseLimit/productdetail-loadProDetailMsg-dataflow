@@ -1,0 +1,26 @@
+// \pages/purchaseLimit/productdetail loadProDetailMsg Data Flow
+digraph {
+	"434a8bc96fb040138973cd171207b03c" [label="FunctionCall,
+function name -> loadProDetailMsg,
+param -> " color=blue]
+	"15286d93cecf48d89bc7428d583a318f" [label=SequenceExpression color=blue]
+	e73c00a5af134de0aaf617fd68cde9cc [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	"6e0cc490d7634c9c804621c0d8f0ba9f" [label="Object Properties
+{
+url -> '/index.php?c=front/WxApp/SecKill&a=getProductInfo&ms_id=' + a.data.queryparams.ms_id + '&ms_product_id=' + a.data.queryparams.ms_proid
+}" color=blue]
+	e73c00a5af134de0aaf617fd68cde9cc -> "6e0cc490d7634c9c804621c0d8f0ba9f"
+	"15286d93cecf48d89bc7428d583a318f" -> e73c00a5af134de0aaf617fd68cde9cc
+	"2a69431e7c4945ec8157a53e7aaa818b" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	"2c1f9b35a3014e79b3daeb41692e54c2" [label="Object Properties
+{
+url -> '/index.php?c=front/WxApp/SecKill&a=getProductSku&productId=' + a.data.queryparams.proid + '&ms_id=' + a.data.queryparams.ms_id
+}" color=blue]
+	"2a69431e7c4945ec8157a53e7aaa818b" -> "2c1f9b35a3014e79b3daeb41692e54c2"
+	"15286d93cecf48d89bc7428d583a318f" -> "2a69431e7c4945ec8157a53e7aaa818b"
+	"434a8bc96fb040138973cd171207b03c" -> "15286d93cecf48d89bc7428d583a318f"
+}

@@ -1,0 +1,17 @@
+// \pages/stu/myBirthday/myBirthday inputBirthday Data Flow
+digraph {
+	da8e846591c04961b42e90eaae452ae4 [label="FunctionCall,
+function name -> inputBirthday,
+param -> t,
+t.,
+" color=blue]
+	"7e03d7c08a3a40c7a1b0575c200dbb77" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"529ab13a6860478fafc34da8dd7dd70a" [label="Object Properties
+{
+birthday -> t.detail.value
+}" color=blue]
+	"7e03d7c08a3a40c7a1b0575c200dbb77" -> "529ab13a6860478fafc34da8dd7dd70a"
+	da8e846591c04961b42e90eaae452ae4 -> "7e03d7c08a3a40c7a1b0575c200dbb77"
+}

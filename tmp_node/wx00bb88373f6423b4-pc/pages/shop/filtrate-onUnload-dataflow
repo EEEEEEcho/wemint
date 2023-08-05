@@ -1,0 +1,44 @@
+// \pages/shop/filtrate onUnload Data Flow
+digraph {
+	d2ceaf90020846d492575f0df68845de [label="FunctionCall,
+function name -> onUnload,
+param -> " color=blue]
+	"23a3cd7807164ce093d9359bd42300bd" [label=SequenceExpression color=blue]
+	"2954ca14930a414dadb088971fd5c520" [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	"20168e9e204a4623a48d4b3012867d11" [label="Object Properties
+{
+data -> this.data.startDate
+}" color=blue]
+	"2954ca14930a414dadb088971fd5c520" -> "20168e9e204a4623a48d4b3012867d11"
+	"23a3cd7807164ce093d9359bd42300bd" -> "2954ca14930a414dadb088971fd5c520"
+	a2356c50ccab4abc85b7e7c4ed95b87e [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	"54eb00b06f194cfe9cb6cce514aee493" [label="Object Properties
+{
+data -> this.data.endDate
+}" color=blue]
+	a2356c50ccab4abc85b7e7c4ed95b87e -> "54eb00b06f194cfe9cb6cce514aee493"
+	"23a3cd7807164ce093d9359bd42300bd" -> a2356c50ccab4abc85b7e7c4ed95b87e
+	ecaa7f87851841e1b646ef11d1d4a359 [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	a8d99f86b9584e5cb7943dc69bfdeff8 [label="Object Properties
+{
+data -> this.data.chooseType
+}" color=blue]
+	ecaa7f87851841e1b646ef11d1d4a359 -> a8d99f86b9584e5cb7943dc69bfdeff8
+	"23a3cd7807164ce093d9359bd42300bd" -> ecaa7f87851841e1b646ef11d1d4a359
+	"956f9afb0daa4d21b02c054a6cb0e75e" [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	"50acf8497c21440b9abf3edf3bee466b" [label="Object Properties
+{
+data -> this.data.chooseTypeText
+}" color=blue]
+	"956f9afb0daa4d21b02c054a6cb0e75e" -> "50acf8497c21440b9abf3edf3bee466b"
+	"23a3cd7807164ce093d9359bd42300bd" -> "956f9afb0daa4d21b02c054a6cb0e75e"
+	d2ceaf90020846d492575f0df68845de -> "23a3cd7807164ce093d9359bd42300bd"
+}

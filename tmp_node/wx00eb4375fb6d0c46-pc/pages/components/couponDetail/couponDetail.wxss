@@ -1,0 +1,240 @@
+.chooseMask {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 500;
+}
+
+.close-img {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    right: 15rpx;
+}
+
+img {
+    width: 100%!important;
+}
+
+.chooseBox {
+    position: fixed;
+    bottom: -35rpx;
+    width: 100%;
+    background: #ffffff;
+    height: 950rpx;
+    transform: translateY(950rpx);
+    transition: all 0.4s;
+    z-index: 501;
+}
+
+.chooseBox-active {
+    transform: translateY(0);
+    transition: all 0.4s;
+}
+
+.coupons-detail-box {
+    z-index: 501;
+    background-color: #fff;
+    width: 100%;
+    max-height: 100%;
+    position: relative;
+    overflow: scroll;
+}
+
+.detail-img {
+    width: 100%;
+    height: 400rpx;
+}
+
+.paading-style image {
+    max-width: 100%;
+}
+
+table {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+table td,table th {
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 3px 5px;
+}
+
+table th {
+    border-bottom: 2px solid #ccc;
+    text-align: center;
+}
+
+blockquote {
+    display: block;
+    border-left: 8px solid #d0e5f2;
+    padding: 5px 10px;
+    margin: 10px 0;
+    line-height: 1.4;
+    font-size: 100%;
+    background-color: #f1f1f1;
+}
+
+code {
+    display: inline-block;
+    zoom: 1;
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    padding: 3px 5px;
+    margin: 0 3px;
+}
+
+pre code {
+    display: block;
+}
+
+.paading-style ul,.paading-style ol {
+    margin: 10px 0 10px 20px;
+}
+
+.coupons-text-box {
+    color: #fff;
+    position: absolute;
+    top: 120rpx;
+    left: 430rpx;
+    font-size: 28rpx;
+}
+
+.coupons-text-box view {
+    margin-bottom: 5rpx;
+}
+
+.shop-name {
+    font-size: 40rpx;
+    font-weight: 600;
+    margin-bottom: 30rpx!important;
+    position: relative;
+    white-space: pre-wrap;
+}
+
+.shop-name::after {
+    position: absolute;
+    left: 0;
+    bottom: -15rpx;
+    content: '';
+    display: block;
+    width: 30rpx;
+    border-bottom: 2px solid #fff;
+    border-radius: 10rpx;
+}
+
+.shop-name text {
+    font-size: 28rpx;
+    font-weight: 500;
+    padding-left: 10rpx;
+}
+
+.activity-time {
+    font-size: 20rpx;
+    color: #ff3054;
+    border: 1px solid #fff;
+    padding: 1rpx 0;
+}
+
+.activity-title {
+    background-color: #fff;
+    padding: 4rpx 5rpx;
+}
+
+.activity-value {
+    color: #fff;
+    background-color: #ff6544;
+    padding-left: 5rpx;
+    padding-right: 5rpx;
+}
+
+.paading-style {
+    padding-left: 20rpx;
+}
+
+.can-use-shop-num {
+    padding-top: 10rpx;
+    font-size: 35rpx;
+    color: #050505;
+}
+
+.can-use-shop-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20rpx;
+}
+
+.can-use-shop-box image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.can-use-shop-name {
+    font-size: 35rpx;
+    margin-bottom: 10rpx;
+}
+
+.can-use-shop-adress {
+    color: #767676;
+    font-size: 30rpx;
+}
+
+.line {
+    height: 20rpx;
+    background-color: #f7f7f7;
+    margin-top: -150rpx;
+}
+
+.presentation-content img {
+    max-width: 100%!important;
+}
+
+.presentation-content table {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+.presentation-content table td,.presentation-content table th {
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 3px 5px;
+}
+
+.presentation-content table th {
+    border-bottom: 2px solid #ccc;
+    text-align: center;
+}
+
+.presentation-content blockquote {
+    display: block;
+    border-left: 8px solid #d0e5f2;
+    padding: 5px 10px;
+    margin: 10px 0;
+    line-height: 1.4;
+    font-size: 100%;
+    background-color: #f1f1f1;
+}
+
+.presentation-content code {
+    display: inline-block;
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    padding: 3px 5px;
+    margin: 0 3px;
+}
+
+.presentation-content pre code {
+    display: block;
+}
+
+.presentation-content ul,ol {
+    margin: 10px 0 10px 20px;
+}

@@ -1,0 +1,20 @@
+// \pages/signature/jinmaoSignature canvasStart Data Flow
+digraph {
+	dc119bc5f6c94f0b972a83beb83c36d6 [label="FunctionCall,
+function name -> canvasStart,
+param -> e,
+e.,
+" color=blue]
+	"35320eb86ea84cd78850a58566b33b3a" [label=SequenceExpression color=blue]
+	cf2cc78b780343718f07d00cb54d8a2b [label="CallExpression,
+callee name -> g.push,
+param -> e.changedTouches[0].x,
+" color=blue]
+	"35320eb86ea84cd78850a58566b33b3a" -> cf2cc78b780343718f07d00cb54d8a2b
+	"1ef8e09c72684fffa87afe00f74965f3" [label="CallExpression,
+callee name -> h.push,
+param -> e.changedTouches[0].y,
+" color=blue]
+	"35320eb86ea84cd78850a58566b33b3a" -> "1ef8e09c72684fffa87afe00f74965f3"
+	dc119bc5f6c94f0b972a83beb83c36d6 -> "35320eb86ea84cd78850a58566b33b3a"
+}

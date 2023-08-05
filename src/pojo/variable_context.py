@@ -1,15 +1,15 @@
 class VariableContext:
 
     def __init__(self, scope: str, name: str = None):
-        # 当前上下文等级
+        # Current context level.
         self.scope = scope
-        # 当前上下文名字
+        # Current context name.
         self.name = name
-        # 变量表
+        # Variable table.
         self.variable_table = dict()
-        # 子上下文
+        # Child context.
         self.children = None
-        # 兄弟上下文
+        # Sibling context
         self.brother = None
-        # 父上下文
+        # Parent context.
         self.father = None

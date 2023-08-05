@@ -1,0 +1,153 @@
+<view class="k10"></view>
+<view class="title">
+    <view bindtap="navchange" class="title-b {{status==1?'active':''}}" data-status="1">个人收益排行榜</view>
+    <view bindtap="navchange" class="title-b {{status==2?'active':''}}" data-status="2">车辆收益排行榜</view>
+</view>
+<view class="b-line">
+    <view class="b-line-{{status==1?'a':'b'}}"></view>
+    <view class="b-line-{{status==2?'a':'b'}}"></view>
+</view>
+<view class="k20 clear"></view>
+<view wx:if="{{status==1}}">
+    <view class="rank1-list" wx:if="{{usernum>0}}">
+        <view class="k40"></view>
+        <view class="first">
+            <image class="img" src="{{user[0].headimgurl}}"></image>
+        </view>
+        <view class="first-img">
+            <image class="img" src="/pages/img/first.png"></image>
+        </view>
+        <view class="k30"></view>
+        <view class="name color1">{{user[0].nickname}}</view>
+        <view class="k6"></view>
+        <view class="shouyi">收益{{user[0].gains}}积分</view>
+    </view>
+    <view class="rank3-list" wx:if="{{usernum>1}}">
+        <view class="k40"></view>
+        <view class="second">
+            <image class="img" src="{{user[1].headimgurl}}"></image>
+        </view>
+        <view class="second-img">
+            <image class="img" src="/pages/img/second.png"></image>
+        </view>
+        <view class="k30"></view>
+        <view class="name color2">{{user[1].nickname}}</view>
+        <view class="k6"></view>
+        <view class="shouyi">收益{{user[1].gains}}积分</view>
+    </view>
+    <view class="rank3-list" wx:if="{{usernum>2}}">
+        <view class="k40"></view>
+        <view class="second">
+            <image class="img" src="{{user[2].headimgurl}}"></image>
+        </view>
+        <view class="second-img">
+            <image class="img" src="/pages/img/third.png"></image>
+        </view>
+        <view class="k30"></view>
+        <view class="name color3">{{user[2].nickname}}</view>
+        <view class="k6"></view>
+        <view class="shouyi">收益{{user[2].gains}}积分</view>
+    </view>
+    <view class="four" wx:if="{{usernum>3}}">
+        <view class="four-li">
+            <view class="four-li-l">NO.4</view>
+            <view class="four-li-m">
+                <image class="img" src="{{user[3].headimgurl}}"></image>
+            </view>
+            <view class="four-li-m2">{{user[3].nickname}}</view>
+            <view class="four-li-r">{{user[3].gains}}</view>
+        </view>
+    </view>
+    <view class="four" wx:if="{{usernum>4}}">
+        <view class="four-li">
+            <view class="four-li-l">NO.5</view>
+            <view class="four-li-m">
+                <image class="img" src="{{user[4].headimgurl}}"></image>
+            </view>
+            <view class="four-li-m2">{{user[4].nickname}}</view>
+            <view class="four-li-r">{{user[4].gains}}</view>
+        </view>
+    </view>
+    <view class="four" wx:if="{{usernum>5}}">
+        <view class="four-li">
+            <view class="four-li-l">NO.6</view>
+            <view class="four-li-m">
+                <image class="img" src="{{user[5].headimgurl}}"></image>
+            </view>
+            <view class="four-li-m2">{{user[5].nickname}}</view>
+            <view class="four-li-r">{{user[5].gains}}</view>
+        </view>
+    </view>
+</view>
+<view wx:if="{{status==2}}">
+    <view class="rank1-list" wx:if="{{carsnum>0}}">
+        <view class="k40"></view>
+        <view class="first">
+            <image class="img" src="{{path}}{{cars[0].img}}"></image>
+        </view>
+        <view class="first-img">
+            <image class="img" src="/pages/img/first.png"></image>
+        </view>
+        <view class="k30"></view>
+        <view class="name color1">{{cars[0].title}}</view>
+        <view class="k6"></view>
+        <view class="shouyi">收益{{cars[0].gains}}积分</view>
+    </view>
+    <view class="rank3-list" wx:if="{{carsnum>1}}">
+        <view class="k40"></view>
+        <view class="second">
+            <image class="img" src="{{path}}{{cars[1].img}}"></image>
+        </view>
+        <view class="second-img">
+            <image class="img" src="/pages/img/second.png"></image>
+        </view>
+        <view class="k30"></view>
+        <view class="name color2">{{cars[1].title}}</view>
+        <view class="k6"></view>
+        <view class="shouyi">收益{{cars[1].gains}}积分</view>
+    </view>
+    <view class="rank3-list" wx:if="{{carsnum>2}}">
+        <view class="k40"></view>
+        <view class="second">
+            <image class="img" src="{{path}}{{cars[2].img}}"></image>
+        </view>
+        <view class="second-img">
+            <image class="img" src="/pages/img/third.png"></image>
+        </view>
+        <view class="k30"></view>
+        <view class="name color3">{{cars[2].title}}</view>
+        <view class="k6"></view>
+        <view class="shouyi">收益{{cars[2].gains}}积分</view>
+    </view>
+    <view class="four" wx:if="{{carsnum>3}}">
+        <view class="four-li">
+            <view class="four-li-l">NO.4</view>
+            <view class="four-li-m">
+                <image class="img" src="{{path}}{{cars[3].img}}"></image>
+            </view>
+            <view class="four-li-m2">{{cars[3].title}}</view>
+            <view class="four-li-r">{{cars[3].gains}}</view>
+        </view>
+    </view>
+    <view class="four" wx:if="{{carsnum>4}}">
+        <view class="four-li">
+            <view class="four-li-l">NO.5</view>
+            <view class="four-li-m">
+                <image class="img" src="{{path}}{{cars[4].img}}"></image>
+            </view>
+            <view class="four-li-m2">{{cars[4].title}}</view>
+            <view class="four-li-r">{{cars[4].gains}}</view>
+        </view>
+    </view>
+    <view class="four" wx:if="{{carsnum>5}}">
+        <view class="four-li">
+            <view class="four-li-l">NO.6</view>
+            <view class="four-li-m">
+                <image class="img" src="{{path}}{{cars[5].img}}"></image>
+            </view>
+            <view class="four-li-m2">{{cars[5].title}}</view>
+            <view class="four-li-r">{{cars[5].gains}}</view>
+        </view>
+    </view>
+</view>
+<view style="wdith:100%;height:140rpx;"></view>

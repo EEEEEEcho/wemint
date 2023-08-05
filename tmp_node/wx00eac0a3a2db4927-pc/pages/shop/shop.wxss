@@ -1,0 +1,157 @@
+.shop {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.topLayout {
+    width: 92%;
+    border-radius: 20rpx;
+    box-shadow: 0rpx 0rpx 16rpx #f0f0f0;
+}
+
+.shopDetail {
+    width: 100%;
+    height: 220rpx;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.shopLogo {
+    width: 120rpx;
+    height: 120rpx;
+    position: absolute;
+    left: 32rpx;
+    top: 50rpx;
+    border-radius: 10rpx;
+}
+
+.shopName {
+    font-size: 28rpx;
+    position: absolute;
+    color: #ffffff;
+    left: 180rpx;
+    top: 90rpx;
+    font-weight: bold;
+    letter-spacing: 3rpx;
+}
+
+.shopBg {
+    width: 100%;
+    height: 220rpx;
+    position: absolute;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+}
+
+.shopMaskBg {
+    width: 100%;
+    height: 220rpx;
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+}
+
+.shareIt {
+    width: 120rpx;
+    height: 46rpx;
+    background: #51515c;
+    position: absolute;
+    border-top-left-radius: 20rpx;
+    border-bottom-left-radius: 20rpx;
+    color: #ffffff;
+    text-align: center;
+    font-size: 22rpx;
+    line-height: 46rpx;
+    right: 0;
+    top: 80rpx;
+}
+
+.btn {
+    width: 120rpx;
+    height: 46rpx;
+    border-top-left-radius: 20rpx;
+    border-bottom-left-radius: 20rpx;
+    opacity: 0;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 80rpx;
+}
+
+.addressLayout {
+    width: 100%;
+    align-items: center;
+}
+
+.addressLabel {
+    width: 68rpx;
+    height: 68rpx;
+    margin: 32rpx;
+    border-radius: 34rpx;
+}
+
+.addressText {
+    flex: 1;
+    color: #aeaeb4;
+    font-size: 25rpx;
+}
+
+.navigationLayout {
+    width: 158rpx;
+    height: 48rpx;
+    background: #ed7b43;
+    border-radius: 24rpx;
+    align-items: center;
+    margin-left: 16rpx;
+    margin-right: 24rpx;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigationLabel {
+    width: 20rpx;
+    height: 20rpx;
+}
+
+.navigationText {
+    font-size: 20rpx;
+    color: #ffffff;
+    margin-left: 8rpx;
+}
+
+.line {
+    flex: 1;
+    height: 2rpx;
+    background: #eeeeee;
+    margin-left: 32rpx;
+    margin-right: 32rpx;
+}
+
+.shopInfoLayout {
+    width: 100%;
+    align-items: center;
+}
+
+.shopInfoCenter {
+    flex: 1;
+}
+
+.shopPhone {
+    font-size: 25rpx;
+    color: #aeaeb4;
+}
+
+.shopSafe {
+    font-size: 25rpx;
+    color: #ed7b43;
+    padding-top: 4rpx;
+}
+
+.contact {
+    width: 158rpx;
+    height: 48rpx;
+}

@@ -1,0 +1,19 @@
+// \pages/shop/searchPage onKeywordChange Data Flow
+digraph {
+	"2ee8dfafa3914cef9f9af3a7a357dfa2" [label="FunctionCall,
+function name -> onKeywordChange,
+param -> a.,
+a,
+" color=blue]
+	fc6b26ab1a674cc6b8f858e99fa4643f [label=VariableDeclarations color=blue]
+	"0722bb0ef2244c0389a433f8936ebd6f" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	efa63eac22ce40d9af60141a52f93a1c [label="CallExpression,
+callee name -> t.trim,
+param -> a.detail.value,
+" color=blue]
+	"0722bb0ef2244c0389a433f8936ebd6f" -> efa63eac22ce40d9af60141a52f93a1c
+	fc6b26ab1a674cc6b8f858e99fa4643f -> "0722bb0ef2244c0389a433f8936ebd6f"
+	"2ee8dfafa3914cef9f9af3a7a357dfa2" -> fc6b26ab1a674cc6b8f858e99fa4643f
+}

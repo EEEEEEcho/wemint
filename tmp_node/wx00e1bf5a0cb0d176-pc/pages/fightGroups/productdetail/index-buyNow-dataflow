@@ -1,0 +1,17 @@
+// \pages/fightGroups/productdetail/index buyNow Data Flow
+digraph {
+	"6b86a1249cae4dc4ad25689d2ce2262a" [label="FunctionCall,
+function name -> buyNow,
+param -> " color=blue]
+	"3c2c7889c2804d40a6ca8e0b21fe007d" [label=SequenceExpression color=blue]
+	"66ae9fcaa7684a7cb22c9ea11103011b" [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	f888ba3b76c5492bbe7ea26c7a21edd1 [label="Object Properties
+{
+url -> '../../shop/productdetail?id=' + t.data.pinTuanProDetail.product_id
+}" color=blue]
+	"66ae9fcaa7684a7cb22c9ea11103011b" -> f888ba3b76c5492bbe7ea26c7a21edd1
+	"3c2c7889c2804d40a6ca8e0b21fe007d" -> "66ae9fcaa7684a7cb22c9ea11103011b"
+	"6b86a1249cae4dc4ad25689d2ce2262a" -> "3c2c7889c2804d40a6ca8e0b21fe007d"
+}

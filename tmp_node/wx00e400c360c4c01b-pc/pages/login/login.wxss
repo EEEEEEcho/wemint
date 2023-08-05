@@ -1,0 +1,48 @@
+.sel {
+    padding-top: 50rpx;
+    padding-bottom: 20rpx;
+    width: 90%;
+}
+
+.inputText {
+    flex: block;
+    float: left;
+    text-align: left;
+    margin-top: 11px;
+    font-size: 14px;
+    width: 680rpx;
+}
+
+.line {
+    width: 90%;
+    height: 1px;
+    background-color: #cccccc;
+    margin-top: 1px;
+}
+
+.classCurr_view_but {
+    font-size: 10px;
+    color: #f8ac59;
+    background-color: #fff;
+    border: 1px solid #f8ac59;
+    margin-top: 10px;
+    width: 200rpx;
+}
+
+.classCurr_view_but_hover {
+    font-size: 10px;
+    color: #fff;
+    background-color: #f8ac59;
+    border: 1px solid #fff;
+    margin-top: 10px;
+    width: 200rpx;
+}
+
+.sendmsgafter {
+    font-size: 10px;
+    color: #cccccc;
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    margin-top: 10px;
+    width: 200rpx;
+}

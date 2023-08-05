@@ -1,0 +1,17 @@
+// \pages/prodshow/prodshow onShow Data Flow
+digraph {
+	"7eda85ef88454978a4b4c896903a34a0" [label="FunctionCall,
+function name -> onShow,
+param -> " color=blue]
+	b9c279bb3f544ed0962d6127d3e68727 [label="If Alternate" color=blue]
+	eb9abcfeceee4ae1a106a726d1df436c [label="CallExpression,
+callee name -> a.setData,
+param -> " color=blue]
+	d357d519be3c47d0a91a70c7fe09367f [label="Object Properties
+{
+attrValueList -> a.data.attrValueList
+}" color=blue]
+	eb9abcfeceee4ae1a106a726d1df436c -> d357d519be3c47d0a91a70c7fe09367f
+	b9c279bb3f544ed0962d6127d3e68727 -> eb9abcfeceee4ae1a106a726d1df436c
+	"7eda85ef88454978a4b4c896903a34a0" -> b9c279bb3f544ed0962d6127d3e68727
+}

@@ -1,0 +1,132 @@
+<view class="wddz">
+    <view class="wddzBox">
+        <view class="wddzTitle">
+            <view class="wddzC">我的地址
+        <image class="wddz_img" src="/images/myAddress.png"></image>
+            </view>
+            <image bindtap="addAddress" class="addAddress" data-type="0" src="/images/addAddress.png"></image>
+        </view>
+    </view>
+</view>
+<view class="company-detail1">
+    <view class="company-detail-content">
+        <view>
+            <view class="addressBox" wx:for="{{mraddresses1}}" wx:key="id">
+                <view class="firstLine">
+                    <view class="name">{{item.wechatUserAddressReceiverName}}</view>
+                    <view class="tel">{{item.wechatUserAddressReceiverPhoneNum}}</view>
+                </view>
+                <view class="address">{{item.wechatUserAddressAddress}}{{item.wechatUserAddressFullAddress}}</view>
+                <view class="thirdLine">
+                    <checkbox-group bindchange="checkboxChange" class="mzdz" data-address-id="{{item.wechatUserAddressId}}" data-type="0">
+                        <label wx:for="{{cartArr1}}" wx:key="cart">
+                            <checkbox checked="{{item.checked}}" style="color:#999;font-size:12px;" value="{{index}}">默认地址</checkbox>
+                        </label>
+                    </checkbox-group>
+                    <view class="edle">
+                        <view bindtap="deleteAddress" class="delete" data-address-id="{{item.wechatUserAddressId}}" data-type="0">
+                            <image class="deleteImg" src="/images/delete.png"></image>删除</view>
+                        <view bindtap="editAddress" class="edit" data-address-id="{{item.wechatUserAddressId}}" data-type="0">
+                            <image class="editImg" src="/images/edit.png"></image>编辑</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="{{isFold?'hide':'show'}}">
+            <view class="addressBox" wx:for="{{ptaddresses1}}" wx:key="id">
+                <view class="firstLine">
+                    <view class="name">{{item.wechatUserAddressReceiverName}}</view>
+                    <view class="tel">{{item.wechatUserAddressReceiverPhoneNum}}</view>
+                </view>
+                <view class="address">{{item.wechatUserAddressAddress}}{{item.wechatUserAddressFullAddress}}</view>
+                <view class="thirdLine">
+                    <checkbox-group bindchange="checkboxChange" class="mzdz" data-address-id="{{item.wechatUserAddressId}}" data-type="0">
+                        <label wx:for="{{item.checklist}}">
+                            <checkbox checked="{{item.checked}}" style="color:#999;font-size:12px;" value="{{index}}">默认地址</checkbox>
+                        </label>
+                    </checkbox-group>
+                    <view class="edle">
+                        <view bindtap="deleteAddress" class="delete" data-address-id="{{item.wechatUserAddressId}}" data-type="0">
+                            <image class="deleteImg" src="/images/delete.png"></image>删除</view>
+                        <view bindtap="editAddress" class="edit" data-address-id="{{item.wechatUserAddressId}}" data-type="0">
+                            <image class="editImg" src="/images/edit.png"></image>编辑</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="showall">
+            <view class="leftline"></view>
+            <view class="deploybox">展开全部地址<image bindtap="showAll" class="arrow" src=" {{isFold?'/images/deploy.png':'/images/retract.png'}}"></image>
+            </view>
+            <view class="rightline"></view>
+        </view>
+    </view>
+</view>
+<view class="tddz">
+    <view class="tddzBox">
+        <view class="tddzTitle">
+            <view class="tddzC">Ta的地址
+        <image class="tddz_img" src="/images/someoneAddress.png"></image>
+            </view>
+            <image bindtap="addAddress" class="addAddress" data-type="1" src="/images/addAddress.png"></image>
+        </view>
+    </view>
+</view>
+<view class="company-detail2">
+    <view class="company-detail-content">
+        <view>
+            <view class="addressBox" wx:for="{{mraddresses2}}" wx:key="id">
+                <view class="firstLine">
+                    <view class="name">{{item.wechatUserAddressReceiverName}}</view>
+                    <view class="tel">{{item.wechatUserAddressReceiverPhoneNum}}</view>
+                </view>
+                <view class="address">{{item.wechatUserAddressAddress}}{{item.wechatUserAddressFullAddress}}</view>
+                <view class="thirdLine">
+                    <checkbox-group bindchange="checkboxChange" class="mzdz" data-address-id="{{item.wechatUserAddressId}}" data-type="1">
+                        <label wx:for="{{item.checklist}}">
+                            <checkbox checked="{{item.checked}}" style="color:#999;font-size:12px;" value="{{index}}">默认地址</checkbox>
+                        </label>
+                    </checkbox-group>
+                    <view class="edle">
+                        <view bindtap="deleteAddress" class="delete" data-address-id="{{item.wechatUserAddressId}}" data-type="1">
+                            <image class="deleteImg" src="/images/delete.png"></image>删除</view>
+                        <view bindtap="editAddress" class="edit" data-address-id="{{item.wechatUserAddressId}}" data-type="1">
+                            <image class="editImg" src="/images/edit.png"></image>编辑</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="{{isFolds?'hide':'show'}}">
+            <view class="addressBox" wx:for="{{ptaddresses2}}" wx:key="id">
+                <view class="firstLine">
+                    <view class="name">{{item.wechatUserAddressReceiverName}}</view>
+                    <view class="tel">{{item.wechatUserAddressReceiverPhoneNum}}</view>
+                </view>
+                <view class="address">{{item.wechatUserAddressAddress}}{{item.wechatUserAddressFullAddress}}</view>
+                <view class="thirdLine">
+                    <checkbox-group bindchange="checkboxChange" class="mzdz" data-address-id="{{item.wechatUserAddressId}}" data-type="1">
+                        <label wx:for="{{item.checklist}}">
+                            <checkbox checked="{{item.checked}}" style="color:#999;font-size:12px;" value="{{index}}">默认地址</checkbox>
+                        </label>
+                    </checkbox-group>
+                    <view class="edle">
+                        <view bindtap="deleteAddress" class="delete" data-address-id="{{item.wechatUserAddressId}}" data-type="1">
+                            <image class="deleteImg" src="/images/delete.png"></image>删除</view>
+                        <view bindtap="editAddress" class="edit" data-address-id="{{item.wechatUserAddressId}}" data-type="1">
+                            <image class="editImg" src="/images/edit.png"></image>编辑</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="showall">
+            <view class="leftline"></view>
+            <view class="deploybox">展开全部地址<image bindtap="showAlls" class="arrow" src=" {{isFolds?'/images/deploy.png':'/images/retract.png'}}"></image>
+            </view>
+            <view class="rightline"></view>
+        </view>
+    </view>
+</view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

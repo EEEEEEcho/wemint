@@ -1,0 +1,205 @@
+scroll-view.contain {
+    background: #474952;
+    color: #fff;
+    min-height: 100vh;
+}
+
+image {
+    border: 0;
+    vertical-align: bottom;
+}
+
+.top_flex {
+    border-bottom: 2rpx solid #666;
+    position: fixed;
+    top: 0;
+    z-index: 90000;
+    background: #474952;
+}
+
+.top {
+    height: 120rpx;
+}
+
+.top view {
+    float: left;
+    margin-left: 30rpx;
+    margin-top: 30rpx;
+    line-height: 58rpx;
+    font-family: NotoSansCJKsc-DemiLight;
+    font-size: 24rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+}
+
+.item1 {
+    width: 690rpx;
+}
+
+.item2 {
+    width: 320rpx;
+}
+
+.item3 {
+    width: 210rpx;
+}
+
+.item4 {
+    width: 180rpx;
+}
+
+.list,.preview {
+    padding-top: 120rpx;
+}
+
+.listItem {
+    display: flex;
+    justify-content: space-between;
+    margin: 30rpx;
+}
+
+.listItem .left {
+    width: 134rxp;
+    height: 320rpx;
+    background: #fff;
+}
+
+.listItem .right {
+    position: relative;
+}
+
+.listItem .right image {
+    width: 460rpx;
+    height: 320rpx;
+}
+
+.listItem .right .shade {
+    width: 460rpx;
+    height: 320rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.listItem .right .vrlogo {
+    width: 64rpx;
+    height: 61rpx;
+    position: absolute;
+    right: 11rpx;
+    bottom: 11rpx;
+}
+
+view.graph {
+    font-family: PingFangSC-Regular;
+    font-size: 40rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 40rpx;
+    position: absolute;
+    bottom: 10rpx;
+}
+
+i.m {
+    font-family: PingFangSC-Regular;
+    font-size: 40rpx;
+    color: #FFFFFF;
+    line-height: 40rpx;
+}
+
+i.tip {
+    font-family: NotoSansCJKsc-Regular;
+    font-size: 20rpx;
+    color: #FFFFFF;
+    text-align: right;
+    line-height: 20rpx;
+    position: absolute;
+    bottom: 14rpx;
+    right: 0;
+}
+
+.line {
+    border: 0.5rpx solid #FFFFFF;
+}
+
+i.useRoom {
+    font-family: NotoSansCJKsc-Regular;
+    font-size: 29rpx;
+    color: #FFFFFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.shade .remark {
+    ont-family: NotoSansCJKsc-DemiLight;
+    font-size: 20rpx;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.shade .top1 {
+    position: relative;
+    height: 100rpx;
+    border-bottom: 1rpx solid #FFFFFF;
+    margin: 0 10rpx;
+}
+
+.shade .bottom {
+    position: relative;
+    height: 200rpx;
+    margin: 10rpx;
+}
+
+.shade .bottom .row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 10rpx;
+    font-size: 29rpx;
+    color: #FFFFFF;
+}
+
+.preview {
+    padding: 120rpx 30rpx 0 30rpx;
+    overflow: hidden;
+}
+
+.preview view .left {
+    font-family: NotoSansCJKsc-Regular;
+    font-size: 38rpx;
+    color: #FFFFFF;
+    text-align: right;
+    line-height: 100rpx;
+    float: left;
+}
+
+.preview view .right {
+    font-family: NotoSansCJKsc-DemiLight;
+    font-size: 20rpx;
+    color: #FFFFFF;
+    line-height: 100rpx;
+    float: right;
+}
+
+.IM button {
+    width: 100%;
+    height: 100rpx;
+    border: 0;
+    border-radius: 0;
+}
+
+.none {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%,-50%,0);
+}

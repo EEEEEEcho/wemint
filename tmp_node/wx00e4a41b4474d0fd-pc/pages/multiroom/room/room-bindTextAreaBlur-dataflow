@@ -1,0 +1,24 @@
+// \pages/multiroom/room/room bindTextAreaBlur Data Flow
+digraph {
+	e1a6f6cd97e745fb80de8f9847576c4a [label="FunctionCall,
+function name -> bindTextAreaBlur,
+param -> t.,
+t,
+" color=blue]
+	fc13f13f901b46758bdf158ac38ed0b7 [label=SequenceExpression color=blue]
+	"4126b0c0b01a49e38b1df03499e705f3" [label="CallExpression,
+callee name -> console.log,
+param -> t.detail.value,
+" color=blue]
+	fc13f13f901b46758bdf158ac38ed0b7 -> "4126b0c0b01a49e38b1df03499e705f3"
+	"326a436689064c0cb41911743beb5196" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"21517e3bfe8344d5b6136e5cfacd699f" [label="Object Properties
+{
+TextArea -> t.detail.value
+}" color=blue]
+	"326a436689064c0cb41911743beb5196" -> "21517e3bfe8344d5b6136e5cfacd699f"
+	fc13f13f901b46758bdf158ac38ed0b7 -> "326a436689064c0cb41911743beb5196"
+	e1a6f6cd97e745fb80de8f9847576c4a -> fc13f13f901b46758bdf158ac38ed0b7
+}

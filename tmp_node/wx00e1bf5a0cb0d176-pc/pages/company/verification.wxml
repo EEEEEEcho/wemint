@@ -1,0 +1,56 @@
+<view class="fixedTopBorder"></view>
+<view class="container">
+    <view class="main">
+        <view class="header-title common-corner">
+      {{couponInfo.Title}}
+    </view>
+        <view class="code common-corner">
+            <view class="line-h"></view>
+            <view class="img">
+                <image src="{{couponUrl}}" style="width: 310rpx; height: 310rpx; background-color: #ddd;"></image>
+            </view>
+            <view class="title-text">优惠券码：{{couponInfo.Code}}</view>
+        </view>
+        <view class="explain-details">
+            <view class="line-h"></view>
+            <view class="title">优惠券说明</view>
+            <view class="item">
+                <view class="title-text">优惠券</view>
+                <view class="desc">{{couponInfo.Title}}</view>
+            </view>
+            <view class="item">
+                <view class="title-text">优惠券类型</view>
+                <view class="desc">{{couponInfo.Type==0?'折扣券':'现金券'}}</view>
+            </view>
+            <view class="item">
+                <view class="title-text">优惠额度</view>
+                <view class="desc">{{couponInfo.Amount-0}} {{couponInfo.Type==0?'折':'元'}}</view>
+            </view>
+            <view class="item">
+                <view class="title-text">使用条件</view>
+                <view class="desc">{{couponInfo.OrderMoney>0?'满'+couponInfo.OrderMoney-0+'可用':'不限'}}</view>
+            </view>
+            <view class="item">
+                <view class="title-text">可用商品</view>
+                <view class="desc user-product">
+                    <text>{{couponInfo.IsProductLimit==0?'全场通用':'指定商品'}}</text>
+                    <text bindtap="goProductList" class="look-pro">查看商品 <text class="iconfont icon-iconfont_arrow-right"></text>
+                    </text>
+                </view>
+            </view>
+            <view class="item">
+                <view class="title-text">有效期至</view>
+                <view class="desc">{{couponInfo.EndTime}}</view>
+            </view>
+            <view class="item" wx:if="{{couponInfo.CanUseWeekText}}">
+                <view class="title-text">使用时间</view>
+                <view class="desc">
+                    <view>{{couponInfo.CanUseWeekText}}</view>
+                    <view>{{couponInfo.StartTimeLimit}} - {{couponInfo.EndTimeLimit}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<include src="/pages/template/popupFromShare.wxml"></include>
+<include src="/pages/template/getUserInfo.wxml"></include>

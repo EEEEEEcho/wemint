@@ -1,0 +1,88 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="overlyingContain" style="margin-top: {{navH+status}}px">
+    <view class="title">相关软装</view>
+    <view class="showProduct">
+        <scroll-view scrollX class="scrollViewH">
+            <view bindtap="chooseFirst" class="tab" data-index="{{index}}" data-spaceUuid="{{item.spaceUuid}}" style="margin-right: {{index===dataList.length-1?'':'20'}}rpx;" wx:for="{{spaceNameList}}">
+                <text class="swiper {{firstActive===index?'swipertabSelect':'swiperTab'}}">{{item.spaceName}}</text>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="showProduct">
+        <scroll-view scrollX class="scrollViewH">
+            <view bindtap="chooseSecond" class="tab" data-groupUuid="{{item.groupUuid}}" data-index="{{index}}" style="margin-right: {{index===dataList.length-1?'':'20'}}rpx;" wx:for="{{spaceNameList[firstActive].groups}}">
+                <text class="swiper {{secondActive===index?'swipertabSelect':'swiperTab'}}">{{item.name}}</text>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="count row">
+        <text class="product">24件精选商品</text>
+        <text class="price">价格</text>
+        <view catchtap="priceSort" class="arrow column">
+            <image class="up" src="{{isDesc?'http://oss.shangmian.xin/weixin_applets_icon_up.png':'http://oss.shangmian.xin/weixin_applets_icon_up_fill.png'}}"></image>
+            <image class="down" src="{{isDesc?'http://oss.shangmian.xin/weixin_applets_icon_down_fill.png':'http://oss.shangmian.xin/weixin_applets_icon_down.png'}}"></image>
+        </view>
+    </view>
+    <view class="productList row">
+        <text class="selected" wx:if="{{isLogin}}">未登录</text>
+        <text class="selected" wx:elif="{{selectedQuery.length!=0}}">已选</text>
+        <text class="selected" wx:else>未选</text>
+        <view class="showProducts">
+            <scroll-view scrollX class="scrollViewH">
+                <view class="tab" style="margin-right: {{index===selectedQuery.length-1?'':'20'}}rpx;" wx:for="{{selectedQuery}}">
+                    <image class="goodImages" lazyLoad="true" mode="aspectFill" src="{{item.covers[0]}}"></image>
+                </view>
+            </scroll-view>
+        </view>
+        <image class="leftArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_more.png" wx:if="{{imageList.length!=0}}"></image>
+        <text class="overlying">套餐组合</text>
+    </view>
+    <view class="goodsListPanel row">
+        <view class="goodPanel row" style="margin-bottom:{{index==relatedProductionList.length-1?'0':'30'}}rpx;" wx:for="{{relatedProductionList}}">
+            <view class="good row">
+                <image class="goodImage" lazyLoad="true" mode="aspectFill" src="{{item.covers[0]}}"></image>
+                <view class="goodInfo column">
+                    <text class="goodName">{{item.title}}</text>
+                    <view class="pricePair row">
+                        <text class="newPricePre">￥</text>
+                        <text class="newPrice">{{overlyingGetPrice.getPrice(item.minSalesPrice)}}</text>
+                        <text class="oldPricePre">￥</text>
+                        <text class="oldPrice">{{overlyingGetPrice.getPrice(item.maxMarketPrice)}}</text>
+                    </view>
+                    <view class="tips row">
+                        <text class="tip" wx:for="{{item.tags}}">{{item}}</text>
+                    </view>
+                </view>
+            </view>
+            <view catchtap="checkedThis" class="checkedImages" data-gooduuid="{{item.goodsUuid}}" data-index="{{index}}">
+                <image class="checkedImage" src="{{item.isSelected!=0?'http://oss.shangmian.xin/weixin_applets_mine_coupon_check_fill.png':'http://oss.shangmian.xin/weixin_applets_mine_coupon_check.png'}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="recommend column">
+        <text class="shopRecommend">尚免推荐</text>
+        <text class="new">精品新款推荐</text>
+        <view class="recommendPanel">
+            <empty iconPath="http://oss.shangmian.xin/weixin_applets_icon_order_empty_view.png" isShow="{{recommendProductionList.length==0}}" textContent="暂无商品推荐"></empty>
+            <view class="recommendGoodPanel row" style="margin-bottom:{{index==recommendProductionList.length-1?'80':'30'}}rpx;" wx:for="{{recommendProductionList}}">
+                <view class="recommendGood row">
+                    <image class="goodImage" lazyLoad="true" mode="aspectFill" src="{{item.covers[0]}}"></image>
+                    <view class="goodInfo column">
+                        <text class="recommendGoodName">{{item.title}}</text>
+                        <view class="pricePair row">
+                            <text class="newPricePre">￥</text>
+                            <text class="newPrice">{{overlyingGetPrice.getPrice(item.minSalesPrice)}}</text>
+                            <text class="oldPricePre">￥</text>
+                            <text class="oldPrice">{{overlyingGetPrice.getPrice(item.maxMarketPrice)}}</text>
+                        </view>
+                        <view class="recommendTips row">
+                            <text class="tip" wx:for="{{item.tags}}">{{item}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<loading-view isShow="{{isShowLoad}}"></loading-view>
+<wxs module="overlyingGetPrice" src="overlying.wxs" />

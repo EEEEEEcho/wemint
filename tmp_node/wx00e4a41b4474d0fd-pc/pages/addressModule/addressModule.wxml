@@ -1,0 +1,53 @@
+<myLoading id="myLoading"></myLoading>
+<navbar data="{{navbar}}"></navbar>
+<view class="addressModuleContainer">
+    <view class="addressModuleContainer-top"></view>
+    <view class="addressModuleSearch">
+        <view class="addressModuleSearch-bg"></view>
+        <image class="addressModuleSearch-icon" mode="scaleToFill" src="https://dm.static.elab-plus.com/GroupMini/sousuo-3.png"></image>
+        <input bindconfirm="startSearchFuc" bindinput="inputValueChange" class="addressModuleSearch-input" confirmType="search" placeholder="输入城市名进行搜索" placeholderClass="addressModuleSearch-placeholder"></input>
+    </view>
+    <view class="cityListContainer" wx:if="{{showSearchListView}}">
+        <view class="searchLetter touchClass">
+            <view bindtap="hotCity" class="thishotText"></view>
+            <view catchtouchend="letterClkFuc" data-letter="{{item.name}}" style="color:#2ab4ff;font-size:20rpx;" wx:for="{{searchLetter}}" wx:key="index">{{item.name}}</view>
+        </view>
+        <view class="showSlectedLetter" wx:if="{{isShowLetter}}">
+        {{showLetter}}
+      </view>
+        <scroll-view bindscroll="bindScroll" scrollIntoView="{{scrollTopId}}" scrollTop="{{scrollTop}}" scrollY="true" style="height:{{winHeight}}px">
+            <view class="hotcity-common thisCity" wx:if="{{currentCity.length>0}}">当前定位城市</view>
+            <view bindtap="bindCurrentCity" class="thisCityName" data-citycode="{{currentCityCode}}" wx:if="{{currentCity.length>0}}">{{currentCity}}</view>
+            <view class="historyCityListContainer" style="overflow: hidden;" wx:if="{{cityHistoryList.length>0}}">
+                <text class="hotcity-common">历史访问城市</text>
+                <view class="history-grid-container">
+                    <view bindtap="bindHistoryCity" class="history-grid" data-city="{{item.city}}" data-cityCode="{{item.cityCode}}" wx:for="{{cityHistoryList}}" wx:key="{{index}}">
+                        <view class="history-grid-label">{{item.city}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="hotCityListContainer" wx:if="{{hotCityList.length>0}}">
+                <text class="hotcity-common">国内热门城市</text>
+                <view class="hot-grid-container" style="overflow: hidden;">
+                    <view bindtap="bindHotCity" class="hot-grid" data-city="{{item.city}}" data-cityCode="{{item.cityCode}}" wx:for="{{hotCityList}}" wx:key="{{index}}">
+                        <view class="hot-grid-label" style="color:{{selectCityCode==item.cityCode?'#2ab4ff':'#333'}};">{{item.city}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="selection" wx:for="{{cityList}}" wx:key="{{item.initial}}">
+                <view class="item_letter" id="{{item.initial}}">{{item.initial}}</view>
+                <view bindtap="bindCity" class="item_city" data-city="{{ct.city}}" data-cityCode="{{ct.code}}" style="color:{{selectCityCode==ct.code?'#2ab4ff':'#666'}};" wx:for="{{item.cityInfo}}" wx:for-item="ct" wx:key="{{index}}">
+          {{ct.city}}
+        </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="cityResultListContainer" wx:if="{{!showSearchListView}}">
+        <view bindtap="bindCityFromSearch" class="item_city" data-city="{{ct.city}}" data-cityCode="{{ct.code}}" style="color:{{selectCityCode==ct.code?'#2ab4ff':'#666'}};" wx:if="{{searchResultList.length>0}}" wx:for="{{searchResultList}}" wx:for-item="ct" wx:key="{{index}}">
+      {{ct.city}}
+    </view>
+        <view class="item_city" wx:if="{{searchResultList.length==0&&hasNoSearch}}">
+      没匹配到您搜索的城市
+    </view>
+    </view>
+</view>

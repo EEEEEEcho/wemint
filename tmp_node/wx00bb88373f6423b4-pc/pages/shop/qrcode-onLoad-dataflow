@@ -1,0 +1,46 @@
+// \pages/shop/qrcode onLoad Data Flow
+digraph {
+	"3ac3c706d0db481c9a42a28e8ba6371a" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"25de6990173340b1921371021520f804" [label=SequenceExpression color=blue]
+	b966d38a62ff485580d957d99d8ef6ae [label="CallExpression,
+callee name -> this.getQrcode,
+param -> " color=blue]
+	d7d80ccbdeb1485f94bcbaed2d670bf7 [label="FunctionCall,
+function name -> getQrcode,
+param -> " color=blue]
+	"1df7c1002d154a67bb14bbebd012455a" [label=VariableDeclarations color=blue]
+	"4152f57e2a2b4d61bb38de958a0a4d9f" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	b592910edd1548dc8f9dafbf6ef9badc [label="Object Properties
+{
+userID -> e.data.userID
+}" color=blue]
+	d066db756f7a4bec928ea8c1002f2806 [label="FunctionCall,
+function name -> success,
+param -> s.,
+s,
+" color=blue]
+	"9fadd9390c6f41879110c1f14cdb1c84" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	d9df078b04ba4006bec62bcc97f7e61f [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"2b97569037b0458dac79fa921c8991ad" [label="Object Properties
+{
+bg_src -> t.globalData.siteBaseUrl + s.info.bg_img_url + '?v=' + Math.random()
+}" color=blue]
+	d9df078b04ba4006bec62bcc97f7e61f -> "2b97569037b0458dac79fa921c8991ad"
+	"9fadd9390c6f41879110c1f14cdb1c84" -> d9df078b04ba4006bec62bcc97f7e61f
+	d066db756f7a4bec928ea8c1002f2806 -> "9fadd9390c6f41879110c1f14cdb1c84"
+	b592910edd1548dc8f9dafbf6ef9badc -> d066db756f7a4bec928ea8c1002f2806
+	"4152f57e2a2b4d61bb38de958a0a4d9f" -> b592910edd1548dc8f9dafbf6ef9badc
+	"1df7c1002d154a67bb14bbebd012455a" -> "4152f57e2a2b4d61bb38de958a0a4d9f"
+	d7d80ccbdeb1485f94bcbaed2d670bf7 -> "1df7c1002d154a67bb14bbebd012455a"
+	b966d38a62ff485580d957d99d8ef6ae -> d7d80ccbdeb1485f94bcbaed2d670bf7
+	"25de6990173340b1921371021520f804" -> b966d38a62ff485580d957d99d8ef6ae
+	"3ac3c706d0db481c9a42a28e8ba6371a" -> "25de6990173340b1921371021520f804"
+}

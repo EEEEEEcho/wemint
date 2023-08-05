@@ -1,0 +1,9 @@
+// \pages/company/businessCard/cardDetails sendclose Data Flow
+digraph {
+	"74382f60f7004738b640a68d56481149" [label="FunctionCall,
+function name -> sendclose,
+param -> " color=blue]
+	"2b328cec4fd34b1a846fdcf7a4315dc8" [label="ConditionalExpression,
+ conditional list -> t.setData" color=blue]
+	"74382f60f7004738b640a68d56481149" -> "2b328cec4fd34b1a846fdcf7a4315dc8"
+}

@@ -1,0 +1,32 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="wish_list_container" style="margin-top:{{navH+status+10}}px">
+    <view class="searchbar">
+        <image class="loupe" src="http://oss.shangmian.xin/weixin_applets_icon_loupe.png"></image>
+        <input bindblur="searchSomething" class="loupe_txt" placeholder="搜索品牌/单品/风格" placeholderClass="placeholder"></input>
+    </view>
+    <view class="wish_list_panel">
+        <view catchtap="toCheck" class="favorite" data-checkIndex="{{index}}" style="margin-bottom:{{index==wishGoodsList.length-1?150:30}}rpx;" wx:for="{{wishGoodsList}}" wx:for-item="goodItem">
+            <image class="favorite_img" lazyLoad="true" mode="aspectFill" src="{{goodItem.covers[0]}}"></image>
+            <view class="favorite_params">
+                <view class="favorite_proname">{{goodItem.title}}</view>
+                <view class="favorite_proprice">
+                    <text class="newPrice_pre">¥</text>
+                    <text class="newPrice">{{goodItem.isExemptGoods=='0'?goodItem.minSalesPrice/100:goodItem.activityPrice/100}}</text>
+                    <text class="oldPrice_pre">¥</text>
+                    <text class="oldPrice">{{goodItem.minMarketPrice/100}}</text>
+                </view>
+                <view class="favorite_prolabel">
+                    <view class="label1" wx:for="{{goodItem.tags}}" wx:for-item="tagItem">{{tagItem}}</view>
+                </view>
+                <view class="favorite_probtn">
+                    <image class="check_img" src="http://oss.shangmian.xin/weixin_applets_mine_check_img.png" wx:if="{{goodItem.isChecked}}"></image>
+                </view>
+            </view>
+        </view>
+        <view catchtap="finished" class="btn" hoverClass="finish" wx:if="{{isChecked}}">完成</view>
+    </view>
+    <view class="loadMoreLayout" wx:if="{{isLoadMore}}">
+        <text class="loadMoreText">加载更多...</text>
+    </view>
+</view>
+<loading-view isShow="{{isShowLoad}}"></loading-view>

@@ -1,0 +1,69 @@
+<view class="s_pagebg">
+    <view class="s_head">
+        <view class="os_1">
+            <view bindtap="topChange" class="navig">
+                <view class="{{can==''?'font2':'font1'}}">全部</view>
+            </view>
+        </view>
+        <view class="os_1">
+            <view bindtap="topChange" class="navig" data-can="usered">
+                <view class="{{can=='usered'?'font2':'font1'}}">已使用</view>
+            </view>
+        </view>
+        <view class="os_1">
+            <view bindtap="topChange" class="navig" data-can="invalid">
+                <view class="{{can=='invalid'?'font2':'font1'}}">已失效</view>
+            </view>
+        </view>
+    </view>
+    <view class="s_box">
+        <view class="yhuiq" wx:for="{{coupon}}" wx:key="*this">
+            <view class="yhtu" wx:if="{{item.o_id==-1||item.o_id>0}}">
+                <image mode="widthFix" src="../../images/ybg2.png" style="width:100%;"></image>
+            </view>
+            <view class="yhtu" wx:elif="{{item.guoqi==1}}">
+                <image mode="widthFix" src="../../images/ybg3.png" style="width:100%;"></image>
+            </view>
+            <view class="yhtu" wx:else>
+                <image mode="widthFix" src="../../images/ybg1.png" style="width:100%;"></image>
+            </view>
+            <view class="yh_con">
+                <view class="h3">¥{{item.money}}<view class="font1">满{{item.meet_money}}元可用</view>
+                </view>
+                <view class="h4">{{item.title}}<view class="font1">有效期：{{item.starttime}} —{{item.endtime2}}</view>
+                </view>
+            </view>
+        </view>
+        <view style="text-align:center; line-height:40px;" wx:if="{{coupon.length==0}}">暂无信息</view>
+    </view>
+</view>
+<view id="foot">
+    <navigator class="navig" hoverClass="none" openType="switchTab" url="../index/index">
+        <view class="fot1">
+            <image class="img1" mode="widthFix" src="../../images/icon11.jpg"></image>
+            <image class="img2" mode="widthFix" src="../../images/icon12.jpg"></image>
+            <view class="font">首页</view>
+        </view>
+    </navigator>
+    <navigator class="navig" hoverClass="none" openType="switchTab" url="../prod/prod">
+        <view class="fot1">
+            <image class="img1" mode="widthFix" src="../../images/icon21.jpg"></image>
+            <image class="img2" mode="widthFix" src="../../images/icon22.jpg"></image>
+            <view class="font">分类</view>
+        </view>
+    </navigator>
+    <navigator class="navig" hoverClass="none" openType="switchTab" url="../buy/buy">
+        <view class="fot1">
+            <image class="img1" mode="widthFix" src="../../images/icon31.jpg"></image>
+            <image class="img2" mode="widthFix" src="../../images/icon32.jpg"></image>
+            <view class="font">购物车</view>
+        </view>
+    </navigator>
+    <navigator class="navig" hoverClass="none" openType="switchTab" url="../my/my">
+        <view class="fot2">
+            <image class="img1" mode="widthFix" src="../../images/icon41.jpg"></image>
+            <image class="img2" mode="widthFix" src="../../images/icon42.jpg"></image>
+            <view class="font">我的</view>
+        </view>
+    </navigator>
+</view>

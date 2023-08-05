@@ -1,0 +1,28 @@
+// \pages/teacher/parentCircleList/parentCircleList previewImage Data Flow
+digraph {
+	"8a0a50ee9a794d629da69a963746c358" [label="FunctionCall,
+function name -> previewImage,
+param -> e,
+e.,
+" color=blue]
+	a45a80513ebb4523b2613cb9d07aaacc [label=VariableDeclarations color=blue]
+	c94da6c9efd244ee8b20b3db963361ff [label="VariableDeclarator,
+left -> t,
+right -> e.currentTarget.dataset.index" color=blue]
+	a45a80513ebb4523b2613cb9d07aaacc -> c94da6c9efd244ee8b20b3db963361ff
+	"8dd0778d249a4ecf87a278cb5d518b7c" [label="VariableDeclarator,
+left -> a,
+right -> e.currentTarget.dataset.src" color=blue]
+	a45a80513ebb4523b2613cb9d07aaacc -> "8dd0778d249a4ecf87a278cb5d518b7c"
+	"8a0a50ee9a794d629da69a963746c358" -> a45a80513ebb4523b2613cb9d07aaacc
+	"2c32532caad34fb1a5efedd4983c7654" [label="CallExpression,
+callee name -> wx.previewImage,
+param -> " color=blue]
+	"89c983c8b6734776b44e6912377431c4" [label="Object Properties
+{
+current -> a[t]
+urls -> a
+}" color=blue]
+	"2c32532caad34fb1a5efedd4983c7654" -> "89c983c8b6734776b44e6912377431c4"
+	"8a0a50ee9a794d629da69a963746c358" -> "2c32532caad34fb1a5efedd4983c7654"
+}

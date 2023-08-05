@@ -1,0 +1,54 @@
+// \pages/cart/cart bindMinus Data Flow
+digraph {
+	d520fb94bf0343d09fd5ed9e8cfabd42 [label="FunctionCall,
+function name -> bindMinus,
+param -> a,
+a.,
+" color=blue]
+	"8c5fa2ac86e644afbecff04c49fb53d8" [label=VariableDeclarations color=blue]
+	ea5767e288df4283be8fa42697f73219 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"3995b2205ab0445e8b788bf5f6bbb054" [label="CallExpression,
+callee name -> parseInt,
+param -> a.currentTarget.dataset.index,
+" color=blue]
+	ea5767e288df4283be8fa42697f73219 -> "3995b2205ab0445e8b788bf5f6bbb054"
+	"8c5fa2ac86e644afbecff04c49fb53d8" -> ea5767e288df4283be8fa42697f73219
+	"2925b58f5072401b8462b57025cf3221" [label="VariableDeclarator,
+left -> r,
+right -> e.data.carts[s].num" color=blue]
+	"8c5fa2ac86e644afbecff04c49fb53d8" -> "2925b58f5072401b8462b57025cf3221"
+	d520fb94bf0343d09fd5ed9e8cfabd42 -> "8c5fa2ac86e644afbecff04c49fb53d8"
+	"79832d4d8e774abda9924ecc356c3d56" [label=SequenceExpression color=blue]
+	"16834fa641524de0aa3375258e7ce0de" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"1d24602489514dd297c42fdd998a0b09" [label="UpdateExpression,
+identifier -> r,
+operate -> --" color=blue]
+	"16834fa641524de0aa3375258e7ce0de" -> "1d24602489514dd297c42fdd998a0b09"
+	"79832d4d8e774abda9924ecc356c3d56" -> "16834fa641524de0aa3375258e7ce0de"
+	de014266edac41449971e22e0f341fee [label="CallExpression,
+callee name -> console.log,
+param -> r,
+" color=blue]
+	"79832d4d8e774abda9924ecc356c3d56" -> de014266edac41449971e22e0f341fee
+	d520fb94bf0343d09fd5ed9e8cfabd42 -> "79832d4d8e774abda9924ecc356c3d56"
+	ef89464e46914082a2cc8620e7007193 [label=VariableDeclarations color=blue]
+	"15071638a966459784b2c3caef4a239a" [label="VariableDeclarator,
+left -> i,
+right -> a.currentTarget.dataset.cartid" color=blue]
+	ef89464e46914082a2cc8620e7007193 -> "15071638a966459784b2c3caef4a239a"
+	d520fb94bf0343d09fd5ed9e8cfabd42 -> ef89464e46914082a2cc8620e7007193
+	e9201dc640064b308177fa949e7ff402 [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	e46e978e9784403d849b8c884342efbb [label="Object Properties
+{
+num -> r
+cart_id -> i
+}" color=blue]
+	e9201dc640064b308177fa949e7ff402 -> e46e978e9784403d849b8c884342efbb
+	d520fb94bf0343d09fd5ed9e8cfabd42 -> e9201dc640064b308177fa949e7ff402
+}

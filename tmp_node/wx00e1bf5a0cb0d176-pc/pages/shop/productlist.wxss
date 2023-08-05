@@ -1,0 +1,503 @@
+@import "searchPage.wxss";
+
+@import "../../__wuBaseWxss__/29.wxss";
+
+.search-product {
+    height: 98rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #f4f4f4;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+
+.searchinp {
+    width: 710rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    border-radius: 33rpx;
+    padding-left: 102rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    background-color: #fff;
+    opacity: 80%;
+    margin-left: 20rpx;
+}
+
+.placeholder-style {
+    color: #999;
+    font-size: 28rpx;
+}
+
+.searchimg {
+    position: absolute;
+    top: 11rpx;
+    left: 21rpx;
+    width: 94rpx;
+    height: 70rpx;
+    box-sizing: border-box;
+    padding-top: 16rpx;
+    padding-left: 30rpx;
+}
+
+.searchimg .iconfont {
+    font-size: 44rpx;
+    color: #999;
+}
+
+.topBar {
+    width: 100%;
+    height: 88rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #fff;
+    position: fixed;
+    z-index: 200;
+    margin-top: 98rpx;
+}
+
+.topBar .topBarItem {
+    height: 88rpx;
+    flex: 1;
+    line-height: 88rpx;
+    color: #666;
+    font-size: 26rpx;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.topBar .topBarItemLast {
+    overflow: hidden;
+    line-height: 88rpx;
+}
+
+.topBar .topBarItem:last-child .title {
+    margin-right: 10rpx;
+    position: relative;
+    top: -2rpx;
+}
+
+.topBar .topBarItem .sortIcon {
+    position: absolute;
+    left: 100rpx;
+    top: 4rpx;
+}
+
+.topBar .topBarItem .sortIcon text {
+    font-size: 16rpx;
+    color: #bbb;
+}
+
+.topBar .topBarItem text.isactived {
+    color: #FF7200;
+}
+
+.topBar .topBarItem .sortIcon text.actived {
+    color: #FF7200;
+}
+
+.topBar .topBarItem .sortIcon text:nth-child(1) {
+    position: relative;
+    top: -12rpx;
+    left: 16rpx;
+}
+
+.products {
+    padding-top: 186rpx;
+}
+
+.products.showCoupon {
+    padding-top: 246rpx;
+}
+
+.products .productList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.products .productList .productItem .info {
+    display: flex;
+    flex-direction: column;
+    margin-top: -10rpx;
+    background: #fff;
+    padding: 0 26rpx;
+}
+
+.products .productList .productItem .proTitle {
+    font-size: 28rpx;
+    color: #333;
+    font-weight: 600;
+    margin: 20rpx 0rpx 14rpx 0rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.productItem {
+    margin-bottom: 12rpx;
+}
+
+.products .productList .productItem .address {
+    font-size: 22rpx;
+    color: #999;
+    margin-bottom: 14rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.products .productList .productItem .botMsg {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 34rpx;
+    align-items: center;
+    position: relative;
+}
+
+.products .productList .productItem .botMsg .label-box {
+    font-size: 22rpx;
+    color: #fff;
+    background-color: #ff3828;
+    padding: 5rpx 5rpx;
+    border-radius: 7rpx;
+    margin-left: 10rpx;
+}
+
+.products .productList .productItem .MarketPrice {
+    font-size: 22rpx;
+    color: #999;
+    height: 32rpx;
+    line-height: 32rpx;
+    text-decoration: line-through;
+}
+
+.products .productList .productItem .botMsg .price {
+    font-size: 30rpx;
+    color: #ef1414;
+    font-weight: bold;
+}
+
+.products .productList .productItem .botMsg .buys {
+    font-size: 22rpx;
+    color: #999;
+    position: absolute;
+    right: 0;
+}
+
+.noMore {
+    display: flex;
+    flex-direction: row;
+    width: 270rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 0 auto;
+    margin-bottom: 34rpx;
+    padding-left: 32rpx;
+}
+
+.noMore .line {
+    width: 56rpx;
+    height: 2rpx;
+    background-color: #bbb;
+    position: relative;
+    top: 40rpx;
+}
+
+.noMore .text {
+    color: #bbb;
+    font-size: 22rpx;
+    margin: 0 20rpx;
+}
+
+.noproduct {
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 32rpx;
+    color: #666;
+    position: fixed;
+    top: 186rpx;
+    width: 100%;
+}
+
+.noproduct image {
+    width: 60%;
+}
+
+.noproduct text {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.mask {
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.category {
+    position: fixed;
+    left: 0;
+    background-color: rgba(255,255,255,1);
+    z-index: 1;
+    border-top: 1rpx solid #ddd;
+}
+
+.categoryIcon {
+    position: absolute;
+    right: 26rpx;
+    top: 32rpx;
+    font-size: 40rpx;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.categoryItem {
+    width: 100%;
+    padding: 0 26rpx;
+}
+
+.categoryItem .categoryBar {
+    width: 100%;
+    height: 88rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+.categoryItem .categoryBar .categoryTitle {
+    font-size: 28rpx;
+    color: #333;
+}
+
+.categoryItem .categoryBar .titleRight {
+    width: 135rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.categoryItem .categoryBar .titleRight .iconfont {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.categoryItem .categoryBar .categoryAll {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.categoryItem .categoryContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.categoryItem .categoryContent .categoryContentItem {
+    width: 342rpx;
+    height: 88rpx;
+    background-color: #f4f4f3;
+    line-height: 88rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #666;
+    border-radius: 10rpx;
+    margin-right: 14rpx;
+    margin-bottom: 14rpx;
+}
+
+.categoryItem .categoryContent .categoryContentItem:nth-child(2n) {
+    margin-right: 14rpx;
+}
+
+.productList {
+    display: flex;
+}
+
+.productList .productItem {
+    width: 369rpx;
+}
+
+.productList .productItem:nth-child(2n-1) {
+    margin-right: 12rpx;
+}
+
+.productItem image {
+    width: 100%;
+    height: 368rpx;
+}
+
+.selectMask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1001;
+}
+
+.selectList {
+    width: 84%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1002;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    transition: all 0.3s linear;
+}
+
+.showSelectList {
+    display: block;
+    transform: translateX(0);
+}
+
+.showSelectMask {
+    background-color: rgba(0,0,0,0.6);
+}
+
+.selectTitleBar {
+    width: 100%;
+    height: 94rpx;
+    padding-top: 40rpx;
+    padding-bottom: 26rpx;
+    font-size: 28rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    color: #333;
+}
+
+.selectContent {
+    margin-bottom: 20rpx;
+    overflow: hidden;
+}
+
+.selectItem {
+    height: 76rpx;
+    width: 184rpx;
+    margin-bottom: 20rpx;
+    background-color: #f4f4f4;
+    border-radius: 10rpx;
+    color: #666;
+    font-size: 26rpx;
+    line-height: 76rpx;
+    text-align: center;
+    margin-right: 12rpx;
+    float: left;
+}
+
+.selectItem:nth-child(3n) {
+    margin-right: 0;
+}
+
+.selected {
+    background-color: #FF7200;
+    color: #fff;
+}
+
+.borderline {
+    width: 100%;
+    height: 2rpx;
+    background-color: #f4f4f4;
+}
+
+.bottomBtn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.resetBtn {
+    width: 50%;
+    height: 98rpx;
+    background-color: #ffe3cc;
+    color: #FF7200;
+    font-size: 30rpx;
+    line-height: 98rpx;
+    text-align: center;
+}
+
+.sureBtn {
+    width: 50%;
+    height: 98rpx;
+    background-color: #FF7200;
+    color: #fff;
+    font-size: 30rpx;
+    line-height: 98rpx;
+    text-align: center;
+}
+
+.timestaus {
+    left: 116rpx!important;
+}
+
+.productList .productItem {
+    position: relative;
+    overflow: hidden;
+}
+
+.productList .groupDiscount {
+    width: 120rpx;
+    height: 36rpx;
+    border-radius: 0 36rpx 36rpx 0;
+    font-size: 24rpx;
+    color: #fc2b26;
+    background: linear-gradient(#ffdace,#ffc7c7);
+    position: absolute;
+    left: 0;
+    top: 20rpx;
+    text-align: center;
+}
+
+.container .coupon-text {
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin-top: 180rpx;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60rpx;
+    font-size: 26rpx;
+    color: #333;
+    z-index: 222;
+    background-color: #fff;
+}
+
+.container .coupon-text .coupon-info {
+    color: #ff7200;
+}

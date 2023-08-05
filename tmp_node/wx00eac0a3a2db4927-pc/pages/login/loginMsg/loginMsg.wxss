@@ -1,0 +1,72 @@
+.login-img {
+    width: 750rpx;
+    height: 656rpx;
+}
+
+.msg {
+    margin-top: -65rpx;
+    width: 514rpx;
+    margin-left: 118rpx;
+}
+
+.tel_input {
+    height: 65rpx;
+    border-bottom: 1px solid #aeaeb4;
+}
+
+.tel,.validate {
+    margin-left: 25rpx;
+    color: #51515c;
+    font-size: 32rpx;
+}
+
+.vali_input {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20rpx;
+    height: 75rpx;
+    border-bottom: 1px solid #aeaeb4;
+    align-items: center;
+}
+
+.validate {
+    width: 360rpx;
+}
+
+.placeholder {
+    color: #c4c4c4;
+    font-size: 32rpx;
+}
+
+.vali_code {
+    color: #51515c;
+    font-size: 26rpx;
+    width: 131rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    text-align: center;
+}
+
+.login_btn {
+    width: 514rpx;
+    height: 44px;
+    line-height: 44px;
+    border-radius: 50rpx;
+    color: #fff;
+    margin-top: 40px;
+    font-size: 18px;
+    letter-spacing: 2rpx;
+    text-align: center;
+}
+
+.after_click {
+    background: #ed7b43;
+}
+
+.before_click {
+    background: #aeaeb4;
+}
+
+.btn_hover {
+    background: #df6e36;
+}

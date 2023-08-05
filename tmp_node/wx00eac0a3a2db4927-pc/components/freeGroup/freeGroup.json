@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "free-group-list": "/components/freeGroupList/freeGroupList",
+        "loading-view": "/components/loading/loading",
+        "empty": "/components/emptyView/emptyView"
+    },
+    "component": true
+}

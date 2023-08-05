@@ -1,0 +1,258 @@
+.head-box {
+    position: relative;
+}
+
+.head-img {
+    width: 750rpx;
+    height: 335rpx;
+}
+
+.month-card-box {
+    position: absolute;
+    top: 80rpx;
+}
+
+.open-month-card {
+    width: 308rpx;
+    height: 120rpx;
+    position: absolute;
+    bottom: 50rpx;
+    right: 20rpx;
+}
+
+.line {
+    height: 15rpx;
+    background-color: #f7f7f7;
+}
+
+.middle-box {
+    margin-top: 50rpx;
+    padding: 20rpx 15rpx;
+}
+
+.value-title {
+    letter-spacing: 5rpx;
+    padding-left: 10rpx;
+    margin-bottom: 20rpx;
+}
+
+.value-box {
+    font-size: 25rpx;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10rpx;
+    margin-bottom: 30rpx;
+}
+
+.month-tip {
+    color: #8f8f8f;
+    margin-bottom: 7rpx;
+}
+
+.pay-with-lt {
+    font-size: 30rpx;
+    padding-left: 10rpx;
+}
+
+.open-vip {
+    text-align: center;
+    margin-top: 30rpx;
+}
+
+.open-vip image {
+    width: 511rpx;
+    height: 67rpx;
+}
+
+.pay-with-lt checkbox .wx-checkbox-input {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.month-card-com {
+    background-color: red;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20rpx;
+    display: inline;
+    padding: 3rpx 10rpx;
+}
+
+.month-card-com image {
+    width: 25rpx;
+    height: 25rpx;
+}
+
+.vip-item {
+    border: 2px solid #e8e8e8;
+    border-radius: 10px;
+    width: 180rpx;
+    height: 180rpx;
+    text-align: center;
+    padding: 10rpx 0 0;
+}
+
+.month-card-price {
+    color: red;
+}
+
+.month-card-price text {
+    font-size: 50rpx;
+}
+
+.vip-item-active {
+    background-color: #fff2e6;
+    border-color: #eda66e;
+}
+
+.value {
+    font-size: 50rpx;
+    margin-right: 5rpx;
+    font-weight: 600;
+}
+
+.has-card-tip {
+    color: red;
+    font-size: 23rpx;
+}
+
+.value-tip {
+    color: #fff;
+    background-color: #fc9300;
+    padding: 3rpx 15rpx;
+}
+
+.zhuanshu-box {
+    text-align: center;
+    padding: 30rpx 40rpx;
+    font-size: 30rpx;
+}
+
+.title-box {
+    text-align: center;
+    padding: 30rpx 40rpx;
+    letter-spacing: 5rpx;
+    font-size: 35rpx;
+    font-weight: 600;
+    position: relative;
+}
+
+.title-box text :before {
+    display: block;
+    content: '';
+    width: 45rpx;
+    height: 15rpx;
+    background-color: #3b3b39;
+    position: absolute;
+    top: 50rpx;
+    left: 165rpx;
+}
+
+.title-box text :after {
+    display: block;
+    content: '';
+    width: 45rpx;
+    height: 15rpx;
+    background-color: #3b3b39;
+    position: absolute;
+    top: 50rpx;
+    right: 165rpx;
+}
+
+.month-text-tip {
+    font-size: 25rpx;
+    padding: 0 40rpx;
+    text-align: center;
+}
+
+.example-box {
+    text-align: center;
+    font-size: 25rpx;
+}
+
+.example-box view {
+    margin-bottom: 5rpx;
+}
+
+.example-box image {
+    width: 585rpx;
+    height: 178rpx;
+}
+
+.month-text-tip text {
+    color: #fc5b7e;
+}
+
+.tequan-tip {
+    font-size: 25rpx;
+    color: #b2b2b2;
+}
+
+.zhuanshu {
+    width: 331rpx;
+    height: 31rpx;
+    margin-bottom: 40rpx;
+}
+
+.shuoming {
+    width: 279rpx;
+    height: 31rpx;
+    margin-bottom: 20rpx;
+}
+
+.tq-title {
+    font-weight: 600;
+    margin-bottom: 5rpx;
+}
+
+.tequan-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tequan-box image {
+    width: 124rpx;
+    height: 124rpx;
+    margin-bottom: 20rpx;
+}
+
+.yueka-btn {
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 10rpx;
+}
+
+.yueka-btn image {
+    width: 465rpx;
+    height: 74rpx;
+}
+
+.has-card-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-msg {
+    color: #fff;
+    font-size: 25rpx;
+    margin-top: 15rpx;
+}
+
+.user-msg>view {
+    margin-bottom: 10rpx;
+}
+
+.user-msg>view>text {
+    background-color: #fc9300;
+    padding: 3rpx 10rpx;
+}
+
+.renew {
+    color: #fc9300;
+    font-size: 35rpx;
+    border: 1px solid rgb(206,196,196);
+    padding: 5rpx 20rpx;
+    border-radius: 30rpx;
+}

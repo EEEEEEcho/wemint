@@ -1,0 +1,114 @@
+page {
+    background: #f9f9f9;
+}
+
+.comentcont {
+    margin-top: 20px;
+}
+
+.uploadimg {
+    width: 25%;
+    margin-left: 15rpx;
+    margin-bottom: 25rpx;
+}
+
+.uploadimg image {
+    border: 1px solid #ddd;
+}
+
+.comentpic,.comenttilte {
+    padding: 25rxp;
+    display: flex;
+    background: #fff;
+}
+
+.comenttilte {
+    background: #fff;
+}
+
+.comtiltepic {
+    width: 100rpx;
+    overflow: hidden;
+    margin-right: 15rpx;
+    margin-bottom: 20rpx;
+}
+
+.comtiltepic image {
+    width: 95rpx;
+    height: 95rpx;
+}
+
+.comtrightop {
+    font-size: 16px;
+}
+
+.comtrightcout {
+    display: flex;
+    margin-top: 10rpx;
+}
+
+.comtrightcout image {
+    width: 44rpx;
+    height: 40rpx;
+}
+
+.comenttext {
+    margin-top: 15rpx;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.comenttext textarea {
+    height: 180rpx;
+    padding: 10rpx;
+}
+
+.comentstpic {
+    padding: 15rpx;
+    background: #fff;
+    font-size: 16px;
+}
+
+.comtright {
+    margin-left: 15rpx;
+}
+
+.comenttiltetop {
+    padding: 25rpx;
+    background: #fff;
+}
+
+.icon-star {
+    width: 44rpx;
+    height: 44rpx;
+    overflow: hidden;
+    color: #ff9800;
+}
+
+.icon-color {
+    color: #e0e0e0;
+}
+
+.comment-btn {
+    padding: 48rpx 24rpx 24rpx 24rpx;
+}
+
+.comment-btn button {
+    height: 88rpx;
+    line-height: 88rpx;
+    margin-bottom: 24rpx;
+    font-size: 36rpx;
+}
+
+.comment-btn button::after {
+    border: 0;
+}
+
+button.btn-confirm {
+    background: #ff4820;
+    color: #fff;
+}
+
+button.btn-confirm:hover {
+    background: #ff1f00;
+}

@@ -6,7 +6,6 @@ from pojo.file_context import FileContext
 from pojo.scope_enum import Scope
 from pojo.miniprogram import MiniProgram
 from utils import utils
-from loguru import logger
 
 
 def analysis(js_file_path: str, mini_program: MiniProgram) -> FileContext:
@@ -40,10 +39,10 @@ def file_level_analysis(ast_json: dict, file_context: FileContext, mini_program:
     variable_table_analysis(file_context, mini_program)
     function_declaration_analysis(file_context, mini_program)
     if file_context.page_object is not None:
-        # 正确拿到了page
+        # Successfully obtained the page
         page_object_analysis(file_context, mini_program)
     else:
-        # js文件损坏严重，直接舍弃掉page作用域
+        # The JavaScript file is severely corrupted. It's best to discard the 'page' scope directly.
         for expression in expression_list:
             cns.expression_statement_analysis(expression, file_context, mini_program)
 
@@ -162,20 +161,3 @@ def find_page_obj(expression: dict, file_context: FileContext):
                             if 'properties' in argument and len(argument['properties']) > 0:
                                 file_context.page_object = argument
                                 break
-
-
-# # todo: 只存常量表？
-if __name__ == '__main__':
-    # base_path = r'F:\wxapp-analyzer\testfile'
-    base_path = r'E:\WorkSpace\wxapp-analyzer\testfile'
-
-    # path = r'F:\wxapp-analyzer\testfile\pages\register.js'
-    # path = r'E:\WorkSpace\wxapp-analyzer\testfile\pages\register.js'
-    path = r'E:\WorkSpace\wxapp-analyzer\testfile\pages\index.js'
-    mp = MiniProgram(base_path, 'test')
-    context = analysis(path, mp)
-    # logger.info(context.const_variable_table)
-    # # logger.info(context)
-    # logger.info(context.children.const_variable_table)
-    mp.backend_checker.analysis()
-    logger.info(mp.backend_checker)

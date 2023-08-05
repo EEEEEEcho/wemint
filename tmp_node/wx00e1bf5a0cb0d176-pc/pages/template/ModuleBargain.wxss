@@ -1,0 +1,183 @@
+.ModuleBargain .layout-101 .pro-img-wrapper {
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.ModuleBargain .layout-101 .pro-img-wrapper .dump {
+    padding-top: 100%;
+}
+
+.ModuleBargain .layout-101 .groupBooking {
+    padding: 10rpx 20rpx;
+    flex-flow: row wrap;
+}
+
+.ModuleBargain .layout-101 .groupBooking .groupProItem {
+    display: flex;
+    box-sizing: border-box;
+    -webkit-box-flex: 0 0 50%;
+    -moz-box-flex: 0 0 50%;
+    flex: 0 0 50%;
+    width: 50%;
+    padding: 20rpx 10rpx 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.ModuleBargain .layout-101 .groupBooking .groupProItem:nth-child(even) {
+    padding: 20rpx 0 0 10rpx;
+}
+
+.ModuleBargain .layout-101 .groupBooking .groupProItem .groupProItemImage {
+    min-height: 60rpx;
+    background-color: #fefefe;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.ModuleBargain .layout-101 .groupBooking .groupProMain {
+    position: relative;
+    padding: 20rpx 0;
+    box-sizing: border-box;
+}
+
+.ModuleBargain .layout-101 .groupBooking .groupProTitle {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.ModuleBargain .layout-101 .groupBooking .groupProNum {
+    display: inline-block;
+    padding: 0 12rpx;
+    color: #fc2b26;
+    background-color: #fed4d4;
+    font-size: 22rpx;
+}
+
+.ModuleBargain .layout-101 .groupBooking .groupProPrice {
+    color: #ef1414;
+    font-size: 32rpx;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.ModuleBargain .layout-101 .groupBooking .groupProOldPrice {
+    font-size: 22rpx;
+    color: #999;
+}
+
+.ModuleBargain .layout-101 .groupBooking .goGroup {
+    width: 120rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    border-radius: 10rpx;
+    color: #fff;
+    font-size: 24rpx;
+    text-align: center;
+    background: linear-gradient(bottom right,#ff2140,#ff5e17);
+}
+
+.ModuleBargain .layout-101 .groupProMain .groupProPriceAndbuy {
+    margin-top: 30rpx;
+}
+
+.ModuleBargain .layout-101 .activityTitle .activityFontName {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #333;
+    margin: 0 20rpx;
+}
+
+.ModuleBargain .layout-101 .activityTitleTop {
+    padding: 30rpx 0;
+}
+
+.ModuleBargain .layout-101 .activityTitle image {
+    width: 36rpx;
+}
+
+.ModuleBargain .layout-101 .activityTitle .activityTitleRotate {
+    transform: rotatey(180deg);
+}
+
+.ModuleBargain .layout-101 .activityTime .activityRules {
+    margin-right: 20rpx;
+}
+
+.ModuleBargain .layout-101 .activityTime .activityDay {
+    color: #333;
+    margin: 0 4rpx;
+}
+
+.ModuleBargain .layout-101 .groupProItem .groupDiscount {
+    width: 120rpx;
+    height: 36rpx;
+    border-radius: 0 36rpx 36rpx 0;
+    font-size: 24rpx;
+    color: #fc2b26;
+    background: linear-gradient(#ffdace,#ffc7c7);
+    position: absolute;
+    left: 0;
+    top: 40rpx;
+    text-align: center;
+}
+
+.ModuleBargain .layout-101 .groupBooking .groupProItem:nth-child(even) .groupDiscount {
+    left: 10rpx;
+}
+
+.ModuleBargain .layout-101 .activityTime .activity-con-txt {
+    color: #999;
+    font-size: 24rpx;
+    display: inline-block;
+}
+
+.ModuleBargain .layout-101 .activityTime .activity-con-txt view {
+    display: inline-block;
+}
+
+.ModuleBargain .layout-101 .activityTime .activity-con-txt .activity-con-status {
+    margin-right: 10rpx;
+}
+
+.ModuleBargain .layout-101 .activityTime .activity-con-txt .time {
+    font-size: 24rpx;
+    color: #fff;
+    display: inline-block;
+    width: 42rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    text-align: center;
+    background: #333;
+    border-radius: 4rpx;
+}
+
+.ModuleBargain .layout-101 .activityTime .shi {
+    font-size: 24rpx;
+    color: #fff;
+    display: inline-block;
+    width: 42rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    text-align: center;
+    background: #333;
+    border-radius: 4rpx;
+}
+
+.ModuleBargain .layout-101 .activityTime .colon {
+    font-size: 24rpx;
+    width: 10rpx;
+    height: 36rpx;
+    text-align: center;
+    display: inline-block;
+    margin: 0 4rpx;
+}
+
+.ModuleBargain .layout-101 .activityItemImgBox {
+    width: 346rpx;
+    height: 346rpx;
+    overflow: hidden;
+}

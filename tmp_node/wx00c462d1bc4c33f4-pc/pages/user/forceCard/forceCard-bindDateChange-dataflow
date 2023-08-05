@@ -1,0 +1,33 @@
+// \pages/user/forceCard/forceCard bindDateChange Data Flow
+digraph {
+	b79dd01dd48d4fc187f133876a19f283 [label="FunctionCall,
+function name -> bindDateChange,
+param -> t.,
+t,
+" color=blue]
+	"2c85ebe4a51c4faeaa1cbcf731864ffa" [label="CallExpression,
+callee name -> console.log,
+param -> t.detail.value,
+" color=blue]
+	b79dd01dd48d4fc187f133876a19f283 -> "2c85ebe4a51c4faeaa1cbcf731864ffa"
+	"9aa5626baa0f416bb18130dcc8597df7" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"0842dc6326134172b0c6780200e1afbf" [label="Object Properties
+{
+date -> t.detail.value
+}" color=blue]
+	"9aa5626baa0f416bb18130dcc8597df7" -> "0842dc6326134172b0c6780200e1afbf"
+	b79dd01dd48d4fc187f133876a19f283 -> "9aa5626baa0f416bb18130dcc8597df7"
+	ca0fd4ddabb04ccb9b6abcc722251ac5 [label=VariableDeclarations color=blue]
+	b45fafcbec8f43649200e1e1428ba6b1 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"04e007103b834aa2881a17e480945f0c" [label="CallExpression,
+callee name -> Date.parse,
+param -> t.detail.value,
+" color=blue]
+	b45fafcbec8f43649200e1e1428ba6b1 -> "04e007103b834aa2881a17e480945f0c"
+	ca0fd4ddabb04ccb9b6abcc722251ac5 -> b45fafcbec8f43649200e1e1428ba6b1
+	b79dd01dd48d4fc187f133876a19f283 -> ca0fd4ddabb04ccb9b6abcc722251ac5
+}

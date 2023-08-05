@@ -1,0 +1,25 @@
+// \pages/fightGroups/productdetail loadProductInfo Data Flow
+digraph {
+	"9329f8346ac54413bd46843e41efe6af" [label="FunctionCall,
+function name -> loadProductInfo,
+param -> " color=blue]
+	"9dfe7860fb2e4d5aa96c5bc4cb274091" [label=SequenceExpression color=blue]
+	d0a142f3355247dab88e22e11f77b227 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"0488739b190d47cb8dd1a5888f977cc3" [label="Assignment,
+left -> e,
+right -> a.data.queryparams.proid" color=blue]
+	d0a142f3355247dab88e22e11f77b227 -> "0488739b190d47cb8dd1a5888f977cc3"
+	"9dfe7860fb2e4d5aa96c5bc4cb274091" -> d0a142f3355247dab88e22e11f77b227
+	c51cc677cdd747988983e3ee8ff76859 [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	"13883f26dca14c208aeb5c6543c05b01" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/JsonApi&a=getProductInfo&id=' + e + '&updateHits=1'
+}" color=blue]
+	c51cc677cdd747988983e3ee8ff76859 -> "13883f26dca14c208aeb5c6543c05b01"
+	"9dfe7860fb2e4d5aa96c5bc4cb274091" -> c51cc677cdd747988983e3ee8ff76859
+	"9329f8346ac54413bd46843e41efe6af" -> "9dfe7860fb2e4d5aa96c5bc4cb274091"
+}

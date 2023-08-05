@@ -1,0 +1,39 @@
+// \pages/applylist/applylist applydetail Data Flow
+digraph {
+	d22f0237dc9f4830995af1525703ee9e [label="FunctionCall,
+function name -> applydetail,
+param -> a,
+a.,
+" color=blue]
+	"41e7565acb0e4ad587b49c19a7956735" [label=VariableDeclarations color=blue]
+	"152a0ba3bac54695912feb565d5f6575" [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.type" color=blue]
+	"41e7565acb0e4ad587b49c19a7956735" -> "152a0ba3bac54695912feb565d5f6575"
+	"45f04362d27e4acb987f0cde59718ae8" [label="VariableDeclarator,
+left -> e,
+right -> a.currentTarget.dataset.id" color=blue]
+	"41e7565acb0e4ad587b49c19a7956735" -> "45f04362d27e4acb987f0cde59718ae8"
+	d22f0237dc9f4830995af1525703ee9e -> "41e7565acb0e4ad587b49c19a7956735"
+	"8a216f5f880e4a78b29e7f65fcdf47d1" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"074455d2cd57415e87ac56e8c7fcfcb3" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	c3add36bef944b6e877b1c0273aafd34 [label="Object Properties
+{
+url -> '../refunddetail/refunddetail?id=' + e
+}" color=blue]
+	"074455d2cd57415e87ac56e8c7fcfcb3" -> c3add36bef944b6e877b1c0273aafd34
+	"8a216f5f880e4a78b29e7f65fcdf47d1" -> "074455d2cd57415e87ac56e8c7fcfcb3"
+	"61776524ac24415cb070bd8baa4f1d33" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"629616dbeaf7450c91992592089cb04b" [label="Object Properties
+{
+url -> '../returndetail/returndetail?id=' + e
+}" color=blue]
+	"61776524ac24415cb070bd8baa4f1d33" -> "629616dbeaf7450c91992592089cb04b"
+	"8a216f5f880e4a78b29e7f65fcdf47d1" -> "61776524ac24415cb070bd8baa4f1d33"
+	d22f0237dc9f4830995af1525703ee9e -> "8a216f5f880e4a78b29e7f65fcdf47d1"
+}

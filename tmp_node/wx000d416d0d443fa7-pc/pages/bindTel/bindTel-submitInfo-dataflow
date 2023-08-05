@@ -1,0 +1,37 @@
+// \pages/bindTel/bindTel submitInfo Data Flow
+digraph {
+	e8c932efc8024954b204f8c506183f5e [label="FunctionCall,
+function name -> submitInfo,
+param -> a,
+a.,
+" color=blue]
+	"2fd8f8fd7c3e4b4882c12962d9148ba5" [label=VariableDeclarations color=blue]
+	aa2439490e274672860fa9b938d7f662 [label="VariableDeclarator,
+left -> d,
+right -> this.data.inputTel" color=blue]
+	"2fd8f8fd7c3e4b4882c12962d9148ba5" -> aa2439490e274672860fa9b938d7f662
+	"7eee68caacd6460b88923569e1c89c80" [label="VariableDeclarator,
+left -> s,
+right -> this.data.inputCode" color=blue]
+	"2fd8f8fd7c3e4b4882c12962d9148ba5" -> "7eee68caacd6460b88923569e1c89c80"
+	d81bf49735b44a3dbc8272de73034acd [label="VariableDeclarator,
+left -> o,
+right -> this.data.inputImgCode" color=blue]
+	"2fd8f8fd7c3e4b4882c12962d9148ba5" -> d81bf49735b44a3dbc8272de73034acd
+	e8c932efc8024954b204f8c506183f5e -> "2fd8f8fd7c3e4b4882c12962d9148ba5"
+	bc00d690261046fc9fddf880ef7ac8ba [label="If Alternate" color=blue]
+	a52cba19a2964b3cb1c0dc7994e69946 [label=VariableDeclarations color=blue]
+	"507677e7005843a1bd782d9a098a9010" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	f1ea30fa025c40cba530abaed6f6b923 [label="Object Properties
+{
+tel -> d
+tel_code -> s
+user_type -> i.data.userType
+}" color=blue]
+	"507677e7005843a1bd782d9a098a9010" -> f1ea30fa025c40cba530abaed6f6b923
+	a52cba19a2964b3cb1c0dc7994e69946 -> "507677e7005843a1bd782d9a098a9010"
+	bc00d690261046fc9fddf880ef7ac8ba -> a52cba19a2964b3cb1c0dc7994e69946
+	e8c932efc8024954b204f8c506183f5e -> bc00d690261046fc9fddf880ef7ac8ba
+}

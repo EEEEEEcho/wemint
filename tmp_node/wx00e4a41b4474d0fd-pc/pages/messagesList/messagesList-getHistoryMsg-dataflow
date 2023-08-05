@@ -1,0 +1,15 @@
+// \pages/messagesList/messagesList getHistoryMsg Data Flow
+digraph {
+	"24cac885e96a4f4087d6984e82831fe3" [label="FunctionCall,
+function name -> getHistoryMsg,
+param -> " color=blue]
+	"82f5f0a33ec7437987b38e149a7688d2" [label="CallExpression,
+callee name -> g.getRecentContactList,
+param -> " color=blue]
+	fd4be652220545769830e61de4c60a44 [label="FunctionCall,
+function name -> Anonymous Function,
+param -> e,
+" color=blue]
+	"82f5f0a33ec7437987b38e149a7688d2" -> fd4be652220545769830e61de4c60a44
+	"24cac885e96a4f4087d6984e82831fe3" -> "82f5f0a33ec7437987b38e149a7688d2"
+}

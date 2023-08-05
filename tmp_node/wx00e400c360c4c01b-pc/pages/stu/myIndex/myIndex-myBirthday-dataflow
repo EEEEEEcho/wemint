@@ -1,0 +1,27 @@
+// \pages/stu/myIndex/myIndex myBirthday Data Flow
+digraph {
+	"99b684b01b1945fe9f6e1b4cc295e054" [label="FunctionCall,
+function name -> myBirthday,
+param -> a.,
+a,
+" color=blue]
+	"2754d94cd4454224ab55ee9d94580b92" [label=VariableDeclarations color=blue]
+	"0cdf161e9d3e4f549892c9d9597aa827" [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.id" color=blue]
+	"2754d94cd4454224ab55ee9d94580b92" -> "0cdf161e9d3e4f549892c9d9597aa827"
+	"2186984192244ee3b70a297d64f6e3cc" [label="VariableDeclarator,
+left -> e,
+right -> a.currentTarget.dataset.birthday" color=blue]
+	"2754d94cd4454224ab55ee9d94580b92" -> "2186984192244ee3b70a297d64f6e3cc"
+	"99b684b01b1945fe9f6e1b4cc295e054" -> "2754d94cd4454224ab55ee9d94580b92"
+	"710116089879485797c5701858106ac1" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"9f7556af017f41ceb3a25ea6ec2cdbfa" [label="Object Properties
+{
+url -> '../myBirthday/myBirthday?id=' + t + '&birthday=' + e
+}" color=blue]
+	"710116089879485797c5701858106ac1" -> "9f7556af017f41ceb3a25ea6ec2cdbfa"
+	"99b684b01b1945fe9f6e1b4cc295e054" -> "710116089879485797c5701858106ac1"
+}

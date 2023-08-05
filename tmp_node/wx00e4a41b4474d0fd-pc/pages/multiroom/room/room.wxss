@@ -1,0 +1,383 @@
+.container-box {
+    background-image: url(http://skyforest.static.elab-plus.com/wepy_pro/mini-wait.jpg);
+    background-color: rgb(247,247,247);
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.titleInfo {
+    position: absolute;
+    top: 105rpx;
+    left: 0rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 54rpx;
+    line-height: 54rpx;
+}
+
+.head-view {
+    position: absolute;
+    top: 545rpx;
+    left: 315rpx;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    z-index: 3;
+    border: 4rpx solid white;
+    overflow: hidden;
+}
+
+.head-view .head {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+
+.headTips {
+    white-space: nowrap;
+    transform: translateX(-50%);
+    height: 54rpx;
+    width: 550rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    line-height: 54rpx;
+    color: #000000;
+    font-size: 38rpx;
+    position: absolute;
+    top: 690rpx;
+    left: 50%;
+    z-index: 1;
+}
+
+.loadEffect span {
+    display: inline-block;
+    width: 10rpx;
+    height: 10rpx;
+    border-radius: 50%;
+    background: lightgreen;
+    position: absolute;
+    -webkit-animation: load 1.04s ease infinite;
+}
+
+@-webkit-keyframes load {
+    0% {
+        -webkit-transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(.3);
+        opacity: 0.5;
+    }
+}
+
+.loadEffect span:nth-child(1) {
+    left: 0;
+    top: 50%;
+    margin-top: -5rpx;
+    -webkit-animation-delay: 0.13s;
+}
+
+.loadEffect span:nth-child(2) {
+    left: 7rpx;
+    top: 7rpx;
+    -webkit-animation-delay: 0.26s;
+}
+
+.loadEffect span:nth-child(3) {
+    left: 50%;
+    top: 0;
+    margin-left: -5rpx;
+    -webkit-animation-delay: 0.39s;
+}
+
+.loadEffect span:nth-child(4) {
+    top: 7rpx;
+    right: 7rpx;
+    -webkit-animation-delay: 0.52s;
+}
+
+.loadEffect span:nth-child(5) {
+    right: 0;
+    top: 50%;
+    margin-top: -5rpx;
+    -webkit-animation-delay: 0.65s;
+}
+
+.loadEffect span:nth-child(6) {
+    right: 7rpx;
+    bottom: 7rpx;
+    -webkit-animation-delay: 0.78s;
+}
+
+.loadEffect span:nth-child(7) {
+    bottom: 0;
+    left: 50%;
+    margin-left: -5rpx;
+    -webkit-animation-delay: 0.91s;
+}
+
+.loadEffect span:nth-child(8) {
+    bottom: 7rpx;
+    left: 7rpx;
+    -webkit-animation-delay: 1.04s;
+}
+
+.hide {
+    display: none;
+}
+
+.evaluate {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.evaluate .bg {
+    position: absolute;
+    top: 0px;
+    left: -10%;
+    width: 120%;
+    height: 100vh;
+    filter: blur(20rpx);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.evaluate .backView {
+    position: absolute;
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 10rpx 12rpx 0rpx 0rpx;
+    z-index: 9;
+}
+
+.height1 {
+    bottom: 0rpx;
+}
+
+.height2 {
+    bottom: 0rpx;
+}
+
+.height3 {
+    bottom: 0rpx;
+}
+
+.evaluate .backView .headImg {
+    position: absolute;
+    top: -75rpx;
+    left: 300rpx;
+    width: 150rpx;
+    height: 150rpx;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 999;
+}
+
+.operate image {
+    width: 140rpx;
+    height: 140rpx;
+}
+
+.operate {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0rpx 150rpx;
+    padding-bottom: 140rpx;
+    box-sizing: border-box;
+}
+
+.operate image :active {
+    opacity: 0.55;
+}
+
+.evaluate .backView .close {
+    position: absolute;
+    top: -63rpx;
+    right: 28rpx;
+    width: 40rpx;
+    height: 40rpx;
+    z-index: 999;
+}
+
+.evaluate .backView .word1 {
+    margin-top: 108rpx;
+    width: 100%;
+    height: 56rpx;
+    line-height: 56rpx;
+    font-size: 40rpx;
+    color: #000000;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.evaluate .backView .word2 {
+    margin-top: 6rpx;
+    margin-bottom: 54rpx;
+    height: 33rpx;
+    line-height: 33rpx;
+    font-size: 24rpx;
+    color: #676767;
+    letter-spacing: 0.9rpx;
+    text-align: center;
+}
+
+.evaluate .backView .content {
+    position: relative;
+    margin-left: 30rpx;
+    padding-bottom: 230rpx;
+    width: 690rpx;
+    height: calc(100% - 407rpx);
+    box-sizing: border-box;
+    border-top: 1px solid #D6D6D6;
+}
+
+.evaluate .backView .content .word3 {
+    font-weight: bolder;
+    margin-top: 38rpx;
+}
+
+.evaluate .backView .content .word4 {
+    font-weight: bolder;
+    margin-top: 45rpx;
+}
+
+.uniteWordStyle {
+    position: relative;
+    width: 100%;
+    height: 40rpx;
+    font-size: 28rpx;
+    color: #000000;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.anonymous {
+    margin-left: 8rpx;
+    width: 40rpx;
+    height: 20rpx;
+}
+
+.evaluate .backView .content .selectList {
+    width: 100%;
+    height: 60rpx;
+    margin-top: 25rpx;
+}
+
+.evaluate .backView .content .selectList .selectItem {
+    width: 190rpx;
+    height: 60rpx;
+    background: #F7F7F7;
+    border-radius: 30rpx;
+    font-size: 24rpx;
+    color: #676767;
+    letter-spacing: 0.9rpx;
+}
+
+.right60 {
+    margin-right: 60rpx;
+}
+
+.right15 {
+    margin-right: 15rpx;
+}
+
+.evaluate .backView .content .selectList .active {
+    background: #536CFF;
+    color: #FFFFFF;
+}
+
+.textarea {
+    width: 100%;
+    height: 160rpx;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    text-align: left;
+    padding: 10rpx;
+    font-size: 32rpx;
+    color: #000000;
+}
+
+.placeholder {
+    line-height: 30rpx;
+    font-size: 28rpx;
+}
+
+.iconSelect1 {
+    width: 36rpx;
+    height: 37rpx;
+    margin-right: 15rpx;
+}
+
+.iconSelect2 {
+    width: 36rpx;
+    height: 38rpx;
+    margin-right: 15rpx;
+}
+
+.btn {
+    position: absolute;
+    left: 30rpx;
+    bottom: 60rpx;
+    width: 690rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    background: #B6BDCB;
+    border-radius: 45rpx;
+    font-size: 32rpx;
+    color: #FFFFFF;
+}
+
+.btn.active {
+    background: #5370FF;
+}
+
+.wait-video {
+    width: 100%;
+    height: 624rpx;
+}
+
+.wait-video image {
+    width: 100%;
+    height: 100%;
+}
+
+.wait-bottom-box {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.unselected {
+    margin-bottom: 200rpx;
+}

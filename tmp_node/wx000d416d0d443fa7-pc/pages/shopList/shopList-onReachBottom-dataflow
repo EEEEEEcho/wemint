@@ -1,0 +1,44 @@
+// \pages/shopList/shopList onReachBottom Data Flow
+digraph {
+	"6d1e28218a244dc7b141268ae5f27077" [label="FunctionCall,
+function name -> onReachBottom,
+param -> " color=blue]
+	d4ec74c65e8b4e83929e8a66e0f3c0b2 [label=VariableDeclarations color=blue]
+	"69690645da514bb9b3f945d8f2b51b17" [label="VariableDeclarator,
+left -> t,
+right -> this.data.page + 1" color=blue]
+	d4ec74c65e8b4e83929e8a66e0f3c0b2 -> "69690645da514bb9b3f945d8f2b51b17"
+	"6d1e28218a244dc7b141268ae5f27077" -> d4ec74c65e8b4e83929e8a66e0f3c0b2
+	"2e4372bf3b9f477eb32f95e99b9dedb4" [label="CallExpression,
+callee name -> this.sendSortArg,
+param -> t,
+" color=blue]
+	"84ac417a24f9456eb27265f9faa39328" [label="FunctionCall,
+function name -> sendSortArg,
+param -> t,
+t.,
+" color=blue]
+	"63e65cca5d914be3a47b2fb67a4ade94" [label=VariableDeclarations color=blue]
+	"8e601ae05dde47e3b9b75c4b38e8138c" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"61097565b6664a4596b4ac26f580abd8" [label="Object Properties
+{
+page -> t
+sortid -> this.data.listId
+}" color=blue]
+	"8e601ae05dde47e3b9b75c4b38e8138c" -> "61097565b6664a4596b4ac26f580abd8"
+	"63e65cca5d914be3a47b2fb67a4ade94" -> "8e601ae05dde47e3b9b75c4b38e8138c"
+	"84ac417a24f9456eb27265f9faa39328" -> "63e65cca5d914be3a47b2fb67a4ade94"
+	fd1e25da61e142ac8f207b96cb8c70f8 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"5440bd1143e7400b8b40e802888f40a9" [label="Object Properties
+{
+page -> t
+}" color=blue]
+	fd1e25da61e142ac8f207b96cb8c70f8 -> "5440bd1143e7400b8b40e802888f40a9"
+	"84ac417a24f9456eb27265f9faa39328" -> fd1e25da61e142ac8f207b96cb8c70f8
+	"2e4372bf3b9f477eb32f95e99b9dedb4" -> "84ac417a24f9456eb27265f9faa39328"
+	"6d1e28218a244dc7b141268ae5f27077" -> "2e4372bf3b9f477eb32f95e99b9dedb4"
+}

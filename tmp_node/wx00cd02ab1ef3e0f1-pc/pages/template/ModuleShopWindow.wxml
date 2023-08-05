@@ -1,0 +1,86 @@
+<template name="ModuleShopWindow">
+    <view class="{{'layout-'+m.Layout+(m.PaddingType==1?' showline':' showpadding')}}" wx:if="{{m.Layout=='102'}}">
+        <view class="item-container1">
+            <view bindtap="navTo" class="item first-item" data-linkid="{{m.Links[0].LinkID}}" data-linktype="{{m.Links[0].LinkType}}" wx:if="{{m.Links.length>0}}">
+                <image class="img" mode="scaleToFill" src="{{globaldata.appGlobalData.siteBaseUrl}}{{m.Links[0].Image}}" wx:if="{{m.Links[0].Image}}"></image>
+                <view class="imgholder" wx:else>
+                    <view class="text">图片1</view>
+                </view>
+            </view>
+        </view>
+        <view class="item-container2">
+            <view bindtap="navTo" class="item" data-linkid="{{link.LinkID}}" data-linktype="{{link.LinkType}}" wx:if="{{index>0}}" wx:for="{{m.Links}}" wx:for-item="link" wx:key="index">
+                <image class="img" mode="scaleToFill" src="{{globaldata.appGlobalData.siteBaseUrl}}{{link.Image}}" wx:if="{{link.Image}}"></image>
+                <view class="imgholder" wx:else>
+                    <view class="text">图片{{index+1}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="{{'layout-'+m.Layout+(m.PaddingType==1?' showline':' showpadding')}}" wx:elif="{{m.Layout=='103'}}">
+        <view class="item-container">
+            <view bindtap="navTo" class="item" data-linkid="{{link.LinkID}}" data-linktype="{{link.LinkType}}" wx:for="{{m.Links}}" wx:for-item="link" wx:key="index">
+                <image class="img" src="{{globaldata.appGlobalData.siteBaseUrl}}{{link.Image}}" wx:if="{{link.Image}}"></image>
+                <view class="imgholder" wx:else>
+                    <view class="text">图片{{index+1}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="{{'layout-'+m.Layout+(m.PaddingType==1?' showline':' showpadding')}}" wx:elif="{{m.Layout=='104'}}">
+        <view class="item-container">
+            <view bindtap="navTo" class="item" data-linkid="{{link.LinkID}}" data-linktype="{{link.LinkType}}" wx:for="{{m.Links}}" wx:for-item="link" wx:key="index">
+                <image class="img" src="{{globaldata.appGlobalData.siteBaseUrl}}{{link.Image}}" wx:if="{{link.Image}}"></image>
+                <view class="imgholder" wx:else>
+                    <view class="text">图片{{index+1}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="{{'layout-'+m.Layout+(m.PaddingType==1?' showline':' showpadding')}}" wx:elif="{{m.Layout=='105'}}">
+        <view class="item-container">
+            <view bindtap="navTo" class="item" data-linkid="{{link.LinkID}}" data-linktype="{{link.LinkType}}" wx:for="{{m.Links}}" wx:for-item="link" wx:key="index">
+                <image class="img" src="{{globaldata.appGlobalData.siteBaseUrl}}{{link.Image}}" wx:if="{{link.Image}}"></image>
+                <view class="imgholder" wx:else>
+                    <view class="text">图片{{index+1}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="{{'layout-'+m.Layout+(m.PaddingType==1?' showline':' showpadding')}}" wx:elif="{{m.Layout=='106'}}">
+        <view class="item-container">
+            <view bindtap="navTo" class="item" data-linkid="{{link.LinkID}}" data-linktype="{{link.LinkType}}" wx:if="{{index<2}}" wx:for="{{m.Links}}" wx:for-item="link" wx:key="index">
+                <image class="img" src="{{globaldata.appGlobalData.siteBaseUrl}}{{link.Image}}" wx:if="{{link.Image}}"></image>
+                <view class="imgholder" wx:else>
+                    <view class="text">图片{{index+1}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="item-container">
+            <view bindtap="navTo" class="item" data-linkid="{{link.LinkID}}" data-linktype="{{link.LinkType}}" wx:if="{{index>1}}" wx:for="{{m.Links}}" wx:for-item="link" wx:key="index">
+                <image class="img" src="{{globaldata.appGlobalData.siteBaseUrl}}{{link.Image}}" wx:if="{{link.Image}}"></image>
+                <view class="imgholder" wx:else>
+                    <view class="text">图片{{index+1}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="{{'layout-'+m.Layout+(m.PaddingType==1?' showline':' showpadding')}}" wx:else>
+        <view class="item-container">
+            <view bindtap="navTo" class="item first-item" data-linkid="{{m.Links[0].LinkID}}" data-linktype="{{m.Links[0].LinkType}}" wx:if="{{m.Links.length>0}}">
+                <image class="img" src="{{globaldata.appGlobalData.siteBaseUrl}}{{m.Links[0].Image}}" wx:if="{{m.Links[0].Image}}"></image>
+                <view class="imgholder" wx:else>
+                    <view class="text">图片1</view>
+                </view>
+            </view>
+        </view>
+        <view class="item-container">
+            <view bindtap="navTo" class="item" data-linkid="{{link.LinkID}}" data-linktype="{{link.LinkType}}" wx:if="{{index>0}}" wx:for="{{m.Links}}" wx:for-item="link" wx:key="index">
+                <image class="img" src="{{globaldata.appGlobalData.siteBaseUrl}}{{link.Image}}" wx:if="{{link.Image}}"></image>
+                <view class="imgholder" wx:else>
+                    <view class="text">图片{{index+1}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

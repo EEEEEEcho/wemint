@@ -1,0 +1,14 @@
+<view class="collage-desc">
+    <view class="collage-text">欢迎使用{{companyName}}商户砍价服务</view>
+    <view class="collage-text">技术支持：沈阳众德润科技有限公司</view>
+    <view class="collage-text">电话：024-31284032</view>
+</view>
+<view class="shouquan">
+    <image class="shakeCover_img" src="{{wntjUrls}}"></image>
+    <button bindtap="goToTuanGou" class="lqhyk" wx:if="{{!jiazaizhong}}">前往团购</button>
+    <button bindtap="backToUser" class="lqhyk" wx:if="{{!jiazaizhong}}">返回</button>
+</view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

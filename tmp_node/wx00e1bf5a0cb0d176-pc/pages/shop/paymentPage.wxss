@@ -1,0 +1,532 @@
+.container .money-input-box {
+    margin-top: 20rpx;
+    padding: 0 24rpx;
+    background: #fff;
+}
+
+.container .money-input-box .input-top {
+    height: 206rpx;
+}
+
+.container .money-input-box .input-top .input-tips {
+    font-size: 26rpx;
+    color: #333844;
+    margin-top: 34rpx;
+    margin-bottom: 56rpx;
+}
+
+.container .money-input-box .input-top .input {
+    display: flex;
+    flex-direction: row;
+    height: 90rpx;
+}
+
+.container .money-input-box .input-top .input .moneyicon {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #333844;
+    margin-right: 10rpx;
+}
+
+.container .money-input-box .input-top .input input {
+    font-size: 66rpx;
+    color: #333844;
+    height: 70rpx;
+    line-height: 70rpx;
+    font-weight: bold;
+}
+
+.container .money-input-box .discounts-money .money-off,.container .money-input-box .discounts-money .discounts-msg {
+    height: 88rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 26rpx;
+}
+
+.container .money-input-box .discounts-money .money-off .label,.container .money-input-box .discounts-money .discounts-msg .label {
+    color: #333844;
+}
+
+.container .money-input-box .discounts-money .money-off .msg,.container .money-input-box .discounts-money .discounts-msg .msg {
+    color: #999;
+}
+
+.container .money-input-box .discounts-money .money-off .msg .icon-jiantou,.container .money-input-box .discounts-money .discounts-msg .msg .icon-iconfont_arrow-right {
+    font-size: 26rpx;
+    margin-left: 20rpx;
+}
+
+.container .money-input-box .out-of-pocket {
+    height: 88rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 30rpx;
+    color: #333844;
+    font-weight: 500;
+}
+
+.container .phcolor {
+    font-size: 30rpx;
+    color: #ccc;
+    font-weight: 200;
+}
+
+.container .btn {
+    width: 646rpx;
+    height: 88rpx;
+    color: #fff;
+    background: #ff7200;
+    line-height: 88rpx;
+    text-align: center;
+    margin: 60rpx auto 0;
+    font-size: 30rpx;
+    border-radius: 44rpx;
+}
+
+button::after {
+    border: none;
+}
+
+.container .mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(163,163,163,0.6);
+    z-index: 10;
+}
+
+.container .success-pop {
+    height: 658rpx;
+    width: 598rpx;
+    border-radius: 16rpx;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    z-index: 11;
+    transition: transform 0.5s linear;
+    transition: transform 0.5s linear,-webkit-transform 0.5s linear;
+}
+
+.container .fangda {
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.container .success-pop .success-top {
+    border-top-left-radius: 16rpx;
+    border-top-right-radius: 16rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .success-pop .success-top .success-icon {
+    margin-top: 60rpx;
+}
+
+.container .success-pop .success-top .success-icon .icon-wancheng- {
+    font-size: 94rpx;
+    color: #fe7f0e;
+}
+
+.container .success-pop .success-top .success-tip {
+    font-size: 36rpx;
+    line-height: 36rpx;
+    color: #fe7f0e;
+    margin-top: 14rpx;
+    font-weight: 500;
+}
+
+.container .success-pop .success-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 56rpx 0 76rpx;
+}
+
+.container .success-pop .success-center .success-money {
+    font-size: 60rpx;
+    line-height: 60rpx;
+    color: #333844;
+    font-weight: 500;
+}
+
+.container .success-pop .store-date {
+    font-size: 26rpx;
+    text-align: center;
+}
+
+.container .success-pop .store-date .store-name {
+    color: #666;
+    margin-bottom: 10rpx;
+    line-height: 26rpx;
+}
+
+.container .success-pop .store-date .create-date {
+    color: #c6c6c6;
+    line-height: 26rpx;
+}
+
+.container .success-pop .to-store {
+    width: 506rpx;
+    height: 88rpx;
+    border-radius: 44rpx;
+    background: #fe7f0e;
+    line-height: 88rpx;
+    text-align: center;
+    color: #fff;
+    margin: 50rpx auto 0;
+    font-size: 30rpx;
+}
+
+.couponinfo-plug {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5555;
+    background: rgba(163,163,163,0.6);
+}
+
+.couponinfo-plug .couponinfo-plugBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.couponinfo-plug .couponinfo-plug-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    height: 820rpx;
+    background-color: #fff;
+}
+
+.couponinfo-topHeader {
+    height: 76rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.couponinfo-topHeader .closePlug {
+    position: absolute;
+    right: 0rpx;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76rpx;
+    height: 76rpx;
+    font-size: 38rpx;
+}
+
+.coupon-item {
+    display: flex;
+    align-items: center;
+    padding: 20rpx 0;
+    justify-content: space-between;
+    font-size: 28rpx;
+    margin: 0 20rpx 10rpx;
+}
+
+.couponinfoItemLeft {
+    flex: 0 0 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.couponinfoItemLeft .numText {
+    font-size: 34rpx;
+    color: #ff7200;
+}
+
+.coupon-item .coupon-info-ctnr {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 18rpx;
+}
+
+.coupon-info-ctnr .coupon-title {
+    font-size: 22rpx;
+    color: #666;
+    margin-bottom: 14rpx;
+}
+
+.coupon-info-ctnr .coupon-expire {
+    font-size: 22rpx;
+    color: #999;
+}
+
+.coupon-item .coupon-radio-ctnr {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.coupon-item .radioItem {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.couponGetOver {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.couponGetOver image {
+    display: inline-block;
+    width: 300rpx;
+}
+
+.couponGetOver text {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.canNoUse {
+    opacity: .5;
+}
+
+.discounts-money .discountName {
+    display: inline-block;
+    margin-right: 20rpx;
+}
+
+.discounts-money .discountName .discount-money {
+    color: #ff7200;
+}
+
+.discounts-money .integralmsg {
+    display: flex;
+    align-items: center;
+}
+
+.pagecontent {
+    height: 100%;
+    background: #f8f8f8;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+.pagecontent .topbox {
+    background: #fff;
+    padding-bottom: 70rpx;
+}
+
+.pagecontent .v1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70rpx;
+    width: 100%;
+}
+
+.pagecontent .v1_text {
+    color: #333;
+    font-size: 40rpx;
+    font-weight: 700;
+    margin-left: 8rpx;
+}
+
+.pagecontent .successIconBox {
+    width: 44rpx;
+    height: 44rpx;
+    background-color: #ff7200;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.pagecontent .iconfont {
+    font-size: 30rpx;
+}
+
+.pagecontent .v2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 34rpx;
+    width: 100%;
+    color: #333;
+    font-size: 30rpx;
+}
+
+.pagecontent .v3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 46rpx;
+    width: 100%;
+}
+
+.pagecontent .v3_btn1,.pagecontent .v3_btn2 {
+    display: inline-block;
+    width: 180rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    font-size: 28rpx;
+    border-radius: 999rpx;
+    border: 1rpx solid #ff7200;
+    color: #ff7200;
+    background: #fff;
+}
+
+.pagecontent .v3_btn2 {
+    margin-left: 98rpx;
+}
+
+.pagecontent .paygify {
+    margin-top: 20rpx;
+    padding: 0 26rpx 32rpx;
+}
+
+.pagecontent .v4 {
+    height: 88rpx;
+    line-height: 88rpx;
+    width: 100%;
+    text-align: center;
+    font-size: 30rpx;
+    color: #fff;
+    font-weight: 700;
+}
+
+.pagecontent .v5 {
+    width: 100%;
+    height: 168rpx;
+    background: #fff;
+    border-radius: 6rpx;
+    padding: 28rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagecontent .v5_status {
+    width: 100%;
+    height: 168rpx;
+    background: #fff;
+    border-radius: 6rpx 6rpx 0 0;
+    border-bottom: 1rpx solid #eee;
+    padding: 28rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagecontent .v5_feft {
+    display: flex;
+    align-items: center;
+}
+
+.pagecontent .v5_img {
+    width: 114rpx;
+    height: 114rpx;
+    border-radius: 999rpx;
+}
+
+.pagecontent .v5_c {
+    display: inline-block;
+    margin-left: 34rpx;
+}
+
+.pagecontent .v5_c1 {
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #333;
+}
+
+.pagecontent .v5_c2 {
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 10rpx;
+}
+
+.pagecontent .v5_right {
+    display: flex;
+    align-items: center;
+}
+
+.pagecontent .v5_right_btn {
+    width: 120rpx;
+    height: 60rpx;
+    font-size: 28rpx;
+    color: #fff;
+    border-radius: 999rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagecontent .v6 {
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    width: 100%;
+    color: #ff7200;
+    font-size: 24rpx;
+    background: #fff;
+    border-radius: 0 0 6rpx 6rpx;
+}
+
+.pagecontent .img {
+    margin-top: 54rpx;
+}
+
+.pagecontent .processing {
+    width: 110rpx;
+    height: 110rpx;
+}
+
+.pagecontent .text-tip {
+    margin-top: 20rpx;
+}
+
+.pagecontent .text-tip .tip-one {
+    font-size: 36rpx;
+    line-height: 36rpx;
+    color: #666;
+    font-weight: 500;
+}
+
+.pagecontent .text-tip .tip-two {
+    font-size: 24rpx;
+    line-height: 24rpx;
+    color: #999;
+    margin-top: 16rpx;
+}

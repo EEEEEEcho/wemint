@@ -1,0 +1,131 @@
+<template name="temp_24">
+    <view class="page-section bg-wihte">
+        <view bindtap="ClickSwiper" class="banner-pic" data-link="{{content.dataset[0].link}}" data-showtype="{{content.dataset[0].linkType}}">
+            <image class="image" src="{{content.dataset[0].pic}}" style="width:100%; height:120rpx"></image>
+        </view>
+    </view>
+</template>
+<template name="temp_23">
+    <view class="page-section bg-wihte">
+        <view bindtap="ClickSwiper" class="hd-pic" data-link="{{content.dataset[0].link}}" data-showtype="{{content.dataset[0].linkType}}">
+            <image class="image" mode="widthFix" src="{{content.dataset[0].pic}}" style="width:100%;"></image>
+        </view>
+        <view class="bd-list-pic">
+            <view bindtap="ClickSwiper" class="bd-list-pro-pic" data-link="{{content.dataset[1].link}}" data-showtype="{{content.dataset[1].linkType}}">
+                <image class="border-right  border-bottom" src="{{content.dataset[1].pic}}" style="width:100%; height:180rpx"></image>
+            </view>
+            <view bindtap="ClickSwiper" class="bd-list-pro-pic" data-link="{{content.dataset[2].link}}" data-showtype="{{content.dataset[2].linkType}}">
+                <image class="border-right  border-bottom" src="{{content.dataset[2].pic}}" style="width:100%; height:180rpx"></image>
+            </view>
+            <view bindtap="ClickSwiper" class="bd-list-pro-pic" data-link="{{content.dataset[3].link}}" data-showtype="{{content.dataset[3].linkType}}">
+                <image class="border-right  border-bottom" src="{{content.dataset[3].pic}}" style="width:100%; height:180rpx"></image>
+            </view>
+            <view bindtap="ClickSwiper" class="bd-list-pro-pic" data-link="{{content.dataset[4].link}}" data-showtype="{{content.dataset[4].linkType}}">
+                <image class="border-right  border-bottom" src="{{content.dataset[4].pic}}" style="width:100%; height:180rpx"></image>
+            </view>
+        </view>
+        <view class="bd-list-b">
+            <view bindtap="ClickSwiper" class="bd-list-b-pic border-right" data-link="{{content.dataset[5].link}}" data-showtype="{{content.dataset[5].linkType}}">
+                <image src="{{content.dataset[5].pic}}" style="width:25%;height:180rpx"></image>
+            </view>
+            <view bindtap="ClickSwiper" class="bd-list-b-pic border-right" data-link="{{content.dataset[6].link}}" data-showtype="{{content.dataset[6].linkType}}">
+                <image src="{{content.dataset[6].pic}}" style="width:25%;height:180rpx"></image>
+            </view>
+            <view bindtap="ClickSwiper" class="bd-list-b-pic border-right" data-link="{{content.dataset[7].link}}" data-showtype="{{content.dataset[7].linkType}}">
+                <image src="{{content.dataset[7].pic}}" style="width:25%;height:180rpx"></image>
+            </view>
+            <view bindtap="ClickSwiper" class="bd-list-b-pic border-right" data-link="{{content.dataset[8].link}}" data-showtype="{{content.dataset[8].linkType}}">
+                <image src="{{content.dataset[8].pic}}" style="width:25%;height:180rpx"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="temp_22">
+    <view class="page-section bg-wihte">
+        <view bindtap="ClickSwiper" class="hd-pic" data-link="{{content.dataset[0].link}}" data-showtype="{{content.dataset[0].linkType}}">
+            <image class="image" mode="widthFix" src="{{content.dataset[0].pic}}" style="width:100%;"></image>
+        </view>
+        <view class="bd-list-pic">
+            <view bindtap="ClickSwiper" class="bd-list-pro-pic" data-link="{{dataset.link}}" data-showtype="{{dataset.linkType}}" wx:if="{{index!=0}}" wx:for="{{content.dataset}}" wx:for-item="dataset">
+                <image class="border-right  border-bottom" src="{{dataset.pic}}" style="width:100%; height:180rpx"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="temp_21">
+    <view class="page-section bg-wihte">
+        <view bindtap="ClickSwiper" class="hd-pic" data-link="{{content.dataset[0].link}}" data-showtype="{{content.dataset[0].linkType}}">
+            <image class="image" mode="widthFix" src="{{content.dataset[0].pic}}" style="width:100%;"></image>
+        </view>
+        <view class="bd-pic">
+            <view class="bd-l-pic border-right">
+                <view bindtap="ClickSwiper" class="bd-l-t-pic border-bottom" data-link="{{content.dataset[1].link}}" data-showtype="{{content.dataset[1].linkType}}">
+                    <image class="image" src="{{content.dataset[1].pic}}" style="width:100%; height:180rpx"></image>
+                </view>
+                <view bindtap="ClickSwiper" class="bd-l-b-pic" data-link="{{content.dataset[4].link}}" data-showtype="{{content.dataset[4].linkType}}">
+                    <image class="image" src="{{content.dataset[4].pic}}" style="width:100%; height:180rpx"></image>
+                </view>
+            </view>
+            <view class="bd-r-pic">
+                <view class="bd-r-t-pic border-bottom">
+                    <view bindtap="ClickSwiper" class="bd-r-b-l-pic border-right" data-link="{{content.dataset[2].link}}" data-showtype="{{content.dataset[2].linkType}}">
+                        <image class="image" src="{{content.dataset[2].pic}}" style="width:100%;display:inline-block; height:180rpx"></image>
+                    </view>
+                    <view bindtap="ClickSwiper" class="bd-r-b-r-pic" data-link="{{content.dataset[3].link}}" data-showtype="{{content.dataset[3].linkType}}">
+                        <image class="image" src="{{content.dataset[3].pic}}" style="width:100%;display:inline-block; height:180rpx"></image>
+                    </view>
+                </view>
+                <view class="bd-r-b-pic">
+                    <view bindtap="ClickSwiper" class="bd-r-b-l-pic border-right" data-link="{{content.dataset[5].link}}" data-showtype="{{content.dataset[5].linkType}}">
+                        <image class="image" src="{{content.dataset[5].pic}}" style="width:100%;display:inline-block; height:180rpx"></image>
+                    </view>
+                    <view bindtap="ClickSwiper" class="bd-r-b-r-pic" data-link="{{content.dataset[6].link}}" data-showtype="{{content.dataset[6].linkType}}">
+                        <image class="image" src="{{content.dataset[6].pic}}" style="width:100%;display:inline-block; height:180rpx"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="temp_20">
+    <view class="page-section bg-wihte">
+        <view bindtap="ClickSwiper" class="hd-pic" data-link="{{content.dataset[0].link}}" data-showtype="{{content.dataset[0].linkType}}" wx:if="{{content.dataset[0].pic.length>=0}}">
+            <image class="image" mode="widthFix" src="{{content.dataset[0].pic}}" style="width:100%;"></image>
+        </view>
+        <view class="bd-pic">
+            <view bindtap="ClickSwiper" class="bd-l-pic border-right" data-link="{{content.dataset[1].link}}" data-showtype="{{content.dataset[1].linkType}}">
+                <image class="image" src="{{content.dataset[1].pic}}" style="width:100%;height:360rpx;"></image>
+            </view>
+            <view class="bd-r-pic">
+                <view bindtap="ClickSwiper" class="bd-r-t-pic border-bottom" data-link="{{content.dataset[2].link}}" data-showtype="{{content.dataset[2].linkType}}">
+                    <image class="image" src="{{content.dataset[2].pic}}" style="width:100%; height:180rpx"></image>
+                </view>
+                <view class="bd-r-b-pic">
+                    <view bindtap="ClickSwiper" class="bd-r-b-l-pic border-right" data-link="{{content.dataset[3].link}}" data-showtype="{{content.dataset[3].linkType}}">
+                        <image class="image" src="{{content.dataset[3].pic}}" style="width:100%; height:180rpx"></image>
+                    </view>
+                    <view class="bd-r-b-r-pic" data-link="{{content.dataset[4].link}}" data-showtype="{{content.dataset[4].linkType}}">
+                        <image class="image" src="{{content.dataset[4].pic}}" style="width:100%; height:180rpx"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="temp_8">
+    <view class="page-section bg-wihte ">
+        <view bindtap="ClickSwiper" class="menu-icon" data-link="{{dataset.link}}" data-showtype="{{dataset.linkType}}" wx:for="{{content.dataset}}" wx:for-item="dataset">
+            <image class="image" src="{{dataset.pic}}"></image>
+            <view class="menu-name">{{dataset.showtitle}}</view>
+        </view>
+    </view>
+</template>
+<template name="temp_9">
+    <view class="page-section-spacing">
+        <swiper autoplay="false" indicatorDots="false">
+            <swiper-item bindtap="ClickSwiper" data-link="{{dataset.link}}" data-showtype="{{dataset.linkType}}" wx:for="{{content.dataset}}" wx:for-item="dataset">
+                <image class="slide-imagesds" mode="widthFix" src="{{dataset.pic}}" style="width:750rpx;display:inline-block;"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+</template>

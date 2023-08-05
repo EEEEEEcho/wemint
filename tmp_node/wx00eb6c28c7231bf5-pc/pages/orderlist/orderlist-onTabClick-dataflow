@@ -1,0 +1,21 @@
+// \pages/orderlist/orderlist onTabClick Data Flow
+digraph {
+	cf72f1a8e5e24a9fa8f8169dd1e6f352 [label="FunctionCall,
+function name -> onTabClick,
+param -> t,
+t.,
+" color=blue]
+	e019e2b39fe847ff990de1ad6a3c2dd0 [label=VariableDeclarations color=blue]
+	"7c123fbe474940579b4b5d7233b7cd12" [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.status" color=blue]
+	e019e2b39fe847ff990de1ad6a3c2dd0 -> "7c123fbe474940579b4b5d7233b7cd12"
+	cf72f1a8e5e24a9fa8f8169dd1e6f352 -> e019e2b39fe847ff990de1ad6a3c2dd0
+	e17c54d2fa714ee9ac2b55f4fb8bd271 [label=SequenceExpression color=blue]
+	"3cc1c21d0b634953b096f7bb2e0be1c7" [label="CallExpression,
+callee name -> e.loadData,
+param -> a,
+" color=blue]
+	e17c54d2fa714ee9ac2b55f4fb8bd271 -> "3cc1c21d0b634953b096f7bb2e0be1c7"
+	cf72f1a8e5e24a9fa8f8169dd1e6f352 -> e17c54d2fa714ee9ac2b55f4fb8bd271
+}

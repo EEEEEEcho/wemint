@@ -1,0 +1,16 @@
+// \pages/shop/qrcode getWindowInfo Data Flow
+digraph {
+	"546c2f5997d447b59eaf3bf42a94ce48" [label="FunctionCall,
+function name -> getWindowInfo,
+param -> " color=blue]
+	"34124db67502427fbfd3f5732c353f9f" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	cde095dec66644d79041130d0facec30 [label="Object Properties
+{
+windowHeight -> wx.getSystemInfoSync().windowHeight
+leftDis -> (wx.getSystemInfoSync().windowWidth - 320) / 2
+}" color=blue]
+	"34124db67502427fbfd3f5732c353f9f" -> cde095dec66644d79041130d0facec30
+	"546c2f5997d447b59eaf3bf42a94ce48" -> "34124db67502427fbfd3f5732c353f9f"
+}

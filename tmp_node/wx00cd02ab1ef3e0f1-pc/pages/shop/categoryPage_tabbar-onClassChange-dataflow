@@ -1,0 +1,14 @@
+// \pages/shop/categoryPage_tabbar onClassChange Data Flow
+digraph {
+	a010f0106a134cf5a7180a56d654cef5 [label="FunctionCall,
+function name -> onClassChange,
+param -> s.,
+s,
+" color=blue]
+	"7c8c205a957f4b5ea54879c9ca1575f8" [label=VariableDeclarations color=blue]
+	"0e16acc1c07c42da80450a1a6abf189d" [label="VariableDeclarator,
+left -> l,
+right -> s.currentTarget.dataset.classid" color=blue]
+	"7c8c205a957f4b5ea54879c9ca1575f8" -> "0e16acc1c07c42da80450a1a6abf189d"
+	a010f0106a134cf5a7180a56d654cef5 -> "7c8c205a957f4b5ea54879c9ca1575f8"
+}

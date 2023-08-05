@@ -1,0 +1,23 @@
+// \pages/shop/userorder delCartItem Data Flow
+digraph {
+	e60afb364d97470994cecfe1f40d270c [label="FunctionCall,
+function name -> delCartItem,
+param -> t,
+t.,
+" color=blue]
+	c71b74d63b6043aa97173eb76201a988 [label=VariableDeclarations color=blue]
+	a71582e85eca49bd98d37f3c5ff6bce9 [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.orderid" color=blue]
+	c71b74d63b6043aa97173eb76201a988 -> a71582e85eca49bd98d37f3c5ff6bce9
+	e60afb364d97470994cecfe1f40d270c -> c71b74d63b6043aa97173eb76201a988
+	"30c00a1cc9de4603ba6801ac30163eaa" [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	b295defef643407eaeb547203053d786 [label="FunctionCall,
+function name -> success,
+param -> t,
+" color=blue]
+	"30c00a1cc9de4603ba6801ac30163eaa" -> b295defef643407eaeb547203053d786
+	e60afb364d97470994cecfe1f40d270c -> "30c00a1cc9de4603ba6801ac30163eaa"
+}

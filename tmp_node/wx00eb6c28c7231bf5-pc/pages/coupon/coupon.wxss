@@ -1,0 +1,95 @@
+page {
+    background: #f5f5f5;
+}
+
+.page-section {
+    background: #f5f5f5;
+}
+
+.coupontitle {
+    border-bottom: 1px solid #dcdcdc;
+    height: 100rpx;
+    line-height: 100rpx;
+    display: flex;
+    font-size: 16px;
+}
+
+.coupontitlel {
+    width: 250rpx;
+    text-align: center;
+}
+
+.coupontitlel view {
+    border-bottom: 2px solid #fff;
+    width: 125rpx;
+    margin: 0 auto;
+    height: 96rpx;
+}
+
+.coupontitlel view.active {
+    border-bottom: 2px solid #212121;
+}
+
+.couponlist {
+    margin-top: 24rpx;
+}
+
+.coupon-info {
+    width: 702rpx;
+    margin: 0 auto;
+    display: block;
+    overflow: hidden;
+}
+
+.coupon-pic {
+    position: relative;
+    height: 96rpx;
+    overflow: hidden;
+    color: #fff;
+}
+
+.coupon-money {
+    position: absolute;
+    top: 25rpx;
+    font-size: 48rpx;
+    font-family: microsoft yahei;
+    font-weight: 700;
+    left: 24rpx;
+}
+
+.coupon-type {
+    right: 24rpx;
+    position: absolute;
+    top: 25rpx;
+    font-size: 24rpx;
+}
+
+.lqicon3 {
+    width: 702rpx;
+    height: 96rpx;
+}
+
+.coupon-des {
+    padding: 15rpx 24rpx;
+    overflow: hidden;
+    font-size: 24rpx;
+}
+
+.coupon-des .coupon-txt {
+    margin: 5rpx 0;
+}
+
+.coupon-des .coupon-txt:before {
+    content: "";
+    width: 10rpx;
+    height: 10rpx;
+    background: #ff5252;
+    display: inline-block;
+    margin-right: 15rpx;
+    margin-bottom: 5rpx;
+}
+
+.coupon-money,.coupon-type {
+    position: absolute;
+    top: 25rpx;
+}

@@ -1,0 +1,15 @@
+// \pages/stu/home/home book Data Flow
+digraph {
+	"51e98e96cfab482eba4be704e5f3a3dd" [label="FunctionCall,
+function name -> book,
+param -> t,
+t.,
+" color=blue]
+	"70252d5455aa41568c8af93baf1d9a30" [label=SequenceExpression color=blue]
+	f5ef08fc391c4436b71ca4b4ed6c60d0 [label="CallExpression,
+callee name -> a.collectFomrId,
+param -> t.detail.formId,
+" color=blue]
+	"70252d5455aa41568c8af93baf1d9a30" -> f5ef08fc391c4436b71ca4b4ed6c60d0
+	"51e98e96cfab482eba4be704e5f3a3dd" -> "70252d5455aa41568c8af93baf1d9a30"
+}

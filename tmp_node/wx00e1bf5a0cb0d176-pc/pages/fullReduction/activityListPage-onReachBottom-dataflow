@@ -1,0 +1,28 @@
+// \pages/fullReduction/activityListPage onReachBottom Data Flow
+digraph {
+	"899a9e589f0f47d985ee284a93edf3d4" [label="FunctionCall,
+function name -> onReachBottom,
+param -> " color=blue]
+	bccdab31bcc64003933eb53f3c9c3b93 [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"855b630c55b9415187271825f3120d92" [label=SequenceExpression color=blue]
+	"09075fd14c41480082369471c3ec9e84" [label="CallExpression,
+callee name -> this.loadactivityProductList,
+param -> " color=blue]
+	"7dd0e01d69f94012866fabf663a25940" [label="FunctionCall,
+function name -> loadactivityProductList,
+param -> " color=blue]
+	"95d7ac96fe6247019d61708d6e272a00" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	b9736f8be2dc4987ac7316aacc3e3e35 [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/FullReduction&a=getActivityProductList&ActivityId=' + a.data.activityID + '&page=' + a.data.productPage
+}" color=blue]
+	"95d7ac96fe6247019d61708d6e272a00" -> b9736f8be2dc4987ac7316aacc3e3e35
+	"7dd0e01d69f94012866fabf663a25940" -> "95d7ac96fe6247019d61708d6e272a00"
+	"09075fd14c41480082369471c3ec9e84" -> "7dd0e01d69f94012866fabf663a25940"
+	"855b630c55b9415187271825f3120d92" -> "09075fd14c41480082369471c3ec9e84"
+	bccdab31bcc64003933eb53f3c9c3b93 -> "855b630c55b9415187271825f3120d92"
+	"899a9e589f0f47d985ee284a93edf3d4" -> bccdab31bcc64003933eb53f3c9c3b93
+}

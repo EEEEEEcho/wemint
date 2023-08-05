@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+        "navigate": "/components/navigate/navigate",
+        "good-skus": "/components/goodSkus/goodSkus",
+        "generate-photo": "/components/generatePhoto/generatePhoto",
+        "get-phone": "/components/getPhone/getPhone",
+        "free-group": "/components/freeGroup/freeGroup",
+        "share-group": "/components/shareGroup/shareGroup",
+        "loading-view": "/components/loading/loading",
+        "empty": "/components/emptyView/emptyView"
+    }
+}

@@ -1,0 +1,63 @@
+<myLoading id="myLoading"></myLoading>
+<view class="model" wx:if="{{showInfoModel}}">
+    <view class="modelTitle">
+        请求获取信息
+    </view>
+    <view class="modelBody">为了更好的为您提供服务，我们请求获取您的昵称、头像等公开信息</view>
+    <view class="btns">
+        <button bindgetuserinfo="getUserInfo" class="agree" lang="zh_CN" openType="getUserInfo" plain="true">下一步</button>
+    </view>
+</view>
+<view class="model" wx:if="{{showImgModel}}">
+    <view class="modelTitle">
+    请求获取授权
+</view>
+    <view class="modelBody">您还未授权摄像头及录音权限,暂时无法使用此功能,点击确定重新获取授权。</view>
+    <view class="btns">
+        <button bindopensetting="getShareProgram" class="agree" lang="zh_CN" openType="openSetting" plain="true">下一步</button>
+    </view>
+</view>
+<view class="myload" wx:if="{{showTips}}">
+    <view class="spinner"></view>
+</view>
+<scroll-view class="counList" scrollY="true" style="padding-bottom:50px;" wx:if="{{isSentAdviserList.length>0}}">
+    <view class="title-box">
+        <view class="title-text">消息列表</view>
+    </view>
+    <view bindtap="goChat" class="message-box" data-item="{{item}}" wx:for="{{isSentAdviserList}}" wx:key="index">
+        <view class="head-box">
+            <view class="newRed" wx:if="{{item.hasNewMsg>0}}">{{item.hasNewMsg}}</view>
+            <image alt="" binderror="error" bindload="load" data-index="{{index}}" hidden="{{item.loadComplete==false}}" src="{{item.head}}"></image>
+            <image alt="" hidden="{{item.loadComplete}}" src="{{defaultImg}}"></image>
+            <view style="background:rgba(255,255,255,0.5);width:100%;height:100%;z-index:10;position:absolute;top:0;left:0;" wx:if="{{item.onlineStatus}}"></view>
+        </view>
+        <view class="message-right-box">
+            <view class="message-right-top">
+                <view class="name">
+                    <text class="name-text">{{item.name}}</text>
+                    <image class="bind-icon" src="https://dm.static.elab-plus.com/wepy_pro/im/bangding.png" wx:if="{{item.bindStatus==1}}"></image>
+                </view>
+                <view class="last-message-time">{{item.MsgTimeStamp}}</view>
+            </view>
+            <view class="message-right-bottom">
+                <view class="message-text">{{item.MsgShow}}</view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="goChatPage" class="more-adviser">
+        <image alt="" src="https://dm.static.elab-plus.com/wepy_pro/im/more-adviser-icon.png" style="width:28rpx;height:28rpx"></image>
+        <text style="color:#5370FF;margin-left:10px;font-size:14px">更多顾问</text>
+    </view>
+</scroll-view>
+<view class="no-adviser-box" wx:if="{{noAdviserPage}}">
+    <view style="text-align:center">
+        <image src="https://dm.static.elab-plus.com/wepy_pro/im/kongbai.png" style="width:50vw;height:50vw"></image>
+    </view>
+    <view class="no-adviser-text">
+       顾问当前繁忙，您可留电预约或稍后再试
+   </view>
+    <button bindgetphonenumber="getPhoneNumber" bindtap="goTel" class="tel-button" openType="{{showPhoneModel?'getPhoneNumber':''}}" wx:if="{{showLiudianBox}}">
+        <view class="ic-phone"></view>
+       留电预约
+    </button>
+</view>

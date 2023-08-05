@@ -1,0 +1,47 @@
+// \pages/counselorList/counselorList goChat Data Flow
+digraph {
+	c65b86a921a3400c9962cbe269d05cd5 [label="FunctionCall,
+function name -> goChat,
+param -> e,
+e.,
+" color=blue]
+	"837ccd26cf19499981e58c1ce5d5ad6d" [label=VariableDeclarations color=blue]
+	e58fb57b3ee4443db727ab25be860e36 [label="VariableDeclarator,
+left -> a,
+right -> e.currentTarget.dataset.item" color=blue]
+	"837ccd26cf19499981e58c1ce5d5ad6d" -> e58fb57b3ee4443db727ab25be860e36
+	c65b86a921a3400c9962cbe269d05cd5 -> "837ccd26cf19499981e58c1ce5d5ad6d"
+	"27f2e18e6d5642a28642affc5571e92e" [label="CallExpression,
+callee name -> wx.setStorageSync,
+param -> " color=blue]
+	bed933f608ea42a1a6cbd2ae021bc647 [label="CallExpression,
+callee name -> JSON.stringify,
+param -> a,
+" color=blue]
+	"27f2e18e6d5642a28642affc5571e92e" -> bed933f608ea42a1a6cbd2ae021bc647
+	c65b86a921a3400c9962cbe269d05cd5 -> "27f2e18e6d5642a28642affc5571e92e"
+	"49d4c033ed414248adf493fc7bc75aef" [label=VariableDeclarations color=blue]
+	a6f37ef1aed24381b88ecd3b0630dd79 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"13f4051169984ee282738a23b4be6037" [label="Object Properties
+{
+adviserId -> a.id
+imTalkId -> a.id + '_' + i.globalData.single.id + '_' + s.houseId
+}" color=blue]
+	a6f37ef1aed24381b88ecd3b0630dd79 -> "13f4051169984ee282738a23b4be6037"
+	"49d4c033ed414248adf493fc7bc75aef" -> a6f37ef1aed24381b88ecd3b0630dd79
+	c65b86a921a3400c9962cbe269d05cd5 -> "49d4c033ed414248adf493fc7bc75aef"
+	"46ef123a69594f15a2381727ae45ea9c" [label=SequenceExpression color=blue]
+	cc75314f8cb74455a84e13cdf23f0aac [label="CallExpression,
+callee name -> console.log,
+param -> a,
+" color=blue]
+	a186e42caf0c477a9ae7934e877020ef [label="CallExpression,
+callee name -> JSON.stringify,
+param -> a,
+" color=blue]
+	cc75314f8cb74455a84e13cdf23f0aac -> a186e42caf0c477a9ae7934e877020ef
+	"46ef123a69594f15a2381727ae45ea9c" -> cc75314f8cb74455a84e13cdf23f0aac
+	c65b86a921a3400c9962cbe269d05cd5 -> "46ef123a69594f15a2381727ae45ea9c"
+}

@@ -1,0 +1,386 @@
+<myLoading id="myLoading"></myLoading>
+<navbar data="{{navbar}}"></navbar>
+<scroll-view scrollY="true" style="min-height:100vh">
+    <view style="min-height:100vh">
+        <view class="userInformation-container">
+            <image class="userInformation-container-bg" mode="scaleToFill" src="https://dm.static.elab-plus.com/miniprogram/sharefriend/background.png"></image>
+            <view class="userInformation-container-content">
+                <view class="userInformation-container-top"></view>
+                <view wx:if="{{!specialUser}}">
+                    <view class="userInformation-container-Common">
+                        <view class="userInformation-container-totalNum">
+                            <text>{{recommendSuccessCount>9999?'1W+':recommendSuccessCount}}</text>
+                        </view>
+                        <view class="userInformation-container-description">
+                            <text style="font-size: 34rpx;color: #FFFFFF;text-align: center;line-height: 36px;">成功推荐注册</text>
+                        </view>
+                    </view>
+                </view>
+                <view wx:else>
+                    <view class="userInformation-container-totalNum">
+                        <text>{{recommendSuccessCountWithBuild+recordCount>9999?'1W+':recommendSuccessCountWithBuild+recordCount}}</text>
+                    </view>
+                    <view class="userInformation-container-description">
+                        <text wx:if="{{specialUserType==2||specialUserType==3}}">{{specialRoleName}}{{agentStatus=='-1'?'(已失效)':''}}{{agentName}}的客户</text>
+                        <text style="font-size: 34rpx;color: #FFFFFF;text-align: center;line-height: 36px;" wx:else>成功推荐注册</text>
+                    </view>
+                    <view class="userInformation-container-recommend-container">
+                        <view class="userInformation-container-recommend-body">
+                            <view class="userInformation-container-recommend-success">
+                                <text>{{recommendSuccessCountWithBuild>9999?'1W+':recommendSuccessCountWithBuild}}</text>
+                            </view>
+                            <view class="userInformation-container-recommend-success-title">
+                                <text>成功推荐</text>
+                            </view>
+                            <view class="userInformation-container-recommend-divide"></view>
+                            <view class="userInformation-container-recommend-liebian">
+                                <text>{{recordCount>9999?'1W+':recordCount}}</text>
+                            </view>
+                            <view class="userInformation-container-recommend-liebian-title">
+                                <text>分享裂变</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="userInformation-container-recommend-bottom" wx:if="{{specialUserType}}">
+                    <image class="userInformation-container-recommend-bottom-bg" mode="scaleToFill" src="https://dm.static.elab-plus.com/miniprogram/sharefriend/buildingBg.png"></image>
+                    <view class="userInformation-container-recommend-bottom-body">
+                        <view class="userInformation-container-recommend-bottom-body-left">
+                            <view class="userInformation-container-recommend-bottom-body-left-image-container">
+                                <image class="userInformation-container-recommend-bottom-body-left-image" mode="scaleToFill" src="https://dm.static.elab-plus.com/pankebao/buildIcon.png"></image>
+                            </view>
+                            <view class="userInformation-container-recommend-bottom-body-left-description">
+                                <text wx:if="{{specialUserType==1}}">身份认证</text>
+                                <text wx:if="{{specialUserType==2||specialUserType==3}}">{{specialRoleName}}</text>
+                            </view>
+                        </view>
+                        <view class="userInformation-container-recommend-bottom-body-right">
+                            <view bindtap="navigateFuc" class="userInformation-container-recommend-bottom-body-right-description">
+                                <text wx:if="{{specialUserType==1}}">去认证</text>
+                                <text wx:if="{{specialUserType==2}}">身份绑定</text>
+                                <text wx:if="{{specialUserType==3}}">可结佣状态</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="navigateToOrganize" class="userInformation-container-organize" wx:if="{{specialUser}}">
+                <image class="userInformation-container-organize-bg" mode="scaleToFill" src="https://dm.static.elab-plus.com/miniprogram/sharefriend/originazre_bg.png"></image>
+                <view class="userInformation-container-organize-content">
+                    <image class="userInformation-container-organize-content-logo" mode="scaleToFill" src="https://dm.static.elab-plus.com/miniprogram/sharefriend/originazre.png"></image>
+                    <view class="userInformation-container-organize-content-text">
+                        <text>组织信息</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="wg-box">
+            <view class="wg-title">
+            围观人数 <span style="color:#ac7b5b">{{currentNum}}</span>人
+        </view>
+            <view class="wg-head-box">
+                <image class="wg-head" src="https://dm.static.elab-plus.com/miniprogram/memberlist_empty.png" wx:if="{{headList.length==0}}"></image>
+                <image class="wg-head" src="{{item.headPortrait&&item.headPortrait.length>0?item.headPortrait:'../../image/wepy_pro/default-head.png'}}" wx:for="{{headList}}" wx:key="index"></image>
+                <view class="mencen" wx:if="{{headList.length>14}}"></view>
+            </view>
+            <view class="head-text" wx:if="{{isGetHeadList}}">
+                <text class="head-t" wx:if="{{headList.length>13}}">悄悄告诉你，有这么多好友浏览了你分享的小程序</text>
+                <text class="head-t" wx:if="{{headList.length>0&&headList.length<14}}">只有这几个好友浏览了你分享的小程序，再接再厉</text>
+                <text class="head-t" wx:if="{{headList.length==0}}">这么好的小程序居然还没有分享出去，快去打破0围观惨案</text>
+            </view>
+        </view>
+        <view class="recommend-list">
+            <view class="recommend-list-title">
+                <view bindtap="ClkRecommend" class="recommend-list-title-recommend" style="{{showRecommend?'padding-bottom: 4px;color: #030303;':'opacity: 0.5;color: #121212;'}}{{!showPhoneModel&&showRecommend&&baobeiTableView?'border-bottom: 1px solid #2359CC;':''}}">
+                    <text>我的推荐</text>
+                </view>
+                <view bindtap="ClkBaobei" class="recommend-list-title-baobei" style="{{showBaoBei?'border-bottom: 1px solid #2359CC;padding-bottom: 4px;':'opacity: 0.5;color: #121212;'}}" wx:if="{{!showPhoneModel&&baobeiTableView}}">
+                    <text>我的报备</text>
+                </view>
+            </view>
+            <view class="recommend-list-noPhone" wx:if="{{showPhoneModel&&recommendList.length>0&&specialUser}}">
+                <view class="authBox">
+                    <view class="wg-head-box" style="justify-content:center;margin-top:10vh;">
+                        <image class="authHead" src="../../image/wepy_pro/default-head.png"></image>
+                        <image class="authHead" src="../../image/wepy_pro/default-head.png"></image>
+                        <image class="authHead" src="../../image/wepy_pro/default-head.png"></image>
+                        <image class="authHead" src="https://dm.static.elab-plus.com/wepy_pro/shareFriend/more.png" style="border:none"></image>
+                    </view>
+                    <view style="margin-top:32rpx;text-align:center;color:#666666;font-size:26rpx">
+                    *点击解锁查看成功推荐明细*
+                </view>
+                    <button bindgetphonenumber="getPhoneNumber" class="authPhoneBtn" openType="getPhoneNumber">立即解锁</button>
+                </view>
+            </view>
+            <view class="recommend-list-noPhone" wx:elif="{{showPhoneModel&&noVerifiedRecommendList.length>0&&!specialUser}}">
+                <view class="authBox">
+                    <view class="wg-head-box" style="justify-content:center;margin-top:10vh;">
+                        <image class="authHead" src="../../image/wepy_pro/default-head.png"></image>
+                        <image class="authHead" src="../../image/wepy_pro/default-head.png"></image>
+                        <image class="authHead" src="../../image/wepy_pro/default-head.png"></image>
+                        <image class="authHead" src="https://dm.static.elab-plus.com/wepy_pro/shareFriend/more.png" style="border:none"></image>
+                    </view>
+                    <view style="margin-top:32rpx;text-align:center;color:#666666;font-size:26rpx">
+                    *点击解锁查看成功推荐明细*
+                </view>
+                    <button bindgetphonenumber="getPhoneNumber" class="authPhoneBtn" openType="getPhoneNumber">立即解锁</button>
+                </view>
+            </view>
+            <view wx:else>
+                <view class="recommend-list-container">
+                    <view wx:if="{{getWuGuanRequest}}">
+                        <view wx:if="{{specialUser}}">
+                            <view wx:if="{{showRecommend}}">
+                                <view class="" wx:for="{{recommendList}}" wx:key="key">
+                                    <view class="recommendList-head">
+                                        <image class="recommendList-head-icon" mode="scaleToFill" src="{{item.headPic?item.headPic:'../../image/wepy_pro/default-head.png'}}"></image>
+                                        <view class="recommendList-head-user">
+                                            <view class="recommendList-head-user-name">
+                                                <text wx:if="{{item.reportType&&item.reportType==3}}">{{item.name||'匿名用户'}}</text>
+                                                <text wx:else>{{item.nickName||'匿名用户'}}</text>
+                                            </view>
+                                            <view class="recommendList-head-user-mark" wx:if="{{item.reportType}}">
+                                                <text wx:if="{{item.reportType==1}}">小程序报备</text>
+                                                <text wx:if="{{item.reportType==2}}">自动报备</text>
+                                                <text wx:if="{{item.reportType==3}}">手动报备</text>
+                                            </view>
+                                            <view class="recommendList-head-user-phone">
+                                                <text>{{item.showMobile}}</text>
+                                            </view>
+                                        </view>
+                                        <view class="recommendList-head-register-data">
+                                            <text>{{item.registerDate}}</text>
+                                        </view>
+                                    </view>
+                                    <view class="recommendList-status">
+                                        <view class="recommendList-status-title">
+                                            <view class="recommendList-status-title-icon">
+                                                <image class="recommendList-status-title-icon-image" mode="scaleToFill" src="https://dm.static.elab-plus.com/miniprogram/sharefriend/refuse.png" wx:if="{{item.dynamic==99||item.dynamic==102||item.dynamic==108||item.dynamic==111}}"></image>
+                                                <image class="recommendList-status-title-icon-image" mode="scaleToFill" src="https://dm.static.elab-plus.com/miniprogram/sharefriend/warning.png" wx:if="{{item.dynamic==101}}"></image>
+                                                <image class="recommendList-status-title-icon-image" mode="scaleToFill" src="https://dm.static.elab-plus.com/miniprogram/sharefriend/success.png" wx:if="{{item.dynamic==1||item.dynamic==2||item.dynamic==100||item.dynamic==103||item.dynamic==104||item.dynamic==105||item.dynamic==106||item.dynamic==107||item.dynamic==109||item.dynamic==110}}"></image>
+                                            </view>
+                                            <view class="recommendList-status-title-warning">
+                                                <text wx:if="{{item.dynamic==1}}">授权号码</text>
+                                                <text wx:if="{{item.dynamic==2}}">在线留电</text>
+                                                <text wx:if="{{item.dynamic==99}}">无法报备</text>
+                                                <text wx:if="{{item.dynamic==100}}">报备成功</text>
+                                                <text wx:if="{{item.dynamic==101}}">即将过期</text>
+                                                <text wx:if="{{item.dynamic==102}}">已过期</text>
+                                                <text wx:if="{{item.dynamic==103}}">来电</text>
+                                                <text wx:if="{{item.dynamic==104}}">已到访</text>
+                                                <text wx:if="{{item.dynamic==105}}">已签约</text>
+                                                <text wx:if="{{item.dynamic==106}}">已结首付</text>
+                                                <text wx:if="{{item.dynamic==107}}">已结全款</text>
+                                                <text wx:if="{{item.dynamic==108}}">复核失效</text>
+                                                <text wx:if="{{item.dynamic==109}}">已结佣</text>
+                                                <text wx:if="{{item.dynamic==110}}">已退款</text>
+                                                <text wx:if="{{item.dynamic==111}}">截客失效</text>
+                                            </view>
+                                            <view class="recommendList-status-title-date">
+                                                <text>{{item.dynamicDate}}</text>
+                                            </view>
+                                        </view>
+                                        <view class="recommendList-status-title-btn" wx:if="{{item.state&&item.state!=1}}">
+                                            <view class="recommendList-status-title-btn-bg" style="{{item.state==2?'opacity:1;':'opacity:0.2;'}}"></view>
+                                            <view bindtap="navigateToBaoBei" class="recommendList-status-title-btn-content" data-customerId="{{item.customerId}}" data-customerMobile="{{item.customerMobile}}" data-stateid="{{item.stateId}}" data-type="{{item.state}}">
+                                                <text style="color: #fff;" wx:if="{{item.state==2}}">可报备</text>
+                                                <text style="color: #B07B56;" wx:if="{{item.state==3}}">已报备</text>
+                                                <text style="color: #B07B56;" wx:if="{{item.state==4}}">已失效</text>
+                                                <text style="color: #B07B56;" wx:if="{{item.state==5}}">可结佣</text>
+                                                <text style="color: #B07B56;" wx:if="{{item.state==6}}">已结佣</text>
+                                            </view>
+                                        </view>
+                                        <view class="recommendList-status-content" wx:if="{{item.copyWriting}}">
+                                            <text>{{item.copyWriting}}</text>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="recommend-list-noPhone" style="left: -50rpx;" wx:if="{{specialUser&&recommendList.length==0}}">
+                                    <view class="recommend-list-noData">
+                                        <view class="recommend-list-noData-title"></view>
+                                        <view class="recommend-list-noData-image-container">
+                                            <image class="recommend-list-noData-image" mode="scaleToFill" src="https://dm.static.elab-plus.com/pankebao/emptyUser.png"></image>
+                                            <view class="recommend-list-noData-text">
+                                                <text>还没有成功推荐好友哦~</text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view wx:if="{{showBaoBei}}">
+                                <view class="" wx:for="{{recordList}}" wx:key="key">
+                                    <view class="recommendList-head">
+                                        <image class="recommendList-head-icon" mode="scaleToFill" src="{{item.headPic?item.headPic:'../../image/wepy_pro/default-head.png'}}"></image>
+                                        <view class="recommendList-head-user">
+                                            <view class="recommendList-head-user-name">
+                                                <text wx:if="{{item.reportType&&item.reportType==3}}">{{item.name||'匿名用户'}}</text>
+                                                <text wx:else>{{item.nickName||'匿名用户'}}</text>
+                                            </view>
+                                            <view class="recommendList-head-user-mark" wx:if="{{item.reportType}}">
+                                                <text wx:if="{{item.reportType==1}}">小程序报备</text>
+                                                <text wx:if="{{item.reportType==2}}">自动报备</text>
+                                                <text wx:if="{{item.reportType==3}}">手动报备</text>
+                                            </view>
+                                            <view class="recommendList-head-user-phone">
+                                                <text>{{item.showMobile}}</text>
+                                            </view>
+                                        </view>
+                                        <view class="recommendList-head-register-data">
+                                            <text>{{item.registerDate}}</text>
+                                        </view>
+                                    </view>
+                                    <view class="recommendList-status">
+                                        <view class="recommendList-status-title">
+                                            <view class="recommendList-status-title-icon">
+                                                <image class="recommendList-status-title-icon-image" mode="scaleToFill" src="https://dm.static.elab-plus.com/miniprogram/sharefriend/refuse.png" wx:if="{{item.dynamic==99||item.dynamic==102||item.dynamic==108||item.dynamic==111}}"></image>
+                                                <image class="recommendList-status-title-icon-image" mode="scaleToFill" src="https://dm.static.elab-plus.com/miniprogram/sharefriend/warning.png" wx:if="{{item.dynamic==101}}"></image>
+                                                <image class="recommendList-status-title-icon-image" mode="scaleToFill" src="https://dm.static.elab-plus.com/miniprogram/sharefriend/success.png" wx:if="{{item.dynamic==1||item.dynamic==2||item.dynamic==100||item.dynamic==103||item.dynamic==104||item.dynamic==105||item.dynamic==106||item.dynamic==107||item.dynamic==109||item.dynamic==110}}"></image>
+                                            </view>
+                                            <view class="recommendList-status-title-warning">
+                                                <text wx:if="{{item.dynamic==1}}">授权号码</text>
+                                                <text wx:if="{{item.dynamic==2}}">在线留电</text>
+                                                <text wx:if="{{item.dynamic==99}}">无法报备</text>
+                                                <text wx:if="{{item.dynamic==100}}">报备成功</text>
+                                                <text wx:if="{{item.dynamic==101}}">即将过期</text>
+                                                <text wx:if="{{item.dynamic==102}}">已过期</text>
+                                                <text wx:if="{{item.dynamic==103}}">来电</text>
+                                                <text wx:if="{{item.dynamic==104}}">已到访</text>
+                                                <text wx:if="{{item.dynamic==105}}">已签约</text>
+                                                <text wx:if="{{item.dynamic==106}}">已结首付</text>
+                                                <text wx:if="{{item.dynamic==107}}">已结全款</text>
+                                                <text wx:if="{{item.dynamic==108}}">复核失效</text>
+                                                <text wx:if="{{item.dynamic==109}}">已结佣</text>
+                                                <text wx:if="{{item.dynamic==110}}">已退款</text>
+                                                <text wx:if="{{item.dynamic==111}}">截客失效</text>
+                                            </view>
+                                            <view class="recommendList-status-title-date">
+                                                <text>{{item.dynamicDate}}</text>
+                                            </view>
+                                        </view>
+                                        <view class="recommendList-status-title-btn" wx:if="{{item.state&&item.state!=1}}">
+                                            <view class="recommendList-status-title-btn-bg" style="{{item.state==2?'opacity:1;':'opacity:0.2;'}}"></view>
+                                            <view bindtap="" class="recommendList-status-title-btn-content">
+                                                <text style="color: #fff;" wx:if="{{item.state==2}}">可报备</text>
+                                                <text style="color: #B07B56;" wx:if="{{item.state==3}}">已报备</text>
+                                                <text style="color: #B07B56;" wx:if="{{item.state==4}}">已失效</text>
+                                                <text style="color: #B07B56;" wx:if="{{item.state==5}}">可结佣</text>
+                                                <text style="color: #B07B56;" wx:if="{{item.state==6}}">已结佣</text>
+                                            </view>
+                                        </view>
+                                        <view class="recommendList-status-content" wx:if="{{item.copyWriting}}">
+                                            <text>{{item.copyWriting}}</text>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view wx:else>
+                            <view wx:if="{{showRecommend}}">
+                                <view class="" wx:for="{{noVerifiedRecommendList}}" wx:key="key">
+                                    <view class="recommendList-head">
+                                        <image class="recommendList-head-icon" mode="scaleToFill" src="{{item.headPic?item.headPic:'../../image/wepy_pro/default-head.png'}}"></image>
+                                        <view class="recommendList-head-user">
+                                            <view class="recommendList-head-user-name">
+                                                <text>{{item.nickName||'匿名用户'}}</text>
+                                            </view>
+                                            <view class="recommendList-head-user-phone">
+                                                <text>{{item.showMobile}}</text>
+                                            </view>
+                                        </view>
+                                        <view class="recommendList-head-register-data">
+                                            <text>{{item.registerDate}}</text>
+                                        </view>
+                                    </view>
+                                    <view class="recommendList-status">
+                                        <view class="recommendList-status-title">
+                                            <view class="recommendList-status-title-icon">
+                                                <image class="recommendList-status-title-icon-image" mode="scaleToFill" src="https://dm.static.elab-plus.com/miniprogram/sharefriend/success.png"></image>
+                                            </view>
+                                            <view class="recommendList-status-title-warning">
+                                                <text>{{item.dynamic||''}}</text>
+                                            </view>
+                                            <view class="recommendList-status-title-date">
+                                                <text>{{item.dynamicDate}}</text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="recommend-list-noPhone" style="left: -50rpx;" wx:if="{{!specialUser&&noVerifiedRecommendList.length==0}}">
+                                    <view class="recommend-list-noData">
+                                        <view class="recommend-list-noData-title"></view>
+                                        <view class="recommend-list-noData-image-container">
+                                            <image class="recommend-list-noData-image" mode="scaleToFill" src="https://dm.static.elab-plus.com/pankebao/emptyUser.png"></image>
+                                            <view class="recommend-list-noData-text">
+                                                <text>还没有成功推荐好友哦~</text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="" wx:if="{{showBaoBei}}" wx:for="{{recordList}}" wx:key="key">
+                                <view class="recommendList-head">
+                                    <image class="recommendList-head-icon" mode="scaleToFill" src="{{item.headPic?item.headPic:'../../image/wepy_pro/default-head.png'}}"></image>
+                                    <view class="recommendList-head-user">
+                                        <view class="recommendList-head-user-name">
+                                            <text>{{item.nickName||'匿名用户'}}</text>
+                                        </view>
+                                        <view class="recommendList-head-user-phone">
+                                            <text>{{item.showMobile}}</text>
+                                        </view>
+                                    </view>
+                                    <view class="recommendList-head-register-data">
+                                        <text>{{item.registerDate}}</text>
+                                    </view>
+                                </view>
+                                <view class="recommendList-status">
+                                    <view class="recommendList-status-title">
+                                        <view class="recommendList-status-title-icon">
+                                            <image class="recommendList-status-title-icon-image" mode="scaleToFill" src="https://dm.static.elab-plus.com/miniprogram/sharefriend/refuse.png" wx:if="{{item.dynamic==99||item.dynamic==102||item.dynamic==108||item.dynamic==111}}"></image>
+                                            <image class="recommendList-status-title-icon-image" mode="scaleToFill" src="https://dm.static.elab-plus.com/miniprogram/sharefriend/warning.png" wx:if="{{item.dynamic==101}}"></image>
+                                            <image class="recommendList-status-title-icon-image" mode="scaleToFill" src="https://dm.static.elab-plus.com/miniprogram/sharefriend/success.png" wx:if="{{item.dynamic==1||item.dynamic==2||item.dynamic==100||item.dynamic==103||item.dynamic==104||item.dynamic==105||item.dynamic==106||item.dynamic==107||item.dynamic==109||item.dynamic==110}}"></image>
+                                        </view>
+                                        <view class="recommendList-status-title-warning">
+                                            <text wx:if="{{item.dynamic==1}}">授权号码</text>
+                                            <text wx:if="{{item.dynamic==2}}">在线留电</text>
+                                            <text wx:if="{{item.dynamic==99}}">无法报备</text>
+                                            <text wx:if="{{item.dynamic==100}}">报备成功</text>
+                                            <text wx:if="{{item.dynamic==101}}">即将过期</text>
+                                            <text wx:if="{{item.dynamic==102}}">已过期</text>
+                                            <text wx:if="{{item.dynamic==103}}">来电</text>
+                                            <text wx:if="{{item.dynamic==104}}">已到访</text>
+                                            <text wx:if="{{item.dynamic==105}}">已签约</text>
+                                            <text wx:if="{{item.dynamic==106}}">已结首付</text>
+                                            <text wx:if="{{item.dynamic==107}}">已结全款</text>
+                                            <text wx:if="{{item.dynamic==108}}">复核失效</text>
+                                            <text wx:if="{{item.dynamic==109}}">已结佣</text>
+                                            <text wx:if="{{item.dynamic==110}}">已退款</text>
+                                            <text wx:if="{{item.dynamic==111}}">截客失效</text>
+                                        </view>
+                                        <view class="recommendList-status-title-date">
+                                            <text>{{item.dynamicDate}}</text>
+                                        </view>
+                                    </view>
+                                    <view class="recommendList-status-title-btn" wx:if="{{item.state&&item.state!=1}}">
+                                        <view class="recommendList-status-title-btn-bg" style="{{item.state==2?'opacity:1;':'opacity:0.2;'}}"></view>
+                                        <view bindtap="" class="recommendList-status-title-btn-content">
+                                            <text style="color: #fff;" wx:if="{{item.state==2}}">可报备</text>
+                                            <text style="color: #B07B56;" wx:if="{{item.state==3}}">已报备</text>
+                                            <text style="color: #B07B56;" wx:if="{{item.state==4}}">已失效</text>
+                                            <text style="color: #B07B56;" wx:if="{{item.state==5}}">可结佣</text>
+                                            <text style="color: #B07B56;" wx:if="{{item.state==6}}">已结佣</text>
+                                        </view>
+                                    </view>
+                                    <view class="recommendList-status-content" wx:if="{{item.copyWriting}}">
+                                        <text>{{item.copyWriting}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view style="position:relative;width: 750rpx;height: 26rpx;"></view>
+        </view>
+    </view>
+</scroll-view>
+<image bindtap="navigateToSelfReport" class="selfReport_icon" mode="scaleToFill" src="https://dm.static.elab-plus.com/selfReport/seleReport_icon.png" wx:if="{{manualRecord==1}}"></image>

@@ -1,0 +1,15 @@
+// \pages/stu/home/home my Data Flow
+digraph {
+	ada0b4dd6c414f69969cc9fdce7d43bb [label="FunctionCall,
+function name -> my,
+param -> t,
+t.,
+" color=blue]
+	e4a86a5f2e9a4aa0b3e756bc80b39ceb [label=SequenceExpression color=blue]
+	"1e13820bc80e44eebee316b490233d3c" [label="CallExpression,
+callee name -> a.collectFomrId,
+param -> t.detail.formId,
+" color=blue]
+	e4a86a5f2e9a4aa0b3e756bc80b39ceb -> "1e13820bc80e44eebee316b490233d3c"
+	ada0b4dd6c414f69969cc9fdce7d43bb -> e4a86a5f2e9a4aa0b3e756bc80b39ceb
+}

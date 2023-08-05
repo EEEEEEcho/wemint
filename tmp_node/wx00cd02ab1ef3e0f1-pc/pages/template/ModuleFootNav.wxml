@@ -1,0 +1,11 @@
+<template name="ModuleFootNav">
+    <view class="ModuleFootNavSpace"></view>
+    <view class="ModuleFootNav" style="background-color:{{m.BgColor}};">
+        <view class="nav-item" style="width:{{100/m.Links.length}}%" wx:for="{{m.Links}}" wx:key="index">
+            <navigator openType="reLaunch" url="{{item.Url}}">
+                <image class="image" src="{{item.Image}}"></image>
+                <view class="text" style="color:{{m.FontColor}}">{{item.Text}}</view>
+            </navigator>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,18 @@
+// \pages/detail/index checkImg Data Flow
+digraph {
+	b205b342a95e46f897fda141adacb8ef [label="FunctionCall,
+function name -> checkImg,
+param -> t,
+t.,
+" color=blue]
+	"24079514f77742648a004ddb9c6c7425" [label="CallExpression,
+callee name -> wx.previewImage,
+param -> " color=blue]
+	c85ab91068db4576a0fb6f477213724d [label="Object Properties
+{
+urls -> t.currentTarget.dataset.urls
+current -> t.currentTarget.dataset.url
+}" color=blue]
+	"24079514f77742648a004ddb9c6c7425" -> c85ab91068db4576a0fb6f477213724d
+	b205b342a95e46f897fda141adacb8ef -> "24079514f77742648a004ddb9c6c7425"
+}

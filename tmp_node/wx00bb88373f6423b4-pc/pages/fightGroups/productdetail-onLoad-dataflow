@@ -1,0 +1,54 @@
+// \pages/fightGroups/productdetail onLoad Data Flow
+digraph {
+	"4050fa5fb1ba445581ec062c2cc08a78" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	e63e3c84eab242e39ec449dde4c930b9 [label=SequenceExpression color=blue]
+	"5f72211fbcd14f99a4d17d3b7613c47f" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"6245b81b007349d88b828b8f3c2a3a63" [label="CallExpression,
+callee name -> t.getPageUrl,
+param -> s,
+" color=blue]
+	"5f72211fbcd14f99a4d17d3b7613c47f" -> "6245b81b007349d88b828b8f3c2a3a63"
+	e63e3c84eab242e39ec449dde4c930b9 -> "5f72211fbcd14f99a4d17d3b7613c47f"
+	"7c5435d6f42441769f878144959a257b" [label="CallExpression,
+callee name -> this.loadProDetailMsg,
+param -> " color=blue]
+	"7da1bff92ce24121a1f93f47691a462e" [label="FunctionCall,
+function name -> loadProDetailMsg,
+param -> " color=blue]
+	bc426260e49747b9a27bfcbfeed4aa46 [label=SequenceExpression color=blue]
+	"8019548d095244d1b15e210940a2f8b1" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	"41fad553f29548079bfbb0b18122e4dd" [label="Object Properties
+{
+url -> '/index.php?c=front/WxApp/pintuan&a=getProductInfo&pintuan_id=' + a.data.queryparams.pintuan_id + '&pintuan_product_id=' + a.data.queryparams.id
+}" color=blue]
+	"8019548d095244d1b15e210940a2f8b1" -> "41fad553f29548079bfbb0b18122e4dd"
+	bc426260e49747b9a27bfcbfeed4aa46 -> "8019548d095244d1b15e210940a2f8b1"
+	"644329acded948f9b0b19b3d501331c2" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	bf649ace963942c6990bd8cc31b834fb [label="Object Properties
+{
+url -> '/index.php?c=front/WxApp/pintuan&a=getProductSku&pintuan_id=' + a.data.queryparams.pintuan_id + '&product_id=' + a.data.queryparams.proid
+}" color=blue]
+	"644329acded948f9b0b19b3d501331c2" -> bf649ace963942c6990bd8cc31b834fb
+	bc426260e49747b9a27bfcbfeed4aa46 -> "644329acded948f9b0b19b3d501331c2"
+	a79709d8274d4ca8a0e44999aafe625d [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	"26985cefa7604ca3833b731c8b08cbb8" [label="Object Properties
+{
+url -> '/index.php?c=front/WxApp/pintuan&a=getPintuanRecommend&pintuan_id=' + a.data.queryparams.pintuan_id + '&pintuan_product_id=' + a.data.queryparams.id
+}" color=blue]
+	a79709d8274d4ca8a0e44999aafe625d -> "26985cefa7604ca3833b731c8b08cbb8"
+	bc426260e49747b9a27bfcbfeed4aa46 -> a79709d8274d4ca8a0e44999aafe625d
+	"7da1bff92ce24121a1f93f47691a462e" -> bc426260e49747b9a27bfcbfeed4aa46
+	"7c5435d6f42441769f878144959a257b" -> "7da1bff92ce24121a1f93f47691a462e"
+	e63e3c84eab242e39ec449dde4c930b9 -> "7c5435d6f42441769f878144959a257b"
+	"4050fa5fb1ba445581ec062c2cc08a78" -> e63e3c84eab242e39ec449dde4c930b9
+}

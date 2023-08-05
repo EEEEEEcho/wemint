@@ -1,0 +1,247 @@
+.yhtjImg {
+    width: 94vw;
+    border-radius: 8px;
+    height: 47vw;
+    margin: 11px auto auto 11px;
+}
+
+.yhtjBox {
+    border-bottom: 1px #666 solid;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.yhtjTitleBox {
+    width: 100%;
+    height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    clear: both;
+}
+
+.yhtjTitle {
+    float: left;
+    text-align: left;
+    color: #fff;
+    line-height: 24px;
+}
+
+.yhtjTitle1 {
+    float: left;
+    margin-left: 10px;
+    text-align: left;
+    color: #fff;
+    line-height: 24px;
+}
+
+.monthSales {
+    text-align: right;
+    color: #999;
+    font-size: 12px;
+    line-height: 24px;
+}
+
+.yhtjPrice {
+    float: left;
+    color: #fb4e44;
+    font-size: 20px;
+    line-height: 30px;
+    box-sizing: border-box;
+    height: 30px;
+}
+
+.spmsBox {
+    border-bottom: 1px #666 solid;
+    clear: both;
+    padding: 10px 20px;
+}
+
+.spmsTitle {
+    color: #fff;
+}
+
+.spmsText {
+    font-size: 14px;
+    color: #999;
+}
+
+.commodityScore {
+    display: flex;
+    float: left;
+    padding-left: 20px;
+    padding-top: 20px;
+    color: #fff;
+}
+
+.thumbs {
+    display: flex;
+    float: right;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+.like {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.likenum {
+    margin-right: 10px;
+    font-size: 14px;
+    height: 24px;
+    display: flex;
+    align-items: flex-end;
+    color: #ffbf21;
+}
+
+.unlike {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.unlikenum {
+    font-size: 14px;
+    height: 24px;
+    display: flex;
+    align-items: flex-end;
+    color: #666;
+}
+
+.userRatingBox {
+    border-top: 1px #666 solid;
+    margin-top: 64px;
+}
+
+.userRatingTitle {
+    color: #fff;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.container {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+
+.xingxing {
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.row {
+    box-sizing: border-box;
+    width: 100%;
+    line-height: 24px;
+}
+
+.col {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.flex20 {
+    width: 20%;
+    flex: 0 0 20%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.col-6 {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.flex45 {
+    width: 45%;
+    flex: 0 0 45%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.flex55 {
+    width: 55%;
+    flex: 0 0 55%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.flex80 {
+    width: 80%;
+    flex: 0 0 80%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.col-12 {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.xing {
+    width: 15px;
+    height: 15px;
+}
+
+.xing1 {
+    width: 16px;
+    height: 15px;
+    float: left;
+    margin-top: 5px;
+}
+
+.userName {
+    font-size: 12px;
+    color: #676767;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.date {
+    font-size: 12px;
+    text-align: right;
+    color: #676767;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 20px;
+    overflow: hidden;
+}
+
+.userJudge {
+    font-size: 14px;
+    color: #c9c9c9;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+li {
+    margin-bottom: 5px;
+    border-bottom: 1px solid #656565;
+}
+
+.user-head {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #b5b5b5;
+    margin-top: 10px;
+    float: left;
+}
+
+.userHead {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

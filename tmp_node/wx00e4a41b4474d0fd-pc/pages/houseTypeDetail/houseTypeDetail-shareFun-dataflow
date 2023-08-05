@@ -1,0 +1,9 @@
+// \pages/houseTypeDetail/houseTypeDetail shareFun Data Flow
+digraph {
+	aa450670d3e34518b02534b4f1fa3fea [label="FunctionCall,
+function name -> shareFun,
+param -> " color=blue]
+	b05d0140140044f7ba14d95b35f19771 [label="ConditionalExpression,
+ conditional list -> t.goShareDetail" color=blue]
+	aa450670d3e34518b02534b4f1fa3fea -> b05d0140140044f7ba14d95b35f19771
+}

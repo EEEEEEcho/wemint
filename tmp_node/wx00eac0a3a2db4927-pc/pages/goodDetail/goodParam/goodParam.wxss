@@ -1,0 +1,33 @@
+.params-container {
+    padding-top: 10rpx;
+}
+
+.params {
+    margin-left: 32rpx;
+    width: 684rpx;
+}
+
+.param_brand {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1rpx dashed #dcdce3;
+    align-items: center;
+}
+
+.param_brand {
+    padding: 30rpx 0;
+}
+
+.brand,.brand_name {
+    font-size: 32rpx;
+}
+
+.brand {
+    color: #9d9da4;
+    margin-left: 18rpx;
+}
+
+.brand_name {
+    color: #50505b;
+    margin-left: 56rpx;
+}

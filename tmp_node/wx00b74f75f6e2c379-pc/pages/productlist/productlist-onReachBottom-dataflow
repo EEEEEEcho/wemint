@@ -1,0 +1,26 @@
+// \pages/productlist/productlist onReachBottom Data Flow
+digraph {
+	"982f83aa1a1848598f4bdeb9ff75fe97" [label="FunctionCall,
+function name -> onReachBottom,
+param -> " color=blue]
+	"14eeeadd3e30435282c646a96b76f3b6" [label=VariableDeclarations color=blue]
+	"240d09a2ec114460903cd0bd41a509cf" [label="VariableDeclarator,
+left -> pageIndex,
+right -> that.data.PageIndex + 1" color=blue]
+	"14eeeadd3e30435282c646a96b76f3b6" -> "240d09a2ec114460903cd0bd41a509cf"
+	"982f83aa1a1848598f4bdeb9ff75fe97" -> "14eeeadd3e30435282c646a96b76f3b6"
+	dbe15bf7243049df92de22c6c26fa1f5 [label="CallExpression,
+callee name -> that.setData,
+param -> " color=blue]
+	d38fa689415c45d8ba0b5a69d755d27b [label="Object Properties
+{
+PageIndex -> pageIndex
+}" color=blue]
+	dbe15bf7243049df92de22c6c26fa1f5 -> d38fa689415c45d8ba0b5a69d755d27b
+	"982f83aa1a1848598f4bdeb9ff75fe97" -> dbe15bf7243049df92de22c6c26fa1f5
+	"967e83d2eb6c43d18050fed56203c518" [label="CallExpression,
+callee name -> that.loadData,
+param -> that,
+" color=blue]
+	"982f83aa1a1848598f4bdeb9ff75fe97" -> "967e83d2eb6c43d18050fed56203c518"
+}

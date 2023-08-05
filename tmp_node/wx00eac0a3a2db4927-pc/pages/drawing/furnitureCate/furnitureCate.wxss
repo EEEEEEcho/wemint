@@ -1,0 +1,200 @@
+.showProduct {
+    margin-top: 40rpx;
+}
+
+.showCate {
+    margin-top: 30rpx;
+}
+
+.scrollViewH {
+    white-space: nowrap;
+}
+
+.furnitureCateContain {
+    width: 682rpx;
+    margin-left: 34rpx;
+}
+
+.tab {
+    display: inline-block;
+}
+
+.swiper {
+    display: inline-block;
+    padding: 0 16rpx;
+    text-align: center;
+    line-height: 48rpx;
+    height: 48rpx;
+    font-size: 24rpx;
+}
+
+.swiperTab {
+    color: #51515c;
+}
+
+.swipertabSelect {
+    background: #ed7b43;
+    color: #fff;
+    border-radius: 50rpx;
+}
+
+.show3DView {
+    width: 682rpx;
+    height: 130rpx;
+    border-radius: 24rpx;
+    margin-top: 20rpx;
+}
+
+.view_back {
+    width: 682rpx;
+    height: 130rpx;
+}
+
+.viewBack {
+    width: 682rpx;
+    height: 130rpx;
+    border-radius: 24rpx;
+    background: #ccc;
+}
+
+.coverView {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 682rpx;
+    height: 130rpx;
+    border-radius: 24rpx;
+    background: #51515c;
+    opacity: 0.5;
+}
+
+.viewIntroduce {
+    align-items: center;
+    position: absolute;
+    top: 40rpx;
+    left: 0;
+    width: 682rpx;
+}
+
+.viewImage {
+    width: 46rpx;
+    height: 46rpx;
+    background: #fff;
+    margin-left: 30rpx;
+}
+
+.viewTxt {
+    font-size: 36rpx;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 13rpx;
+}
+
+.viewBtn {
+    border: 1rpx solid #fff;
+    border-radius: 24rpx;
+    width: 146rpx;
+    height: 40rpx;
+    margin-left: auto;
+    margin-right: 30rpx;
+    align-items: center;
+    justify-content: center;
+}
+
+.viewBtnTxt {
+    font-size: 24rpx;
+    color: #fff;
+}
+
+.viewBtnImage {
+    width: 6rpx;
+    height: 10rpx;
+    background: #fff;
+    margin-left: 7rpx;
+}
+
+.spaceView {
+    align-items: center;
+    width: 682rpx;
+    margin-top: 48rpx;
+}
+
+.showView {
+    font-size: 42rpx;
+    color: #51515c;
+    font-weight: bold;
+}
+
+.get3DView {
+    font-size: 24rpx;
+    color: #aeaeb4;
+    margin-top: 4rpx;
+}
+
+.back {
+    width: 72rpx;
+    border-radius: 24rpx;
+    font-size: 20rpx;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 2rpx;
+    padding: 10rpx 0;
+}
+
+.servicesPlan {
+    margin-left: auto;
+    width: 72rpx;
+    height: 72rpx;
+}
+
+.relatedProduct {
+    width: 72rpx;
+    height: 72rpx;
+    margin-left: 16rpx;
+}
+
+.viewRadioPanel {
+    width: 682rpx;
+    margin-top: 30rpx;
+}
+
+.viewRadio {
+    width: 682rpx;
+    position: relative;
+}
+
+.labelImage {
+    width: 682rpx;
+    height: 532rpx;
+    border-radius: 24rpx;
+}
+
+.radioImage {
+    width: 108rpx;
+    height: 108rpx;
+    position: absolute;
+    top: 222rpx;
+    left: 297rpx;
+}
+
+.labelBtn {
+    padding: 4rpx 12rpx;
+    border-radius: 50rpx;
+    background: #fff;
+    font-size: 24rpx;
+    color: #3f3f3f;
+    letter-spacing: 2rpx;
+    font-weight: bold;
+}
+
+.label {
+    position: absolute;
+    bottom: 30rpx;
+    right: 20rpx;
+}
+
+.tuce {
+    position: absolute;
+    bottom: 30rpx;
+    right: 160rpx;
+}

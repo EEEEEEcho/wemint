@@ -1,0 +1,251 @@
+page {
+    background-color: #f4f4f4;
+}
+
+.back {
+    width: 682rpx;
+    border-radius: 24rpx;
+    margin-left: 34rpx;
+    margin-top: 30rpx;
+}
+
+.refund_detail_container {
+    position: relative;
+    padding-top: 10rpx;
+}
+
+.tip {
+    height: 130rpx;
+    background: #51515c;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.refund_tip {
+    color: #fff;
+    font-size: 33rpx;
+    margin-left: 50rpx;
+    width: 470rpx;
+}
+
+.refund_img {
+    width: 74rpx;
+    height: 72rpx;
+    margin-right: 53rpx;
+}
+
+.refund_progress {
+    height: 169rpx;
+    background: #aeaeb4;
+    margin-top: 38rpx;
+}
+
+.progress_image {
+    margin-left: 109rpx;
+    margin-top: 10rpx;
+}
+
+.progress_img {
+    width: 462rpx;
+    height: 14rpx;
+}
+
+.steps {
+    justify-content: space-around;
+    align-items: center;
+}
+
+.steps_first,.steps_second,.steps_last {
+    align-items: center;
+    position: relative;
+    margin-top: 10rpx;
+    width: 200rpx;
+    height: 79rpx;
+}
+
+.finish {
+    width: 26rpx;
+    height: 26rpx;
+    position: absolute;
+    left: 86rpx;
+    top: -36rpx;
+}
+
+.first_txt,.second_txt,.last_txt {
+    color: #fff;
+    font-size: 28rpx;
+}
+
+.first_date,.second_date,.last_date {
+    color: #fff;
+    font-size: 22rpx;
+    margin-top: 6rpx;
+}
+
+.refund_money,.feedback {
+    height: 85rpx;
+    background: #fff;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.amount_title,.feedback_title {
+    color: #51515c;
+    font-size: 30rpx;
+    margin-left: 24rpx;
+}
+
+.amount_money {
+    color: #f1763a;
+    font-size: 28rpx;
+    margin-right: 34rpx;
+}
+
+.feedback_cause {
+    color: #999;
+    font-size: 28rpx;
+    margin-right: 25rpx;
+    letter-spacing: 2rpx;
+}
+
+.rejection {
+    background: #fff;
+}
+
+.reject {
+    margin: 20rpx 16rpx 20rpx 23rpx;
+    line-height: 30rpx;
+}
+
+.reject_reason {
+    color: #51515c;
+    font-size: 30rpx;
+}
+
+.reason {
+    color: #aeaeb4;
+    font-size: 28rpx;
+    margin-left: 16rpx;
+    line-height: 42rpx;
+    letter-spacing: 2rpx;
+}
+
+.refund_commodity {
+    background: #fff;
+}
+
+.commodity {
+    min-height: 200rpx;
+    align-items: center;
+    border-bottom: 1rpx solid #eee;
+}
+
+.commodity_image {
+    margin-left: 30rpx;
+    margin-right: 16rpx;
+}
+
+.commodity_img {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 10rpx;
+}
+
+.commodity_detail {
+    flex: 1;
+    margin-right: 30rpx;
+}
+
+.commodity_name {
+    font-size: 28rpx;
+    color: #51515c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-height: 40rpx;
+}
+
+.price_num {
+    margin-top: 26rpx;
+    margin-right: 26rpx;
+    align-items: flex-end;
+}
+
+.commodity_type {
+    font-size: 22rpx;
+    color: #aeaeb4;
+    margin-top: 6rpx;
+}
+
+.commodity_price {
+    font-size: 28rpx;
+    color: #ed7b43;
+}
+
+.commodity_num {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.num_img {
+    width: 14rpx;
+    height: 14rpx;
+}
+
+.other_info {
+    margin-top: 20rpx;
+    margin-left: 34rpx;
+    margin-bottom: 30rpx;
+}
+
+.info_reason,.info_money,.info_time,.info_number {
+    font-size: 22rpx;
+    color: #aeaeb4;
+    margin-top: 10rpx;
+    margin-right: 24rpx;
+    line-height: 30rpx;
+}
+
+.buttons {
+    background: #fff;
+    height: 82rpx;
+    align-items: center;
+    margin-top: 30rpx;
+    margin-bottom: 50rpx;
+}
+
+.interval {
+    font-size: 32rpx;
+    color: #ed7b43;
+    margin-left: 34rpx;
+}
+
+.btn {
+    margin-left: auto;
+    margin-right: 44rpx;
+}
+
+.btn1,.btn2 {
+    font-size: 24rpx;
+    color: #aeaeb4;
+    width: 118rpx;
+    height: 46rpx;
+    line-height: 46rpx;
+    text-align: center;
+    border: 1px solid #aeaeb4;
+    border-radius: 24rpx;
+    margin-right: 20rpx;
+}
+
+.btn3 {
+    font-size: 24rpx;
+    color: #ed7b43;
+    width: 118rpx;
+    height: 46rpx;
+    line-height: 46rpx;
+    text-align: center;
+    border: 1px solid #ed7b43;
+    border-radius: 24rpx;
+}

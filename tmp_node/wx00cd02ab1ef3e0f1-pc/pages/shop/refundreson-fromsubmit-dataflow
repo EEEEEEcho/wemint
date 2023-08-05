@@ -1,0 +1,87 @@
+// \pages/shop/refundreson fromsubmit Data Flow
+digraph {
+	"1c659191536145b598a2692737f3e831" [label="FunctionCall,
+function name -> fromsubmit,
+param -> a.,
+a,
+" color=blue]
+	"7a964afa95a04a61bd9b9b940b20d0bb" [label=VariableDeclarations color=blue]
+	daf42974c8c143c79380c3db5d399e76 [label="VariableDeclarator,
+left -> t,
+right -> a.detail.value.refundsOrderID" color=blue]
+	"7a964afa95a04a61bd9b9b940b20d0bb" -> daf42974c8c143c79380c3db5d399e76
+	"8207b8720ad84ec18a2bc7348e1c8c1b" [label="VariableDeclarator,
+left -> s,
+right -> a.detail.value.refundsPKey" color=blue]
+	"7a964afa95a04a61bd9b9b940b20d0bb" -> "8207b8720ad84ec18a2bc7348e1c8c1b"
+	ccec5c9b44954441881e94d52ffe98ec [label="VariableDeclarator,
+left -> i,
+right -> a.detail.value.refundsReason" color=blue]
+	"7a964afa95a04a61bd9b9b940b20d0bb" -> ccec5c9b44954441881e94d52ffe98ec
+	"519f1600f59645c4ab156506b1f56126" [label="VariableDeclarator,
+left -> l,
+right -> a.detail.value.DeliveryGood" color=blue]
+	"7a964afa95a04a61bd9b9b940b20d0bb" -> "519f1600f59645c4ab156506b1f56126"
+	bf09ccb4a69e48fabae2eedab8f43fcd [label="VariableDeclarator,
+left -> n,
+right -> a.detail.value.refundsEdit" color=blue]
+	"7a964afa95a04a61bd9b9b940b20d0bb" -> bf09ccb4a69e48fabae2eedab8f43fcd
+	"5eb80f8b897840b7b95e99ec914bebea" [label="VariableDeclarator,
+left -> d,
+right -> a.detail.formId" color=blue]
+	"7a964afa95a04a61bd9b9b940b20d0bb" -> "5eb80f8b897840b7b95e99ec914bebea"
+	"1c659191536145b598a2692737f3e831" -> "7a964afa95a04a61bd9b9b940b20d0bb"
+	d990dd6bf8c2484882c40e4eb0b2ef9e [label=ReturnExpression color=blue]
+	"594d9ca3151e430f807bbaadb5f392a3" [label=SequenceExpression color=blue]
+	"7c328c1766ee43ada706560d3850fb88" [label="CallExpression,
+callee name -> console.log,
+param -> d,
+" color=blue]
+	"594d9ca3151e430f807bbaadb5f392a3" -> "7c328c1766ee43ada706560d3850fb88"
+	"26563e6af2d54eccbe7f2ecc1e7595d5" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"04ca449f4d1343caa2e50b9ab8c7edb0" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"1fea4a2e92734cff9d85ed4542d82da9" [label=SequenceExpression color=blue]
+	"604aefe21a47465cadeae9524fcf69a1" [label=voidNone color=blue]
+	"141c12e664a045f19df078a01e5d1be2" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	ba050d4c210f4c8087ec61b5b5501b7c [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	fb6ebebf8ecb4ab8ab91347aba7773d3 [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=Apply&refundsOrderID=' + t + '&refundsPKey=' + s + '&refundsReason=' + i + '&DeliveryGood=' + l + '&edit=' + n + '&formid=' + d
+}" color=blue]
+	ba050d4c210f4c8087ec61b5b5501b7c -> fb6ebebf8ecb4ab8ab91347aba7773d3
+	"141c12e664a045f19df078a01e5d1be2" -> ba050d4c210f4c8087ec61b5b5501b7c
+	"45914321c547435ebbcf9ec0b1af347f" [label=SequenceExpression color=blue]
+	bc09e24e4ddb45009172fd04e736f53e [label="CallExpression,
+callee name -> e.uploadRequest,
+param -> " color=blue]
+	"6ae95f8ed77b44f292df907ea90e6699" [label="Object Properties
+{
+refundsOrderID -> t
+refundsPKey -> s
+refundsReason -> i
+DeliveryGood -> l
+edit -> n
+formid -> d
+}" color=blue]
+	bc09e24e4ddb45009172fd04e736f53e -> "6ae95f8ed77b44f292df907ea90e6699"
+	"8e519aff05f04d29a325be27f924d79e" [label="FunctionCall,
+function name -> success,
+param -> a,
+" color=blue]
+	bc09e24e4ddb45009172fd04e736f53e -> "8e519aff05f04d29a325be27f924d79e"
+	"45914321c547435ebbcf9ec0b1af347f" -> bc09e24e4ddb45009172fd04e736f53e
+	"141c12e664a045f19df078a01e5d1be2" -> "45914321c547435ebbcf9ec0b1af347f"
+	"604aefe21a47465cadeae9524fcf69a1" -> "141c12e664a045f19df078a01e5d1be2"
+	"1fea4a2e92734cff9d85ed4542d82da9" -> "604aefe21a47465cadeae9524fcf69a1"
+	"04ca449f4d1343caa2e50b9ab8c7edb0" -> "1fea4a2e92734cff9d85ed4542d82da9"
+	"26563e6af2d54eccbe7f2ecc1e7595d5" -> "04ca449f4d1343caa2e50b9ab8c7edb0"
+	"594d9ca3151e430f807bbaadb5f392a3" -> "26563e6af2d54eccbe7f2ecc1e7595d5"
+	d990dd6bf8c2484882c40e4eb0b2ef9e -> "594d9ca3151e430f807bbaadb5f392a3"
+	"1c659191536145b598a2692737f3e831" -> d990dd6bf8c2484882c40e4eb0b2ef9e
+}

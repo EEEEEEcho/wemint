@@ -1,0 +1,7 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "领券中心",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+}

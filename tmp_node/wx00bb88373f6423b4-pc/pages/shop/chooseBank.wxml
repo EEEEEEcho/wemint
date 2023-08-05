@@ -1,0 +1,16 @@
+<view class="fixedTopBorder"></view>
+<view class="container">
+    <scroll-view scrollY="true">
+        <view catchtap="chooseBank" class="bankbox border1px" data-idx="{{index}}" wx:for="{{banks}}" wx:key="*this">
+            <view class="bankName">
+                <view class="bank-left">
+                    <image src="{{baseUrl}}/images/wxapp/{{item.code}}.jpg"></image>
+                    <text>{{item.name}}</text>
+                </view>
+                <view class="bank-right" data-idx="{{index}}" wx:if="{{chooseWay===index}}">
+                    <icon class="iconfont icon-duigou other-icon"></icon>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

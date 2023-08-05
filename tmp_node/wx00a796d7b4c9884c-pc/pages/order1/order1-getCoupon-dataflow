@@ -1,0 +1,44 @@
+// \pages/order1/order1 getCoupon Data Flow
+digraph {
+	"35b32c8cd5b94cc18b94d46fa19ea77b" [label="FunctionCall,
+function name -> getCoupon,
+param -> " color=blue]
+	"4dbedfeea7c34947941220eccfaad203" [label="If Alternate" color=blue]
+	d96c9723e67d44e3893bfea8283dfb88 [label=VariableDeclarations color=blue]
+	"573a71d1d2ce472b8619e3250013c891" [label="VariableDeclarator,
+left -> t,
+right -> this.data.money" color=blue]
+	d96c9723e67d44e3893bfea8283dfb88 -> "573a71d1d2ce472b8619e3250013c891"
+	"4dbedfeea7c34947941220eccfaad203" -> d96c9723e67d44e3893bfea8283dfb88
+	b830a634add9482382d635de81fade22 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"536f40dda10e4b8a972f0c06333a87fb" [label="Object Properties
+{
+couIndex1 -> this.data.couIndex
+money1 -> t
+couId1 -> this.data.couId
+}" color=blue]
+	"34ac7efb57a54015a0e2f02f122c9744" [label="CallExpression,
+callee name -> parseFloat,
+param -> " color=blue]
+	"9488f0cddae142acb4cac22396a7515e" [label="CallExpression,
+callee name -> parseFloat,
+param -> this.data.totalprice,
+" color=blue]
+	"34ac7efb57a54015a0e2f02f122c9744" -> "9488f0cddae142acb4cac22396a7515e"
+	"4de0024e85d44eb38884f0906fd5fc4d" [label="CallExpression,
+callee name -> parseFloat,
+param -> t,
+" color=blue]
+	"34ac7efb57a54015a0e2f02f122c9744" -> "4de0024e85d44eb38884f0906fd5fc4d"
+	"91df0055606147afbe21f4304866a4c1" [label="CallExpression,
+callee name -> parseFloat,
+param -> this.data.all_yunfei,
+" color=blue]
+	"34ac7efb57a54015a0e2f02f122c9744" -> "91df0055606147afbe21f4304866a4c1"
+	"536f40dda10e4b8a972f0c06333a87fb" -> "34ac7efb57a54015a0e2f02f122c9744"
+	b830a634add9482382d635de81fade22 -> "536f40dda10e4b8a972f0c06333a87fb"
+	"4dbedfeea7c34947941220eccfaad203" -> b830a634add9482382d635de81fade22
+	"35b32c8cd5b94cc18b94d46fa19ea77b" -> "4dbedfeea7c34947941220eccfaad203"
+}

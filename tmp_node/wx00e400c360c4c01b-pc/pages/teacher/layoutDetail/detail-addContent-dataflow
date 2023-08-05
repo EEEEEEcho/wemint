@@ -1,0 +1,17 @@
+// \pages/teacher/layoutDetail/detail addContent Data Flow
+digraph {
+	"5e5f654ad0bc4a0a8efa37b8d9ee4aef" [label="FunctionCall,
+function name -> addContent,
+param -> t,
+t.,
+" color=blue]
+	"6778888d1b34438e909eea2a62de9011" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"7d3a685734224dc187096a61bc040fe5" [label="Object Properties
+{
+content -> t.detail.value
+}" color=blue]
+	"6778888d1b34438e909eea2a62de9011" -> "7d3a685734224dc187096a61bc040fe5"
+	"5e5f654ad0bc4a0a8efa37b8d9ee4aef" -> "6778888d1b34438e909eea2a62de9011"
+}

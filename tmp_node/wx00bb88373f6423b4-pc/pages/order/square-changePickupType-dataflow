@@ -1,0 +1,27 @@
+// \pages/order/square changePickupType Data Flow
+digraph {
+	"150bf94775e14f21990809daa7b6f812" [label="FunctionCall,
+function name -> changePickupType,
+param -> t,
+t.,
+" color=blue]
+	"27afbff185f44b52a89f4d6bccedd4f0" [label=VariableDeclarations color=blue]
+	f12b0ae6f5a14bc78bc6c34c93486054 [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.type" color=blue]
+	"27afbff185f44b52a89f4d6bccedd4f0" -> f12b0ae6f5a14bc78bc6c34c93486054
+	"150bf94775e14f21990809daa7b6f812" -> "27afbff185f44b52a89f4d6bccedd4f0"
+	"218928e4cf9543f1ba7a4b3e2825e9ff" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	c1d19b59fd3a478886d4e219e55e1b1d [label="Object Properties
+{
+}" color=blue]
+	"84e0cabbd4584575be60d9621679ad62" [label="CallExpression,
+callee name -> parseInt,
+param -> a,
+" color=blue]
+	c1d19b59fd3a478886d4e219e55e1b1d -> "84e0cabbd4584575be60d9621679ad62"
+	"218928e4cf9543f1ba7a4b3e2825e9ff" -> c1d19b59fd3a478886d4e219e55e1b1d
+	"150bf94775e14f21990809daa7b6f812" -> "218928e4cf9543f1ba7a4b3e2825e9ff"
+}

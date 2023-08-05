@@ -1,0 +1,46 @@
+// \pages/shop/square onlbsListScroll Data Flow
+digraph {
+	"50592d4d9c2649bf9a3102cb1a815693" [label="FunctionCall,
+function name -> onlbsListScroll,
+param -> " color=blue]
+	d2d4fe0694ed41d5811168ab6a0304b3 [label="CallExpression,
+callee name -> this.getLbsStoreList,
+param -> " color=blue]
+	"79b44127691748aa9785cb5a156162c1" [label="FunctionCall,
+function name -> getLbsStoreList,
+param -> " color=blue]
+	"93dcdb09c47e4f74b92af94cc451dea7" [label=VariableDeclarations color=blue]
+	af3c364c5c48408584c3727cfd16be22 [label="VariableDeclarator,
+left -> i,
+right -> a.data.recordcount" color=blue]
+	"93dcdb09c47e4f74b92af94cc451dea7" -> af3c364c5c48408584c3727cfd16be22
+	c1385bf7d80641b3984a0e477d805836 [label="VariableDeclarator,
+left -> o,
+right -> a.data.lbsList.length" color=blue]
+	"93dcdb09c47e4f74b92af94cc451dea7" -> c1385bf7d80641b3984a0e477d805836
+	"79b44127691748aa9785cb5a156162c1" -> "93dcdb09c47e4f74b92af94cc451dea7"
+	"87de55eb4df24173ad224b9013994846" [label="If Alternate" color=blue]
+	"98964fdde8564766b133b9c24e92bd02" [label=VariableDeclarations color=blue]
+	"173bc42bac294033b5b70002e084522f" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	b2a4981eb7374c4c988cb512023b1512 [label="CallExpression,
+callee name -> Math.ceil,
+param -> o / a.data.pagesize,
+" color=blue]
+	"173bc42bac294033b5b70002e084522f" -> b2a4981eb7374c4c988cb512023b1512
+	"98964fdde8564766b133b9c24e92bd02" -> "173bc42bac294033b5b70002e084522f"
+	"87de55eb4df24173ad224b9013994846" -> "98964fdde8564766b133b9c24e92bd02"
+	a98f042835594c96bf506a3f11a30f38 [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	"465ca5969fbc4bd58065e580a5ba5803" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=getLbsStoreList&lng=' + a.data.lng + '&lat=' + a.data.lat + '&page=' + s + '&pageSize=' + a.data.pagesize
+}" color=blue]
+	a98f042835594c96bf506a3f11a30f38 -> "465ca5969fbc4bd58065e580a5ba5803"
+	"87de55eb4df24173ad224b9013994846" -> a98f042835594c96bf506a3f11a30f38
+	"79b44127691748aa9785cb5a156162c1" -> "87de55eb4df24173ad224b9013994846"
+	d2d4fe0694ed41d5811168ab6a0304b3 -> "79b44127691748aa9785cb5a156162c1"
+	"50592d4d9c2649bf9a3102cb1a815693" -> d2d4fe0694ed41d5811168ab6a0304b3
+}

@@ -1,0 +1,25 @@
+<view class="waitBox">
+    <view class="waitTitle">{{waitReceitName}}</view>
+    <view class="waitTT">
+        <view class="waitText">距离自动取消订单还有</view>
+        <view class="waitTime">{{minute}}分{{second}}秒</view>
+    </view>
+    <view class="waitNotice">注：提交订单后，商家10分钟之内未接单将自动取消订单</view>
+</view>
+<view class="waitTel">商家电话：{{phone}}</view>
+<view class="waitAddr">店铺地址：{{address}}</view>
+<view class="waitInfo">预订信息</view>
+<view class="destineInfo">
+    <view>预定日期：{{date}}</view>
+    <view>预定时间：{{time}}</view>
+    <view>选择桌型：{{tableType}}</view>
+    <view>用餐人数：{{mealsNumber}}</view>
+    <view>联 系 人：{{contants}}</view>
+    <view>联系电话：{{contantsTel}}</view>
+    <view>详细说明：{{textDesc}}</view>
+</view>
+<button bindtap="back" class="destineButton">取 消 预 约</button>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

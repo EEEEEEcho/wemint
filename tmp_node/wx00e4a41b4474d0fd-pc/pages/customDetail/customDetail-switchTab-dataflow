@@ -1,0 +1,34 @@
+// \pages/customDetail/customDetail switchTab Data Flow
+digraph {
+	"833ebc7e24f44c41b3d486c128bbc60d" [label="FunctionCall,
+function name -> switchTab,
+param -> e,
+e.,
+" color=blue]
+	"3233d53bb44b4ef7b2acdece1030916f" [label=VariableDeclarations color=blue]
+	"432fb2dc5cbc453db57b622325aa0411" [label="VariableDeclarator,
+left -> t,
+right -> e.currentTarget.dataset.id" color=blue]
+	"3233d53bb44b4ef7b2acdece1030916f" -> "432fb2dc5cbc453db57b622325aa0411"
+	"833ebc7e24f44c41b3d486c128bbc60d" -> "3233d53bb44b4ef7b2acdece1030916f"
+	"9f26579748a14993bc7c6154ba11c9ab" [label=SequenceExpression color=blue]
+	"6882628b2ab14cfd8ac0da8c8125b234" [label="CallExpression,
+callee name -> console.log,
+param -> t,
+" color=blue]
+	"9f26579748a14993bc7c6154ba11c9ab" -> "6882628b2ab14cfd8ac0da8c8125b234"
+	"18a36f422a744d098441be8e935edd51" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"230717419d3f456c8ffcc00b19559b61" [label="Object Properties
+{
+}" color=blue]
+	c8dcefd765014626bdc944e4bac3ce84 [label="CallExpression,
+callee name -> parseInt,
+param -> t,
+" color=blue]
+	"230717419d3f456c8ffcc00b19559b61" -> c8dcefd765014626bdc944e4bac3ce84
+	"18a36f422a744d098441be8e935edd51" -> "230717419d3f456c8ffcc00b19559b61"
+	"9f26579748a14993bc7c6154ba11c9ab" -> "18a36f422a744d098441be8e935edd51"
+	"833ebc7e24f44c41b3d486c128bbc60d" -> "9f26579748a14993bc7c6154ba11c9ab"
+}

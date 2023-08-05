@@ -1,0 +1,57 @@
+page {
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0 26rpx;
+    background-color: #fff;
+}
+
+.container .recharge-amount {
+    font-size: 26rpx;
+    color: #666;
+    margin-top: 36rpx;
+    margin-bottom: 12rpx;
+}
+
+.container .amount-input {
+    display: flex;
+    height: 130rpx;
+    position: relative;
+}
+
+.container .amount-input .iconPrice {
+    font-size: 30rpx;
+    color: #333;
+    font-weight: bold;
+    position: absolute;
+    top: 34rpx;
+}
+
+.container .amount-input input {
+    display: flex;
+    flex: 1;
+    height: 130rpx;
+    line-height: 130rpx;
+    font-size: 64rpx;
+    color: #333;
+    font-weight: bold;
+    margin-left: 44rpx;
+    font-family: '微软雅黑';
+}
+
+.container .btn {
+    margin: 38rpx 0;
+}
+
+.container .btn .recharge-btn {
+    height: 96rpx;
+    border-radius: 50rpx;
+    line-height: 96rpx;
+    background-color: #ff7200;
+    color: #fff;
+    font-size: 36rpx;
+}

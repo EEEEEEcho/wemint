@@ -1,0 +1,17 @@
+// \pages/shopDetail/shopDetail callShop Data Flow
+digraph {
+	caea1007000247cb8265cbd68fe2a18a [label="FunctionCall,
+function name -> callShop,
+param -> o,
+o.,
+" color=blue]
+	"591ba6309f6b4a6087dd115d9bfee8a1" [label="CallExpression,
+callee name -> wx.makePhoneCall,
+param -> " color=blue]
+	bbcaa9154eb44c439061f2fc907793ee [label="Object Properties
+{
+phoneNumber -> o.target.dataset.tel
+}" color=blue]
+	"591ba6309f6b4a6087dd115d9bfee8a1" -> bbcaa9154eb44c439061f2fc907793ee
+	caea1007000247cb8265cbd68fe2a18a -> "591ba6309f6b4a6087dd115d9bfee8a1"
+}

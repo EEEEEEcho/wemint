@@ -1,0 +1,37 @@
+// \pages/index/takeOut/queryFood/queryFood bindBeizhu Data Flow
+digraph {
+	d7bd96133b734bb98b7668a830fe1e69 [label="FunctionCall,
+function name -> bindBeizhu,
+param -> o.,
+o,
+" color=blue]
+	"6589a3267692459dabe40bf9f0b28d9d" [label=VariableDeclarations color=blue]
+	"895570754d2e46568dd3bb68f290088b" [label="VariableDeclarator,
+left -> t,
+right -> o.detail.value" color=blue]
+	"6589a3267692459dabe40bf9f0b28d9d" -> "895570754d2e46568dd3bb68f290088b"
+	d7bd96133b734bb98b7668a830fe1e69 -> "6589a3267692459dabe40bf9f0b28d9d"
+	"5ac7bd8a2ca6407d94582f1477ce4c82" [label=SequenceExpression color=blue]
+	d3c65b6babe94b9f9c4e610bdcbf8643 [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"2f75c3e6e9d344caa5d632754eff8833" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"51d5a997291e4ff1a5aea46adc3fe662" [label="Object Properties
+{
+dcBeizhu -> t
+}" color=blue]
+	"2f75c3e6e9d344caa5d632754eff8833" -> "51d5a997291e4ff1a5aea46adc3fe662"
+	d3c65b6babe94b9f9c4e610bdcbf8643 -> "2f75c3e6e9d344caa5d632754eff8833"
+	"5ac7bd8a2ca6407d94582f1477ce4c82" -> d3c65b6babe94b9f9c4e610bdcbf8643
+	"36de1f190b24429da80d5aeb430b566a" [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	"08c8a94198024d40a35c598b47a41ad7" [label="Object Properties
+{
+data -> t
+}" color=blue]
+	"36de1f190b24429da80d5aeb430b566a" -> "08c8a94198024d40a35c598b47a41ad7"
+	"5ac7bd8a2ca6407d94582f1477ce4c82" -> "36de1f190b24429da80d5aeb430b566a"
+	d7bd96133b734bb98b7668a830fe1e69 -> "5ac7bd8a2ca6407d94582f1477ce4c82"
+}

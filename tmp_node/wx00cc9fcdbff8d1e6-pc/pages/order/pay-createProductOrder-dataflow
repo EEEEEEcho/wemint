@@ -1,0 +1,21 @@
+// \pages/order/pay createProductOrder Data Flow
+digraph {
+	ea1d9720376f48eeb61c9c7955275af6 [label="FunctionCall,
+function name -> createProductOrder,
+param -> " color=blue]
+	c40e1fb504d046eb9e4123b8e4facff2 [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"75c66c26498e4309ad740cd32e4b4e40" [label="Object Properties
+{
+uid -> a.data.userId
+cart_id -> a.data.cartId
+type -> a.data.paytype
+aid -> a.data.addrId
+remark -> a.data.remark
+price -> a.data.total
+vid -> a.data.vid
+}" color=blue]
+	c40e1fb504d046eb9e4123b8e4facff2 -> "75c66c26498e4309ad740cd32e4b4e40"
+	ea1d9720376f48eeb61c9c7955275af6 -> c40e1fb504d046eb9e4123b8e4facff2
+}

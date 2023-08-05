@@ -1,0 +1,11 @@
+<view class="main">
+    <scroll-view class="scroller">
+        <image class="backImage" mode="widthFix" src="{{backImageUrl}}"></image>
+        <view class="signView"></view>
+        <canvas binderror="canvasIdErrorCallback" bindtouchend="canvasEnd" bindtouchmove="canvasMove" bindtouchstart="canvasStart" canvasId="canvas" class="canvas" disableScroll="true" id="canvas"></canvas>
+        <cover-view class="coverView" hidden="{{!isHide}}"></cover-view>
+        <view bindtap="getimg" class="submitBtn btn" hidden="{{isHide}}"></view>
+        <view bindtap="cleardraw" class="clearBtn btn" hidden="{{isHide}}"></view>
+        <canvas canvasId="customCanvas" class="customCanvas"></canvas>
+    </scroll-view>
+</view>

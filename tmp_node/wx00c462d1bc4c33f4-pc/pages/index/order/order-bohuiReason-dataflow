@@ -1,0 +1,25 @@
+// \pages/index/order/order bohuiReason Data Flow
+digraph {
+	d0eb2f1bd0c546a897fd1845b2066617 [label="FunctionCall,
+function name -> bohuiReason,
+param -> r.,
+r,
+" color=blue]
+	"033a23f4450d496b83c60f8ca2f09390" [label=VariableDeclarations color=blue]
+	"6190802243a241d6bc13636f5dd13db6" [label="VariableDeclarator,
+left -> a,
+right -> r.currentTarget.dataset.id" color=blue]
+	"033a23f4450d496b83c60f8ca2f09390" -> "6190802243a241d6bc13636f5dd13db6"
+	d0eb2f1bd0c546a897fd1845b2066617 -> "033a23f4450d496b83c60f8ca2f09390"
+	e318d2e01d334d1a8ed54559aead69eb [label=SequenceExpression color=blue]
+	f6067e149b5b42da85f3207a11785276 [label="CallExpression,
+callee name -> wx.getStorage,
+param -> " color=blue]
+	"0859c4d4ba58474a9f41dfe468e1d2f2" [label="FunctionCall,
+function name -> success,
+param -> r,
+" color=blue]
+	f6067e149b5b42da85f3207a11785276 -> "0859c4d4ba58474a9f41dfe468e1d2f2"
+	e318d2e01d334d1a8ed54559aead69eb -> f6067e149b5b42da85f3207a11785276
+	d0eb2f1bd0c546a897fd1845b2066617 -> e318d2e01d334d1a8ed54559aead69eb
+}

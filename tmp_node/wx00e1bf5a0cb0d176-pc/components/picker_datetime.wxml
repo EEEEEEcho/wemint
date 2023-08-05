@@ -1,0 +1,18 @@
+<view class="pick_datetime_mask" wx:if="{{pickerViewShow}}"></view>
+<view animation="{{pickerAnimation}}" class="pick_datetime" style="{{pickerViewStyle}}" wx:if="{{pickerViewShow}}">
+    <view class="pick_datetime_tool">
+        <view bindtap="pickerCancel" class="pick_datetime_clear">取消</view>
+        <view bindtap="pickerOk" class="pick_datetime_ok">完成</view>
+    </view>
+    <picker-view bindchange="bindDateTimeChange" indicatorStyle="height:40px;border-top:1px solid #eee;border-bottom:1px solid #eee;" style="height:{{pickerViewHeight}}rpx;" value="{{pickDatetimeValue}}">
+        <picker-view-column>
+            <view class="pick_datetime_column" wx:for="{{pickerDateTextArr}}" wx:key="index">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view class="pick_datetime_column" wx:for="{{pickerHourTextArr}}" wx:key="index">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view class="pick_datetime_column" wx:for="{{pickerMinuteTextArr}}" wx:key="index">{{item}}</view>
+        </picker-view-column>
+    </picker-view>
+</view>

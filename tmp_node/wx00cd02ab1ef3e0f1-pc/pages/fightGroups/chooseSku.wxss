@@ -1,0 +1,330 @@
+.hideParam {
+    position: fixed;
+    bottom: 0;
+    transform: translateY(150%);
+    transition: all 0.3s linear;
+    z-index: 100;
+    width: 100%;
+}
+
+.showParam {
+    position: fixed;
+    bottom: 0;
+    transform: translateY(0);
+    transition: all 0.3s linear;
+    z-index: 999;
+    width: 100%;
+}
+
+.xiangou {
+    height: 64rpx;
+    line-height: 64rpx;
+    font-size: 26rpx;
+    padding-left: 20rpx;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    position: fixed;
+    z-index: 202;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.product-attrs .pro-attrs .attr-vals .attr-val.active {
+    border: 1px solid #ff7200;
+    color: #ff7200;
+}
+
+.discount,.specification {
+    height: 88rpx;
+    padding: 0 26rpx;
+    display: flex;
+    justify-content: space-between;
+    line-height: 88rpx;
+    box-sizing: border-box;
+}
+
+.product-attrs .pro-attrs .attr-vals .attr-val.no-quantity {
+    border: 1px dashed #ccc!important;
+    color: #ccc!important;
+}
+
+.discount .disLeft .disIcon {
+    vertical-align: middle;
+    font-size: 40rpx;
+    color: #ff7914;
+    margin-right: 10rpx;
+}
+
+.discount .disLeft .title {
+    vertical-align: middle;
+    font-size: 26rpx;
+    color: #666;
+}
+
+.discount .iconsize,.specification .iconsize {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.particulars-line {
+    height: 20rpx;
+    background: #f4f4f4;
+    width: 100%;
+}
+
+.speLeft {
+    font-size: 26rpx;
+    color: #333;
+}
+
+.speLeft .titChoose {
+    margin-right: 30rpx;
+}
+
+.dm_module {
+    padding: 0 26rpx;
+}
+
+.particulars-page .product-parameter {
+    padding: 0 26rpx;
+}
+
+.pt88 {
+    padding-top: 88rpx;
+}
+
+.particulars-page .product-parameter .noParam {
+    height: 200rpx;
+    text-align: center;
+    line-height: 200rpx;
+}
+
+.particulars-page .product-parameter .noParam text {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.particulars-page .product-parameter .paramList {
+    padding: 31rpx 0;
+    font-size: 26rpx;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: baseline;
+}
+
+.particulars-page .product-parameter .paramList .pro-name {
+    color: #999;
+    margin-right: 50rpx;
+    flex: 20% 0 0;
+}
+
+.particulars-page .product-parameter .paramList .pro-content {
+    color: #333;
+}
+
+.product-attrs .product-conTop {
+    height: 170rpx;
+    display: flex;
+    overflow: visible;
+    justify-content: space-between;
+}
+
+.product-attrs .product-conTop .top-left {
+    position: relative;
+}
+
+.product-attrs .product-conTop .top-left .content {
+    padding-top: 22rpx;
+    margin-left: 242rpx;
+}
+
+.product-attrs .product-conTop .top-left .content .price {
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 6rpx;
+}
+
+.product-attrs .product-conTop .top-left .content .price text:nth-of-type(2) {
+    font-size: 34rpx;
+}
+
+.product-attrs .product-conTop .close {
+    padding: 10rpx 26rpx 0 0;
+    color: #666;
+}
+
+.product-attrs .product-conTop .top-left .content .inventory,.product-attrs .product-conTop .top-left .content .hasChoose {
+    font-size: 24rpx;
+    color: #666;
+}
+
+.product-attrs .product-conTop .top-left .content .inventory {
+    padding-bottom: 4rpx;
+}
+
+.product-attrs .product-conTop .top-left .content .hasChoose .message {
+    color: #ff7200;
+}
+
+.product-attrs .product-conTop .img image {
+    width: 196rpx;
+    height: 204rpx;
+    border-radius: 12rpx;
+}
+
+.product-attrs .product-conTop .img {
+    width: 196rpx;
+    height: 204rpx;
+    border-radius: 12rpx;
+    margin-left: 26rpx;
+    position: absolute;
+    left: 0;
+    top: -60rpx;
+    background-color: #f4f4f4;
+    box-shadow: 0rpx 0rpx 20rpx rgba(51,51,51,0.4);
+}
+
+.product-attrs .product-conTop .close .closeIcon,.discountList .dis-top .markClose .closeIcon {
+    font-size: 38rpx;
+}
+
+.product-attrs .pro-attrs {
+    margin-top: 36rpx;
+    padding: 0 26rpx;
+    width: 650rpx;
+}
+
+.product-attrs .pro-attrs:nth-of-type(2) {
+    margin-top: 18rpx;
+}
+
+.product-attrs .attr-name {
+    font-size: 24rpx;
+    color: #999;
+    margin: 0 0 18rpx 0;
+}
+
+.product-attrs .pro-attrs .attr-vals {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-attrs .pro-attrs .attr-val {
+    min-width: 124rpx;
+    padding: 0 14rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    color: #333;
+    text-align: center;
+    border-radius: 5rpx;
+    overflow: hidden;
+    font-size: 24rpx;
+    border: 1px solid #ddd;
+    margin-right: 20rpx;
+    margin-bottom: 18rpx;
+}
+
+.product-attrs .pro-attrs .attr-val:last-child {
+    margin-right: 0;
+}
+
+.product-attrs .chooseCount {
+    padding: 18rpx 26rpx 0;
+    margin-bottom: 90rpx;
+}
+
+.product-attrs .chooseCounts {
+    padding-bottom: 166rpx;
+}
+
+.product-attrs .chooseCount .btn {
+    display: flex;
+}
+
+.product-attrs .chooseCount .btn .decrease,.product-attrs .chooseCount .btn .increase {
+    width: 64rpx;
+    height: 64rpx;
+    text-align: center;
+    line-height: 64rpx;
+    color: #fff;
+}
+
+.product-attrs .chooseCount .btn .decrease {
+    color: #666;
+}
+
+.product-attrs .chooseCount .btn input {
+    border: 1px solid #f4f4f4;
+    text-align: center;
+    width: 190rpx;
+    height: 60rpx;
+}
+
+.product-attrs .chooseCount .btn .normal {
+    background-color: #ff7200;
+    color: #fff;
+}
+
+.product-attrs .chooseCount .btn .disabled {
+    background-color: #f4f4f4;
+    color: #666;
+}
+
+.product-attrs {
+    background-color: #fff;
+    height: 600rpx;
+    padding-bottom: 86px;
+}
+
+.hideParam {
+    position: fixed;
+    bottom: 0;
+    transform: translateY(150%);
+    transition: all 0.3s linear;
+    z-index: 100;
+    width: 100%;
+}
+
+.showParam {
+    position: fixed;
+    bottom: 0;
+    transform: translateY(0);
+    transition: all 0.3s linear;
+    z-index: 9999;
+    width: 100%;
+}
+
+.mark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 202;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.showMark {
+    display: block;
+}
+
+.product-attrs .sureBuy {
+    height: 98rpx;
+    width: 100%;
+    line-height: 100rpx;
+    text-align: center;
+    background-color: #ff7200;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+}

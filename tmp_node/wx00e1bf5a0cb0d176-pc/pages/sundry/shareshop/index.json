@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "转发店铺",
+    "navigationBarBackgroundColor": "#f4f4f4",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f4f4f4",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+}

@@ -1,0 +1,7 @@
+<swiper>
+    <swiper-item class="swiper-items" wx:for="{{imgs}}" wx:key="index">
+        <text bindtap="start" class="up-style">跳过</text>
+        <image class="swiper-image" src="{{item}}"></image>
+        <button bindtap="start" class="button-img" wx:if="{{index==imgs.length-1}}">立即体验</button>
+    </swiper-item>
+</swiper>

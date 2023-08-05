@@ -1,0 +1,24 @@
+// \pages/company/businessCard/cardDetails abolish Data Flow
+digraph {
+	"3947c7b87bce446e9c2773a48aa228e1" [label="FunctionCall,
+function name -> abolish,
+param -> " color=blue]
+	a4b3273824e54adfaf35e69e133d09bb [label=SequenceExpression color=blue]
+	"53a0af5aa73b459c92867536645ee335" [label="ConditionalExpression,
+ conditional list -> a.getphone" color=blue]
+	a06aeca506864a258f1a8c0a05a61fb2 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"1c10fa8bf53848319078f2c6b042b8b0" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"0f12031731cb4b638554dfde9244834c" [label="Object Properties
+{
+url -> '/pages/businesscard/chatdialogue/index?UserID=' + a.data.BusinssUserID + '&SiteID=' + a.data.cardsiteID + '&BusinessCardID=' + (a.data.optionsobj.BusinessCardID ? a.data.optionsobj.BusinessCardID : a.data.optionsobj.cid) + '&OtherName=' + a.data.BusinssCardName
+}" color=blue]
+	"1c10fa8bf53848319078f2c6b042b8b0" -> "0f12031731cb4b638554dfde9244834c"
+	a06aeca506864a258f1a8c0a05a61fb2 -> "1c10fa8bf53848319078f2c6b042b8b0"
+	"53a0af5aa73b459c92867536645ee335" -> a06aeca506864a258f1a8c0a05a61fb2
+	a4b3273824e54adfaf35e69e133d09bb -> "53a0af5aa73b459c92867536645ee335"
+	"3947c7b87bce446e9c2773a48aa228e1" -> a4b3273824e54adfaf35e69e133d09bb
+}

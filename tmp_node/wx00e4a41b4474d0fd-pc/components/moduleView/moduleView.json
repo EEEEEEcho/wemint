@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "authView": "../../components/authHandle/authHandle",
+        "swipeUnit": "../../components/swipeUnit/swipeUnit",
+        "myLoading": "../globalLoad/globalLoad",
+        "navbar": "/components/navbar/navbar",
+        "c-img": "../../pages/components/indexImg/indexImg"
+    }
+}

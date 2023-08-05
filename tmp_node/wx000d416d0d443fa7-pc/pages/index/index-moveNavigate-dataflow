@@ -1,0 +1,52 @@
+// \pages/index/index moveNavigate Data Flow
+digraph {
+	"2573e1b0985e4e8c91ddb7477b9fa081" [label="FunctionCall,
+function name -> moveNavigate,
+param -> e.,
+e,
+" color=blue]
+	"0628bf4b4e534ea4a94c0eea8f8fa04f" [label="If Alternate" color=blue]
+	c39d0148bbe043c797e89a19031971e3 [label=VariableDeclarations color=blue]
+	"728475f7d7d54678ae35b76d4b5e297e" [label="VariableDeclarator,
+left -> t,
+right -> e.changedTouches[0].clientX" color=blue]
+	c39d0148bbe043c797e89a19031971e3 -> "728475f7d7d54678ae35b76d4b5e297e"
+	"0628bf4b4e534ea4a94c0eea8f8fa04f" -> c39d0148bbe043c797e89a19031971e3
+	"8d32217e70c94a4784368f8bd9b26112" [label="If Alternate" color=blue]
+	c0d0135d43784f2a8a2edda9108194d7 [label=VariableDeclarations color=blue]
+	"12ed8c4487d04b958f1fee8da06d197d" [label="VariableDeclarator,
+left -> s,
+right -> this.data.nowNavPage + 1" color=blue]
+	c0d0135d43784f2a8a2edda9108194d7 -> "12ed8c4487d04b958f1fee8da06d197d"
+	"8d32217e70c94a4784368f8bd9b26112" -> c0d0135d43784f2a8a2edda9108194d7
+	ab1c899a37de4c9888858fdd5758fbe8 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"2fd8cf87a5d74714b5007892d8d151ed" [label="Object Properties
+{
+nowNavPage -> s
+category -> this.data.allCategory[s]
+clientXOld -> t
+}" color=blue]
+	ab1c899a37de4c9888858fdd5758fbe8 -> "2fd8cf87a5d74714b5007892d8d151ed"
+	"8d32217e70c94a4784368f8bd9b26112" -> ab1c899a37de4c9888858fdd5758fbe8
+	"6de6742bd30e4fa7b63e15728e9a7bb1" [label=VariableDeclarations color=blue]
+	c754fd5e61344b0a9e043aeedaf0a409 [label="VariableDeclarator,
+left -> o,
+right -> this.data.nowNavPage - 1" color=blue]
+	"6de6742bd30e4fa7b63e15728e9a7bb1" -> c754fd5e61344b0a9e043aeedaf0a409
+	"8d32217e70c94a4784368f8bd9b26112" -> "6de6742bd30e4fa7b63e15728e9a7bb1"
+	"93b97311cec64a0bb06bf373c132a7d3" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	e89d0dcb729f4293ac93542aa7788fd0 [label="Object Properties
+{
+nowNavPage -> o
+category -> this.data.allCategory[o]
+clientXOld -> t
+}" color=blue]
+	"93b97311cec64a0bb06bf373c132a7d3" -> e89d0dcb729f4293ac93542aa7788fd0
+	"8d32217e70c94a4784368f8bd9b26112" -> "93b97311cec64a0bb06bf373c132a7d3"
+	"0628bf4b4e534ea4a94c0eea8f8fa04f" -> "8d32217e70c94a4784368f8bd9b26112"
+	"2573e1b0985e4e8c91ddb7477b9fa081" -> "0628bf4b4e534ea4a94c0eea8f8fa04f"
+}

@@ -1,0 +1,80 @@
+<import src="../../wxParse/wxParse.wxml"></import>
+<view class="page">
+    <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__hd">
+            <view class="fs26">
+                <span class="zytext">{{seller}}</span>
+            </view>
+        </view>
+        <view class="weui-panel__bd">
+            <view bindtap="GoToDetail" class="weui-media-box weui-media-box_appmsg mymedia" id="{{item.ID}}" wx:for="{{list}}">
+                <view class="weui-media-box__hd">
+                    <image class="weui-media-box__thumb" src="{{item.img_url}}"></image>
+                </view>
+                <view class="weui-media-box__bd">
+                    <view class="fs26">{{item.name}}</view>
+                    <p class="fs9 text-muted">{{item.texts}}</p>
+                </view>
+                <view class="weui-media-box__ft">
+                    <view>
+                        <span class="fs22">￥</span>
+                        <b class="fs26">{{filters.toFix(item.price*item.discount/100)}}</b>
+                    </view>
+                    <view class="fs22 text-muted tr">x{{item.count}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="weui-panel__ft">
+            <view class="weui-cell weui-cell_link fs26">
+                <view class="weui-cell__bd tr">
+                    <span class="fs24 text-muted">共{{pcount}}件商品 合计 ￥</span>
+                    <b class="fs30 bigprice">{{cartMoney}}</b>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="weui-cells">
+        <view class="weui-cell">
+            <view class="weui-cell__bd">
+                <label class="weui-label">购买备注</label>
+                <view class="mt10">
+                    <textarea bindblur="bindRemark" class="weui-textarea" style="height: 100px;"></textarea>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="fixed-bottom2">
+        <view class="weui-flex">
+            <view class="weui-flex__item fs24 ">
+                <view>
+                    <span class="text-muted">合计</span>
+                    <span class="text-red">￥</span>
+                    <b class="fs30 text-red bigprice">{{cartMoney}}</b>
+                </view>
+            </view>
+            <view class="weui-flex__item">
+                <view bindtap="goSubmit" class="btn-primary">提交订单</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="popup" wx:if="{{popin}}">
+    <view class="weui-mask"></view>
+    <view class="popuo-conent">
+        <view class="weui-panel">
+            <view class="weui-panel__hd after-left__0">
+                <view>购买须知</view>
+            </view>
+            <view class="weui-panel__bd" style="width: 95%;padding-left: 2.5%;">
+                <scroll-view scrollY style="height: 720rpx;">
+                    <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+                </scroll-view>
+            </view>
+            <view bindtap="changePopin" class="btn-area">
+                <view class="btn-primary">我已阅读并同意购买须知
+        </view>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="filters" src="../../components/filters.wxs" />

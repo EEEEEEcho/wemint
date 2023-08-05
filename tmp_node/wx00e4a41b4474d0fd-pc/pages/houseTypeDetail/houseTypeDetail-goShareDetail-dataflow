@@ -1,0 +1,34 @@
+// \pages/houseTypeDetail/houseTypeDetail goShareDetail Data Flow
+digraph {
+	af9111c3ee4a42efb9e3eb42a992eb9d [label="FunctionCall,
+function name -> goShareDetail,
+param -> " color=blue]
+	c513617015cb4e1291b319f511ac5e69 [label=SequenceExpression color=blue]
+	"4a749e7296da486291027b67fabf836e" [label="CallExpression,
+callee name -> d.createXcxQrCode,
+param -> " color=blue]
+	bc77b9444fbf40f090ab03f229545f01 [label="Object Properties
+{
+currentIndex -> this.data.currentIndex
+currentName -> this.data.currentName
+id -> this.data.active
+buildingId -> this.data.buildingId
+btnColor -> this.data.btnColor
+lineColor -> this.data.lineColor
+textColor -> this.data.textColor
+backgroundColor -> this.data.backgroundColor
+}" color=blue]
+	"4a749e7296da486291027b67fabf836e" -> bc77b9444fbf40f090ab03f229545f01
+	"4af1dbc1263048b7bbd57397a93696b7" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> t,
+" color=blue]
+	"4a749e7296da486291027b67fabf836e" -> "4af1dbc1263048b7bbd57397a93696b7"
+	f56ad3f6d5f5469896e6700d02f2f653 [label="FunctionCall,
+function name -> Anonymous Function,
+param -> e,
+" color=blue]
+	"4a749e7296da486291027b67fabf836e" -> f56ad3f6d5f5469896e6700d02f2f653
+	c513617015cb4e1291b319f511ac5e69 -> "4a749e7296da486291027b67fabf836e"
+	af9111c3ee4a42efb9e3eb42a992eb9d -> c513617015cb4e1291b319f511ac5e69
+}

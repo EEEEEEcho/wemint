@@ -1,0 +1,33 @@
+// \pages/customHouse/customHouse bindKeyInput Data Flow
+digraph {
+	"42d9d945ab7f4d0b906a865389021238" [label="FunctionCall,
+function name -> bindKeyInput,
+param -> e,
+e.,
+" color=blue]
+	"3d159d5ad52f4132b5cf9879ccd48859" [label=VariableDeclarations color=blue]
+	"50e60c0d85a5484dba50443868cec3c8" [label="VariableDeclarator,
+left -> t,
+right -> e.detail.value" color=blue]
+	"3d159d5ad52f4132b5cf9879ccd48859" -> "50e60c0d85a5484dba50443868cec3c8"
+	"42d9d945ab7f4d0b906a865389021238" -> "3d159d5ad52f4132b5cf9879ccd48859"
+	"316dd54365524a79be734fb0f0fb37ce" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"522553ca1862481a8586e149f9735d9a" [label=SequenceExpression color=blue]
+	d9b2d0f9fedc4380bc5bbff0a4f6a86b [label="Assignment,
+left -> t,
+right -> t.trim" color=blue]
+	"522553ca1862481a8586e149f9735d9a" -> d9b2d0f9fedc4380bc5bbff0a4f6a86b
+	b0902f56673849eb92fa61d089b7b1e9 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"7a3a45f22ae3494c8e6c3014ee93cc9f" [label="Object Properties
+{
+inputComment -> t
+}" color=blue]
+	b0902f56673849eb92fa61d089b7b1e9 -> "7a3a45f22ae3494c8e6c3014ee93cc9f"
+	"522553ca1862481a8586e149f9735d9a" -> b0902f56673849eb92fa61d089b7b1e9
+	"316dd54365524a79be734fb0f0fb37ce" -> "522553ca1862481a8586e149f9735d9a"
+	"42d9d945ab7f4d0b906a865389021238" -> "316dd54365524a79be734fb0f0fb37ce"
+}

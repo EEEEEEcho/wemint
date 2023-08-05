@@ -1,0 +1,132 @@
+page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: -apple-system-font,'Helvetica Neue',Helvetica,'Microsoft YaHei',sans-serif;
+}
+
+view,text,button,input {
+    font-size: 28rpx;
+}
+
+@import "../../__wuBaseWxss__/26.wxss";
+/*! Import by _C[22], whose real path we cannot found. */
+ul,li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.flexBox {
+    display: box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flexDirectionRow {
+    flex-direction: row;
+}
+
+.flexDirectionColumn {
+    flex-direction: column;
+}
+
+.overflowAutos {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.flexJustify {
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.flexJustifyBetween {
+    justify-content: space-between;
+}
+
+.flexAlign {
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.boxSizingBox {
+    box-sizing: border-box;
+}
+
+.flex1 {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    flex: 1;
+}
+
+.overflow1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.overflow2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.fixed-top {
+    position: fixed!important;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.module-item {
+    position: relative;
+}
+
+.padding-lr {
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+}
+
+.padding-tb {
+    padding-top: 6rpx;
+    padding-bottom: 6rpx;
+}
+/*! Import end */
+@import "customform.wxss";
+
+@import "ModuleCustomForm.wxss";
+
+@import "ModuleSearch.wxss";
+
+@import "ModuleTitle.wxss";
+
+@import "ModuleLine.wxss";
+
+@import "ModuleLink.wxss";
+
+@import "ModuleButton.wxss";
+
+@import "ModuleShopWindow.wxss";
+
+@import "ModuleProductList.wxss";
+
+@import "ModuleImageText.wxss";
+
+@import "ModuleVideo.wxss";
+
+@import "ModuleNewsList.wxss";
+
+@import "ModuleCoupon.wxss";
+
+@import "ModulePinTuan.wxss";
+
+@import "ModuleSecKill.wxss";

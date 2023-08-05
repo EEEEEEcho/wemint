@@ -1,0 +1,10 @@
+// \pages/teacher/layoutDetail/detail getAddress Data Flow
+digraph {
+	e9c0e9d56250466594bb3fe5f097934c [label="FunctionCall,
+function name -> getAddress,
+param -> " color=blue]
+	"6c289d227dc347889daf84d810d256d0" [label="CallExpression,
+callee name -> wx.chooseLocation,
+param -> " color=blue]
+	e9c0e9d56250466594bb3fe5f097934c -> "6c289d227dc347889daf84d810d256d0"
+}

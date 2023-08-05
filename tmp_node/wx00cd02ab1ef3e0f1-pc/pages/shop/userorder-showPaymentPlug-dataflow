@@ -1,0 +1,60 @@
+// \pages/shop/userorder showPaymentPlug Data Flow
+digraph {
+	"59ec54d9b6fb446fb238f592bda11362" [label="FunctionCall,
+function name -> showPaymentPlug,
+param -> t,
+t.,
+" color=blue]
+	a335b16815e64b6ab15d06a8c9c96a63 [label=SequenceExpression color=blue]
+	"27d42c0aba3545a3a5f006105b543ea6" [label="CallExpression,
+callee name -> this.getBalanceNumber,
+param -> " color=blue]
+	"1c7afca985ad4bc3bd5d4946acc535ef" [label="FunctionCall,
+function name -> getBalanceNumber,
+param -> " color=blue]
+	a9a7ac2f16fe42d3954310edc4b1c88e [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	"4dda722fb03647b5b492bdd27b9096ae" [label="FunctionCall,
+function name -> fail,
+param -> a,
+" color=blue]
+	a9a7ac2f16fe42d3954310edc4b1c88e -> "4dda722fb03647b5b492bdd27b9096ae"
+	"1c7afca985ad4bc3bd5d4946acc535ef" -> a9a7ac2f16fe42d3954310edc4b1c88e
+	"27d42c0aba3545a3a5f006105b543ea6" -> "1c7afca985ad4bc3bd5d4946acc535ef"
+	a335b16815e64b6ab15d06a8c9c96a63 -> "27d42c0aba3545a3a5f006105b543ea6"
+	ddfd1fa03f0042cdb39ac19cd2985e82 [label="CallExpression,
+callee name -> console.log,
+param -> t,
+" color=blue]
+	a335b16815e64b6ab15d06a8c9c96a63 -> ddfd1fa03f0042cdb39ac19cd2985e82
+	"59ec54d9b6fb446fb238f592bda11362" -> a335b16815e64b6ab15d06a8c9c96a63
+	"6fe307b821014ca48999bb158aa1304c" [label=VariableDeclarations color=blue]
+	"7f210e2d005d430ebb4e600c662a9cbf" [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.orderid" color=blue]
+	"6fe307b821014ca48999bb158aa1304c" -> "7f210e2d005d430ebb4e600c662a9cbf"
+	f91ecc77f5d84425b0ce98910c93bbbb [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.totalmoney" color=blue]
+	"6fe307b821014ca48999bb158aa1304c" -> f91ecc77f5d84425b0ce98910c93bbbb
+	"59ec54d9b6fb446fb238f592bda11362" -> "6fe307b821014ca48999bb158aa1304c"
+	"6149f3ab75b94fc2af15a9ba34393f83" [label=SequenceExpression color=blue]
+	"66ccb15da4764a71b9bfd02246412065" [label="CallExpression,
+callee name -> console.log,
+param -> e,
+" color=blue]
+	"6149f3ab75b94fc2af15a9ba34393f83" -> "66ccb15da4764a71b9bfd02246412065"
+	d43c37d5faed4650bb830b810546e7e5 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"7ed507efb7d5455ca215cf5671a76f14" [label="Object Properties
+{
+balanceflagNum -> this.data.balanceNumber - this.data.TotalMoeny < 0
+curOrderId -> a
+TotalMoeny -> e
+}" color=blue]
+	d43c37d5faed4650bb830b810546e7e5 -> "7ed507efb7d5455ca215cf5671a76f14"
+	"6149f3ab75b94fc2af15a9ba34393f83" -> d43c37d5faed4650bb830b810546e7e5
+	"59ec54d9b6fb446fb238f592bda11362" -> "6149f3ab75b94fc2af15a9ba34393f83"
+}

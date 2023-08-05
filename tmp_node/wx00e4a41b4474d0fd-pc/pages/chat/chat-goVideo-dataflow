@@ -1,0 +1,45 @@
+// \pages/chat/chat goVideo Data Flow
+digraph {
+	"951d309f94e44f1ca96706bcb3dd0c32" [label="FunctionCall,
+function name -> goVideo,
+param -> e,
+e.,
+" color=blue]
+	d6370410105740b9a16bbf558c7dcc76 [label="If Alternate" color=blue]
+	"38776a13273e43979c7bee7b74cac535" [label=VariableDeclarations color=blue]
+	af111511cbd4431ca9cedd3aa5790053 [label="VariableDeclarator,
+left -> a,
+right -> e.currentTarget.dataset.istoself" color=blue]
+	"38776a13273e43979c7bee7b74cac535" -> af111511cbd4431ca9cedd3aa5790053
+	d6370410105740b9a16bbf558c7dcc76 -> "38776a13273e43979c7bee7b74cac535"
+	c5c024a3dc404dabaadd523f72c5c125 [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"31f5d19243b6412f8807bbe9294a42b3" [label="ConditionalExpression,
+ conditional list -> e.currentTarget.dataset.consultantid" color=blue]
+	c5c024a3dc404dabaadd523f72c5c125 -> "31f5d19243b6412f8807bbe9294a42b3"
+	d6370410105740b9a16bbf558c7dcc76 -> c5c024a3dc404dabaadd523f72c5c125
+	"49ae87d023dd4e4eb255a9e81ec63d60" [label=VariableDeclarations color=blue]
+	d07ef935f83f4a2885a58570296c249f [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"6ea7015fcf7040b7aacbb9416389de93" [label="Object Properties
+{
+pvPageStayTime -> (new Date().getTime() - wx.getStorageSync('loadTime')) / 1000
+}" color=blue]
+	d07ef935f83f4a2885a58570296c249f -> "6ea7015fcf7040b7aacbb9416389de93"
+	"49ae87d023dd4e4eb255a9e81ec63d60" -> d07ef935f83f4a2885a58570296c249f
+	d6370410105740b9a16bbf558c7dcc76 -> "49ae87d023dd4e4eb255a9e81ec63d60"
+	b05932602f7d48fdae45b1c0ab11bc8f [label=SequenceExpression color=blue]
+	"4348aceecefb490396784f61544c3a45" [label="CallExpression,
+callee name -> wx.getSetting,
+param -> " color=blue]
+	"98e4d0fd146b49978537afb3ca82a0c9" [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	"4348aceecefb490396784f61544c3a45" -> "98e4d0fd146b49978537afb3ca82a0c9"
+	b05932602f7d48fdae45b1c0ab11bc8f -> "4348aceecefb490396784f61544c3a45"
+	d6370410105740b9a16bbf558c7dcc76 -> b05932602f7d48fdae45b1c0ab11bc8f
+	"951d309f94e44f1ca96706bcb3dd0c32" -> d6370410105740b9a16bbf558c7dcc76
+}

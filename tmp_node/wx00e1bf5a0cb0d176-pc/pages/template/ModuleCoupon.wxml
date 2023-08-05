@@ -1,0 +1,34 @@
+<template name="ModuleCoupon">
+    <scroll-view scrollX="true" style="width: 100%;">
+        <view class="container boxSizingBox">
+            <view class="item" style="width:{{m.CouponList.length==1?'100%':''}};display:{{index<6?'block':'none'}}" wx:for="{{m.CouponList}}" wx:for-item="coupon" wx:key="index">
+                <view class="couponinfo" style="width:{{m.CouponList.length>1?'500rpx':'100%'}};">
+                    <view class="col1 flexBox flexAlign" style="background: linear-gradient(to right, {{coupon.color[0]}}, {{coupon.color[1]}});">
+                        <view class="moneyBox flexBox flexDirectionColumn">
+                            <view class="coupon-money ">
+                                <text class="moneyText" style="text-shadow: 0 0 10px {{coupon.color[1]}};">{{coupon.Amount>=10000&&coupon.Type=='1'?coupon.Amount/10000:coupon.Amount}}</text>
+                                <text class="unit" style="text-shadow: 0 0 10px {{coupon.color[1]}}">{{coupon.Amount>=10000&&coupon.Type=='1'?'万':''}}{{coupon.Type=='0'?'折':'元'}}</text>
+                            </view>
+                            <text class="astrict" style="text-shadow: 0 0 10px {{coupon.color[1]}}">{{coupon.OrderMoney==='0.00'||coupon.OrderMoney==0?'无使用门槛':'满'+coupon.OrderMoney+'元可使用'}}</text>
+                        </view>
+                        <view class="typeBox flexBox flexAlign flexDirectionColumn">
+                            <sapn class="unitText" style="text-shadow: 0 0 10px {{coupon.color[1]}};">{{coupon.IsProductLimit=='1'?'指定可用':'全场通用'}}</sapn>
+                            <view>
+                                <view bindtap="M_getCoupon" class="coupon-getbtn" data-couponid="{{coupon.CouponID}}" data-idxitem="{{index}}" data-moduleid="{{m.ModuleID}}" style="color: {{coupon.color[1]}};box-shadow: 0 0 10px {{coupon.color[1]}};" wx:if="{{coupon.CanGet==1&&coupon.Available>0}}">领取</view>
+                                <view class="coupon-getbtn coupon-getbtn2" style="color: #999;box-shadow: 0 0 10px {{coupon.color[1]}};background: #eaeaea;" wx:if="{{coupon.CanGet==0&&coupon.Available>0}}">已领取</view>
+                                <view class="coupon-getbtn coupon-getbtn2" style="color: #999;box-shadow: 0 0 10px {{coupon.color[1]}};background: #eaeaea;" wx:elif="{{coupon.Available<=0}}">已领完</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="col2 flexBox flexJustifyBetween">
+                        <text>有效期至：{{coupon.timeLimit}}</text>
+                        <text class="coupon-avail" wx:if="{{coupon.Limit!='0'}}">剩{{coupon.Available}}张</text>
+                    </view>
+                </view>
+            </view>
+            <navigator class="ModuleCoupon-more" hoverClass="navigator-hover" openType="navigate" url="/pages/company/couponcenter" wx:if="{{m.CouponList.length>=6}}">
+                <text class="iconfont icon-qianwang-copy"></text>
+            </navigator>
+        </view>
+    </scroll-view>
+</template>

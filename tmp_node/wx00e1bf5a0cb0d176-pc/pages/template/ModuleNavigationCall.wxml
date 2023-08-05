@@ -1,0 +1,62 @@
+<template name="ModuleNavigationCall">
+    <view class="box">
+        <view class="navigation" wx:if="{{m.Layout=='101'}}">
+            <view class="address " wx:if="{{m.ModuleData[0].Type==0?layoutFun.hasItem(m.Enabled,'EnabledDialing'):layoutFun.hasItem(m.Enabled,'EnabledNavigation')}}">
+                <view bindtap="yijianbohao" class="addressFont" data-iphone="{{m.ModuleData[0].Type==1?m.ModuleData[1].Text:m.ModuleData[0].Text}}" wx:if="{{m.ModuleData[0].Type==0}}">{{m.ModuleData[0].Text}}</view>
+                <view bindtap="yijiandaohhang" class="addressFont" data-hi="{{m.ModuleData}}" wx:if="{{m.ModuleData[0].Type==1}}">{{m.ModuleData[0].Text}}</view>
+                <view bindtap="yijianbohao" class="addressIcon" data-iphone="{{m.ModuleData[0].Type==1?m.ModuleData[1].Text:m.ModuleData[0].Text}}" wx:if="{{m.ModuleData[0].Type==0}}">
+                    <view class="addressIcon-line"></view>
+                    <image src="{{globaldata.appGlobalData.siteBaseUrl}}{{m.ModuleData[0].Image}}"></image>
+                </view>
+                <view bindtap="yijiandaohhang" class="addressIcon" data-hi="{{m.ModuleData}}" wx:if="{{m.ModuleData[0].Type==1}}">
+                    <view class="addressIcon-line"></view>
+                    <image src="{{globaldata.appGlobalData.siteBaseUrl}}{{m.ModuleData[0].Image}}"></image>
+                </view>
+            </view>
+            <view class="lines border1px" wx:if="{{layoutFun.hasItem(m.Enabled,'EnabledNavigation')&&layoutFun.hasItem(m.Enabled,'EnabledDialing')}}"></view>
+            <view class="address" wx:if="{{m.ModuleData[0].Type==0?layoutFun.hasItem(m.Enabled,'EnabledNavigation'):layoutFun.hasItem(m.Enabled,'EnabledDialing')}}">
+                <view bindtap="yijianbohao" class="addressNum" data-iphone="{{m.ModuleData[1].Text}}" wx:if="{{m.ModuleData[1].Type==0}}">{{m.ModuleData[1].Text}}</view>
+                <view bindtap="yijiandaohhang" class="addressNum" data-hi="{{m.ModuleData}}" wx:if="{{m.ModuleData[1].Type==1}}">{{m.ModuleData[1].Text}}</view>
+                <view bindtap="yijianbohao" class="addressIcon" data-iphone="{{m.ModuleData[1].Text}}" wx:if="{{m.ModuleData[1].Type==0}}">
+                    <view class="addressIcon-line"></view>
+                    <image src="{{globaldata.appGlobalData.siteBaseUrl}}{{m.ModuleData[1].Image}}"></image>
+                </view>
+                <view bindtap="yijiandaohhang" class="addressIcon" data-hi="{{m.ModuleData}}" wx:if="{{m.ModuleData[1].Type==1}}">
+                    <view class="addressIcon-line"></view>
+                    <image src="{{globaldata.appGlobalData.siteBaseUrl}}{{m.ModuleData[1].Image}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="navigation-1" wx:if="{{m.Layout=='102'}}">
+            <view class="address" wx:if="{{m.ModuleData[0].Type==0?layoutFun.hasItem(m.Enabled,'EnabledDialing'):layoutFun.hasItem(m.Enabled,'EnabledNavigation')}}">
+                <view bindtap="yijianbohao" class="addressFont" data-iphone="{{m.ModuleData[0].Type==0?m.ModuleData[0].Text:m.ModuleData[1].Text}}" wx:if="{{m.ModuleData[1].Type==1}}">
+                    <image src="{{globaldata.appGlobalData.siteBaseUrl}}{{m.ModuleData[0].Image}}"></image>
+                    <view class="yijian">{{m.ModuleData[0].Title}}</view>
+                </view>
+                <view bindtap="yijiandaohhang" class="addressFont" data-hi="{{m.ModuleData}}" wx:if="{{m.ModuleData[1].Type==0}}">
+                    <image src="{{globaldata.appGlobalData.siteBaseUrl}}{{m.ModuleData[0].Image}}"></image>
+                    <view class="yijian">{{m.ModuleData[0].Title}}</view>
+                </view>
+                <view class="line" wx:if="{{layoutFun.hasItem(m.Enabled,'EnabledNavigation')}}"></view>
+            </view>
+            <view class="address" wx:if="{{m.ModuleData[0].Type==0?layoutFun.hasItem(m.Enabled,'EnabledNavigation'):layoutFun.hasItem(m.Enabled,'EnabledDialing')}}">
+                <view bindtap="yijianbohao" class="addressNum" data-iphone="{{m.ModuleData[0].Type==0?m.ModuleData[0].Text:m.ModuleData[1].Text}}" wx:if="{{m.ModuleData[1].Type==0}}">
+                    <image src="{{globaldata.appGlobalData.siteBaseUrl}}{{m.ModuleData[1].Image}}"></image>
+                    <view class="yijian">{{m.ModuleData[1].Title}}</view>
+                </view>
+                <view bindtap="yijiandaohhang" class="addressNum" data-hi="{{m.ModuleData}}" wx:if="{{m.ModuleData[1].Type==1}}">
+                    <image src="{{globaldata.appGlobalData.siteBaseUrl}}{{m.ModuleData[1].Image}}"></image>
+                    <view class="yijian">{{m.ModuleData[1].Title}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<wxs module="layoutFun">
+var hasItem = (function(items, val) {
+    return (items.indexOf(val) > -1)
+});
+module.exports = ({
+    hasItem: hasItem,
+});
+</wxs>

@@ -1,0 +1,26 @@
+<template name="ModuleLink">
+    <view class="layout-{{m.Layout}}">
+        <view class="item-container boxSizingBox" wx:if="{{m.Layout=='103'}}">
+            <view bindtap="navTo" class="item" data-linkid="{{link.LinkID}}" data-linktype="{{link.LinkType}}" wx:for="{{m.Links}}" wx:for-item="link" wx:key="index">
+                <view class="item2">
+                    <view class="imgboxf">
+                        <view class="imgbox">
+                            <image class="img" src="{{globaldata.appGlobalData.siteBaseUrl}}{{link.Image}}" wx:if="{{link.Image}}"></image>
+                            <view class="imgholder" wx:else></view>
+                        </view>
+                    </view>
+                    <view class="text overflow1" wx:if="{{link.Text}}">{{link.Text}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="item-container boxSizingBox" wx:else>
+            <view bindtap="navTo" class="item" data-linkid="{{link.LinkID}}" data-linktype="{{link.LinkType}}" wx:for="{{m.Links}}" wx:for-item="link" wx:key="index">
+                <view class="imgbox">
+                    <image class="img" src="{{globaldata.appGlobalData.siteBaseUrl}}{{link.Image}}" wx:if="{{link.Image}}"></image>
+                    <view class="imgholder" wx:else></view>
+                </view>
+                <view class="text overflow1" wx:if="{{link.Text}}">{{link.Text}}</view>
+            </view>
+        </view>
+    </view>
+</template>

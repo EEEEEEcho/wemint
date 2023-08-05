@@ -1,0 +1,13 @@
+<view class="getPhoneLayout" wx:if="{{isShow}}">
+    <view class="popUpWindowsLayout">
+        <view class="popUpWindows">
+            <text class="popUpTitle">需要您的登录</text>
+            <text class="popUpContent">为了提供更好的服务</text>
+            <text class="popUpRemark">请在稍后的提示框中点击允许</text>
+            <image class="remindImage" lazyLoad="true" src="http://oss.shangmian.xin/weixin_applets_icon_get_user_phone.png"></image>
+            <text class="sure">我知道了</text>
+        </view>
+        <button bindgetphonenumber="getPhoneNumber" class="phoneNumber" openType="getPhoneNumber"></button>
+    </view>
+</view>
+<loading-view isShow="{{isShowLoad}}"></loading-view>

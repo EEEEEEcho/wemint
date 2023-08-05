@@ -1,0 +1,23 @@
+// \pages/shop/refund goRufundswuliu Data Flow
+digraph {
+	f921d65d675944079913091d687ad8ec [label="FunctionCall,
+function name -> goRufundswuliu,
+param -> e,
+e.,
+" color=blue]
+	"4ba9f59263ae495f8576667ae1cf3cec" [label=VariableDeclarations color=blue]
+	a2ed557725ab4847b9739aaa7c20044d [label="VariableDeclarator,
+left -> t,
+right -> e.currentTarget.dataset.pkey" color=blue]
+	"4ba9f59263ae495f8576667ae1cf3cec" -> a2ed557725ab4847b9739aaa7c20044d
+	f921d65d675944079913091d687ad8ec -> "4ba9f59263ae495f8576667ae1cf3cec"
+	"89ceb568ecc043fd9024af699b84271a" [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	"0e789534ef494e3f8a79a1521db1af47" [label="Object Properties
+{
+url -> 'refundswuliu?pkey=' + t
+}" color=blue]
+	"89ceb568ecc043fd9024af699b84271a" -> "0e789534ef494e3f8a79a1521db1af47"
+	f921d65d675944079913091d687ad8ec -> "89ceb568ecc043fd9024af699b84271a"
+}

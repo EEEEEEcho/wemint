@@ -1,0 +1,45 @@
+<view class="specification-wrapper" wx:if="{{proSkuModalShow}}">
+    <modal bind:close="_onCloseModal" foot="{{true}}" head="{{false}}" id="proModal">
+        <view slot="content">
+            <view class="product-info border1px">
+                <image binderror="" bindload="" class="product-img" lazyLoad="false" mode="aspectFill" src="{{productBaseInfo.currentProImg}}"></image>
+                <view class="product-message">
+                    <view class="product-price">￥{{productBaseInfo.price}}</view>
+                    <view class="product-repertory">库存{{productBaseInfo.quantity}}件</view>
+                    <view class="product-sku" wx:if="{{productAttrs&&productAttrs.length}}">
+                        <text class="sku-title">已选：</text>
+                        <text class="sku-content">{{currentSelectAttrText.text}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="product-main" style="height:{{mainHeight}}rpx">
+                <scroll-view scrollY="true" style="height:{{mainHeight}}rpx;padding: 0 24rpx;">
+                    <view class="c-item" wx:for="{{productAttrs}}" wx:key="index">
+                        <view class="c-item-title">{{item.AttrKeyName}}：</view>
+                        <view class="c-item-content">
+                            <text bindtap="_onSelectAttrItem" class="sku-val {{currentDefaultData[item.AttrKeyID]==val.AttrValID?'main-color secondary-bg border':''}} {{val.disable?'c-item-disable':''}}" data-idx="{{idx}}" data-index="{{index}}" wx:for="{{item.AttrVals}}" wx:for-index="idx" wx:for-item="val" wx:key="idx">{{val.AttrValName}}</text>
+                        </view>
+                    </view>
+                    <view class="c-item" wx:if="{{!hideNumFlag}}">
+                        <view class="c-item-title">数量：</view>
+                        <view class="c-item-content">
+                            <view class="c-count-box">
+                                <view bindtap="_onCalculateNum" class="c-num-val {{productBaseInfo.count>1?'active':''}}" data-type="1">-</view>
+                                <input bindblur="_blurManual" bindchange="_bindManual" class="c-num-inp" type="number" value="{{productBaseInfo.count}}"></input>
+                                <view bindtap="_onCalculateNum" class="c-num-val {{productBaseInfo.limitNum&&productBaseInfo.count>=productBaseInfo.limitNum||productBaseInfo.count>=productBaseInfo.quantity?'':'active'}}" data-type="2">+</view>
+                            </view>
+                            <text class="main-color c-limt-text" wx:if="{{productBaseInfo.limitNum&&productBaseInfo.limitNumText}}">限购{{productBaseInfo.limitNumText}}件</text>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+        <view slot="footer">
+            <view class="common-btn-wrapper ">
+                <yz-button bindtap="_onBottomButton" class="btn-footer" data-type="1" size="large" type="lucency" wx:if="{{entranceType==='select'}}">加入购物车</yz-button>
+                <yz-button bindtap="_onBottomButton" class="btn-footer" data-type="2" size="large" wx:if="{{entranceType==='select'}}">立即购买</yz-button>
+                <yz-button bindtap="_onBottomButton" class="btn-footer" data-type="0" size="large" wx:if="{{entranceType==='default'}}">确定</yz-button>
+            </view>
+        </view>
+    </modal>
+</view>

@@ -1,0 +1,27 @@
+// \pages/shopList/shopList onLoad Data Flow
+digraph {
+	"8dd8964fe87c4420a939639a9a8224e7" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	f33ef1fae3d74482a49034c86863d89b [label=SequenceExpression color=blue]
+	b2f982ecce4c4206866766c61ad0cf8b [label="CallExpression,
+callee name -> this.sendSortArg,
+param -> " color=blue]
+	"8a597fd8d9834919890815a1abb32e52" [label="FunctionCall,
+function name -> sendSortArg,
+param -> " color=blue]
+	"367710cac5ff4811b1963cfa449d51bb" [label=VariableDeclarations color=blue]
+	"28c7133a9c324fe088a779282bbd0f5a" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	ea1c2c404906465482fa3f182d663375 [label="Object Properties
+{
+sortid -> this.data.listId
+}" color=blue]
+	"28c7133a9c324fe088a779282bbd0f5a" -> ea1c2c404906465482fa3f182d663375
+	"367710cac5ff4811b1963cfa449d51bb" -> "28c7133a9c324fe088a779282bbd0f5a"
+	"8a597fd8d9834919890815a1abb32e52" -> "367710cac5ff4811b1963cfa449d51bb"
+	b2f982ecce4c4206866766c61ad0cf8b -> "8a597fd8d9834919890815a1abb32e52"
+	f33ef1fae3d74482a49034c86863d89b -> b2f982ecce4c4206866766c61ad0cf8b
+	"8dd8964fe87c4420a939639a9a8224e7" -> f33ef1fae3d74482a49034c86863d89b
+}

@@ -1,0 +1,48 @@
+// \pages/user/forceCard/forceCard doWxPay Data Flow
+digraph {
+	"39e7726f130f41b79b124faccd974882" [label="FunctionCall,
+function name -> doWxPay,
+param -> " color=blue]
+	"6a416bdd94314d9587e8b6159539c0e7" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"37e875fd90404ffbafa26ff26fc9ed6f" [label=SequenceExpression color=blue]
+	"7730f33119e145958cd38caa0eb71b1a" [label="CallExpression,
+callee name -> wx.getStorage,
+param -> " color=blue]
+	a7f0376fdc3a44bb88eff003d4cea522 [label="FunctionCall,
+function name -> success,
+param -> " color=blue]
+	c55b0b16494d4985b7121960296bca2f [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	a109630e6bbd48aabaf1f4e3319940d9 [label="FunctionCall,
+function name -> success,
+param -> " color=blue]
+	"11d11818f8f147d9b03bdf8be665668b" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"9739125593f0479a92eb579d4dbe8485" [label="CallExpression,
+callee name -> wx.requestPayment,
+param -> " color=blue]
+	"840c95c553944f9898afecbeea4d7eae" [label="FunctionCall,
+function name -> fail,
+param -> a,
+a.,
+" color=blue]
+	"6ec6a5725f7645059f68bbb8c3c50a93" [label=SequenceExpression color=blue]
+	a13ed7edff1a469bae06b8f92f9380d1 [label="CallExpression,
+callee name -> console.log,
+param -> a,
+" color=blue]
+	"6ec6a5725f7645059f68bbb8c3c50a93" -> a13ed7edff1a469bae06b8f92f9380d1
+	"840c95c553944f9898afecbeea4d7eae" -> "6ec6a5725f7645059f68bbb8c3c50a93"
+	"9739125593f0479a92eb579d4dbe8485" -> "840c95c553944f9898afecbeea4d7eae"
+	"11d11818f8f147d9b03bdf8be665668b" -> "9739125593f0479a92eb579d4dbe8485"
+	a109630e6bbd48aabaf1f4e3319940d9 -> "11d11818f8f147d9b03bdf8be665668b"
+	c55b0b16494d4985b7121960296bca2f -> a109630e6bbd48aabaf1f4e3319940d9
+	a7f0376fdc3a44bb88eff003d4cea522 -> c55b0b16494d4985b7121960296bca2f
+	"7730f33119e145958cd38caa0eb71b1a" -> a7f0376fdc3a44bb88eff003d4cea522
+	"37e875fd90404ffbafa26ff26fc9ed6f" -> "7730f33119e145958cd38caa0eb71b1a"
+	"6a416bdd94314d9587e8b6159539c0e7" -> "37e875fd90404ffbafa26ff26fc9ed6f"
+	"39e7726f130f41b79b124faccd974882" -> "6a416bdd94314d9587e8b6159539c0e7"
+}

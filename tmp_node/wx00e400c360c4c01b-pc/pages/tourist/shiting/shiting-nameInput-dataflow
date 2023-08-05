@@ -1,0 +1,17 @@
+// \pages/tourist/shiting/shiting nameInput Data Flow
+digraph {
+	"9fae3581fa8d4e63b7c7e653d7053de3" [label="FunctionCall,
+function name -> nameInput,
+param -> t,
+t.,
+" color=blue]
+	"004e39cb481a40c987e70fd580873e79" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"2957187f82f74f0a9db1fff99d0eddfd" [label="Object Properties
+{
+name -> t.detail.value
+}" color=blue]
+	"004e39cb481a40c987e70fd580873e79" -> "2957187f82f74f0a9db1fff99d0eddfd"
+	"9fae3581fa8d4e63b7c7e653d7053de3" -> "004e39cb481a40c987e70fd580873e79"
+}

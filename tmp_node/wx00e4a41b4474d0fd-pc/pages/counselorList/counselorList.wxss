@@ -1,0 +1,249 @@
+.counList {
+    padding: 0 25px 40px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 22px;
+    right: 0;
+    height: 24px;
+    width: 24px;
+}
+
+.close-button image {
+    width: 16px;
+    height: 16px;
+}
+
+.title-box {
+    box-sizing: border-box;
+    padding: 10px 0 0 10px;
+    width: 100%;
+}
+
+.title-one {
+    font-size: 31px;
+    font-weight: bold;
+    display: block;
+}
+
+.title-two {
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+}
+
+.adviser-item {
+    border-bottom: 1px solid #cccccc;
+    box-sizing: border-box;
+    margin: 0 auto;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.head-box {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+.head-box image {
+    width: 100%;
+    height: 100%!important;
+}
+
+.message-box {
+    margin-left: 10px;
+    width: calc(100% - 100px);
+}
+
+.message-box .name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 26px;
+    line-height: 26px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.message-box .evaluate {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 8px;
+    color: #999999;
+    max-width: 200px;
+}
+
+.time {
+    width: 30px;
+    height: 30px;
+}
+
+.time image {
+    width: 30px;
+    height: 30px;
+}
+
+.sorry-box {
+    margin: 80px auto;
+    width: 100%;
+}
+
+.sorry-pic {
+    height: 50vw;
+    display: block;
+    margin: 0 auto;
+    width: 50vw;
+}
+
+.tel-button image {
+    width: 140px;
+    height: 60px;
+    background-size: cover;
+    margin: 0 auto;
+    display: block;
+}
+
+.sorry-text {
+    width: 100%;
+    font-weight: 600;
+    text-align: center;
+    color: #3EB2AC;
+}
+
+.fixImg {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.mask {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(155,155,155,0.6);
+    z-index: 15;
+}
+
+.loadData {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.model {
+    position: absolute;
+    width: 80vw;
+    left: 10vw;
+    top: 20vh;
+    border-radius: 20rpx;
+    background-color: white;
+    z-index: 16;
+}
+
+.model .modelTitle {
+    width: 100%;
+    padding: 20rpx 0rpx;
+    font-size: 40rpx;
+    text-align: center;
+    color: block;
+    border-bottom: 1rpx solid rgb(237,237,237);
+}
+
+.model .modelBody {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 50rpx 50rpx;
+    text-align: center;
+    color: rgb(178,178,178);
+    font-size: 30rpx;
+    border-bottom: 1rpx solid rgb(237,237,237);
+}
+
+.model .btns {
+    width: 100%;
+    text-align: center;
+}
+
+.model .btns .agree {
+    border-width: 0px;
+    color: rgb(26,172,25);
+}
+
+.myload {
+    position: fixed;
+    width: 220rpx;
+    height: 180rpx;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 16rpx;
+    color: rgb(235,237,239);
+    z-index: 10;
+    text-align: center;
+    font-size: 24rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+.myload .spinner {
+    display: inline-block;
+    margin-bottom: 40rpx;
+    width: 30rpx;
+    height: 30rpx;
+    background-color: white;
+    animation: rotateplane 1.5s infinite ease-in-out;
+}
+
+@-webkit-keyframes rotateplane {
+    0% {
+        -webkit-transform: perspective(30rpx);
+    }
+
+    50% {
+        -webkit-transform: perspective(30rpx) rotateY(180deg);
+    }
+
+    100% {
+        -webkit-transform: perspective(30rpx) rotateY(180deg) rotateX(180deg);
+    }
+}
+
+@keyframes rotateplane {
+    0% {
+        transform: perspective(30rpx) rotateX(0deg) rotateY(0deg);
+    }
+
+    50% {
+        transform: perspective(30rpx) rotateX(-180.1deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: perspective(30rpx) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}

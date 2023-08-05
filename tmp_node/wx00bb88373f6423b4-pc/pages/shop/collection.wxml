@@ -1,0 +1,62 @@
+<view class="fixedTopBorder"></view>
+<view class="container">
+    <view class="product-list">
+        <scroll-view bindscrolltolower="onProductListScroll" hidden="{{newList.List.length==0}}" lowerThreshold="50" scrollY="true" style="height: {{showHeight}}rpx;">
+            <view class="product-introduce" wx:for="{{newList.List}}" wx:key="id">
+                <view class="yearMonth">
+                    <text>{{item.yearMonth}}</text>
+                </view>
+                <view class="collBox {{theItem.productType===3||theItem.productType===2?'noExit':''}}" wx:for="{{item.list}}" wx:for-item="theItem" wx:key="theItem.CollProductID">
+                    <checkbox-group bindchange="SaveChcekValue" data-index="{{index}}" data-productid="{{theItem.CollProductID}}">
+                        <view class="collectionCheckedBox" wx:if="{{flag}}">
+                            <checkbox checked="{{theItem.selected}}" class="checkbox" color="#ff7200" value="{{theItem.CollProductID}}"></checkbox>
+                            <icon class="iconText" color="{{theItem.selected?'#ff7200':'#ddd'}}" size="20" type="{{theItem.selected?'success':'circle'}}"></icon>
+                        </view>
+                        <view catchtap="{{!buttonClicked?'goProductdetail':''}}" class="shopBox" data-productid="{{theItem.CollProductID}}">
+                            <image src="{{baseUrl}}/{{theItem.CollImages}}"></image>
+                            <view class="introduce-text {{index>0?'borderTop1px':''}}">
+                                <text class="title">{{theItem.CollProductName}}</text>
+                                <view class="itemContentBottom">
+                                    <view class="msg">
+                                        <text class="theRMB">￥</text>
+                                        <text class="price">{{theItem.CollProductPrice}}</text>
+                                    </view>
+                                    <view class="img">
+                                        <image src="{{baseUrl}}/images/wxapp/havedel.png" wx:if="{{theItem.productType===3}}"></image>
+                                        <image src="{{baseUrl}}/images/wxapp/havedown.png" wx:if="{{theItem.productType===2}}"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </checkbox-group>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="footertext" hidden="{{newList.List.length!=recordcount}}">
+      没有更多了
+    </view>
+        <view class="tips" hidden="{{newList.List&&newList.List.length!=0}}">
+            <view class="img">
+                <image mode="widthFix" src="{{baseUrl}}/images/wxapp/blank_20.png"></image>
+            </view>
+            <text>暂无收藏</text>
+        </view>
+    </view>
+    <view class="footnav" hidden="{{newList.List.length==0}}">
+        <view class="border" wx:if="{{flag==false}}">
+            <view bindtap="edit" class="edit">编辑</view>
+        </view>
+        <view class="borderBox" wx:if="{{flag}}">
+            <view class="allCheckedBox">
+                <view class="allCheckedBoxIcon">
+                    <icon class="iconText" color="{{allChecked?'#ff7200':'#ddd'}}" size="20" type="{{allChecked?'success':'circle'}}"></icon>
+                    <checkbox bindtap="allCheckedBtn" checked="{{allChecked}}" color="#ff7200" data-currentall="{{allChecked?1:0}}" value="{{allname}}"></checkbox>
+                </view>全选
+      </view>
+            <view bindtap="DelCollection" class="delete">删除</view>
+            <view bindtap="complete" class="complete">完成</view>
+        </view>
+    </view>
+</view>
+<import src="/pages/footnav.wxml"></import>
+<template is="footnav" data="{{pageurl:pageurl,shopcart:shopcart}}"></template>

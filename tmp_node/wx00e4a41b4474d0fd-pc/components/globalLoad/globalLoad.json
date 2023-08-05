@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "myLoading": "globalLoad",
+        "navbar": "/components/navbar/navbar",
+        "c-img": "../../pages/components/indexImg/indexImg"
+    }
+}

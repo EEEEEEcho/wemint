@@ -1,0 +1,80 @@
+page {
+    background-color: #fff;
+}
+
+.text_style {
+    width: 700rpx;
+    color: #aeaeb4;
+    font-size: 28rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    margin-left: 31rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.editAddress_container {
+    position: relative;
+    padding-top: 10rpx;
+}
+
+.form {
+    width: 682rpx;
+    margin-left: 34rpx;
+}
+
+.name,.tel,.address,.detail {
+    border-radius: 50rpx;
+    margin-bottom: 30rpx;
+    box-shadow: 0rpx 0rpx 16rpx #f0f0f0;
+}
+
+.consignee,.telephone,.picker,.detail_address {
+    height: 88rpx;
+    font-size: 28rpx;
+    color: #51515c;
+    margin: 0 30rpx;
+    border: none;
+    line-height: 88rpx;
+}
+
+.address_picker {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.placeholder {
+    font-size: 28rpx;
+    color: #aeaeb4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.picker_img {
+    width: 24rpx;
+    height: 12rpx;
+    margin-right: 30rpx;
+}
+
+.addBtn,.deleteBtn {
+    width: 682rpx;
+    height: 88rpx;
+    background: #51515c;
+    border-radius: 50rpx;
+    color: #fff;
+    font-size: 36rpx;
+    text-align: center;
+    line-height: 88rpx;
+}
+
+.deleteBtn {
+    margin-top: 30rpx;
+}

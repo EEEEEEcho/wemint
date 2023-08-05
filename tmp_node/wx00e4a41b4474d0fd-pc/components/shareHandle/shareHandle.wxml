@@ -1,0 +1,86 @@
+<view class="inputWord" hidden="{{!showEditView}}">
+    <view class="mainContent">
+        <view class="title">自定义分享文案</view>
+        <view class="seTitle">最多<span style="color:#5370FF;">40</span>个字</view>
+        <textarea bindinput="bindKeyInput" class="textarea" maxlength="40" value="{{shareWord}}"></textarea>
+        <view class="btnlist">
+            <button bindtap="cancel" class="sharebtn" style="background: #7684A0;">取消</button>
+            <button bindtap="confirm" class="sharebtn" style="background: #5370FF;">确定</button>
+        </view>
+    </view>
+</view>
+<view class="Pic" wx:if="{{showImgModel}}">
+    <view class="Picmodel">
+        <view class="modelTitle">
+			请求获取授权
+		</view>
+        <view class="modelBody">您还未授权相册权限,暂时无法使用此功能,点击确定重新获取授权。</view>
+        <view class="btns">
+            <button bindopensetting="getShareProgram" class="agree" lang="zh_CN" openType="openSetting" plain="true">下一步</button>
+        </view>
+    </view>
+</view>
+<view class="canvasView">
+    <scroll-view class="model" wx:if="{{shareType!='0'}}">
+        <scroll-view class="modelmain {{shareType=='1'||shareType=='2'?'whiteBg':'otherBg'}}" scrollY="{{shareType!='0'}}">
+            <swiper bindchange="swipChage" circular="true" class="img-box" current="{{currentIndex}}" style="width:100%;height:{{selectObj.imgWidth>selectObj.imgHeight?selectObj.imgWidth+'rpx':selectObj.imgHeight+'rpx'}};position:relative;padding-top:{{marginTop+'rpx'}}">
+                <swiper-item style="text-align:center;border-radius: 9rpx;" wx:for="{{resultImgList}}" wx:key="item">
+                    <image class="cardImg {{item.horizontal?'rotate':''}}" src="{{item.imgUrl}}" style="height:{{item.imgHeight+'rpx'}};width:{{item.imgWidth+'rpx'}};" wx:if="{{item&&item.imgUrl.length>0}}"></image>
+                </swiper-item>
+            </swiper>
+        </scroll-view>
+        <image bindtap="showEditViewTap" class="customize" hidden="{{!selectObj||shareType=='4'||creatCard}}" src="../../image/wepy_pro/customize.png" style="top:{{shareType=='7'?'672rpx':'30rpx'}}"></image>
+        <view class="myload" wx:if="{{creatFirstCard}}">
+            <view class="spinner"></view>
+            <view>正在为您生成分享卡片...</view>
+        </view>
+        <view class="myload" wx:if="{{showLoading}}">
+            <view class="spinner"></view>
+            <view>{{text}}</view>
+        </view>
+        <view class="tmpBg" wx:if="{{showBg}}">
+            <image class="BgImage" src="https://dm.static.elab-plus.com/miniprogram/tmp.png"></image>
+        </view>
+        <view class="showPhoneView" wx:if="{{showBack}}">
+            <view class="backView"></view>
+            <view class="titleWord">图片加载失败，请稍后再试</view>
+            <view class="btnList">
+                <view bindtap="closeBackView" class="im_btn im_btn1">确定</view>
+            </view>
+        </view>
+        <view class="dots" wx:if="{{shareType!='1'&&shareType!='2'&&resultImgList.length>1}}">
+            <text class="text" wx:if="{{shareType=='7'}}">左右滑动选择更多名片</text>
+            <text class="text" wx:else>左右滑动切换个人信息</text>
+            <view class="dot{{index==swipIndex?' active':''}}" wx:for="{{resultImgList}}" wx:key="item"></view>
+        </view>
+        <view class="model-btn-1" wx:if="{{shareType=='1'||shareType=='2'}}">
+            <view bindtap="reselect" class="reselect">
+                <image class="icon" src="../../image/wepy_pro/choose.png"></image>
+                <span class="word">{{shareType=='2'?'重拍':'重选照片'}}</span>
+            </view>
+            <view class="saveimg">
+                <button bindtap="save" class="button" hoverClass="none" wx:if="{{!showImgBtn}}">
+					保存到相册
+				</button>
+                <button bindopensetting="getShareProgram" class="button" hoverClass="none" openType="openSetting" wx:else>
+					保存到相册
+				</button>
+            </view>
+            <view bindtap="chooseBtn" class="addborder {{selectBtn?' active':''}}">
+                <image class="icon" src="../../image/wepy_pro/biankaung_sel.png" wx:if="{{selectBtn}}"></image>
+                <image class="icon" src="../../image/wepy_pro/biankaung_nor.png" wx:else></image>
+                <span class="word">添加边框</span>
+            </view>
+        </view>
+        <view class="model-btn-2" wx:else>
+            <button bindtap="save" class="model-btn-2-btn" hoverClass="none" wx:if="{{!showImgBtn}}">
+				保存到相册
+			</button>
+            <button bindopensetting="getShareProgram" class="model-btn-2-btn" hoverClass="none" openType="openSetting" wx:else>
+				保存到相册
+			</button>
+        </view>
+    </scroll-view>
+    <canvas canvasId="shareCardCanvas" class="canvas" style="width:{{canvasWidth+'rpx'}};height:{{canvasHeight+'rpx'}};"></canvas>
+    <canvas canvasId="shareCardHorizontalCanvas" class="canvas" style="width:{{canvasHeight+'rpx'}};height:{{canvasWidth+'rpx'}};"></canvas>
+</view>

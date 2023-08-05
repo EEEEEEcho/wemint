@@ -1,0 +1,105 @@
+<view bindtap="hideDelete">
+    <view class="tab-box">
+        <ul>
+            <li bindtap="menuClick" class="{{shareMode==0?'tab-active':''}}" data-check="0">全部</li>
+            <li bindtap="menuClick" class="{{shareMode==3?'tab-active':''}}" data-check="3">加码圈</li>
+            <li bindtap="menuClick" class="{{shareMode==4?'tab-active':''}}" data-check="4">分享圈</li>
+            <li bindtap="menuClick" class="{{shareMode==2?'tab-active':''}}" data-check="2">拼手气圈</li>
+            <li bindtap="getMyBenefitCircle" class="{{shareMode==1?'tab-active':''}}" data-check="1">我的</li>
+        </ul>
+    </view>
+    <view class="circle-item-box" wx:for="{{circleList}}" wx:key="{{ index }}">
+        <view class="item-headimg-box">
+            <image src="{{item.headImgUrl}}"></image>
+        </view>
+        <view class="item-detai-box">
+            <view class="item-detai-header">
+                <view>{{item.nickname}}</view>
+                <view class="share-icon" wx:if="{{item.isMine==1}}">
+                    <button plain bindtap="shareCoupon" data-couponsid="{{item.couponsId}}" data-notice="{{item.notice}}" data-shareMode="{{item.shareMode}}">
+                        <image src="./../../utils/imgs/shareicon.png"></image>
+                    </button>
+                </view>
+            </view>
+            <view class="item-detai">
+                <view bindtap="toActivity" data-shareurl="{{item.shareUrl}}">
+                    <rich-text nodes="{{item.text}}" type="text"></rich-text>
+                </view>
+                <view class="item-image-box">
+                    <image bindtap="previewImage" data-imglist="{{item.img}}" data-src="{{imgItem}}" src="{{imgItem}}" wx:for="{{item.img}}" wx:for-index="imgIndex" wx:for-item="imgItem" wx:key="{{ imgIndex }}"></image>
+                </view>
+            </view>
+            <view class="item-adress-box">
+                <view>{{item.address}}</view>
+                <view>{{item.minDistance}}</view>
+            </view>
+            <view class="{{item.shareMode!==3?'share-mode-not-three item-function-box':'item-function-box'}}">
+                <view class="item-function-talk">
+                    <image src="./../../utils/imgs/talk.png"></image>
+                    <text class="item-function-num">{{item.commentNum}}</text>
+                </view>
+                <view class="item-function-agree">
+                    <image bindtap="giveLike" data-benefitcircleid="{{item.benefitCircleId}}" src="./../../utils/imgs/agreed.png" wx:if="{{item.isGood==1}}"></image>
+                    <image bindtap="giveLike" data-benefitcircleid="{{item.benefitCircleId}}" src="./../../utils/imgs/agree.png" wx:else></image>
+                    <text class="item-function-num">{{item.goodNum}}</text>
+                </view>
+                <view bindtap="toActivity" class="item-function-help" data-shareurl="{{item.shareUrl}}" wx:if="{{item.shareMode==3}}">
+                    <image bindtap="helpAdd" src="./../../utils/imgs/help.png" style="width:87rpx;"></image>
+                </view>
+            </view>
+            <view class="item-comment-box" wx:if="{{item.commentNum>0}}">
+                <text class="triangle_border_up"></text>
+                <view class="item-comment-num">共<text>{{item.commentNum}}</text>条评论</view>
+                <view bindlongpress="showComment" class="{{commentItem.commentId==showDelete?'delete-comment-bg item-comment-detai':'item-comment-detai'}}" data-deletable="{{commentItem.deletable}}" data-deletenum="{{commentItem.commentId}}" wx:for="{{item.commentList}}" wx:for-index="commentIndex" wx:for-item="commentItem" wx:key="{{ commentIndex }}">
+                    <text>{{commentItem.nickname}}：</text>
+                    <text>{{commentItem.comment}}</text>
+                    <text catchtap="deleteComment" class="delete-comment" data-deletenum="{{commentItem.commentId}}" wx:if="{{commentItem.commentId==showDelete}}">删除</text>
+                </view>
+            </view>
+            <view class="item-add-comment">
+                <view class="item-add-comment-headimg">
+                    <image src="{{selfHeaderImg}}"></image>
+                </view>
+                <view>
+                    <input bindblur="submitComment" class="item-add-comment-content" confirmType="done" data-benefitcircleid="{{item.benefitCircleId}}" placeholder="添加评论···" type="text" value="{{commentValue}}"></input>
+                </view>
+            </view>
+            <view class="item-add-comment-time">{{item.createTime}}</view>
+        </view>
+    </view>
+    <view class="no-circle" wx:if="{{isLoading}}">
+        <image src="./../../utils/imgs/loading-spinning-bubbles.svg"></image>
+        <view>数据加载中</view>
+    </view>
+    <view class="no-circle" wx:if="{{noCircle}}">
+        <image src="./../../utils/imgs/nocircle.png"></image>
+        <view>附近暂时还没人发布惠圈呢</view>
+        <view>赶紧发布第一条惠圈带动他们吧</view>
+    </view>
+    <view class="under-line" wx:if="{{showUnderLine}}">---------- 我是有底线的 ----------</view>
+    <view bindtap="issue" class="add-comment-box">
+        <image src="./../../utils/imgs/addcomment.png"></image>
+    </view>
+    <view class="dialog-container" wx:if="{{!isAuthor}}">
+        <view class="dialog-mask"></view>
+        <view class="dialog-info">
+            <view class="dialog-title">温馨提示</view>
+            <view class="dialog-content">小程序需要您的位置信息才能提供更好的服务哦</view>
+            <view class="dialog-footer">
+                <button bindtap="choseAdress" class="dialog-btn">确定</button>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="circle-tip-bg" wx:if="{{showTip}}"></view>
+<view class="circle-tip" wx:if="{{showTip}}">
+    <image src="./../../utils/imgs/tip.png"></image>
+    <view class="circle-tip-btn-box">
+        <view>
+            <text bindtap="issue" class="btn-1">立即体验</text>
+        </view>
+        <view>
+            <text bindtap="hideTipFunc" class="btn-2">稍后再看</text>
+        </view>
+    </view>
+</view>

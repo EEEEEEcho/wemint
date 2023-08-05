@@ -1,0 +1,33 @@
+// \pages/user/alterMyCard/alterMyCard bindDateChange Data Flow
+digraph {
+	ee1eb376a263418196f8c489783995a1 [label="FunctionCall,
+function name -> bindDateChange,
+param -> a,
+a.,
+" color=blue]
+	"62dfc13dfded4b5ea5d330043d1a71ed" [label="CallExpression,
+callee name -> console.log,
+param -> a.detail.value,
+" color=blue]
+	ee1eb376a263418196f8c489783995a1 -> "62dfc13dfded4b5ea5d330043d1a71ed"
+	a2ef2be49b634e3aadf834e7c8cecbcc [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"18f531502b594a70ab68b69efc615add" [label="Object Properties
+{
+date -> a.detail.value
+}" color=blue]
+	a2ef2be49b634e3aadf834e7c8cecbcc -> "18f531502b594a70ab68b69efc615add"
+	ee1eb376a263418196f8c489783995a1 -> a2ef2be49b634e3aadf834e7c8cecbcc
+	"7ad9b10d3fc3441aa7c39de4211f4fc4" [label=VariableDeclarations color=blue]
+	a62faf7eefd54b0d833296f584751d26 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"6b4fe6af5349449cb515cf8049710edd" [label="CallExpression,
+callee name -> Date.parse,
+param -> a.detail.value,
+" color=blue]
+	a62faf7eefd54b0d833296f584751d26 -> "6b4fe6af5349449cb515cf8049710edd"
+	"7ad9b10d3fc3441aa7c39de4211f4fc4" -> a62faf7eefd54b0d833296f584751d26
+	ee1eb376a263418196f8c489783995a1 -> "7ad9b10d3fc3441aa7c39de4211f4fc4"
+}

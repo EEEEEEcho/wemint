@@ -1,0 +1,32 @@
+// \pages/ApplyReturns/ApplyReturns ChooseAfterType Data Flow
+digraph {
+	"5a8e7d8578fe47179eaec056b8aff9dd" [label="FunctionCall,
+function name -> ChooseAfterType,
+param -> e,
+e.,
+" color=blue]
+	"2f6dc1affca14847958ddd3440e69d21" [label=VariableDeclarations color=blue]
+	d4be5885eae644fcbe7e8adc4d3c579b [label="VariableDeclarator,
+left -> t,
+right -> e.currentTarget.dataset.id" color=blue]
+	"2f6dc1affca14847958ddd3440e69d21" -> d4be5885eae644fcbe7e8adc4d3c579b
+	"28d65cc1c1294b90bff8f34e5949fd09" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	d134d39b74ae446799af3103e0eb6980 [label="CallExpression,
+callee name -> a.ShowAfterTypeName,
+param -> t,
+" color=blue]
+	"28d65cc1c1294b90bff8f34e5949fd09" -> d134d39b74ae446799af3103e0eb6980
+	"2f6dc1affca14847958ddd3440e69d21" -> "28d65cc1c1294b90bff8f34e5949fd09"
+	"5a8e7d8578fe47179eaec056b8aff9dd" -> "2f6dc1affca14847958ddd3440e69d21"
+	e387f524413e4e48824400563676156e [label="CallExpression,
+callee name -> a.setData,
+param -> " color=blue]
+	e5ae4ee7fa3b4b51a4cb2f4a551c56b3 [label="Object Properties
+{
+AfterSaleType -> t
+}" color=blue]
+	e387f524413e4e48824400563676156e -> e5ae4ee7fa3b4b51a4cb2f4a551c56b3
+	"5a8e7d8578fe47179eaec056b8aff9dd" -> e387f524413e4e48824400563676156e
+}

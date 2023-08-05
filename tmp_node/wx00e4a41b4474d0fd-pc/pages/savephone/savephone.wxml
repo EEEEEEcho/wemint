@@ -1,0 +1,23 @@
+<myLoading id="myLoading"></myLoading>
+<view class="tel-container">
+    <view class="title-box">
+        <view class="title-one">请填写手机号</view>
+        <view class="title-two">置业顾问将第一时间联络您。</view>
+    </view>
+    <view class="input-box">
+        <view class="top-box">
+            <input bindinput="userPhone" class="verify-input" placeholder="请输入手机号" type="number"></input>
+            <button bindtap="getVerifyCode" class="getVerify">{{verifyText}}</button>
+        </view>
+        <view class="bottom-box">
+            <input bindinput="verifyCode" class="verify-input" placeholder="请输入验证码" type="number"></input>
+        </view>
+    </view>
+    <view bindtap="sendTel" class="sure">
+        <image alt="" src="{{serverUrl+'im/sure.png'}}"></image>
+    </view>
+    <view class="dialog" wx:if="{{dialog}}">
+        <view class="dialog-top">已成功预约留电</view>
+        <view class="dialog-bottom">置业顾问将第一时间联络您。</view>
+    </view>
+</view>

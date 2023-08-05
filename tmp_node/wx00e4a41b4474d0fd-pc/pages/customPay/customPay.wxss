@@ -1,0 +1,164 @@
+.container {
+    height: 100vh;
+    overflow: hidden;
+    background: url('https://dm.static.elab-plus.com/wuXiW3/img/custom_pay_bg1.png') top/100% repeat-y;
+}
+
+.custom-pay-card {
+    display: block;
+    width: 670rpx;
+    height: 280rpx;
+    margin: 50rpx 40rpx 30rpx;
+}
+
+.privileges {
+    margin-left: 80rpx;
+    margin-right: 70rpx;
+}
+
+.privilege {
+    display: flex;
+    margin-bottom: 40rpx;
+    margin-top: 60rpx;
+}
+
+.icon-privilege {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.privilege-detail {
+    flex: 1;
+    margin-left: 30rpx;
+}
+
+.privilege-title {
+    color: #FFD6BA;
+    font-size: 38rpx;
+    line-height: 50rpx;
+}
+
+.privilege-desc {
+    color: #fff;
+    font-size: 24rpx;
+    line-height: 1.4;
+}
+
+.explain {
+    margin: 0 60rpx;
+    color: #d5d5d5;
+    font-size: 20rpx;
+    padding-bottom: 10rpx;
+    text-align: center;
+    opacity: .3;
+    margin-top: 36px;
+    border-bottom: 1rpx solid rgba(213,213,213,.8);
+}
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.share-help {
+    background-image: linear-gradient(-208deg,#5B5B5B 0%,#12120F 100%);
+    padding: 10rpx 20rpx;
+}
+
+.tag {
+    color: #000;
+    background: linear-gradient(49deg,rgba(255,216,179,1) 0%,rgba(190,152,93,1) 100%);
+    border-radius: 10px;
+    line-height: 40rpx;
+    padding: 0 20rpx;
+    margin-right: 10rpx;
+}
+
+.share-time {
+    display: flex;
+    align-items: center;
+    color: #D5D5D5;
+    font-size: 24rpx;
+}
+
+.share-desc {
+    font-size: 26rpx;
+    color: #fff;
+}
+
+.share-desc2 {
+    font-size: 26rpx;
+    color: #fff;
+    text-align: center;
+}
+
+.share-price {
+    font-size: 48rpx;
+}
+
+.btn-group {
+    display: flex;
+    color: #fff;
+    font-size: 40rpx;
+    height: 100rpx;
+}
+
+.btn-item {
+    flex: 1;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-pay {
+    background-image: linear-gradient(-190deg,#5B5B5B 0%,#777777 68%);
+}
+
+.btn-share {
+    background: linear-gradient(46deg,rgba(223,113,164,1) 0%,rgba(239,157,105,1) 100%);
+}
+
+.icon-info {
+    width: 24rpx;
+    height: 24rpx;
+    margin-right: 8rpx;
+}
+
+.date {
+    line-height: 1;
+    margin-right: 20rpx;
+}
+
+.grey {
+    color: #D5D5D5!important;
+}
+
+.service {
+    background: #606060;
+    width: 90rpx;
+}
+
+.icon-service {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-grey {
+    background-image: linear-gradient(-190deg,#5B5B5B 0%,#777777 68%);
+}
+
+.btn-orange {
+    background: linear-gradient(46deg,rgba(223,113,164,1) 0%,rgba(239,157,105,1) 100%);
+}
+
+.flex-1 {
+    flex: 1;
+}

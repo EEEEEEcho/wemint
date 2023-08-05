@@ -1,0 +1,23 @@
+// \pages/mine/collect detail Data Flow
+digraph {
+	a7a70bf15fec475e99f54776afbedbef [label="FunctionCall,
+function name -> detail,
+param -> t.,
+t,
+" color=blue]
+	c4f68d07dd634663ac0c912e948e0368 [label=VariableDeclarations color=blue]
+	"15623bd85ddc4eaf80edb64b64634141" [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.id" color=blue]
+	c4f68d07dd634663ac0c912e948e0368 -> "15623bd85ddc4eaf80edb64b64634141"
+	a7a70bf15fec475e99f54776afbedbef -> c4f68d07dd634663ac0c912e948e0368
+	"85deb7a973bb46e99f3b5b594d1d0f6f" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"2e829f46e28d4d808dc0de839ae08fa1" [label="Object Properties
+{
+url -> '/pages/cars/detail?id=' + a
+}" color=blue]
+	"85deb7a973bb46e99f3b5b594d1d0f6f" -> "2e829f46e28d4d808dc0de839ae08fa1"
+	a7a70bf15fec475e99f54776afbedbef -> "85deb7a973bb46e99f3b5b594d1d0f6f"
+}

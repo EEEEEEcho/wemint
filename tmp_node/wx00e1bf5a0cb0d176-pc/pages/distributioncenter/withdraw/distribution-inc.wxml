@@ -1,0 +1,103 @@
+<view class="container-distribution" wx:if="{{userType==1}}">
+    <view class="commission-info">
+        <view class="commission-price">{{canApplyTotal}}</view>
+        <view class="commission-name">可提现{{language.TIPS_Commission}}（元）</view>
+        <view bindtap="buttonClicked" class="withdrawal">
+            <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/distributioncenter/requestwithdrawal/index?status=2">
+                <view class="withdrawal-btn">申请提现</view>
+            </navigator>
+        </view>
+    </view>
+    <view class="withdrawal-msg">
+        <view class="withdrawaling border1px">
+            <view class="w-left">
+                <icon class="iconfont icon-tixian1 other-icon"></icon>
+                <text>提现中</text>
+            </view>
+            <view class="w-right">
+                <text>￥{{applyTotal}}</text>
+            </view>
+        </view>
+        <view class="pending-amount border1px">
+            <view class="pending-left">
+                <icon class="iconfont icon-iconfont_shenhe other-icon"></icon>
+                <text>待审金额</text>
+            </view>
+            <view class="pending-right">
+                <text>￥{{notAuditedTotal}}</text>
+            </view>
+        </view>
+        <view bindtap="buttonClicked" class="withdrawaled border1px">
+            <navigator class="nav" hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/distributioncenter/withdrawalrecord/index?types=3">
+                <view class="widthdrawal-left">
+                    <icon class="iconfont icon-qianbao other-icon"></icon>
+                    <text>已提现</text>
+                </view>
+                <view class="widthdrawal-right">
+                    <text>￥{{auditedTotal}}</text>
+                    <icon class="iconfont icon-iconfont_arrow-right icon-right"></icon>
+                </view>
+            </navigator>
+        </view>
+        <view bindtap="buttonClicked" class="total-commission">
+            <navigator class="nav" hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/distributioncenter/totalcommission/commissiondetails/index">
+                <view class="commission-left">
+                    <icon class="iconfont icon-yusuanjine other-icon"></icon>
+                    <text>总{{language.TIPS_Commission}}</text>
+                </view>
+                <view class="commission-right">
+                    <text>￥{{allTotal}}</text>
+                    <icon class="iconfont icon-iconfont_arrow-right icon-right"></icon>
+                </view>
+            </navigator>
+        </view>
+        <view bindtap="buttonClicked" class="total-commission withdrawal-record">
+            <navigator class="nav" hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/distributioncenter/withdrawalrecord/index?types=3">
+                <view class="commission-left">
+                    <icon class="iconfont icon-tubiaobianji- other-icon"></icon>
+                    <text>提现记录</text>
+                </view>
+                <view class="commission-right">
+                    <icon class="iconfont icon-iconfont_arrow-right icon-right"></icon>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view class="my-team">
+        <text>{{language.TIPS_MyTeam}}</text>
+    </view>
+    <view bindtap="buttonClicked" class="team-btn">
+        <navigator class="team-nav" hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/distributioncenter/team/teamlist/index">
+            <view class="team-left">
+                <icon class="iconfont icon-tuandui other-icon"></icon>
+                <text>团队</text>
+            </view>
+            <view class="team-right">
+                <text>{{count}}人</text>
+                <icon class="iconfont icon-iconfont_arrow-right icon-right"></icon>
+            </view>
+        </navigator>
+    </view>
+    <view bindtap="buttonClicked" class="my-popularize">
+        <text>我的推广</text>
+    </view>
+    <view bindtap="buttonClicked" class="popularize-btn">
+        <navigator class="popularize-nav" hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/sundry/shareshop/index?userID={{userID}}">
+            <view class="popularize-left">
+                <icon class="iconfont icon-trumpet other-icon"></icon>
+                <text>推广二维码</text>
+            </view>
+            <view class="popularize-right">
+                <icon class="iconfont icon-iconfont_arrow-right icon-right"></icon>
+            </view>
+        </navigator>
+    </view>
+    <view class="referrer-info" wx:if="{{superiorUserInfo}}">
+        <view class="referrer-title">我的推荐人</view>
+        <view class="referrer">
+            <image src="{{superiorUserInfo.HeadImgUrl}}"></image>
+            <text class="referrer-name">{{superiorUserInfo.NickName}}</text>
+        </view>
+    </view>
+    <view style="height: 40rpx;"></view>
+</view>

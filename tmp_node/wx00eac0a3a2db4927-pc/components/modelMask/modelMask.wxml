@@ -1,0 +1,34 @@
+<view catchtouchmove="true" wx:if="{{isShowMask}}">
+    <view catchtap="closeMask" class="modelMask {{options?'showMask':'hideMask'}}"></view>
+    <view class="modelContainer flexColumn {{options?'slideUp':'slideDown'}}">
+        <view class="model_title">线下门店</view>
+        <scroll-view scrollY class="modelContent flexColumn">
+            <view class="model_panel flexColumn" style="margin-top: {{index===0?16:0}}rpx;margin-bottom: {{index===shopList.length-1?70:32}}rpx;padding-bottom:{{index===shopList.length-1?10:0}}rpx" wx:for="{{shopList}}" wx:key="index">
+                <view class="shop_info flexRow">
+                    <view class="shop flexRow">
+                        <image class="shop_img" src="{{item.logo}}"></image>
+                        <text class="shop_name">{{item.name}}</text>
+                    </view>
+                    <view bindtap="onNavigation" class="nav flexRow" data-shop="{{item}}">
+                        <image class="nav_img" src="http://oss.shangmian.xin/weixin_applets_shop_navigation.png"></image>
+                        <text class="nav_txt">导航</text>
+                    </view>
+                </view>
+                <view class="hr"></view>
+                <view class="shop_position flexRow">
+                    <image class="pos_img" src="http://oss.shangmian.xin/weixin_applets_icon_position.png"></image>
+                    <text class="pos_txt">{{item.addressDetail}}</text>
+                    <text class="distance_txt" wx:if="{{item.distance}}">{{item.distance}}km</text>
+                    <image class="distance_img" src="http://oss.shangmian.xin/weixin_applets_icon_distance.png"></image>
+                </view>
+                <view class="shop_contact flexRow">
+                    <view class="tel_info flexRow">
+                        <image class="tel_img" src="http://oss.shangmian.xin/weixin_applets_icon_telephone.png"></image>
+                        <text class="tel">{{item.phone}}</text>
+                    </view>
+                    <view bindtap="callPhone" class="tel_txt" data-phone="{{item.phone}}">立即联系</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

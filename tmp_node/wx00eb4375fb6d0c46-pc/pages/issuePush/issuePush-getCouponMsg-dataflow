@@ -1,0 +1,17 @@
+// \pages/issuePush/issuePush getCouponMsg Data Flow
+digraph {
+	"09acc2cbece04af09adbc7f8f77fa3d2" [label="FunctionCall,
+function name -> getCouponMsg,
+param -> " color=blue]
+	"37541adf96eb4712b182f6bc8fa21523" [label=VariableDeclarations color=blue]
+	e223f13a223e48e9b11cfdfde59c9c36 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"86e9efc09d204868a984f7c400f054e8" [label="Object Properties
+{
+couponsId -> this.data.couponsId
+}" color=blue]
+	e223f13a223e48e9b11cfdfde59c9c36 -> "86e9efc09d204868a984f7c400f054e8"
+	"37541adf96eb4712b182f6bc8fa21523" -> e223f13a223e48e9b11cfdfde59c9c36
+	"09acc2cbece04af09adbc7f8f77fa3d2" -> "37541adf96eb4712b182f6bc8fa21523"
+}

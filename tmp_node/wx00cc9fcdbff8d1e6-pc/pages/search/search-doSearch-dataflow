@@ -1,0 +1,40 @@
+// \pages/search/search doSearch Data Flow
+digraph {
+	"0443e5e268b448ad9ad3c1a3abe34353" [label="FunctionCall,
+function name -> doSearch,
+param -> " color=blue]
+	"392cf30fd06743b5a1f8b1f1a0b6857b" [label=VariableDeclarations color=blue]
+	c42953dafb9c4d759d0e76aebad38253 [label="VariableDeclarator,
+left -> t,
+right -> this.data.searchValue" color=blue]
+	"392cf30fd06743b5a1f8b1f1a0b6857b" -> c42953dafb9c4d759d0e76aebad38253
+	"0443e5e268b448ad9ad3c1a3abe34353" -> "392cf30fd06743b5a1f8b1f1a0b6857b"
+	"2179955a069d42b692a8d5660c66267c" [label="ConditionalExpression,
+ conditional list -> this.setData" color=blue]
+	b105b7e5666d42f3878b79bc175268d6 [label=SequenceExpression color=blue]
+	"41fd3407bb004facbbd6c6999f4db20c" [label="CallExpression,
+callee name -> this.searchProductData,
+param -> " color=blue]
+	"96257feef9684612b5b1f10d48444b38" [label="FunctionCall,
+function name -> searchProductData,
+param -> " color=blue]
+	d42a976a58d146ffb446a083e222b49c [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	e7eaba243441407381e730d0b3229b0c [label="Object Properties
+{
+keyword -> a.data.searchValue
+page -> a.data.page
+}" color=blue]
+	d42a976a58d146ffb446a083e222b49c -> e7eaba243441407381e730d0b3229b0c
+	"96257feef9684612b5b1f10d48444b38" -> d42a976a58d146ffb446a083e222b49c
+	"41fd3407bb004facbbd6c6999f4db20c" -> "96257feef9684612b5b1f10d48444b38"
+	b105b7e5666d42f3878b79bc175268d6 -> "41fd3407bb004facbbd6c6999f4db20c"
+	"445afb7b0cca46e2ad4844f70b9a9fa7" [label="CallExpression,
+callee name -> this.getOrSetSearchHistory,
+param -> t,
+" color=blue]
+	b105b7e5666d42f3878b79bc175268d6 -> "445afb7b0cca46e2ad4844f70b9a9fa7"
+	"2179955a069d42b692a8d5660c66267c" -> b105b7e5666d42f3878b79bc175268d6
+	"0443e5e268b448ad9ad3c1a3abe34353" -> "2179955a069d42b692a8d5660c66267c"
+}

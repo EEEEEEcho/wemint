@@ -1,0 +1,17 @@
+// \pages/returngoods/returngoods onReturnReasonInput Data Flow
+digraph {
+	cb9cfdb954f245c5ae07312dd2b32663 [label="FunctionCall,
+function name -> onReturnReasonInput,
+param -> t.,
+t,
+" color=blue]
+	"427eedabcc6f44f3b0c12fdbccbdfb3b" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	e25e8a7754044405a2476713159ff26f [label="Object Properties
+{
+ReturnReason -> t.detail.value
+}" color=blue]
+	"427eedabcc6f44f3b0c12fdbccbdfb3b" -> e25e8a7754044405a2476713159ff26f
+	cb9cfdb954f245c5ae07312dd2b32663 -> "427eedabcc6f44f3b0c12fdbccbdfb3b"
+}

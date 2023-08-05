@@ -1,0 +1,67 @@
+// \pages/video/video switchVideo Data Flow
+digraph {
+	b9ce15fafdea46d5ac5f3363d713a416 [label="FunctionCall,
+function name -> switchVideo,
+param -> e,
+e.,
+" color=blue]
+	"93547a3f60d7439faa5696fc875fd649" [label="CallExpression,
+callee name -> console.log,
+param -> e.currentTarget,
+" color=blue]
+	b9ce15fafdea46d5ac5f3363d713a416 -> "93547a3f60d7439faa5696fc875fd649"
+	f4f29df949c44d96b8632df93fbe6587 [label=VariableDeclarations color=blue]
+	fae02678df1e46c9a48d0576f6513c15 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"4dbb1f4671184ff6b0ab75b73df2bb17" [label="Object Properties
+{
+videoUrl -> e.currentTarget.dataset.video.videoUrl
+}" color=blue]
+	fae02678df1e46c9a48d0576f6513c15 -> "4dbb1f4671184ff6b0ab75b73df2bb17"
+	f4f29df949c44d96b8632df93fbe6587 -> fae02678df1e46c9a48d0576f6513c15
+	b9ce15fafdea46d5ac5f3363d713a416 -> f4f29df949c44d96b8632df93fbe6587
+	d3bda2b62cf54aab81c1040b70ebd64a [label=SequenceExpression color=blue]
+	"1610814b8bf843fca98f5b1371bfaf57" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"8868c258b9fe460287acf00e3169857b" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	"855fbe67042f40ec865488d0418cc385" [label="Object Properties
+{
+source -> e.currentTarget.dataset.video.videoUrl
+}" color=blue]
+	dad5964fc24d448ca198b28d5098e8ba [label="ConditionalExpression,
+ conditional list -> e.currentTarget.dataset.video.showTime" color=blue]
+	"855fbe67042f40ec865488d0418cc385" -> dad5964fc24d448ca198b28d5098e8ba
+	e255633fd90e4ee1a671f9f45c6139c1 [label="ConditionalExpression,
+ conditional list -> e.currentTarget.dataset.video.showWeather" color=blue]
+	"855fbe67042f40ec865488d0418cc385" -> e255633fd90e4ee1a671f9f45c6139c1
+	"8868c258b9fe460287acf00e3169857b" -> "855fbe67042f40ec865488d0418cc385"
+	"1610814b8bf843fca98f5b1371bfaf57" -> "8868c258b9fe460287acf00e3169857b"
+	"1546b8e8980147f196f2ac783b54069a" [label=SequenceExpression color=blue]
+	"92c86e152a8a4cf59592d2f10b8d7a25" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	"90859fb511bb439e801558749bd0c957" [label="Object Properties
+{
+currentFlag -> e.currentTarget.dataset.id
+source -> e.currentTarget.dataset.video.videoUrl
+}" color=blue]
+	"13e30e1ac79846238a237a15b0d2b9d5" [label="ConditionalExpression,
+ conditional list -> e.currentTarget.dataset.video.showTime" color=blue]
+	"90859fb511bb439e801558749bd0c957" -> "13e30e1ac79846238a237a15b0d2b9d5"
+	d8b20245888b49f9951feae1330933c7 [label="ConditionalExpression,
+ conditional list -> e.currentTarget.dataset.video.showWeather" color=blue]
+	"90859fb511bb439e801558749bd0c957" -> d8b20245888b49f9951feae1330933c7
+	"92c86e152a8a4cf59592d2f10b8d7a25" -> "90859fb511bb439e801558749bd0c957"
+	"1546b8e8980147f196f2ac783b54069a" -> "92c86e152a8a4cf59592d2f10b8d7a25"
+	"1610814b8bf843fca98f5b1371bfaf57" -> "1546b8e8980147f196f2ac783b54069a"
+	d3bda2b62cf54aab81c1040b70ebd64a -> "1610814b8bf843fca98f5b1371bfaf57"
+	"7b2422c1b3804ed482c4286ad89f926a" [label="CallExpression,
+callee name -> console.log,
+param -> e.currentTarget.dataset.id,
+" color=blue]
+	d3bda2b62cf54aab81c1040b70ebd64a -> "7b2422c1b3804ed482c4286ad89f926a"
+	b9ce15fafdea46d5ac5f3363d713a416 -> d3bda2b62cf54aab81c1040b70ebd64a
+}

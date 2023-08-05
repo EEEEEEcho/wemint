@@ -1,0 +1,20 @@
+<navigate bindsearchHistory="onSearchHistory" cartPage="{{cartPage}}"></navigate>
+<view style="margin-top: {{navH+status+10}}px;">
+    <view class="record">
+        <view class="hot">
+            <text class="hot_title">热门搜索</text>
+            <view class="hot_label">
+                <view bindtap="onTabSearch" class="label" data-item="{{item}}" wx:for="{{searchList}}">{{item}}</view>
+            </view>
+        </view>
+        <view class="history" wx:if="{{searchHistory.length>0}}">
+            <view class="history_headline">
+                <text class="history_title">历史搜索</text>
+                <image bindtap="clearHistory" class="waste" src="http://oss.shangmian.xin/weixin_applets_icon_waste.png"></image>
+            </view>
+            <view class="history_label">
+                <view bindtap="onTabSearch" class="label" data-item="{{item}}" wx:for="{{searchHistory}}">{{item}}</view>
+            </view>
+        </view>
+    </view>
+</view>

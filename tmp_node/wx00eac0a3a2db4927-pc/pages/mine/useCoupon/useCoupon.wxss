@@ -1,0 +1,127 @@
+page {
+    background-color: #f4f4f4;
+}
+
+.use_coupon_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.introduce {
+    font-size: 28rpx;
+    color: #51515c;
+    text-align: right;
+    margin: 40rpx 34rpx 0 0;
+}
+
+.coupon_group {
+    width: 100%;
+    padding-bottom: 100rpx;
+}
+
+.coupon {
+    width: 680rpx;
+    height: 220rpx;
+    margin-left: 35rpx;
+    position: relative;
+    margin-top: 31rpx;
+}
+
+.coupon_image {
+    height: 220rpx;
+    width: 680rpx;
+}
+
+.coupon_img {
+    height: 220rpx;
+    width: 680rpx;
+}
+
+.coupon_info {
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 40rpx;
+    margin-right: 33rpx;
+    width: 600rpx;
+    position: absolute;
+    top: 38rpx;
+    left: 0;
+}
+
+.info_detail {
+    width: 440rpx;
+}
+
+.coupon_detail {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.coupon_title {
+    font-size: 28rpx;
+    color: #51515c;
+}
+
+.coupon_type {
+    font-size: 20rpx;
+    color: #5fabf2;
+    border: 1rpx solid #5fabf2;
+    border-radius: 24rpx;
+    text-align: center;
+    line-height: 32rpx;
+    height: 32rpx;
+    padding: 0rpx 8rpx;
+}
+
+.coupon_price {
+    align-items: center;
+    margin-top: 4rpx;
+}
+
+.price_pre {
+    color: #5fabf2;
+    margin-top: 14rpx;
+}
+
+.price {
+    font-size: 49rpx;
+    color: #5fabf2;
+}
+
+.coupon_require,.coupon_expire {
+    font-size: 22rpx;
+    color: #51515c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.info_checked_img {
+    height: 60rpx;
+    width: 60rpx;
+}
+
+.tip {
+    font-size: 26rpx;
+    color: #999999;
+    text-align: center;
+    margin-top: 50rpx;
+    width: 100%;
+}
+
+.cancel {
+    width: 750rpx;
+    height: 97rpx;
+    background: #fff;
+    font-size: 36rpx;
+    color: #5fabf2;
+    text-align: center;
+    line-height: 97rpx;
+    border-top: 1rpx solid #e5e5e5;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}

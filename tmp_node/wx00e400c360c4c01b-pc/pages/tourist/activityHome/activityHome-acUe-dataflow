@@ -1,0 +1,28 @@
+// \pages/tourist/activityHome/activityHome acUe Data Flow
+digraph {
+	"71882ca303ae4d44ade3152d4ad21f91" [label="FunctionCall,
+function name -> acUe,
+param -> a.,
+a,
+" color=blue]
+	"29e091f5aff94022becdcc7bde52d7e2" [label="CallExpression,
+callee name -> t.collectFomrId,
+param -> a.detail.formId,
+" color=blue]
+	"71882ca303ae4d44ade3152d4ad21f91" -> "29e091f5aff94022becdcc7bde52d7e2"
+	"66646e453ea5488788f158a1e3bee738" [label=VariableDeclarations color=blue]
+	"79a2c363219f4fa1a1df4805e212a154" [label="VariableDeclarator,
+left -> e,
+right -> a.detail.target.dataset.alias" color=blue]
+	"66646e453ea5488788f158a1e3bee738" -> "79a2c363219f4fa1a1df4805e212a154"
+	"71882ca303ae4d44ade3152d4ad21f91" -> "66646e453ea5488788f158a1e3bee738"
+	"400ab5a2d3fc42dba026822d140ec491" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	e022dadfc9c2431598c70fa248578245 [label="Object Properties
+{
+url -> '../acUe/acUe?alias=' + e
+}" color=blue]
+	"400ab5a2d3fc42dba026822d140ec491" -> e022dadfc9c2431598c70fa248578245
+	"71882ca303ae4d44ade3152d4ad21f91" -> "400ab5a2d3fc42dba026822d140ec491"
+}

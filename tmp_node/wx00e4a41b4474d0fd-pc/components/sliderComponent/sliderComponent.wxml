@@ -1,0 +1,8 @@
+<view class="range-slider" style="width:{{width}}rpx;height:{{height}}rpx">
+    <view class="range-bar" style="width:100%;height:{{barHeight}}rpx">
+        <view class="range-bar-bg" style="background-color:{{backgroundColor}}"></view>
+        <view class="range-bar-progress" style="margin-left:{{progressBarLeft}}rpx;width:{{progressBarWidth}}rpx;background-color:{{activeColor}}"></view>
+    </view>
+    <view catch:touchend="_onBlockTouchEnd" catch:touchmove="_onBlockTouchMove" catch:touchstart="_onBlockTouchStart" class="block" data-left="{{minBlockLeft}}" data-tag="minBlock" id="blockLeft" style="width:{{blockSize}}rpx;height:{{blockSize}}rpx;margin-left:{{minBlockLeft}}rpx;"></view>
+    <view catch:touchend="_onBlockTouchEnd" catch:touchmove="_onBlockTouchMove" catch:touchstart="_onBlockTouchStart" class="block" data-left="{{maxBlockLeft}}" data-tag="maxBlock" id="blockRight" style="width:{{blockSize}}rpx;height:{{blockSize}}rpx;margin-left:{{maxBlockLeft}}rpx;"></view>
+</view>

@@ -1,0 +1,19 @@
+// \pages/shop/collection SaveChcekValue Data Flow
+digraph {
+	"0d781abb5a7843d4910e52cdb50bdfd9" [label="FunctionCall,
+function name -> SaveChcekValue,
+param -> t,
+t.,
+" color=blue]
+	"9ebd6003c9d04ff78f22c155139322d4" [label="If Alternate" color=blue]
+	"0a91e9125a114cdda1cd488026f5eb38" [label="CallExpression,
+callee name -> e.data.newList.List.forEach,
+param -> " color=blue]
+	f1dae51d9670429ab5aca1b4de299238 [label="FunctionCall,
+function name -> Anonymous Function,
+param -> t,
+" color=blue]
+	"0a91e9125a114cdda1cd488026f5eb38" -> f1dae51d9670429ab5aca1b4de299238
+	"9ebd6003c9d04ff78f22c155139322d4" -> "0a91e9125a114cdda1cd488026f5eb38"
+	"0d781abb5a7843d4910e52cdb50bdfd9" -> "9ebd6003c9d04ff78f22c155139322d4"
+}

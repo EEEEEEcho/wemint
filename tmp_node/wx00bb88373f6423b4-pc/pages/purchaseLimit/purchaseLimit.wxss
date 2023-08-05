@@ -1,0 +1,325 @@
+page {
+    background: #f4f4f4;
+}
+
+.puzzle {
+    height: 322rpx;
+    width: 100%;
+    overflow: hidden;
+}
+
+.puzzle image {
+    width: 100%;
+}
+
+.txt-img image {
+    width: 340rpx;
+    height: 340rpx;
+}
+
+.kaiTuan {
+    height: 40rpx;
+    line-height: 42rpx;
+    display: block;
+    width: 90rpx;
+    text-align: center;
+    border-radius: 28rpx;
+}
+
+.puzzle_list {
+    height: 96rpx;
+    font-size: 24rpx;
+    background: #444;
+    box-sizing: border-box;
+    width: 170rpx;
+    display: inline-block;
+    text-align: center;
+    line-height: 36rpx;
+    position: relative;
+}
+
+.puzzle_list .borderRight {
+    width: 2rpx;
+    height: 48rpx;
+    background-color: rgba(147,147,147,.3);
+    position: absolute;
+    right: 0;
+    top: 24rpx;
+}
+
+.puzzle_list .day_time {
+    margin-top: 13rpx;
+    display: block;
+}
+
+.puzzle_list.active {
+    background: #ff4c5b;
+}
+
+.puzzle_list.hasend {
+    background: #ddd;
+}
+
+.puzzle_list.hasend text {
+    color: #666;
+}
+
+.meal-time-list {
+    position: fixed;
+    top: 0;
+    background: #fff;
+    z-index: 4;
+    height: 96rpx;
+    width: 100%;
+    font-size: 16px;
+    color: #fff;
+    background: #444;
+    white-space: nowrap;
+}
+
+.puzzle_list text {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.puzzle-time {
+    height: 110rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.puzzle-time .puzzle-time-txt {
+    height: 44rpx;
+    line-height: 44rpx;
+    text-align: center;
+    margin-right: 4rpx;
+}
+
+.txt-img {
+    position: relative;
+    height: 309rpx;
+    overflow: hidden;
+}
+
+.txt-shu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    padding: 5rpx 14rpx;
+}
+
+.time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time text {
+    display: inline-block;
+    height: 38rpx;
+    width: 44rpx;
+    line-height: 38rpx;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    border-radius: 4rpx;
+    margin-right: 10rpx;
+    margin-left: 10rpx;
+    font-size: 26rpx;
+}
+
+.time text.overThree {
+    width: 63rpx;
+}
+
+.act_pro_list .act_pro_item {
+    width: 100%;
+    padding: 0 26rpx;
+    box-sizing: border-box;
+    margin-bottom: 20rpx;
+}
+
+.act_pro_list .act_pro_item .act_pro_inner {
+    display: flex;
+    flex-direction: row;
+    padding: 20rpx;
+    position: relative;
+    background-color: #fff;
+}
+
+.act_pro_list .act_pro_item .act_img_box {
+    width: 220rpx;
+    height: 220rpx;
+    margin-right: 20rpx;
+}
+
+.act_pro_list .act_pro_item .act_img_box image {
+    width: 220rpx;
+    height: 220rpx;
+}
+
+.act_pro_list .act_pro_item .act_desc_box {
+    flex: 1;
+    padding: 16rpx 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.act_pro_list .act_pro_item .act_desc_box .title {
+    color: #333;
+    font-size: 30rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 430rpx;
+    margin-bottom: 4rpx;
+}
+
+.act_pro_list .act_pro_item .act_desc_box .desc {
+    color: #999;
+    font-size: 24rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 430rpx;
+    margin-bottom: 6rpx;
+}
+
+.act_pro_list .act_pro_item .act_desc_box .price_box .price_now {
+    font-size: 30rpx;
+    color: #ff4c5b;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 20rpx;
+}
+
+.act_pro_list .act_pro_item .act_desc_box .price_box .price_old {
+    font-size: 24rpx;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.act_pro_list .act_pro_item .act_desc_box .price_box .price_end {
+    font-size: 30rpx;
+    color: #999;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 20rpx;
+}
+
+.act_pro_list .act_pro_item .act_desc_box .bottom_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 16rpx;
+    width: 96%;
+}
+
+.act_pro_list .act_pro_item .act_desc_box .bottom_box .sell_box {
+    width: 208rpx;
+    position: absolute;
+    bottom: 0;
+}
+
+.act_pro_list .act_pro_item .act_desc_box .bottom_box .sell_box .has_sell {
+    color: #999;
+    font-size: 20rpx;
+    text-align: left;
+    margin-bottom: 8rpx;
+}
+
+.act_pro_list .act_pro_item .act_desc_box .bottom_box .sell_box .sell_progress {
+    background-color: #ddd;
+    height: 10rpx;
+    border-radius: 10rpx;
+    position: relative;
+}
+
+.act_pro_list .act_pro_item .act_desc_box .bottom_box .sell_box .sell_pro_content {
+    background: linear-gradient(to right,#fc8127 0%,#fe2869 100%);
+    width: 50%;
+    height: 10rpx;
+    border-radius: 5rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.act_pro_list .act_pro_item .act_desc_box .bottom_box .buynow {
+    color: #fff;
+    font-size: 26rpx;
+    width: 150rpx;
+    height: 56rpx;
+    background: linear-gradient(to right,#ff6771 0%,#ff4b58 100%);
+    line-height: 56rpx;
+    text-align: center;
+    border-radius: 28rpx;
+    position: absolute;
+    right: 0;
+    top: -56rpx;
+}
+
+.act_pro_list .act_pro_item .act_desc_box .bottom_box .buyend {
+    color: #fff;
+    font-size: 26rpx;
+    width: 150rpx;
+    height: 56rpx;
+    background: #bcbcbc;
+    line-height: 56rpx;
+    text-align: center;
+    border-radius: 28rpx;
+    position: absolute;
+    right: 0;
+    top: -56rpx;
+}
+
+.act_pro_list .act_pro_item .act_desc_box .bottom_box .notbegin {
+    color: #ff4c5b;
+    font-size: 26rpx;
+    width: 150rpx;
+    height: 56rpx;
+    background: #ffedee;
+    line-height: 56rpx;
+    text-align: center;
+    border-radius: 28rpx;
+    position: absolute;
+    right: 0;
+    top: -56rpx;
+}
+
+.noMore {
+    display: flex;
+    flex-direction: row;
+    width: 284rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 0 auto;
+    padding-left: 32rpx;
+    margin-bottom: 34rpx;
+}
+
+.noMore .line {
+    width: 56rpx;
+    height: 2rpx;
+    background-color: #bbb;
+    position: relative;
+    top: 40rpx;
+}
+
+.noMore .text {
+    color: #bbb;
+    font-size: 22rpx;
+    margin: 0 20rpx;
+}
+
+.puzzle-item.OnlyPro {
+    margin-bottom: 64rpx;
+}

@@ -1,0 +1,93 @@
+<import src="../common/templeates.wxml"></import>
+<view class="homecont">
+    <view class="search-box">
+        <view class="search-l">
+            <image src="/images/default_03.jpg"></image>
+        </view>
+        <view class="search">
+            <input bindblur="bindBlurInput" bindconfirm="bindConfirmSearchInput" bindfocus="gotoKeyWordPage" bindinput="bindSearchInput" class="text" confirmType="search" placeholder="搜索你的最爱" type="text"></input>
+            <icon bindtap="bindSearchAction" class="icon" color="#000" size="14" type="search"></icon>
+        </view>
+    </view>
+    <template is="{{'temp_'+item.type}}" data="{{...item,RequestUrl:RequestUrl}}" wx:for="{{TopicData}}" wx:key="id"></template>
+    <view class="page-section merchandise">
+        <view class="page-section-title">
+            <text class="iconfont icon-aixin"></text>
+            <text>商品精选</text>
+        </view>
+        <view class="prodcut-list">
+            <view class="prodcut-comm">
+                <view bindtap="bindGoodsTap" class="prodcut" data-activeid="{{item.ActiveId}}" data-activetype="{{item.ActiveType}}" data-productid="{{item.ProductId}}" wx:for="{{choiceProducts}}" wx:for-index="idx" wx:key="goodcont">
+                    <view class="product-info">
+                        <view class="product-pic">
+                            <image class="image" src="{{item.ThumbnailUrl160}}" style="width:320rpx;height:320rpx"></image>
+                        </view>
+                        <view class="product-des">
+                            <view class="product-name">{{item.ProductName}}</view>
+                            <view class="product-into">
+                                <view class="product-price">￥<text>{{item.SalePrice}}</text>
+                                </view>
+                                <view class="product-shop">
+                                    <view class="product-add">+
+                      <view hidden="{{item.CartQuantity<=0}}">{{item.CartQuantity}}</view>
+                                    </view>
+                                    <view class="product-buy" hidden="true">
+                                        <view class="l">-</view>
+                                        <input class="m" type="text" value="0"></input>
+                                        <view class="r">+</view>
+                                    </view>
+                                </view>
+                                <view class="product-add" hidden="true">+<view class="product-add-num">{{item.CartQuantity}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="comm-stand" hidden="true">
+        <view class="comm-stand-con">
+            <view class="comm-name">UCC 悠诗诗 117速溶咖啡 90克…</view>
+            <view class="comm-icon">
+                <image src="/images/colse_03.jpg"></image>
+            </view>
+            <view class="comm-bd">
+                <view class="comm-item">
+                    <view class="comm-title">颜色</view>
+                    <view class="comm-attr">
+                        <text>红色</text>
+                        <text class="active">红色</text>
+                        <text>红色</text>
+                        <text>红色</text>
+                    </view>
+                </view>
+                <view class="comm-item">
+                    <view class="comm-title">尺寸</view>
+                    <view class="comm-attr">
+                        <text>红色</text>
+                        <text>红色</text>
+                        <text>红色</text>
+                        <text>红色</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="comm-stand-shop">
+            <view class="product-into">
+                <view class="product-price">￥<text>6544</text>
+                </view>
+                <view class="product-shop">
+                    <view class="product-add">+
+                          <view>0</view>
+                    </view>
+                    <view class="product-buy" hidden="true">
+                        <view class="l">-</view>
+                        <input class="m" type="text" value="0"></input>
+                        <view class="r">+</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

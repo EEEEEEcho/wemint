@@ -1,0 +1,163 @@
+<view class="container">
+    <view class="orderinfo-img">
+        <view>{{orderinfo.Status}}</view>
+        <view class="orderinfo-imgs" wx:if="{{orderinfo.Status=='未付款'}}">
+            <image src="{{baseUrl}}/images/wxapp/orderdetail_03.png"></image>
+        </view>
+        <view class="orderinfo-imgs" wx:if="{{orderinfo.Status=='等待买家收货'}}">
+            <image src="{{baseUrl}}/images/wxapp/orderdetail_07.png"></image>
+        </view>
+        <view class="orderinfo-imgs" wx:if="{{orderinfo.Status=='等待卖家发货'}}">
+            <image src="{{baseUrl}}/images/wxapp/orderdetail_05.png"></image>
+        </view>
+        <view class="orderinfo-imgs" wx:if="{{orderinfo.Status=='已完成'}}">
+            <image src="{{baseUrl}}/images/wxapp/orderdetail_09.png"></image>
+        </view>
+    </view>
+    <view class="address">
+        <view class="iconfont icon-iconfont_location"></view>
+        <view class="address-tit">
+            <view class="address-tit-s">
+                <text class="tit">{{orderinfo.Contact}}</text>
+                <text class="tit-s">{{orderinfo.Mobile}}</text>
+            </view>
+            <view class="address-tit-c">
+          {{orderinfo.Address}}
+        </view>
+        </view>
+    </view>
+    <view class="customer-service">
+        <text class="iconfont icon-iconfont_contact"></text>
+        <contact-button sessionFrom="weapp" size="20" type="default-dark"></contact-button>
+        <text class="customer-service-fu">联系客服</text>
+    </view>
+    <view class="order-list" wx:for="{{orderinfo.ProductList}}" wx:for-index="idx" wx:key="id">
+        <view class="order-list-item">
+            <view class="pro-img">
+                <image mode="widthFix" src="{{baseUrl}}/comdata/{{siteID}}/product/{{item.Image}}"></image>
+            </view>
+            <view class="protext  {{orderinfo.ProductList.length-1!=idx?'border1px':''}}">
+                <view class="pro-name">{{item.ProductName}}</view>
+                <view class="pro-jiange">
+                    <text class="guige">{{item.ProAttrStr}}</text>
+                    <text class="chima">x{{item.ProductNum}}</text>
+                </view>
+                <view class="pro-Price">
+                    <text class="selling-price">￥{{item.ProductPrice}}</text>
+                    <text class="market-value">￥{{item.MarketPrice}}</text>
+                </view>
+                <view bindtap="goRefunds" class="refund-status" data-orderid="{{orderinfo.OrderID}}" data-pkey="{{item.Pkey}}" style="display:{{orderinfo.Status=='未付款'||orderinfo.Status=='交易关闭'||orderinfo.groupp_Status==1?'none ':'block'}}" wx:if="{{!item.hasrefunds}}">
+                    <text>退款</text>
+                </view>
+                <view bindtap="goRefundsWuliu" class="refund-status" data-orderid="{{orderinfo.OrderID}}" data-pkey="{{item.Pkey}}" wx:elif="{{item.RefundStatus==3}}">
+                    <text>同意退款</text>
+                </view>
+                <view wx:elif="{{item.hasrefunds}}">
+                    <view class="refund-status" wx:if="{{item.RefundStatus==0}}">
+                        <text bindtap="" data-orderid="{{orderinfo.OrderID}}" data-pkey="{{item.Pkey}}">商家审核中</text>
+                    </view>
+                    <view bindtap="goRefundsuc" class="refund-status" data-orderid="{{orderinfo.OrderID}}" data-pkey="{{item.Pkey}}" wx:elif="{{item.RefundStatus==1}}">
+                        <text>退款成功</text>
+                    </view>
+                    <view bindtap="goRefundfail" class="refund-status" data-orderid="{{orderinfo.OrderID}}" data-pkey="{{item.Pkey}}" wx:elif="{{item.RefundStatus==2}}">
+                        <text>退款失败</text>
+                    </view>
+                    <view class="refund-status" wx:elif="{{item.RefundStatus==3}}">
+                        <text type="defaule">同意退款 </text>
+                    </view>
+                    <view class="refund-status" wx:elif="{{item.RefundStatus==4}}">
+                        <text bindtap="" data-orderid="{{orderinfo.OrderID}}" data-pkey="{{item.Pkey}}" type="defaule">等待退款</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="order-details">
+        <view class="orders-item border1px">
+            <text class="orders-tit">
+                <text>买家留言 : </text>
+            </text>
+            <text class="color">{{orderinfo.OrderInfo.Remark}}</text>
+        </view>
+        <view class="orders-item border1px">
+            <text class="orders-tit">
+                <text>快递运费 : </text>
+            </text>
+            <text class="orders-tit-item">￥{{orderinfo.OrderInfo.FreightMoney}}</text>
+        </view>
+        <view class="orders-item border1px" style="display:{{orderinfo.OrderType==20?'none':''}}">
+            <text class="orders-tit">
+                <text>优惠券抵扣 : </text>
+                <text>{{orderinfo.OrderInfo.Title==null?'':orderinfo.OrderInfo.Title}}</text>
+            </text>
+            <text class="orders-tit-item">￥{{orderinfo.OrderInfo.CouponMoney}}</text>
+        </view>
+        <view class="orders-item border1px" style="display:{{orderinfo.OrderType==20?'none':''}}">
+            <text class="orders-tit">
+                <text>积分抵扣 : </text>
+                <text>{{orderinfo.OrderInfo.UsedJiFen==0?'':orderinfo.OrderInfo.UsedJiFen}}</text>
+            </text>
+            <text class="orders-tit-item">￥{{orderinfo.OrderInfo.UsedJiFenMoney}}</text>
+        </view>
+        <view class="orders-item border1px">
+            <text class="orders-tit">
+                <text>实际付费(含运费) : </text>
+            </text>
+            <text class="orders-tit-item">￥{{orderinfo.OrderInfo.countmoney}}</text>
+        </view>
+    </view>
+    <view class="order-number">
+        <view>订单编号：{{orderinfo.OrderID}}</view>
+        <view>交易码：42586338899654899</view>
+        <view>创建时间：{{orderinfo.OrderInfo.CrTime}}</view>
+        <view>成交时间：{{orderinfo.OrderInfo.PayTime==null?'':orderinfo.OrderInfo.PayTime}}</view>
+    </view>
+    <view class="button-item" wx:if="{{orderinfo.Status=='未付款'}}">
+        <text bindtap="showPaymentPlug" class="other-button-item other-button-color" data-orderid="{{orderinfo.OrderID}}" type="defaule">去付款</text>
+    </view>
+    <view class="button-item" wx:elif="{{orderinfo.Status=='等待卖家发货'}}"></view>
+    <view class="button-item" wx:elif="{{orderinfo.Status=='已付款，未成团'}}">
+        <text bindtap="goPinTuanDetail" class="other-button-item other-button-color" data-orderid="{{orderinfo.OrderID}}" type="defaule" wx:if="{{orderinfo.OrderType==20}}">邀请好友参团</text>
+    </view>
+    <view class="button-item" wx:elif="{{orderinfo.Status=='已成团，等待卖家发货'}}">
+        <text bindtap="goPinTuanDetail" class="other-button-item other-button-color" data-orderid="{{orderinfo.OrderID}}" type="defaule" wx:if="{{orderinfo.OrderType==20}}">参团情况</text>
+    </view>
+    <view class="button-item" wx:elif="{{orderinfo.Status=='交易关闭'}}">
+        <text bindtap="goPinTuanDetail" class="other-button-item other-button-color" data-orderid="{{orderinfo.OrderID}}" type="defaule" wx:if="{{orderinfo.OrderType==20}}">拼团情况</text>
+    </view>
+    <view class="button-item" wx:elif="{{orderinfo.Status=='等待买家收货'}}">
+        <form bindsubmit="ConfirmReceive" data-orderid="{{orderinfo.OrderID}}" reportSubmit="true">
+            <button class="other-button-item other-button-tit " formType="submit" type="defaule">确认收货</button>
+        </form>
+        <text bindtap="goPinTuanDetail" class="other-button-item other-button-color other-button-tit" data-orderid="{{orderinfo.OrderID}}" style="display:{{orderinfo.OrderType==20?'':'none'}}" type="defaule">拼团情况</text>
+        <text bindtap="goKuaidiUrl" class="other-button-item other-button-color " data-company="{{orderinfo.LogisticsName}}" data-postid="{{orderinfo.InvoiceNo}}" type="defaule">查看物流</text>
+    </view>
+    <view bindtap="closePaymentPlug" class="paymentPlugBg" wx:if="{{paymentPlugShow}}"></view>
+    <view class="paymentPlug {{paymentPlugShow?'showPayment':''}}">
+        <form bindsubmit="Gopay" reportSubmit="true">
+            <view class="paymentWrapper ">
+                <view class="paymentTitle border1px">
+                    <view class="payTitle">付款方式</view>
+                    <text bindtap="closePaymentPlug" class="iconfont closePaymentPlug icon-guanbi-copy"></text>
+                </view>
+                <view class="total-moneyPlug">￥{{orderinfo.OrderInfo.countmoney}}</view>
+                <view catchtap="changePaymentWay" class="paymentBalance border1px" data-paymentFlag="1">
+                    <text class="iconfont balanceIcon icon-yue"></text>
+                    <view class="balanceText {{balanceflagNum?'colorChange':''}}">余额 ￥{{balanceNumber}}
+            <text class="insufficient" wx:if="{{balanceflagNum}}">(余额不足)</text>
+                    </view>
+                    <text class="iconfont icon-duigou selectPayment" style="display:{{paymentFlag==='1'?'flex':'none'}}"></text>
+                </view>
+                <view catchtap="changePaymentWay" class="paymentWx border1px" data-paymentFlag="2">
+                    <text class="iconfont wxIcon icon-weixinzhifu"></text>
+                    <text>微信支付</text>
+                    <text class="iconfont icon-duigou selectPayment" style="display:{{paymentFlag==='2'?'flex':'none'}}"></text>
+                </view>
+                <view class="paymentAffirm">确认
+            <button class="btnsubmit" formType="submit" size="mini" type="default">确认</button>
+                </view>
+            </view>
+        </form>
+    </view>
+</view>
+<include src="/pages/template/floatLayer.wxml"></include>

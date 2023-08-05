@@ -1,0 +1,52 @@
+<view class="container">
+    <view class="balance-info">
+        <view class="balanceimg">
+            <image mode="widthFix" src="{{baseUrl}}/images/wxapp/me-background_04.jpg"></image>
+        </view>
+        <view class="conPrice">
+            <view class="price">
+                <text>{{financelist.Balance}}</text>
+            </view>
+            <view class="conPrice-name">
+                <text>账户余额（元）</text>
+            </view>
+        </view>
+    </view>
+    <view class="data-list">
+        <view bindtap="buttonClicked" class="recharge {{canWithdraw==1?'border1px':''}}">
+            <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/shop/recharge?codee=0">
+                <view class="other-content">
+                    <view class="other-left">
+                        <icon class="iconfont icon-chongzhi"></icon>
+                        <text>充值</text>
+                    </view>
+                    <icon class="other-icon iconfont icon-iconfont_arrow-right"></icon>
+                </view>
+            </navigator>
+        </view>
+        <view bindtap="buttonClicked" class="withdraw-deposit" wx:if="{{canWithdraw==1}}">
+            <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/shop/withdrawal?status=1">
+                <view class="other-content">
+                    <view class="other-left">
+                        <icon class="iconfont icon-tixian"></icon>
+                        <text>提现</text>
+                    </view>
+                    <icon class="other-icon iconfont icon-iconfont_arrow-right"></icon>
+                </view>
+            </navigator>
+        </view>
+        <view class="data-list-line"></view>
+        <view bindtap="buttonClicked" class="current-account">
+            <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/shop/userfinance?statu=1">
+                <view class="other-content">
+                    <view class="other-left">
+                        <icon class="iconfont icon-iconfont_liushui"></icon>
+                        <text>财务流水</text>
+                    </view>
+                    <icon class="other-icon iconfont icon-iconfont_arrow-right"></icon>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>
+<include src="/pages/shop/UserReg.wxml"></include>

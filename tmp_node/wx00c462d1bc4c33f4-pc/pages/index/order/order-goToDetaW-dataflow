@@ -1,0 +1,75 @@
+// \pages/index/order/order goToDetaW Data Flow
+digraph {
+	"9f5b41d8251242e583ee994a910200fc" [label="FunctionCall,
+function name -> goToDetaW,
+param -> r.,
+r,
+" color=blue]
+	f53b4c8595df45289fe7fa087390f2cb [label=VariableDeclarations color=blue]
+	fddd655c9c784477859bde0a65bffb5d [label="VariableDeclarator,
+left -> t,
+right -> r.currentTarget.dataset.id" color=blue]
+	f53b4c8595df45289fe7fa087390f2cb -> fddd655c9c784477859bde0a65bffb5d
+	"085e29389f874428ae7e9f22e628f1b8" [label="VariableDeclarator,
+left -> a,
+right -> r.currentTarget.dataset.orderState" color=blue]
+	f53b4c8595df45289fe7fa087390f2cb -> "085e29389f874428ae7e9f22e628f1b8"
+	"9f5b41d8251242e583ee994a910200fc" -> f53b4c8595df45289fe7fa087390f2cb
+	ebdca184e1f244dd965625d66cfd746b [label="If Alternate" color=blue]
+	e63bccb8368c44908bb49fb9566fd16a [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	e8abcb9ad01d4211a825f8f54f4be562 [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	a9dcd5b8e9864e12ae2a04e3ed93ffc2 [label="Object Properties
+{
+url -> 'evalOrder/bohuiOrder/bohuiOrder?orderId=' + t + '&orderType=W&orderState=6'
+}" color=blue]
+	e8abcb9ad01d4211a825f8f54f4be562 -> a9dcd5b8e9864e12ae2a04e3ed93ffc2
+	e63bccb8368c44908bb49fb9566fd16a -> e8abcb9ad01d4211a825f8f54f4be562
+	b5ee3a83893c423e8da98bbff4b6416e [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"6e38aeec5ccb450e97100a0c4441b26a" [label="CallExpression,
+callee name -> e.getPayBackInfo,
+param -> r,
+" color=blue]
+	b5ee3a83893c423e8da98bbff4b6416e -> "6e38aeec5ccb450e97100a0c4441b26a"
+	"2a24b87db0cb434f9b01b67afef21e44" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"876ae445c3dd4a62ad41fbe094ec89d5" [label="CallExpression,
+callee name -> e.resumePayBack,
+param -> r,
+" color=blue]
+	"2a24b87db0cb434f9b01b67afef21e44" -> "876ae445c3dd4a62ad41fbe094ec89d5"
+	"7e8ad694c9dd402294acc406485dc50c" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"4c0aea64a0564bd3af24c81228fbcab3" [label="CallExpression,
+callee name -> e.bohuiReason,
+param -> r,
+" color=blue]
+	"7e8ad694c9dd402294acc406485dc50c" -> "4c0aea64a0564bd3af24c81228fbcab3"
+	"314d3683c2004149bc86b4152f2320fe" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"1add3cbf7a134a56b7b986dce664c780" [label="CallExpression,
+callee name -> e.payBack,
+param -> r,
+" color=blue]
+	"314d3683c2004149bc86b4152f2320fe" -> "1add3cbf7a134a56b7b986dce664c780"
+	c4e9e7d7d6e344b98fa60cbe067755b0 [label=SequenceExpression color=blue]
+	"02fb540a220e46cdb455ecf87034d303" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"07e165f9203541f5bddac7124ad74177" [label="Object Properties
+{
+url -> 'evalOrder/submitOrder/submitOrder?orderId=' + t + '&orderType=W'
+}" color=blue]
+	"02fb540a220e46cdb455ecf87034d303" -> "07e165f9203541f5bddac7124ad74177"
+	c4e9e7d7d6e344b98fa60cbe067755b0 -> "02fb540a220e46cdb455ecf87034d303"
+	"314d3683c2004149bc86b4152f2320fe" -> c4e9e7d7d6e344b98fa60cbe067755b0
+	"7e8ad694c9dd402294acc406485dc50c" -> "314d3683c2004149bc86b4152f2320fe"
+	"2a24b87db0cb434f9b01b67afef21e44" -> "7e8ad694c9dd402294acc406485dc50c"
+	b5ee3a83893c423e8da98bbff4b6416e -> "2a24b87db0cb434f9b01b67afef21e44"
+	e63bccb8368c44908bb49fb9566fd16a -> b5ee3a83893c423e8da98bbff4b6416e
+	ebdca184e1f244dd965625d66cfd746b -> e63bccb8368c44908bb49fb9566fd16a
+	"9f5b41d8251242e583ee994a910200fc" -> ebdca184e1f244dd965625d66cfd746b
+}

@@ -1,0 +1,82 @@
+// \pages/index/index getLocation Data Flow
+digraph {
+	"1fbaa44a282440409b8d56714e35361c" [label="FunctionCall,
+function name -> getLocation,
+param -> " color=blue]
+	"96cecd198bb84e51b4971d5cc109ec31" [label="CallExpression,
+callee name -> wx.getLocation,
+param -> " color=blue]
+	e4edd447adbc4ff99511c00b82f5e122 [label="FunctionCall,
+function name -> success,
+param -> e.,
+e,
+" color=blue]
+	d5202319fd5f40cc9657c988537efbdc [label=SequenceExpression color=blue]
+	"3febfa15943547ac847626b2e430d10b" [label="CallExpression,
+callee name -> console.log,
+param -> e,
+" color=blue]
+	d5202319fd5f40cc9657c988537efbdc -> "3febfa15943547ac847626b2e430d10b"
+	"80853c440e1e45829e3623c971fa65b3" [label="CallExpression,
+callee name -> wx.setStorageSync,
+param -> e,
+" color=blue]
+	d5202319fd5f40cc9657c988537efbdc -> "80853c440e1e45829e3623c971fa65b3"
+	"2e00df408442418298b81438a0c9de04" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	"188783626de04c449217ca5ca9369c32" [label="Object Properties
+{
+latitude -> e.latitude
+longitude -> e.longitude
+}" color=blue]
+	"2e00df408442418298b81438a0c9de04" -> "188783626de04c449217ca5ca9369c32"
+	d5202319fd5f40cc9657c988537efbdc -> "2e00df408442418298b81438a0c9de04"
+	e4edd447adbc4ff99511c00b82f5e122 -> d5202319fd5f40cc9657c988537efbdc
+	c299549a42d64a278bd09499040caf43 [label=VariableDeclarations color=blue]
+	"7733df928b86420fa755599e677b1996" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"7cfc667057e64937a1323502958da61c" [label="CallExpression,
+callee name -> Math.abs,
+param -> e.longitude - 113.3710098267,
+" color=blue]
+	"7733df928b86420fa755599e677b1996" -> "7cfc667057e64937a1323502958da61c"
+	"876d75fec52c4363b0b50c46d0d336d7" [label="CallExpression,
+callee name -> Math.abs,
+param -> e.latitude - 22.9463799362,
+" color=blue]
+	"7733df928b86420fa755599e677b1996" -> "876d75fec52c4363b0b50c46d0d336d7"
+	c299549a42d64a278bd09499040caf43 -> "7733df928b86420fa755599e677b1996"
+	"74eb751a73ec4dfabce577d6bcc3a1c4" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	e0d9095200da42d4bc7aef5dcbeca39b [label="CallExpression,
+callee name -> Math.abs,
+param -> e.longitude - 115.858039856,
+" color=blue]
+	"74eb751a73ec4dfabce577d6bcc3a1c4" -> e0d9095200da42d4bc7aef5dcbeca39b
+	"2a5531749e0c4c88a43551eaa705f51b" [label="CallExpression,
+callee name -> Math.abs,
+param -> e.latitude - 28.6829828023,
+" color=blue]
+	"74eb751a73ec4dfabce577d6bcc3a1c4" -> "2a5531749e0c4c88a43551eaa705f51b"
+	c299549a42d64a278bd09499040caf43 -> "74eb751a73ec4dfabce577d6bcc3a1c4"
+	d52a6d8d4f1f4061b784163ce58c91cc [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	a5cef2ca46ab4d0b85cf1039e0f6a484 [label="CallExpression,
+callee name -> Math.abs,
+param -> e.longitude - 114.41612,
+" color=blue]
+	d52a6d8d4f1f4061b784163ce58c91cc -> a5cef2ca46ab4d0b85cf1039e0f6a484
+	"2a95712467694013ba7be50ee7b6d577" [label="CallExpression,
+callee name -> Math.abs,
+param -> e.latitude - 27.81443,
+" color=blue]
+	d52a6d8d4f1f4061b784163ce58c91cc -> "2a95712467694013ba7be50ee7b6d577"
+	c299549a42d64a278bd09499040caf43 -> d52a6d8d4f1f4061b784163ce58c91cc
+	e4edd447adbc4ff99511c00b82f5e122 -> c299549a42d64a278bd09499040caf43
+	"96cecd198bb84e51b4971d5cc109ec31" -> e4edd447adbc4ff99511c00b82f5e122
+	"1fbaa44a282440409b8d56714e35361c" -> "96cecd198bb84e51b4971d5cc109ec31"
+}

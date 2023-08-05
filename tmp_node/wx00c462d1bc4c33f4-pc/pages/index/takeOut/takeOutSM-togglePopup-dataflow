@@ -1,0 +1,19 @@
+// \pages/index/takeOut/takeOutSM togglePopup Data Flow
+digraph {
+	f665a00239014d68807874cdc351a0e4 [label="FunctionCall,
+function name -> togglePopup,
+param -> e.,
+e,
+" color=blue]
+	"42d3ea2e63cf432bbd85b67f732e70d8" [label=SequenceExpression color=blue]
+	ef04a9543a5148f9a482b1e5d34c32f6 [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	f770453f4d76487988a463b68126d1f2 [label="Object Properties
+{
+data -> e.currentTarget.dataset.foodId
+}" color=blue]
+	ef04a9543a5148f9a482b1e5d34c32f6 -> f770453f4d76487988a463b68126d1f2
+	"42d3ea2e63cf432bbd85b67f732e70d8" -> ef04a9543a5148f9a482b1e5d34c32f6
+	f665a00239014d68807874cdc351a0e4 -> "42d3ea2e63cf432bbd85b67f732e70d8"
+}

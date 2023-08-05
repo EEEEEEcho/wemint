@@ -1,0 +1,43 @@
+.deliveryRule {
+    width: 100%;
+    height: 100vh;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+.deliveryLayout {
+    width: 100%;
+    height: 630rpx;
+    background: #ffffff;
+    border-top-right-radius: 20rpx;
+    border-top-left-radius: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deliveryText {
+    color: #51515c;
+    font-size: 40rpx;
+    letter-spacing: 3rpx;
+    padding: 24rpx 24rpx 0rpx 24rpx;
+}
+
+.deliveryRemark {
+    font-size: 30rpx;
+    line-height: 48rpx;
+    padding: 32rpx 32rpx 24rpx 32rpx;
+}
+
+.deliveryContent {
+    color: #51515c;
+    font-size: 26rpx;
+    padding: 0rpx 32rpx 32rpx 32rpx;
+    line-height: 48rpx;
+}

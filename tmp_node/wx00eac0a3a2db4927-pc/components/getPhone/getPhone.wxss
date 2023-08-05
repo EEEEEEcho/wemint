@@ -1,0 +1,90 @@
+.getPhoneLayout {
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 101;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.popUpWindowsLayout {
+    width: 88%;
+    height: 71.6%;
+    background: #ffffff;
+    border-radius: 20rpx;
+    box-shadow: 0rpx 0rpx 20rpx #f0f0f0;
+    position: relative;
+}
+
+.popUpWindows {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.phoneNumber {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.popUpTitle {
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 38rpx;
+    color: #51515c;
+    letter-spacing: 6rpx;
+    width: 100%;
+    text-align: center;
+    margin-top: 24rpx;
+    font-weight: bold;
+}
+
+.popUpContent {
+    font-size: 28rpx;
+    color: #adadad;
+    padding: 24rpx;
+    letter-spacing: 3rpx;
+    padding: 8rpx 24rpx 1rpx 24rpx;
+}
+
+.popUpRemark {
+    font-size: 28rpx;
+    color: #adadad;
+    padding: 24rpx;
+    letter-spacing: 3rpx;
+    padding: 0rpx 24rpx 48rpx 24rpx;
+}
+
+.remindImage {
+    width: 509rpx;
+    height: 451rpx;
+}
+
+.sure {
+    width: 76%;
+    height: 84rpx;
+    text-align: center;
+    position: relative;
+    border-radius: 42rpx;
+    margin: 56rpx 0;
+    line-height: 84rpx;
+    border-radius: 42rpx;
+    font-size: 35rpx;
+    letter-spacing: 8rpx;
+    background: #04c160;
+    color: #ffffff;
+}

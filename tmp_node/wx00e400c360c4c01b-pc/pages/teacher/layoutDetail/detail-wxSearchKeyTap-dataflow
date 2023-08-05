@@ -1,0 +1,22 @@
+// \pages/teacher/layoutDetail/detail wxSearchKeyTap Data Flow
+digraph {
+	"9fac113bec96449ab468c2f94aca519f" [label="FunctionCall,
+function name -> wxSearchKeyTap,
+param -> " color=blue]
+	e215ba8b838c4f8fb6bb106cc9086466 [label=SequenceExpression color=blue]
+	"754f226be1194a1e953360ce0cee5839" [label="CallExpression,
+callee name -> s.wxSearchKeyTap,
+param -> a,
+" color=blue]
+	e215ba8b838c4f8fb6bb106cc9086466 -> "754f226be1194a1e953360ce0cee5839"
+	"7b29174c68f94aeba46898ecbd836d59" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"93cf6586fcab4210b36c1f6c74ec01e7" [label="Object Properties
+{
+theme_name -> a.data.wxSearchData.value
+}" color=blue]
+	"7b29174c68f94aeba46898ecbd836d59" -> "93cf6586fcab4210b36c1f6c74ec01e7"
+	e215ba8b838c4f8fb6bb106cc9086466 -> "7b29174c68f94aeba46898ecbd836d59"
+	"9fac113bec96449ab468c2f94aca519f" -> e215ba8b838c4f8fb6bb106cc9086466
+}

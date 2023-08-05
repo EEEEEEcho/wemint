@@ -1,0 +1,170 @@
+<template name="ModulePinTuan-layout-103">
+    <view class="groupBooking flexBox boxSizingBox">
+        <view catchtap="navTo" class="groupProItem flexDirectionColumn {{index<m.ProList.length-2?'marginBottom10':''}}" data-linkdata="{{layoutFun.getDetailNavData(m.PinTuan,item)}}" data-linkid="{{layoutFun.getDetailNavID(m.PinTuan,item)}}" data-linknorepeat="1" data-linktype="{{layoutFun.getDetailNavType(m.PinTuan,item.store_num)}}" wx:for="{{m.ProList}}" wx:key="{{item.id}}">
+            <view class="pro-img-wrapper flexBox flexAlign flexJustif">
+                <image class="groupProImg" src="{{globaldata.appGlobalData.siteBaseUrl}}{{item.img_src}}"></image>
+            </view>
+            <view class="groupProMain">
+                <view class="groupProTitle overflow1">{{item.name}}</view>
+                <view class="groupProMoney">
+                    <text class="groupProPrice">￥{{item.sale_price}}</text>
+                </view>
+                <view class="flexBox flexJustifyBetween flexAlign">
+                    <view class="groupProNum">{{item.pintuan_num}} 人团</view>
+                    <view class="goGroup flexBox flexAlign flexJustify {{layoutFun.getKaiTuanClass(m.PinTuan,item.store_num)}}">
+            {{layoutFun.getKaiTuanDesc(m.PinTuan,item.store_num)}}
+          </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="ModulePinTuan-layout-102">
+    <view class="groupBooking">
+        <view catchtap="navTo" class="groupProItem {{index<m.ProList.length-1?'marginBottom15':''}}" data-linkdata="{{layoutFun.getDetailNavData(m.PinTuan,item)}}" data-linkid="{{layoutFun.getDetailNavID(m.PinTuan,item)}}" data-linknorepeat="1" data-linktype="{{layoutFun.getDetailNavType(m.PinTuan,item.store_num)}}" wx:for="{{m.ProList}}" wx:key="{{item.id}}">
+            <image class="groupProImg" src="{{globaldata.appGlobalData.siteBaseUrl}}{{item.img_src}}"></image>
+            <view class="groupProMain">
+                <view class="groupProTitle overflow1">{{item.name}}</view>
+                <view class="groupProNum">{{item.pintuan_num}} 人团</view>
+                <view class="groupProMoney">
+                    <text class="groupProPrice">￥{{item.sale_price}}</text>
+                </view>
+                <view class="goGroup flexBox flexAlign flexJustify {{layoutFun.getKaiTuanClass(m.PinTuan,item.store_num)}}">
+        {{layoutFun.getKaiTuanDesc(m.PinTuan,item.store_num)}}
+        </view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="ModulePinTuan-layout-101">
+    <view class="activity" style="display:{{m.PinTuan?'block':' none'}}" wx:if="{{m.ProList.length>0}}">
+        <view catchtap="navTo" class="activity-top" data-linktype="PinTuanIndex">
+            <image class="pintuan_top_bg" mode="widthFix" src="/pages/template/images/ModulePinTuan/pintuan-bg.jpg"></image>
+        </view>
+        <view catchtap="navTo" class="activity-con" data-linktype="PinTuanIndex">
+            <text class="activity-con-txt">更多优惠团购，手慢无</text>
+            <text class="iconfont icon-qianwang-copy" style="margin-left:16rpx"></text>
+        </view>
+        <view class="activity-content">
+            <view catchtap="navTo" class="activity-img" data-linktype="PinTuanIndex" style="display:{{m.PinTuan.img_src==''?'none':'block'}}">
+                <image mode="aspectFit" src="{{globaldata.appGlobalData.siteBaseUrl}}{{m.PinTuan.img_src}}"></image>
+            </view>
+            <scroll-view scrollX="true">
+                <view class="activity-item">
+                    <view catchtap="navTo" class="puzzle-item-txt" data-linkdata="{{layoutFun.getDetailNavData(m.PinTuan,item)}}" data-linkid="{{layoutFun.getDetailNavID(m.PinTuan,item)}}" data-linknorepeat="1" data-linktype="{{layoutFun.getDetailNavType(m.PinTuan,item.store_num)}}" wx:for="{{m.ProList}}" wx:for-index="idx" wx:key="{{item.id}}">
+                        <view class="txt-img v-border">
+                            <image mode="widthFix" src="{{globaldata.appGlobalData.siteBaseUrl}}{{item.img_src}}"></image>
+                            <view class="txt-shu sizea">{{item.pintuan_num}}人团</view>
+                            <view class="qiang">抢</view>
+                        </view>
+                        <view class="txt-info">
+                            <view class="proTitle sizec colora">{{item.name}}</view>
+                            <view class="botMsg">
+                                <text class="price colord sizeg">￥<text class="sizeb">{{item.sale_price}}</text>
+                                </text>
+                                <text class="kaiTuan colord sizeb {{layoutFun.getKaiTuanClass(m.PinTuan,item.store_num)}}">{{layoutFun.getKaiTuanDesc(m.PinTuan,item.store_num)}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view catchtap="navTo" class="activity-more v-border" data-linktype="PinTuanIndex" hoverClass="none" wx:if="{{m.ProList.length>2}}">
+                        <view>
+                            <text class="more-txt" wx:if="{{m.ProList.length>0}}">
+                                <text>查</text>
+                                <text>看</text>
+                                <text>更</text>
+                                <text>多</text>
+                            </text>
+                            <text class="more-txt" wx:if="{{m.ProList.length==0}}">
+                                <text>加</text>
+                                <text>载</text>
+                                <text>更</text>
+                                <text>多</text>
+                            </text>
+                            <text class="m-iconfont m-icon-qianwang-copy"></text>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</template>
+<template name="ModulePinTuan">
+    <view class="layout-{{m.Layout}}">
+        <template is="ModulePinTuan-layout-{{m.Layout}}" data="{{m:m,globaldata:globaldata}}"></template>
+    </view>
+</template>
+<wxs module="layoutFun">
+var parseStatus = (function(pinTuan, storeNum) {
+    if (pinTuan.status == 1 && storeNum != 0) return (1);
+    else if (pinTuan.status == 2 && storeNum > 0) return (2);
+    else if (pinTuan.status == 2 && storeNum == 0) return (3);
+    else return (0)
+});
+var getDetailNav = (function(pinTuan, storeNum) {
+    if (pinTuan.status == 2 && storeNum == 0 || pinTuan.status == 1 || pinTuan.status == 3) return (0);
+    else return (1)
+});
+var getKaiTuanClass = (function(pinTuan, storeNum) {
+    var status = parseStatus(pinTuan, storeNum);
+    switch (status) {
+        case 1:
+            return ('statusOne');
+        case 2:
+            return ('statusTwo');
+        case 3:
+            return ('statusThree');
+        default:
+            return ('statusThree');
+    }
+});
+var getKaiTuanDesc = (function(pinTuan, storeNum) {
+    var status = parseStatus(pinTuan, storeNum);
+    switch (status) {
+        case 1:
+            return ('未开始');
+        case 2:
+            return ('去开团');
+        case 3:
+            return ('已抢完');
+        default:
+            return ('已结束');
+    }
+});
+var getDetailNavType = (function(pinTuan, storeNum) {
+    var type = getDetailNav(pinTuan, storeNum);
+    switch (type) {
+        case 1:
+            return ('PinTuanDetail');
+        default:
+            return ('ProductDetail');
+    }
+});
+var getDetailNavID = (function(pinTuan, item) {
+    var type = getDetailNav(pinTuan, item.store_num);
+    switch (type) {
+        case 1:
+            return (item.id);
+        default:
+            return (item.product_id);
+    }
+});
+var getDetailNavData = (function(pinTuan, item) {
+    var navData = ({});
+    if (pinTuan && item) {
+        navData.pintuan_id = pinTuan.id;
+        navData.proid = item.product_id;
+        navData.buycount = item.buy_limit_num;
+        navData.img = item.img_src;
+        navData.price = item.sale_price;
+        navData.storenum = item.store_num
+    };
+    return (JSON.stringify(navData))
+});
+module.exports = ({
+    getKaiTuanClass: getKaiTuanClass,
+    getKaiTuanDesc: getKaiTuanDesc,
+    getDetailNavType: getDetailNavType,
+    getDetailNavID: getDetailNavID,
+    getDetailNavData: getDetailNavData,
+});
+</wxs>

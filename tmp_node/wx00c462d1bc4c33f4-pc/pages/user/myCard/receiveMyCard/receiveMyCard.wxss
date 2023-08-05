@@ -1,0 +1,96 @@
+.cardBox {
+    width: 300px;
+    height: 150px;
+    border-radius: 8px;
+    background: #666;
+    margin: 20px auto;
+}
+
+.receiveCardBox {
+    width: 300px;
+    height: 160px;
+    border-radius: 8px;
+    background: #666;
+    margin: 20px auto;
+}
+
+.receiveCardName {
+    color: #fff;
+    font-size: 22px;
+    padding-top: 20px;
+    padding-left: 24px;
+}
+
+.viphycard {
+    color: #fff;
+    font-size: 16px;
+    padding-left: 24px;
+}
+
+.hytq {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.cardNumber {
+    float: right;
+    padding-right: 24px;
+    font-size: 16px;
+    padding-top: 70px;
+    color: #fff;
+}
+
+.first {
+    box-sizing: border-box;
+    padding: 20px 30px;
+    width: 100%;
+    border-bottom: 1px #666 solid;
+}
+
+.flex {
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+.flex1 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+.title-index {
+    font-size: 42px;
+    font-style: italic;
+    color: #ffbf21;
+}
+
+.title-item {
+    padding-left: 16px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.title-item1 {
+    padding-right: 16px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.content-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    color: #999;
+    font-size: 12px;
+}
+
+.content-item1 {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    color: #999;
+    font-size: 12px;
+}

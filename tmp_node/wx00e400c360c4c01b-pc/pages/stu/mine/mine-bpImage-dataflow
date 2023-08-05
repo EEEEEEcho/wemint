@@ -1,0 +1,27 @@
+// \pages/stu/mine/mine bpImage Data Flow
+digraph {
+	"9348144d185d49caabe4a3e06b8ffec8" [label="FunctionCall,
+function name -> bpImage,
+param -> " color=blue]
+	"8427b4e755374f7d820cfef7afc14bcc" [label="CallExpression,
+callee name -> wx.chooseImage,
+param -> " color=blue]
+	"4ba98fd3225648b3833993d58dc9a6ef" [label="FunctionCall,
+function name -> success,
+param -> a.,
+a,
+" color=blue]
+	"464b566b418840079c3ff7d1e05c6102" [label=SequenceExpression color=blue]
+	d610d9648aa1447aab26d03fec0fa64e [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"1946ada2717c4aada9cdd39dfa9878b2" [label="Object Properties
+{
+url -> '../../wx-cropper/index?url=' + a.tempFilePaths[0] + '&tp=0'
+}" color=blue]
+	d610d9648aa1447aab26d03fec0fa64e -> "1946ada2717c4aada9cdd39dfa9878b2"
+	"464b566b418840079c3ff7d1e05c6102" -> d610d9648aa1447aab26d03fec0fa64e
+	"4ba98fd3225648b3833993d58dc9a6ef" -> "464b566b418840079c3ff7d1e05c6102"
+	"8427b4e755374f7d820cfef7afc14bcc" -> "4ba98fd3225648b3833993d58dc9a6ef"
+	"9348144d185d49caabe4a3e06b8ffec8" -> "8427b4e755374f7d820cfef7afc14bcc"
+}

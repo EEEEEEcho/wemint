@@ -1,0 +1,46 @@
+// \pages/search/search btngotoSearch Data Flow
+digraph {
+	d81919d313714bbbb7d0de301485a04c [label="FunctionCall,
+function name -> btngotoSearch,
+param -> " color=blue]
+	"1704a0fcafa649a18944b5a21d4ef512" [label="CallExpression,
+callee name -> this.gotoSearch,
+param -> this.data.KeyWord,
+" color=blue]
+	"43e48aa99009455aabb22ec56b1bad14" [label="FunctionCall,
+function name -> gotoSearch,
+param -> " color=blue]
+	"46045b4758f14e94986c7814454005e4" [label="If Alternate" color=blue]
+	"850f85479fe3441381bf7e7e6dc63b71" [label=VariableDeclarations color=blue]
+	"8524ebf9145f423690fe2d69d8999605" [label="VariableDeclarator,
+left -> a,
+right -> t.data.GoToUrl + '?keyword=' + e" color=blue]
+	"850f85479fe3441381bf7e7e6dc63b71" -> "8524ebf9145f423690fe2d69d8999605"
+	"46045b4758f14e94986c7814454005e4" -> "850f85479fe3441381bf7e7e6dc63b71"
+	"37fc31f4c9cf4564905c99140f5467ac" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"455189856df84f609c008d6f74460ea2" [label=SequenceExpression color=blue]
+	"0fd2b7468a4c4f07b9e3b9f16293b5da" [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	"2cd6768043a44f56a45f5371b840fd0f" [label="Object Properties
+{
+url -> a
+}" color=blue]
+	"0fd2b7468a4c4f07b9e3b9f16293b5da" -> "2cd6768043a44f56a45f5371b840fd0f"
+	"455189856df84f609c008d6f74460ea2" -> "0fd2b7468a4c4f07b9e3b9f16293b5da"
+	"37fc31f4c9cf4564905c99140f5467ac" -> "455189856df84f609c008d6f74460ea2"
+	"50ddb309df4d4c51aae84a7e4f8b2946" [label="CallExpression,
+callee name -> wx.switchTab,
+param -> " color=blue]
+	"9fd036d74bd541488c6880865a05cb58" [label="Object Properties
+{
+url -> a
+}" color=blue]
+	"50ddb309df4d4c51aae84a7e4f8b2946" -> "9fd036d74bd541488c6880865a05cb58"
+	"37fc31f4c9cf4564905c99140f5467ac" -> "50ddb309df4d4c51aae84a7e4f8b2946"
+	"46045b4758f14e94986c7814454005e4" -> "37fc31f4c9cf4564905c99140f5467ac"
+	"43e48aa99009455aabb22ec56b1bad14" -> "46045b4758f14e94986c7814454005e4"
+	"1704a0fcafa649a18944b5a21d4ef512" -> "43e48aa99009455aabb22ec56b1bad14"
+	d81919d313714bbbb7d0de301485a04c -> "1704a0fcafa649a18944b5a21d4ef512"
+}

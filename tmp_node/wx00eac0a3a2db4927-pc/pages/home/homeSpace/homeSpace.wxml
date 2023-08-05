@@ -1,0 +1,62 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="space_container" style="margin-top: {{navH+status+10}}px">
+    <view class="header_display row">
+        <view class="tabbar-title">
+            <text class="selected-title" wx:if="{{dataList.length>0}}">{{dataList[active].name}}</text>
+        </view>
+        <view class="ul_searchbar row">
+            <view bindtap="showCateModel" class="ul_view">
+                <image class="ul" src="http://oss.shangmian.xin/weixin_applets_icon_ul.png"></image>
+            </view>
+            <view bindtap="toPage" class="searchbar row" data-type="搜索">
+                <image class="search-img2" src="http://oss.shangmian.xin/weixin_applets_icon_searchbar.png"></image>
+                <text class="placeholder">搜索</text>
+            </view>
+        </view>
+    </view>
+    <view class="show_product">
+        <scroll-view scrollX class="scroll-view_H">
+            <view bindtap="chooseOne" class="tab {{index===dataList.length-1?'tab_last':''}}" data-index="{{index}}" wx:for="{{dataList}}">
+                <text class="swiper {{active===index?'swipertab_select':'swipertab'}}">{{item.name}}</text>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="more_img">
+        <image bindtap="previewImg" class="cate-img" data-images="{{dataList[active].scenes.images}}" lazyLoad="true" mode="aspectFill" src="{{dataList[active].scenes.images[0]}}" wx:if="{{dataList.length>0}}"></image>
+        <image catchtap="toPage" class="morePic" data-type="案例美图" src="http://oss.shangmian.xin/weixin_applets_icon_more_pic.png"></image>
+    </view>
+    <view class="count" wx:if="{{dataList.length>0}}">
+        <view class="admire flexRow">
+            <text class="praised">已赞</text>
+            <view class="avatarView">
+                <image class="praised_avatar" lazyLoad="true" mode="aspectFill" src="{{item}}" wx:for="{{avatars}}"></image>
+            </view>
+        </view>
+        <view class="like">
+            <image class="like_img" src="http://oss.shangmian.xin/weixin_applets_icon_like_fill.png" wx:if="{{dataList[active].scenes.isLiked==1}}"></image>
+            <image bindtap="onLike" class="like_img" data-uuid="{{dataList[active].scenes.linkUuid}}" src="http://oss.shangmian.xin/weixin_applets_icon_like_normal.png" wx:if="{{dataList[active].scenes.isLiked==0}}"></image>
+            <text class="people">{{dataList[active].scenes.likeCount}}</text>
+        </view>
+    </view>
+    <text class="commendTitle">尚免推荐</text>
+    <goods-list id="goodsList" isClassify="{{isClassify}}" isComplex="{{isComplex}}" isFilter="{{isFilter}}" isPrice="{{isPrice}}" spaceUuid="{{spaceUuid}}"></goods-list>
+</view>
+<view catchtouchmove="preventMove">
+    <view class="cover_screen" wx:if="{{isShowCateModel}}"></view>
+    <view class="showCateModal {{options?'openCate':'closeCate'}}" wx:if="{{isShowCateModel}}">
+        <view class="close_img" style="margin-top:{{navH+status}}px;">
+            <image bindtap="closeModel" class="img" src="http://oss.shangmian.xin/weixin_applets_icon_close.png"></image>
+        </view>
+        <view class="modelTitle">{{cartPage}}切换</view>
+        <scroll-view scrollY class="main-content">
+            <view class="scroll_view">
+                <view class="list">
+                    <view class="cate_list">
+                        <image bindtap="onClassify" class="category_img" data-index="{{index}}" data-uuid="{{item.spaceUuid}}" lazyLoad="true" mode="aspectFill" src="{{item.covers}}" wx:for="{{dataList}}"></image>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+<loading-view isShow="{{isShowLoad}}"></loading-view>

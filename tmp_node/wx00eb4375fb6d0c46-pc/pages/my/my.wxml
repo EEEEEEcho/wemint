@@ -1,0 +1,64 @@
+<loading-component showLoading="{{showLoading}}"></loading-component>
+<view class="head-box">
+    <view class="head-box2">
+        <view class="my-message-box">
+            <image src="{{userImg}}"></image>
+            <view>
+                <view>{{userName}}</view>
+                <view class="pt-vip" wx:if="{{!state}}">普通会员</view>
+                <view class="pt-vip" wx:if="{{state}}">月卡会员</view>
+            </view>
+        </view>
+        <view bindtap="toMonthCard" class="card-num" wx:if="{{!state}}">办月卡会员></view>
+        <view bindtap="toMonthCard" class="card-num" wx:if="{{state}}">月卡续费></view>
+    </view>
+</view>
+<view class="my-tab-out-box">
+    <view class="my-tab-box">
+        <view class="tab-box">
+            <view bindtap="toggleMemu" data-item="1" data-type="coupon">
+                <image src="./../../utils/imgs/mycoupon.png"></image>
+                <view class="{{thisItem==1?'tab-active-a tab-title':'tab-title'}}">我的券</view>
+            </view>
+            <view bindtap="toggleMemu" data-item="2" data-type="card">
+                <image src="./../../utils/imgs/mycard.png"></image>
+                <view class="{{thisItem==2?'tab-active-a tab-title':'tab-title'}}">我的卡</view>
+            </view>
+            <view bindtap="toggleMemu" data-item="3" data-type="bill">
+                <image src="./../../utils/imgs/mybill.png"></image>
+                <view class="{{thisItem==3?'tab-active-a tab-title':'tab-title'}}">消费账单</view>
+            </view>
+            <view bindtap="toggleMemu" data-item="4" data-type="message">
+                <image src="./../../utils/imgs/mymsg.png"></image>
+                <view class="{{thisItem==4?'tab-active-a tab-title':'tab-title'}}">消息通知</view>
+            </view>
+        </view>
+    </view>
+    <image bindtap="toMonthCard" class="my-head-img" src="./../../utils/imgs/banner.png"></image>
+</view>
+<coupons-component bind:myevent="getDetail" class="show-class" couponList="{{couponList}}" wx:if="{{checkTab=='coupon'}}"></coupons-component>
+<detail-component bind:myevent="hideCouponDetail" couponDetail="{{couponDetail}}" showDetail="{{showDetail}}"></detail-component>
+<card-component bind:recharge="showRechargeCase" cardList="{{cardList}}" wx:if="{{checkTab=='card'}}"></card-component>
+<bill-component billList="{{billList}}" wx:if="{{checkTab=='bill'}}"></bill-component>
+<message-component bind:delMessage="delMessage" messageList="{{messageList}}" wx:if="{{checkTab=='message'}}"></message-component>
+<recharge-component bind:hideRechargeCase="hideRechargeCase" rechargeCase="{{rechargeCase}}" showCase="{{showCase}}"></recharge-component>
+<view class="no-circle" wx:if="{{isLoading}}">
+    <image src="./../../utils/imgs/loading-spinning-bubbles.svg"></image>
+    <view>数据加载中</view>
+</view>
+<view wx:if="{{noData}}">
+    <view class="no-card-box" wx:if="{{checkTab=='coupon'||checkTab=='card'}}">
+        <view style="font-size: 40rpx;color: #171717;">主人，您暂无商家{{checkTab=='card'?'会员':checkTab=='coupon'?'优惠券':''}}喔</view>
+        <image src="./../../utils/imgs/nodata2.png"></image>
+        <view>去地图上发现优质的商家</view>
+        <view>关注它即{{checkTab=='card'?'可享受福利':checkTab=='coupon'?'可领取大额':''}}优惠</view>
+    </view>
+    <view class="no-card-box" wx:if="{{checkTab=='message'}}">
+        <image src="./../../utils/imgs/nomsg.png" style="width: 250rpx;height:190rpx;"></image>
+        <view>空空滴，有消息我再通知您</view>
+    </view>
+    <view class="no-card-box" wx:if="{{checkTab=='bill'}}">
+        <image src="./../../utils/imgs/nobill.png" style="width: 250rpx;height:189rpx;"></image>
+        <view>空空滴，您还没有消费记录</view>
+    </view>
+</view>

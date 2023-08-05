@@ -1,0 +1,223 @@
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 200rpx 0;
+    box-sizing: border-box;
+}
+
+page {
+    font-family: microsoft yahei;
+}
+
+.bg-white {
+    background: #fff;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+image {
+    display: flex;
+}
+
+@font-face {
+    font-family:'iconfont';src:url('http://at.alicdn.com/t/font_p6fkqs4gscmlhaor.eot');src:url('http://at.alicdn.com/t/font_p6fkqs4gscmlhaor.eot?#iefix') format('embedded-opentype'),url('http://at.alicdn.com/t/font_p6fkqs4gscmlhaor.woff') format('woff'),url('http://at.alicdn.com/t/font_p6fkqs4gscmlhaor.ttf') format('truetype'),url('http://at.alicdn.com/t/font_p6fkqs4gscmlhaor.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont"!important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-user:before {
+    content: "\e600";
+}
+
+.icon-wenhao:before {
+    content: "\e61d";
+}
+
+.icon-address:before {
+    content: "\e601";
+}
+
+.icon-time:before {
+    content: "\e60f";
+}
+
+.icon-dianpu:before {
+    content: "\e603";
+}
+
+.icon-wxfriend:before {
+    content: "\e604";
+}
+
+.icon-weixin:before {
+    content: "\e607";
+}
+
+.icon-fenlei:before {
+    content: "\e66f";
+}
+
+.icon-shouye:before {
+    content: "\e605";
+}
+
+.icon-refund:before {
+    content: "\e616";
+}
+
+.icon-qunzu:before {
+    content: "\e615";
+}
+
+.icon-daifukuan:before {
+    content: "\e609";
+}
+
+.icon-guanyu:before {
+    content: "\e60d";
+}
+
+.icon-fav:before {
+    content: "\e60b";
+}
+
+.icon-daifahuo01:before {
+    content: "\e610";
+}
+
+.icon-daipingjia:before {
+    content: "\e611";
+}
+
+.icon-youhuiquan:before {
+    content: "\e602";
+}
+
+.icon-shouhuo:before {
+    content: "\e60a";
+}
+
+.icon-icon:before {
+    content: "\e61b";
+}
+
+.icon-guanzhu:before {
+    content: "\e60e";
+}
+
+.icon-more:before {
+    content: "\e619";
+}
+
+.icon-jifen:before {
+    content: "\e60c";
+}
+
+.icon-shoucang:before {
+    content: "\e621";
+}
+
+.icon-fenxiang:before {
+    content: "\e606";
+}
+
+.icon-gouwuche:before {
+    content: "\e608";
+}
+
+.icon-zuji:before {
+    content: "\e61a";
+}
+
+.icon-yaoqing:before {
+    content: "\e614";
+}
+
+.icon-star:before {
+    content: "\e613";
+}
+
+.icon-qq:before {
+    content: "\e612";
+}
+
+.icon-account:before {
+    content: "\e617";
+}
+
+.icon-bianhao:before {
+    content: "\e61e";
+}
+
+.icon-ensure:before {
+    content: "\e618";
+}
+
+.icon-pintuan:before {
+    content: "\e61c";
+}
+
+.icon-saoma:before {
+    content: "\e61f";
+}
+
+.icon-aixin:before {
+    content: "\e64e";
+    color: #fe5722;
+}
+
+.icon-notice:before {
+    content: "\e622";
+}
+
+.icon-right:before {
+    content: "\e623";
+}
+
+.icon-store:before {
+    content: "\e620";
+}
+
+.icon-sousuo_sousuo:before {
+    content: "\e655";
+}
+
+.footer {
+    position: fixed;
+    bottom: 0rpx;
+    left: 0rpx;
+    width: 100%;
+    font-size: 24rpx;
+    overflow: hidden;
+    background: #fff;
+    border-top: 1px solid #ababab;
+    color: #8f8f8f;
+    padding-bottom: 8rpx;
+}
+
+.footer navigator {
+    width: 25%;
+    text-align: center;
+    float: left;
+}
+
+.footer navigator image {
+    width: 48rpx;
+    height: 48rpx;
+    margin-top: 15rpx;
+    display: inline-block;
+    margin-bottom: 5rpx;
+}

@@ -1,0 +1,37 @@
+// \pages/company/mycenter getUserFenXiaoInfo Data Flow
+digraph {
+	aec4d8b45a8649a98541f562544b4763 [label="FunctionCall,
+function name -> getUserFenXiaoInfo,
+param -> " color=blue]
+	b9ccfb37cc9c4911a0d6262b4c007002 [label=VariableDeclarations color=blue]
+	b62736dd167b402a9492480c88067c9f [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"74419c55654e48b8be1ea8531dae4857" [label="Object Properties
+{
+}" color=blue]
+	c53585136bf747628764bafad7a40398 [label="FunctionCall,
+function name -> success,
+param -> t,
+t.,
+" color=blue]
+	b5d957e8a0f1473ca5dd3affa33e968e [label="CallExpression,
+callee name -> a.setData,
+param -> " color=blue]
+	c8a403962cb04299b0c8d9795cbf0b42 [label="Object Properties
+{
+total -> t.info.notAuditedTotal
+enableFenXiao -> t.enableFenXiao
+}" color=blue]
+	"0933f3d20625422291be0a2eccdf58cf" [label="CallExpression,
+callee name -> parseInt,
+param -> t.info.count,
+" color=blue]
+	c8a403962cb04299b0c8d9795cbf0b42 -> "0933f3d20625422291be0a2eccdf58cf"
+	b5d957e8a0f1473ca5dd3affa33e968e -> c8a403962cb04299b0c8d9795cbf0b42
+	c53585136bf747628764bafad7a40398 -> b5d957e8a0f1473ca5dd3affa33e968e
+	"74419c55654e48b8be1ea8531dae4857" -> c53585136bf747628764bafad7a40398
+	b62736dd167b402a9492480c88067c9f -> "74419c55654e48b8be1ea8531dae4857"
+	b9ccfb37cc9c4911a0d6262b4c007002 -> b62736dd167b402a9492480c88067c9f
+	aec4d8b45a8649a98541f562544b4763 -> b9ccfb37cc9c4911a0d6262b4c007002
+}

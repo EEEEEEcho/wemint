@@ -1,0 +1,59 @@
+.canvas-box {
+    width: 100%;
+    text-align: center;
+    background: #f4f4f4;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+canvas {
+    margin: 0 auto;
+    width: 630rpx;
+    height: 1024rpx;
+    box-shadow: 0 0 30rpx rgba(0,0,0,0.1);
+}
+
+.canvas-box .save {
+    width: 630rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 30rpx;
+    color: #fff;
+    background: #333;
+    border-radius: 48rpx;
+    margin: 34rpx auto 0;
+}
+
+.canvas-box .openSetting {
+    width: 630rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 30rpx;
+    color: #fff;
+    background: #333;
+    border-radius: 48rpx;
+    margin: 34rpx auto 0;
+}
+
+.tips {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin: 290rpx 0 0;
+}
+
+.tips .img {
+    text-align: center;
+}
+
+.tips .img image {
+    width: 50%;
+    padding-bottom: 16rpx;
+}
+
+.tips text {
+    font-size: 24rpx;
+    color: #999;
+}

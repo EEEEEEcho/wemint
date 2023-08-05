@@ -1,0 +1,50 @@
+<view class="page">
+    <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__hd">
+            <view class="fs26">
+                <span>{{Seller}}</span>
+            </view>
+        </view>
+        <view class="weui-panel__bd" wx:for="{{OrderDetails}}">
+            <navigator class="weui-media-box weui-media-box_appmsg mymedia" url="/pages/details/details?GoodsID={{item.goods_id}}">
+                <view class="weui-media-box__hd">
+                    <image class="weui-media-box__thumb" src="{{item.goods_img}}"></image>
+                </view>
+                <view class="weui-media-box__bd">
+                    <view class="fs26 goods-title">{{item.goods_name}}</view>
+                    <p class="fs22 text-muted">{{item.spec}}</p>
+                </view>
+                <view class="weui-media-box__ft">
+                    <view>
+                        <span class="fs24">￥</span>
+                        <b class="fs30">{{item.price}}</b>
+                    </view>
+                    <view class="fs22 text-muted tr">x{{item.quantity}}</view>
+                </view>
+            </navigator>
+        </view>
+        <view class="weui-panel__ft">
+            <view class="weui-cell weui-cell_link fs26">
+                <view class="weui-cell__bd">实付金额</view>
+                <view>
+                    <span class="fs24">￥</span>
+                    <b class="fs30">{{PayMoney}}</b>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="weui-cells">
+        <view class="weui-cell">
+            <view class="weui-cell__bd">订单编号</view>
+            <view class="weui-cell__ft">
+                <span class="text-muted">{{OrderNo}}</span>
+            </view>
+        </view>
+        <view class="weui-cell">
+            <view class="weui-cell__bd">下单时间</view>
+            <view class="weui-cell__ft">
+                <span class="text-muted">{{CreateTime}}</span>
+            </view>
+        </view>
+    </view>
+</view>

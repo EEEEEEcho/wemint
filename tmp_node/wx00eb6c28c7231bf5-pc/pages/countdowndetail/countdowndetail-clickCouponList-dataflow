@@ -1,0 +1,11 @@
+// \pages/countdowndetail/countdowndetail clickCouponList Data Flow
+digraph {
+	eaa8938419704f55b5878e9e2bc4409d [label="FunctionCall,
+function name -> clickCouponList,
+param -> t,
+t.,
+" color=blue]
+	"89d7c20c9a5f412b98bf88e3f4184333" [label="ConditionalExpression,
+ conditional list -> this.setData" color=blue]
+	eaa8938419704f55b5878e9e2bc4409d -> "89d7c20c9a5f412b98bf88e3f4184333"
+}

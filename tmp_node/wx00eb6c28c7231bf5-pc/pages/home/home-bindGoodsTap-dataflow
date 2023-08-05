@@ -1,0 +1,29 @@
+// \pages/home/home bindGoodsTap Data Flow
+digraph {
+	fdb3713a42044fd9a5f6a17033b4e10a [label="FunctionCall,
+function name -> bindGoodsTap,
+param -> t,
+t.,
+" color=blue]
+	a91de93ab16d44529f3195412e68b666 [label=VariableDeclarations color=blue]
+	ba944d63ea6d40b196e146d3a6012505 [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.productid" color=blue]
+	a91de93ab16d44529f3195412e68b666 -> ba944d63ea6d40b196e146d3a6012505
+	ac142c0b68bf45d5af4be7b69205ce13 [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.activeid" color=blue]
+	a91de93ab16d44529f3195412e68b666 -> ac142c0b68bf45d5af4be7b69205ce13
+	fdb3713a42044fd9a5f6a17033b4e10a -> a91de93ab16d44529f3195412e68b666
+	c9ba5aba37524e588f47d15f6fce7e67 [label=SequenceExpression color=blue]
+	edc3cc3fde754d479faeb037873ec51d [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"2d5de1461eb44a439a85923bc99fbb45" [label="Object Properties
+{
+url -> '../productdetail/productdetail?id=' + a
+}" color=blue]
+	edc3cc3fde754d479faeb037873ec51d -> "2d5de1461eb44a439a85923bc99fbb45"
+	c9ba5aba37524e588f47d15f6fce7e67 -> edc3cc3fde754d479faeb037873ec51d
+	fdb3713a42044fd9a5f6a17033b4e10a -> c9ba5aba37524e588f47d15f6fce7e67
+}

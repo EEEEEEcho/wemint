@@ -1,0 +1,10 @@
+<template name="tabBar">
+    <view class="tab-bar" style="color: {{tabBar.color}}; {{tabBar.position=='top'?'top: 0':'bottom: 0'}}; {{tabBar.borderStyle?tabBar.position=='top'?'border-bottom: solid 1px '+tabBar.borderStyle+';':'border-top: solid 1px '+tabBar.borderStyle+';':''}}">
+        <navigator class="{{item.clas}}" openType="redirect" style="{{item.active?'color: '+(item.selectedColor?item.selectedColor:tabBar.selectedColor):''}}" url="{{item.pagePath}}" wx:for="{{tabBar.list}}" wx:key="pagePath">
+            <image class="img" src="{{item.selectedIconPath}}" wx:if="{{item.active}}"></image>
+            <image class="img" src="{{item.iconPath}}" wx:if="{{!item.active}}"></image>
+            <text>{{item.text}}</text>
+        </navigator>
+        <view class="clear"></view>
+    </view>
+</template>

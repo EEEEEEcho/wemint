@@ -1,0 +1,27 @@
+// \pages/stu/score/score onLoad Data Flow
+digraph {
+	"4cafc3bc122249fb8dd253ebe30f4e3e" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"30c8ca4c4d91424f96c5454ecf07a7bb" [label=SequenceExpression color=blue]
+	"75641766bce34801aed7ddbef1f77942" [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> " color=blue]
+	d2e80459b5504b0081965d090830e8e6 [label="FunctionCall,
+function name -> success,
+param -> a.,
+a,
+" color=blue]
+	"28e49d9314b24fa8bc4e3142839c42ab" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	"506a06c2aa424a59adffff5734357275" [label="Object Properties
+{
+scrollHeight -> a.windowHeight + 300
+}" color=blue]
+	"28e49d9314b24fa8bc4e3142839c42ab" -> "506a06c2aa424a59adffff5734357275"
+	d2e80459b5504b0081965d090830e8e6 -> "28e49d9314b24fa8bc4e3142839c42ab"
+	"75641766bce34801aed7ddbef1f77942" -> d2e80459b5504b0081965d090830e8e6
+	"30c8ca4c4d91424f96c5454ecf07a7bb" -> "75641766bce34801aed7ddbef1f77942"
+	"4cafc3bc122249fb8dd253ebe30f4e3e" -> "30c8ca4c4d91424f96c5454ecf07a7bb"
+}

@@ -1,0 +1,17 @@
+// \pages/shop/filtrate startDateChange Data Flow
+digraph {
+	"6b8bfa4b89ae47229a8c7c5bf68c5630" [label="FunctionCall,
+function name -> startDateChange,
+param -> e.,
+e,
+" color=blue]
+	"8dd2bcc8c9d74fdd9e7efa81708f7047" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	d58c73bb6eda4dbebd32a8cb090f1935 [label="Object Properties
+{
+startDate -> e.detail.value
+}" color=blue]
+	"8dd2bcc8c9d74fdd9e7efa81708f7047" -> d58c73bb6eda4dbebd32a8cb090f1935
+	"6b8bfa4b89ae47229a8c7c5bf68c5630" -> "8dd2bcc8c9d74fdd9e7efa81708f7047"
+}

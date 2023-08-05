@@ -1,0 +1,17 @@
+// \pages/addAddr/addAddr bindNameInput Data Flow
+digraph {
+	"2642d6a0058748d3a209855842732bc3" [label="FunctionCall,
+function name -> bindNameInput,
+param -> t.,
+t,
+" color=blue]
+	d6d2db1624f54f34bf8c2e803ebc13f4 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	e134c0a41cef45c087aaa6f43e77ef2f [label="Object Properties
+{
+name -> t.detail.value
+}" color=blue]
+	d6d2db1624f54f34bf8c2e803ebc13f4 -> e134c0a41cef45c087aaa6f43e77ef2f
+	"2642d6a0058748d3a209855842732bc3" -> d6d2db1624f54f34bf8c2e803ebc13f4
+}

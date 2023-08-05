@@ -1,0 +1,21 @@
+// \pages/shop/userorder changePaymentWay Data Flow
+digraph {
+	"9ebdfee2bb254b628d3c96225c737034" [label="FunctionCall,
+function name -> changePaymentWay,
+param -> t,
+t.,
+" color=blue]
+	a0d026fee09141349f54d2095c831aec [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"8b0c0d6ce7df46c7a70273098e52a44d" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"97071388add1435588f008c211b26d56" [label="Object Properties
+{
+paymentFlag -> t.currentTarget.dataset.paymentflag
+}" color=blue]
+	"8b0c0d6ce7df46c7a70273098e52a44d" -> "97071388add1435588f008c211b26d56"
+	a0d026fee09141349f54d2095c831aec -> "8b0c0d6ce7df46c7a70273098e52a44d"
+	"9ebdfee2bb254b628d3c96225c737034" -> a0d026fee09141349f54d2095c831aec
+}

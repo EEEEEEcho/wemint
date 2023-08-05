@@ -1,0 +1,39 @@
+.search-bar {
+    position: relative;
+    background-color: #fff;
+    padding: 20rpx;
+}
+
+.weui-flex {
+    display: flex;
+}
+
+.search-input {
+    border-radius: 50rpx;
+    overflow: hidden;
+    padding: 0 22rpx 0 20rpx;
+    background: #fff;
+    margin-right: 10px;
+    border: 1px solid #f5f5f5;
+    flex: 1;
+    display: flex;
+    height: 60rpx;
+    align-items: center;
+}
+
+.search-input input {
+    border: none;
+    width: 100%;
+}
+
+.search-icon {
+    margin-right: 8px;
+    position: relative;
+    top: -2rpx;
+}
+
+.search-icon image {
+    width: 30rpx;
+    height: 30rpx;
+    vertical-align: middle;
+}

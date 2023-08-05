@@ -1,0 +1,50 @@
+// \pages/cart/cart bindPlus Data Flow
+digraph {
+	"05383351e10841b2a41b24b80fc6bcc2" [label="FunctionCall,
+function name -> bindPlus,
+param -> a,
+a.,
+" color=blue]
+	e349bf1b4f4440febc5edf53ca1ea226 [label=VariableDeclarations color=blue]
+	"7cce53c3384f4191a22d4767a0ae4183" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	ec62cdacdb68490c853b211c20f17154 [label="CallExpression,
+callee name -> parseInt,
+param -> a.currentTarget.dataset.index,
+" color=blue]
+	"7cce53c3384f4191a22d4767a0ae4183" -> ec62cdacdb68490c853b211c20f17154
+	e349bf1b4f4440febc5edf53ca1ea226 -> "7cce53c3384f4191a22d4767a0ae4183"
+	"7520905d4fd341558927c86e8db96a8a" [label="VariableDeclarator,
+left -> r,
+right -> e.data.carts[s].num" color=blue]
+	e349bf1b4f4440febc5edf53ca1ea226 -> "7520905d4fd341558927c86e8db96a8a"
+	"05383351e10841b2a41b24b80fc6bcc2" -> e349bf1b4f4440febc5edf53ca1ea226
+	e5e971451c804806b507c36a9db1a8df [label=SequenceExpression color=blue]
+	"4f40b968ad3e4fc6baf10f504bbcb4ac" [label="UpdateExpression,
+identifier -> r,
+operate -> ++" color=blue]
+	e5e971451c804806b507c36a9db1a8df -> "4f40b968ad3e4fc6baf10f504bbcb4ac"
+	ae27fd7ed7454d578fe0ff0e02a80c70 [label="CallExpression,
+callee name -> console.log,
+param -> r,
+" color=blue]
+	e5e971451c804806b507c36a9db1a8df -> ae27fd7ed7454d578fe0ff0e02a80c70
+	"05383351e10841b2a41b24b80fc6bcc2" -> e5e971451c804806b507c36a9db1a8df
+	f1045bbb4094444bab4844caf0ed060f [label=VariableDeclarations color=blue]
+	"8dbc040ae54c4f519fdfdb9886275dd3" [label="VariableDeclarator,
+left -> i,
+right -> a.currentTarget.dataset.cartid" color=blue]
+	f1045bbb4094444bab4844caf0ed060f -> "8dbc040ae54c4f519fdfdb9886275dd3"
+	"05383351e10841b2a41b24b80fc6bcc2" -> f1045bbb4094444bab4844caf0ed060f
+	"0334ba3be125463099a0a809bc80fe6a" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"0a2e5b6a67f94bf1850d3c850a9ea6f5" [label="Object Properties
+{
+num -> r
+cart_id -> i
+}" color=blue]
+	"0334ba3be125463099a0a809bc80fe6a" -> "0a2e5b6a67f94bf1850d3c850a9ea6f5"
+	"05383351e10841b2a41b24b80fc6bcc2" -> "0334ba3be125463099a0a809bc80fe6a"
+}

@@ -1,0 +1,13 @@
+<view class="container">
+    <view class="sel">
+        <input bindinput="phoneInput" class="inputText" focus="{{focus1}}" placeholder="账号"></input>
+    </view>
+    <view class="line"></view>
+    <view class="sel">
+        <input bindinput="passwordInput" class="inputText" focus="{{focus2}}" placeholder="密码"></input>
+    </view>
+    <view class="line"></view>
+    <view class="loginBtnView">
+        <button bindtap="binding" class="loginBtn">绑定</button>
+    </view>
+</view>

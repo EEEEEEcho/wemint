@@ -1,0 +1,25 @@
+// \pages/couponlist/couponlist onReachBottom Data Flow
+digraph {
+	d03f250e36c94964ae61c8f49a0e5a7f [label="FunctionCall,
+function name -> onReachBottom,
+param -> " color=blue]
+	"541e67fdd7994277b45f5dbbdfff6d4b" [label=VariableDeclarations color=blue]
+	"2b3b645616994d7cafe903b40cdc472f" [label="VariableDeclarator,
+left -> refreshSuccess,
+right -> that.data.refreshSuccess" color=blue]
+	"541e67fdd7994277b45f5dbbdfff6d4b" -> "2b3b645616994d7cafe903b40cdc472f"
+	d03f250e36c94964ae61c8f49a0e5a7f -> "541e67fdd7994277b45f5dbbdfff6d4b"
+	"5be63a2b8673419286188250f221af11" [label="If Alternate" color=blue]
+	ee9a17049ebd445eb780fe262cdce71f [label=VariableDeclarations color=blue]
+	c349b5239c784e619a8dbd938f74d8f0 [label="VariableDeclarator,
+left -> pageIndex,
+right -> that.data.pageIndex + 1" color=blue]
+	ee9a17049ebd445eb780fe262cdce71f -> c349b5239c784e619a8dbd938f74d8f0
+	"5be63a2b8673419286188250f221af11" -> ee9a17049ebd445eb780fe262cdce71f
+	"4a94beb32ef6406fbbc0250e5c54e62a" [label="CallExpression,
+callee name -> that.initData,
+param -> pageIndex,
+" color=blue]
+	"5be63a2b8673419286188250f221af11" -> "4a94beb32ef6406fbbc0250e5c54e62a"
+	d03f250e36c94964ae61c8f49a0e5a7f -> "5be63a2b8673419286188250f221af11"
+}

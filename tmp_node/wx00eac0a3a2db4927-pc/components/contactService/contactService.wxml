@@ -1,0 +1,14 @@
+<view catchtouchmove="true" wx:if="{{isShowContactService}}">
+    <view catchtap="dismissConcatModal" class="model_bg {{serviceOptions?'showMask':'hideMask'}}"></view>
+    <view class="model_content_bg {{serviceOptions?'slideUp':'slideDown'}}">
+        <text class="model_title">专属客服</text>
+        <image class="model_img" src="http://oss.shangmian.xin/weixin_applets_icon_service_model.png"></image>
+        <text class="model_text text1">即将跳转专属客服服务</text>
+        <view class="model_text text_layout">
+            <text class="text1">回复</text>
+            <text class="text_num">“1”</text>
+            <text class="text1">自动获取下载链接</text>
+        </view>
+        <button bindcontact="contactService" class="model_btn" openType="contact">确定</button>
+    </view>
+</view>

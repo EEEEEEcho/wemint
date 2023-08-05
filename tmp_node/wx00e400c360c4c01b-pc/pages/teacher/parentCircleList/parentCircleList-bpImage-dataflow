@@ -1,0 +1,29 @@
+// \pages/teacher/parentCircleList/parentCircleList bpImage Data Flow
+digraph {
+	"088e79951fac4c5aba64b831c78c0f1e" [label="FunctionCall,
+function name -> bpImage,
+param -> " color=blue]
+	b502f30c475a4ba3a46010dac3aeaf6c [label=SequenceExpression color=blue]
+	c54d9dc421db41a39bb2960db824be72 [label="CallExpression,
+callee name -> wx.chooseImage,
+param -> " color=blue]
+	"12eb1ab9b3a6439aba077a17ce37f37c" [label="FunctionCall,
+function name -> success,
+param -> t,
+t.,
+" color=blue]
+	d903b2ef7cf440c4980c2f54a743496c [label=SequenceExpression color=blue]
+	fe732557551d4a2ca4dd1ee1c9b6ecc3 [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	fc1c59c6d00349059be3a9144fea0589 [label="Object Properties
+{
+url -> '../../wx-cropper/index?url=' + t.tempFilePaths[0] + '&tp=1'
+}" color=blue]
+	fe732557551d4a2ca4dd1ee1c9b6ecc3 -> fc1c59c6d00349059be3a9144fea0589
+	d903b2ef7cf440c4980c2f54a743496c -> fe732557551d4a2ca4dd1ee1c9b6ecc3
+	"12eb1ab9b3a6439aba077a17ce37f37c" -> d903b2ef7cf440c4980c2f54a743496c
+	c54d9dc421db41a39bb2960db824be72 -> "12eb1ab9b3a6439aba077a17ce37f37c"
+	b502f30c475a4ba3a46010dac3aeaf6c -> c54d9dc421db41a39bb2960db824be72
+	"088e79951fac4c5aba64b831c78c0f1e" -> b502f30c475a4ba3a46010dac3aeaf6c
+}

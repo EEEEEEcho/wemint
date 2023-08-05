@@ -1,0 +1,20 @@
+// \pages/shopDetail/shopDetail openShopAds Data Flow
+digraph {
+	"3e6b473fbe6a40a08795c1140c14ff3b" [label="FunctionCall,
+function name -> openShopAds,
+param -> o,
+o.,
+" color=blue]
+	b502005fdf414956a4364e2a444bb1a8 [label="CallExpression,
+callee name -> wx.openLocation,
+param -> " color=blue]
+	f0afe9b3588343008ef16583f2230e2f [label="Object Properties
+{
+}" color=blue]
+	"9d1525230b7f43eda62f7980ef90d87a" [label="+o.target.dataset.lat" color=blue]
+	f0afe9b3588343008ef16583f2230e2f -> "9d1525230b7f43eda62f7980ef90d87a"
+	"5b141421d2f04b5aaf2b7f8ab4b0fdd9" [label="+o.target.dataset.lon" color=blue]
+	f0afe9b3588343008ef16583f2230e2f -> "5b141421d2f04b5aaf2b7f8ab4b0fdd9"
+	b502005fdf414956a4364e2a444bb1a8 -> f0afe9b3588343008ef16583f2230e2f
+	"3e6b473fbe6a40a08795c1140c14ff3b" -> b502005fdf414956a4364e2a444bb1a8
+}

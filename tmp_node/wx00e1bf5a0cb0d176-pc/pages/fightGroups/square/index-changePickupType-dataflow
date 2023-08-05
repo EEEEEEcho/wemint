@@ -1,0 +1,33 @@
+// \pages/fightGroups/square/index changePickupType Data Flow
+digraph {
+	"017a910eb51746aeb2109db4ba952610" [label="FunctionCall,
+function name -> changePickupType,
+param -> t,
+t.,
+" color=blue]
+	"8c1079c01bf04358851cafe70491a14b" [label=VariableDeclarations color=blue]
+	fcc7f2bfeefc468c9827796051786cd2 [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.type" color=blue]
+	"8c1079c01bf04358851cafe70491a14b" -> fcc7f2bfeefc468c9827796051786cd2
+	"017a910eb51746aeb2109db4ba952610" -> "8c1079c01bf04358851cafe70491a14b"
+	"31a7803c68184368b9fff9500a0b1ba1" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"4ecdcb85f5c04af48a3b7cedb3b541dd" [label=SequenceExpression color=blue]
+	"574b56f066794290ac7d76b05c019eb1" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	da7dfe21e96d4174b47312a6e8831a63 [label="Object Properties
+{
+}" color=blue]
+	db0552ef3b3f4db3b00c45c6c10d735d [label="CallExpression,
+callee name -> parseInt,
+param -> a,
+" color=blue]
+	da7dfe21e96d4174b47312a6e8831a63 -> db0552ef3b3f4db3b00c45c6c10d735d
+	"574b56f066794290ac7d76b05c019eb1" -> da7dfe21e96d4174b47312a6e8831a63
+	"4ecdcb85f5c04af48a3b7cedb3b541dd" -> "574b56f066794290ac7d76b05c019eb1"
+	"31a7803c68184368b9fff9500a0b1ba1" -> "4ecdcb85f5c04af48a3b7cedb3b541dd"
+	"017a910eb51746aeb2109db4ba952610" -> "31a7803c68184368b9fff9500a0b1ba1"
+}

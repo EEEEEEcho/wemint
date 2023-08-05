@@ -1,0 +1,10 @@
+<view class="margintop5"></view>
+<view class="container">
+    <view class="sel">
+        <input bindinput="inputName" class="inputText" focus="{{focus1}}" placeholder="姓名" value="{{name}}"></input>
+    </view>
+    <view class="line"></view>
+    <view class="loginBtnView">
+        <button bindtap="editName" class="loginBtn">保 存</button>
+    </view>
+</view>

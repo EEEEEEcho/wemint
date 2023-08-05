@@ -1,0 +1,271 @@
+.ModuleNewsList .no-info {
+    padding: 20rpx;
+}
+
+.ModuleNewsList .layout-101 .news-item-wrapper {
+    padding: 10rpx 20rpx;
+    background-color: #fff;
+}
+
+.ModuleNewsList .layout-101 .news-item-wrapper .news-item {
+    margin-bottom: 20rpx;
+}
+
+.ModuleNewsList .layout-101 .news-item-wrapper .news-item:last-child {
+    margin-bottom: 0;
+}
+
+.ModuleNewsList .layout-101 .news-item-wrapper .news-item .new-img {
+    width: 180rpx;
+    height: 180rpx;
+    margin-right: 20rpx;
+    background-color: #eee;
+}
+
+.ModuleNewsList .layout-101 .news-item-wrapper .news-item .new-img image {
+    width: 44rpx;
+    height: 34rpx;
+}
+
+.ModuleNewsList .layout-101 .news-item-wrapper .news-item .news-title {
+    font-size: 28rpx;
+    color: #333;
+}
+
+.ModuleNewsList .layout-101 .news-item-wrapper .news-item .new-desc-wrapper {
+    padding: 16rpx 0;
+}
+
+.ModuleNewsList .layout-101 .news-item-wrapper .news-item .new-desc-wrapper .news-time {
+    font-size: 22rpx;
+    color: #999;
+}
+
+.ModuleNewsList .layout-102 .news-item-wrapper {
+    padding: 0 20rpx;
+    background-color: #fff;
+}
+
+.ModuleNewsList .layout-102 .news-item-wrapper .news-item {
+    height: 96rpx;
+    border-bottom: 1rpx solid #ddd;
+}
+
+.ModuleNewsList .layout-102 .news-item-wrapper .news-item .news-title {
+    flex: 3;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.ModuleNewsList .layout-102 .news-item-wrapper .news-item .news-time {
+    color: #999;
+    font-size: 22rpx;
+    text-align: right;
+}
+
+.ModuleNewsList .layout-103 .news-item-wrapper {
+    padding: 0 20rpx;
+    background-color: #fff;
+}
+
+.ModuleNewsList .layout-103 .news-item-wrapper .news-item {
+    padding: 20rpx 0 20rpx 0;
+    border-bottom: 1rpx solid #ddd;
+}
+
+.ModuleNewsList .layout-103 .news-item-wrapper .news-item:last-child {
+    border-bottom: none;
+}
+
+.ModuleNewsList .layout-103 .news-item-wrapper .news-item .news-title {
+    font-size: 28rpx;
+    color: #333;
+    margin-bottom: 10rpx;
+}
+
+.ModuleNewsList .layout-103 .news-item-wrapper .news-item .news-desc {
+    color: #999;
+    font-size: 22rpx;
+}
+
+.ModuleNewsList .layout-103 .news-item-wrapper .news-item .news-time {
+    color: #999;
+    font-size: 22rpx;
+    margin-top: 14rpx;
+    display: inline-block;
+}
+
+.ModuleNewsList .layout-104 .news-item-wrapper {
+    padding: 10rpx 20rpx;
+    background-color: #fff;
+}
+
+.ModuleNewsList .layout-104 .news-item-wrapper .news-item-list {
+    flex-wrap: wrap;
+}
+
+.ModuleNewsList .layout-104 .news-item-wrapper .news-item {
+    margin-bottom: 20rpx;
+    -webkit-box-flex: 0 0 50%;
+    -moz-box-flex: 0 0 50%;
+    flex: 0 0 50%;
+}
+
+.ModuleNewsList .layout-104 .news-item-wrapper .news-item:nth-child(2n) {
+    border-left: 8rpx solid #fff;
+    box-sizing: border-box;
+}
+
+.ModuleNewsList .layout-104 .news-item-wrapper .news-item .new-img {
+    width: 345rpx;
+    height: 240rpx;
+    background-color: #eee;
+}
+
+.ModuleNewsList .layout-104 .news-item-wrapper .news-item .new-img image {
+    width: 48rpx;
+    height: 38rpx;
+}
+
+.ModuleNewsList .layout-104 .news-item-wrapper .news-item .news-title {
+    height: 68rpx;
+    line-height: 68rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.ModuleNewsList .layout-105 .news-item-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.ModuleNewsList .layout-105 .news-item-wrapper .news-item {
+    height: 80rpx;
+}
+
+.ModuleNewsList .layout-105 .news-item-wrapper image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 16rpx;
+    position: relative;
+    top: -2rpx;
+}
+
+.ModuleNewsList .layout-105 .news-item-wrapper swiper {
+    flex: 1;
+    height: 80rpx;
+}
+
+.ModuleNewsList .layout-105 .news-item-wrapper .news-item .news-desc {
+    color: #666;
+    font-size: 13px;
+    line-height: 80rpx;
+    height: 80rpx;
+}
+
+.ModuleNewsList .layout-106 .news-item-wrapper {
+    padding: 10rpx 20rpx;
+    background-color: #fff;
+}
+
+.ModuleNewsList .layout-106 .news-item-wrapper .news-item-list {
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.ModuleNewsList .layout-106 .news-item-wrapper .news-item {
+    background-origin: content-box;
+    margin-right: 18rpx;
+    width: 620rpx;
+}
+
+.ModuleNewsList .layout-106 .news-item-wrapper .news-item:last-child {
+    margin-right: 0;
+}
+
+.ModuleNewsList .layout-106 .new-desc-wrapper {
+    padding-bottom: 20rpx;
+}
+
+.ModuleNewsList .layout-106 .news-item-wrapper .news-item .new-img {
+    width: 620rpx;
+    height: 360rpx;
+    background-color: #eee;
+}
+
+.ModuleNewsList .layout-106 .news-item-wrapper .news-item .new-img image {
+    width: 48rpx;
+    height: 38rpx;
+}
+
+.ModuleNewsList .layout-106 .news-item-wrapper .news-item .news-title {
+    font-size: 28rpx;
+    color: #333;
+    -webkit-box-flex: 3;
+    -moz-box-flex: 3;
+    flex: 3;
+    margin-top: 20rpx;
+}
+
+.ModuleNewsList .layout-106 .news-item-wrapper .news-item .news-time {
+    font-size: 22rpx;
+    color: #999;
+    text-align: right;
+    position: relative;
+    top: 8rpx;
+}
+
+.ModuleNewsList .layout-106 .news-item-wrapper .news-item .news-desc {
+    width: 620rpx;
+    font-size: 24rpx;
+    color: #999;
+    margin-top: 12rpx;
+    line-height: 1.5;
+}
+
+.ModuleNewsList .layout-107 .news-item-wrapper {
+    padding: 10rpx 20rpx;
+    background-color: #fff;
+}
+
+.ModuleNewsList .layout-107 .news-item-wrapper .news-item-list {
+    width: 100%;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+}
+
+.ModuleNewsList .layout-107 .news-item-wrapper .news-item {
+    margin-bottom: 10rpx;
+    margin-right: 18rpx;
+    width: 290rpx;
+}
+
+.ModuleNewsList .layout-107 .news-item-wrapper .news-item:last-child {
+    margin-right: 0;
+}
+
+.ModuleNewsList .layout-107 .news-item-wrapper .news-item .new-img {
+    width: 290rpx;
+    height: 380rpx;
+    background-color: #eee;
+}
+
+.ModuleNewsList .layout-107 .news-item-wrapper .news-item .new-img image {
+    width: 48rpx;
+    height: 38rpx;
+}
+
+.ModuleNewsList .layout-107 .news-item-wrapper .news-item .news-title {
+    height: 68rpx;
+    line-height: 68rpx;
+    text-align: left;
+    font-size: 28rpx;
+    color: #333;
+    display: inline-block;
+}

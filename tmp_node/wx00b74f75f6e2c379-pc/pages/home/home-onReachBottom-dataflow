@@ -1,0 +1,25 @@
+// \pages/home/home onReachBottom Data Flow
+digraph {
+	"61c8c632c79248bd9c43b2fb1bee3408" [label="FunctionCall,
+function name -> onReachBottom,
+param -> " color=blue]
+	b11dcda51388471ca01063791ae92906 [label=VariableDeclarations color=blue]
+	b2f96e8a73bc45b08f0b9ee1c293f89d [label="VariableDeclarator,
+left -> refreshSuccess,
+right -> that.data.refreshSuccess" color=blue]
+	b11dcda51388471ca01063791ae92906 -> b2f96e8a73bc45b08f0b9ee1c293f89d
+	"61c8c632c79248bd9c43b2fb1bee3408" -> b11dcda51388471ca01063791ae92906
+	"76b6bec48c9149928f63c821db06839b" [label="If Alternate" color=blue]
+	"7c2db0e204d645b786acac3328a5d44f" [label=VariableDeclarations color=blue]
+	"278b1a0c2bc946a092f117c8fd25445a" [label="VariableDeclarator,
+left -> pageIndex,
+right -> that.data.pageIndex" color=blue]
+	"7c2db0e204d645b786acac3328a5d44f" -> "278b1a0c2bc946a092f117c8fd25445a"
+	"76b6bec48c9149928f63c821db06839b" -> "7c2db0e204d645b786acac3328a5d44f"
+	c38fa03d10884a279ce2d61500d48b5b [label="CallExpression,
+callee name -> that.getHomeProductData,
+param -> pageIndex,
+" color=blue]
+	"76b6bec48c9149928f63c821db06839b" -> c38fa03d10884a279ce2d61500d48b5b
+	"61c8c632c79248bd9c43b2fb1bee3408" -> "76b6bec48c9149928f63c821db06839b"
+}

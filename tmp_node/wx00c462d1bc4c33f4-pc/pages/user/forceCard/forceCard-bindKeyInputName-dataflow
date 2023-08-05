@@ -1,0 +1,19 @@
+// \pages/user/forceCard/forceCard bindKeyInputName Data Flow
+digraph {
+	b5553d1879974d05b382f36d56093254 [label="FunctionCall,
+function name -> bindKeyInputName,
+param -> a,
+a.,
+" color=blue]
+	"119e55bed65a48afbc59d68cde79e866" [label=SequenceExpression color=blue]
+	bdb6c65b79ae45f29a374e5aa175baa3 [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	f7ffba9743e94179a90ee05488a6c9ac [label="Object Properties
+{
+userName -> a.detail.value
+}" color=blue]
+	bdb6c65b79ae45f29a374e5aa175baa3 -> f7ffba9743e94179a90ee05488a6c9ac
+	"119e55bed65a48afbc59d68cde79e866" -> bdb6c65b79ae45f29a374e5aa175baa3
+	b5553d1879974d05b382f36d56093254 -> "119e55bed65a48afbc59d68cde79e866"
+}

@@ -1,0 +1,23 @@
+// \pages/searchresult/searchresult goToProductDetail Data Flow
+digraph {
+	"90455d8264c24609adc9a70a03b9894d" [label="FunctionCall,
+function name -> goToProductDetail,
+param -> a,
+a.,
+" color=blue]
+	"758483f3970142b68a4db2cd987e43a3" [label=VariableDeclarations color=blue]
+	"1d69314bf0d448989d00ef1d64512f97" [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.productid" color=blue]
+	"758483f3970142b68a4db2cd987e43a3" -> "1d69314bf0d448989d00ef1d64512f97"
+	"90455d8264c24609adc9a70a03b9894d" -> "758483f3970142b68a4db2cd987e43a3"
+	fba0089c7ed14fa9924fea8afc2105df [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"8fdf8b96d201496c8ad76f5cd9c6dc53" [label="Object Properties
+{
+url -> '../productdetail/productdetail?id=' + t
+}" color=blue]
+	fba0089c7ed14fa9924fea8afc2105df -> "8fdf8b96d201496c8ad76f5cd9c6dc53"
+	"90455d8264c24609adc9a70a03b9894d" -> fba0089c7ed14fa9924fea8afc2105df
+}

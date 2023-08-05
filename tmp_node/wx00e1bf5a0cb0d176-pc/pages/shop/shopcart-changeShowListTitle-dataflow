@@ -1,0 +1,19 @@
+// \pages/shop/shopcart changeShowListTitle Data Flow
+digraph {
+	ff9a9a96d2b54c92abd488049c686be6 [label="FunctionCall,
+function name -> changeShowListTitle,
+param -> " color=blue]
+	"880d0b8b01e44076a02efa3fd35b20c3" [label="If Alternate" color=blue]
+	"081abc814597407a9d1d4d90cbbdc516" [label=SequenceExpression color=blue]
+	edc9331eb8a54a14b2a97d2f1802ea51 [label="CallExpression,
+callee name -> a.setData,
+param -> " color=blue]
+	"5ca3e426ce5645ebb289aaa948895b19" [label="Object Properties
+{
+showList -> a.data.showList
+}" color=blue]
+	edc9331eb8a54a14b2a97d2f1802ea51 -> "5ca3e426ce5645ebb289aaa948895b19"
+	"081abc814597407a9d1d4d90cbbdc516" -> edc9331eb8a54a14b2a97d2f1802ea51
+	"880d0b8b01e44076a02efa3fd35b20c3" -> "081abc814597407a9d1d4d90cbbdc516"
+	ff9a9a96d2b54c92abd488049c686be6 -> "880d0b8b01e44076a02efa3fd35b20c3"
+}

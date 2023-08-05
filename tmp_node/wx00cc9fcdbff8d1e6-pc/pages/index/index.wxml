@@ -1,0 +1,74 @@
+<view class="page">
+    <swiper autoplay="{{autoplay}}" duration="{{duration}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+        <swiper-item wx:for="{{imgUrls}}" wx:key="key">
+            <image class="slide-image" height="200" src="{{item.photo}}" width="100%"></image>
+        </swiper-item>
+    </swiper>
+    <view class="search">
+        <button bindtap="suo">
+            <image class="searchcion" src="/images/search.jpg"></image>
+        </button>
+    </view>
+    <view class="navs">
+        <view class="nav-item">
+            <navigator class="nav-item1" hoverClass="nav-hover" openType="navigate" url="../cplist/listdetail">
+                <image class="nav-image" src="https://jszb.xihewh.com/images/app-billboard.png"></image>
+                <text>今日上新</text>
+            </navigator>
+        </view>
+        <view class="nav-item">
+            <navigator class="nav-item1" hoverClass="nav-hover" openType="navigate" url="../bklist/listdetail">
+                <image class="nav-image" src="https://jszb.xihewh.com/images/app-jifen.png"></image>
+                <text>爆款推荐</text>
+            </navigator>
+        </view>
+        <view class="nav-item">
+            <navigator class="nav-item1" hoverClass="nav-hover" openType="navigate" url="../listdetail/listdetail?cat_id=31">
+                <image class="nav-image" src="https://jszb.xihewh.com/images/xianglian.jpg"></image>
+                <text>吊坠/项链</text>
+            </navigator>
+        </view>
+        <view class="nav-item">
+            <navigator class="nav-item1" hoverClass="nav-hover" openType="navigate" url="../listdetail/listdetail?cat_id=25">
+                <image class="nav-image" src="https://jszb.xihewh.com/images/shoubiao.jpg"></image>
+                <text>手表系列</text>
+            </navigator>
+        </view>
+    </view>
+    <view class="navs">
+        <view class="nav-item">
+            <navigator class="nav-item1" hoverClass="nav-hover" openType="navigate" url="../listdetail/listdetail">
+                <image class="nav-image" src="https://jszb.xihewh.com/images/quanbu.jpg"></image>
+                <text>全部宝贝</text>
+            </navigator>
+        </view>
+        <view class="nav-item">
+            <navigator class="nav-item1" hoverClass="nav-hover" openType="navigate" url="../listdetail/listdetail?cat_id=24">
+                <image class="nav-image" src="https://jszb.xihewh.com/images/qingyu.jpg"></image>
+                <text>青玉系列</text>
+            </navigator>
+        </view>
+        <view class="nav-item">
+            <navigator class="nav-item1" hoverClass="nav-hover" openType="navigate" url="../listdetail/listdetail?cat_id=34">
+                <image class="nav-image" src="https://jszb.xihewh.com/images/baiyu.jpg"></image>
+                <text>白玉系列</text>
+            </navigator>
+        </view>
+        <view class="nav-item">
+            <navigator class="nav-item1" hoverClass="nav-hover" openType="navigate" url="../listdetail/listdetail?cat_id=35">
+                <image class="nav-image" src="https://jszb.xihewh.com/images/biyu.jpg"></image>
+                <text>碧玉系列</text>
+            </navigator>
+        </view>
+    </view>
+    <view class="cont">
+        <navigator class="pr" hoverClass="changestyle" url="../product/detail?productId={{item.id}}" wx:for="{{productData}}" wx:key="key">
+            <image class="photo" src="{{item.photo_x}}"></image>
+            <view class="title">{{item.name}}</view>
+            <view style="display:flex;line-height:25px;">
+                <view class="gmxx">¥价格详询客服</view>
+            </view>
+        </navigator>
+    </view>
+    <view bindtap="getMore" class="clear mt10">点击查看更多</view>
+</view>

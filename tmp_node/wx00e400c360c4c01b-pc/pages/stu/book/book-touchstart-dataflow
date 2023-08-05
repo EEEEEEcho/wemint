@@ -1,0 +1,29 @@
+// \pages/stu/book/book touchstart Data Flow
+digraph {
+	"8b3a85e6ed3948ebacd488e946ecc23b" [label="FunctionCall,
+function name -> touchstart,
+param -> a.,
+a,
+" color=blue]
+	"3789a09e210645d2b48766b2824a3e37" [label=SequenceExpression color=blue]
+	"7d5f0a16bde84377a5cbe0210e7b7c19" [label="CallExpression,
+callee name -> this.data.bookLoaningList.forEach,
+param -> " color=blue]
+	"7c5851270d214df39d6ed4e784324760" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> a,
+" color=blue]
+	"7d5f0a16bde84377a5cbe0210e7b7c19" -> "7c5851270d214df39d6ed4e784324760"
+	"3789a09e210645d2b48766b2824a3e37" -> "7d5f0a16bde84377a5cbe0210e7b7c19"
+	c24fcaa3f56f4e2d952c6eb75fad192b [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"06ca9244bcde4a79aec3aa373000fd62" [label="Object Properties
+{
+startX -> a.changedTouches[0].clientX
+startY -> a.changedTouches[0].clientY
+}" color=blue]
+	c24fcaa3f56f4e2d952c6eb75fad192b -> "06ca9244bcde4a79aec3aa373000fd62"
+	"3789a09e210645d2b48766b2824a3e37" -> c24fcaa3f56f4e2d952c6eb75fad192b
+	"8b3a85e6ed3948ebacd488e946ecc23b" -> "3789a09e210645d2b48766b2824a3e37"
+}

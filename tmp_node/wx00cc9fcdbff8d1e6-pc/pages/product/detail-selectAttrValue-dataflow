@@ -1,0 +1,71 @@
+// \pages/product/detail selectAttrValue Data Flow
+digraph {
+	e0af8def0b974478860cd2fe2b8d426d [label="FunctionCall,
+function name -> selectAttrValue,
+param -> " color=blue]
+	fc38bfe208b042b18fed17ab1ad1e03d [label=VariableDeclarations color=blue]
+	c3510809dcc5404dac74958a098bdfdf [label="VariableDeclarator,
+left -> a,
+right -> this.data.attrValueList" color=blue]
+	fc38bfe208b042b18fed17ab1ad1e03d -> c3510809dcc5404dac74958a098bdfdf
+	e0af8def0b974478860cd2fe2b8d426d -> fc38bfe208b042b18fed17ab1ad1e03d
+	ae773fd3fbf846d3a70e76fd2d223cfe [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"67d561f8d0f4437aa7fc09213f62a0f2" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	b0572dbfab20487583d0afb41d13e92c [label="CallExpression,
+callee name -> this.disSelectValue,
+param -> a,
+" color=blue]
+	dafb705ed0af4b8eb305cb35b2587f2a [label="FunctionCall,
+function name -> disSelectValue,
+param -> t,
+t.,
+" color=blue]
+	"1cd8d5863128432190c3933835576578" [label=VariableDeclarations color=blue]
+	"7265a91a73a44a18b3ee03af5366c2a0" [label="VariableDeclarator,
+left -> s,
+right -> this.data.commodityAttr" color=blue]
+	"1cd8d5863128432190c3933835576578" -> "7265a91a73a44a18b3ee03af5366c2a0"
+	dafb705ed0af4b8eb305cb35b2587f2a -> "1cd8d5863128432190c3933835576578"
+	f1d861d0abf342de8cef8886ba52629f [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"5b487ca41d40477696b1bf8aa72f99bb" [label="Object Properties
+{
+includeGroup -> s
+attrValueList -> t
+}" color=blue]
+	f1d861d0abf342de8cef8886ba52629f -> "5b487ca41d40477696b1bf8aa72f99bb"
+	dafb705ed0af4b8eb305cb35b2587f2a -> f1d861d0abf342de8cef8886ba52629f
+	b0572dbfab20487583d0afb41d13e92c -> dafb705ed0af4b8eb305cb35b2587f2a
+	"67d561f8d0f4437aa7fc09213f62a0f2" -> b0572dbfab20487583d0afb41d13e92c
+	"2cd306f237c44be581b81bc63f127f91" [label="CallExpression,
+callee name -> this.selectValue,
+param -> a,
+" color=blue]
+	"24c190f1b5fb4ddfbf958ee75ca29226" [label="FunctionCall,
+function name -> selectValue,
+param -> t,
+t.,
+" color=blue]
+	"9ff979d2bdee44bcbef178b634cdcaaf" [label=SequenceExpression color=blue]
+	cfec13057c7f4f6e9421f5cf99f830db [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	f249e0b58955431680e9223d2708c8cc [label="Object Properties
+{
+attrValueList -> t
+}" color=blue]
+	cfec13057c7f4f6e9421f5cf99f830db -> f249e0b58955431680e9223d2708c8cc
+	"9ff979d2bdee44bcbef178b634cdcaaf" -> cfec13057c7f4f6e9421f5cf99f830db
+	"24c190f1b5fb4ddfbf958ee75ca29226" -> "9ff979d2bdee44bcbef178b634cdcaaf"
+	"4fbb99cea01644dd90d397c4cdcb18e9" [label="ConditionalExpression,
+ conditional list -> this.setData,this.setData" color=blue]
+	"24c190f1b5fb4ddfbf958ee75ca29226" -> "4fbb99cea01644dd90d397c4cdcb18e9"
+	"2cd306f237c44be581b81bc63f127f91" -> "24c190f1b5fb4ddfbf958ee75ca29226"
+	"67d561f8d0f4437aa7fc09213f62a0f2" -> "2cd306f237c44be581b81bc63f127f91"
+	ae773fd3fbf846d3a70e76fd2d223cfe -> "67d561f8d0f4437aa7fc09213f62a0f2"
+	e0af8def0b974478860cd2fe2b8d426d -> ae773fd3fbf846d3a70e76fd2d223cfe
+}

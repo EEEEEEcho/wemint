@@ -1,0 +1,37 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view style="margin-top: {{navH+status+10}}px;">
+    <view class="headline row">
+        <view class="pro_info row">
+            <image class="pro_img" lazyLoad="true" mode="aspectFill" src="{{imageUrl}}"></image>
+            <text class="pro_status">{{serviceMessage.getStatus(logistics.status)}}</text>
+        </view>
+        <view class="service row">
+            <view class="hr"></view>
+            <view bindtap="callPhone" class="contact column" data-phone="{{logistics.expPhone}}">
+                <image class="contact_img" src="http://oss.shangmian.xin/weixin_applets_icon_service.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="serviceContent">
+        <view class="service_info row" wx:for="{{logistics.list}}" wx:key="index">
+            <view class="time_line column">
+                <view class="service_time column">
+                    <view class="date">{{serviceMessage.getDate(item.time)}}</view>
+                    <view class="time">{{serviceMessage.getTime(item.time)}}</view>
+                </view>
+            </view>
+            <view class="service_hr" style="margin-top: {{index==0?30:0}}rpx"></view>
+            <view class="place_line">
+                <view class="service_place column">
+                    <view class="dot"></view>
+                    <view class="service_status">{{item.status}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="recommend">
+        <text class="commendTitle">尚免推荐</text>
+        <goods-list></goods-list>
+    </view>
+</view>
+<wxs module="serviceMessage" src="serviceMessage.wxs" />

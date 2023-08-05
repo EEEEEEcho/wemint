@@ -1,0 +1,44 @@
+<view class="xzdz">
+    <view class="xzdzBox">
+        <view class="xzdzTitle">
+            <view class="xzdzC">评价订单 
+        <image class="xzdz_img" src="/images/eveluationOrder.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="evabox" wx:for="{{evaluates}}" wx:key="title">
+    <view class="evabox-text">{{item.title}}</view>
+    <view class="xing">
+        <image bindtap="pingjia" class="imgs" data-point="{{cellIndex}}" data-title-index="{{index}}" src="{{cell.star}}" wx:for="{{evaluates[index].starUrl}}" wx:for-index="cellIndex" wx:for-item="cell"></image>
+    </view>
+</view>
+<view class="section" style="width:80%;background:#4a4a4a;border-radius:8px;margin:20px auto;">
+    <textarea bindblur="sayMore" focus="{{focus}}" placeholder="您对店铺及菜品有什么想说的？" style="font-size:14px;padding:16px;padding-left:24px;height:120px; color:#fff;box-sizing:border-box;" value="{{sayMore}}"></textarea>
+</view>
+<view style="display:flex;flex-flow:row;justify-content: space-between;">
+    <view style="color:#fff;font-size:16px;padding-left:40px;">{{food}}</view>
+</view>
+<view class="container">
+    <view class="row" wx:for="{{foods}}">
+        <view class="col-12">
+            <view class="foodname" wx:if="{{food.sizeName==null||food.sizeName==''}}">{{item.foodName}}</view>
+            <view class="foodname" wx:else>{{item.foodName}}({{item.sizeName}})</view>
+            <view style="float:right;padding-right:10vw;">
+                <view bindtap="cai" class="unlikefood" data-cai-index="{{index}}" data-caicolor="#494949" style="background-color:{{caiColors[index]}};">
+                    <image class="cai" src="{{unlikeUrls[index]}}"></image>
+                    <text class="zan" style="color:{{caiWordColors[index]}};">踩</text>
+                </view>
+                <view bindtap="zan" class="likefood" data-zan-index="{{index}}" data-zancolor="#ffbf21" style="background-color:{{zanColors[index]}};">
+                    <image class="cai" src="{{likeUrls[index]}}"></image>
+                    <text class="zan" style="color:{{zanWordColors[index]}};">赞</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<button bindtap="submitEval" class="saveAddress">提 交 评 价</button>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

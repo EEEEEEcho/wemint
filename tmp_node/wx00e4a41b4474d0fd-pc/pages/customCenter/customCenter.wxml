@@ -1,0 +1,253 @@
+<myLoading id="myLoading"></myLoading>
+<view class="container">
+    <view class="section section-top">
+        <view class="card-box">
+            <view class="card">
+                <view bind:tap="showIntro" class="desc">
+                    <image class="icon-info" mode="scaleToFill" src="{{cdn}}/info_white.png"></image>
+					用途说明
+				</view>
+                <view class="card-info">
+                    <view class="slogan">
+                        <view class="logo">无锡WIII公寓</view>
+                        <view class="title">户型定制入场券</view>
+                    </view>
+                    <view class="worth" wx:if="{{!hasPay}}">
+						600<text class="unit">元</text>
+                    </view>
+                </view>
+                <view class="card-feature" wx:if="{{!hasPay}}">
+                    <view class="feature">
+                        <image class="icon-privilege" mode="scaleToFill" src="{{cdn}}/icon_design.png"></image>
+						个性定制
+					</view>
+                    <view class="feature">
+                        <image class="icon-privilege" mode="scaleToFill" src="{{cdn}}/icon_refund.png"></image>
+						随时退款
+					</view>
+                    <view class="feature">
+                        <image class="icon-privilege" mode="scaleToFill" src="{{cdn}}/icon_chosen.png"></image>
+						折扣礼遇
+					</view>
+                </view>
+                <view class="card-number" wx:else>
+					NO.{{ticketViewCode}} <image class="qrcode" mode="scaleToFill" src="{{cdn}}/QRcode.png"></image>
+                </view>
+            </view>
+            <block wx:if="{{!hasPay}}">
+                <view class="card-desc">
+                    <view class="tag">限时活动</view>
+					邀请朋友,享5折好友价,还能提升排名哦
+				</view>
+                <view class="group">
+                    <view bind:tap="onPay" class="btn-card btn-pay">直接付款</view>
+                    <view bind:tap="menuShare" class="btn-card btn-share">邀请立减</view>
+                </view>
+                <view class="date" wx:if="{{houseId}}">
+                    <component-count-down houseId="{{houseId}}"></component-count-down>
+                </view>
+            </block>
+            <view class="pay-detail" wx:else>
+                <view class="pay-detial-item">支付时间：{{payTime}}</view>
+                <view class="pay-detial-item">支付金额：{{payFee}}元 定制服务入场券</view>
+                <view class="pay-detial-item">定制状态：{{payProcess}}
+						<view bind:tap="didShowProgress" class="float-r">查看详情 ></view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{hasPay}}">
+            <view class="invite-list">
+                <block wx:for="{{inviteArr}}" wx:for-item="i" wx:key="{{i}}">
+                    <block wx:for="{{[0,1,2,3,4]}}" wx:for-index="idx" wx:key="j">
+                        <block wx:if="{{inviteList[i*5+idx]}}">
+                            <image class="invite-avatar" mode="scaleToFill" src="{{inviteList[i*5+idx].headImage}}" wx:if="{{inviteList[i*5+idx].headImage}}"></image>
+                            <image class="invite-avatar" mode="scaleToFill" src="{{cdn}}/avatar.png" wx:else></image>
+                        </block>
+                        <image class="invite-avatar" mode="scaleToFill" src="{{cdn}}/avatar_b.png" wx:else></image>
+                    </block>
+                </block>
+            </view>
+            <view class="invite-content">您已邀请{{inviteList.length}}人抢定制入场券, 排名大幅提升</view>
+            <view bind:tap="menuShare" class="btn-share btn-invite">邀请好友助力</view>
+            <view bind:tap="showActivityPop" class="invite-tip">
+                <component-count-down houseId="{{houseId}}"></component-count-down>
+                <image class="icon-info icon-info--invite" mode="scaleToFill" src="{{cdn}}/info_grey1.png"></image>
+				活动说明
+			</view>
+        </view>
+    </view>
+    <view class="section section-rank">
+        <view class="section-title">
+            <text class="flex-1">我的意向方案</text>
+            <text bind:tap="createCustom" class="section-btn">新建方案</text>
+        </view>
+        <view class="custom-list" wx:if="{{customList&&customList.length}}">
+            <view class="custom-item" wx:for="{{customList}}" wx:key="item.id">
+                <view class="touch-item {{item.isTouchMove?'touch-move-active':''}}">
+                    <view bindtouchmove="touchmove" bindtouchstart="touchstart" class="custom-card touch-content" data-index="{{index}}">
+                        <view class="custom-card-box">
+                            <c-img bind:click="onRouteDetail" cclass="custom-item-img" index="{{item.id}}" mode="aspectFill" src="{{item.senceImage}}"></c-img>
+                            <view class="custom-feature-list">
+                                <view class="custom-feature" wx:for="{{item.spaces}}" wx:for-item="space" wx:key="space.id">{{space.name}}</view>
+                            </view>
+                            <image class="shadow" src="https://dm.static.elab-plus.com/wuXiW3/index/shadow.png"></image>
+                            <view bind:tap="onLike" class="custom-like" data-id="{{item.id}}">
+                                <image class="icon-like" mode="scaleToFill" src="{{cdn}}/like.png" wx:if="{{item.isLike}}"></image>
+                                <image class="icon-like" mode="scaleToFill" src="{{cdn}}/like_normal@1x.png" wx:else></image>
+								{{item.like}}
+							</view>
+                        </view>
+                        <view class="custom-item-info">
+                            <text class="custom-item-rank">{{item.name}}</text>
+							最后编辑 {{item.date}}
+						</view>
+                    </view>
+                    <view bind:tap="onDelete" class="del" data-id="{{item.id}}">删除</view>
+                </view>
+                <view class="custom-rank">
+					当前排名:<text class="red">{{item.rank}}</text>
+                    <view bind:tap="onShare" class="section-btn" data-id="{{item.id}}">分享</view>
+                    <view bind:tap="onEdit" class="section-btn margin-right" data-id="{{item.id}}">编辑</view>
+                </view>
+            </view>
+            <view class="divide">
+				向左划可以进行删除操作
+			</view>
+        </view>
+        <view class="divide-empty" wx:else>
+			噢噢,您暂时还没有方案哦,快去生成方案吧
+		</view>
+    </view>
+    <view class="section section-rank">
+        <view class="section-title">
+            <text class="flex-1">明星户型排行榜</text>
+            <text bindtap="onRouteStar" class="section-more">查看更多</text>
+            <image class="icon-right" mode="scaleToFill" src="{{cdn}}/more_grey.png"></image>
+        </view>
+        <view class="rank-star">
+            <view class="rank-star-box" wx:for="{{rankList}}" wx:key="{{item.id}}">
+                <view class="rank-star-album">
+                    <c-img cclass="rank-star-img" mode="aspectFill" src="{{item.src}}"></c-img>
+                    <view bind:tap="onLikeStar" class="custom-like" data-id="{{item.id}}">
+                        <image class="icon-like" mode="scaleToFill" src="{{cdn}}/like.png" wx:if="{{item.isLike}}"></image>
+                        <image class="icon-like" mode="scaleToFill" src="{{cdn}}/like_normal@1x.png" wx:else></image>
+						{{item.like}}
+					</view>
+                </view>
+                <image src="https://dm.static.elab-plus.com/wuXiW3/index/icover.png" style="position: absolute;left: 0;bottom: 0;height: 120rpx"></image>
+                <view class="rank-star-info">
+                    <image class="rank-star-avatar" mode="scaleToFill" src="{{item.owner.avatar}}"></image>
+					{{item.owner.name}}
+				</view>
+            </view>
+        </view>
+    </view>
+    <view class="section section-footer">
+        <image class="banner" mode="scaleToFill" src="https://dm.static.elab-plus.com/wuXiW3/index/banner图1@2x.png"></image>
+    </view>
+    <view class="mask mask-white" wx:if="{{showIntro}}">
+        <view class="popup popup-intro">
+            <view class="popup-box">
+                <view class="intro-value">
+					仅需 <text class="large">600</text>元
+				</view>
+                <view class="intro-title">
+					无锡WIII公寓户型定制 <text class="theme-color">入场券</text>
+                </view>
+                <view class="privileges">
+                    <view class="privilege">
+                        <image class="privilege-img" mode="scaleToFill" src="{{cdn}}/icon_design.png"></image>
+                        <view class="privilege-detail">
+                            <view class="privilege-title">自主设计权</view>
+                            <view class="privilege-desc">您的户型定制方案,将成为开发商为您设计户型的依据,您心目中完美的家,Elab为您实现.</view>
+                        </view>
+                    </view>
+                    <view class="privilege">
+                        <image class="privilege-img" mode="scaleToFill" src="{{cdn}}/icon_refund.png"></image>
+                        <view class="privilege-detail">
+                            <view class="privilege-title">无忧退款权</view>
+                            <view class="privilege-desc">入场券非定金,您可在任意时间随时申请退款,款项将7个工作日内按原路径退至付款微信账户.</view>
+                        </view>
+                    </view>
+                    <view class="privilege">
+                        <image class="privilege-img" mode="scaleToFill" src="{{cdn}}/icon_chosen.png"></image>
+                        <view class="privilege-detail">
+                            <view class="privilege-title">最终入选权</view>
+                            <view class="privilege-desc">获得的点赞数和成功邀请好友数将决定方案的排名,排名前列的方案将有机会进入开发商的户型库.</view>
+                        </view>
+                    </view>
+                    <view class="explain">定制服务，elab保有完整解释权</view>
+                </view>
+            </view>
+            <view bind:tap="hideIntro" class="pop-btn">我已知晓</view>
+        </view>
+    </view>
+    <view class="mask" wx:if="{{showProgress}}">
+        <view class="popup">
+            <view class="popup-progress">
+                <view class="h3 margin-7">我的定制服务进展</view>
+                <view class="progress-wrap">
+                    <view class="pop-step {{index===progress.length-1?'progress-end':''}}" wx:for="{{progress}}" wx:key="item">
+                        <view class="step-date">
+				  	{{item.date}} <view class="time">{{item.time}}</view>
+                        </view>
+                        <image class="progress-img" mode="scaleToFill" src="{{cdn}}/progress.png" wx:if="{{index!==progress.length-1}}"></image>
+                        <image class="progress-img-end" mode="scaleToFill" src="{{cdn}}/progress_end.png" wx:else></image>
+                        <view class="step-desc {{index===progress.length-1?'step-desc-end':''}}">
+				    {{item.processName}}
+				  </view>
+                    </view>
+                </view>
+                <view class="pop-bottom">
+                    <view bind:tap="onRefund" class="pop-btn pop-btn-progress">申请退款</view>
+                </view>
+            </view>
+            <image bind:tap="closePopup" class="pop-close" mode="scaleToFill" src="{{cdn}}/close.png"></image>
+        </view>
+    </view>
+    <view class="mask" wx:if="{{showRefund}}">
+        <view class="popup popup-progress popup-refund">
+            <view class="h3 margin-1">申请退款</view>
+            <view class="service">
+          抱歉没能让您满意,您是不是遇到什么问题？联系在线客服帮忙解决～
+        </view>
+            <view bind:tap="onPhoneCall" class="service-btn">联系客服</view>
+            <view class="reason">
+        	选择我的退款原因
+        </view>
+            <view bind:tap="selectReason" class="reason-item" data-id="{{idx}}" wx:for="{{refundResons}}" wx:for-index="idx" wx:key="idx">
+                <image class="select-icon" mode="scaleToFill" src="{{cdn}}/select.png" wx:if="{{idx===selectedReason}}"></image>
+                <image class="select-icon" mode="scaleToFill" src="{{cdn}}/un_select.png" wx:else></image>
+        	{{item}}
+        </view>
+            <view class="refund">
+        	申请退款后,7个工作日内将按原路径退还至您支付时所用的微信账户。
+        </view>
+            <view class="button-group">
+                <view bind:tap="didRefund" class="refund-button">确认退款</view>
+                <view bind:tap="cancelRefund" class="refund-button refund-cancel">先不退了</view>
+            </view>
+        </view>
+    </view>
+    <view class="mask" wx:if="{{showCustomPop}}">
+        <view class="popup">
+            <view class="popup-custom">
+                <view class="pop-custom-top">
+                    <c-img cclass="pop-custom-img" mode="scaleToFill" src="{{cdn}}/center_dialog.png"></c-img>
+                    <view class="pop-custom-tip">
+			  	即刻拥有你的专属户型
+			  </view>
+                    <view class="pop-custom-tip-s">
+			  	不再等待/这一次,我们让你重新定义你的生活
+			  </view>
+                </view>
+                <view class="pop-bottom-custom">
+                    <view bind:tap="onRouteCustom" class="pop-btn-custom btn-share">立即定制我的方案</view>
+                </view>
+            </view>
+            <image bind:tap="closeCustomPopup" class="pop-close" mode="scaleToFill" src="{{cdn}}/close.png"></image>
+        </view>
+    </view>
+</view>
+<component-action-sheet bind:onclose="onClose" bind:onsaveimage="onSaveImage" bind:opensetting="handleSetting" openSetting="{{openSetting}}" timelineSrc="{{timelineSrc}}" wx:if="{{doShare}}"></component-action-sheet>
+<component-pop-up bind:onclose="showActivityPop" contentSrc="{{cdn}}/yaoqing.png" hasClose="{{true}}" wx:if="{{showPopup}}"></component-pop-up>

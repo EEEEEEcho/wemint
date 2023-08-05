@@ -1,0 +1,31 @@
+// \pages/shop/withdrawal alipay Data Flow
+digraph {
+	"169fff51446c4a07ad3548ceaf0ce2eb" [label="FunctionCall,
+function name -> alipay,
+param -> a,
+a.,
+" color=blue]
+	ea52386f5ea545d6aa9d24b17be4ec4a [label=VariableDeclarations color=blue]
+	d8664942e2fa449dbe1dc48621e67a47 [label="VariableDeclarator,
+left -> e,
+right -> a.detail.value" color=blue]
+	ea52386f5ea545d6aa9d24b17be4ec4a -> d8664942e2fa449dbe1dc48621e67a47
+	"169fff51446c4a07ad3548ceaf0ce2eb" -> ea52386f5ea545d6aa9d24b17be4ec4a
+	"64c6a3a99e264579bdab1a6db487f294" [label=SequenceExpression color=blue]
+	"9a783448626d41be95e13d5fdb2426f1" [label="ConditionalExpression,
+ conditional list -> this.setData,this.setData" color=blue]
+	"077f9047ff414c0593060768b6b2984e" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	b710882127804aa6a50579d5787e8d8e [label="Object Properties
+{
+alipay -> e
+}" color=blue]
+	"077f9047ff414c0593060768b6b2984e" -> b710882127804aa6a50579d5787e8d8e
+	"9a783448626d41be95e13d5fdb2426f1" -> "077f9047ff414c0593060768b6b2984e"
+	"64c6a3a99e264579bdab1a6db487f294" -> "9a783448626d41be95e13d5fdb2426f1"
+	"437430605ebb412185833591bddc9d73" [label="ConditionalExpression,
+ conditional list -> this.setData,this.setData" color=blue]
+	"64c6a3a99e264579bdab1a6db487f294" -> "437430605ebb412185833591bddc9d73"
+	"169fff51446c4a07ad3548ceaf0ce2eb" -> "64c6a3a99e264579bdab1a6db487f294"
+}

@@ -1,0 +1,17 @@
+// \pages/user/shippingAddress/addAddress/addAddress bindNameInput Data Flow
+digraph {
+	"8e2e89b36ef74a5783529b1eb88f2306" [label="FunctionCall,
+function name -> bindNameInput,
+param -> a,
+a.,
+" color=blue]
+	"457b3e238ff6459ebb0b5d2b84df5167" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"9854700f8a824ae797077ee40bd83f1b" [label="Object Properties
+{
+name -> a.detail.value
+}" color=blue]
+	"457b3e238ff6459ebb0b5d2b84df5167" -> "9854700f8a824ae797077ee40bd83f1b"
+	"8e2e89b36ef74a5783529b1eb88f2306" -> "457b3e238ff6459ebb0b5d2b84df5167"
+}

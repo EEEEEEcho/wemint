@@ -1,0 +1,17 @@
+// \pages/order/downline bindKeyInputPayUser Data Flow
+digraph {
+	"8b6a4b89e8ce40e6bcdaeda30cb876b8" [label="FunctionCall,
+function name -> bindKeyInputPayUser,
+param -> a,
+a.,
+" color=blue]
+	d6327d89352f43dd89d9ca0dfe073a99 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	f28c8424c1e64c75995f127bb8bc64ac [label="Object Properties
+{
+payAccountName -> a.detail.value
+}" color=blue]
+	d6327d89352f43dd89d9ca0dfe073a99 -> f28c8424c1e64c75995f127bb8bc64ac
+	"8b6a4b89e8ce40e6bcdaeda30cb876b8" -> d6327d89352f43dd89d9ca0dfe073a99
+}

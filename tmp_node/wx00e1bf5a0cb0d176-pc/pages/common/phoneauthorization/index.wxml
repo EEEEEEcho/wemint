@@ -1,0 +1,12 @@
+<view catchtouchmove="preventD" class="popout-mark " wx:if="{{phonelicense||authorizationfailure}}"></view>
+<view class="popout-content" wx:if="{{phonelicense}}">
+    <view class="popout-title">
+        <view>小程序授权</view>
+    </view>
+    <view class="popout-main">请允许当前小程序获取手机号码</view>
+    <view class="popout-button">
+        <view class="button-rights">
+            <button bindgetphonenumber="getPhoneNumber" bindtap="turnOff" openType="getPhoneNumber" type="primary">允许</button>
+        </view>
+    </view>
+</view>

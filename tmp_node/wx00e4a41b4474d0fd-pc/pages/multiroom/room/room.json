@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "视频看房",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "rtc-room": "/pages/components/rtc-room/rtc-room",
+        "myLoading": "../../../components/globalLoad/globalLoad",
+        "navbar": "/components/navbar/navbar",
+        "c-img": "../../components/indexImg/indexImg"
+    }
+}

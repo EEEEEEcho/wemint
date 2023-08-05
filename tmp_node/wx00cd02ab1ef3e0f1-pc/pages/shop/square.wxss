@@ -1,0 +1,717 @@
+@import "../../components/picker_datetime.wxss";
+
+@import "AddrManage.wxss";
+
+.container {
+    background: white;
+    font-size: 28rpx;
+}
+
+.addPlace {
+    display: flex;
+    align-items: center;
+    height: 96rpx;
+    padding-left: 26rpx;
+    color: #999;
+    font-size: 30rpx;
+}
+
+.addBtn {
+    margin-right: 22rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48rpx;
+    height: 48rpx;
+    border: 1px solid #ddd;
+    border-radius: 10rpx;
+}
+
+.service {
+    position: relative;
+    font-size: 26rpx;
+    color: #333;
+    height: 96rpx;
+}
+
+.service button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2;
+    height: 96rpx;
+    opacity: 0;
+}
+
+.service view text {
+    font-size: 32rpx;
+    display: inline-block;
+    margin-right: 12rpx;
+}
+
+.serviceText {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 38%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 26rpx;
+}
+
+.pickuptype-item {
+    width: 50%;
+    display: inline-block;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 80rpx;
+    height: 80rpx;
+    position: relative;
+}
+
+.pickuptype-item.active {
+    color: #ff9934;
+}
+
+.pickuptype-item.active::after {
+    content: '';
+    position: absolute;
+    background: #ff9934;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5rpx;
+}
+
+.input-contact,.input-mobile {
+    display: inline-block;
+    border-radius: 10rpx;
+    border: 1px solid #ccc;
+}
+
+.lbsshop-item {
+    display: flex;
+    font-size: 28rpx;
+    border: 1px solid #ccc;
+    border-radius: 5rpx;
+    margin-bottom: 10rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+}
+
+.lbsshop-item .lbsshop-radio-ctnr {
+    flex: 0 0 20%;
+}
+
+.coupon-item .lbsshop-info-ctnr {
+    flex: 1;
+}
+
+.btnlbsshop {
+    width: 150rpx;
+    background: #ca0000;
+    font-size: 28rpx;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 60rpx;
+    border-radius: 10rpx;
+    color: white;
+}
+
+.lbsshop-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    opacity: 0.5;
+}
+
+.lbsshop-ctnr {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 99;
+    width: 100%;
+    max-height: 800rpx;
+    background: white;
+}
+
+.product-list {
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 240rpx;
+    background-color: #f4f4f4;
+}
+
+.product-item .col1 {
+    height: 100%;
+    flex: 0 0 236rpx;
+    padding: 0 26rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-item .col2 {
+    position: relative;
+    height: 100%;
+    flex: 1;
+    padding: 30rpx 26rpx 30rpx 0;
+    box-sizing: border-box;
+}
+
+.product-item .image {
+    width: 100%;
+}
+
+.product-item .name {
+    width: 100%;
+    font-size: 26rpx;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.product-item .norms {
+    position: relative;
+    margin-top: 12rpx;
+    padding-right: 50rpx;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 22rpx;
+    color: #999;
+    height: 30rpx;
+}
+
+.itemNum {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.product-item .price {
+    position: absolute;
+    bottom: 30rpx;
+    left: 0;
+    width: 100%;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.memoinfo {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 30rpx 26rpx;
+}
+
+.memoinfo .memoinfoTitle {
+    font-size: 26rpx;
+    color: #333;
+    flex: 0 0 20%;
+}
+
+.memo {
+    flex: 1;
+    font-size: 26rpx;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.freightinfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 28rpx;
+    padding: 26rpx;
+    box-sizing: border-box;
+    height: 96rpx;
+    color: #333;
+}
+
+.subtotal {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 96rpx;
+    padding-right: 26rpx;
+    box-sizing: border-box;
+    color: #333;
+}
+
+.subtotalnum {
+    font-size: 26rpx;
+}
+
+.allMoney {
+    font-size: 26rpx;
+    font-weight: bold;
+}
+
+.jifeninfo {
+    font-size: 28rpx;
+    height: 96rpx;
+    display: flex;
+    align-items: center;
+    padding-left: 26rpx;
+    box-sizing: border-box;
+    color: #999;
+}
+
+.jifeninfo .jifentext {
+    color: #333;
+}
+
+.jifeninfo .jifennum {
+    display: inline-block;
+    padding: 0 10rpx;
+    color: #ff7200;
+}
+
+.integralSelec {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96rpx;
+    height: 96rpx;
+}
+
+.integralSelecitem {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.couponinfo {
+    padding: 0 26rpx;
+    box-sizing: border-box;
+    width: 100%;
+    height: 96rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.coupon-item {
+    display: flex;
+    font-size: 28rpx;
+    border-radius: 5rpx;
+    margin-bottom: 10rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+}
+
+.rightIconBox .rightIcon {
+    font-size: 28rpx;
+}
+
+.rightIconBox .rightIconBoxText {
+    display: inline-block;
+    margin-right: 10rpx;
+    color: #999;
+}
+
+.coupon-img {
+    width: 100%;
+}
+
+.couponinfo-plug {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5555;
+    background-color: rgba(0,0,0,.7);
+}
+
+.couponinfo-plugBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.paymentPlugBg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0,0,0,.7);
+}
+
+.couponinfo-plug-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    height: 820rpx;
+    background-color: #fff;
+}
+
+.leftCouponinfo .juan {
+    font-size: 28rpx;
+}
+
+.couponinfo-topHeader {
+    height: 76rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.couponinfo-topHeader .closePlug {
+    position: absolute;
+    right: 0rpx;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76rpx;
+    height: 76rpx;
+    font-size: 38rpx;
+}
+
+.coupon-item {
+    display: flex;
+    align-items: center;
+    padding: 20rpx 0;
+    justify-content: space-between;
+}
+
+.couponinfoItemLeft {
+    flex: 0 0 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.couponinfoItemLeft .numText {
+    font-size: 34rpx;
+    color: #ff7200;
+}
+
+.coupon-item .coupon-info-ctnr {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 18rpx;
+}
+
+.coupon-info-ctnr .coupon-title {
+    font-size: 22rpx;
+    color: #666;
+    margin-bottom: 14rpx;
+}
+
+.coupon-info-ctnr .coupon-expire {
+    font-size: 22rpx;
+    color: #999;
+}
+
+.coupon-item .coupon-radio-ctnr {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.coupon-item .radioItem {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.suminfo {
+    position: fixed;
+    width: 100%;
+    height: 98rpx;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    box-shadow: 0 0 10rpx rgba(0,0,0,0.1);
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    clear: both;
+    background: #fff;
+}
+
+.suminfo-desc {
+    margin-right: 16rpx;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.total-money {
+    color: #ff7200;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+.suminfo-submit {
+    position: relative;
+    width: 196rpx;
+    background: #ff7200;
+    color: white;
+    text-align: center;
+    height: 98rpx;
+    font-size: 28rpx;
+}
+
+.suminfo-submit .submitText {
+    position: absolute;
+    width: 100%;
+    height: 98rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.suminfo-submit button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 98rpx;
+    background-color: transparent;
+    border: none;
+}
+
+.addr-manage-header .goPlace {
+    position: absolute;
+    right: 26rpx;
+    top: 50%;
+    font-size: 24rpx;
+    transform: translateY(-50%);
+}
+
+.successPlug {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,.7);
+}
+
+.successPlugContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 560rpx;
+    height: 532rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+    padding: 0 26rpx;
+    box-sizing: border-box;
+}
+
+.successPlugContent .successIconBox {
+    width: 126rpx;
+    height: 126rpx;
+    background-color: #ff7200;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.successPlugContent .successIconBox .iconfont {
+    font-size: 70rpx;
+}
+
+.successPlugContent .successIconBox.nosuccess {
+    background-color: #999;
+}
+
+.successPlugContent .success-title {
+    margin-top: 36rpx;
+    font-size: 28rpx;
+    color: #666;
+}
+
+.successPlugContent .success-desc {
+    margin-top: 22rpx;
+    font-size: 22rpx;
+    color: #999;
+    text-align: center;
+}
+
+.successPlugContent .success-orderdetail {
+    margin-top: 72rpx;
+    width: 480rpx;
+    height: 88rpx;
+    background-color: #ff7200;
+    color: #fff;
+    border-radius: 88rpx;
+    text-align: center;
+    line-height: 88rpx;
+}
+
+.paymentPlug {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 624rpx;
+    bottom: 0;
+    background-color: rgba(0,0,0,.7);
+    z-index: 10;
+    transition: all .3s;
+    transform: translateY(150%);
+}
+
+.paymentPlug .paymentWrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 624rpx;
+    color: #333;
+    font-size: 30rpx;
+    background-color: #fff;
+    z-index: 3;
+}
+
+.paymentPlug.showPayment {
+    transform: translateY(0);
+}
+
+.paymentWrapper .paymentTitle,.paymentBalance,.paymentWx {
+    height: 96rpx;
+}
+
+.paymentBalance,.paymentWx {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.selectPayment {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 96rpx;
+    height: 96rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #ff7f0e;
+}
+
+.paymentWrapper .paymentTitle {
+    text-align: center;
+    position: relative;
+    line-height: 96rpx;
+}
+
+.closePaymentPlug {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96rpx;
+    height: 96rpx;
+    font-size: 30rpx;
+}
+
+.paymentAffirm {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 98rpx;
+    background-color: #ff7f0e;
+    color: #fff;
+    text-align: center;
+    line-height: 98rpx;
+    font-size: 34rpx;
+}
+
+.paymentBalance .balanceText .insufficient {
+    font-size: 28rpx;
+}
+
+.btnsubmit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paymentPlug .balanceIcon,.paymentPlug .wxIcon {
+    width: 96rpx;
+    height: 96rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 46rpx;
+}
+
+.paymentPlug .balanceIcon {
+    color: #fac905;
+}
+
+.paymentPlug .wxIcon {
+    color: #41b035;
+}
+
+.paymentPlug .total-moneyPlug {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 148rpx;
+    color: #333;
+    font-size: 50rpx;
+}
+
+.colorChange {
+    opacity: .6;
+}

@@ -1,0 +1,56 @@
+// \pages/shop/square onLoad Data Flow
+digraph {
+	"238991dd77394b63b563c6c6edf0efb8" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	efb1b6e113e9413a9512113e49112c13 [label=SequenceExpression color=blue]
+	"510553f7947f42e2b5b1f3f2eade2090" [label="CallExpression,
+callee name -> e.getPageUrl,
+param -> o,
+" color=blue]
+	efb1b6e113e9413a9512113e49112c13 -> "510553f7947f42e2b5b1f3f2eade2090"
+	dbb3e76937974d368225ee171416b268 [label="CallExpression,
+callee name -> e.registerGlobalFunctions,
+param -> o,
+" color=blue]
+	efb1b6e113e9413a9512113e49112c13 -> dbb3e76937974d368225ee171416b268
+	"587f70bc408a424c90da0ab602101275" [label="CallExpression,
+callee name -> this.getInfo,
+param -> " color=blue]
+	d083d2e7a1154eba820604cb9a111c25 [label="FunctionCall,
+function name -> getInfo,
+param -> " color=blue]
+	ed7fdbb917924f06b001de1e7d83e00c [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	"87684e25c525419c88f316ac448c8f01" [label="FunctionCall,
+function name -> fail,
+param -> t,
+" color=blue]
+	ed7fdbb917924f06b001de1e7d83e00c -> "87684e25c525419c88f316ac448c8f01"
+	d083d2e7a1154eba820604cb9a111c25 -> ed7fdbb917924f06b001de1e7d83e00c
+	"587f70bc408a424c90da0ab602101275" -> d083d2e7a1154eba820604cb9a111c25
+	efb1b6e113e9413a9512113e49112c13 -> "587f70bc408a424c90da0ab602101275"
+	"8de921a88a4349c2900f523ea57c224b" [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> " color=blue]
+	"689673a6e3df4c15a040d888d6f162f6" [label="FunctionCall,
+function name -> success,
+param -> t,
+t.,
+" color=blue]
+	"6c0479a3a60b4dc4b758bcaf3578ba3e" [label=SequenceExpression color=blue]
+	"70f6387141684795a18783f48128540c" [label="CallExpression,
+callee name -> o.setData,
+param -> " color=blue]
+	"5f7ddb7064e046dbac354be64db12fe1" [label="Object Properties
+{
+systemInfo -> t
+}" color=blue]
+	"70f6387141684795a18783f48128540c" -> "5f7ddb7064e046dbac354be64db12fe1"
+	"6c0479a3a60b4dc4b758bcaf3578ba3e" -> "70f6387141684795a18783f48128540c"
+	"689673a6e3df4c15a040d888d6f162f6" -> "6c0479a3a60b4dc4b758bcaf3578ba3e"
+	"8de921a88a4349c2900f523ea57c224b" -> "689673a6e3df4c15a040d888d6f162f6"
+	efb1b6e113e9413a9512113e49112c13 -> "8de921a88a4349c2900f523ea57c224b"
+	"238991dd77394b63b563c6c6edf0efb8" -> efb1b6e113e9413a9512113e49112c13
+}

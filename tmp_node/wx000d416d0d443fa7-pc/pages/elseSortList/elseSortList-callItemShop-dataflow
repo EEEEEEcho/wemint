@@ -1,0 +1,17 @@
+// \pages/elseSortList/elseSortList callItemShop Data Flow
+digraph {
+	"4c152a77e57c4862b99a8e18ca06faa3" [label="FunctionCall,
+function name -> callItemShop,
+param -> a,
+a.,
+" color=blue]
+	a758e2eaa2ae4e21b28199fc3e8b4a61 [label="CallExpression,
+callee name -> wx.makePhoneCall,
+param -> " color=blue]
+	"61da918969d7421da7412c58f2f3dfef" [label="Object Properties
+{
+phoneNumber -> a.target.dataset.tel
+}" color=blue]
+	a758e2eaa2ae4e21b28199fc3e8b4a61 -> "61da918969d7421da7412c58f2f3dfef"
+	"4c152a77e57c4862b99a8e18ca06faa3" -> a758e2eaa2ae4e21b28199fc3e8b4a61
+}

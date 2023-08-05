@@ -1,0 +1,33 @@
+<view class="margintop5"></view>
+<view class="section">
+    <view>
+        <input bindinput="inputTitle" class="inputText" focus="{{focus1}}" maxlength="25" placeholder="主题25字" placeholderClass="placeholder-class"></input>
+    </view>
+    <view>
+        <textarea bindinput="inputContent" class="textarea" focus="{{focus2}}" maxlength="500" placeholder="请提出您的宝贵意见" placeholderClass="placeholder-class"></textarea>
+    </view>
+    <view class="flexRow">
+        <view bindtap="chooseImg" class="but_img " wx:if="{{imgs.length<9}}">
+            <image src="../../../image/add@2x.png"></image>
+        </view>
+        <view class="but_img" wx:for="{{imgs}}" wx:key="*this">
+            <image bindtap="previewImg" data-index="{{index}}" mode="aspectFill" src="{{item}}"></image>
+            <view class="but_img_del">
+                <icon bindtap="deleteImg" color="red" data-index="{{index}}" size="15" type="cancel"></icon>
+            </view>
+        </view>
+    </view>
+    <view class="common-list">
+        <view class="header">
+            <view>
+                <image bindtap="claSelect" class="item-select" data-id="jzq" data-index="jzq" src="{{isCheckF?'../../../image/choose@2x.png':'../../../image/choose_no@2x.png'}}"></image>
+            </view>
+            <view class="item-select_text">匿名</view>
+        </view>
+    </view>
+    <view class="loginBtnView">
+        <form reportSubmit bindsubmit="saveMail">
+            <button class="loginBtn" formType="submit">发送</button>
+        </form>
+    </view>
+</view>

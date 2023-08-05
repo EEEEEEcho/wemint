@@ -1,0 +1,35 @@
+// \pages/shop/shopcart onPkeyClick Data Flow
+digraph {
+	c20f336e324f46d686fd64a63332d010 [label="FunctionCall,
+function name -> onPkeyClick,
+param -> t,
+t.,
+" color=blue]
+	"2b7553d499114e68a4256498433311a9" [label=VariableDeclarations color=blue]
+	"78047c04f02c4e2cbc89bec05f861a79" [label="VariableDeclarator,
+left -> o,
+right -> t.currentTarget.dataset.idx" color=blue]
+	"2b7553d499114e68a4256498433311a9" -> "78047c04f02c4e2cbc89bec05f861a79"
+	bff5f905f2a44106994be53f571cdec3 [label="VariableDeclarator,
+left -> s,
+right -> t.currentTarget.dataset.check" color=blue]
+	"2b7553d499114e68a4256498433311a9" -> bff5f905f2a44106994be53f571cdec3
+	c20f336e324f46d686fd64a63332d010 -> "2b7553d499114e68a4256498433311a9"
+	"932c2865ae4246a7b0dcfc2c26aed4c4" [label=SequenceExpression color=blue]
+	"250e2d7af6464bb89b45ae718e3caff9" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	b3ed4ccf4083473d9d3ce00aa189d551 [label="!s" color=blue]
+	"250e2d7af6464bb89b45ae718e3caff9" -> b3ed4ccf4083473d9d3ce00aa189d551
+	"932c2865ae4246a7b0dcfc2c26aed4c4" -> "250e2d7af6464bb89b45ae718e3caff9"
+	"35c91b0aa5eb45699d38eab20810e72f" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"7d80e7f01cdc442194d6d09190ec51f0" [label="Object Properties
+{
+showList -> e.data.showList
+}" color=blue]
+	"35c91b0aa5eb45699d38eab20810e72f" -> "7d80e7f01cdc442194d6d09190ec51f0"
+	"932c2865ae4246a7b0dcfc2c26aed4c4" -> "35c91b0aa5eb45699d38eab20810e72f"
+	c20f336e324f46d686fd64a63332d010 -> "932c2865ae4246a7b0dcfc2c26aed4c4"
+}

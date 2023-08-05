@@ -1,0 +1,35 @@
+// \pages/shop/mymember onShow Data Flow
+digraph {
+	"616f56c3ac4649f6889992ae92de3453" [label="FunctionCall,
+function name -> onShow,
+param -> " color=blue]
+	ec0875f29661444696423e2f78a409c4 [label="CallExpression,
+callee name -> this.loadDeam,
+param -> " color=blue]
+	b7f64fff9626419bb9c8690c9a90c59e [label="FunctionCall,
+function name -> loadDeam,
+param -> " color=blue]
+	"7150720177c240548900e38216a8280f" [label="If Alternate" color=blue]
+	"9237dc75283640d3b93bd9c5d850e16d" [label=SequenceExpression color=blue]
+	"5fecbc2a3fc34112af2b4e031a6ae524" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"22365284983f4c89859061b43419fa70" [label="Assignment,
+left -> t,
+right -> e.data.queryparams.userid" color=blue]
+	"5fecbc2a3fc34112af2b4e031a6ae524" -> "22365284983f4c89859061b43419fa70"
+	"9237dc75283640d3b93bd9c5d850e16d" -> "5fecbc2a3fc34112af2b4e031a6ae524"
+	"9b782d96c89741f99e6cbe8a470d89df" [label="CallExpression,
+callee name -> a.sendRequest,
+param -> " color=blue]
+	"4989e0939cbb46e0879b7a2bbbd9043b" [label="Object Properties
+{
+url -> '/index.php?c=front/WxApp/FenXiao&a=getMemberFenXiaoDetail&userid=' + t
+}" color=blue]
+	"9b782d96c89741f99e6cbe8a470d89df" -> "4989e0939cbb46e0879b7a2bbbd9043b"
+	"9237dc75283640d3b93bd9c5d850e16d" -> "9b782d96c89741f99e6cbe8a470d89df"
+	"7150720177c240548900e38216a8280f" -> "9237dc75283640d3b93bd9c5d850e16d"
+	b7f64fff9626419bb9c8690c9a90c59e -> "7150720177c240548900e38216a8280f"
+	ec0875f29661444696423e2f78a409c4 -> b7f64fff9626419bb9c8690c9a90c59e
+	"616f56c3ac4649f6889992ae92de3453" -> ec0875f29661444696423e2f78a409c4
+}

@@ -1,0 +1,24 @@
+// \pages/shop/orderdetail showPaymentPlug Data Flow
+digraph {
+	b415d418a7e247b19bf2b77dfb8795a4 [label="FunctionCall,
+function name -> showPaymentPlug,
+param -> t,
+t.,
+" color=blue]
+	"7ef382bec3bc4c199f42a2d6e0ec15ff" [label=VariableDeclarations color=blue]
+	cafdf7c5d1d8478da21bdad0181563b1 [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.orderid" color=blue]
+	"7ef382bec3bc4c199f42a2d6e0ec15ff" -> cafdf7c5d1d8478da21bdad0181563b1
+	b415d418a7e247b19bf2b77dfb8795a4 -> "7ef382bec3bc4c199f42a2d6e0ec15ff"
+	"6c8f3e1b7f504f62b3b3c89e99c388e1" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	f901ab0886c442fea261fe50d681cda7 [label="Object Properties
+{
+balanceflagNum -> this.data.balanceNumber - this.data.TotalMoeny < 0
+curOrderId -> a
+}" color=blue]
+	"6c8f3e1b7f504f62b3b3c89e99c388e1" -> f901ab0886c442fea261fe50d681cda7
+	b415d418a7e247b19bf2b77dfb8795a4 -> "6c8f3e1b7f504f62b3b3c89e99c388e1"
+}

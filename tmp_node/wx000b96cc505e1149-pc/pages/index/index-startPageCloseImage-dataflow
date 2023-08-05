@@ -1,0 +1,15 @@
+// \pages/index/index startPageCloseImage Data Flow
+digraph {
+	c0b08656cc9042d181f7a8e787975a07 [label="FunctionCall,
+function name -> startPageCloseImage,
+param -> e.,
+e,
+" color=blue]
+	"719c85dc7e734529a32a93ae425b3818" [label="CallExpression,
+callee name -> index.saveRecord,
+param -> that.data.userOppenId,
+that.data.startPage.target,
+that.data.startPage.param,
+" color=blue]
+	c0b08656cc9042d181f7a8e787975a07 -> "719c85dc7e734529a32a93ae425b3818"
+}

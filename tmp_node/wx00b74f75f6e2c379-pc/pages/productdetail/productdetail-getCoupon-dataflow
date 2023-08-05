@@ -1,0 +1,14 @@
+// \pages/productdetail/productdetail getCoupon Data Flow
+digraph {
+	"89d73cf95a5d45518de6908234cd2f0a" [label="FunctionCall,
+function name -> getCoupon,
+param -> e,
+e.,
+" color=blue]
+	e9315c4c0cb94a21b065aed07321e784 [label=VariableDeclarations color=blue]
+	"4568b3a47e1d482f94005d9d2d52e93d" [label="VariableDeclarator,
+left -> couponid,
+right -> e.currentTarget.id" color=blue]
+	e9315c4c0cb94a21b065aed07321e784 -> "4568b3a47e1d482f94005d9d2d52e93d"
+	"89d73cf95a5d45518de6908234cd2f0a" -> e9315c4c0cb94a21b065aed07321e784
+}

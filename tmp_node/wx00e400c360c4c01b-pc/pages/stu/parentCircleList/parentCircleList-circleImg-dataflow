@@ -1,0 +1,27 @@
+// \pages/stu/parentCircleList/parentCircleList circleImg Data Flow
+digraph {
+	b3262c4ba15f40218ae8f269fbaf68ff [label="FunctionCall,
+function name -> circleImg,
+param -> " color=blue]
+	"40f6591c0d9b4326bae046b026989fc6" [label="CallExpression,
+callee name -> wx.chooseImage,
+param -> " color=blue]
+	"01a1adbdf4944ba0ba518d92c802eab6" [label="FunctionCall,
+function name -> success,
+param -> t,
+t.,
+" color=blue]
+	b7e0b00b4ee5464d88218ad3885133de [label=VariableDeclarations color=blue]
+	"2d6549aa2c5d4b848a519db02e80abd8" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	bdcf06d2d17e4a35870f49aa875053b5 [label="CallExpression,
+callee name -> JSON.stringify,
+param -> t.tempFilePaths,
+" color=blue]
+	"2d6549aa2c5d4b848a519db02e80abd8" -> bdcf06d2d17e4a35870f49aa875053b5
+	b7e0b00b4ee5464d88218ad3885133de -> "2d6549aa2c5d4b848a519db02e80abd8"
+	"01a1adbdf4944ba0ba518d92c802eab6" -> b7e0b00b4ee5464d88218ad3885133de
+	"40f6591c0d9b4326bae046b026989fc6" -> "01a1adbdf4944ba0ba518d92c802eab6"
+	b3262c4ba15f40218ae8f269fbaf68ff -> "40f6591c0d9b4326bae046b026989fc6"
+}

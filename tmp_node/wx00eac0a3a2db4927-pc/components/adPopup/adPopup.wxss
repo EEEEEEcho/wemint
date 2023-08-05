@@ -1,0 +1,76 @@
+.adPopup {
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 101;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.swiperImg {
+    width: 600rpx;
+    height: 680rpx;
+    border-top-left-radius: 30rpx;
+    border-top-right-radius: 30rpx;
+}
+
+.slide-image {
+    width: 600rpx;
+    height: 680rpx;
+    border-top-left-radius: 30rpx;
+    border-top-right-radius: 30rpx;
+    background: #ffffff;
+}
+
+.seeDetailsLayout {
+    width: 600rpx;
+    height: 140rpx;
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+    border-bottom-right-radius: 30rpx;
+    border-bottom-left-radius: 30rpx;
+}
+
+.seeDetails {
+    margin-top: 35rpx;
+    width: 330rpx;
+    height: 66rpx;
+    font-size: 30rpx;
+    background: #ED7B43;
+    color: #ffffff;
+    text-align: center;
+    line-height: 66rpx;
+    border-radius: 33rpx;
+    font-weight: bold;
+    box-shadow: 2rpx 2rpx 10rpx 2rpx #e9e8e8;
+}
+
+.indicatorLight {
+    width: 730rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30rpx;
+    margin-left: 20rpx;
+}
+
+.indicator {
+    width: 16rpx;
+    height: 16rpx;
+    background: #ffffff;
+    margin-right: 20rpx;
+    border-radius: 8rpx;
+}
+
+.closeIcon {
+    width: 70rpx;
+    height: 70rpx;
+    margin-top: 50rpx;
+}

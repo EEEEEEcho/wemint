@@ -1,0 +1,14 @@
+// \pages/houseDIY/houseDIY statusChange Data Flow
+digraph {
+	f68f9682764d4a689bbfe4ec79d16701 [label="FunctionCall,
+function name -> statusChange,
+param -> e,
+e.,
+" color=blue]
+	"02fb3eee578e4df7b54b3313738598c3" [label=SequenceExpression color=blue]
+	"6d13443405b6482db45b3926dee45706" [label="Assignment,
+left -> this.data.dx,
+right -> e.detail.dx" color=blue]
+	"02fb3eee578e4df7b54b3313738598c3" -> "6d13443405b6482db45b3926dee45706"
+	f68f9682764d4a689bbfe4ec79d16701 -> "02fb3eee578e4df7b54b3313738598c3"
+}

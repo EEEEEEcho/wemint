@@ -1,0 +1,15 @@
+// \pages/company/businessCard/cardDetails toWrokBench Data Flow
+digraph {
+	"845f4ae27e2842dabacc2b24a4e3a359" [label="FunctionCall,
+function name -> toWrokBench,
+param -> " color=blue]
+	"18ea7598dc5c408b872f3b09ccaa502f" [label=VariableDeclarations color=blue]
+	ea887b0fb45045edad45f0ca38a694d6 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	fb629371010f4a0a8d7917aea636c91d [label="ConditionalExpression,
+ conditional list -> t.data.optionsobj.BusinessCardID,t.data.optionsobj.cid" color=blue]
+	ea887b0fb45045edad45f0ca38a694d6 -> fb629371010f4a0a8d7917aea636c91d
+	"18ea7598dc5c408b872f3b09ccaa502f" -> ea887b0fb45045edad45f0ca38a694d6
+	"845f4ae27e2842dabacc2b24a4e3a359" -> "18ea7598dc5c408b872f3b09ccaa502f"
+}

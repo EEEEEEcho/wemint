@@ -1,0 +1,26 @@
+<view class="margintop5"></view>
+<view class="search-bar">
+    <view class="search-wrap">
+        <icon class="icon-search" size="16" type="search"></icon>
+        <input bindblur="wxSearchBlur" bindfocus="wxSerchFocus" bindinput="wxSearchInput" class="search-input" name="searchKeyword" placeholder="请输入学员名称" type="text" value="{{keyword}}"></input>
+    </view>
+</view>
+<view class="wnr" wx:if="{{carts.length==0}}">
+    <image src="http://p7mq9gjza.bkt.clouddn.com/non.png" style="width:276px; height:319px;"></image>
+</view>
+<scroll-view bindscrolltolower="searchScrollLower" scrollY="true" style="height: {{scrollHeight}}rpx;" wx:else>
+    <view class="section">
+        <view wx:for="{{carts}}" wx:for-index="idx" wx:key="car">
+            <view bindtap="cpcview" class="cart_container" data-id="{{item.cpc_id}}" data-index="{{idx}}">
+                <image class="item-image" src="{{item.icon}}"></image>
+                <view class="column">
+                    <text class="column_title">{{item.cpc_name}}</text>
+                </view>
+                <view class="column_bir">{{item.birthday}}</view>
+                <view class="column_ccm">{{item.ccm_name}}</view>
+            </view>
+        </view>
+        <view class="loading" hidden="{{!searchLoading}}">正在载入...</view>
+        <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+    </view>
+</scroll-view>

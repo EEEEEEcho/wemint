@@ -1,0 +1,22 @@
+// \pages/shop/productdetail onLoad Data Flow
+digraph {
+	"6f65796f919c45f792694e3114816a3e" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"0fb08620ef284713a51c63320814fdd6" [label=SequenceExpression color=blue]
+	"22d652c8bdb046068e664bfdb4282798" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	c28a42c2aeea413d889ea0f5dd88bfdd [label="CallExpression,
+callee name -> t.getPageUrl,
+param -> s,
+" color=blue]
+	"22d652c8bdb046068e664bfdb4282798" -> c28a42c2aeea413d889ea0f5dd88bfdd
+	"0fb08620ef284713a51c63320814fdd6" -> "22d652c8bdb046068e664bfdb4282798"
+	"1fb08deac5aa4d6384a0b48519eed4cb" [label="CallExpression,
+callee name -> t.registerGlobalFunctions,
+param -> s,
+" color=blue]
+	"0fb08620ef284713a51c63320814fdd6" -> "1fb08deac5aa4d6384a0b48519eed4cb"
+	"6f65796f919c45f792694e3114816a3e" -> "0fb08620ef284713a51c63320814fdd6"
+}

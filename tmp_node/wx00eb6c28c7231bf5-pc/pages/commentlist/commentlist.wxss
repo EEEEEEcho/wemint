@@ -1,0 +1,147 @@
+page {
+    background: #f5f5f5;
+}
+
+.coupontitlels,.commentlisttopt,.commentlist_ctrtilex,.commentlist_ctrtile {
+    display: flex;
+}
+
+.coupontitlel {
+    width: 25%;
+    text-align: center;
+    font-size: 14px;
+}
+
+.coupontitlel .active {
+    color: #ff5722;
+}
+
+.commentlisttop {
+    background: #fff;
+    padding: 25rpx 15rpx;
+}
+
+.commentlisleft {
+    width: 450rpx;
+    margin-left: 15rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 20rpx;
+}
+
+.commentlisright {
+    margin-right: 15rpx;
+    display: flex;
+    color: #747474;
+    line-height: 50rpx;
+}
+
+.proportion {
+    color: #ff5722;
+    padding-left: 10rpx;
+}
+
+.commentlisttopt {
+    font-size: 16px;
+}
+
+.coupontitlels {
+    margin-top: 20rpx;
+}
+
+.commentlist {
+    margin-top: 20rpx;
+    background: #fff;
+    overflow: hidden;
+}
+
+.commentlist_ctl image {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+}
+
+.commentlist_ctr {
+    margin: 20rpx 10rpx 20rpx 20rpx;
+}
+
+.commentlist_ctl {
+    margin-left: 15rpx;
+    margin-top: 15rpx;
+}
+
+.commentlist_ctrsize,.commentlist_ctrtiler {
+    font-size: 14px;
+    color: #bdbdbd;
+    margin-top: 15rpx;
+}
+
+.commentlist_ctrtext {
+    font-size: 14px;
+    line-height: 50rpx;
+    margin-top: 20rpx;
+}
+
+.commentlist_ctrpic image {
+    width: 135rpx;
+    height: 135rpx;
+    margin-top: 20rpx;
+    margin-right: 15rpx;
+}
+
+.commentlist_ctrpic {
+    display: flex;
+}
+
+.commentlist_ctrtilex image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+
+.commentlist_ctrtilel {
+    width: 470rpx;
+}
+
+.shangjiahuif {
+    padding-left: 60rpx;
+    background: #f9f9f9;
+    overflow: hidden;
+    width: 750rpx;
+    clear: both;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+}
+
+.Replyshangjia {
+    float: left;
+    color: #ff5722;
+    font-size: 16px;
+}
+
+.ReplyText {
+    float: right;
+    color: #bdbdbd;
+    font-size: 14px;
+}
+
+.commentlist_clear {
+    clear: both;
+    width: 750rpx;
+    overflow: hidden;
+    display: flex;
+}
+
+.shangjiahuifc {
+    margin-top: 20rpx;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.shangjiahuift {
+    width: 100%;
+    overflow: hidden;
+}

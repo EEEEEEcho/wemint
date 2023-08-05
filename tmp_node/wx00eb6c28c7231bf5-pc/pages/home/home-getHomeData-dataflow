@@ -1,0 +1,26 @@
+// \pages/home/home getHomeData Data Flow
+digraph {
+	"7930e3d17f22462ab66e3949ce6b9323" [label="FunctionCall,
+function name -> getHomeData,
+param -> " color=blue]
+	de5da1f5874e43349ceefdc82b0fd0ae [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	b19b98a9d52b4f78a20ba0012b61eb39 [label=SequenceExpression color=blue]
+	"3f6acee20304459dbf31f99a9c59af99" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"09fcb965bbb64cbea912f98879217460" [label=SequenceExpression color=blue]
+	ac8ef5e651d345a5b0bc3baa214dfd6c [label="CallExpression,
+callee name -> a.getHomeProductData,
+param -> a.data.pageIndex,
+" color=blue]
+	"09fcb965bbb64cbea912f98879217460" -> ac8ef5e651d345a5b0bc3baa214dfd6c
+	b47c9418310f4680a11df4d98d19407b [label="CallExpression,
+callee name -> a.CheckVersionNumber,
+param -> a,
+" color=blue]
+	"09fcb965bbb64cbea912f98879217460" -> b47c9418310f4680a11df4d98d19407b
+	"3f6acee20304459dbf31f99a9c59af99" -> "09fcb965bbb64cbea912f98879217460"
+	b19b98a9d52b4f78a20ba0012b61eb39 -> "3f6acee20304459dbf31f99a9c59af99"
+	de5da1f5874e43349ceefdc82b0fd0ae -> b19b98a9d52b4f78a20ba0012b61eb39
+	"7930e3d17f22462ab66e3949ce6b9323" -> de5da1f5874e43349ceefdc82b0fd0ae
+}

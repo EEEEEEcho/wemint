@@ -1,0 +1,44 @@
+// \pages/tourist/order/order bindChange Data Flow
+digraph {
+	"00529e0b871b4f5caf155567341a4b33" [label="FunctionCall,
+function name -> bindChange,
+param -> a.,
+a,
+" color=blue]
+	"48b2650e021346a99da8f16aded45d6f" [label=SequenceExpression color=blue]
+	fb8e489521924d46848c60e5404b78be [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"2f8c53165b7548f4ae391a74fee4f3d0" [label="Object Properties
+{
+currentTab -> a.detail.current
+}" color=blue]
+	fb8e489521924d46848c60e5404b78be -> "2f8c53165b7548f4ae391a74fee4f3d0"
+	"48b2650e021346a99da8f16aded45d6f" -> fb8e489521924d46848c60e5404b78be
+	d39a2ecb515141dbb0c4ac1c68658f5c [label="CallExpression,
+callee name -> this.backLoad,
+param -> " color=blue]
+	"881ff504ca9b4a2d814114f9bc0b6004" [label="FunctionCall,
+function name -> backLoad,
+param -> " color=blue]
+	ad39ead445a64360a31b0ecc461fb44a [label=SequenceExpression color=blue]
+	b7b68230ea2c4a2e9c2f90d08fe69115 [label="CallExpression,
+callee name -> this.fetchSearchList,
+param -> " color=blue]
+	ba9e94e8b19244199c1c2572c57932da [label="FunctionCall,
+function name -> fetchSearchList,
+param -> " color=blue]
+	fbaf3031a4ca4fe78da7ae519cea714a [label="CallExpression,
+callee name -> a,
+param -> t.data.currentTab,
+t.data.searchPageNum,
+t.data.callbackcount,
+" color=blue]
+	ba9e94e8b19244199c1c2572c57932da -> fbaf3031a4ca4fe78da7ae519cea714a
+	b7b68230ea2c4a2e9c2f90d08fe69115 -> ba9e94e8b19244199c1c2572c57932da
+	ad39ead445a64360a31b0ecc461fb44a -> b7b68230ea2c4a2e9c2f90d08fe69115
+	"881ff504ca9b4a2d814114f9bc0b6004" -> ad39ead445a64360a31b0ecc461fb44a
+	d39a2ecb515141dbb0c4ac1c68658f5c -> "881ff504ca9b4a2d814114f9bc0b6004"
+	"48b2650e021346a99da8f16aded45d6f" -> d39a2ecb515141dbb0c4ac1c68658f5c
+	"00529e0b871b4f5caf155567341a4b33" -> "48b2650e021346a99da8f16aded45d6f"
+}

@@ -1,0 +1,15 @@
+// \pages/fightGroups/square/index getBalanceNumber Data Flow
+digraph {
+	"1fb23bf155484c4b948ec1c5193c0822" [label="FunctionCall,
+function name -> getBalanceNumber,
+param -> " color=blue]
+	"282ea4e1a3f54ac78d6de6825fa3ba70" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	e9cfc0ec42144ef099b37696a43b6355 [label="FunctionCall,
+function name -> fail,
+param -> e,
+" color=blue]
+	"282ea4e1a3f54ac78d6de6825fa3ba70" -> e9cfc0ec42144ef099b37696a43b6355
+	"1fb23bf155484c4b948ec1c5193c0822" -> "282ea4e1a3f54ac78d6de6825fa3ba70"
+}

@@ -1,0 +1,29 @@
+<view class="userinfo">
+    <form reportSubmit bindsubmit="stuNavigate">
+        <button bindgetuserinfo="stuNavigate" bindtouchstart="mytouchstart" class="formBtn" lang="zh_CN" openType="getUserInfo">
+            <image backgroundSize="cover" class="userinfo-avatar" src="{{home_01}}"></image>
+        </button>
+    </form>
+    <text class="userinfo-nickname">会员登录</text>
+</view>
+<view class="usermotto"></view>
+<view class="userinfo">
+    <form reportSubmit bindsubmit="teaLogin">
+        <button bindgetuserinfo="teaLogin" bindtouchstart="myteacherstart" class="formBtn" lang="zh_CN" openType="getUserInfo">
+            <image backgroundSize="cover" class="userinfo-avatar" src="{{home_02}}"></image>
+        </button>
+    </form>
+    <text class="userinfo-nickname">老师登录</text>
+</view>
+<view class="usermotto"></view>
+<view class="userinfo">
+    <form reportSubmit bindsubmit="tourist">
+        <button bindgetuserinfo="tourist" bindtouchstart="myinfostart" class="formBtn" lang="zh_CN" openType="getUserInfo">
+            <image backgroundSize="cover" class="userinfo-avatar" src="{{home_02}}"></image>
+        </button>
+    </form>
+    <text class="userinfo-nickname">我的</text>
+</view>
+<button bindgetuserinfo="poster" class="formBtn" lang="zh_CN" openType="getUserInfo" wx:if="{{posterList.length>0}}">
+    <image class="img-plus-style" src="http://p7mq9gjza.bkt.clouddn.com/tuijian.png"></image>
+</button>

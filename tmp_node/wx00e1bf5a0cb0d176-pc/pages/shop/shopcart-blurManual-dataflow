@@ -1,0 +1,41 @@
+// \pages/shop/shopcart blurManual Data Flow
+digraph {
+	a13420a35f43456f990836c49318a3ca [label="FunctionCall,
+function name -> blurManual,
+param -> " color=blue]
+	"1e08a97a252848d786047eda1d7e10a2" [label=VariableDeclarations color=blue]
+	fbc32387f4064d0d896886f0206efdc9 [label="VariableDeclarator,
+left -> s,
+right -> this.data.showList[a].pro_list[o]" color=blue]
+	"1e08a97a252848d786047eda1d7e10a2" -> fbc32387f4064d0d896886f0206efdc9
+	a13420a35f43456f990836c49318a3ca -> "1e08a97a252848d786047eda1d7e10a2"
+	b514f955f6144840833e905509f8c6fb [label=SequenceExpression color=blue]
+	"697961d0cee04cbeb9bf23f3bde83c90" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"5f93c4a6a7c649328bf6df4a87f86d82" [label=SequenceExpression color=blue]
+	e9b1e571120e48cbbb24ce91cf1160b5 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	a0973b15d8a34df4a6b21f1f256ae87b [label="Object Properties
+{
+showList -> this.data.showList
+}" color=blue]
+	e9b1e571120e48cbbb24ce91cf1160b5 -> a0973b15d8a34df4a6b21f1f256ae87b
+	"5f93c4a6a7c649328bf6df4a87f86d82" -> e9b1e571120e48cbbb24ce91cf1160b5
+	"697961d0cee04cbeb9bf23f3bde83c90" -> "5f93c4a6a7c649328bf6df4a87f86d82"
+	b514f955f6144840833e905509f8c6fb -> "697961d0cee04cbeb9bf23f3bde83c90"
+	a99748dd624d454781521f31d13f9901 [label="CallExpression,
+callee name -> this.changeProductNum,
+param -> " color=blue]
+	a1badc6ec542492eb0a1a769d88ab7aa [label="Object Properties
+{
+pkey -> s.pkey
+num -> s.num
+source -> s.source
+actId -> s.extra
+}" color=blue]
+	a99748dd624d454781521f31d13f9901 -> a1badc6ec542492eb0a1a769d88ab7aa
+	b514f955f6144840833e905509f8c6fb -> a99748dd624d454781521f31d13f9901
+	a13420a35f43456f990836c49318a3ca -> b514f955f6144840833e905509f8c6fb
+}

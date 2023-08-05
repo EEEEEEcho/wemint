@@ -1,0 +1,94 @@
+.getReadyImage {
+    position: relative;
+    width: 750rpx;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.readyBackList {
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.getReadyBack {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.scroll {
+    background-image: url(http://oss.shangmian.xin/ic_weixin_applets_login_page_bg_20191019.jpg);
+    background-position: center center;
+    background-size: 350px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 300%;
+    z-index: 0;
+    animation: scrollGood 30s linear infinite;
+}
+
+.loginPageTitle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 750rpx;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginPageTop {
+    width: 243rpx;
+    height: 724rpx;
+}
+
+.loginPageSubmit {
+    width: 468rpx;
+    height: 82rpx;
+    margin-top: 90rpx;
+    position: relative;
+}
+
+.submitImage {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.phoneNumber {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.loginPageBottom {
+    margin-top: 30rpx;
+    width: 400rpx;
+    height: 24rpx;
+}
+
+@-webkit-keyframes scrollGood {
+    0% {
+        transform: translateX(-350px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes scrollGood {
+    0% {
+        transform: translateX(-350px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

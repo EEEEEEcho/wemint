@@ -1,0 +1,17 @@
+// \pages/person-info/person-info bindKeyInput Data Flow
+digraph {
+	aa3a3ee659b8432aa092a84ac34e7883 [label="FunctionCall,
+function name -> bindKeyInput,
+param -> e,
+e.,
+" color=blue]
+	"8ee56bcbbc52438281c9d9475977a197" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"909d09ae7cda45f3bd22cb5fa9e8a4f3" [label="Object Properties
+{
+name -> e.detail.value
+}" color=blue]
+	"8ee56bcbbc52438281c9d9475977a197" -> "909d09ae7cda45f3bd22cb5fa9e8a4f3"
+	aa3a3ee659b8432aa092a84ac34e7883 -> "8ee56bcbbc52438281c9d9475977a197"
+}

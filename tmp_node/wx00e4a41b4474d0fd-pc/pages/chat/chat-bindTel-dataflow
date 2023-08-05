@@ -1,0 +1,17 @@
+// \pages/chat/chat bindTel Data Flow
+digraph {
+	"87cb25c9c79a497c94bccb8eaf8e6ffb" [label="FunctionCall,
+function name -> bindTel,
+param -> e,
+e.,
+" color=blue]
+	"5f7e8998a81f4b5da2fa5703524f5441" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	a27ee5b1cd8e4c098664aae051cdfbed [label="Object Properties
+{
+tel -> e.detail.value
+}" color=blue]
+	"5f7e8998a81f4b5da2fa5703524f5441" -> a27ee5b1cd8e4c098664aae051cdfbed
+	"87cb25c9c79a497c94bccb8eaf8e6ffb" -> "5f7e8998a81f4b5da2fa5703524f5441"
+}

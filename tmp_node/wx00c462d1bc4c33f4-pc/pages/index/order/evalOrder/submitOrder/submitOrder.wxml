@@ -1,0 +1,72 @@
+<view class="xzdz">
+    <view class="xzdzBox">
+        <view class="xzdzTitle">
+            <view class="xzdzC">提交订单
+        <image class="xzdz_img" src="../../../../../images/orderDetails.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="sele-box">
+    <view class="sele-box-line1">
+    收货人姓名<text class="sele-box-name">{{receiveUser}} {{receiveTel}}</text>
+        <view bindtap="selAddr1" class="sele-box-he">{{shouhuo}}</view>
+    </view>
+    <view class="sele-box-line2">
+        <text style="font-size:14px;">{{receiveAddr}}</text>
+        <view class="seladdr">
+            <view bindtap="selAddr" class="iconfont icon-angle-up-copy"></view>
+        </view>
+    </view>
+</view>
+<view class="order-detail-box">
+    <view class="order-detail-title">
+        <image class="order-detail-storelogo" src="{{storeInfo.storeInfoHeadImgUrl}}"></image>
+        <view class="order-detail-storename">{{storeInfo.storeInfoName}}</view>
+    </view>
+    <view wx:for="{{foodInfo.foodList}}" wx:key="key">
+        <view class="row order-detail-content">
+            <view class="col-9">
+                <image class="order-detail-foodsrc" src="{{item.imgUrl}}"></image>
+                <view style="float:left;">
+                    <view class="order-detail-foodname" wx:if="{{item.sizeName==null||item.sizeName==''}}">{{item.foodName}}</view>
+                    <view class="order-detail-foodname" wx:else>{{item.foodName}}({{item.sizeName}})</view>
+                    <view class="order-detail-foodcount">×{{item.foodCount}}</view>
+                </view>
+            </view>
+            <view class="col-3 order-detail-price">{{item.realPrice==null?'':item.realPrice}}￥</view>
+        </view>
+    </view>
+    <view class="mj-detail">
+        <view class="mj-zhuo"></view>
+        <view style="float:right;">
+            <em class="mj-yyh">配送费 {{peisongfei}}￥</em>
+            <em class="mj-yyh">餐盒费 {{canhefei}}￥</em>
+        </view>
+        <view style="float:right; width:50%;text-align:right">
+            <em class="mj-hj">合计</em>
+            <em class="mj-jm">{{filters.toFix(foodInfo.orderReceivablePrice*1+peisongfei*1+canhefei*1)}}￥</em>
+        </view>
+        <view class="clear"></view>
+    </view>
+</view>
+<textarea bindinput="inputBeizhu" class="inputBeizhu" placeholder="请输入口味、偏好、餐具数量等备注信息（选填）"></textarea>
+<button bindtap="toSubmit" class="evaluation">支 付 订 单</button>
+<view class="cover" style="display:{{displ}}">
+    <view bindtap="back" class="cover1"></view>
+    <view class="cover2">
+        <view class="row0">
+            <view class="cover-text">选择优惠</view>
+        </view>
+        <view class="row1">
+            <view bindtap="selCoupon" class="cover-sel" style="background-color:{{bkclor1}};color:{{clor1}};">优惠券</view>
+            <view bindtap="selMemberCard" class="cover-sel" style="background-color:{{bkclor}};color:{{clor}};">会员卡</view>
+            <view bindtap="selForceCard" class="cover-sel" style="background-color:{{bkclor1}};color:{{clor1}};">权益卡</view>
+        </view>
+    </view>
+</view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>
+<wxs module="filters" src="../../../../../addmul.wxs" />

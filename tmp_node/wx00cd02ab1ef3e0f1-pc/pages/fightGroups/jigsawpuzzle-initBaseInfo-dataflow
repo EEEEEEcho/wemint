@@ -1,0 +1,70 @@
+// \pages/fightGroups/jigsawpuzzle initBaseInfo Data Flow
+digraph {
+	"4dd8f256ce974871acbb8fa20d669ede" [label="FunctionCall,
+function name -> initBaseInfo,
+param -> " color=blue]
+	ae25a9b2eff1437e806f12b5f485e39d [label=SequenceExpression color=blue]
+	"8247e44abbe34b3696e576792bed6fa4" [label="Assignment,
+left -> a.data.currentPinTuanId,
+right -> a.data.pintuanCategory[0].id" color=blue]
+	ae25a9b2eff1437e806f12b5f485e39d -> "8247e44abbe34b3696e576792bed6fa4"
+	b365ff18929f453bad5ee7186771cf3e [label="CallExpression,
+callee name -> a.pinTuanColByCate,
+param -> a.data.currentPinTuanId,
+" color=blue]
+	ae25a9b2eff1437e806f12b5f485e39d -> b365ff18929f453bad5ee7186771cf3e
+	"4dd8f256ce974871acbb8fa20d669ede" -> ae25a9b2eff1437e806f12b5f485e39d
+	d07afb1b70c848bfad28c168931c07bf [label=VariableDeclarations color=blue]
+	"0f7bc507235d4a11a51c4d86b9528790" [label="VariableDeclarator,
+left -> t,
+right -> a.data.pintuanCategory[0].remain_start_time" color=blue]
+	d07afb1b70c848bfad28c168931c07bf -> "0f7bc507235d4a11a51c4d86b9528790"
+	bd51a8f897eb4e0191c30b773e5a4d92 [label="VariableDeclarator,
+left -> e,
+right -> a.data.pintuanCategory[0].remain_end_time" color=blue]
+	d07afb1b70c848bfad28c168931c07bf -> bd51a8f897eb4e0191c30b773e5a4d92
+	d1749ff19cba41c188e819226b5417f4 [label="VariableDeclarator,
+left -> n,
+right -> a.data.pintuanCategory[0].status" color=blue]
+	d07afb1b70c848bfad28c168931c07bf -> d1749ff19cba41c188e819226b5417f4
+	"4dd8f256ce974871acbb8fa20d669ede" -> d07afb1b70c848bfad28c168931c07bf
+	a4d4a9dad1ce41d08b993f7fd046db8a [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"017e60621bbc46648da34cec8559668d" [label=SequenceExpression color=blue]
+	"2ed5c6489f9745d5bd682f1274e9548e" [label="CallExpression,
+callee name -> a.setData,
+param -> " color=blue]
+	"972bfa0ecc9548769987f81c56f73fd4" [label="Object Properties
+{
+categoryState -> n
+}" color=blue]
+	"2ed5c6489f9745d5bd682f1274e9548e" -> "972bfa0ecc9548769987f81c56f73fd4"
+	"017e60621bbc46648da34cec8559668d" -> "2ed5c6489f9745d5bd682f1274e9548e"
+	d6ba84ae689548c782948e841b30f06a [label="CallExpression,
+callee name -> clearInterval,
+param -> a.data.interval,
+" color=blue]
+	"017e60621bbc46648da34cec8559668d" -> d6ba84ae689548c782948e841b30f06a
+	a4d4a9dad1ce41d08b993f7fd046db8a -> "017e60621bbc46648da34cec8559668d"
+	fa31230f1eec46bf944990b94f8116d0 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	d507ad78a9d545f3adcd9f88acebc85f [label=SequenceExpression color=blue]
+	"29b839f4d06b4544b0baf064a921ec80" [label="CallExpression,
+callee name -> a.setData,
+param -> " color=blue]
+	"55b543fb7bd242e7ac3e86446563e779" [label="Object Properties
+{
+categoryState -> n
+}" color=blue]
+	"29b839f4d06b4544b0baf064a921ec80" -> "55b543fb7bd242e7ac3e86446563e779"
+	d507ad78a9d545f3adcd9f88acebc85f -> "29b839f4d06b4544b0baf064a921ec80"
+	bf88def8c2cf4adf82cb1c578895bbc1 [label="CallExpression,
+callee name -> clearInterval,
+param -> a.data.interval,
+" color=blue]
+	d507ad78a9d545f3adcd9f88acebc85f -> bf88def8c2cf4adf82cb1c578895bbc1
+	fa31230f1eec46bf944990b94f8116d0 -> d507ad78a9d545f3adcd9f88acebc85f
+	a4d4a9dad1ce41d08b993f7fd046db8a -> fa31230f1eec46bf944990b94f8116d0
+	"4dd8f256ce974871acbb8fa20d669ede" -> a4d4a9dad1ce41d08b993f7fd046db8a
+}

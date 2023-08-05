@@ -1,0 +1,15 @@
+// \pages/teacher/myIndex/myIndex editTeacher Data Flow
+digraph {
+	"5c77edce9459437c81167cb1e29ec49e" [label="FunctionCall,
+function name -> editTeacher,
+param -> " color=blue]
+	"14fc051fa15b480cb6a364806788f0e2" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"221ffa57a94d486c8ace6ba17be4901d" [label="Object Properties
+{
+tId -> i.data.teacher.id
+}" color=blue]
+	"14fc051fa15b480cb6a364806788f0e2" -> "221ffa57a94d486c8ace6ba17be4901d"
+	"5c77edce9459437c81167cb1e29ec49e" -> "14fc051fa15b480cb6a364806788f0e2"
+}

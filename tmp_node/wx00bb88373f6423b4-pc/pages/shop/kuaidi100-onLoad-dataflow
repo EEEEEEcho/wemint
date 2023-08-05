@@ -1,0 +1,45 @@
+// \pages/shop/kuaidi100 onLoad Data Flow
+digraph {
+	"1865a27776f141cca1d40eabe4e73136" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"6c0bbb0accaa4ddbaf5e7d99a627f3a7" [label=SequenceExpression color=blue]
+	"414c427f6d184c23af09fe9a906ca146" [label="CallExpression,
+callee name -> this.loadkuadi,
+param -> " color=blue]
+	"76536991633d40d483c711ddd10538b3" [label="FunctionCall,
+function name -> loadkuadi,
+param -> " color=blue]
+	c0b5f635b1c94e718bcc612d3762eea9 [label="If Alternate" color=blue]
+	"0cfa4fd5af4640a684a5c21bd84c2741" [label=SequenceExpression color=blue]
+	fc994066ddc743a7a1b5dd10b88ace3f [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"58d1d8566d9a4efa86ad322114d13c91" [label="Assignment,
+left -> s,
+right -> t.data.queryparams.company" color=blue]
+	fc994066ddc743a7a1b5dd10b88ace3f -> "58d1d8566d9a4efa86ad322114d13c91"
+	"0cfa4fd5af4640a684a5c21bd84c2741" -> fc994066ddc743a7a1b5dd10b88ace3f
+	"42b7af1489fd43fdae45f2de096ea107" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	c57d10373d804cdb92d421be9bd32eea [label="Assignment,
+left -> i,
+right -> t.data.queryparams.postid" color=blue]
+	"42b7af1489fd43fdae45f2de096ea107" -> c57d10373d804cdb92d421be9bd32eea
+	"0cfa4fd5af4640a684a5c21bd84c2741" -> "42b7af1489fd43fdae45f2de096ea107"
+	daeab9c7eb0446e482df6bc0390ae63f [label="CallExpression,
+callee name -> a.sendRequest,
+param -> " color=blue]
+	"309f3ddf2d5642f990c4bc284495918d" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=KuaiDi100&type=' + s + '&postid=' + i
+}" color=blue]
+	daeab9c7eb0446e482df6bc0390ae63f -> "309f3ddf2d5642f990c4bc284495918d"
+	"0cfa4fd5af4640a684a5c21bd84c2741" -> daeab9c7eb0446e482df6bc0390ae63f
+	c0b5f635b1c94e718bcc612d3762eea9 -> "0cfa4fd5af4640a684a5c21bd84c2741"
+	"76536991633d40d483c711ddd10538b3" -> c0b5f635b1c94e718bcc612d3762eea9
+	"414c427f6d184c23af09fe9a906ca146" -> "76536991633d40d483c711ddd10538b3"
+	"6c0bbb0accaa4ddbaf5e7d99a627f3a7" -> "414c427f6d184c23af09fe9a906ca146"
+	"1865a27776f141cca1d40eabe4e73136" -> "6c0bbb0accaa4ddbaf5e7d99a627f3a7"
+}

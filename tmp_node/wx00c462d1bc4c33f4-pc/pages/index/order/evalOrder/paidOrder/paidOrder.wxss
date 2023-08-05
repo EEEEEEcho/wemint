@@ -1,0 +1,199 @@
+.evaluation {
+    background: #777;
+    color: #ffbf20;
+    width: 86%;
+    margin: 15px auto;
+}
+
+.waitInfo {
+    border-left: 4px #ffbf20 solid;
+    padding-left: 20px;
+    color: #fff;
+    margin-top: 24px;
+    margin-left: 20px;
+}
+
+.destineInfo {
+    box-sizing: border-box;
+    color: #999;
+    width: 90%;
+    margin: 15px auto;
+    border-radius: 5px;
+    padding: 20px;
+    line-height: 25px;
+    font-size: 16px;
+    background-color: #333;
+}
+
+.destineButton {
+    background-color: #444;
+    color: #999;
+    border-radius: 8px;
+    width: 86%;
+    margin: 15px auto;
+}
+
+.mj-logo-size {
+    width: 20px;
+    height: 20px;
+    margin-top: 12px;
+}
+
+.order-detail-box {
+    width: 90%;
+    border-radius: 8px;
+    background: #333;
+    margin: 0 auto;
+}
+
+.order-detail-title {
+    display: flex;
+    flex-flow: row;
+    height: 40px;
+    padding: 14px 0 0 14px;
+}
+
+.order-detail-storelogo {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: 1px #fff solid;
+}
+
+.order-detail-storename {
+    color: #999;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+.order-detail-content {
+    border-bottom: 10px #333 solid;
+    padding-left: 14px;
+}
+
+.order-detail-foodsrc {
+    width: 60px;
+    height: 60px;
+    float: left;
+    padding: 10px 0 10px 14px;
+}
+
+.order-detail-price {
+    color: #999;
+    font-size: 16px;
+    padding-top: 12px;
+    padding-right: 15px;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+.order-detail-foodname {
+    padding: 12px 0 10px 12px;
+    font-size: 18px;
+    color: #eee;
+}
+
+.order-detail-foodcount {
+    color: #999;
+    padding: 2px 0 10px 12px;
+    font-size: 14px;
+}
+
+.mj-box {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    border-bottom: 1px #3d3d3d solid;
+    height: 42px;
+    line-height: 42px;
+}
+
+.mj-box-youhui {
+    flex: 0 0 75%;
+    color: #999;
+    font-size: 16px;
+    float: left;
+    padding-left: 5px;
+}
+
+.mj-youhui {
+    float: left;
+    padding-left: 5px;
+}
+
+.selYouhui {
+    color: #fb4e3e;
+    text-decoration: underline;
+}
+
+.mj-box-price {
+    color: #fb4e3e;
+    font-size: 16px;
+    float: right;
+    padding-right: 15px;
+}
+
+.mj-detail {
+    justify-content: space-between;
+    height: 42px;
+    line-height: 50px;
+    padding-bottom: 10px;
+}
+
+.mj-zhuo {
+    color: #ffbf20;
+    font-size: 20px;
+    float: left;
+    padding-left: 30px;
+}
+
+.mj-yyh {
+    font-size: 14px;
+    color: #999;
+}
+
+.mj-hj {
+    color: #fff;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.mj-jm {
+    color: #fb4e3e;
+    font-size: 18px;
+    padding-left: 5px;
+    padding-right: 14px;
+}
+
+.order-number {
+    width: 90%;
+    border-radius: 8px;
+    background: #333;
+    margin: 10px auto;
+}
+
+.order-number-con {
+    color: #999;
+    font-size: 14px;
+    margin-left: 10px;
+    padding-top: 16px;
+}
+
+.order-time {
+    color: #999;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.order-pay {
+    color: #999;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-bottom: 16px;
+}
+
+.padleft20 {
+    padding-left: 20px;
+}

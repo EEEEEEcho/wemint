@@ -1,0 +1,65 @@
+// \pages/shop/productdetail doAttrChange Data Flow
+digraph {
+	"94e8bbd3e40f4281b7f436b8033ec655" [label="FunctionCall,
+function name -> doAttrChange,
+param -> " color=blue]
+	e36d53223a554643a9f65e4b7b7ad541 [label=VariableDeclarations color=blue]
+	aec79394a0fd47c6a9251f58672631cf [label="VariableDeclarator,
+left -> s,
+right -> this.data.selectedAttrs" color=blue]
+	e36d53223a554643a9f65e4b7b7ad541 -> aec79394a0fd47c6a9251f58672631cf
+	"94e8bbd3e40f4281b7f436b8033ec655" -> e36d53223a554643a9f65e4b7b7ad541
+	"2c95a92c03844910adc0d9662ed8eabf" [label=SequenceExpression color=blue]
+	"7abeee3ba5064859bcc377649c311a2d" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	f652d0e0bb9d4b609d69001c2714172e [label="Object Properties
+{
+selectedAttrs -> s
+}" color=blue]
+	"7abeee3ba5064859bcc377649c311a2d" -> f652d0e0bb9d4b609d69001c2714172e
+	"2c95a92c03844910adc0d9662ed8eabf" -> "7abeee3ba5064859bcc377649c311a2d"
+	"2e5c0d4fdc244cc79e7b1b9d2fcc6672" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"699c6e210c144adb950e2963277e9c55" [label="CallExpression,
+callee name -> this.getCurrentSkuData,
+param -> " color=blue]
+	"1d3f8106cb014817a51ceaf9629a86fd" [label="FunctionCall,
+function name -> getCurrentSkuData,
+param -> " color=blue]
+	"4807da40eed54029a7444309ccee01a3" [label=VariableDeclarations color=blue]
+	acb577dd7a6f43e6bdd95558da76c27c [label="VariableDeclarator,
+left -> a,
+right -> this.data.selectedAttrs" color=blue]
+	"4807da40eed54029a7444309ccee01a3" -> acb577dd7a6f43e6bdd95558da76c27c
+	"1d3f8106cb014817a51ceaf9629a86fd" -> "4807da40eed54029a7444309ccee01a3"
+	"3481038f73074cca91cdac0104a1a438" [label="For Loop" color=blue]
+	"1db761882569499f837df371fcc742de" [label=VariableDeclarations color=blue]
+	"1451a6035db24248b68a02cb6f32c463" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	ef0112c4c6de47eeb35a3f4c0a7a9ca7 [label="CallExpression,
+callee name -> this.findAttrValItemById,
+param -> a[i],
+" color=blue]
+	"1451a6035db24248b68a02cb6f32c463" -> ef0112c4c6de47eeb35a3f4c0a7a9ca7
+	"1db761882569499f837df371fcc742de" -> "1451a6035db24248b68a02cb6f32c463"
+	"3481038f73074cca91cdac0104a1a438" -> "1db761882569499f837df371fcc742de"
+	"1d3f8106cb014817a51ceaf9629a86fd" -> "3481038f73074cca91cdac0104a1a438"
+	c3822daf1d964182aa834692d6ec8e5f [label=VariableDeclarations color=blue]
+	d066b8997bb3452f962114d6ff2408da [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	bc35cb25fa3a49c689527dc70e524fe2 [label="CallExpression,
+callee name -> t.analyseProductSkusPrice,
+param -> a,
+" color=blue]
+	d066b8997bb3452f962114d6ff2408da -> bc35cb25fa3a49c689527dc70e524fe2
+	c3822daf1d964182aa834692d6ec8e5f -> d066b8997bb3452f962114d6ff2408da
+	"1d3f8106cb014817a51ceaf9629a86fd" -> c3822daf1d964182aa834692d6ec8e5f
+	"699c6e210c144adb950e2963277e9c55" -> "1d3f8106cb014817a51ceaf9629a86fd"
+	"2e5c0d4fdc244cc79e7b1b9d2fcc6672" -> "699c6e210c144adb950e2963277e9c55"
+	"2c95a92c03844910adc0d9662ed8eabf" -> "2e5c0d4fdc244cc79e7b1b9d2fcc6672"
+	"94e8bbd3e40f4281b7f436b8033ec655" -> "2c95a92c03844910adc0d9662ed8eabf"
+}

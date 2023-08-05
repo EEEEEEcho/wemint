@@ -1,0 +1,49 @@
+// \pages/classhome/classhome poster Data Flow
+digraph {
+	"24a508aab6164257a725449aff62d211" [label="FunctionCall,
+function name -> poster,
+param -> t,
+t.,
+" color=blue]
+	d7cf786779574235bbfa993c4f816c27 [label=VariableDeclarations color=blue]
+	b8f612657b4d49a5a3d13cab033b5a30 [label="VariableDeclarator,
+left -> e,
+right -> t.detail.userInfo" color=blue]
+	d7cf786779574235bbfa993c4f816c27 -> b8f612657b4d49a5a3d13cab033b5a30
+	"24a508aab6164257a725449aff62d211" -> d7cf786779574235bbfa993c4f816c27
+	ec7ca1f45c094b70874b17603882ad00 [label=SequenceExpression color=blue]
+	"77a6d13263ac4324a01560cd83cb7aab" [label="Assignment,
+left -> a.globalData.userInfo,
+right -> t.detail.userInfo" color=blue]
+	ec7ca1f45c094b70874b17603882ad00 -> "77a6d13263ac4324a01560cd83cb7aab"
+	"286d85295ab34ac58ee0ad4bd76bf48b" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"22031a93dc2840a3b0e8ea51bfd2195e" [label="CallExpression,
+callee name -> wx.login,
+param -> " color=blue]
+	"161e4ebf300b49be88d0e7dd27c5155c" [label="FunctionCall,
+function name -> success,
+param -> t,
+t.,
+" color=blue]
+	"31043626a5394b29a159dd5474190992" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"5498f17b9d3d4e1b9921f454501bc617" [label=SequenceExpression color=blue]
+	e237a5a36597400b8b9bca28c628ac39 [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"0c12c96ec38146a79164fb5e4800b0e4" [label="Object Properties
+{
+code -> t.code
+}" color=blue]
+	e237a5a36597400b8b9bca28c628ac39 -> "0c12c96ec38146a79164fb5e4800b0e4"
+	"5498f17b9d3d4e1b9921f454501bc617" -> e237a5a36597400b8b9bca28c628ac39
+	"31043626a5394b29a159dd5474190992" -> "5498f17b9d3d4e1b9921f454501bc617"
+	"161e4ebf300b49be88d0e7dd27c5155c" -> "31043626a5394b29a159dd5474190992"
+	"22031a93dc2840a3b0e8ea51bfd2195e" -> "161e4ebf300b49be88d0e7dd27c5155c"
+	"286d85295ab34ac58ee0ad4bd76bf48b" -> "22031a93dc2840a3b0e8ea51bfd2195e"
+	ec7ca1f45c094b70874b17603882ad00 -> "286d85295ab34ac58ee0ad4bd76bf48b"
+	"24a508aab6164257a725449aff62d211" -> ec7ca1f45c094b70874b17603882ad00
+}

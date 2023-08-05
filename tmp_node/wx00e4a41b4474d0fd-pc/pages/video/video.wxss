@@ -1,0 +1,242 @@
+.video {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+}
+
+.controls {
+    position: relative;
+    top: 50%;
+    height: 50px;
+    margin-top: -25px;
+    display: flex;
+}
+
+.img {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 7px;
+}
+
+.text-vieo {
+    width: 60%;
+    height: 140px;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    margin-left: 35px;
+    box-sizing: border-box;
+}
+
+.text-queit {
+    width: 100%;
+    height: 140px;
+    position: absolute;
+    left: 0;
+    bottom: 60px;
+    margin-left: 20px;
+    box-sizing: border-box;
+}
+
+.time {
+    font-size: 50px;
+    color: #FFFFFF;
+    line-height: 70px;
+}
+
+.time1 {
+    color: #fff;
+}
+
+.time-det {
+    position: relative;
+    height: 40px;
+}
+
+.time1,.time2,.time3 {
+    overflow: visible;
+    height: 26px;
+    position: absolute;
+    padding-left: 16px;
+    top: 0;
+}
+
+.time1 {
+    width: 30%;
+    left: 0;
+}
+
+.time2 {
+    width: 20%;
+    left: 30%;
+}
+
+.time3 {
+    width: 50%;
+    left: 50%;
+}
+
+.time1 cover-view,.time2 cover-view,.time3 cover-view {
+    display: inline-block;
+}
+
+.text-cover {
+    font-size: 15px;
+    color: #fff;
+    line-height: 26px;
+    overflow: visible;
+    width: 100%;
+}
+
+.back-btn {
+    width: 28px;
+    height: 44px;
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 30px;
+}
+
+.text-calendar {
+    width: 90%;
+}
+
+.moreBtn {
+    width: 130px;
+    height: 32px;
+    color: #fff;
+    font-size: 14px;
+    background: rgba(0,0,0,0.40);
+    border-radius: 50px;
+    position: absolute;
+    bottom: 30px;
+    left: 35px;
+}
+
+.more-text {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+
+.arrow {
+    border-width: 6px;
+    border-color: #fff;
+    border-top-width: 0;
+    border-style: dashed;
+    border-bottom-style: solid;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+}
+
+.boxVideo {
+    height: 147px;
+    position: absolute;
+    left: -12.5vw;
+    bottom: 0;
+    padding: 23px 7.5vw 23px 12.5vw;
+    box-sizing: border-box;
+    z-index: 8;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.moreVide {
+    width: 100%;
+    height: 147px;
+    background: rgba(0,0,0,0.50);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 20px 2%;
+    box-sizing: border-box;
+}
+
+.left-sec,.right-sec {
+    width: 10vw;
+    height: 147px;
+    position: absolute;
+    top: 0;
+}
+
+.left-sec {
+    left: 0;
+}
+
+.right-sec {
+    right: 0;
+}
+
+.leftBtn,.rightBtn {
+    width: 12px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9;
+}
+
+.hideBox {
+    width: 75vw;
+    height: 147px;
+    position: absolute;
+    top: 0;
+    left: 12.5vw;
+    overflow: hidden;
+}
+
+.upBtn {
+    width: 36px;
+    height: 18px;
+    position: absolute;
+    left: 50%;
+    bottom: 147px;
+    transform: translateX(-50%);
+}
+
+.video-list {
+    position: relative;
+    width: 15vw;
+    height: 15vw;
+    margin-right: 5vw;
+    box-sizing: border-box;
+}
+
+.action {
+    border: 2px solid #fff;
+}
+
+.liveText {
+    width: 3.8vw;
+    height: 1.8vw;
+    line-height: 1.8vw;
+    text-align: center;
+    background-color: #FFffff;
+    color: #000;
+    font-size: 20rpx;
+    position: absolute;
+    bottom: 10rpx;
+    left: 10rpx;
+}
+
+.liveTitle {
+    width: 90%;
+    color: #fff;
+    font-size: 18rpx;
+    position: absolute;
+    bottom: calc(20rpx + 1.8vw);
+    left: 10rpx;
+    white-space: initial;
+    word-wrap: break-word;
+    word-break: normal;
+}

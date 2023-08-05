@@ -1,0 +1,34 @@
+// \pages/teacher/activityWrite/activityWrite deleteTeammateList Data Flow
+digraph {
+	aa55ece6d41f49d4847770b18faaca9a [label="FunctionCall,
+function name -> deleteTeammateList,
+param -> t,
+t.,
+" color=blue]
+	"5805816b12ca4321809914c140d5d7d5" [label=VariableDeclarations color=blue]
+	eab69e1985ce4d36a1169378453f13c2 [label="VariableDeclarator,
+left -> a,
+right -> this.data.teammateList" color=blue]
+	"5805816b12ca4321809914c140d5d7d5" -> eab69e1985ce4d36a1169378453f13c2
+	a64aa327eb8b4957a2f7e5583e54159f [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.index" color=blue]
+	"5805816b12ca4321809914c140d5d7d5" -> a64aa327eb8b4957a2f7e5583e54159f
+	aa55ece6d41f49d4847770b18faaca9a -> "5805816b12ca4321809914c140d5d7d5"
+	be2d8b292c754b37a5a9d584085bcb18 [label=SequenceExpression color=blue]
+	"4c208eb6764e451d9e918176ce255b95" [label="CallExpression,
+callee name -> a.splice,
+param -> e,
+" color=blue]
+	be2d8b292c754b37a5a9d584085bcb18 -> "4c208eb6764e451d9e918176ce255b95"
+	f4990c7d1d1545a6a7bea0689fe473ee [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"796a14e14ad746a688bff00c7e5b7f08" [label="Object Properties
+{
+teammateList -> a
+}" color=blue]
+	f4990c7d1d1545a6a7bea0689fe473ee -> "796a14e14ad746a688bff00c7e5b7f08"
+	be2d8b292c754b37a5a9d584085bcb18 -> f4990c7d1d1545a6a7bea0689fe473ee
+	aa55ece6d41f49d4847770b18faaca9a -> be2d8b292c754b37a5a9d584085bcb18
+}

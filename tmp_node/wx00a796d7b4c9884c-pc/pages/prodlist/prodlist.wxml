@@ -1,0 +1,34 @@
+<view class="max1">
+    <view class="search">
+        <button bindtap="search" class="cjjz">
+            <image src="../../images/seac1.png"></image>
+        </button>
+        <input bindconfirm="search" bindinput="searchInp" placeholder="请输入关键字" type="text" value="{{keyword}}"></input>
+    </view>
+</view>
+<view class="s_list_bg">
+    <view bindtap="priceTap" class="s_list_1" data-status="{{priceFlag}}">
+        <view class="navig">
+            <view class="font1">价格</view>
+            <image src="{{priceImg}}" style="width: 14px; height:25px;"></image>
+        </view>
+    </view>
+    <view bindtap="sellnumTap" class="s_list_1" data-status="{{sellnumFlag}}">
+        <view class="navig">
+            <view class="font1">销量</view>
+            <image src="{{sellnumImg}}" style="width: 14px; height:25px;"></image>
+        </view>
+    </view>
+</view>
+<view class="m_box1" wx:if="{{goods.length>0}}">
+    <view class="m_box1_2" wx:for="{{goods}}" wx:key="*this">
+        <navigator class="navig" url="../prodshow/prodshow?cid={{item.classid}}&id={{item.id}}">
+            <image mode="widthFix" src="{{url}}{{item.picurl}}" style="width:100%;"></image>
+            <view class="h3">{{item.title}}</view>
+            <view class="h4">¥{{item.salesprice}}<view class="font1">已售{{item.sellnum}}</view>
+            </view>
+        </navigator>
+    </view>
+    <view class="m_box1" hidden="{{hidden}}" style="text-align: center;width: 100%;font-size:12px;margin-bottom:0%;">没有更多商品</view>
+</view>
+<view class="m_box1" style="text-align: center;width: 100%;" wx:else>暂无结果</view>

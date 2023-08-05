@@ -1,0 +1,17 @@
+// \pages/stu/myName/myName inputName Data Flow
+digraph {
+	"0498de4914444a519507507eb5c1b40a" [label="FunctionCall,
+function name -> inputName,
+param -> a.,
+a,
+" color=blue]
+	"4e7deda09d12473eb2cd695e86c649b2" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	fbb5fec6ba1348a4a671069d5dea8c91 [label="Object Properties
+{
+name -> a.detail.value
+}" color=blue]
+	"4e7deda09d12473eb2cd695e86c649b2" -> fbb5fec6ba1348a4a671069d5dea8c91
+	"0498de4914444a519507507eb5c1b40a" -> "4e7deda09d12473eb2cd695e86c649b2"
+}

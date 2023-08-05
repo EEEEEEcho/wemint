@@ -1,0 +1,38 @@
+// \pages/company/businessCard/cardDetails getDynmicList Data Flow
+digraph {
+	"2dedd7a993254c4ea4d64e827e8107d7" [label="FunctionCall,
+function name -> getDynmicList,
+param -> " color=blue]
+	"4efe5e281b5d457c9a6e546f7f79f732" [label=VariableDeclarations color=blue]
+	"3b2074b96bd4429aa8d9fb3e07247f23" [label="VariableDeclarator,
+left -> s,
+right -> e.data.recordcount" color=blue]
+	"4efe5e281b5d457c9a6e546f7f79f732" -> "3b2074b96bd4429aa8d9fb3e07247f23"
+	f848a79034df4415a0c03b3dd11a329b [label="VariableDeclarator,
+left -> i,
+right -> e.data.dynamicList.length" color=blue]
+	"4efe5e281b5d457c9a6e546f7f79f732" -> f848a79034df4415a0c03b3dd11a329b
+	"2dedd7a993254c4ea4d64e827e8107d7" -> "4efe5e281b5d457c9a6e546f7f79f732"
+	aa05eb326fcb4744b935a69c6fce05b3 [label="If Alternate" color=blue]
+	"4c68de2c5eb840fcb299730b36709373" [label=VariableDeclarations color=blue]
+	db6e85f614c84e5eaa850da7307dc5d7 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"7392ef0fb883430a8e1cf5dbe79e5fc7" [label="CallExpression,
+callee name -> Math.ceil,
+param -> i / e.data.pagesize,
+" color=blue]
+	db6e85f614c84e5eaa850da7307dc5d7 -> "7392ef0fb883430a8e1cf5dbe79e5fc7"
+	"4c68de2c5eb840fcb299730b36709373" -> db6e85f614c84e5eaa850da7307dc5d7
+	aa05eb326fcb4744b935a69c6fce05b3 -> "4c68de2c5eb840fcb299730b36709373"
+	d06d24398a2c457791ae9b9b0ecb464f [label="CallExpression,
+callee name -> a.sendRequest,
+param -> " color=blue]
+	"198f811a8eeb48189336cc9a1b95038f" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/Dynamic/Dynamic&a=getDynmicList&page=' + o + '&pageSize=' + e.data.pagesize
+}" color=blue]
+	d06d24398a2c457791ae9b9b0ecb464f -> "198f811a8eeb48189336cc9a1b95038f"
+	aa05eb326fcb4744b935a69c6fce05b3 -> d06d24398a2c457791ae9b9b0ecb464f
+	"2dedd7a993254c4ea4d64e827e8107d7" -> aa05eb326fcb4744b935a69c6fce05b3
+}

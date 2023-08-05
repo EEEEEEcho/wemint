@@ -1,0 +1,18 @@
+// \pages/wx-cropper/index contentStartMove Data Flow
+digraph {
+	af3304af314b4c5b922ea5d5182a98eb [label="FunctionCall,
+function name -> contentStartMove,
+param -> t,
+t.,
+" color=blue]
+	ae5041fed82d4e9095650b42104c5b14 [label=SequenceExpression color=blue]
+	"89f0532cf80942d09699daf2badecf7b" [label="Assignment,
+left -> c,
+right -> t.touches[0].pageX" color=blue]
+	ae5041fed82d4e9095650b42104c5b14 -> "89f0532cf80942d09699daf2badecf7b"
+	"303247df4b32456ba28823fe52e6abf8" [label="Assignment,
+left -> i,
+right -> t.touches[0].pageY" color=blue]
+	ae5041fed82d4e9095650b42104c5b14 -> "303247df4b32456ba28823fe52e6abf8"
+	af3304af314b4c5b922ea5d5182a98eb -> ae5041fed82d4e9095650b42104c5b14
+}

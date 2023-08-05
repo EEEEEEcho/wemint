@@ -1,0 +1,21 @@
+<view class="neirong">
+    <view class="news-item-container">
+        <block wx:for="{{list}}" wx:for-index="id">
+            <text class="sub-title" wx:if="{{item.header}}">{{item.header}}</text>
+            <navigator url="../news/detail?id={{item.id}}" wx:else>
+                <view class="news-item">
+                    <view class="news-item-left">
+                        <text class="news-item-title">{{item.title}}</text>
+                        <view class="news-stamp">
+                            <text>{{item.addtime}}</text>
+                        </view>
+                    </view>
+                    <view class="news-item-right">
+                        <image class="news-image" src="{{item.picname}}"></image>
+                    </view>
+                </view>
+            </navigator>
+        </block>
+        <button bindtap="loadMore" class="load-btn" loading="{{loading}}" plain="{{plain}}" type="primary"> 更多 </button>
+    </view>
+</view>

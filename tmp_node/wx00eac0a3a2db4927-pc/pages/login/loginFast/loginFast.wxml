@@ -1,0 +1,12 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view style="margin-top: {{navH+status+10}}px;">
+    <image class="login_img" lazyLoad="true" src="http://oss.shangmian.xin/weixin_applets_login_low.png"></image>
+    <button bindgetphonenumber="getPhoneNumber" class="login_btn" hoverClass="btn_hover" openType="getPhoneNumber">微信手机号快捷登陆</button>
+    <button bindtap="openLoginMsg" class="register_btn" hoverClass="plain_hover" openType="navigate">登录/注册</button>
+    <view class="introduce">
+    若您的手机号未注册，将为您直接注册，注册即视为同意
+    <text catchtap="toPage" class="rich_text" data-type="注册协议">《尚免用户注册协议》</text>、
+    <text catchtap="toPage" class="rich_text" data-type="隐私政策">《尚免隐私政策》</text>
+    </view>
+</view>
+<loading-view isShow="{{isShowLoad}}"></loading-view>

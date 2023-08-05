@@ -1,0 +1,15 @@
+<view catchtouchmove="preventD" class="popout-mark " wx:if="{{allowspopup}}"></view>
+<view class="popout-content" wx:if="{{allowspopup}}">
+    <view class="popout-title">
+        <view>{{reminder}}</view>
+    </view>
+    <view class="popout-main">{{matter}}</view>
+    <view class="popout-button">
+        <view class="button-left">
+            <button bindtap="abolish" type="primary">{{abrogate}}</button>
+        </view>
+        <view class="button-right">
+            <button bindgetphonenumber="getPhoneNumber" bindtap="ensure" openType="getPhoneNumber" type="primary">{{permission}}</button>
+        </view>
+    </view>
+</view>

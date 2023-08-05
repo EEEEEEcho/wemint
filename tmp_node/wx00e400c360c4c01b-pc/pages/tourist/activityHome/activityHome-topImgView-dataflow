@@ -1,0 +1,23 @@
+// \pages/tourist/activityHome/activityHome topImgView Data Flow
+digraph {
+	"55720b2bc89b4dd3a1fb13eb204f560d" [label="FunctionCall,
+function name -> topImgView,
+param -> a.,
+a,
+" color=blue]
+	"91492747df674c56950325d92c9edfd4" [label=VariableDeclarations color=blue]
+	f4e0c3eb35a348bd9f0af12d90acbc0c [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.id" color=blue]
+	"91492747df674c56950325d92c9edfd4" -> f4e0c3eb35a348bd9f0af12d90acbc0c
+	"55720b2bc89b4dd3a1fb13eb204f560d" -> "91492747df674c56950325d92c9edfd4"
+	"636ddd54d32446d08dd8387a3cd82f4a" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"0eb028ba07d24c779d58e5157357b4ab" [label="Object Properties
+{
+url -> '../activityView/activityView?id=' + t + '&isPay=0'
+}" color=blue]
+	"636ddd54d32446d08dd8387a3cd82f4a" -> "0eb028ba07d24c779d58e5157357b4ab"
+	"55720b2bc89b4dd3a1fb13eb204f560d" -> "636ddd54d32446d08dd8387a3cd82f4a"
+}

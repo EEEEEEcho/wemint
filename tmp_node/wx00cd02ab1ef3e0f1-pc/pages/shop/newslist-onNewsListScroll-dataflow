@@ -1,0 +1,67 @@
+// \pages/shop/newslist onNewsListScroll Data Flow
+digraph {
+	"922d1867f9cd4c44a07cb27c5762603e" [label="FunctionCall,
+function name -> onNewsListScroll,
+param -> s.,
+s,
+" color=blue]
+	"5a3275d94a6042a1b1249bcefc99029c" [label="CallExpression,
+callee name -> this.loadNewsList,
+param -> " color=blue]
+	"76a6a41dc4294103a33b1c1af2bfb5d8" [label="FunctionCall,
+function name -> loadNewsList,
+param -> " color=blue]
+	a201f30c02504afea01a37fe5d8de821 [label="If Alternate" color=blue]
+	"9f6a43e10b114b859d69079488053e75" [label=VariableDeclarations color=blue]
+	"05b2315edf474913a2d3dccf30a8c0dc" [label="VariableDeclarator,
+left -> e,
+right -> a.data.recordcount" color=blue]
+	"9f6a43e10b114b859d69079488053e75" -> "05b2315edf474913a2d3dccf30a8c0dc"
+	"08ccc8bac6d349ab870cc8fe9d269d8c" [label="VariableDeclarator,
+left -> i,
+right -> a.data.newslist.length" color=blue]
+	"9f6a43e10b114b859d69079488053e75" -> "08ccc8bac6d349ab870cc8fe9d269d8c"
+	a201f30c02504afea01a37fe5d8de821 -> "9f6a43e10b114b859d69079488053e75"
+	"730fc1d26bd942b98e28f5ff70f1223e" [label="If Alternate" color=blue]
+	dbdd804ff145460a856aeb624c00136a [label=VariableDeclarations color=blue]
+	e03eab08cca54513a8318aa307dfe197 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"5a0853943cbb4c70b01659cd3a7fef3f" [label="CallExpression,
+callee name -> Math.ceil,
+param -> i / a.data.pagesize,
+" color=blue]
+	e03eab08cca54513a8318aa307dfe197 -> "5a0853943cbb4c70b01659cd3a7fef3f"
+	dbdd804ff145460a856aeb624c00136a -> e03eab08cca54513a8318aa307dfe197
+	"4de02203bdb64b3e99cbf421d2f27689" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"8d66ced012bd44e080b5fa7bf3308d79" [label="ConditionalExpression,
+ conditional list -> a.data.queryparams.keyword" color=blue]
+	"4de02203bdb64b3e99cbf421d2f27689" -> "8d66ced012bd44e080b5fa7bf3308d79"
+	dbdd804ff145460a856aeb624c00136a -> "4de02203bdb64b3e99cbf421d2f27689"
+	"730fc1d26bd942b98e28f5ff70f1223e" -> dbdd804ff145460a856aeb624c00136a
+	"4c331989a3554529b5caa4bfcbf811b0" [label=SequenceExpression color=blue]
+	ae414b2be5a442fe8b0cf95638d3eb0f [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"71e07abb0f714934b58343532f128fa1" [label="Assignment,
+left -> o,
+right -> '&sortcol=' + a.data.sortcol + '&sort=' + a.data.sort" color=blue]
+	ae414b2be5a442fe8b0cf95638d3eb0f -> "71e07abb0f714934b58343532f128fa1"
+	"4c331989a3554529b5caa4bfcbf811b0" -> ae414b2be5a442fe8b0cf95638d3eb0f
+	"9b7122cbef384035ba54c3c75ccce2c3" [label="CallExpression,
+callee name -> s.sendRequest,
+param -> " color=blue]
+	"7ef9943a8f5a48c2b3597ee79abb8b63" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/JsonApi&a=getnewslist&keyword=' + n + '&page=' + l + '&pagesize=' + a.data.pagesize + o + '&classid=' + a.data.classid
+}" color=blue]
+	"9b7122cbef384035ba54c3c75ccce2c3" -> "7ef9943a8f5a48c2b3597ee79abb8b63"
+	"4c331989a3554529b5caa4bfcbf811b0" -> "9b7122cbef384035ba54c3c75ccce2c3"
+	"730fc1d26bd942b98e28f5ff70f1223e" -> "4c331989a3554529b5caa4bfcbf811b0"
+	a201f30c02504afea01a37fe5d8de821 -> "730fc1d26bd942b98e28f5ff70f1223e"
+	"76a6a41dc4294103a33b1c1af2bfb5d8" -> a201f30c02504afea01a37fe5d8de821
+	"5a3275d94a6042a1b1249bcefc99029c" -> "76a6a41dc4294103a33b1c1af2bfb5d8"
+	"922d1867f9cd4c44a07cb27c5762603e" -> "5a3275d94a6042a1b1249bcefc99029c"
+}

@@ -1,0 +1,12 @@
+// \pages/stu/activity/activity fetchSearchList Data Flow
+digraph {
+	fd1c486a510e4e5d91f1e37bd25cfff3 [label="FunctionCall,
+function name -> fetchSearchList,
+param -> " color=blue]
+	"4c71b5581f8047b6a81f21110cda5e59" [label="CallExpression,
+callee name -> a,
+param -> t.data.searchPageNum,
+t.data.callbackcount,
+" color=blue]
+	fd1c486a510e4e5d91f1e37bd25cfff3 -> "4c71b5581f8047b6a81f21110cda5e59"
+}

@@ -1,0 +1,28 @@
+// \pages/index/order/evalOrder/submitOrder/submitOrder inputBeizhu Data Flow
+digraph {
+	"4a900d3a4f0443189cd8edf2ab191988" [label="FunctionCall,
+function name -> inputBeizhu,
+param -> s.,
+s,
+" color=blue]
+	"645930f84a1e4bc2801538e873b52545" [label=SequenceExpression color=blue]
+	"92346fe031284eb6a04ff771a319c826" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"3d66042ded0d4471954c5bf46f646ce8" [label="Object Properties
+{
+beizhu -> s.detail.value
+}" color=blue]
+	"92346fe031284eb6a04ff771a319c826" -> "3d66042ded0d4471954c5bf46f646ce8"
+	"645930f84a1e4bc2801538e873b52545" -> "92346fe031284eb6a04ff771a319c826"
+	"73318966f3eb46788d673e4a3e6fa9f6" [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	d6a04483cbcd4436a1d48c2a9b2953f2 [label="Object Properties
+{
+data -> s.detail.value
+}" color=blue]
+	"73318966f3eb46788d673e4a3e6fa9f6" -> d6a04483cbcd4436a1d48c2a9b2953f2
+	"645930f84a1e4bc2801538e873b52545" -> "73318966f3eb46788d673e4a3e6fa9f6"
+	"4a900d3a4f0443189cd8edf2ab191988" -> "645930f84a1e4bc2801538e873b52545"
+}

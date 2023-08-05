@@ -1,0 +1,24 @@
+<loading-component showLoading="{{showLoading}}"></loading-component>
+<view class="item-detai">
+    <rich-text nodes="{{text}}" type="text"></rich-text>
+    <view class="item-image-box">
+        <image src="{{item}}" wx:for="{{imgList}}" wx:key="{{ index }}"></image>
+    </view>
+</view>
+<view class="shop-adress-box">
+    <view class="shop-adress">
+        <view>
+            <image class="map-icon" src="./../../utils/imgs/mapicon.png"></image>
+        </view>
+        <view class="shop-adress-detail">
+            <view style="width: 170rpx;">门店地址:</view>
+            <view>
+                <view wx:for="{{subbranchList}}" wx:key="{{ index }}">{{item.address}}<text wx:if="{{subbranchList.length>1}}"> ;</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="next-step">
+    <button bindtap="issuePush">发布</button>
+</view>

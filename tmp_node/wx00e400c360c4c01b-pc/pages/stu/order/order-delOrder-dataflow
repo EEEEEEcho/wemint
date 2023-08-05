@@ -1,0 +1,27 @@
+// \pages/stu/order/order delOrder Data Flow
+digraph {
+	af48176dc17d487a9f2b54f1c59f791f [label="FunctionCall,
+function name -> delOrder,
+param -> a.,
+a,
+" color=blue]
+	"5581141bc8e046e9b1b528732e98071a" [label=VariableDeclarations color=blue]
+	ea5b32f581434b67b1cae63b293c3c4e [label="VariableDeclarator,
+left -> n,
+right -> a.currentTarget.dataset.id" color=blue]
+	"5581141bc8e046e9b1b528732e98071a" -> ea5b32f581434b67b1cae63b293c3c4e
+	e6b93eb41a5240f589a3b8ac57bff49e [label="VariableDeclarator,
+left -> i,
+right -> a.currentTarget.dataset.index" color=blue]
+	"5581141bc8e046e9b1b528732e98071a" -> e6b93eb41a5240f589a3b8ac57bff49e
+	af48176dc17d487a9f2b54f1c59f791f -> "5581141bc8e046e9b1b528732e98071a"
+	"7ba316aac13e4f17af8bad8e89cf4b18" [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	c9fd0025afca4f5eaee9d4af8108a9df [label="FunctionCall,
+function name -> success,
+param -> a,
+" color=blue]
+	"7ba316aac13e4f17af8bad8e89cf4b18" -> c9fd0025afca4f5eaee9d4af8108a9df
+	af48176dc17d487a9f2b54f1c59f791f -> "7ba316aac13e4f17af8bad8e89cf4b18"
+}

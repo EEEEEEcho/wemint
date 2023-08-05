@@ -1,0 +1,95 @@
+.loadingLayout {
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+}
+
+.loadingBg {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    background: #ffffff;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0rpx 0rpx 16rpx #f0f0f0;
+}
+
+.loading {
+    width: 60rpx;
+    height: 60rpx;
+    animation: aniLoading 0.9s steps(1) infinite;
+    background-size: 100% 100%;
+}
+
+@-webkit-keyframes aniLoading {
+    0% {
+        background: url('http://oss.shangmian.xin/weixin_applets_loading_five_20190629.png');
+        background-size: 100% 100%;
+    }
+
+    20% {
+        background: url('http://oss.shangmian.xin/weixin_applets_loading_one_20190629.png');
+        background-size: 100% 100%;
+    }
+
+    40% {
+        background: url('http://oss.shangmian.xin/weixin_applets_loading_two_20190629.png');
+        background-size: 100% 100%;
+    }
+
+    60% {
+        background: url('http://oss.shangmian.xin/weixin_applets_loading_three_20190629.png');
+        background-size: 100% 100%;
+    }
+
+    80% {
+        background: url('http://oss.shangmian.xin/weixin_applets_loading_four_20190629.png');
+        background-size: 100% 100%;
+    }
+
+    100% {
+        background: url('http://oss.shangmian.xin/weixin_applets_loading_five_20190629.png');
+        background-size: 100%;
+    }
+}
+
+@keyframes aniLoading {
+    0% {
+        background: url('http://oss.shangmian.xin/weixin_applets_loading_five_20190629.png');
+        background-size: 100% 100%;
+    }
+
+    20% {
+        background: url('http://oss.shangmian.xin/weixin_applets_loading_one_20190629.png');
+        background-size: 100% 100%;
+    }
+
+    40% {
+        background: url('http://oss.shangmian.xin/weixin_applets_loading_two_20190629.png');
+        background-size: 100% 100%;
+    }
+
+    60% {
+        background: url('http://oss.shangmian.xin/weixin_applets_loading_three_20190629.png');
+        background-size: 100% 100%;
+    }
+
+    80% {
+        background: url('http://oss.shangmian.xin/weixin_applets_loading_four_20190629.png');
+        background-size: 100% 100%;
+    }
+
+    100% {
+        background: url('http://oss.shangmian.xin/weixin_applets_loading_five_20190629.png');
+        background-size: 100%;
+    }
+}

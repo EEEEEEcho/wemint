@@ -1,0 +1,18 @@
+// \pages/index/denglu timeout Data Flow
+digraph {
+	f6a3d3b35a004977ab3b8dfe09bb58c1 [label="FunctionCall,
+function name -> timeout,
+param -> " color=blue]
+	"407995649ca7404dabe2f9297f1da595" [label=SequenceExpression color=blue]
+	"0fab4c97a1e34cbfa9cd07566d320d2f" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	"43c6f76e61f54240b2603d89fc65ce65" [label="Object Properties
+{
+text -> t.data.second
+second -> t.data.second - 1
+}" color=blue]
+	"0fab4c97a1e34cbfa9cd07566d320d2f" -> "43c6f76e61f54240b2603d89fc65ce65"
+	"407995649ca7404dabe2f9297f1da595" -> "0fab4c97a1e34cbfa9cd07566d320d2f"
+	f6a3d3b35a004977ab3b8dfe09bb58c1 -> "407995649ca7404dabe2f9297f1da595"
+}

@@ -1,0 +1,63 @@
+// \pages/shop/customer-service changeData Data Flow
+digraph {
+	d8521429160d47f1a449d88f27733ffd [label="FunctionCall,
+function name -> changeData,
+param -> " color=blue]
+	c9c4e76bee8b4407a77face695b2ee3c [label="CallExpression,
+callee name -> this.loadOrder,
+param -> " color=blue]
+	"16e0a443d45c4d71bf0e599639969888" [label="FunctionCall,
+function name -> loadOrder,
+param -> " color=blue]
+	"4e5bc1ceb3a64a5c849b7b1bb4d15a8d" [label="If Alternate" color=blue]
+	a89cefedbfc54efb98a4884182b1651e [label=VariableDeclarations color=blue]
+	"8263c6b6fb6149f8a92778d63bdbada2" [label="VariableDeclarator,
+left -> r,
+right -> a.data.recordcount" color=blue]
+	a89cefedbfc54efb98a4884182b1651e -> "8263c6b6fb6149f8a92778d63bdbada2"
+	"65ee26e9ee3c46a9ae411b24ace4add2" [label="VariableDeclarator,
+left -> o,
+right -> a.data.orderlist.length" color=blue]
+	a89cefedbfc54efb98a4884182b1651e -> "65ee26e9ee3c46a9ae411b24ace4add2"
+	"4e5bc1ceb3a64a5c849b7b1bb4d15a8d" -> a89cefedbfc54efb98a4884182b1651e
+	"4350a6f33b8c4fe7bc1174a77802cf9e" [label="If Alternate" color=blue]
+	"75fb01b5bd82468aaa477ec210dd67f6" [label=VariableDeclarations color=blue]
+	"8d6899cce4a94f60835e687127250d07" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"9d79e338ca864885bcd1641b54ab9673" [label="CallExpression,
+callee name -> Math.ceil,
+param -> o / a.data.pagesize,
+" color=blue]
+	"8d6899cce4a94f60835e687127250d07" -> "9d79e338ca864885bcd1641b54ab9673"
+	"75fb01b5bd82468aaa477ec210dd67f6" -> "8d6899cce4a94f60835e687127250d07"
+	"4350a6f33b8c4fe7bc1174a77802cf9e" -> "75fb01b5bd82468aaa477ec210dd67f6"
+	"5340a3936a694122b6657862d0cca7f2" [label=SequenceExpression color=blue]
+	b5c4525be6b84573abd67447026936fb [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	d42070de72c94797b1f80c861a7c5be6 [label="Assignment,
+left -> a.data.status,
+right -> a.data.queryparams.status" color=blue]
+	b5c4525be6b84573abd67447026936fb -> d42070de72c94797b1f80c861a7c5be6
+	"5340a3936a694122b6657862d0cca7f2" -> b5c4525be6b84573abd67447026936fb
+	ab08afd0b8564441ba74aab5a7c6c63b [label="CallExpression,
+callee name -> console.log,
+param -> a.data.status,
+" color=blue]
+	"5340a3936a694122b6657862d0cca7f2" -> ab08afd0b8564441ba74aab5a7c6c63b
+	"414ac7b1c0084eada33acacf10cf10d3" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	bf9ef88d05c842cfb56e7eea55dfb007 [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=refundlist&page=' + s + '&pagesize=' + a.data.pagesize
+}" color=blue]
+	"414ac7b1c0084eada33acacf10cf10d3" -> bf9ef88d05c842cfb56e7eea55dfb007
+	"5340a3936a694122b6657862d0cca7f2" -> "414ac7b1c0084eada33acacf10cf10d3"
+	"4350a6f33b8c4fe7bc1174a77802cf9e" -> "5340a3936a694122b6657862d0cca7f2"
+	"4e5bc1ceb3a64a5c849b7b1bb4d15a8d" -> "4350a6f33b8c4fe7bc1174a77802cf9e"
+	"16e0a443d45c4d71bf0e599639969888" -> "4e5bc1ceb3a64a5c849b7b1bb4d15a8d"
+	c9c4e76bee8b4407a77face695b2ee3c -> "16e0a443d45c4d71bf0e599639969888"
+	d8521429160d47f1a449d88f27733ffd -> c9c4e76bee8b4407a77face695b2ee3c
+}

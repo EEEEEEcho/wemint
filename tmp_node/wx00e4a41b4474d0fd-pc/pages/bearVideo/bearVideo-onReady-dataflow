@@ -1,0 +1,15 @@
+// \pages/bearVideo/bearVideo onReady Data Flow
+digraph {
+	f7546029d389494e80a12c52fd5d8393 [label="FunctionCall,
+function name -> onReady,
+param -> " color=blue]
+	"4fbdc3846c034284b0833c9e5ecb1b79" [label="CallExpression,
+callee name -> wx.setNavigationBarTitle,
+param -> " color=blue]
+	d4675a3f92004f84a9cb317a4dbbd71e [label="Object Properties
+{
+title -> this.data.title
+}" color=blue]
+	"4fbdc3846c034284b0833c9e5ecb1b79" -> d4675a3f92004f84a9cb317a4dbbd71e
+	f7546029d389494e80a12c52fd5d8393 -> "4fbdc3846c034284b0833c9e5ecb1b79"
+}

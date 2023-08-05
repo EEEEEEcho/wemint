@@ -1,0 +1,45 @@
+// \pages/shop/refundfail onLoad Data Flow
+digraph {
+	f11040662e744d5581f416cff6f0b1cc [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"9e33385245704c15bf236a3c27582d26" [label=SequenceExpression color=blue]
+	"64dbbc8a2abc407fa8707f788c87ed82" [label="CallExpression,
+callee name -> this.loadrefundsreson,
+param -> " color=blue]
+	e47868e100c840b2b200b8f7c34c6166 [label="FunctionCall,
+function name -> loadrefundsreson,
+param -> " color=blue]
+	"1d0f076aa65c43919c240e8b50759593" [label="If Alternate" color=blue]
+	e1f160fd777b4d9eb059052d38b9510c [label=SequenceExpression color=blue]
+	d77b1340b2254175966f699b336ee906 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"414d3511b88e43f886dfae923976ee5c" [label="Assignment,
+left -> r,
+right -> a.data.queryparams.orderid" color=blue]
+	d77b1340b2254175966f699b336ee906 -> "414d3511b88e43f886dfae923976ee5c"
+	e1f160fd777b4d9eb059052d38b9510c -> d77b1340b2254175966f699b336ee906
+	"198a3207b10e4b2f91a9919064038fa0" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"70df7c1fc3c64d94805952b38ec7ca7b" [label="Assignment,
+left -> t,
+right -> a.data.queryparams.pkey" color=blue]
+	"198a3207b10e4b2f91a9919064038fa0" -> "70df7c1fc3c64d94805952b38ec7ca7b"
+	e1f160fd777b4d9eb059052d38b9510c -> "198a3207b10e4b2f91a9919064038fa0"
+	"03e92cf224aa43448433647d2c423d49" [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	"7a74a4d8638548adbd5fe2342eaf252d" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=rdetail&orderid=' + r + '&pkey=' + t
+}" color=blue]
+	"03e92cf224aa43448433647d2c423d49" -> "7a74a4d8638548adbd5fe2342eaf252d"
+	e1f160fd777b4d9eb059052d38b9510c -> "03e92cf224aa43448433647d2c423d49"
+	"1d0f076aa65c43919c240e8b50759593" -> e1f160fd777b4d9eb059052d38b9510c
+	e47868e100c840b2b200b8f7c34c6166 -> "1d0f076aa65c43919c240e8b50759593"
+	"64dbbc8a2abc407fa8707f788c87ed82" -> e47868e100c840b2b200b8f7c34c6166
+	"9e33385245704c15bf236a3c27582d26" -> "64dbbc8a2abc407fa8707f788c87ed82"
+	f11040662e744d5581f416cff6f0b1cc -> "9e33385245704c15bf236a3c27582d26"
+}

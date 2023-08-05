@@ -1,0 +1,28 @@
+// \pages/orderlist/orderlist orderShow Data Flow
+digraph {
+	"129f081bee524086b09778505da5fd94" [label="FunctionCall,
+function name -> orderShow,
+param -> e.,
+e,
+" color=blue]
+	"0b8001abe4314e529cd0bd09358be9f9" [label="CallExpression,
+callee name -> console.log,
+param -> e.currentTarget.dataset.id,
+" color=blue]
+	"129f081bee524086b09778505da5fd94" -> "0b8001abe4314e529cd0bd09358be9f9"
+	ef6b0ede99b34c51936d87fbc7f179fd [label=VariableDeclarations color=blue]
+	"5a0cdcf18dba477d878ac2c6070ef3e8" [label="VariableDeclarator,
+left -> t,
+right -> e.currentTarget.dataset.id" color=blue]
+	ef6b0ede99b34c51936d87fbc7f179fd -> "5a0cdcf18dba477d878ac2c6070ef3e8"
+	"129f081bee524086b09778505da5fd94" -> ef6b0ede99b34c51936d87fbc7f179fd
+	"6541449cf8a247deb6e9f92d61a9f6d8" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"727e166cd1924684883bb112ae499519" [label="Object Properties
+{
+url -> '../ordershow/ordershow?id=' + t
+}" color=blue]
+	"6541449cf8a247deb6e9f92d61a9f6d8" -> "727e166cd1924684883bb112ae499519"
+	"129f081bee524086b09778505da5fd94" -> "6541449cf8a247deb6e9f92d61a9f6d8"
+}

@@ -1,0 +1,61 @@
+<view class="page-section">
+    <view class="coupontitle bg-white">
+        <view bindtap="bingNoUseTap" class="coupontitlel">
+            <view class="{{couponType==1?'active':''}}">未使用</view>
+        </view>
+        <view bindtap="binghasUseTap" class="coupontitlel">
+            <view class="{{couponType==2?'active':''}}">已使用</view>
+        </view>
+        <view bindtap="bingExpiredTap" class="coupontitlel">
+            <view class="{{couponType==3?'active':''}}">已过期</view>
+        </view>
+    </view>
+    <view class="mt120">
+        <view class="couponlist" wx:if="{{couponType==1}}" wx:for="{{couponsList}}" wx:for-index="idx" wx:key="coupons-box">
+            <view class="coupon-info bg-white">
+                <view class="coupon-pic">
+                    <view class="counpimg padding24" style="background:url({{counpimg}}) center center no-repeat; background-size:100% 100%">
+                        <view class="coupon-money">￥{{item.couponsPrice}}</view>
+                        <view class="coupon-type">{{item.couponsCanUseProductse}}</view>
+                    </view>
+                </view>
+                <view class="coupon-des coupon">
+                    <view class="coupon-txt">{{item.LimitText}}</view>
+                    <view class="coupon-txt">{{item.couponsDate}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="mt120">
+        <view class="couponlist" wx:if="{{couponType==2}}" wx:for="{{couponsList}}" wx:for-index="idx" wx:key="coupons-box">
+            <view class="coupon-info bg-white">
+                <view class="coupon-pic">
+                    <view class="counpimg padding24" style="background:url({{use_counpimg}}) center center no-repeat; background-size:100% 100%">
+                        <view class="coupon-money">￥{{item.couponsPrice}}</view>
+                        <view class="coupon-type">{{item.couponsCanUseProductse}}</view>
+                    </view>
+                </view>
+                <view class="coupon-des coupon-use">
+                    <view class="coupon-txt">{{item.LimitText}}</view>
+                    <view class="coupon-txt">{{item.couponsDate}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="mt120">
+        <view class="couponlist" wx:if="{{couponType==3}}" wx:for="{{couponsList}}" wx:for-index="idx" wx:key="coupons-box">
+            <view class="coupon-info bg-white">
+                <view class="coupon-pic">
+                    <view class="counpimg padding24" style="background:url({{over_counpimg}}) center center no-repeat; background-size:100% 100%">
+                        <view class="coupon-money">￥{{item.couponsPrice}}</view>
+                        <view class="coupon-type">{{item.couponsCanUseProductse}}</view>
+                    </view>
+                </view>
+                <view class="coupon-des coupon-over">
+                    <view class="coupon-txt">{{item.LimitText}}</view>
+                    <view class="coupon-txt">{{item.couponsDate}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

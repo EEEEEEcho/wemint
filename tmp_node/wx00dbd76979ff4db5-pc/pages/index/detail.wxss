@@ -1,0 +1,28 @@
+@import "../../wxParse/wxParse.wxss";
+
+.title {
+    width: 92%;
+    height: 100rpx;
+    margin: 0 auto;
+    font-size: 40rpx;
+    line-height: 40rpx;
+    font-weight: bold;
+}
+
+.time {
+    width: 92%;
+    height: 30rpx;
+    margin: 0 auto;
+    font-size: 26rpx;
+    line-height: 30rpx;
+    overflow: hidden;
+    color: #888;
+}
+
+.cont {
+    width: 92%;
+    margin: 0 auto;
+    margin-top: 40rpx;
+    margin-bottom: 100rpx;
+    overflow-x: hidden;
+}

@@ -1,0 +1,20 @@
+<view class="bestview">
+    <view class="textview">
+        <text class="text">您有什么问题或建议想对我们说 ?</text>
+    </view>
+    <view class="inputview">
+        <input bindinput="titleinput" class="input" placeholder="您的主题："></input>
+    </view>
+    <view class="textareaview">
+        <textarea bindinput="contentinput" class="textarea" placeholder="您的宝贵意见，就是我们进步的源泉"></textarea>
+    </view>
+    <view class="textview2">
+        <text class="text2">^_^请详细描述您遇到的问题，有助于快速定位并解决问题，或留下您宝贵的建议或意见，我们会认真评估！</text>
+    </view>
+    <view class="buttonview">
+        <button bindtap="ideasubmit" class="btn">
+            <text class="text3">问题提交</text>
+        </button>
+    </view>
+</view>
+<toast bindchange="hideToast" duration="1000" hidden="{{!showToast}}">{{toastMessage}}</toast>

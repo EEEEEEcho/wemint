@@ -1,0 +1,195 @@
+// \pages/shopDetail/shopDetail reduceGoods Data Flow
+digraph {
+	dc228167af854a0bb3754fc18f1b0126 [label="FunctionCall,
+function name -> reduceGoods,
+param -> o,
+o.,
+" color=blue]
+	"562eb17409c84b9dbea2452587600f29" [label=VariableDeclarations color=blue]
+	"5887559e275a443d98967dfc88c6b9cd" [label="VariableDeclarator,
+left -> t,
+right -> o.target.dataset.item" color=blue]
+	"562eb17409c84b9dbea2452587600f29" -> "5887559e275a443d98967dfc88c6b9cd"
+	"1d2d0eccca5840919ebc49a1f6de9c33" [label="VariableDeclarator,
+left -> s,
+right -> this.getNowShopCar" color=blue]
+	"562eb17409c84b9dbea2452587600f29" -> "1d2d0eccca5840919ebc49a1f6de9c33"
+	dc228167af854a0bb3754fc18f1b0126 -> "562eb17409c84b9dbea2452587600f29"
+	"5e01dbd06b1e482ab86903d66a829acb" [label="If Alternate" color=blue]
+	"1fa294aadbc64b31aa4126657c5c8ef9" [label=VariableDeclarations color=blue]
+	"2a68eaaf8446492f9f20faafd5cdf8de" [label="VariableDeclarator,
+left -> e,
+right -> this.compareReduceShopCar" color=blue]
+	faa2d33034874cd2b88407a45444abc6 [label="CallExpression,
+callee name -> this.compareReduceShopCar,
+param -> t,
+s,
+" color=blue]
+	"2a68eaaf8446492f9f20faafd5cdf8de" -> faa2d33034874cd2b88407a45444abc6
+	"1fa294aadbc64b31aa4126657c5c8ef9" -> "2a68eaaf8446492f9f20faafd5cdf8de"
+	"5e01dbd06b1e482ab86903d66a829acb" -> "1fa294aadbc64b31aa4126657c5c8ef9"
+	"42cf379199d341dea68643fd9d5e80e8" [label="CallExpression,
+callee name -> this.changeShopCar,
+param -> e,
+" color=blue]
+	be0d9f76b5fe405dbc06181dfa08786f [label="FunctionCall,
+function name -> changeShopCar,
+param -> t,
+t.,
+" color=blue]
+	d438449c0289460c90d1c3a6aeb3015b [label=VariableDeclarations color=blue]
+	f93c7a3328ba4f48a86cd905dafe2927 [label="VariableDeclarator,
+left -> s,
+right -> this.getNowShopCar" color=blue]
+	d438449c0289460c90d1c3a6aeb3015b -> f93c7a3328ba4f48a86cd905dafe2927
+	a4e7dd4f9e1447498f38ba8cf2f4070c [label="VariableDeclarator,
+left -> e,
+right -> this.getShopCar" color=blue]
+	d438449c0289460c90d1c3a6aeb3015b -> a4e7dd4f9e1447498f38ba8cf2f4070c
+	b689053350aa42d09fae07d189018edf [label="VariableDeclarator,
+left -> a,
+right -> s.goods" color=blue]
+	d438449c0289460c90d1c3a6aeb3015b -> b689053350aa42d09fae07d189018edf
+	be0d9f76b5fe405dbc06181dfa08786f -> d438449c0289460c90d1c3a6aeb3015b
+	ba286c42a1c1424385ebd8b347dd3c3b [label="Assignment,
+left -> s.goods,
+right -> a" color=blue]
+	be0d9f76b5fe405dbc06181dfa08786f -> ba286c42a1c1424385ebd8b347dd3c3b
+	f6f38b0726ad474c916f458d05be07d5 [label=ReturnExpression color=blue]
+	fac62259851249789007590e326abe10 [label=SequenceExpression color=blue]
+	"73d295350dca40778eb99b8d376e18fe" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	b6d11c7a77b049189ec723eb0e315f4a [label="Object Properties
+{
+shopCar -> e
+}" color=blue]
+	"73d295350dca40778eb99b8d376e18fe" -> b6d11c7a77b049189ec723eb0e315f4a
+	fac62259851249789007590e326abe10 -> "73d295350dca40778eb99b8d376e18fe"
+	f6f38b0726ad474c916f458d05be07d5 -> fac62259851249789007590e326abe10
+	be0d9f76b5fe405dbc06181dfa08786f -> f6f38b0726ad474c916f458d05be07d5
+	"42cf379199d341dea68643fd9d5e80e8" -> be0d9f76b5fe405dbc06181dfa08786f
+	"5e01dbd06b1e482ab86903d66a829acb" -> "42cf379199d341dea68643fd9d5e80e8"
+	"43b90294a98e4a69b659daaf575ebab4" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	c3b1dd7ef38b4acb9ed59b74d8b0f8ea [label="ConditionalExpression,
+ conditional list -> this.changeNowGoods,this.changeNowAttrGoods" color=blue]
+	a143a290f59d4146a37ba7b5dea1e968 [label="CallExpression,
+callee name -> this.changeNowGoods,
+param -> e,
+" color=blue]
+	"34a740845527478887a10ed1a98b9412" [label="FunctionCall,
+function name -> changeNowGoods,
+param -> o,
+o.,
+" color=blue]
+	c32c714c62494b25b7a53e60bf8606df [label=VariableDeclarations color=blue]
+	"8c7e1f89e60d415bbb0fe761a7f3f0c9" [label="VariableDeclarator,
+left -> t,
+right -> this.data.goodsChoose" color=blue]
+	c32c714c62494b25b7a53e60bf8606df -> "8c7e1f89e60d415bbb0fe761a7f3f0c9"
+	"34a740845527478887a10ed1a98b9412" -> c32c714c62494b25b7a53e60bf8606df
+	a143a290f59d4146a37ba7b5dea1e968 -> "34a740845527478887a10ed1a98b9412"
+	c3b1dd7ef38b4acb9ed59b74d8b0f8ea -> a143a290f59d4146a37ba7b5dea1e968
+	"665cd0d7540b4f4ead5fe6dd78127a6c" [label="CallExpression,
+callee name -> this.changeNowAttrGoods,
+param -> e,
+" color=blue]
+	a03ad39a64a14d769cf7d83038ea1379 [label="FunctionCall,
+function name -> changeNowAttrGoods,
+param -> o,
+o.,
+" color=blue]
+	eaa6cbeaed864e9b9ee18083ebfe6d41 [label=VariableDeclarations color=blue]
+	"64a1da567e0f4ab6a3ce55b84d4acee4" [label="VariableDeclarator,
+left -> s,
+right -> this.data.goodsChoose" color=blue]
+	eaa6cbeaed864e9b9ee18083ebfe6d41 -> "64a1da567e0f4ab6a3ce55b84d4acee4"
+	a03ad39a64a14d769cf7d83038ea1379 -> eaa6cbeaed864e9b9ee18083ebfe6d41
+	"665cd0d7540b4f4ead5fe6dd78127a6c" -> a03ad39a64a14d769cf7d83038ea1379
+	c3b1dd7ef38b4acb9ed59b74d8b0f8ea -> "665cd0d7540b4f4ead5fe6dd78127a6c"
+	"43b90294a98e4a69b659daaf575ebab4" -> c3b1dd7ef38b4acb9ed59b74d8b0f8ea
+	"5e01dbd06b1e482ab86903d66a829acb" -> "43b90294a98e4a69b659daaf575ebab4"
+	"9e9a8ae80b624df5978f7f2bfe9d132f" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"81a6ffb4af9a4ca083205a6f8a99cb31" [label="ConditionalExpression,
+ conditional list -> this.changeNowGoods,this.changeAllAttrGoods" color=blue]
+	"613a732ce04f49a5a3c2b1206cbd9ed3" [label="CallExpression,
+callee name -> this.changeNowGoods,
+param -> e,
+" color=blue]
+	"70c85c37e3e649259c6b6958ada1517c" [label="FunctionCall,
+function name -> changeNowGoods,
+param -> " color=blue]
+	"84bd3dc177234c2e98aecaa01e6b1103" [label=VariableDeclarations color=blue]
+	"27814f222e92495698e1eb22304de49b" [label="VariableDeclarator,
+left -> t,
+right -> this.data.goodsChoose" color=blue]
+	"84bd3dc177234c2e98aecaa01e6b1103" -> "27814f222e92495698e1eb22304de49b"
+	"70c85c37e3e649259c6b6958ada1517c" -> "84bd3dc177234c2e98aecaa01e6b1103"
+	"613a732ce04f49a5a3c2b1206cbd9ed3" -> "70c85c37e3e649259c6b6958ada1517c"
+	"81a6ffb4af9a4ca083205a6f8a99cb31" -> "613a732ce04f49a5a3c2b1206cbd9ed3"
+	"30662ab9b58740529e5e52c9831283a2" [label="CallExpression,
+callee name -> this.changeAllAttrGoods,
+param -> e,
+" color=blue]
+	a6cf5fe134e34f6ebd05aae7804f784f [label="FunctionCall,
+function name -> changeAllAttrGoods,
+param -> o,
+o.,
+" color=blue]
+	"1378b574ecea4e24a95bb7b065eff9bd" [label=VariableDeclarations color=blue]
+	"5de2553cab59453d835ca5b616b81262" [label="VariableDeclarator,
+left -> a,
+right -> this.data.allGoods" color=blue]
+	"1378b574ecea4e24a95bb7b065eff9bd" -> "5de2553cab59453d835ca5b616b81262"
+	a6cf5fe134e34f6ebd05aae7804f784f -> "1378b574ecea4e24a95bb7b065eff9bd"
+	"2ae14ea9de03478cb3a16765e58cde2b" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"7733184be394493da41eea86be421f20" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"6132111eda464acf93ebbe07edc0a998" [label="typeofarguments[1]" color=blue]
+	"7733184be394493da41eea86be421f20" -> "6132111eda464acf93ebbe07edc0a998"
+	"2ae14ea9de03478cb3a16765e58cde2b" -> "7733184be394493da41eea86be421f20"
+	a6cf5fe134e34f6ebd05aae7804f784f -> "2ae14ea9de03478cb3a16765e58cde2b"
+	"30662ab9b58740529e5e52c9831283a2" -> a6cf5fe134e34f6ebd05aae7804f784f
+	"81a6ffb4af9a4ca083205a6f8a99cb31" -> "30662ab9b58740529e5e52c9831283a2"
+	"9e9a8ae80b624df5978f7f2bfe9d132f" -> "81a6ffb4af9a4ca083205a6f8a99cb31"
+	"5e01dbd06b1e482ab86903d66a829acb" -> "9e9a8ae80b624df5978f7f2bfe9d132f"
+	e527028bc3934beab84f17998ed02ed1 [label=VariableDeclarations color=blue]
+	c1ab8e7db77a4dc39e0219e7607bb942 [label="VariableDeclarator,
+left -> r,
+right -> this.priceTotal" color=blue]
+	e527028bc3934beab84f17998ed02ed1 -> c1ab8e7db77a4dc39e0219e7607bb942
+	d5f47a9337214469a9ff708101f77f49 [label="VariableDeclarator,
+left -> d,
+right -> this.nowSum" color=blue]
+	e527028bc3934beab84f17998ed02ed1 -> d5f47a9337214469a9ff708101f77f49
+	"7668dfc6022243bf93f9db934ae16741" [label="VariableDeclarator,
+left -> n,
+right -> this.getNowShopCar" color=blue]
+	e527028bc3934beab84f17998ed02ed1 -> "7668dfc6022243bf93f9db934ae16741"
+	"5e01dbd06b1e482ab86903d66a829acb" -> e527028bc3934beab84f17998ed02ed1
+	"5c16d5d210e84acb923fcf2298bc788c" [label=SequenceExpression color=blue]
+	"69d3e3b2ef1848719efbc57dc6a31633" [label="CallExpression,
+callee name -> this.isEmptyCar,
+param -> n,
+" color=blue]
+	"5c16d5d210e84acb923fcf2298bc788c" -> "69d3e3b2ef1848719efbc57dc6a31633"
+	"274a2fb06b9d48179719417a84c986e8" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"84eb88d9172744f6a603936dd36223c4" [label="Object Properties
+{
+sumPrice -> r
+nowShopCar -> n
+allshopCarSum -> d
+}" color=blue]
+	"274a2fb06b9d48179719417a84c986e8" -> "84eb88d9172744f6a603936dd36223c4"
+	"5c16d5d210e84acb923fcf2298bc788c" -> "274a2fb06b9d48179719417a84c986e8"
+	"5e01dbd06b1e482ab86903d66a829acb" -> "5c16d5d210e84acb923fcf2298bc788c"
+	dc228167af854a0bb3754fc18f1b0126 -> "5e01dbd06b1e482ab86903d66a829acb"
+}

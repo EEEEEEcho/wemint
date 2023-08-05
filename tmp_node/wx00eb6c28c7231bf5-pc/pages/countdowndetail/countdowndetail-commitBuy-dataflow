@@ -1,0 +1,33 @@
+// \pages/countdowndetail/countdowndetail commitBuy Data Flow
+digraph {
+	"401bb8b7275e4ee8b40d35435df478d5" [label="FunctionCall,
+function name -> commitBuy,
+param -> t,
+t.,
+" color=blue]
+	"388b9248d697497ba133720757597dc2" [label="If Alternate" color=blue]
+	fe040c2a41654779b9b4c9741cc1f0a6 [label=VariableDeclarations color=blue]
+	"889e29558dcc4084b0aac36b24a2acae" [label="VariableDeclarator,
+left -> o,
+right -> this.data.buyAmount" color=blue]
+	fe040c2a41654779b9b4c9741cc1f0a6 -> "889e29558dcc4084b0aac36b24a2acae"
+	"52acadbc6cfb42c7bfaed2a12a2804a7" [label="VariableDeclarator,
+left -> n,
+right -> this.data.selectedSku" color=blue]
+	fe040c2a41654779b9b4c9741cc1f0a6 -> "52acadbc6cfb42c7bfaed2a12a2804a7"
+	"69d7d19cb804481c97be8f3960701840" [label="VariableDeclarator,
+left -> u,
+right -> this.data.CountDownId" color=blue]
+	fe040c2a41654779b9b4c9741cc1f0a6 -> "69d7d19cb804481c97be8f3960701840"
+	"388b9248d697497ba133720757597dc2" -> fe040c2a41654779b9b4c9741cc1f0a6
+	"880446fbe54447189ac9f7d2b9e9dd11" [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	daabf4536426496bbb6d775fd5bc2801 [label="Object Properties
+{
+url -> '../submitorder/submitorder?productsku=' + n + '&buyamount=' + o + '&frompage=countdown&countdownid=' + u
+}" color=blue]
+	"880446fbe54447189ac9f7d2b9e9dd11" -> daabf4536426496bbb6d775fd5bc2801
+	"388b9248d697497ba133720757597dc2" -> "880446fbe54447189ac9f7d2b9e9dd11"
+	"401bb8b7275e4ee8b40d35435df478d5" -> "388b9248d697497ba133720757597dc2"
+}

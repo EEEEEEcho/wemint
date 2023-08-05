@@ -1,0 +1,20 @@
+<block wx:if="{{newsInfo.Title}}">
+    <import src="../../components/wxParse/wxParse.wxml"></import>
+    <view class="container">
+        <view class="newsinfo" style="margin-top:24rpx">
+            <view class="title">{{newsInfo.Title}}</view>
+            <view class="publishtime">发表时间：{{newsInfo.PublishTime}}</view>
+            <view class="content">
+                <template is="wxParse" data="{{wxParseData:DetailInfo.nodes}}"></template>
+            </view>
+        </view>
+        <view class="prevnext bordertop">
+            <view catchtap="goNewsDetails" class="news-item" data-newsid="{{prevnext['prev'].ArticleID}}" wx:if="{{prevnext['prev'].ArticleID}}">
+                <text class="news-title">上一篇：{{prevnext['prev'].Title}}</text>
+            </view>
+            <view catchtap="goNewsDetails" class="news-item" data-newsid="{{prevnext['next'].ArticleID}}" wx:if="{{prevnext['next'].ArticleID}}">
+                <text class="news-title">下一篇：{{prevnext['next'].Title}}</text>
+            </view>
+        </view>
+    </view>
+</block>

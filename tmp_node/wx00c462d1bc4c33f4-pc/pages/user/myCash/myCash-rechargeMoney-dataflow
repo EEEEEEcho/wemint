@@ -1,0 +1,38 @@
+// \pages/user/myCash/myCash rechargeMoney Data Flow
+digraph {
+	"64085c61c87d477da7149880553a91dc" [label="FunctionCall,
+function name -> rechargeMoney,
+param -> a,
+a.,
+" color=blue]
+	db799b3aa6084ebbb6bf1e60f2e09b77 [label=VariableDeclarations color=blue]
+	"8da864f9bdc54d26b0c10fde9aa995b7" [label="VariableDeclarator,
+left -> t,
+right -> a.detail.value" color=blue]
+	db799b3aa6084ebbb6bf1e60f2e09b77 -> "8da864f9bdc54d26b0c10fde9aa995b7"
+	"64085c61c87d477da7149880553a91dc" -> db799b3aa6084ebbb6bf1e60f2e09b77
+	d5c9ce913f6c4327b65e60292dbcfd47 [label=SequenceExpression color=blue]
+	"3adac4d0dc6f4fe7bade0a0a2f539104" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"6e2eb1a05cf0458f9a94bdb051be6e62" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"838d0c4f43b54ce09081eafa44eacc70" [label="CallExpression,
+callee name -> parseFloat,
+param -> t,
+" color=blue]
+	"6e2eb1a05cf0458f9a94bdb051be6e62" -> "838d0c4f43b54ce09081eafa44eacc70"
+	"3adac4d0dc6f4fe7bade0a0a2f539104" -> "6e2eb1a05cf0458f9a94bdb051be6e62"
+	d5c9ce913f6c4327b65e60292dbcfd47 -> "3adac4d0dc6f4fe7bade0a0a2f539104"
+	"01c015db1f6149f6beefc7c8a2ae5aa4" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"837c573eaed147aa912e4e72547dd418" [label="Object Properties
+{
+money -> t
+}" color=blue]
+	"01c015db1f6149f6beefc7c8a2ae5aa4" -> "837c573eaed147aa912e4e72547dd418"
+	d5c9ce913f6c4327b65e60292dbcfd47 -> "01c015db1f6149f6beefc7c8a2ae5aa4"
+	"64085c61c87d477da7149880553a91dc" -> d5c9ce913f6c4327b65e60292dbcfd47
+}

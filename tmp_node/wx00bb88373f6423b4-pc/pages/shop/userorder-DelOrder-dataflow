@@ -1,0 +1,23 @@
+// \pages/shop/userorder DelOrder Data Flow
+digraph {
+	a6a6969a1d4c4b7eb98dfe0e0f471c85 [label="FunctionCall,
+function name -> DelOrder,
+param -> a,
+a.,
+" color=blue]
+	"1122747427384e5c96cd67d1255e872e" [label=VariableDeclarations color=blue]
+	b54570adb7b34bc8a50c026b56653043 [label="VariableDeclarator,
+left -> r,
+right -> a.currentTarget.dataset.orderid" color=blue]
+	"1122747427384e5c96cd67d1255e872e" -> b54570adb7b34bc8a50c026b56653043
+	a6a6969a1d4c4b7eb98dfe0e0f471c85 -> "1122747427384e5c96cd67d1255e872e"
+	"72849f4f3e47474caa6c9054f8862748" [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	b10ade6ed92549a0a848db09f7c4d91f [label="FunctionCall,
+function name -> success,
+param -> a,
+" color=blue]
+	"72849f4f3e47474caa6c9054f8862748" -> b10ade6ed92549a0a848db09f7c4d91f
+	a6a6969a1d4c4b7eb98dfe0e0f471c85 -> "72849f4f3e47474caa6c9054f8862748"
+}

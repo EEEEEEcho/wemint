@@ -1,0 +1,38 @@
+// \pages/address/address bindEditAddressTap Data Flow
+digraph {
+	"2b45ba70c1964c8bb14ecd13355410c2" [label="FunctionCall,
+function name -> bindEditAddressTap,
+param -> t,
+t.,
+" color=blue]
+	"3544238f29dd43f89eb64fe890cfe848" [label=VariableDeclarations color=blue]
+	"7b1232fe583f41e3ac4df17461fcf3d0" [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.addressdata" color=blue]
+	"3544238f29dd43f89eb64fe890cfe848" -> "7b1232fe583f41e3ac4df17461fcf3d0"
+	"2b45ba70c1964c8bb14ecd13355410c2" -> "3544238f29dd43f89eb64fe890cfe848"
+	"36a9a4fc3c5743f186b16087029fe4b9" [label=SequenceExpression color=blue]
+	"4b504ed99566468aba9f7a7e41e7ca63" [label="CallExpression,
+callee name -> console.log,
+param -> " color=blue]
+	"8954a80666874bd4818dd620e270c0f3" [label="CallExpression,
+callee name -> JSON.stringify,
+param -> a,
+" color=blue]
+	"4b504ed99566468aba9f7a7e41e7ca63" -> "8954a80666874bd4818dd620e270c0f3"
+	"36a9a4fc3c5743f186b16087029fe4b9" -> "4b504ed99566468aba9f7a7e41e7ca63"
+	ff33358e290f4febb74112e8d05eb99a [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	"54e269b1c7a94d69912ea2d36f948822" [label="Object Properties
+{
+}" color=blue]
+	"631aae78574247d7ad8620382c928308" [label="CallExpression,
+callee name -> JSON.stringify,
+param -> a,
+" color=blue]
+	"54e269b1c7a94d69912ea2d36f948822" -> "631aae78574247d7ad8620382c928308"
+	ff33358e290f4febb74112e8d05eb99a -> "54e269b1c7a94d69912ea2d36f948822"
+	"36a9a4fc3c5743f186b16087029fe4b9" -> ff33358e290f4febb74112e8d05eb99a
+	"2b45ba70c1964c8bb14ecd13355410c2" -> "36a9a4fc3c5743f186b16087029fe4b9"
+}

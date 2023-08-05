@@ -1,0 +1,15 @@
+// \pages/stu/home/home layout Data Flow
+digraph {
+	"4810cc92b97b436f95102c92fba3b990" [label="FunctionCall,
+function name -> layout,
+param -> t,
+t.,
+" color=blue]
+	"59be24381856431d8d855d19c2e73cdb" [label=SequenceExpression color=blue]
+	"8d8d541d0f63498cbd1d2123a2f770e4" [label="CallExpression,
+callee name -> a.collectFomrId,
+param -> t.detail.formId,
+" color=blue]
+	"59be24381856431d8d855d19c2e73cdb" -> "8d8d541d0f63498cbd1d2123a2f770e4"
+	"4810cc92b97b436f95102c92fba3b990" -> "59be24381856431d8d855d19c2e73cdb"
+}

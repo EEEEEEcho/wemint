@@ -1,0 +1,74 @@
+<view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
+<view>
+    <view class="brandDetailBox">
+        <image class="logoImg" mode="aspectFill" src="{{storeInfoHeadImgUrl}}"></image>
+        <view class="storeInfo">
+            <view class="storeName">{{storeName}}</view>
+            <view class="storeTel">{{storeTel==null?'':storeTel}}</view>
+            <view class="storeAddress">{{storeAddress}}</view>
+        </view>
+    </view>
+    <picker bindchange="bindDateChange" end="{{dateEnd}}" mode="date" name="date1" start="{{dateStart}}" value="{{date}}">
+        <view class="dateBox">
+            <view class="mealsnumber">选择日期：</view>
+            <view class="date1">
+                <text>{{dates}}</text>
+            </view>
+            <image class="arrow_up" src="/images/arrow_up.png"></image>
+        </view>
+    </picker>
+    <view class="clear"></view>
+    <picker bindchange="bindTimeChange" mode="time" name="date2" value="{{times}}">
+        <view class="timeBox">
+            <view class="mealsnumber">选择时间：</view>
+            <view class="time1">
+                <text>{{times}}</text>
+            </view>
+            <image class="arrow_up" src="/images/arrow_up.png"></image>
+        </view>
+    </picker>
+    <view class="clear"></view>
+    <picker bindchange="bindCasPickerChange" mode="selector" range="{{array}}" rangeKey="tableTypeName" value="{{index}}">
+        <view class="tableTypeBox">
+            <view class="mealsnumber">选择桌型：</view>
+            <view class="tableType1">
+                <text>{{tableCut}}</text>
+            </view>
+            <image class="arrow_up" src="/images/arrow_up.png"></image>
+        </view>
+    </picker>
+    <view class="clear"></view>
+    <view class="mealsnumberBox">
+        <view class="mealsnumber">用餐人数：</view>
+        <view class="float-left">
+            <input bindinput="bindInputNum" class="weui-input" maxlength="10" placeholder="请输入用餐人数" value="{{personNum}}"></input>
+        </view>
+    </view>
+    <view class="clear"></view>
+    <view class="linkmanBox">
+        <view class="mealsnumber">联 系 人：</view>
+        <view class="float-left">
+            <input bindinput="bindInputName" class="weui-input" maxlength="10" placeholder="请输入联系人姓名" value="{{contractName}}"></input>
+        </view>
+    </view>
+    <view class="clear"></view>
+    <view class="contactnumBox">
+        <view class="mealsnumber">联系电话：</view>
+        <view class="float-left">
+            <input bindinput="bindInputTel" class="weui-input" maxlength="11" placeholder="请输入联系电话" value="{{contractTel}}"></input>
+        </view>
+    </view>
+    <view class="clear"></view>
+    <view class="remarkBox">
+        <view class="remark-text">备注：</view>
+        <view class="float-left">
+            <input bindinput="bindTextAreaBlur" class="weui-input" placeholder="请输入备注(选填)" value="{{textDesc}}"></input>
+        </view>
+    </view>
+    <view class="clear"></view>
+    <button bindtap="waitReceipt" class="submit" style="opacity:{{opacity}}">提 交 预 约</button>
+</view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

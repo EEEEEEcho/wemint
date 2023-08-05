@@ -1,0 +1,41 @@
+// \pages/stu/myActivity/myActivity onLoad Data Flow
+digraph {
+	"8aea4c3b2feb4defa5cf0986b93e2fb4" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	b086ed10e96e4385b7a74b06c6b66eaa [label=SequenceExpression color=blue]
+	b4e54e4f7ef34a848e2b57689420dbdb [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> " color=blue]
+	"0d9d568a52d04f599cf0d8860892fee4" [label="FunctionCall,
+function name -> success,
+param -> a.,
+a,
+" color=blue]
+	"69880ed0f7ba4d5889b42cee4c5d1f8c" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	"75c845787f0c4cb2b424bcf5a6c2f494" [label="Object Properties
+{
+scrollHeight -> a.windowHeight + 700
+}" color=blue]
+	"69880ed0f7ba4d5889b42cee4c5d1f8c" -> "75c845787f0c4cb2b424bcf5a6c2f494"
+	"0d9d568a52d04f599cf0d8860892fee4" -> "69880ed0f7ba4d5889b42cee4c5d1f8c"
+	b4e54e4f7ef34a848e2b57689420dbdb -> "0d9d568a52d04f599cf0d8860892fee4"
+	b086ed10e96e4385b7a74b06c6b66eaa -> b4e54e4f7ef34a848e2b57689420dbdb
+	a8c18332e8d14f919bc62895ba350d41 [label="CallExpression,
+callee name -> this.fetchSearchList,
+param -> " color=blue]
+	"435480b81a204506a5d57fbf7b3fdf15" [label="FunctionCall,
+function name -> fetchSearchList,
+param -> " color=blue]
+	f172fa5dac2c48a5a1ec4c4927633007 [label="CallExpression,
+callee name -> a,
+param -> t.data.searchPageNum,
+t.data.callbackcount,
+" color=blue]
+	"435480b81a204506a5d57fbf7b3fdf15" -> f172fa5dac2c48a5a1ec4c4927633007
+	a8c18332e8d14f919bc62895ba350d41 -> "435480b81a204506a5d57fbf7b3fdf15"
+	b086ed10e96e4385b7a74b06c6b66eaa -> a8c18332e8d14f919bc62895ba350d41
+	"8aea4c3b2feb4defa5cf0986b93e2fb4" -> b086ed10e96e4385b7a74b06c6b66eaa
+}

@@ -1,0 +1,35 @@
+// \pages/fightGroups/productdetail onShow Data Flow
+digraph {
+	f48e0d1da33b47528acde6c850c10158 [label="FunctionCall,
+function name -> onShow,
+param -> " color=blue]
+	"005d88f5f93e45e89dcee0a995255322" [label=SequenceExpression color=blue]
+	db29a9cc99b144638c176c88cb1d2b3f [label="CallExpression,
+callee name -> this.loadProductInfo,
+param -> " color=blue]
+	ae42c9d4d34d42c19ca897849cc1595e [label="FunctionCall,
+function name -> loadProductInfo,
+param -> " color=blue]
+	"0be3df6d938f46a1b0854557073f3d3f" [label=SequenceExpression color=blue]
+	"35a3fa63d23a42f1840a6f5955c1899e" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"884b403b50e54902b7ca98d9175a451c" [label="Assignment,
+left -> e,
+right -> a.data.queryparams.proid" color=blue]
+	"35a3fa63d23a42f1840a6f5955c1899e" -> "884b403b50e54902b7ca98d9175a451c"
+	"0be3df6d938f46a1b0854557073f3d3f" -> "35a3fa63d23a42f1840a6f5955c1899e"
+	"93be9c5cd4434c94bb038a19545d48ab" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	"052823aba0ab490da28d52b1632bb3fd" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/JsonApi&a=getProductInfo&id=' + e + '&updateHits=1'
+}" color=blue]
+	"93be9c5cd4434c94bb038a19545d48ab" -> "052823aba0ab490da28d52b1632bb3fd"
+	"0be3df6d938f46a1b0854557073f3d3f" -> "93be9c5cd4434c94bb038a19545d48ab"
+	ae42c9d4d34d42c19ca897849cc1595e -> "0be3df6d938f46a1b0854557073f3d3f"
+	db29a9cc99b144638c176c88cb1d2b3f -> ae42c9d4d34d42c19ca897849cc1595e
+	"005d88f5f93e45e89dcee0a995255322" -> db29a9cc99b144638c176c88cb1d2b3f
+	f48e0d1da33b47528acde6c850c10158 -> "005d88f5f93e45e89dcee0a995255322"
+}

@@ -1,0 +1,28 @@
+// \pages/shop/square onLbsShopChange Data Flow
+digraph {
+	"947e5f6c561247929a322bcaff9cb941" [label="FunctionCall,
+function name -> onLbsShopChange,
+param -> t,
+t.,
+" color=blue]
+	"0056b7c815fa4e4081db8c0e5ff5b574" [label=VariableDeclarations color=blue]
+	"1076f2bf4a134864a25e10005ad3916f" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.lbsname" color=blue]
+	"0056b7c815fa4e4081db8c0e5ff5b574" -> "1076f2bf4a134864a25e10005ad3916f"
+	e11083e47505413f87c8e341ced4ef63 [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.lbsid" color=blue]
+	"0056b7c815fa4e4081db8c0e5ff5b574" -> e11083e47505413f87c8e341ced4ef63
+	"947e5f6c561247929a322bcaff9cb941" -> "0056b7c815fa4e4081db8c0e5ff5b574"
+	de3d75607675448c9e8c9db3fae1fde5 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"8c7bd01762fb4bb8bb22b2b106b4ce8a" [label="Object Properties
+{
+LbsShopName -> e
+LbsShopId -> a
+}" color=blue]
+	de3d75607675448c9e8c9db3fae1fde5 -> "8c7bd01762fb4bb8bb22b2b106b4ce8a"
+	"947e5f6c561247929a322bcaff9cb941" -> de3d75607675448c9e8c9db3fae1fde5
+}

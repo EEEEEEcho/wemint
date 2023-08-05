@@ -1,0 +1,45 @@
+.release-item {
+    flex: auto;
+    width: 25%;
+    height: 190rpx;
+    background-color: #fff;
+    text-align: center;
+}
+
+.release-item image {
+    display: block;
+    margin: 5rpx auto;
+    width: 125rpx;
+    height: 125rpx;
+}
+
+.cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+}
+
+.cover .goods-list {
+    text-align: center;
+    background: #fff;
+    position: absolute;
+    height: 350px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.cover .goods-item {
+    display: block;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.cover .cancel {
+    color: red;
+}

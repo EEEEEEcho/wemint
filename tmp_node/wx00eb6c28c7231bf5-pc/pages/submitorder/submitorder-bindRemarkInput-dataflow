@@ -1,0 +1,17 @@
+// \pages/submitorder/submitorder bindRemarkInput Data Flow
+digraph {
+	"9a54f181461542b5b3da418eac24ca6f" [label="FunctionCall,
+function name -> bindRemarkInput,
+param -> t,
+t.,
+" color=blue]
+	d4fb2cf426d9450facd0c2b40e484b32 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	e4e557592f6040148154b7162802f47f [label="Object Properties
+{
+Remark -> t.detail.value
+}" color=blue]
+	d4fb2cf426d9450facd0c2b40e484b32 -> e4e557592f6040148154b7162802f47f
+	"9a54f181461542b5b3da418eac24ca6f" -> d4fb2cf426d9450facd0c2b40e484b32
+}

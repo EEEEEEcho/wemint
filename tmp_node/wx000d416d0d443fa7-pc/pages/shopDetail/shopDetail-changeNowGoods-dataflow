@@ -1,0 +1,12 @@
+// \pages/shopDetail/shopDetail changeNowGoods Data Flow
+digraph {
+	"48cbd070fd8d422585d89f4b8a324c93" [label="FunctionCall,
+function name -> changeNowGoods,
+param -> " color=blue]
+	"52bd2309c62d403892a7faa55dc64efe" [label=VariableDeclarations color=blue]
+	"1a71b9d74b5d4a6280db372d3b3ecf24" [label="VariableDeclarator,
+left -> t,
+right -> this.data.goodsChoose" color=blue]
+	"52bd2309c62d403892a7faa55dc64efe" -> "1a71b9d74b5d4a6280db372d3b3ecf24"
+	"48cbd070fd8d422585d89f4b8a324c93" -> "52bd2309c62d403892a7faa55dc64efe"
+}

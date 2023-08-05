@@ -1,0 +1,23 @@
+// \pages/usehome/usehome bindTelPhone Data Flow
+digraph {
+	e0d75214193d4823a1617cf20ad4d687 [label="FunctionCall,
+function name -> bindTelPhone,
+param -> t,
+t.,
+" color=blue]
+	"5dce3cfdc2e74dd88f2eca258867cb52" [label=VariableDeclarations color=blue]
+	"742f41266ec148539701bdf112192df4" [label="VariableDeclarator,
+left -> n,
+right -> t.currentTarget.dataset.tel" color=blue]
+	"5dce3cfdc2e74dd88f2eca258867cb52" -> "742f41266ec148539701bdf112192df4"
+	e0d75214193d4823a1617cf20ad4d687 -> "5dce3cfdc2e74dd88f2eca258867cb52"
+	"09b6a8da56ad4401b1ba6bc0f9d03b62" [label="CallExpression,
+callee name -> wx.makePhoneCall,
+param -> " color=blue]
+	"78f5d9c869334ed4bf1f15db87583e8b" [label="Object Properties
+{
+phoneNumber -> n
+}" color=blue]
+	"09b6a8da56ad4401b1ba6bc0f9d03b62" -> "78f5d9c869334ed4bf1f15db87583e8b"
+	e0d75214193d4823a1617cf20ad4d687 -> "09b6a8da56ad4401b1ba6bc0f9d03b62"
+}

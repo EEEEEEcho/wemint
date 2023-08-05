@@ -1,0 +1,46 @@
+// \pages/shop/userorder showPaymentPlug Data Flow
+digraph {
+	fe98e2698cd94ddfa06dbe6abb08035c [label="FunctionCall,
+function name -> showPaymentPlug,
+param -> t,
+t.,
+" color=blue]
+	"8e7010a132884e3497e2319db4cef7b8" [label="CallExpression,
+callee name -> this.getBalanceNumber,
+param -> " color=blue]
+	"43d9a2ef93da4b9cb5202747372e2fe5" [label="FunctionCall,
+function name -> getBalanceNumber,
+param -> " color=blue]
+	"5cb2330699f646ab8b5ca1e3db57255a" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	c1386770927b4514b5ea9e4503552f37 [label="FunctionCall,
+function name -> fail,
+param -> a,
+" color=blue]
+	"5cb2330699f646ab8b5ca1e3db57255a" -> c1386770927b4514b5ea9e4503552f37
+	"43d9a2ef93da4b9cb5202747372e2fe5" -> "5cb2330699f646ab8b5ca1e3db57255a"
+	"8e7010a132884e3497e2319db4cef7b8" -> "43d9a2ef93da4b9cb5202747372e2fe5"
+	fe98e2698cd94ddfa06dbe6abb08035c -> "8e7010a132884e3497e2319db4cef7b8"
+	"3cadac9f295d4f4b88284accbfa179d8" [label=VariableDeclarations color=blue]
+	"924d92f7a9834c73b8d03b54e4ddefca" [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.orderid" color=blue]
+	"3cadac9f295d4f4b88284accbfa179d8" -> "924d92f7a9834c73b8d03b54e4ddefca"
+	ac12ee163fbe4aa6ab1b9e7160843aad [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.totalmoney" color=blue]
+	"3cadac9f295d4f4b88284accbfa179d8" -> ac12ee163fbe4aa6ab1b9e7160843aad
+	fe98e2698cd94ddfa06dbe6abb08035c -> "3cadac9f295d4f4b88284accbfa179d8"
+	"57c1334181d3472db5f83890d226c964" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	b2262e38e7834a37a3b74c7a86adb11e [label="Object Properties
+{
+balanceflagNum -> this.data.balanceNumber - this.data.TotalMoeny < 0
+curOrderId -> a
+TotalMoeny -> e
+}" color=blue]
+	"57c1334181d3472db5f83890d226c964" -> b2262e38e7834a37a3b74c7a86adb11e
+	fe98e2698cd94ddfa06dbe6abb08035c -> "57c1334181d3472db5f83890d226c964"
+}

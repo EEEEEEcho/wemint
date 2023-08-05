@@ -1,0 +1,29 @@
+// \pages/shop/square onUseJiFenChange Data Flow
+digraph {
+	ec3805348d7447dfa867dac46933fa6e [label="FunctionCall,
+function name -> onUseJiFenChange,
+param -> e.,
+e,
+" color=blue]
+	fc2c06ba576e4698bec80f8bfbb42b9f [label=SequenceExpression color=blue]
+	"3136c8bcca814b62b810a9bb9d511ea5" [label="CallExpression,
+callee name -> this.reCalMoney,
+param -> " color=blue]
+	"70cf31c7d6da4781b02c7503ffc621fa" [label="FunctionCall,
+function name -> reCalMoney,
+param -> " color=blue]
+	"43be9171da414bcfbe00f213bd4a8f88" [label=SequenceExpression color=blue]
+	ec576a5599554c65aa28f3349c350138 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"9e6528756ece4530a2202b8d1a1336ad" [label="Object Properties
+{
+squareInfo -> this.data.squareInfo
+}" color=blue]
+	ec576a5599554c65aa28f3349c350138 -> "9e6528756ece4530a2202b8d1a1336ad"
+	"43be9171da414bcfbe00f213bd4a8f88" -> ec576a5599554c65aa28f3349c350138
+	"70cf31c7d6da4781b02c7503ffc621fa" -> "43be9171da414bcfbe00f213bd4a8f88"
+	"3136c8bcca814b62b810a9bb9d511ea5" -> "70cf31c7d6da4781b02c7503ffc621fa"
+	fc2c06ba576e4698bec80f8bfbb42b9f -> "3136c8bcca814b62b810a9bb9d511ea5"
+	ec3805348d7447dfa867dac46933fa6e -> fc2c06ba576e4698bec80f8bfbb42b9f
+}

@@ -1,0 +1,35 @@
+// \pages/searchresult/searchresult onSortClick Data Flow
+digraph {
+	bb51f0f5e9604738b89ff4694ec0c9a8 [label="FunctionCall,
+function name -> onSortClick,
+param -> e,
+e.,
+" color=blue]
+	"4717b64aaca847bcbbc7efc733427e43" [label=VariableDeclarations color=blue]
+	df3ce1bfadbe42f5bfd01fa12bd53fe6 [label="VariableDeclarator,
+left -> sortby,
+right -> e.target.dataset.sortby" color=blue]
+	"4717b64aaca847bcbbc7efc733427e43" -> df3ce1bfadbe42f5bfd01fa12bd53fe6
+	bb51f0f5e9604738b89ff4694ec0c9a8 -> "4717b64aaca847bcbbc7efc733427e43"
+	e1af6fff41cd4ed0a994e6a798bfa4c8 [label=VariableDeclarations color=blue]
+	fdae1f27d33c4b05b9e54e32c876a96a [label="VariableDeclarator,
+left -> suoyin,
+right -> e.currentTarget.dataset.num" color=blue]
+	e1af6fff41cd4ed0a994e6a798bfa4c8 -> fdae1f27d33c4b05b9e54e32c876a96a
+	bb51f0f5e9604738b89ff4694ec0c9a8 -> e1af6fff41cd4ed0a994e6a798bfa4c8
+	c5408171750f4f03a311c08b7a09a03f [label="CallExpression,
+callee name -> that.setData,
+param -> " color=blue]
+	d431669bac384ae58cd3dc79c9d3f1a8 [label="Object Properties
+{
+SortBy -> sortby
+Num -> suoyin
+}" color=blue]
+	c5408171750f4f03a311c08b7a09a03f -> d431669bac384ae58cd3dc79c9d3f1a8
+	bb51f0f5e9604738b89ff4694ec0c9a8 -> c5408171750f4f03a311c08b7a09a03f
+	"5131b11cd08a4eee861139ba9c084070" [label="CallExpression,
+callee name -> that.loadData,
+param -> that,
+" color=blue]
+	bb51f0f5e9604738b89ff4694ec0c9a8 -> "5131b11cd08a4eee861139ba9c084070"
+}

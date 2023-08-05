@@ -1,0 +1,145 @@
+.container {
+    width: 750rpx;
+    height: 100%;
+}
+
+.ws-description {
+    position: relative;
+    width: 690rpx;
+    height: 50px;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+}
+
+.ws-connect {
+    margin-top: 20px;
+    position: relative;
+}
+
+.btn-connect {
+    width: 300rpx;
+    height: 50px;
+    margin-left: 30rpx;
+    position: absolute;
+}
+
+.btn-disconnect {
+    width: 300rpx;
+    height: 50px;
+    margin-left: 360rpx;
+    position: absolute;
+}
+
+.ws-userName {
+    margin-top: 10px;
+    margin-left: 30rpx;
+    position: relative;
+}
+
+.divide {
+    position: relative;
+    width: 690rpx;
+    height: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #000;
+    margin-left: 30rpx;
+}
+
+.sendMessageSingle {
+    width: 690rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+}
+
+.sendMessageSingle p {
+    font-size: 14px;
+}
+
+.singleTitle {
+    position: relative;
+}
+
+.userNameMsg {
+    position: relative;
+    margin-top: 5rpx;
+}
+
+.username {
+    margin-left: 0rpx;
+    font-size: 16px;
+    width: 200rpx;
+    height: 30px;
+}
+
+.usernameInput {
+    width: 200px;
+    height: 30px;
+    border-color: azure;
+}
+
+.userContentMsg {
+    position: relative;
+}
+
+.userContent {
+    margin-left: 0rpx;
+    font-size: 16px;
+    width: 200rpx;
+    height: 30px;
+}
+
+.userContentInput {
+    width: 200px;
+    height: 30px;
+    border-color: azure;
+}
+
+.sendSingleMsg {
+    position: relative;
+    margin-top: 10px;
+    width: 400rpx;
+    margin-left: 175rpx;
+    margin-right: 175rpx;
+}
+
+.sendGlobleMsg {
+    position: relative;
+    margin-top: 50px;
+    width: 400rpx;
+    margin-left: 175rpx;
+    margin-right: 175rpx;
+}
+
+.globleContent {
+    margin-left: 0rpx;
+    font-size: 16px;
+    width: 200rpx;
+    height: 30px;
+}
+
+.globleContentInput {
+    width: 200px;
+    height: 30px;
+    border-color: azure;
+}
+
+.sendMessageGloble {
+    width: 690rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+}
+
+.sendMessageGloble p {
+    font-size: 14px;
+}
+
+.newsList {
+    width: 690rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+}
+
+.news-title {
+    font-size: 20px;
+}

@@ -1,0 +1,15 @@
+{
+    "pages": [
+        "pages/main/main",
+        "pages/index/index",
+        "pages/home/home",
+        "pages/logs/logs",
+        "pages/xmadH5/xmadH5"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "粉笔教师正版",
+        "navigationBarTextStyle": "black"
+    }
+}

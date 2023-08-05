@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "navigate": "/components/navigate/navigate",
+        "payment-good": "/components/paymentGood/paymentGood",
+        "delivery-rule": "/components/deliveryRule/deliveryRule",
+        "loading-view": "/components/loading/loading",
+        "empty": "/components/emptyView/emptyView"
+    }
+}

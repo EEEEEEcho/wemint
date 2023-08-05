@@ -1,0 +1,105 @@
+<myLoading id="myLoading"></myLoading>
+<scroll-view class="houseTypeDetailModule-Body" scrollTop="{{scrollTop}}" scrollY="{{showPhoneModel&&checkTabForScroll==1?false:true}}">
+    <view class="houseTypeDetailModule-head" hidden="{{!currentRoomDetail}}">
+        <image class="houseTypeDetailModule-head-image" mode="aspectFill" src="{{currentRoomDetail.backgroundImage?currentRoomDetail.backgroundImage:serverUrl+'houseType/'+(currentRoomDetail.backgroundNumber||'1')+'.png'}}"></image>
+        <image class="houseTypeDetailModule-head-image" mode="aspectFill" src="{{currentRoomDetail.backgroundImage?'https://dm.static.elab-plus.com/houseDetail/mengceng@2x.png':''}}"></image>
+        <view class="houseTypeDetailModule-head-content">
+            <view class="houseTypeDetailModule-head-top"></view>
+            <view class="houseTypeDetailModule-head-content-container">
+                <view class="houseTypeDetailModule-area-mark">
+                    <view class="houseTypeDetailModule-area" wx:if="currentRoomDetail">
+                        <p>{{currentRoomDetail.name}}</p>
+                    </view>
+                    <view class="houseTypeDetailModule-mark2" wx:if="{{remark2List&&remark2List.length>0}}">
+                        <view class="houseTypeDetailModule-mark-item" wx:if="{{item&&item.length>0}}" wx:for="{{remark2List}}" wx:key="index">
+                            <p>{{item}}</p>
+                        </view>
+                    </view>
+                    <view class="houseTypeDetailModule-mark">
+                        <view class="houseTypeDetailModule-mark-item" wx:if="{{item&&item.length>0}}" wx:for="{{remarkList}}" wx:key="index">
+                            <p>{{item}}</p>
+                        </view>
+                    </view>
+                </view>
+                <view class="houseTypeDetailModule-area-divide"></view>
+                <view class="houseTypeDetailModule-room-information">
+                    <view class="houseTypeDetailModule-Params">
+                        <view class="houseTypeDetailModule-room-information-item" wx:for="{{currentHouseInformation}}" wx:key="index">
+                            <view class="houseTypeDetailModule-room-information-item-title">
+                                <p>{{item.name}}</p>
+                            </view>
+                            <view class="houseTypeDetailModule-room-information-item-content">
+                                <p>{{item.content}}</p>
+                            </view>
+                        </view>
+                    </view>
+                    <button bindgetphonenumber="getPhoneNumber" bindtap="tabVr" class="watchRoom-3D" data-type="goVr" openType="{{showPhoneModel?'getPhoneNumber':''}}" wx:if="{{currentRoomDetail.hasVr&&currentRoomDetail.hasVr==1&&currentRoomDetail.vrUrl&&currentRoomDetail.vrUrl.length>0}}">
+                        <image class="TD_icon" mode="widthFix" src="https://dm.static.elab-plus.com/wepy_pro/houseType/td-btn-gray.png" wx:if="{{showPhoneModel}}"></image>
+                        <image class="TD_icon" mode="widthFix" src="{{TDImagePath}}" wx:else></image>
+                        <view class="show-td-btn" wx:if="{{showPhoneModel}}">
+                            <image src="https://dm.static.elab-plus.com/wepy_pro/houseType/lock.png" style="width:15rpx;height:15rpx;margin-right:10rpx;margin-left:10rpx"></image>解锁3D看房</view>
+                    </button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="houseTypeDetailModule-content">
+        <scroll-view class="houseTypeDetailModule-content-title" scrollLeft="{{scrollLeft}}" scrollX="true" wx:if="{{showScroll}}">
+            <view bindtap="swichNav" class="tab-item {{currentTab==index&&tableList.length>1?'active':''}}" data-current="{{index}}" data-item="{{item}}" style="{{titleStyle}}" wx:for="{{tableList}}" wx:key="index">
+                <p class="tab-title">{{item}}</p>
+            </view>
+        </scroll-view>
+        <swiper bindchange="switchTab" class="tab-content" current="{{currentTab}}" duration="300" style="height:{{currentTab==0?styleLayoutHeight+currentLayoutList.length*90+stylePositionHeight+(isShowDiy?190:80):styleHardbackHeight+(isShowDiy?190:80)}}rpx;">
+            <swiper-item class="myswipe" current="{{current}}" wx:for="{{tableList}}" wx:for-index="idx" wx:for-item="itemView" wx:key="idx">
+                <view style="position:relative" wx:if="{{itemView===currentRoomDetail.layoutTabName}}">
+                    <block wx:for="{{currentLayoutList}}" wx:key="index">
+                        <view class="houseDetail-houseType" style="height:{{layoutImgheights[index]}}rpx;">
+                            <image class="click-big-btn" src="../../image/wepy_pro/zoomin.png"></image>
+                            <image binderror="ImageError" bindload="ImageLayoutLoad" bindtap="priviewPic1" class="houseDetail-houseType-image" data-index="{{index}}" hidden="{{item.loadComplete==false}}" mode="widthFix" src="{{item.imageUrl}}" style="height:{{layoutImgheights[index]}}rpx;width:{{layoutWidth}}rpx;"></image>
+                            <view class="myload" hidden="{{item.loadComplete}}">
+                                <view class="spinner"></view>
+                            </view>
+                        </view>
+                        <view class="houseDetail-houseType-image-description">
+                            <p>{{item.name}}</p>
+                        </view>
+                    </block>
+                    <view class="houseDetail-position" hidden="{{!currentRoomDetail.positionImg||currentRoomDetail.positionImg.length==0}}" style="height:{{stylePositionHeight-60}}rpx;">
+                        <image class="click-big-btn" src="../../image/wepy_pro/zoomin.png"></image>
+                        <image binderror="ImageError" bindload="ImagePositionLoad" bindtap="positionPriviewPic" class="houseDetail-position-image" mode="widthFix" src="{{currentRoomDetail.positionImg}}"></image>
+                    </view>
+                </view>
+                <view style="position:relative" wx:if="{{itemView===currentRoomDetail.hardbackTabName}}">
+                    <view class="authBox" style="top:0" wx:if="{{showPhoneModel}}">
+                        <button bindgetphonenumber="getPhoneNumber" bindtap="clickPhoneAuth" class="authPhoneBtn" openType="getPhoneNumber">解锁查看完整户型信息</button>
+                    </view>
+                    <view bindtap="priviewPic1" class="houseDetail-atlas" data-index="{{index}}" data-item="{{item}}" style="height:{{hardbackImgheights[index]}}rpx;" wx:for="{{currentHardbackList}}" wx:key="index">
+                        <image binderror="ImageError" bindload="ImageHardbackLoad" class="houseDetail-atlas-image" data-index="{{index}}" hidden="{{item.loadComplete==false}}" mode="widthFix" src="{{item.image}}" style="height:{{hardbackImgheights[index]}}rpx;width:{{imgwidth}}rpx;"></image>
+                        <view class="myload" hidden="{{item.loadComplete}}">
+                            <view class="spinner"></view>
+                        </view>
+                        <view class="houseDetail-atlas-image-cover"></view>
+                        <view class="houseDetail-atlas-image-description">
+                            <view class="houseDetail-atlas-image-description-title">
+                                <p>{{item.title}}</p>
+                            </view>
+                            <view class="houseDetail-atlas-image-description-content">
+                                <p>{{item.content}}</p>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="diy" class="diy" style="line-height:80rpx;font-size: 32rpx;color: #FFFFFF;letter-spacing: 0;text-align: center;" wx:if="{{isShowDiy}}">
+          户型DIY
+        </view>
+                <view class="bottom-description-container">
+                    <view class="bottom-description">
+                        <p>注：本资料提供的所有的信息仅供参考，不作为购房交付标准，最终以政府批准文件及双方签订的买卖合同为准。</p>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view class="emptyView" wx:if="{{emptyHeight}}"></view>
+    </view>
+</scroll-view>
+<IMView bindafterIMHandle="afterIMHandle" bindafterIndexHandle="afterIndexHandle" bindgetUserInfoFun="shareFun" bindheightHandle="heightHandle" id="IMView" imPhoneAuthorize="{{imPhoneAuthorize}}"></IMView>

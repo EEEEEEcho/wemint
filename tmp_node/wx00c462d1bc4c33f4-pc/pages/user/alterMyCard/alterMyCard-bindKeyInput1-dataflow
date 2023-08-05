@@ -1,0 +1,19 @@
+// \pages/user/alterMyCard/alterMyCard bindKeyInput1 Data Flow
+digraph {
+	a10b02b4fcbb4d5f88095e3e20a02e8b [label="FunctionCall,
+function name -> bindKeyInput1,
+param -> t.,
+t,
+" color=blue]
+	dcea98cab604448dbcc50bbc6f1a332c [label=SequenceExpression color=blue]
+	bd35e86f033346c9b376458e2bb4e43e [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"261c3a4b53f148de9748c7a23e12b982" [label="Object Properties
+{
+tele -> t.detail.value
+}" color=blue]
+	bd35e86f033346c9b376458e2bb4e43e -> "261c3a4b53f148de9748c7a23e12b982"
+	dcea98cab604448dbcc50bbc6f1a332c -> bd35e86f033346c9b376458e2bb4e43e
+	a10b02b4fcbb4d5f88095e3e20a02e8b -> dcea98cab604448dbcc50bbc6f1a332c
+}

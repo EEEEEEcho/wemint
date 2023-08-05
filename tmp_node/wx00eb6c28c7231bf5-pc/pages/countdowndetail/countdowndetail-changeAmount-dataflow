@@ -1,0 +1,23 @@
+// \pages/countdowndetail/countdowndetail changeAmount Data Flow
+digraph {
+	"9c5bc5d660f34e3c8bc146872575a841" [label="FunctionCall,
+function name -> changeAmount,
+param -> t,
+t.,
+" color=blue]
+	e2758fad373a4656bfd72c771506fc1a [label=VariableDeclarations color=blue]
+	"2d852353cd7d4af0a26e2e1e5ee7760b" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	b5664ce220764b65a91d6b2b75f8f463 [label="CallExpression,
+callee name -> parseInt,
+param -> t.detail.value,
+" color=blue]
+	"2d852353cd7d4af0a26e2e1e5ee7760b" -> b5664ce220764b65a91d6b2b75f8f463
+	e2758fad373a4656bfd72c771506fc1a -> "2d852353cd7d4af0a26e2e1e5ee7760b"
+	"20fadcbfdc6245c897767d237e74758e" [label="VariableDeclarator,
+left -> o,
+right -> e.data.MaxCount" color=blue]
+	e2758fad373a4656bfd72c771506fc1a -> "20fadcbfdc6245c897767d237e74758e"
+	"9c5bc5d660f34e3c8bc146872575a841" -> e2758fad373a4656bfd72c771506fc1a
+}

@@ -1,0 +1,53 @@
+.customerInfo_panels {
+    width: 682rpx;
+    margin-left: 34rpx;
+    margin-top: 30rpx;
+}
+
+.customerInfo_panel {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0rpx 0rpx 16rpx #f0f0f0;
+    border-radius: 24rpx;
+    align-items: center;
+    width: 682rpx;
+    height: 140rpx;
+    margin-bottom: 30rpx;
+}
+
+.customer_info {
+    display: flex;
+    flex-direction: column;
+    width: 529rpx;
+    margin-left: 20rpx;
+}
+
+.customer_avatar {
+    width: 84rpx;
+    height: 84rpx;
+    border-radius: 42rpx;
+    margin-left: 30rpx;
+}
+
+.customer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.customer_nickname {
+    color: #aeaeb4;
+    font-size: 30rpx;
+}
+
+.customer_createtime {
+    color: #aeaeb4;
+    font-size: 24rpx;
+}
+
+.customer_tel {
+    color: #51515c;
+    font-size: 26rpx;
+    margin-top: 10rpx;
+}

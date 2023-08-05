@@ -1,0 +1,29 @@
+// \pages/commentlist/commentlist prevImage Data Flow
+digraph {
+	e4548c362d1945dda696fde56673b052 [label="FunctionCall,
+function name -> prevImage,
+param -> e,
+e.,
+" color=blue]
+	"558eaae3211040d69cf6ec51655bdd07" [label=VariableDeclarations color=blue]
+	a27322d19f7640649bbd6d191f03dbaa [label="VariableDeclarator,
+left -> idx,
+right -> e.target.dataset.index" color=blue]
+	"558eaae3211040d69cf6ec51655bdd07" -> a27322d19f7640649bbd6d191f03dbaa
+	e4548c362d1945dda696fde56673b052 -> "558eaae3211040d69cf6ec51655bdd07"
+	"5a6a2e544cf142fa94a8a8f03f2c73fe" [label=VariableDeclarations color=blue]
+	a34f5b2ff8f041f49f08a0f6ee512024 [label="VariableDeclarator,
+left -> current,
+right -> e.target.dataset.src" color=blue]
+	"5a6a2e544cf142fa94a8a8f03f2c73fe" -> a34f5b2ff8f041f49f08a0f6ee512024
+	e4548c362d1945dda696fde56673b052 -> "5a6a2e544cf142fa94a8a8f03f2c73fe"
+	"76e54f631fbf43e8a099da623c7c0d4b" [label="CallExpression,
+callee name -> wx.previewImage,
+param -> " color=blue]
+	"299a496af7d049eea1de58948eb01e2d" [label="Object Properties
+{
+current -> current
+}" color=blue]
+	"76e54f631fbf43e8a099da623c7c0d4b" -> "299a496af7d049eea1de58948eb01e2d"
+	e4548c362d1945dda696fde56673b052 -> "76e54f631fbf43e8a099da623c7c0d4b"
+}

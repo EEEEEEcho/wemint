@@ -1,0 +1,23 @@
+// \pages/orderlist/orderlist goToOrderDetail Data Flow
+digraph {
+	"8260a0b4321a4720a8b299075cea300d" [label="FunctionCall,
+function name -> goToOrderDetail,
+param -> t,
+t.,
+" color=blue]
+	"62951015f87546f28ca3afcf13c7f386" [label=VariableDeclarations color=blue]
+	"327ad4fb5dfa4be7be1c2d238b3f0be1" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.orderid" color=blue]
+	"62951015f87546f28ca3afcf13c7f386" -> "327ad4fb5dfa4be7be1c2d238b3f0be1"
+	"8260a0b4321a4720a8b299075cea300d" -> "62951015f87546f28ca3afcf13c7f386"
+	"65c7a005da5b4d55ae756464919fb4bd" [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	"501c5d45d00748d6a17d04e220bbf8c8" [label="Object Properties
+{
+url -> '../orderdetails/orderdetails?orderid=' + e
+}" color=blue]
+	"65c7a005da5b4d55ae756464919fb4bd" -> "501c5d45d00748d6a17d04e220bbf8c8"
+	"8260a0b4321a4720a8b299075cea300d" -> "65c7a005da5b4d55ae756464919fb4bd"
+}

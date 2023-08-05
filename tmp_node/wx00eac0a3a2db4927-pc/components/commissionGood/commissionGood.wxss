@@ -1,0 +1,92 @@
+.goods {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.good {
+    box-shadow: 0rpx 0rpx 16rpx #f0f0f0;
+    width: 331rpx;
+    border-radius: 8rpx;
+    margin-bottom: 30rpx;
+}
+
+.goodImg {
+    border-top-left-radius: 8rpx;
+    border-top-right-radius: 8rpx;
+    width: 100%;
+    height: 373rpx;
+}
+
+.goodIntro {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20rpx;
+    margin-bottom: 30rpx;
+    margin-top: 10rpx;
+    position: relative;
+}
+
+.label111 {
+    margin-bottom: 20rpx;
+    position: absolute;
+    top: -88rpx;
+    left: 0;
+}
+
+.label11,.label12 {
+    width: 96rpx;
+    height: 34rpx;
+    border: 1px solid #eee;
+    font-size: 20rpx;
+    border-radius: 8rpx;
+    background: #fff;
+    padding: 4rpx 10rpx;
+    margin-right: 10rpx;
+}
+
+.goodName {
+    font-size: 24rpx;
+    width: 284rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-bottom: 6rpx;
+}
+
+.goodPrice {
+    width: 100%;
+}
+
+.newPricePre {
+    font-size: 20rpx;
+    color: #f1763a;
+    margin-right: 4rpx;
+}
+
+.newPrice {
+    color: #f1763a;
+    font-weight: bold;
+    font-size: 26rpx;
+}
+
+.oldPricePre,.oldPrice {
+    font-size: 22rpx;
+    color: #aeaeb4;
+}
+
+.commission {
+    color: #f1763a;
+    font-size: 23rpx;
+}
+
+.priceLabel {
+    font-size: 22rpx;
+    color: #aeaeb4;
+    margin-left: 18rpx;
+}

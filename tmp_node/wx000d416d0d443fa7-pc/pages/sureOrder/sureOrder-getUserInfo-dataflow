@@ -1,0 +1,42 @@
+// \pages/sureOrder/sureOrder getUserInfo Data Flow
+digraph {
+	feb3d03d624b4ca3a1f0642b0fd64407 [label="FunctionCall,
+function name -> getUserInfo,
+param -> e.,
+e,
+" color=blue]
+	b58346ce917248efba8af4dc70996da4 [label="CallExpression,
+callee name -> wx.chooseAddress,
+param -> " color=blue]
+	ab9e6f9b808045b3a94dc40193f39cc7 [label="FunctionCall,
+function name -> success,
+param -> e.,
+e,
+" color=blue]
+	"663287ccd5d94990a078300f1dc04da1" [label=VariableDeclarations color=blue]
+	"06bf24c07ad246698f5d97338921423d" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	fb8a1221cf144257a6b7b7d2c0a645fc [label="Object Properties
+{
+userName -> e.userName
+userTel -> e.telNumber
+userAddress -> e.provinceName + e.cityName + e.countyName + e.detailInfo
+}" color=blue]
+	"06bf24c07ad246698f5d97338921423d" -> fb8a1221cf144257a6b7b7d2c0a645fc
+	"663287ccd5d94990a078300f1dc04da1" -> "06bf24c07ad246698f5d97338921423d"
+	ab9e6f9b808045b3a94dc40193f39cc7 -> "663287ccd5d94990a078300f1dc04da1"
+	"7ef9c021012c44dcb89db6e71ba34341" [label=SequenceExpression color=blue]
+	b77f01d76a7f4aecba79f9608cbfb33f [label="CallExpression,
+callee name -> t.getPoint(a, i).then,
+param -> " color=blue]
+	"8059a3746d634341825b63cd1663e5bd" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> e,
+" color=blue]
+	b77f01d76a7f4aecba79f9608cbfb33f -> "8059a3746d634341825b63cd1663e5bd"
+	"7ef9c021012c44dcb89db6e71ba34341" -> b77f01d76a7f4aecba79f9608cbfb33f
+	ab9e6f9b808045b3a94dc40193f39cc7 -> "7ef9c021012c44dcb89db6e71ba34341"
+	b58346ce917248efba8af4dc70996da4 -> ab9e6f9b808045b3a94dc40193f39cc7
+	feb3d03d624b4ca3a1f0642b0fd64407 -> b58346ce917248efba8af4dc70996da4
+}

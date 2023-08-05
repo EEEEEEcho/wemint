@@ -1,0 +1,28 @@
+// \pages/fightGroups/productdetail/index sureBuy Data Flow
+digraph {
+	"71b4d0e3fc7a45c285f94c024554d111" [label="FunctionCall,
+function name -> sureBuy,
+param -> " color=blue]
+	"0781bc86229f4e18aab352fd0de7952e" [label=SequenceExpression color=blue]
+	"7b911f84a563411c93b778370e682309" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"51fe56df8e2d4ae5a00be6a3259bdf2e" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"595714c5475e4ad1995db6abf31a53b7" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	a198fde31f9b4aed90299d5c11652115 [label=SequenceExpression color=blue]
+	be01d9344a9c4876b78cc83ec80814c7 [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"0401a35d99ab4b409d66211784d5313d" [label="Object Properties
+{
+url -> '../square/index?pintuan_id=' + this.data.pinTuanProDetail.pintuan_config.pintuan_id + '&pintuan_product_id=' + this.data.pinTuanProDetail.id + '&pintuan_product_num=' + this.data.buyCount + '&sku_id=' + this.data.skuid + '&attrImg=' + this.data.AttrValSmallImg
+}" color=blue]
+	be01d9344a9c4876b78cc83ec80814c7 -> "0401a35d99ab4b409d66211784d5313d"
+	a198fde31f9b4aed90299d5c11652115 -> be01d9344a9c4876b78cc83ec80814c7
+	"595714c5475e4ad1995db6abf31a53b7" -> a198fde31f9b4aed90299d5c11652115
+	"51fe56df8e2d4ae5a00be6a3259bdf2e" -> "595714c5475e4ad1995db6abf31a53b7"
+	"7b911f84a563411c93b778370e682309" -> "51fe56df8e2d4ae5a00be6a3259bdf2e"
+	"0781bc86229f4e18aab352fd0de7952e" -> "7b911f84a563411c93b778370e682309"
+	"71b4d0e3fc7a45c285f94c024554d111" -> "0781bc86229f4e18aab352fd0de7952e"
+}

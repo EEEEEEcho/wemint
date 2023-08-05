@@ -1,0 +1,40 @@
+<view class="k130"></view>
+<view class="head">
+    <image class="img" src="{{user.headimgurl}}"></image>
+</view>
+<view class="k40"></view>
+<view class="k40 nickname">{{user.nickname}}</view>
+<view class="k50"></view>
+<view class="k30"></view>
+<view class="k40 title">会员登录</view>
+<view class="dixian"></view>
+<view class="k40"></view>
+<view class="ipt-list">
+    <view class="ipt-list-l">
+        <image class="img" src="/pages/img/user.png"></image>
+    </view>
+    <view class="ipt-list-r">
+        <input bindinput="input" class="input" maxlength="11" placeholder="填写手机号码" placeholderClass="inp-text" type="number"></input>
+    </view>
+</view>
+<view class="ipt-list">
+    <view class="ipt-list-l">
+        <image class="img" src="/pages/img/yzm.png"></image>
+    </view>
+    <view class="ipt-list-r">
+        <input bindinput="input2" class="input" maxlength="6" placeholder="填写短信验证码" placeholderClass="inp-text" type="number"></input>
+    </view>
+    <view bindtap="getYzm" class="ipt-list-r2" hoverClass="hover" wx:if="{{second==60}}">{{text}}</view>
+    <view class="ipt-list-r3" wx:else>{{text}}</view>
+</view>
+<view class="ipt-list">
+    <view class="ipt-list-l">
+        <image class="img" src="/pages/img/team.png"></image>
+    </view>
+    <view class="ipt-list-r">
+        <input bindinput="input3" class="input" maxlength="-1" placeholder="推荐人工号(选填)" placeholderClass="inp-text" type="text"></input>
+    </view>
+</view>
+<view class="k50"></view>
+<view class="k40"></view>
+<view bindtap="bindphone" class="btn" hoverClass="hover">登录</view>

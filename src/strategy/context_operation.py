@@ -10,14 +10,11 @@ def add_brother_to_context(context, mini_program: MiniProgram):
     tmp_context = context
     while tmp_context.father:
         tmp_context = tmp_context.father
-    # 如果已经分析过了，就不分析了
     if 'getApp' in tmp_context.brother_table:
         return
     else:
-        # 没有分析过，那么进行分析
         if not af.contains(brother_path):
             import file_layer.taint_analyzer as ja
-            # 全局文件中也没有
             file_context = ja.analysis(brother_path, mini_program)
             af.set_context(brother_path, file_context)
         tmp_context.brother_table.update({'getApp': af.get_context(brother_path)})
@@ -50,18 +47,10 @@ def find_bother(variable_name: str, context):
 
 
 def search_identifier(variable_name: str, context):
-    """
-    根据变量名在缓存、父级作用域和兄弟作用域中寻找
-    todo: 缓存
-    :param variable_name:
-    :param context:
-    :return:
-    """
     if variable_name is None:
         return None
 
     if '.' in variable_name:
-        # 是一个字典类型的调用
         variable_list = variable_name.split('.')
         variable_value = None
         value_table = find_context(variable_list[0], context)
@@ -72,9 +61,6 @@ def search_identifier(variable_name: str, context):
             variable_value = analysis_identifier(variable_list,value_table)
         return variable_value
     else:
-        # variable_value = find_storage(variable_name)
-        # if variable_value is not None:
-        #     return variable_value
         variable_value = find_context(variable_name, context)
         if variable_value is not None:
             return variable_value

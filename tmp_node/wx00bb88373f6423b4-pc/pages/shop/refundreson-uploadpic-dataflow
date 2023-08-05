@@ -1,0 +1,18 @@
+// \pages/shop/refundreson uploadpic Data Flow
+digraph {
+	c061eb92a1734e5889ec006d70e32740 [label="FunctionCall,
+function name -> uploadpic,
+param -> a,
+a.,
+" color=blue]
+	b8c40ea3446847049c6c4a31b4cec34c [label=VariableDeclarations color=blue]
+	"8e4d91f7e88246c6942bf336c4b3815f" [label="VariableDeclarator,
+left -> t,
+right -> e.data.upload_picture_list" color=blue]
+	b8c40ea3446847049c6c4a31b4cec34c -> "8e4d91f7e88246c6942bf336c4b3815f"
+	c061eb92a1734e5889ec006d70e32740 -> b8c40ea3446847049c6c4a31b4cec34c
+	"2e8738baa03c4d0b9722f404850c5078" [label="CallExpression,
+callee name -> wx.chooseImage,
+param -> " color=blue]
+	c061eb92a1734e5889ec006d70e32740 -> "2e8738baa03c4d0b9722f404850c5078"
+}

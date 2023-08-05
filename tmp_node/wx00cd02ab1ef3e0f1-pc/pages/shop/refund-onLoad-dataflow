@@ -1,0 +1,50 @@
+// \pages/shop/refund onLoad Data Flow
+digraph {
+	"452b10895260463babf7f0a6cdd2a8ae" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"5f33a96281ea43b18b0a295f8a8a2181" [label=SequenceExpression color=blue]
+	aa9da736b4094cc59e3fafe42c71d41c [label="CallExpression,
+callee name -> this.loadrefundsreson,
+param -> " color=blue]
+	"7b8a1a6583e1499a85f17778b2644bf8" [label="FunctionCall,
+function name -> loadrefundsreson,
+param -> " color=blue]
+	"2589c7be18744be788667812d526edad" [label="If Alternate" color=blue]
+	f12d6bd8684f40ed878d7bd87ef52364 [label=SequenceExpression color=blue]
+	"7cc36b7545bd4c6e9b4cad8c2440a403" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	ffa402892cf942079cc72d328ad91887 [label="Assignment,
+left -> s,
+right -> t.data.queryparams.orderid" color=blue]
+	"7cc36b7545bd4c6e9b4cad8c2440a403" -> ffa402892cf942079cc72d328ad91887
+	f12d6bd8684f40ed878d7bd87ef52364 -> "7cc36b7545bd4c6e9b4cad8c2440a403"
+	"703e6faefe6444c6937a0ed9f816624f" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"0357aaf64d0c4d808b752343cb12e7d4" [label="Assignment,
+left -> a,
+right -> t.data.queryparams.pkey" color=blue]
+	"703e6faefe6444c6937a0ed9f816624f" -> "0357aaf64d0c4d808b752343cb12e7d4"
+	f12d6bd8684f40ed878d7bd87ef52364 -> "703e6faefe6444c6937a0ed9f816624f"
+	"15717149b8ac47478de9e28b844df23d" [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	"87e810f652d444c7bf73fca1d9f6666b" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=rdetail&orderid=' + s + '&pkey=' + a
+}" color=blue]
+	"15717149b8ac47478de9e28b844df23d" -> "87e810f652d444c7bf73fca1d9f6666b"
+	af40e11652ef46328a77b0223a0a8540 [label="FunctionCall,
+function name -> success,
+param -> s,
+" color=blue]
+	"15717149b8ac47478de9e28b844df23d" -> af40e11652ef46328a77b0223a0a8540
+	f12d6bd8684f40ed878d7bd87ef52364 -> "15717149b8ac47478de9e28b844df23d"
+	"2589c7be18744be788667812d526edad" -> f12d6bd8684f40ed878d7bd87ef52364
+	"7b8a1a6583e1499a85f17778b2644bf8" -> "2589c7be18744be788667812d526edad"
+	aa9da736b4094cc59e3fafe42c71d41c -> "7b8a1a6583e1499a85f17778b2644bf8"
+	"5f33a96281ea43b18b0a295f8a8a2181" -> aa9da736b4094cc59e3fafe42c71d41c
+	"452b10895260463babf7f0a6cdd2a8ae" -> "5f33a96281ea43b18b0a295f8a8a2181"
+}

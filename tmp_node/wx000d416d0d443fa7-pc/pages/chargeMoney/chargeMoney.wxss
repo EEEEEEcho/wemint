@@ -1,0 +1,22 @@
+.chargeMoney {
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: 1rpx solid rgba(9,9,9,.1);
+}
+
+.chargeMoneyItem {
+    margin-left: 5%;
+}
+
+.chargeMoneyLog {
+    margin: 20rpx 0;
+    border-top: 1rpx solid rgba(9,9,9,.1);
+    border-bottom: 1rpx solid rgba(9,9,9,.1);
+}
+
+.chargeMoneyLogItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20rpx 0;
+}

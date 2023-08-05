@@ -1,0 +1,11 @@
+// \pages/shop/productdetail addToCartContent Data Flow
+digraph {
+	"7c482de30ec04d268e1ccd61f7b9a06d" [label="FunctionCall,
+function name -> addToCartContent,
+param -> a.,
+a,
+" color=blue]
+	"2593ad5777754dbca37460efc212fd14" [label="ConditionalExpression,
+ conditional list -> e.addToCart" color=blue]
+	"7c482de30ec04d268e1ccd61f7b9a06d" -> "2593ad5777754dbca37460efc212fd14"
+}

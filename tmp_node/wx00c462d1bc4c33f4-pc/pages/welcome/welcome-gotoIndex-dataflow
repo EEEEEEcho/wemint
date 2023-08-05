@@ -1,0 +1,62 @@
+// \pages/welcome/welcome gotoIndex Data Flow
+digraph {
+	feacddac83724c33bba0bf892eef10e2 [label="FunctionCall,
+function name -> gotoIndex,
+param -> t.,
+t,
+" color=blue]
+	b322fbd42a3f4ef79973bde55b362a42 [label="If Alternate" color=blue]
+	"6e936ec553454fb582c3b54ea42bfe64" [label=VariableDeclarations color=blue]
+	"0eafd3f2e1df477383c58f5f132b5883" [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.storeName" color=blue]
+	"6e936ec553454fb582c3b54ea42bfe64" -> "0eafd3f2e1df477383c58f5f132b5883"
+	b3ce645c59554b02bff956a55c95dd3c [label="VariableDeclarator,
+left -> o,
+right -> t.currentTarget.dataset.storeuid" color=blue]
+	"6e936ec553454fb582c3b54ea42bfe64" -> b3ce645c59554b02bff956a55c95dd3c
+	"867680de1d4a4be7a748254eaf546410" [label="VariableDeclarator,
+left -> n,
+right -> t.currentTarget.dataset.storeInfo" color=blue]
+	"6e936ec553454fb582c3b54ea42bfe64" -> "867680de1d4a4be7a748254eaf546410"
+	"81a8a412e00b4b02a9975ad284a7d20c" [label="VariableDeclarator,
+left -> s,
+right -> t.currentTarget.dataset.storeInfoDeliveryPrice" color=blue]
+	"6e936ec553454fb582c3b54ea42bfe64" -> "81a8a412e00b4b02a9975ad284a7d20c"
+	b322fbd42a3f4ef79973bde55b362a42 -> "6e936ec553454fb582c3b54ea42bfe64"
+	"025e90c4c0b046adaba5b09d69e8ae38" [label=SequenceExpression color=blue]
+	b865cd433a64499b98caf74856f4ec9b [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	e9925b57d40a4aa1b1016543441fab82 [label="Object Properties
+{
+data -> n
+}" color=blue]
+	b865cd433a64499b98caf74856f4ec9b -> e9925b57d40a4aa1b1016543441fab82
+	"025e90c4c0b046adaba5b09d69e8ae38" -> b865cd433a64499b98caf74856f4ec9b
+	c9ea4f0f6c994cc99a1b95409096abeb [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	"17a0841eef6144fea5caeea18a144d8c" [label="Object Properties
+{
+data -> s
+}" color=blue]
+	c9ea4f0f6c994cc99a1b95409096abeb -> "17a0841eef6144fea5caeea18a144d8c"
+	"025e90c4c0b046adaba5b09d69e8ae38" -> c9ea4f0f6c994cc99a1b95409096abeb
+	"03292fe72964446d963673a911ca0627" [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	baead0d29989421b87b8c34bced1e18f [label="Object Properties
+{
+data -> a
+}" color=blue]
+	"03292fe72964446d963673a911ca0627" -> baead0d29989421b87b8c34bced1e18f
+	"025e90c4c0b046adaba5b09d69e8ae38" -> "03292fe72964446d963673a911ca0627"
+	d171ba34c310434ca7d027ce8799e29d [label="CallExpression,
+callee name -> e.resendIndex,
+param -> o,
+" color=blue]
+	"025e90c4c0b046adaba5b09d69e8ae38" -> d171ba34c310434ca7d027ce8799e29d
+	b322fbd42a3f4ef79973bde55b362a42 -> "025e90c4c0b046adaba5b09d69e8ae38"
+	feacddac83724c33bba0bf892eef10e2 -> b322fbd42a3f4ef79973bde55b362a42
+}

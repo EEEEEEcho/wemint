@@ -1,0 +1,25 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view style="margin-top: {{navH+status+10}}px;">
+    <view class="addAccountContain">
+        <view class="accountInfomation row">
+            <image class="accountAvatar" mode="aspectFill" src="http://oss.shangmian.xin/weixin_applets_login_default_avatar.png"></image>
+            <input bindinput="getInputValue" class="inputName" placeholder="输入名称" placeholderClass="placeholderName" value="{{nickname}}"></input>
+            <text class="profit">分成比例{{inputValueProfit}}%</text>
+        </view>
+        <view class="featuresLayout column">
+            <view bindtap="toPage" class="featuresRow row" data-type="手机号码">
+                <text class="featuresLabel">手机号码</text>
+                <text class="featuresLabel2">{{inputValueMobile}}</text>
+                <image class="featuresArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+            </view>
+            <view class="lineStyle"></view>
+            <view bindtap="toPage" class="featuresRow row" data-type="分成比例">
+                <text class="featuresLabel">分成比例</text>
+                <text class="featuresLabel2">{{inputValueProfit}}%</text>
+                <image class="featuresArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+            </view>
+        </view>
+        <view catchtap="addComplete" class="complete">添加完成</view>
+        <view class="tip">提示：最多可创建10个分销</view>
+    </view>
+</view>

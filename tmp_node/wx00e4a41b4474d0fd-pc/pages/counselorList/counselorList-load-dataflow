@@ -1,0 +1,15 @@
+// \pages/counselorList/counselorList load Data Flow
+digraph {
+	"53fd4ca016bd481b93fd55ed020fcd71" [label="FunctionCall,
+function name -> load,
+param -> e,
+e.,
+" color=blue]
+	c03934ac54104986927632ff2837eee9 [label=SequenceExpression color=blue]
+	eccec865bb9342429736ca0460146b8d [label="CallExpression,
+callee name -> console.log,
+param -> e,
+" color=blue]
+	c03934ac54104986927632ff2837eee9 -> eccec865bb9342429736ca0460146b8d
+	"53fd4ca016bd481b93fd55ed020fcd71" -> c03934ac54104986927632ff2837eee9
+}

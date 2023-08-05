@@ -1,0 +1,45 @@
+// \pages/shop/browseRecord delRecord Data Flow
+digraph {
+	"1316496cfd954349ae88a91d29c540b0" [label="FunctionCall,
+function name -> delRecord,
+param -> " color=blue]
+	adc00364c76b45a9889e933fab9dff24 [label=VariableDeclarations color=blue]
+	dc5e7bdabdcc4c3baae677d61ab42449 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"9ea020ffd7cc4b10a55165903fa182d8" [label="Object Properties
+{
+}" color=blue]
+	"194480b4639845fc8e12c167d09c835e" [label="FunctionCall,
+function name -> success,
+param -> e.,
+e,
+" color=blue]
+	e59d593091b84c47b43fcf502580dda0 [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"2e728030a18b4c4a8e95f86f39f6bff6" [label=SequenceExpression color=blue]
+	a8fb63a5977b453d9ef80cf669121333 [label="CallExpression,
+callee name -> t.showToast,
+param -> " color=blue]
+	"45d2c525e2694805abde275a6b71394d" [label="Object Properties
+{
+title -> e.info
+}" color=blue]
+	a8fb63a5977b453d9ef80cf669121333 -> "45d2c525e2694805abde275a6b71394d"
+	"2e728030a18b4c4a8e95f86f39f6bff6" -> a8fb63a5977b453d9ef80cf669121333
+	e59d593091b84c47b43fcf502580dda0 -> "2e728030a18b4c4a8e95f86f39f6bff6"
+	ea6412b62db7413bbd539a746604d6ba [label="CallExpression,
+callee name -> wx.showToast,
+param -> " color=blue]
+	"64e81f09d8e042318144449d0533e5e1" [label="Object Properties
+{
+title -> e.info
+}" color=blue]
+	ea6412b62db7413bbd539a746604d6ba -> "64e81f09d8e042318144449d0533e5e1"
+	e59d593091b84c47b43fcf502580dda0 -> ea6412b62db7413bbd539a746604d6ba
+	"194480b4639845fc8e12c167d09c835e" -> e59d593091b84c47b43fcf502580dda0
+	"9ea020ffd7cc4b10a55165903fa182d8" -> "194480b4639845fc8e12c167d09c835e"
+	dc5e7bdabdcc4c3baae677d61ab42449 -> "9ea020ffd7cc4b10a55165903fa182d8"
+	adc00364c76b45a9889e933fab9dff24 -> dc5e7bdabdcc4c3baae677d61ab42449
+	"1316496cfd954349ae88a91d29c540b0" -> adc00364c76b45a9889e933fab9dff24
+}

@@ -1,0 +1,18 @@
+// \pages/index/index showMore Data Flow
+digraph {
+	"8192c5c013214b32b066ad993b2c54e3" [label="FunctionCall,
+function name -> showMore,
+param -> t.,
+t,
+" color=blue]
+	ab7a8b0ec9664b4791c2b40c2a2478d9 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"4e9b2369eda74a13a4e238d972ae57fe" [label="Object Properties
+{
+}" color=blue]
+	"21788e37f12e4d13891b63df90e84e38" [label="!this.data.showMoreTab" color=blue]
+	"4e9b2369eda74a13a4e238d972ae57fe" -> "21788e37f12e4d13891b63df90e84e38"
+	ab7a8b0ec9664b4791c2b40c2a2478d9 -> "4e9b2369eda74a13a4e238d972ae57fe"
+	"8192c5c013214b32b066ad993b2c54e3" -> ab7a8b0ec9664b4791c2b40c2a2478d9
+}

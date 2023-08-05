@@ -1,0 +1,28 @@
+// \pages/houseDIY/houseDIY downLoad Data Flow
+digraph {
+	"6c9e570a30054b07a91ba30696783ad6" [label="FunctionCall,
+function name -> downLoad,
+param -> e,
+e.,
+" color=blue]
+	"14f5f71e38a24dc6aaeabdd7b299fc45" [label="CallExpression,
+callee name -> console.log,
+param -> e.currentTarget.dataset.index,
+" color=blue]
+	"6c9e570a30054b07a91ba30696783ad6" -> "14f5f71e38a24dc6aaeabdd7b299fc45"
+	"8d48fc1670e640e6ba9ac080b904612f" [label=VariableDeclarations color=blue]
+	"49bd6278cc6d4b109f0d4218a0e449aa" [label="VariableDeclarator,
+left -> t,
+right -> e.currentTarget.dataset.index" color=blue]
+	"8d48fc1670e640e6ba9ac080b904612f" -> "49bd6278cc6d4b109f0d4218a0e449aa"
+	"6c9e570a30054b07a91ba30696783ad6" -> "8d48fc1670e640e6ba9ac080b904612f"
+	"7c5f86a5f6984ca1883b1ba241a2de42" [label="CallExpression,
+callee name -> wx.getSetting,
+param -> " color=blue]
+	d29bb42608854c299804154bd66be460 [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	"7c5f86a5f6984ca1883b1ba241a2de42" -> d29bb42608854c299804154bd66be460
+	"6c9e570a30054b07a91ba30696783ad6" -> "7c5f86a5f6984ca1883b1ba241a2de42"
+}

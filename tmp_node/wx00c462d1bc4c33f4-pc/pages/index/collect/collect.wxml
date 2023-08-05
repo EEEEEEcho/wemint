@@ -1,0 +1,61 @@
+<view style="color:#fff;font-size:18px;text-align:center;padding-top:60px;">您将要付款{{collectMoney}}元给{{storename}}</view>
+<view style="display:flex;justify-content:center;align-items:flex-end;height:100px;">
+    <image src="{{storeImgUrl}}" style="border:1px #ffbf20 solid;border-radius:100%;width:80px;height:80px;"></image>
+    <image src="{{userImgUrl}}" style="border:1px #fff solid;border-radius:100%;width:64px;height:64px;margin-left:-30px;"></image>
+</view>
+<view style="background:#555;border-radius:6px;width:80%;height:80px;margin:30px auto;display:flex;align-items:center;">
+    <input bindinput="moneyInput" class="weui-input" maxlength="8" pattern="^d+(.d{0,2})?$" placeholder="请询问店员后输入" style="box-sizing:border-box;padding-left:20px;color:#fff;font-size:16px;float:left;flex:0 0 60%" type="digit" value="{{initMoney}}"></input>
+    <view style="box-sizing:border-box;background:#999;width:1px;height:24px;float:left;"></view>
+    <view style="box-sizing:border-box;color:#ffbf20;flex:0 0 38%; text-align:center;">消费金额</view>
+</view>
+<view bindtap="chooseYouhui" style="text-align:center;color:#ffbf20;font-size:16px;">选择可使用的优惠 ></view>
+<view class="wk">
+    <view class="sjyh">
+        <view class="sjyh-title">
+            <text>商家优惠</text>
+        </view>
+        <view class="sjyh-content">
+            <view class="sjyh-coupon" wx:if="{{coupon==true}}">{{couponName}} (满{{miniMoney}}元可用)</view>
+            <view class="sjyh-derateMoney" wx:if="{{coupon==true&&couponType=='4'}}">减{{derateMoney}}元</view>
+            <view class="sjyh-derateMoney" wx:if="{{coupon==true&&couponType=='2'&&derateMoney!='10'}}">打{{derateMoney}}折</view>
+            <view class="sjyh-derateMoney" wx:if="{{coupon==true&&couponType=='2'&&derateMoney=='10'}}">无折扣</view>
+            <view class="sjyh-coupon" wx:if="{{card==true&&forceCard==false}}">会员卡</view>
+            <view class="sjyh-coupon" wx:if="{{card==true&&forceCard==true}}">权益卡</view>
+            <view class="sjyh-derateMoney" wx:if="{{card==true&&discount=='10'}}">无折扣</view>
+            <view class="sjyh-derateMoney" wx:if="{{card==true&&discount!='10'}}">打{{discount}}折</view>
+            <view class="clear"></view>
+        </view>
+    </view>
+    <view class="sjfk">
+        <view class="sjfk-title">
+            <text>实际付款（元）</text>
+        </view>
+        <view class="sjfk-realPrice">
+            <text>{{collectMoney*1<0?'0':collectMoney}}</text>
+        </view>
+        <view class="clear"></view>
+    </view>
+</view>
+<view style="display:flex;justify-content:center;width:100%;margin:20px 0;">
+    <button bindtap="toPay2" data-id="1" style="background:#777; color:#ffbf20;border-radius:6px;width:80%;">支 付</button>
+</view>
+<view class="cover" style="display:{{displ2}}">
+    <view bindtap="back" class="cover1"></view>
+    <view class="cover4">
+        <button bindtap="wxPay" class="evaluation" data-id="W">微 信 支 付</button>
+        <button bindtap="wxPay" class="evaluation" data-id="B">余 额 支 付</button>
+    </view>
+</view>
+<view class="cover" style="display:{{displ3}}">
+    <view bindtap="back" class="cover1"></view>
+    <view class="cover3">
+        <button bindtap="chooseCoupon" class="evaluation">优 惠 券</button>
+        <button bindtap="chooseCard" class="evaluation">会 员 卡</button>
+        <button bindtap="chooseForceCard" class="evaluation">权 益 卡</button>
+    </view>
+</view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>
+<wxs module="filters" src="../../../addmul.wxs" />

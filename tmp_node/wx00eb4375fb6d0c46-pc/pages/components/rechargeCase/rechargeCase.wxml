@@ -1,0 +1,10 @@
+<view>
+    <view class="chooseBox {{showCase?'chooseBox-active':''}}'">
+        <view class="nav-item-box">
+            <view>
+                <text class="append">aaa</text>
+            </view>
+        </view>
+    </view>
+    <view bindtap="hideRechargeCase" class="chooseMask" wx:if="{{showCase}}"></view>
+</view>

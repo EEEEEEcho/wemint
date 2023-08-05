@@ -1,0 +1,65 @@
+// \pages/shop/shopcart touchMove Data Flow
+digraph {
+	d9cc0cd92cb94d208e6a8c96de797d8e [label="FunctionCall,
+function name -> touchMove,
+param -> " color=blue]
+	"2835606febd94dddac7e717e521ed2da" [label="If Alternate" color=blue]
+	"139fd6c38fef454aa5572b3ded97db0b" [label=VariableDeclarations color=blue]
+	"9ba6e324aceb41ed920eae48a476a56b" [label="VariableDeclarator,
+left -> s,
+right -> e.data" color=blue]
+	"139fd6c38fef454aa5572b3ded97db0b" -> "9ba6e324aceb41ed920eae48a476a56b"
+	f43decb705294866afc0ce061356c9a2 [label="VariableDeclarator,
+left -> i,
+right -> s.startX - a" color=blue]
+	"139fd6c38fef454aa5572b3ded97db0b" -> f43decb705294866afc0ce061356c9a2
+	a8952a8573e745dda47f58abbae48fb4 [label="VariableDeclarator,
+left -> n,
+right -> s.startY - o" color=blue]
+	"139fd6c38fef454aa5572b3ded97db0b" -> a8952a8573e745dda47f58abbae48fb4
+	"2835606febd94dddac7e717e521ed2da" -> "139fd6c38fef454aa5572b3ded97db0b"
+	"0dc80a967129497986b6082aabd07cbc" [label=VariableDeclarations color=blue]
+	"3c78f1b6a8244ecdae2b028556edb393" [label="VariableDeclarator,
+left -> c,
+right -> s.showList[r].pro_list[l].leftNum" color=blue]
+	"0dc80a967129497986b6082aabd07cbc" -> "3c78f1b6a8244ecdae2b028556edb393"
+	"2835606febd94dddac7e717e521ed2da" -> "0dc80a967129497986b6082aabd07cbc"
+	"60853254aa9e4b8c8f2dd63bb661a50a" [label="If Alternate" color=blue]
+	"061445a9abeb43268b5c966b9d61108e" [label=VariableDeclarations color=blue]
+	"1442987915e345ceb2d6728f3c4cb683" [label="VariableDeclarator,
+left -> h,
+right -> c + i" color=blue]
+	"061445a9abeb43268b5c966b9d61108e" -> "1442987915e345ceb2d6728f3c4cb683"
+	"60853254aa9e4b8c8f2dd63bb661a50a" -> "061445a9abeb43268b5c966b9d61108e"
+	"4ab665df551c40149d51a28d2acff36c" [label=SequenceExpression color=blue]
+	"07db01c20ae14a72bf685e126140f5b8" [label="Assignment,
+left -> u,
+right -> 'left:-' + h + 'px'" color=blue]
+	"4ab665df551c40149d51a28d2acff36c" -> "07db01c20ae14a72bf685e126140f5b8"
+	d36cc7d9074742afba83fdb722024023 [label="Assignment,
+left -> i,
+right -> h" color=blue]
+	"4ab665df551c40149d51a28d2acff36c" -> d36cc7d9074742afba83fdb722024023
+	"60853254aa9e4b8c8f2dd63bb661a50a" -> "4ab665df551c40149d51a28d2acff36c"
+	"2835606febd94dddac7e717e521ed2da" -> "60853254aa9e4b8c8f2dd63bb661a50a"
+	"871220201ae44b6d959a5ee52287a12c" [label=SequenceExpression color=blue]
+	b8f2fd230de94be2952741e731548f0b [label="Assignment,
+left -> s.showList[r].pro_list[l].txtStyle,
+right -> u" color=blue]
+	"871220201ae44b6d959a5ee52287a12c" -> b8f2fd230de94be2952741e731548f0b
+	"74817ba66f8844e0b566c4253104ca03" [label="Assignment,
+left -> s.showList[r].pro_list[l].leftNum,
+right -> i" color=blue]
+	"871220201ae44b6d959a5ee52287a12c" -> "74817ba66f8844e0b566c4253104ca03"
+	b01aea8248534577bb0f02f6d98c12d9 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"704ffbb8ec3e49f78b507fae85069b47" [label="Object Properties
+{
+showList -> s.showList
+}" color=blue]
+	b01aea8248534577bb0f02f6d98c12d9 -> "704ffbb8ec3e49f78b507fae85069b47"
+	"871220201ae44b6d959a5ee52287a12c" -> b01aea8248534577bb0f02f6d98c12d9
+	"2835606febd94dddac7e717e521ed2da" -> "871220201ae44b6d959a5ee52287a12c"
+	d9cc0cd92cb94d208e6a8c96de797d8e -> "2835606febd94dddac7e717e521ed2da"
+}

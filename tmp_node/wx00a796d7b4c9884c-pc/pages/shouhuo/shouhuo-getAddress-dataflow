@@ -1,0 +1,22 @@
+// \pages/shouhuo/shouhuo getAddress Data Flow
+digraph {
+	"79d1d0b44d0c480fa16a0cc002d3ddcf" [label="FunctionCall,
+function name -> getAddress,
+param -> " color=blue]
+	"96209b408b04472e8bb0609b050bcd4d" [label=SequenceExpression color=blue]
+	fee82fd25277400891be48abb1fa7b03 [label="CallExpression,
+callee name -> console.log,
+param -> t.data.userid,
+" color=blue]
+	"96209b408b04472e8bb0609b050bcd4d" -> fee82fd25277400891be48abb1fa7b03
+	"474d409767db4ba8a3d91e4fe1a8cd82" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"2ae39aafd85943fcafd78bbd4b4a3c4b" [label="Object Properties
+{
+userid -> t.data.userid
+}" color=blue]
+	"474d409767db4ba8a3d91e4fe1a8cd82" -> "2ae39aafd85943fcafd78bbd4b4a3c4b"
+	"96209b408b04472e8bb0609b050bcd4d" -> "474d409767db4ba8a3d91e4fe1a8cd82"
+	"79d1d0b44d0c480fa16a0cc002d3ddcf" -> "96209b408b04472e8bb0609b050bcd4d"
+}

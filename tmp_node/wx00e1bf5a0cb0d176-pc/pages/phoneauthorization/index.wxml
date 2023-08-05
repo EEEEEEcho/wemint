@@ -1,0 +1,21 @@
+<view class="phoneauthorization">
+    <view class="phoneauthorization-img ">
+        <image mode="aspectFill" src="{{baseUrl}}/{{Icon}}"></image>
+    </view>
+    <view class="border1px"></view>
+    <view class="information">
+        <view class="information-title">请确认以下授权信息</view>
+        <view class="information-phone">
+            <view>授权手机号完善会员资料</view>
+        </view>
+    </view>
+    <view class="btn-groupss">
+        <button bindgetphonenumber="getPhoneNumber" bindtap="turnOff" openType="getPhoneNumber" type="primary">完善资料</button>
+    </view>
+    <view class="back-homepage">
+        <button bindtap="backHomepag" type="primary">返回首页</button>
+    </view>
+    <view class="tips">温馨提示：完成注册才能继续操作</view>
+</view>
+<include src="/pages/common/phoneauthorization/index.wxml"></include>
+<include src="/pages/common/popout/index.wxml"></include>

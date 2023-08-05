@@ -1,0 +1,27 @@
+// \pages/shop/record getScrollHeight Data Flow
+digraph {
+	fca462e519b84499ae3a36da04d2d288 [label="FunctionCall,
+function name -> getScrollHeight,
+param -> " color=blue]
+	a92d61874c574634b4a6d3505c4e70e1 [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"22db2fbc5faa46b784cc2afa98302504" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	d7e81d3219c04caba154911228a0a22c [label="Object Properties
+{
+scrollHeight -> wx.getSystemInfoSync().windowHeight - wx.getSystemInfoSync().windowWidth / 750 * 96
+}" color=blue]
+	"22db2fbc5faa46b784cc2afa98302504" -> d7e81d3219c04caba154911228a0a22c
+	a92d61874c574634b4a6d3505c4e70e1 -> "22db2fbc5faa46b784cc2afa98302504"
+	d7a31d6a2e2f4e86a8912f72c08075e5 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"8421027c055e4e29a9a629ad53b6070f" [label="Object Properties
+{
+scrollHeight -> wx.getSystemInfoSync().windowHeight
+}" color=blue]
+	d7a31d6a2e2f4e86a8912f72c08075e5 -> "8421027c055e4e29a9a629ad53b6070f"
+	a92d61874c574634b4a6d3505c4e70e1 -> d7a31d6a2e2f4e86a8912f72c08075e5
+	fca462e519b84499ae3a36da04d2d288 -> a92d61874c574634b4a6d3505c4e70e1
+}

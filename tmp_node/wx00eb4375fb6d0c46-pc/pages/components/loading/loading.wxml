@@ -1,0 +1,6 @@
+<view class="loading" wx:if="{{showLoading}}">
+    <view>
+        <image src="./../../../utils/imgs/logo.png"></image>
+        <view class="loadingText">--探索身边优惠--</view>
+    </view>
+</view>

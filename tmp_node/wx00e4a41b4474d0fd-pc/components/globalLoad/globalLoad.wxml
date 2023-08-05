@@ -1,0 +1,6 @@
+<view class="containView" hidden="{{isShow==false}}">
+    <view class="myload">
+        <view class="spinner"></view>
+        <view style="display:inline-block;">{{text}}</view>
+    </view>
+</view>

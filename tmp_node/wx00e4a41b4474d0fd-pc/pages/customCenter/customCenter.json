@@ -1,0 +1,17 @@
+{
+    "navigationBarTitleText": "我的定制",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "usingComponents": {
+        "component-pick-up": "../../components/pick-up/pick-up",
+        "component-pop-up": "../../components/pop-up/pop-up",
+        "component-section": "../../components/section-list/section-list",
+        "component-action-sheet": "../../components/action-sheet/action-sheet",
+        "component-count-down": "../../components/count-down/count-down",
+        "myLoading": "../../components/globalLoad/globalLoad",
+        "navbar": "/components/navbar/navbar",
+        "c-img": "../components/indexImg/indexImg"
+    }
+}

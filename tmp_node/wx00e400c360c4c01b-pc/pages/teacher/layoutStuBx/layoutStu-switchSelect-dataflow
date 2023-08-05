@@ -1,0 +1,30 @@
+// \pages/teacher/layoutStuBx/layoutStu switchSelect Data Flow
+digraph {
+	ec3a0ee0ea3d4421b48471f49f140bfa [label="FunctionCall,
+function name -> switchSelect,
+param -> a.,
+a,
+" color=blue]
+	"3bb194b735014374a516e67ebf74dc85" [label=VariableDeclarations color=blue]
+	"6085bc3e7ca64ee685f795b33fe547bb" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"8197eef57d3343e099e66906a82486fd" [label=SequenceExpression color=blue]
+	"2ee771966f2347d7958f434bfc3f741e" [label="CallExpression,
+callee name -> parseInt,
+param -> a.target.dataset.index,
+" color=blue]
+	"8197eef57d3343e099e66906a82486fd" -> "2ee771966f2347d7958f434bfc3f741e"
+	"6085bc3e7ca64ee685f795b33fe547bb" -> "8197eef57d3343e099e66906a82486fd"
+	"3bb194b735014374a516e67ebf74dc85" -> "6085bc3e7ca64ee685f795b33fe547bb"
+	ec3a0ee0ea3d4421b48471f49f140bfa -> "3bb194b735014374a516e67ebf74dc85"
+	"26eaf1f2f9804fe39c5e5f5e807063a2" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	eb5e07ebf35e46d7b8c473d8390978dc [label="Object Properties
+{
+carts -> this.data.carts
+}" color=blue]
+	"26eaf1f2f9804fe39c5e5f5e807063a2" -> eb5e07ebf35e46d7b8c473d8390978dc
+	ec3a0ee0ea3d4421b48471f49f140bfa -> "26eaf1f2f9804fe39c5e5f5e807063a2"
+}

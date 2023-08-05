@@ -1,0 +1,133 @@
+@import "UserReg.wxss";
+
+page {
+    background-color: #ffffff;
+}
+
+.homeWrapper {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+@import "../template/modules.wxss";
+
+.notice-mask {
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.notice-info {
+    z-index: 9999999;
+    position: fixed;
+    width: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20rpx;
+}
+
+.notice-item {
+    width: 100%;
+    background: #fff;
+}
+
+.notice-title {
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #333;
+    font-size: 20px;
+    text-align: center;
+    background: white;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    padding: 0 30rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    box-sizing: border-box;
+}
+
+.notice-image {
+    background: white;
+    text-align: center;
+    height: 410rpx;
+}
+
+.notice-image image {
+    height: 100%;
+    overflow: hidden;
+}
+
+.notice-image image {
+    max-width: 100%;
+}
+
+.notice-intro {
+    background: white;
+    padding: 34rpx 10% 10rpx;
+    color: #333;
+    line-height: 45rpx;
+    font-size: 24rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.notice-detailbtn {
+    text-align: center;
+    background: white;
+    padding: 30rpx 0;
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+}
+
+.notice-detailbtn .button {
+    width: 284rpx;
+    height: 88rpx;
+    border-radius: 88rpx;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #2a292f;
+    color: #ffc000;
+    line-height: 88rpx;
+    font-size: 28rpx;
+}
+
+.notice-closebtn {
+    text-align: center;
+    padding: 30rpx 0;
+}
+
+.notice-closebtn .button {
+    margin: 0 auto;
+    color: white;
+    line-height: 54rpx;
+    font-size: 40rpx;
+}
+
+.icon-guanbi {
+    font-size: 60rpx;
+    color: #fff;
+}
+
+.coach-tit {
+    font-size: 30rpx;
+    color: #999;
+}
+
+.home,.home-she {
+    color: #ffc000!important;
+}

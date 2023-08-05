@@ -1,0 +1,17 @@
+// \pages/stu/parentCircle/parentCircle addContent Data Flow
+digraph {
+	"8f1db16748254ea09a0ad086e5164c84" [label="FunctionCall,
+function name -> addContent,
+param -> t,
+t.,
+" color=blue]
+	bbbe10368bab452ab993e08371ec5c20 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	ec22e813fb684f1a864512d9c9906398 [label="Object Properties
+{
+content -> t.detail.value
+}" color=blue]
+	bbbe10368bab452ab993e08371ec5c20 -> ec22e813fb684f1a864512d9c9906398
+	"8f1db16748254ea09a0ad086e5164c84" -> bbbe10368bab452ab993e08371ec5c20
+}

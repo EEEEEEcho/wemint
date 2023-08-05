@@ -1,0 +1,42 @@
+// \pages/sureOrder/sureOrder chooseTicket Data Flow
+digraph {
+	bc86505a0a3b4b329ce315419e7aae3c [label="FunctionCall,
+function name -> chooseTicket,
+param -> e.,
+e,
+" color=blue]
+	"7f3aae7e6c954366855124b65ecb2e03" [label=VariableDeclarations color=blue]
+	b032b9e3e5974258a28d4d8882fdf921 [label="VariableDeclarator,
+left -> t,
+right -> e.currentTarget.dataset.logid" color=blue]
+	"7f3aae7e6c954366855124b65ecb2e03" -> b032b9e3e5974258a28d4d8882fdf921
+	"0e60ec69e3be4145aa52fc70112ea798" [label="VariableDeclarator,
+left -> a,
+right -> this.data.ticket" color=blue]
+	"7f3aae7e6c954366855124b65ecb2e03" -> "0e60ec69e3be4145aa52fc70112ea798"
+	d70f60cc2bcd4be5b2ff79825054ab2f [label="VariableDeclarator,
+left -> i,
+right -> this.data.useTicket" color=blue]
+	"7f3aae7e6c954366855124b65ecb2e03" -> d70f60cc2bcd4be5b2ff79825054ab2f
+	"27af7c36417f4cb78970d56f53dc161b" [label="VariableDeclarator,
+left -> s,
+right -> this.data.finalPrice" color=blue]
+	"7f3aae7e6c954366855124b65ecb2e03" -> "27af7c36417f4cb78970d56f53dc161b"
+	bc86505a0a3b4b329ce315419e7aae3c -> "7f3aae7e6c954366855124b65ecb2e03"
+	"6860e0711bda460aba05b6ee9e17cc66" [label=SequenceExpression color=blue]
+	b80eefdf91bf4735ab3e336900b44b90 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"0d35281eac124a569a4cb3da96d44edc" [label="Object Properties
+{
+useTicket -> i
+}" color=blue]
+	"7c2a8305b32f43ab802a0db158db9f2e" [label="CallExpression,
+callee name -> getApp().moneyFilter,
+param -> s,
+" color=blue]
+	"0d35281eac124a569a4cb3da96d44edc" -> "7c2a8305b32f43ab802a0db158db9f2e"
+	b80eefdf91bf4735ab3e336900b44b90 -> "0d35281eac124a569a4cb3da96d44edc"
+	"6860e0711bda460aba05b6ee9e17cc66" -> b80eefdf91bf4735ab3e336900b44b90
+	bc86505a0a3b4b329ce315419e7aae3c -> "6860e0711bda460aba05b6ee9e17cc66"
+}

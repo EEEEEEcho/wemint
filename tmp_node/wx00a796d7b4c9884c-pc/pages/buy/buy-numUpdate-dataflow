@@ -1,0 +1,16 @@
+// \pages/buy/buy numUpdate Data Flow
+digraph {
+	dab7230f08574f9883d0a193ff1d26f6 [label="FunctionCall,
+function name -> numUpdate,
+param -> " color=blue]
+	"1fdcf3f2c3f64ff7baee18e8938f2bc2" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	e89de2a9ab474b8689fb23456201cda3 [label="Object Properties
+{
+num -> e.data.num
+id -> e.data.cart_id
+}" color=blue]
+	"1fdcf3f2c3f64ff7baee18e8938f2bc2" -> e89de2a9ab474b8689fb23456201cda3
+	dab7230f08574f9883d0a193ff1d26f6 -> "1fdcf3f2c3f64ff7baee18e8938f2bc2"
+}

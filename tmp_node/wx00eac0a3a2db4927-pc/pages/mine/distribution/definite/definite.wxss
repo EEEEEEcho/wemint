@@ -1,0 +1,35 @@
+.definite {
+    border-bottom: 1rpx solid #ccc;
+    height: 127rpx;
+    width: 100%;
+    justify-content: center;
+}
+
+.bill,.bill_money {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bill_title,.surplus {
+    margin-left: 34rpx;
+}
+
+.bill_date,.deduct {
+    margin-right: 34rpx;
+}
+
+.bill_title,.surplus,.deduct {
+    color: #50505b;
+}
+
+.bill_date {
+    color: #9a9aa8;
+}
+
+.bill_date,.surplus {
+    font-size: 24rpx;
+}
+
+.deduct {
+    font-size: 32rpx;
+}

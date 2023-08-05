@@ -1,0 +1,35 @@
+<view class="margintop5"></view>
+<view class="payView">
+    <view class="scatitle">
+        {{class_num}}
+    </view>
+    <view class="scatext">
+        剩余课时
+    </view>
+</view>
+<view class="margintop100">
+    <view class="record">
+        <view>
+            <text class="placeholder-class">————</text>
+            <label>上课记录</label>
+            <text class="placeholder-class">————</text>
+        </view>
+    </view>
+</view>
+<view class="section">
+    <view class="wnr" wx:if="{{csaList.length==0}}">
+        <image src="http://p7mq9gjza.bkt.clouddn.com/non.png" style="width:276px; height:319px;"></image>
+    </view>
+    <scroll-view bindscrolltolower="searchScrollLower" scrollY="true" style="height: {{scrollHeight}}rpx;" wx:else>
+        <view class="currContent" wx:for="{{csaList}}" wx:key="activity">
+            <view class="currContent_list2">
+                <image class="currContent_time" src="../../../image/me_line@2x.png"></image>
+            </view>
+            <view class="currContent_list3">
+                <view class="lable">{{item.class_time}}</view>
+                <view class="lable">{{item.theme_name}}</view>
+                <view class="lable2">{{item.teacher_name}}</view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

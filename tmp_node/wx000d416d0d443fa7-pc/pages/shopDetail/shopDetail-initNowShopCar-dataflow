@@ -1,0 +1,17 @@
+// \pages/shopDetail/shopDetail initNowShopCar Data Flow
+digraph {
+	"20d686d822604db3a3b372b8cc66c03c" [label="FunctionCall,
+function name -> initNowShopCar,
+param -> " color=blue]
+	"1ff6c503f0c042289c5d8ba7bdd18d92" [label=VariableDeclarations color=blue]
+	"7dea0752c94547988434d6a547e4669c" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	ea71f44ef70042fa9c248bd30c4b8ac1 [label="Object Properties
+{
+goodsPrice_sum -> this.data.sumPrice
+}" color=blue]
+	"7dea0752c94547988434d6a547e4669c" -> ea71f44ef70042fa9c248bd30c4b8ac1
+	"1ff6c503f0c042289c5d8ba7bdd18d92" -> "7dea0752c94547988434d6a547e4669c"
+	"20d686d822604db3a3b372b8cc66c03c" -> "1ff6c503f0c042289c5d8ba7bdd18d92"
+}

@@ -1,0 +1,17 @@
+// \pages/shop/shopcart judgeCheckedNum Data Flow
+digraph {
+	eaf2af6fab5740688972da9b73b4fe01 [label="FunctionCall,
+function name -> judgeCheckedNum,
+param -> " color=blue]
+	b6bb05194c78451f8988e6aad3ce78b3 [label=SequenceExpression color=blue]
+	"2adb8129655f46a9bdde50d56fa8bffb" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"631d6e55648d4ff9a115171b5b827279" [label="Object Properties
+{
+allChecked -> t === this.data.checkedNum
+}" color=blue]
+	"2adb8129655f46a9bdde50d56fa8bffb" -> "631d6e55648d4ff9a115171b5b827279"
+	b6bb05194c78451f8988e6aad3ce78b3 -> "2adb8129655f46a9bdde50d56fa8bffb"
+	eaf2af6fab5740688972da9b73b4fe01 -> b6bb05194c78451f8988e6aad3ce78b3
+}

@@ -1,0 +1,21 @@
+// \pages/customHouse/customHouse onHouseTypeUpdate Data Flow
+digraph {
+	b89e2472779349bd85b5d107cd048b5e [label="FunctionCall,
+function name -> onHouseTypeUpdate,
+param -> " color=blue]
+	abd5f96b414749b6ba0e8ea4f4bbd897 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"596905a25851423abe6b8132438df741" [label=SequenceExpression color=blue]
+	"85e159ea273b4b7288ed5edbee9d4c84" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"6dd9f6fdc5f549ff87c4150ab0e65769" [label="Object Properties
+{
+preHouseType -> this.data.selectedType
+}" color=blue]
+	"85e159ea273b4b7288ed5edbee9d4c84" -> "6dd9f6fdc5f549ff87c4150ab0e65769"
+	"596905a25851423abe6b8132438df741" -> "85e159ea273b4b7288ed5edbee9d4c84"
+	abd5f96b414749b6ba0e8ea4f4bbd897 -> "596905a25851423abe6b8132438df741"
+	b89e2472779349bd85b5d107cd048b5e -> abd5f96b414749b6ba0e8ea4f4bbd897
+}

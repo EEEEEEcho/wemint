@@ -1,0 +1,33 @@
+<view class="fixedTopBorder"></view>
+<view class="container">
+    <view class="memberWrapper">
+        <view class="headerWrapper">
+            <view class="imgMember">
+                <image src="{{myteam.HeadImgUrl}}"></image>
+            </view>
+            <view class="memberMessage">
+                <text class="memberName">{{myteam.NickName}}</text>
+            </view>
+            <view class="yongjin">
+                <view class="yongjin-l">
+                    <view class="yongjin-con">贡献{{language.TIPS_Commission}}</view>
+                    <view class="yongjin-txt">{{myteam.ContributionMoney}}</view>
+                </view>
+                <view class="yongjin-l">
+                    <view class="yongjin-con">下级数</view>
+                    <view class="yongjin-txt">{{myteam.ChildCount}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="contentWrapper">
+            <view class="timeTitle border1px">
+                <text class=" iconfont icon-iconfont-yongjin"></text>
+                <text>贡献{{language.TIPS_Commission}}</text>
+            </view>
+            <view class="contributionMoney border1px" wx:for="{{myteams}}" wx:key="id">
+                <text class="Money">￥{{item.Money}}</text>
+                <text class="time">{{item.CrTime}}</text>
+            </view>
+        </view>
+    </view>
+</view>

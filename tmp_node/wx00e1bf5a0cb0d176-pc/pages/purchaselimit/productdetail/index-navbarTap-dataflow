@@ -1,0 +1,17 @@
+// \pages/purchaselimit/productdetail/index navbarTap Data Flow
+digraph {
+	d4071e44a8404b8da5ef3d08c46afae6 [label="FunctionCall,
+function name -> navbarTap,
+param -> t,
+t.,
+" color=blue]
+	c605415b8490447f957def52f7547d52 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	d26551b4794b4c1b915086afb3269871 [label="Object Properties
+{
+currentTab -> t.currentTarget.dataset.idx
+}" color=blue]
+	c605415b8490447f957def52f7547d52 -> d26551b4794b4c1b915086afb3269871
+	d4071e44a8404b8da5ef3d08c46afae6 -> c605415b8490447f957def52f7547d52
+}

@@ -1,0 +1,35 @@
+// \pages/mine/index userInfoHandler Data Flow
+digraph {
+	"2ac032a6996f440da47b9ca80e8b46e5" [label="FunctionCall,
+function name -> userInfoHandler,
+param -> a.,
+a,
+" color=blue]
+	"02a3a597b7504e1887a0a520a1d61f44" [label="If Alternate" color=blue]
+	c5853a68e9b44fb5b16bb74c544658d0 [label="CallExpression,
+callee name -> console.log,
+param -> a,
+" color=blue]
+	"02a3a597b7504e1887a0a520a1d61f44" -> c5853a68e9b44fb5b16bb74c544658d0
+	"0db1a66fc20d4afcb5555859bf0d488b" [label=VariableDeclarations color=blue]
+	d9339b5c4267446fab43d826d49d572a [label="VariableDeclarator,
+left -> o,
+right -> a.detail.userInfo.avatarUrl" color=blue]
+	"0db1a66fc20d4afcb5555859bf0d488b" -> d9339b5c4267446fab43d826d49d572a
+	aa63ab67a93749269523d6289012c7a1 [label="VariableDeclarator,
+left -> t,
+right -> a.detail.userInfo.nickName" color=blue]
+	"0db1a66fc20d4afcb5555859bf0d488b" -> aa63ab67a93749269523d6289012c7a1
+	"02a3a597b7504e1887a0a520a1d61f44" -> "0db1a66fc20d4afcb5555859bf0d488b"
+	"62ed81f3c56448329d51a36df2b8fa24" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"3c5eda8f624a416e96d727cfc60ae23d" [label="Object Properties
+{
+headimgurl -> o
+nickname -> t
+}" color=blue]
+	"62ed81f3c56448329d51a36df2b8fa24" -> "3c5eda8f624a416e96d727cfc60ae23d"
+	"02a3a597b7504e1887a0a520a1d61f44" -> "62ed81f3c56448329d51a36df2b8fa24"
+	"2ac032a6996f440da47b9ca80e8b46e5" -> "02a3a597b7504e1887a0a520a1d61f44"
+}

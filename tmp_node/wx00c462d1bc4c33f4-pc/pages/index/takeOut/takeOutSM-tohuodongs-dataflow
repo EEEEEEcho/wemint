@@ -1,0 +1,19 @@
+// \pages/index/takeOut/takeOutSM tohuodongs Data Flow
+digraph {
+	"8655390139234bb58389e952eaf14cd1" [label="FunctionCall,
+function name -> tohuodongs,
+param -> e.,
+e,
+" color=blue]
+	"0d32ea9bc75846eb9de36d24f48fc65d" [label=SequenceExpression color=blue]
+	"4ea16bef54a747b886e4192b4b221c71" [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	"5e123ee3083446aa95e29402660bba4b" [label="Object Properties
+{
+data -> e.currentTarget.dataset.foodId
+}" color=blue]
+	"4ea16bef54a747b886e4192b4b221c71" -> "5e123ee3083446aa95e29402660bba4b"
+	"0d32ea9bc75846eb9de36d24f48fc65d" -> "4ea16bef54a747b886e4192b4b221c71"
+	"8655390139234bb58389e952eaf14cd1" -> "0d32ea9bc75846eb9de36d24f48fc65d"
+}

@@ -1,0 +1,5 @@
+.date-time {
+    color: #2A453B;
+    font-size: 24rpx;
+    line-height: 32rpx;
+}

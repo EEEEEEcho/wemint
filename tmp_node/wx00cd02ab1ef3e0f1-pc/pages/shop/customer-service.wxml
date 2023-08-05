@@ -1,0 +1,43 @@
+<view class="container">
+    <view class="fixedTopBorder"></view>
+    <view class="product-list">
+        <scroll-view bindscrolltolower="onOrderListScroll" lowerThreshold="20" scrollTop="{{scrollCurrent}}" scrollY="true" style="height:{{scrollHeight}}px;">
+            <view class="noproducttips" wx:if="{{refundslist.length==0}}">
+                <image mode="widthFix" src="../../images/blank_10.png"></image>
+                <text>你还没有相关的订单</text>
+            </view>
+            <view class="order-list" data-pkey="{{orderitem.Pkey}}" wx:for="{{refundslist}}" wx:for-index="idx" wx:for-item="orderitem" wx:key="id">
+                <view class="tuikuang" wx:if="{{orderitem.Status==0&&orderitem.RefundProStatus==null}}">申请退款</view>
+                <view class="tuikuang" wx:elif="{{orderitem.Status==1&&orderitem.RefundProStatus==null}}">退款完成</view>
+                <view class="tuikuang" wx:elif="{{orderitem.Status==2&&orderitem.RefundProStatus==null}}">退款失败</view>
+                <view class="tuikuang" wx:elif="{{orderitem.Status==0&&orderitem.RefundProStatus==0}}">申请退货</view>
+                <view class="tuikuang" wx:elif="{{orderitem.Status==0&&orderitem.RefundProStatus==1}}">同意退货，等待买家退货</view>
+                <view class="tuikuang" wx:elif="{{orderitem.Status==0&&orderitem.RefundProStatus==2}}">已退货，等待处理</view>
+                <view class="tuikuang" wx:elif="{{orderitem.Status==1&&orderitem.RefundProStatus==2}}">退货完成</view>
+                <view class="tuikuang" wx:elif="{{orderitem.Status==2&&orderitem.RefundProStatus==0}}">退货失败</view>
+                <view class="tuikuang" wx:else></view>
+                <view bindtap="goRefund" class="order-list-item" data-RefundProStatus="{{orderitem.RefundProStatus}}" data-pkey="{{orderitem.Pkey}}" data-status="{{orderitem.Status}}">
+                    <view class="pro-img">
+                        <image mode="widthFix" src="{{baseUrl}}/comdata/{{siteID}}/product/{{orderitem.ProductImage}}"></image>
+                    </view>
+                    <view class="protext">
+                        <view class="pro-name">{{orderitem.ProductName}}</view>
+                        <view class="pro-jiange">
+                            <text class="guige">{{orderitem.ProAttrStr}}</text>
+                            <text class="chima">x{{orderitem.ProductNum}}</text>
+                        </view>
+                        <view class="pro-Price">
+                            <text class="selling-price">￥{{orderitem.Money}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="order-bottom border1px" style="display:{{orderitem.RefundProStatus==1?' block':'none'}}">
+                    <view wx:if="{{orderitem.RefundProStatus==1}}">
+                        <text bindtap="goRufundswuliu" class="other-button-item" data-pkey="{{orderitem.Pkey}}">去退货</text>
+                    </view>
+                    <view></view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

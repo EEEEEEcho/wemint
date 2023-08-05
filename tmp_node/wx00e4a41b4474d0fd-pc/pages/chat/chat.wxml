@@ -1,0 +1,166 @@
+<myLoading id="myLoading"></myLoading>
+<image class="bind-icon" src="https://dm.static.elab-plus.com/wepy_pro/im/bangding.png" style="{{isBusy?'top:45px':''}}" wx:if="{{isBindStatus==1}}"></image>
+<view class="model" wx:if="{{showImgModel}}">
+    <view class="modelTitle">
+        请求获取授权
+    </view>
+    <view class="modelBody">您还未授权摄像头及录音权限,暂时无法使用此功能,点击确定重新获取授权。</view>
+    <view class="btns">
+        <button bindopensetting="getShareProgram" class="agree" lang="zh_CN" openType="openSetting" plain="true">下一步</button>
+    </view>
+</view>
+<view class="mask2" wx:if="{{showImModal||showNoAdviserModal}}"></view>
+<view class="showImModal" wx:if="{{showImModal}}">
+    <view class="imModalText">该顾问未及时回复，</view>
+    <view class="imModalText">是否选择其他顾问进行咨询？</view>
+    <view class="imModalBtnBox">
+        <view bindtap="nextTime" class="nextTime">暂不需要</view>
+        <view bindtap="goPdAction" class="goImBtn">换顾问</view>
+    </view>
+</view>
+<view class="showImModal" wx:if="{{showNoAdviserModal}}">
+    <view class="imModalText">很抱歉，当前暂无其他在线顾问，您可在线留电或稍后再试。</view>
+    <view class="imModalBtnBox">
+        <view bindtap="nextTime" class="nextTime">稍后再试</view>
+        <view bindtap="showOnlineLiudian" class="goImBtn">在线留电</view>
+    </view>
+</view>
+<view class="showImModal" wx:if="{{liudianFromPd}}">
+    <view class="imModalText">填写号码完成在线留电</view>
+    <view class="tel-box-bottom" style="padding-top:10px">
+        <view class="input-box" style="text-align:left;width:90%;margin-left:5%">
+            <input bindinput="bindTel" class="input-tel" placeholder="请输入手机号" placeholderStyle="font-size:24rpx;color:#fff;" type="text"></input>
+            <view bindtap="getVerifyCode" class="verify-btn">{{verifyText}}</view>
+        </view>
+        <view class="input-box" style="text-align:left;width:90%;margin-left:5%">
+            <input bindinput="verifyCode" class="input-tel" placeholder="请输入验证码" placeholderStyle="font-size:24rpx;color:#fff;" type="text"></input>
+            <view bindtap="sendTel" class="verify-btn" style="text-align: right;padding-right:15px;color:#5370FF;">提交</view>
+        </view>
+    </view>
+</view>
+<view style="background:#eee">
+    <view class="title" wx:if="{{isBusy}}">
+        <view class="ad-name">
+            <text>顾问{{adviserName}}当前离线，可能无法立即回复</text>
+        </view>
+    </view>
+    <scroll-view scrollY bindscrolltoupper="scrollTop" class="message-box" scrollIntoView="{{toView}}" style="height:100vh;">
+        <view class="line-box">
+            <view class="line"></view>
+            <view class="line-text">{{adviserInfo.honor||'资深顾问'}}{{adviserName}}为您服务</view>
+            <view class="line"></view>
+        </view>
+        <view class="message-text {{item.local?'right':'left'}} " wx:for="{{localMessages}}" wx:key="index">
+            <view class="system-tip line-box2" wx:if="{{item.content.type&&item.content.type==503}}">
+                <image src="https://dm.static.elab-plus.com/wepy_pro/im/isAgreeIcon.png" style="height:20px;width:140.8px"></image>
+            </view>
+            <view class="{{item.content&&(item.content.type==104||item.content.type==506||item.content.type==509)?'text-content1':'text-content'}}" style="{{item.content&&item.content.type==520?'background-color:#fff':''}}" wx:if="{{item.content.type!=503}}">
+                <image bindtap="tryAgain" class="failed" data-index="{{index}}" data-msg="{{item.content}}" src="../../image/im/fail.png" wx:if="{{item.failed}}"></image>
+                <text selectable="true" wx:if="{{!item.content.type&&!item.content.second}}">{{item.content}}</text>
+                <text selectable="true" wx:if="{{item.content.type==515||item.content.type==516||item.content.type==521}}">{{item.content.param.text}}</text>
+                <view class="autoRepeatBox" wx:if="{{item.content.type&&item.content.type==520}}">
+                    <view style="color:#252525;text-align:left">{{item.content.param.textStart||''}}</view>
+                    <view bindtap="sendAutoQuestion" class="autoQuestion" data-message="{{repeatItem}}" wx:for="{{item.content.param.textList}}" wx:for-index="repeatIndex" wx:for-item="repeatItem" wx:key="repeatIndex">{{repeatItem.customerQuestion}}</view>
+                    <view style="color:#252525;line-height:45rpx;padding-bottom:10px;text-align:left">{{item.content.param.textEnd||''}}</view>
+                </view>
+                <view data-dialog="1" data-showvideo="1" data-url="{{item.content.param.linkedUrl}}" style="max-width:250px;max-height:300px" wx:if="{{item.content.type&&item.content.type==509}}">
+                    <image bindtap="previewImage" data-src="{{item.content.param.linkedUrl}}" mode="widthFix" src="{{item.content.param.linkedUrl}}" style="{{'width:'+(item.content.param.width>250?250:item.content.param.width||250)+'px'}}"></image>
+                </view>
+                <view bindtap="showDialog" data-dialog="1" data-showvideo="2" data-url="{{item.content.param.linkedUrl}}" style="max-width:250px;position:relative" wx:if="{{item.content.type&&item.content.type==506||item.content.type==508}}">
+                    <image class="play-icon" src="https://dm.static.elab-plus.com/wepy_pro/im/shipinbofang.png"></image>
+                    <image mode="widthFix" src="{{item.content.param.url}}" style="width:250px;border-radius:5px"></image>
+                </view>
+                <view style="width:200px;margin-bottom:10px" wx:if="{{item.content.type&&item.content.type==502}}">
+                    <view style="margin-top:5px;margin-left:5px">顾问{{adviserName}}</view>
+                    <view style="margin-left:5px;margin-bottom:10px;">正在请求获取您的手机号码</view>
+                    <view class="down-box" wx:if="{{!isGiveTel}}">
+                        <view bindtap="deny" class="deny-button">
+                            <icon class="deny-icon" color="gray" size="20" type="clear"></icon>
+                            <text> 拒绝</text>
+                        </view>
+                        <view bindtap="admit" class="deny-button">
+                            <icon class="deny-icon" color="gray" size="20" type="success"></icon>
+                            <text>同意</text>
+                        </view>
+                    </view>
+                    <view class="result-btn" wx:if="{{isGiveTel===1}}">
+                        <text>已拒绝</text>
+                    </view>
+                    <view class="result-btn" wx:if="{{isGiveTel===2}}">
+                        <text>已同意</text>
+                    </view>
+                </view>
+                <view bindtap="playSound" class="sound-box" data-index="{{index}}" data-url="{{item.content.downUrl}}" data-uuid="{{item.content.uuid}}" wx:if="{{item.content.second}}">
+                    <view class="sound-icon" style="{{'background-position-x:'+activeCount[index]+'px'}}"></view>
+                    <text style="line-height:25px">{{item.content.second}}s</text>
+                </view>
+                <view bindtap="goH5" data-url="{{item.content.param.url}}" style="display:flex" wx:if="{{item.content.type&&item.content.type==507}}">
+                    <view style="width:160px">
+                        <view>{{item.content.param.h5Title}}</view>
+                        <view style="font-size:14px;white-space:nowrap;overflow:hidden;texe-overflow:ellipsis">{{item.content.param.h5Desc}}</view>
+                    </view>
+                    <view>
+                        <image alt="" src="{{item.content.param.h5Icon}}" style="width:50px;height:50px;"></image>
+                    </view>
+                </view>
+                <view bindtap="goPDF" data-url="{{item.content.param.linkedUrl}}" style="display:flex" wx:if="{{item.content.type&&item.content.type==204}}">
+                    <view style="width:160px">
+                        <view>{{item.content.param.pdfTitle}}</view>
+                    </view>
+                    <view>
+                        <image alt="" src="{{pdfImg}}" style="width:50px;height:50px;border-radius:50%;"></image>
+                    </view>
+                </view>
+                <view bindtap="goVideo" data-consultantid="{{item.content.param.consultantId}}" data-istoself="{{item.content.param.isToSelf}}" style="width:250px;border-radius:5px;overflow:hidden" wx:if="{{item.content.type&&item.content.type==104}}">
+                    <image mode="widthFix" src="{{videoImg}}" style="width:250px"></image>
+                </view>
+                <view class="time-now" style="{{item.content&&item.content.type==520?'color:#525252':''}}" wx:if="{{item.content.type!=503}}">{{item.time||''}}</view>
+            </view>
+            <view class="head-box {{item.local?'head-right':'head-left'}}" wx:if="{{item.content.type!=503&&item.showHead}}">
+                <image class="head-img" src="{{item.local?customerHead:adviserInfo.head}}"></image>
+            </view>
+        </view>
+        <view class="hei {{isFullScreen?'full-screen':''}}" id="hei"></view>
+    </scroll-view>
+    <view class="bottom-box {{isFullScreen?'full-screen':''}}">
+        <image bindtap="inputFocus" class="keyboard-img" src="https://dm.static.elab-plus.com/wepy_pro/im/jianpan.png"></image>
+        <input confirmHold bindblur="lostFocus" bindconfirm="bindButtonTap" bindinput="bindKeyInput" class="input-box" focus="{{inputFocus}}" placeholder="点击输入..." placeholderStyle="font-size:14px;color:#cccccc" value="{{currentMessage}}"></input>
+        <image bindtap="uploadImgs" class="uploadImg-img" src="https://dm.static.elab-plus.com/wepy_pro/im/tupian.png"></image>
+    </view>
+    <view bindtap="showDialog" class="dialog" data-dialog="2" wx:if="{{dialog==1}}">
+        <view class="pic-div">
+            <video controls catchtap="prevent" objectFit="cover" src="{{imgUrl}}" style="width:100vw" wx:if="{{showvideo==2}}"></video>
+            <image alt="" src="{{imgUrl}}" style="width:100vw" wx:else></image>
+        </view>
+    </view>
+    <view class="show-tel-dialog" wx:if="{{showTelBox}}">
+        <view class="tel-box">
+            <view bindtap="showTelBox" class="close-btn">
+                <image class="icon-close" src="https://dm.static.elab-plus.com/wepy_pro/1-20-guanbi.png"></image>
+            </view>
+            <view class="title-text">
+                <view class="busy-text">对不起，您的私人顾问目前正忙！</view>
+                <view class="call-text">您可以拨打顾问电话：</view>
+            </view>
+            <view bindtap="callTel" class="call-btn" wx:if="{{adviserPhone}}">
+                <view class="ic-phone"></view>
+                <span style="color:#fff;font-weight:0">
+                    {{adviserPhone}}
+                </span>
+            </view>
+            <view class="tel-box-bottom">
+                <view class="text">
+                    您也可以留下电话等顾问主动联系您:
+                </view>
+                <view class="input-box">
+                    <input bindinput="bindTel" class="input-tel" placeholder="请输入手机号" placeholderStyle="font-size:24rpx;color:#fff;" type="text"></input>
+                    <view bindtap="getVerifyCode" class="verify-btn">{{verifyText}}</view>
+                </view>
+                <view class="input-box">
+                    <input bindinput="verifyCode" class="input-tel" placeholder="请输入验证码" placeholderStyle="font-size:24rpx;color:#fff;" type="text"></input>
+                    <view bindtap="sendTel" class="verify-btn" style="text-align: right;padding-right:15px;color:#5370FF;">提交</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

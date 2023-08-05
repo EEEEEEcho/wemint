@@ -1,0 +1,15 @@
+// \pages/houseTypeDetail/houseTypeDetail onShareAppMessage Data Flow
+digraph {
+	"8b302ffa40004ea5842180c02d272d6e" [label="FunctionCall,
+function name -> onShareAppMessage,
+param -> " color=blue]
+	"469fe733212a44e1b7a31a286e540cc8" [label=ReturnExpression color=blue]
+	becd5713c5d64fd6b7d95bd43fb3a2ec [label=SequenceExpression color=blue]
+	"49be21a8f1f8476a979f414b18c9e052" [label="Object Properties
+{
+path -> '/pages/houseTypeDetail/houseTypeDetail?shareToken=' + d.globalData.shareToken + '&currentIndex=' + this.data.currentIndex + '&currentName=' + this.data.currentName + '&id=' + this.data.active + '&buildingId=' + this.data.buildingId + '&btnColor=' + this.data.btnColor + '&lineColor=' + this.data.lineColor + '&textColor=' + this.data.textColor + '&backgroundColor=' + this.data.backgroundColor
+}" color=blue]
+	becd5713c5d64fd6b7d95bd43fb3a2ec -> "49be21a8f1f8476a979f414b18c9e052"
+	"469fe733212a44e1b7a31a286e540cc8" -> becd5713c5d64fd6b7d95bd43fb3a2ec
+	"8b302ffa40004ea5842180c02d272d6e" -> "469fe733212a44e1b7a31a286e540cc8"
+}

@@ -1,0 +1,31 @@
+// \pages/shop/userorder ConfirmReceive Data Flow
+digraph {
+	bbba32cba05f45ac8cbf88dfa30102d3 [label="FunctionCall,
+function name -> ConfirmReceive,
+param -> a.,
+a,
+" color=blue]
+	"60fd829791ae4c18b1655087f29b3a4b" [label=VariableDeclarations color=blue]
+	bdde01ada4a545b5ac7d4e4d459642f0 [label="VariableDeclarator,
+left -> o,
+right -> a.currentTarget.dataset.orderid" color=blue]
+	"60fd829791ae4c18b1655087f29b3a4b" -> bdde01ada4a545b5ac7d4e4d459642f0
+	"22b6a24355694627aeb35c7b4d18e0d6" [label="VariableDeclarator,
+left -> r,
+right -> a.detail.formId" color=blue]
+	"60fd829791ae4c18b1655087f29b3a4b" -> "22b6a24355694627aeb35c7b4d18e0d6"
+	bbba32cba05f45ac8cbf88dfa30102d3 -> "60fd829791ae4c18b1655087f29b3a4b"
+	"473a02be9d0f4a51901bba30a1c3bfe8" [label=ReturnExpression color=blue]
+	"92d6a4b34e9b4cb7998a48e6f24e7ea2" [label=SequenceExpression color=blue]
+	"5ccfbabb8c0e43bb805a6d1056f5a679" [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	e12440c8335049d2bd2cffdf6c0e86ea [label="FunctionCall,
+function name -> success,
+param -> a,
+" color=blue]
+	"5ccfbabb8c0e43bb805a6d1056f5a679" -> e12440c8335049d2bd2cffdf6c0e86ea
+	"92d6a4b34e9b4cb7998a48e6f24e7ea2" -> "5ccfbabb8c0e43bb805a6d1056f5a679"
+	"473a02be9d0f4a51901bba30a1c3bfe8" -> "92d6a4b34e9b4cb7998a48e6f24e7ea2"
+	bbba32cba05f45ac8cbf88dfa30102d3 -> "473a02be9d0f4a51901bba30a1c3bfe8"
+}

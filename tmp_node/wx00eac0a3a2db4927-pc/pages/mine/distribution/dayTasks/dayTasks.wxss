@@ -1,0 +1,98 @@
+.dailyTasks {
+    width: 682rpx;
+    margin: 0 34rpx;
+}
+
+.imageBack {
+    width: 682rpx;
+    height: 300rpx;
+    border-radius: 24rpx;
+    margin-top: 20rpx;
+    background: #999;
+}
+
+.taskImage {
+    width: 682rpx;
+    height: 300rpx;
+    border-radius: 24rpx;
+}
+
+.doTask {
+    margin: 20rpx 0;
+    font-size: 32rpx;
+    color: #51515c;
+    font-weight: bold;
+    letter-spacing: 4rpx;
+}
+
+.taskCards {
+    box-shadow: 0rpx 0rpx 6rpx 6rpx #edeeee;
+    border-radius: 24rpx;
+}
+
+.columnCard {
+    align-items: center;
+    margin: 20rpx;
+}
+
+.cardTtile {
+    font-size: 26rpx;
+    color: #51515c;
+}
+
+.cardTask {
+    font-size: 20rpx;
+    color: #aeaeb4;
+    margin-top: 6rpx;
+    letter-spacing: 4rpx;
+}
+
+.cardRight {
+    margin-left: auto;
+    font-size: 24rpx;
+    color: #fff;
+    background: #ed7b43;
+    padding: 6rpx 16rpx;
+    border-radius: 24rpx;
+}
+
+.cardRightAlready {
+    margin-left: auto;
+    font-size: 24rpx;
+    color: #fff;
+    background: #aeaeb4;
+    padding: 6rpx 16rpx;
+    border-radius: 24rpx;
+}
+
+.first {
+    padding-top: 20rpx;
+}
+
+.last {
+    padding-bottom: 20rpx;
+}
+
+.lineStyle {
+    border-bottom: 1rpx solid #edeeee;
+    width: 682rpx;
+    margin: 14rpx 0;
+}
+
+.rule {
+    margin-top: 20rpx;
+    align-items: center;
+}
+
+.ruleSymbol {
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 10rpx;
+    background: #aeaeb4;
+}
+
+.ruleWords {
+    font-size: 22rpx;
+    color: #aeaeb4;
+    margin-left: 10rpx;
+}

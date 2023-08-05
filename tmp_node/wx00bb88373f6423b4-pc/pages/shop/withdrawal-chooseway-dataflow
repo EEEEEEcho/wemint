@@ -1,0 +1,27 @@
+// \pages/shop/withdrawal chooseway Data Flow
+digraph {
+	f3411c9379e143fbad5851882a9b77b9 [label="FunctionCall,
+function name -> chooseway,
+param -> a,
+a.,
+" color=blue]
+	"952ef0636ba445069613006440df6c56" [label=VariableDeclarations color=blue]
+	dfa996e210e14aadbee7fc19098cac8e [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"4286ce0f52cb420680e0232efd4720fe" [label=SequenceExpression color=blue]
+	"54b696aba49b4176948f3b7a0cc03fce" [label="CallExpression,
+callee name -> parseInt,
+param -> a.currentTarget.dataset.idx,
+" color=blue]
+	"4286ce0f52cb420680e0232efd4720fe" -> "54b696aba49b4176948f3b7a0cc03fce"
+	dfa996e210e14aadbee7fc19098cac8e -> "4286ce0f52cb420680e0232efd4720fe"
+	"952ef0636ba445069613006440df6c56" -> dfa996e210e14aadbee7fc19098cac8e
+	f3411c9379e143fbad5851882a9b77b9 -> "952ef0636ba445069613006440df6c56"
+	"512cb95c74d240c8b427f82448747e68" [label="ConditionalExpression,
+ conditional list -> this.setData" color=blue]
+	fe8720df82114a6f912148da07add6db [label="ConditionalExpression,
+ conditional list -> this.setData" color=blue]
+	"512cb95c74d240c8b427f82448747e68" -> fe8720df82114a6f912148da07add6db
+	f3411c9379e143fbad5851882a9b77b9 -> "512cb95c74d240c8b427f82448747e68"
+}

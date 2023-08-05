@@ -1,0 +1,14 @@
+// \pages/company/businessCard/cardDetails switchTab Data Flow
+digraph {
+	"313202faf40f4d7495ac97afef4ebd5c" [label="FunctionCall,
+function name -> switchTab,
+param -> t,
+t.,
+" color=blue]
+	"0085222c282f45d3a096aca1de062cc9" [label=VariableDeclarations color=blue]
+	ee307a9720724026953cb5fb15fdecc4 [label="VariableDeclarator,
+left -> e,
+right -> t.detail.current" color=blue]
+	"0085222c282f45d3a096aca1de062cc9" -> ee307a9720724026953cb5fb15fdecc4
+	"313202faf40f4d7495ac97afef4ebd5c" -> "0085222c282f45d3a096aca1de062cc9"
+}

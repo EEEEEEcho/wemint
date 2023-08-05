@@ -1,0 +1,27 @@
+// \pages/countdowndetail/countdowndetail addAmount Data Flow
+digraph {
+	dbf3f91ad43f48d48661ed26c730e24b [label="FunctionCall,
+function name -> addAmount,
+param -> t,
+t.,
+" color=blue]
+	"7dc47196a69f4de398c61988a21a72ec" [label=VariableDeclarations color=blue]
+	"21d93adffa8c4448a5c6afee5abc0112" [label="VariableDeclarator,
+left -> e,
+right -> this.data.buyAmount" color=blue]
+	"7dc47196a69f4de398c61988a21a72ec" -> "21d93adffa8c4448a5c6afee5abc0112"
+	dbf3f91ad43f48d48661ed26c730e24b -> "7dc47196a69f4de398c61988a21a72ec"
+	"3c16b1d94e414f69b87cefc7cd74c7ab" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"0e87de6898634b96b688c304cf0e4c88" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"837a8cbaa6564b40968e3c6242381e52" [label="Object Properties
+{
+buyAmount -> e
+}" color=blue]
+	"0e87de6898634b96b688c304cf0e4c88" -> "837a8cbaa6564b40968e3c6242381e52"
+	"3c16b1d94e414f69b87cefc7cd74c7ab" -> "0e87de6898634b96b688c304cf0e4c88"
+	dbf3f91ad43f48d48661ed26c730e24b -> "3c16b1d94e414f69b87cefc7cd74c7ab"
+}

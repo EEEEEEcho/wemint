@@ -1,0 +1,46 @@
+<view class="pagecontent" style="background:{{!processing?'#f8f8f8':'#fff'}}" wx:if="{{otherSuccessFlag}}">
+    <view style="height:100%;">
+        <view class="topbox">
+            <view style="text-align:center;" wx:if="{{processing}}">
+                <view class="img">
+                    <image class="processing" src="{{baseUrl}}/images/wxapp/load.gif"></image>
+                </view>
+                <view class="text-tip">
+                    <view class="tip-one">付款中</view>
+                    <view class="tip-two">请稍等一下，不要退出页面哦</view>
+                </view>
+            </view>
+            <view class="v1" style="visibility:{{!processing?'inherit':'hidden'}};">
+                <view class="successIconBox">
+                    <text class="icon-gou iconfont"></text>
+                </view>
+                <view class="v1_text">付款成功</view>
+            </view>
+            <view class="v2" style="visibility:{{!processing?'inherit':'hidden'}};">实付：￥{{payParam.orderMoney}}</view>
+            <view class="v3" style="visibility:{{!processing?'inherit':'hidden'}};">
+                <view catchtap="{{payParam.payScenes==2?'tolastPageFn':'toIndex'}}" class="v3_btn1">{{payParam.payScenes==2?'返回':'返回首页'}}</view>
+                <view catchtap="viewOrder" class="v3_btn2" wx:if="{{payParam.payScenes==1}}">查看订单</view>
+            </view>
+        </view>
+        <view class="paygify" style="background:url({{baseUrl+'/images/payComplete/bgcharge.png'}});background-size:cover" wx:if="{{!processing&&payConfig.payGiftType}}">
+            <view class="v4">支付有礼</view>
+            <view class="{{isSelect?'v5_status':'v5'}}">
+                <view class="v5_feft">
+                    <image class="v5_img" src="{{baseUrl+'/images/payComplete/integral.png'}}" wx:if="{{payConfig.payGiftType==1}}"></image>
+                    <image class="v5_img" src="{{baseUrl+'/images/payComplete/coupons.png'}}" wx:elif="{{payConfig.payGiftType==2}}"></image>
+                    <image class="v5_img" src="{{baseUrl+'/images/payComplete/envelope.png'}}" wx:else></image>
+                    <view class="v5_c">
+                        <view class="v5_c1" wx:if="{{payConfig.payGiftType==1}}">{{payConfig.ext.jifen}}积分</view>
+                        <view class="v5_c1" wx:elif="{{payConfig.payGiftType==2}}">{{payConfig.ext.couponTitle}}</view>
+                        <view class="v5_c1" wx:else>{{payConfig.ext.redPack}}元余额红包</view>
+                        <view class="v5_c2">{{payConfig.payGiftType==1?'支付成功奖励积分':'支付成功奖励优惠券'}}</view>
+                    </view>
+                </view>
+                <view class="v5_right">
+                    <view bindtap="{{isSelect?'':'receive'}}" class="v5_right_btn" style="background:{{isSelect?'#ccc':'#ff7200'}}">{{isSelect?'已领取':'领取'}}</view>
+                </view>
+            </view>
+            <view class="v6" wx:if="{{isSelect&&payParam.payScenes==1}}">订单交易成功后可使用</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,24 @@
+// \pages/customDetail/customDetail swiperChange Data Flow
+digraph {
+	"3d54c017033b45b7bff06eb6da371a8b" [label="FunctionCall,
+function name -> swiperChange,
+param -> e,
+e.,
+" color=blue]
+	"59eeed2109114048a7ba7f1b6da1e3d2" [label=SequenceExpression color=blue]
+	cd096f843e9c4f24bec9363dadb2ce99 [label="CallExpression,
+callee name -> console.log,
+param -> e.detail.current,
+" color=blue]
+	"59eeed2109114048a7ba7f1b6da1e3d2" -> cd096f843e9c4f24bec9363dadb2ce99
+	"8b85c4c96695481489c3da43a92fdfbf" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	b659e660cd8942c9b0053460b388ce40 [label="Object Properties
+{
+tabSelected -> e.detail.current
+}" color=blue]
+	"8b85c4c96695481489c3da43a92fdfbf" -> b659e660cd8942c9b0053460b388ce40
+	"59eeed2109114048a7ba7f1b6da1e3d2" -> "8b85c4c96695481489c3da43a92fdfbf"
+	"3d54c017033b45b7bff06eb6da371a8b" -> "59eeed2109114048a7ba7f1b6da1e3d2"
+}

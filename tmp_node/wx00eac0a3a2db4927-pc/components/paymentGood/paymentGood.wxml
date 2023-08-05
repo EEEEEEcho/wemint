@@ -1,0 +1,15 @@
+<view class="goodItemLayout">
+    <view class="goodImageLayout">
+        <image class="goodImage" lazyLoad="true" src="{{good.goodsCovers[0]}}"></image>
+        <text class="goodImageTab" wx:if="{{good.payType==2}}">定金</text>
+    </view>
+    <view class="goodDetail">
+        <text class="goodTitle">{{good.title}}</text>
+        <text class="propertyLabel" wx:for="{{good.skuProperties}}">{{goodFilter.getProperty(item)}}</text>
+    </view>
+    <view class="priceNumber">
+        <text class="price">¥{{good.salesPrice/100}}</text>
+        <text class="number">x{{good.num}}</text>
+    </view>
+</view>
+<wxs module="goodFilter" src="paymentGood.wxs" />

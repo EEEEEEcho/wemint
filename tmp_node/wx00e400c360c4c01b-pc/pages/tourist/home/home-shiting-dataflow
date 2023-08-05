@@ -1,0 +1,15 @@
+// \pages/tourist/home/home shiting Data Flow
+digraph {
+	c54c10cf6cdb49b99c49735466f7ec43 [label="FunctionCall,
+function name -> shiting,
+param -> a.,
+a,
+" color=blue]
+	"3847b2996bc645fd8eff99c44f48b9e9" [label=SequenceExpression color=blue]
+	d34f4e6b2dc1491a843795907873424e [label="CallExpression,
+callee name -> t.collectFomrId,
+param -> a.detail.formId,
+" color=blue]
+	"3847b2996bc645fd8eff99c44f48b9e9" -> d34f4e6b2dc1491a843795907873424e
+	c54c10cf6cdb49b99c49735466f7ec43 -> "3847b2996bc645fd8eff99c44f48b9e9"
+}

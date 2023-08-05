@@ -1,0 +1,5 @@
+<view class="container bg-c-a">
+    <view class="deal-list">
+        <include src="/templates/dealList.wxml"></include>
+    </view>
+</view>

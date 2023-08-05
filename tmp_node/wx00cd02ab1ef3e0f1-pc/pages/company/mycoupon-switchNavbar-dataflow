@@ -1,0 +1,78 @@
+// \pages/company/mycoupon switchNavbar Data Flow
+digraph {
+	"35e4e1da56504552a18f3e6ca1bca78d" [label="FunctionCall,
+function name -> switchNavbar,
+param -> t,
+t.,
+" color=blue]
+	eed42471f1694bdf9fc0c4c96d5eea5e [label=SequenceExpression color=blue]
+	"0e9414066f77415b82e46a92e5c69cd5" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	f7618edd1079492fb560e714fd6168a2 [label="Object Properties
+{
+currentTab -> t.currentTarget.dataset.idx
+use -> t.currentTarget.dataset.use
+}" color=blue]
+	"0e9414066f77415b82e46a92e5c69cd5" -> f7618edd1079492fb560e714fd6168a2
+	eed42471f1694bdf9fc0c4c96d5eea5e -> "0e9414066f77415b82e46a92e5c69cd5"
+	e1e0d8cfef114d198679293489a41df0 [label="CallExpression,
+callee name -> this.loadMyList,
+param -> " color=blue]
+	caa893164590493c948b7de2cb5e8c48 [label="FunctionCall,
+function name -> loadMyList,
+param -> " color=blue]
+	eec59cc16fc34fd0b81adec3cb428352 [label=VariableDeclarations color=blue]
+	"6e0f59726f214b7bbfcba417cdec6c19" [label="VariableDeclarator,
+left -> e,
+right -> s.data.myrecordcount" color=blue]
+	eec59cc16fc34fd0b81adec3cb428352 -> "6e0f59726f214b7bbfcba417cdec6c19"
+	"632f166e9efa4505893cc6da298fb48e" [label="VariableDeclarator,
+left -> i,
+right -> s.data.mylist.length" color=blue]
+	eec59cc16fc34fd0b81adec3cb428352 -> "632f166e9efa4505893cc6da298fb48e"
+	caa893164590493c948b7de2cb5e8c48 -> eec59cc16fc34fd0b81adec3cb428352
+	b03419e0ad93458ea18e4b5306d7562c [label="If Alternate" color=blue]
+	"517804092f274a5c8729a23e817e811b" [label=VariableDeclarations color=blue]
+	"7486e9faefb541b19d905bf5d13864be" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"09e187b584b940c7a9919653716ea71f" [label="CallExpression,
+callee name -> Math.ceil,
+param -> i / s.data.mypagesize,
+" color=blue]
+	"7486e9faefb541b19d905bf5d13864be" -> "09e187b584b940c7a9919653716ea71f"
+	"517804092f274a5c8729a23e817e811b" -> "7486e9faefb541b19d905bf5d13864be"
+	b03419e0ad93458ea18e4b5306d7562c -> "517804092f274a5c8729a23e817e811b"
+	"15ad27fe1a0d4eeb8d739f817b2a5ed4" [label=SequenceExpression color=blue]
+	"5dcd25c1fe1c411b8036f5fe4df6dfe1" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"455e2355f6064ea9ae1f6551d92d4f35" [label="Assignment,
+left -> r,
+right -> '&sortcol=' + s.data.sortcol + '&sort=' + s.data.sort" color=blue]
+	"5dcd25c1fe1c411b8036f5fe4df6dfe1" -> "455e2355f6064ea9ae1f6551d92d4f35"
+	"15ad27fe1a0d4eeb8d739f817b2a5ed4" -> "5dcd25c1fe1c411b8036f5fe4df6dfe1"
+	"9378bf03343d48bc82a143b7bcd1a11f" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"06299cf83cb141a993b2d4c202f703d3" [label="Assignment,
+left -> s.data.use,
+right -> s.data.queryparams.use" color=blue]
+	"9378bf03343d48bc82a143b7bcd1a11f" -> "06299cf83cb141a993b2d4c202f703d3"
+	"15ad27fe1a0d4eeb8d739f817b2a5ed4" -> "9378bf03343d48bc82a143b7bcd1a11f"
+	"2c197dff24ba49f8ae80d05794fc1f19" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	"8b44b2bbcf5c4b7e9833204a0bd4ddce" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ServiceApi&a=getUserCouponList&page=' + o + '&pagesize=' + s.data.mypagesize + r
+}" color=blue]
+	"2c197dff24ba49f8ae80d05794fc1f19" -> "8b44b2bbcf5c4b7e9833204a0bd4ddce"
+	"15ad27fe1a0d4eeb8d739f817b2a5ed4" -> "2c197dff24ba49f8ae80d05794fc1f19"
+	b03419e0ad93458ea18e4b5306d7562c -> "15ad27fe1a0d4eeb8d739f817b2a5ed4"
+	caa893164590493c948b7de2cb5e8c48 -> b03419e0ad93458ea18e4b5306d7562c
+	e1e0d8cfef114d198679293489a41df0 -> caa893164590493c948b7de2cb5e8c48
+	eed42471f1694bdf9fc0c4c96d5eea5e -> e1e0d8cfef114d198679293489a41df0
+	"35e4e1da56504552a18f3e6ca1bca78d" -> eed42471f1694bdf9fc0c4c96d5eea5e
+}

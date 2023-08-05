@@ -1,0 +1,47 @@
+// \pages/shop/square onLoad Data Flow
+digraph {
+	b222b77128c14a6ab1db0801339671ce [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"88ee1a804e4649e194d3bf9abb96f79f" [label=SequenceExpression color=blue]
+	"0d4342b362c940fe8babb8f9ed0ac260" [label="CallExpression,
+callee name -> this.loadSquareInfo,
+param -> " color=blue]
+	"1616b0bb7ae64643abcac4891b6b2a80" [label="FunctionCall,
+function name -> loadSquareInfo,
+param -> " color=blue]
+	dfbdb83f6d474feab93864ac1611181f [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	"8c8c799fe62e4300b35e0e4d6fb8d34c" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=getSquareInfo&pkeys=' + t.queryparams.pkeys
+}" color=blue]
+	dfbdb83f6d474feab93864ac1611181f -> "8c8c799fe62e4300b35e0e4d6fb8d34c"
+	"30727ad4d0234e81b35b5deccd474e28" [label="FunctionCall,
+function name -> fail,
+param -> t,
+" color=blue]
+	dfbdb83f6d474feab93864ac1611181f -> "30727ad4d0234e81b35b5deccd474e28"
+	"1616b0bb7ae64643abcac4891b6b2a80" -> dfbdb83f6d474feab93864ac1611181f
+	"0d4342b362c940fe8babb8f9ed0ac260" -> "1616b0bb7ae64643abcac4891b6b2a80"
+	"88ee1a804e4649e194d3bf9abb96f79f" -> "0d4342b362c940fe8babb8f9ed0ac260"
+	"06ab37c46b534cdc9c427d16cf48eb4f" [label="CallExpression,
+callee name -> this.getBalanceNumber,
+param -> " color=blue]
+	b37a0a79e03441c3ab6a8eb3182648d8 [label="FunctionCall,
+function name -> getBalanceNumber,
+param -> " color=blue]
+	"930aac70b89b47cab1857c1793f80bd8" [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	"0975e20646804ecaa4e09610c56482df" [label="FunctionCall,
+function name -> fail,
+param -> t,
+" color=blue]
+	"930aac70b89b47cab1857c1793f80bd8" -> "0975e20646804ecaa4e09610c56482df"
+	b37a0a79e03441c3ab6a8eb3182648d8 -> "930aac70b89b47cab1857c1793f80bd8"
+	"06ab37c46b534cdc9c427d16cf48eb4f" -> b37a0a79e03441c3ab6a8eb3182648d8
+	"88ee1a804e4649e194d3bf9abb96f79f" -> "06ab37c46b534cdc9c427d16cf48eb4f"
+	b222b77128c14a6ab1db0801339671ce -> "88ee1a804e4649e194d3bf9abb96f79f"
+}

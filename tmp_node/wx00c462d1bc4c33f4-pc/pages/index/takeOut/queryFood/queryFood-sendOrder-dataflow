@@ -1,0 +1,21 @@
+// \pages/index/takeOut/queryFood/queryFood sendOrder Data Flow
+digraph {
+	"45f5eb32bf9a45f8b08c9205f76e018f" [label="FunctionCall,
+function name -> sendOrder,
+param -> o.,
+t.,
+t,
+o,
+" color=blue]
+	"91af7f52bd0b4c5eb4c92d28f3f739bc" [label=SequenceExpression color=blue]
+	f790fe1e6e804fb8a4ea9b9120581a37 [label="CallExpression,
+callee name -> wx.getStorage,
+param -> " color=blue]
+	e69fc50380f343b8a9ca796943fc29b3 [label="FunctionCall,
+function name -> success,
+param -> o,
+" color=blue]
+	f790fe1e6e804fb8a4ea9b9120581a37 -> e69fc50380f343b8a9ca796943fc29b3
+	"91af7f52bd0b4c5eb4c92d28f3f739bc" -> f790fe1e6e804fb8a4ea9b9120581a37
+	"45f5eb32bf9a45f8b08c9205f76e018f" -> "91af7f52bd0b4c5eb4c92d28f3f739bc"
+}

@@ -1,0 +1,14 @@
+// \pages/poster/demo formSubmit Data Flow
+digraph {
+	a08cad5a5b65446abb50905ef2674daf [label="FunctionCall,
+function name -> formSubmit,
+param -> t,
+t.,
+" color=blue]
+	"23460143618b43f8921cf0448300a1a9" [label=SequenceExpression color=blue]
+	c9206abc9c6145f9964e5bc373da23cd [label="Assignment,
+left -> e.globalData.userInfo,
+right -> t.detail.userInfo" color=blue]
+	"23460143618b43f8921cf0448300a1a9" -> c9206abc9c6145f9964e5bc373da23cd
+	a08cad5a5b65446abb50905ef2674daf -> "23460143618b43f8921cf0448300a1a9"
+}

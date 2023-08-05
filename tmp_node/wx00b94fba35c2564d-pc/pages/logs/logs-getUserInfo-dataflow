@@ -1,0 +1,27 @@
+// \pages/logs/logs getUserInfo Data Flow
+digraph {
+	"646f4760b3384825859f3186adc7abc8" [label="FunctionCall,
+function name -> getUserInfo,
+param -> " color=blue]
+	"31488c899e254774b4c825ae37f2e0c1" [label="CallExpression,
+callee name -> wx.getUserInfo,
+param -> " color=blue]
+	dfe38b674ee44bc1a7eba862fae401af [label="FunctionCall,
+function name -> success,
+param -> o,
+o.,
+" color=blue]
+	db40b797702a4641b7545465bca659e0 [label=SequenceExpression color=blue]
+	c2512110d95d4ecbb3d17cd4921e3785 [label="CallExpression,
+callee name -> console.log,
+param -> o,
+" color=blue]
+	db40b797702a4641b7545465bca659e0 -> c2512110d95d4ecbb3d17cd4921e3785
+	"6c59690aca8a442e88dd133c0bf4acff" [label="Assignment,
+left -> e.globalData.userInfo,
+right -> o.userInfo" color=blue]
+	db40b797702a4641b7545465bca659e0 -> "6c59690aca8a442e88dd133c0bf4acff"
+	dfe38b674ee44bc1a7eba862fae401af -> db40b797702a4641b7545465bca659e0
+	"31488c899e254774b4c825ae37f2e0c1" -> dfe38b674ee44bc1a7eba862fae401af
+	"646f4760b3384825859f3186adc7abc8" -> "31488c899e254774b4c825ae37f2e0c1"
+}

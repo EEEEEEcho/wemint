@@ -1,0 +1,29 @@
+// \pages/index/index junpPage Data Flow
+digraph {
+	"0313947d96f0470ebaddc38c6b7176d8" [label="FunctionCall,
+function name -> junpPage,
+param -> e.,
+e,
+" color=blue]
+	b4812e021b8649f088f6a27f400c8796 [label="CallExpression,
+callee name -> index.saveRecord,
+param -> e.currentTarget.dataset.url,
+e.currentTarget.dataset.path,
+e.currentTarget.dataset.appname,
+" color=blue]
+	"2f5f626be8644d4c821b6f34434f5e55" [label="Object Properties
+{
+id -> e.currentTarget.dataset.event
+}" color=blue]
+	b4812e021b8649f088f6a27f400c8796 -> "2f5f626be8644d4c821b6f34434f5e55"
+	"0313947d96f0470ebaddc38c6b7176d8" -> b4812e021b8649f088f6a27f400c8796
+	"9aebbb9075264ab38f8735fcbd46cc26" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"69366999bb6948e4851a3a8abb9df478" [label="Object Properties
+{
+websrc -> config.ppbaseDomain + '/user/junpage?url=' + e.currentTarget.dataset.url + '&userCode=' + this.data.userOppenId + '&appsign=' + config.appsign
+}" color=blue]
+	"9aebbb9075264ab38f8735fcbd46cc26" -> "69366999bb6948e4851a3a8abb9df478"
+	"0313947d96f0470ebaddc38c6b7176d8" -> "9aebbb9075264ab38f8735fcbd46cc26"
+}

@@ -1,0 +1,23 @@
+// \pages/address/user-address/user-address setDefault Data Flow
+digraph {
+	"42d08ff0cfb648aa87b91f2310e80372" [label="FunctionCall,
+function name -> setDefault,
+param -> e,
+e.,
+" color=blue]
+	"9c37571617a948d28f89b0ffafed28e7" [label=VariableDeclarations color=blue]
+	"55de3f0d497d4ebe9afbca91b11b22e6" [label="VariableDeclarator,
+left -> d,
+right -> e.currentTarget.dataset.id" color=blue]
+	"9c37571617a948d28f89b0ffafed28e7" -> "55de3f0d497d4ebe9afbca91b11b22e6"
+	"42d08ff0cfb648aa87b91f2310e80372" -> "9c37571617a948d28f89b0ffafed28e7"
+	ee98048cba9f41bb8aefa3fee7f16d39 [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"3fec9997b66442f5bec6d349f6d60d5d" [label="Object Properties
+{
+addr_id -> d
+}" color=blue]
+	ee98048cba9f41bb8aefa3fee7f16d39 -> "3fec9997b66442f5bec6d349f6d60d5d"
+	"42d08ff0cfb648aa87b91f2310e80372" -> ee98048cba9f41bb8aefa3fee7f16d39
+}

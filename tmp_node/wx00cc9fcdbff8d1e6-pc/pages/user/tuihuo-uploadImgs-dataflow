@@ -1,0 +1,41 @@
+// \pages/user/tuihuo uploadImgs Data Flow
+digraph {
+	"18786bf4b7054858a11ae817120d2e8c" [label="FunctionCall,
+function name -> uploadImgs,
+param -> " color=blue]
+	e4bfa8822bc54d509427c415719311f1 [label="CallExpression,
+callee name -> wx.chooseImage,
+param -> " color=blue]
+	"560b22595f67417094ea0e2763859356" [label="FunctionCall,
+function name -> success,
+param -> t,
+t.,
+" color=blue]
+	"07b35db2fff5491ca88b4ae841747733" [label="CallExpression,
+callee name -> console.log,
+param -> t,
+" color=blue]
+	"560b22595f67417094ea0e2763859356" -> "07b35db2fff5491ca88b4ae841747733"
+	"5b0e2193ed4948f1bac523146dd5e291" [label=VariableDeclarations color=blue]
+	c3b6752764df43ffb9c7d4e6500e3721 [label="VariableDeclarator,
+left -> e,
+right -> t.tempFilePaths" color=blue]
+	"5b0e2193ed4948f1bac523146dd5e291" -> c3b6752764df43ffb9c7d4e6500e3721
+	"560b22595f67417094ea0e2763859356" -> "5b0e2193ed4948f1bac523146dd5e291"
+	"8bb6bac9c1394feb86d5a35dd7a19f53" [label="CallExpression,
+callee name -> wx.uploadFile,
+param -> " color=blue]
+	ca5e171e197e47a381f692bd2d589161 [label="Object Properties
+{
+filePath -> e[0]
+}" color=blue]
+	"8bb6bac9c1394feb86d5a35dd7a19f53" -> ca5e171e197e47a381f692bd2d589161
+	"8a18c81d7360451f8ff865605103082a" [label="FunctionCall,
+function name -> success,
+param -> t,
+" color=blue]
+	"8bb6bac9c1394feb86d5a35dd7a19f53" -> "8a18c81d7360451f8ff865605103082a"
+	"560b22595f67417094ea0e2763859356" -> "8bb6bac9c1394feb86d5a35dd7a19f53"
+	e4bfa8822bc54d509427c415719311f1 -> "560b22595f67417094ea0e2763859356"
+	"18786bf4b7054858a11ae817120d2e8c" -> e4bfa8822bc54d509427c415719311f1
+}

@@ -1,0 +1,7 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "AI雷达",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
+}

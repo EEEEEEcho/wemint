@@ -1,0 +1,36 @@
+// \pages/address/address bindEditAddressTap Data Flow
+digraph {
+	ff09934fd2c44e60ac7ec3b774b948ff [label="FunctionCall,
+function name -> bindEditAddressTap,
+param -> e,
+e.,
+" color=blue]
+	d4aed05bd0bf4ed3a6abae9d6b4b37bd [label=VariableDeclarations color=blue]
+	"23abd5b1b8fd4984a0934f11a7b412b4" [label="VariableDeclarator,
+left -> addressData,
+right -> e.currentTarget.dataset.addressdata" color=blue]
+	d4aed05bd0bf4ed3a6abae9d6b4b37bd -> "23abd5b1b8fd4984a0934f11a7b412b4"
+	ff09934fd2c44e60ac7ec3b774b948ff -> d4aed05bd0bf4ed3a6abae9d6b4b37bd
+	"79f09861a4734e26bf7ed0c2d05a8cbb" [label="CallExpression,
+callee name -> console.log,
+param -> " color=blue]
+	dd5c5ae914204deaba91a89dc9b5fa2a [label="CallExpression,
+callee name -> JSON.stringify,
+param -> addressData,
+" color=blue]
+	"79f09861a4734e26bf7ed0c2d05a8cbb" -> dd5c5ae914204deaba91a89dc9b5fa2a
+	ff09934fd2c44e60ac7ec3b774b948ff -> "79f09861a4734e26bf7ed0c2d05a8cbb"
+	"6c9bba097413453ba7a107beabe1f0d6" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	b5e07add8c5f43f0ab006f78a9e9f4e2 [label="Object Properties
+{
+}" color=blue]
+	e29732200e2349de868b697db30f3f7c [label="CallExpression,
+callee name -> JSON.stringify,
+param -> addressData,
+" color=blue]
+	b5e07add8c5f43f0ab006f78a9e9f4e2 -> e29732200e2349de868b697db30f3f7c
+	"6c9bba097413453ba7a107beabe1f0d6" -> b5e07add8c5f43f0ab006f78a9e9f4e2
+	ff09934fd2c44e60ac7ec3b774b948ff -> "6c9bba097413453ba7a107beabe1f0d6"
+}

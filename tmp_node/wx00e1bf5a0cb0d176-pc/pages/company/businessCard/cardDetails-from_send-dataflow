@@ -1,0 +1,19 @@
+// \pages/company/businessCard/cardDetails from_send Data Flow
+digraph {
+	"0f3bf0cabe234f02932177ba6cff1e4d" [label="FunctionCall,
+function name -> from_send,
+param -> t,
+t.,
+" color=blue]
+	"7c422733cbba4279af871b0f9dee55d7" [label=VariableDeclarations color=blue]
+	"2e62fb9d6d2542cb940f85c2839d8a5a" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"85d5805f723045abbc591ae301ebd479" [label="Object Properties
+{
+formID -> t.detail.formId
+}" color=blue]
+	"2e62fb9d6d2542cb940f85c2839d8a5a" -> "85d5805f723045abbc591ae301ebd479"
+	"7c422733cbba4279af871b0f9dee55d7" -> "2e62fb9d6d2542cb940f85c2839d8a5a"
+	"0f3bf0cabe234f02932177ba6cff1e4d" -> "7c422733cbba4279af871b0f9dee55d7"
+}

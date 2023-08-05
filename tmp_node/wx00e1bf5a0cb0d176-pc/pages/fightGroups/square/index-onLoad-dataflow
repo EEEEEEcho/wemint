@@ -1,0 +1,18 @@
+// \pages/fightGroups/square/index onLoad Data Flow
+digraph {
+	"3794ff704152417abee3fca361f5d671" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"6f97f321a1734afebe4e1e9dee09922b" [label=SequenceExpression color=blue]
+	ab8d05f9bafe4c688fdf4f5b53bb3d98 [label="CallExpression,
+callee name -> t.getPageUrl,
+param -> o,
+" color=blue]
+	"6f97f321a1734afebe4e1e9dee09922b" -> ab8d05f9bafe4c688fdf4f5b53bb3d98
+	f51f1f9bbfcd46658b53a7d7ca65b3a4 [label="CallExpression,
+callee name -> t.registerGlobalFunctions,
+param -> o,
+" color=blue]
+	"6f97f321a1734afebe4e1e9dee09922b" -> f51f1f9bbfcd46658b53a7d7ca65b3a4
+	"3794ff704152417abee3fca361f5d671" -> "6f97f321a1734afebe4e1e9dee09922b"
+}

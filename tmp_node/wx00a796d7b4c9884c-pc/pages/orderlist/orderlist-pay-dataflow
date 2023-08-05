@@ -1,0 +1,29 @@
+// \pages/orderlist/orderlist pay Data Flow
+digraph {
+	"0f27416c92da42029663a3d0957932a8" [label="FunctionCall,
+function name -> pay,
+param -> t,
+t.,
+" color=blue]
+	c4e98611ada942cdbfe7d916ad7e649a [label=SequenceExpression color=blue]
+	"3a91a159bc0d49daaef7f48ef92831ac" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	bc8d53b4dee64fe39661d9587434cac3 [label="Object Properties
+{
+order_sn -> t.currentTarget.dataset.sn
+}" color=blue]
+	"3a91a159bc0d49daaef7f48ef92831ac" -> bc8d53b4dee64fe39661d9587434cac3
+	c4e98611ada942cdbfe7d916ad7e649a -> "3a91a159bc0d49daaef7f48ef92831ac"
+	b2ae37d1f94c469482cee2b2a926c61a [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"9732e0a6c24241cfa25aab02dad3e47e" [label="Object Properties
+{
+order_sn -> this.data.order_sn
+uid -> this.data.userid
+}" color=blue]
+	b2ae37d1f94c469482cee2b2a926c61a -> "9732e0a6c24241cfa25aab02dad3e47e"
+	c4e98611ada942cdbfe7d916ad7e649a -> b2ae37d1f94c469482cee2b2a926c61a
+	"0f27416c92da42029663a3d0957932a8" -> c4e98611ada942cdbfe7d916ad7e649a
+}

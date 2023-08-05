@@ -1,0 +1,56 @@
+// \pages/company/mycenter_tabbar onShow Data Flow
+digraph {
+	c4e2f569219f4af184bc4eb9b8266418 [label="FunctionCall,
+function name -> onShow,
+param -> " color=blue]
+	"01c12fff29f24d108d26645324b9e64b" [label=SequenceExpression color=blue]
+	b0e3698357094f8fb48e2c24b636cde7 [label="CallExpression,
+callee name -> this.getUserInfo,
+param -> " color=blue]
+	fa83b384a4384255978cfacd7f3ced07 [label="FunctionCall,
+function name -> getUserInfo,
+param -> " color=blue]
+	e4ddeb469dbd48f8948d63335153d5e2 [label=VariableDeclarations color=blue]
+	"0855ef93759c44ebabd0636f82d1b124" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"1f623dcb6f3c49a48cc6173b77ce96c8" [label="Object Properties
+{
+}" color=blue]
+	b692e5daa2ef449986a33a5db1d87bb7 [label="FunctionCall,
+function name -> success,
+param -> e.,
+e,
+" color=blue]
+	d792aec8e0c24b93becd706448647a3f [label="If Alternate" color=blue]
+	be2050f8b9ff4357918be9162933aec4 [label=VariableDeclarations color=blue]
+	"7341e03809a64f02b1a2280bcd2e51e2" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"2f98105e4c9e4ef984a1756299d1a782" [label="CallExpression,
+callee name -> parseInt,
+param -> e.info.UserType,
+" color=blue]
+	"7341e03809a64f02b1a2280bcd2e51e2" -> "2f98105e4c9e4ef984a1756299d1a782"
+	be2050f8b9ff4357918be9162933aec4 -> "7341e03809a64f02b1a2280bcd2e51e2"
+	d792aec8e0c24b93becd706448647a3f -> be2050f8b9ff4357918be9162933aec4
+	f970ccc2f5894bcf9b672902497eb2af [label=SequenceExpression color=blue]
+	"6ee0c63ac1a948f2a4651f3894273a00" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	cd73850225914ca38459e4cd19be17f1 [label="Object Properties
+{
+levelName -> e.info.UserLevel
+}" color=blue]
+	"6ee0c63ac1a948f2a4651f3894273a00" -> cd73850225914ca38459e4cd19be17f1
+	f970ccc2f5894bcf9b672902497eb2af -> "6ee0c63ac1a948f2a4651f3894273a00"
+	d792aec8e0c24b93becd706448647a3f -> f970ccc2f5894bcf9b672902497eb2af
+	b692e5daa2ef449986a33a5db1d87bb7 -> d792aec8e0c24b93becd706448647a3f
+	"1f623dcb6f3c49a48cc6173b77ce96c8" -> b692e5daa2ef449986a33a5db1d87bb7
+	"0855ef93759c44ebabd0636f82d1b124" -> "1f623dcb6f3c49a48cc6173b77ce96c8"
+	e4ddeb469dbd48f8948d63335153d5e2 -> "0855ef93759c44ebabd0636f82d1b124"
+	fa83b384a4384255978cfacd7f3ced07 -> e4ddeb469dbd48f8948d63335153d5e2
+	b0e3698357094f8fb48e2c24b636cde7 -> fa83b384a4384255978cfacd7f3ced07
+	"01c12fff29f24d108d26645324b9e64b" -> b0e3698357094f8fb48e2c24b636cde7
+	c4e2f569219f4af184bc4eb9b8266418 -> "01c12fff29f24d108d26645324b9e64b"
+}

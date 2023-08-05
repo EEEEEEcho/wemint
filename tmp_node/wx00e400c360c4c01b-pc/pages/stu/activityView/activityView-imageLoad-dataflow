@@ -1,0 +1,23 @@
+// \pages/stu/activityView/activityView imageLoad Data Flow
+digraph {
+	"48c84cd753f44b3c8d1ef427f7b261b1" [label="FunctionCall,
+function name -> imageLoad,
+param -> t,
+t.,
+" color=blue]
+	"1cab89e2cc03423694bb9908d26d5d1d" [label=VariableDeclarations color=blue]
+	"76bf450131a14462aae887651c18be8f" [label="VariableDeclarator,
+left -> i,
+right -> 750 / (t.detail.width / t.detail.height)" color=blue]
+	"1cab89e2cc03423694bb9908d26d5d1d" -> "76bf450131a14462aae887651c18be8f"
+	"48c84cd753f44b3c8d1ef427f7b261b1" -> "1cab89e2cc03423694bb9908d26d5d1d"
+	"8aa7e306e07b49cabe39b93c80601763" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	f3586933cc29410892eb55a47c806f4c [label="Object Properties
+{
+imgheight -> i
+}" color=blue]
+	"8aa7e306e07b49cabe39b93c80601763" -> f3586933cc29410892eb55a47c806f4c
+	"48c84cd753f44b3c8d1ef427f7b261b1" -> "8aa7e306e07b49cabe39b93c80601763"
+}

@@ -1,0 +1,1 @@
+<image bind:tap="onPreview" class="{{class}}" mode="{{mode}}" src="{{src}}"></image>

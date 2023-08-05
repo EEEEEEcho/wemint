@@ -1,0 +1,144 @@
+<view class="fixedTopBorder"></view>
+<import src="/components/wxParse/wxParse.wxml"></import>
+<view class="container">
+    <scroll-view scrollY="true">
+        <swiper autoplay="true" circular="true" duration="200" indicatorDots="{{productImgs.length<=1?'':true}}" interval="5000" style="height:{{bannerHeight}}px">
+            <swiper-item wx:for="{{productImgs}}" wx:for-index="idx" wx:key="{{idx}}">
+                <image bindload="onBannerImgLoad" class="slide-image" data-index="{{idx}}" mode="aspectFit" src="{{item}}"></image>
+            </swiper-item>
+        </swiper>
+        <view class="product">
+            <view class="product-top">
+                <view class="num">{{pinTuanProDetail.pintuan_num}}人团</view>
+                <view class="pice">
+                    <view class="pice_l">
+                        <text class="present-price">
+                            <text class="jiage">￥</text>{{pinTuanProDetail.pintuan_price}}</text>
+                    </view>
+                    <view class="pice_r">
+                        <view class="time-txt">距结束还有</view>
+                        <view class="time">
+                            <text class="{{intervalTime.days>99?'OverThree':''}}">{{intervalTime.days}}</text> 天
+              <text class="t">{{intervalTime.hours}}</text> 时
+              <text class="branch">{{intervalTime.minutes}}</text> 分
+              <text class="second">{{intervalTime.seconds}}</text> 秒
+            </view>
+                    </view>
+                </view>
+            </view>
+            <view class="product-detail ">
+                <view class="detail-title two">{{pinTuanProDetail.name}}</view>
+                <text class="stock">原价:￥{{pinTuanProDetail.price}}</text>
+                <view class="stock">剩余参团库存：{{pinTuanProDetail.remain_stock}}</view>
+                <view class="freight border1px ">
+                    <view class="freight-l">运费：￥{{pinTuanProDetail.freight_fee==null||pinTuanProDetail.freight_fee==''?'0.00':pinTuanProDetail.freight_fee}}</view>
+                    <view class="freight-r">
+                        <view class="yuexiao">月销{{pinTuanProDetail.sales_count}}笔</view>
+                        <view catchtap="share" class="expAndSales" wx:if="{{enableWxShare}}">
+                            <view class="shareicon">
+                                <icon class="iconfont icon-fenxiang"></icon>
+                            </view>
+                            <view class="share protext">{{language.TIPS_Sha}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="regiments" wx:if="{{groupList.length>0}}">
+                <view class="regiments-title">以下小伙伴正在发起团购,您可以直接参与</view>
+                <view class="regiments-item">
+                    <view class="regiments-con" wx:for="{{groupList}}" wx:key="pintuan_group_id">
+                        <view class="regiments-con-item">
+                            <view class="regiments-con-img">
+                                <image mode="widthFix" src="{{item.create_user_img}}"></image>
+                            </view>
+                            <view class="regiments-con-txt">
+                                <view class="sizeb colora one">{{item.create_user_name}}</view>
+                            </view>
+                        </view>
+                        <view class="regiments-con-tuan">
+                            <view class="regiments-cha">
+                                <view class="colora sizea ">还差
+                  <text class="colord">{{item.pintuan_num-item.pintuan_user_num}}</text>人成团</view>
+                                <view class="colorb sizea ">还差
+                  <text class="colord">{{item.leftTimeStr}}</text>结束</view>
+                            </view>
+                            <view catchtap="{{!buttonClicked?'goPinTuanDetail':''}}" class="tuan-btn sizeb" data-group="{{item.pintuan_group_id}}">去参团</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="particulars-line"></view>
+        <view bindtap="buyKaiTuan" class="specification" wx:if="{{skuMsg.length!=0}}">
+            <view class="speLeft">
+                <text class="titChoose">{{selectValArr.length!=0?'已选':'请选择规格'}}</text>
+                <text>{{selectSkuDes}}</text>
+            </view>
+            <icon class="iconfont icon-iconfont_arrow-right iconsize"></icon>
+        </view>
+        <view bindtap="close" class="mark {{shareMarkFlag?'showMark':''}}"></view>
+        <view class="sharePopout {{shareMarkFlag?'showPopout':'hidePopout'}}">
+            <view class="btnGroup">
+                <button catchtap="sharetoFriend" class="btns" openType="share">
+                    <view class="img">
+                        <image src="{{baseUrl}}/images/wxapp/fx.png"></image>
+                    </view>
+                    <text class="words">{{language.TIPS_SendToFriend}}</text>
+                </button>
+                <view catchtap="shareHfive" class="btns shareHfive">
+                    <view class="img">
+                        <image src="{{baseUrl}}/images/wxapp/bc.png"></image>
+                    </view>
+                    <text class="words">{{language.TIPS_ShaPoster}}</text>
+                </view>
+            </view>
+            <view catchtap="close" class="cancelBtn">取消</view>
+        </view>
+        <view class="particulars-page">
+            <view class="particulars-title border1px {{toFixed?'toFixed':''}}">
+                <text bindtap="navbarTap" class="item {{currentTab==0?'active':''}}" data-idx="0">商品详情</text>
+                <text bindtap="navbarTap" class="item {{currentTab==1?'active':''}}" data-idx="1">产品参数</text>
+            </view>
+            <view class="particulars-content {{toFixed?'pt88':''}}" hidden="{{currentTab!=0}}">
+                <rich-text nodes="{{deContent}}" type="text"></rich-text>
+            </view>
+            <view class="product-parameter {{toFixed?'pt88':''}}" hidden="{{currentTab!=1}}">
+                <view wx:if="{{pinTuanProDetail.ParamList.length!=0}}">
+                    <view class="paramList" wx:for="{{pinTuanProDetail.ParamList}}" wx:key="ParamList.ID">
+                        <view class="pro-name">{{item.Name}}</view>
+                        <view class="pro-content">{{item.Value}}</view>
+                    </view>
+                </view>
+                <view class="noParam" wx:if="{{pinTuanProDetail.ParamList.length==0}}">
+                    <text>暂无参数</text>
+                </view>
+            </view>
+        </view>
+        <view class="particulars-line"></view>
+    </scroll-view>
+</view>
+<view class="footnav" style="display: {{shareMarkFlag?'none':''}};">
+    <view class="footLeft">
+        <view catchtap="backToHome" class="backToHome">
+            <icon class="iconfont icon-iconfont_homepage"></icon>
+            <text>首页</text>
+        </view>
+        <view>
+            <view catchtap="{{collection?'CanleCollection':'AddCollection'}}" class="favorite" data-ProID="{{pinTuanProDetail.product_id}}">
+                <icon class="iconfont {{collection?'icon-iconfont_favorite-fi':'icon-iconfont_favorite'}}  favorIcon {{collection?'collected':''}}"></icon>
+                <text>收藏</text>
+            </view>
+        </view>
+    </view>
+    <view class="footMiddle complementarycolor">
+        <view catchtap="{{!buttonClicked?'buyNow':''}}" class="addToCart">
+            <text class="juli">￥{{pinTuanProDetail.price}}</text>单买</view>
+    </view>
+    <view class="footRight activitycolor">
+        <view catchtap="{{!buttonClicked?'buyKaiTuan':''}}" class="buyNow">
+            <text class="juli">￥{{pinTuanProDetail.pintuan_price}}</text>开团</view>
+    </view>
+</view>
+<include src="/pages/common/chooseSku.wxml"></include>
+<include src="/pages/template/floatLayer.wxml"></include>
+<include src="/pages/template/getUserInfo.wxml"></include>

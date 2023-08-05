@@ -1,0 +1,28 @@
+// \pages/countdowndetail/countdowndetail changeAmount Data Flow
+digraph {
+	"3801efb2dbf4430ba13c81335481c210" [label="FunctionCall,
+function name -> changeAmount,
+param -> e,
+e.,
+" color=blue]
+	"22e25847fc9f455a8d6224186c4f3a43" [label=VariableDeclarations color=blue]
+	"123da1429d0e4fed8c04f900883710a5" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"3dfd48d88a9445eb976de63638f4b4e6" [label="CallExpression,
+callee name -> parseInt,
+param -> e.detail.value,
+" color=blue]
+	"123da1429d0e4fed8c04f900883710a5" -> "3dfd48d88a9445eb976de63638f4b4e6"
+	"22e25847fc9f455a8d6224186c4f3a43" -> "123da1429d0e4fed8c04f900883710a5"
+	"3801efb2dbf4430ba13c81335481c210" -> "22e25847fc9f455a8d6224186c4f3a43"
+	c827c0355ac94a84909fbd4e4443daeb [label=VariableDeclarations color=blue]
+	"5f931b7b63044ed6ad2bbefc5dee21e4" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"19d44b216d944d1382cb62ef72bd0c5b" [label="ConditionalExpression,
+ conditional list -> this.data.skuStock" color=blue]
+	"5f931b7b63044ed6ad2bbefc5dee21e4" -> "19d44b216d944d1382cb62ef72bd0c5b"
+	c827c0355ac94a84909fbd4e4443daeb -> "5f931b7b63044ed6ad2bbefc5dee21e4"
+	"3801efb2dbf4430ba13c81335481c210" -> c827c0355ac94a84909fbd4e4443daeb
+}

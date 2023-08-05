@@ -1,0 +1,35 @@
+// \pages/index/takeOut/queryFood/queryFood xuanguige Data Flow
+digraph {
+	d48bb5cdbcdf4e0a97bff99240903dc9 [label="FunctionCall,
+function name -> xuanguige,
+param -> o.,
+o,
+" color=blue]
+	edbb2f048b6a4a88bd1e6036b433d8eb [label=VariableDeclarations color=blue]
+	"96a177074de443e08e23f038468a4cd9" [label="VariableDeclarator,
+left -> t,
+right -> o.currentTarget.dataset.foodCount" color=blue]
+	edbb2f048b6a4a88bd1e6036b433d8eb -> "96a177074de443e08e23f038468a4cd9"
+	"9b0bbb6110ff4d44aa19c9d09000c28f" [label="VariableDeclarator,
+left -> a,
+right -> o.currentTarget.dataset.foodPrice" color=blue]
+	edbb2f048b6a4a88bd1e6036b433d8eb -> "9b0bbb6110ff4d44aa19c9d09000c28f"
+	"6bf3ac370ce347b3855be017ebeb2172" [label="VariableDeclarator,
+left -> n,
+right -> o.currentTarget.dataset.foodId" color=blue]
+	edbb2f048b6a4a88bd1e6036b433d8eb -> "6bf3ac370ce347b3855be017ebeb2172"
+	d48bb5cdbcdf4e0a97bff99240903dc9 -> edbb2f048b6a4a88bd1e6036b433d8eb
+	a5528b3810e84e4190c9381dcf75a25d [label=SequenceExpression color=blue]
+	"4799fb91121349b7a1517ba843f8ab3a" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"61c4351f09b44125a78fa76988d803db" [label="Object Properties
+{
+guige -> n
+foodCount -> t
+foodPrice -> a
+}" color=blue]
+	"4799fb91121349b7a1517ba843f8ab3a" -> "61c4351f09b44125a78fa76988d803db"
+	a5528b3810e84e4190c9381dcf75a25d -> "4799fb91121349b7a1517ba843f8ab3a"
+	d48bb5cdbcdf4e0a97bff99240903dc9 -> a5528b3810e84e4190c9381dcf75a25d
+}

@@ -1,0 +1,20 @@
+<view catchtap="bindEditAddressTap" class="addresslist" data-addressdata="{{item}}" wx:for="{{addressData}}" wx:for-index="idx" wx:key="address-box">
+    <view class="addressname">
+        <view class="addressnamel">{{item.ShipTo}}</view>
+        <view class="addressnamer">{{item.CellPhone}}</view>
+    </view>
+    <view class="addresscont">{{item.FullAddress}}</view>
+    <view class="addressmor">
+        <view class="addressmorl">
+            <radio catchtap="bindRadioAddressChange" checked="{{item.IsDefault}}" color="#303030" data-shippingid="{{item.ShippingId}}" size="20" value="value"></radio>
+            <text>默认地址</text>
+        </view>
+        <view catchtap="bindDeleteAddressTap" class="addressmorr" data-shippingid="{{item.ShippingId}}">
+            <image src="/images/shanchu.jpg"></image>
+            <text> 删除</text>
+        </view>
+    </view>
+</view>
+<view class="xinzheng">
+    <button bindtap="bindAddAddressTap" data-value="{{addressData.length}}" hidden="{{addressData.length>=5}}">新增一个收货地址</button>
+</view>

@@ -1,0 +1,7 @@
+<view class="kitchenbox">
+    <view class="k_item" wx:for="{{pageData.Item}}">
+        <navigator url="{{item.Link}}">
+            <image mode="widthFix" src="{{item.Img}}"></image>
+        </navigator>
+    </view>
+</view>

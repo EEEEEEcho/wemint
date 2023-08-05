@@ -1,0 +1,17 @@
+// \pages/addAddr/addAddr bindMobileInput Data Flow
+digraph {
+	ca90bb74caf5463188e394f34ff4130d [label="FunctionCall,
+function name -> bindMobileInput,
+param -> t.,
+t,
+" color=blue]
+	"1afdfbf8dd314f91a82abd08c5ca75f0" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"22da0f68480441e4b3c809e2a2677454" [label="Object Properties
+{
+mobile -> t.detail.value
+}" color=blue]
+	"1afdfbf8dd314f91a82abd08c5ca75f0" -> "22da0f68480441e4b3c809e2a2677454"
+	ca90bb74caf5463188e394f34ff4130d -> "1afdfbf8dd314f91a82abd08c5ca75f0"
+}

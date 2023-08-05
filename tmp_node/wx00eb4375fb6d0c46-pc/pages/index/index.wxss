@@ -1,0 +1,539 @@
+.head-box {
+    position: relative;
+}
+
+.paper-num {
+    text-align: center;
+    color: #7a7a7a;
+    margin-top: -20rpx;
+    font-size: 25rpx;
+}
+
+.under-line {
+    font-size: 30rpx;
+    color: #808080;
+    text-align: center;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.adress-box {
+    color: #fff;
+    font-size: 20rpx;
+    padding-left: 25rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 10rpx;
+}
+
+.map-box {
+    display: flex;
+    align-items: center;
+}
+
+.map-box text {
+    padding-left: 5rpx;
+}
+
+.my-center {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 40rpx;
+}
+
+.map-icon {
+    width: 20rpx;
+    height: 25rpx;
+}
+
+.utils-box {
+    font-size: 25rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10rpx 0;
+}
+
+.utils-box .icon {
+    width: 25rpx;
+    height: 31rpx;
+    margin-right: 10rpx;
+    position: relative;
+    top: 5rpx;
+}
+
+.utils-box .icon2 {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+
+.xiabiao {
+    width: 20rpx;
+    height: 20rpx;
+    float: right;
+    margin-top: 10rpx;
+}
+
+.search-box {
+    background-color: #f3f3f3;
+    width: 65%;
+    margin-left: 25rpx;
+    border-radius: 15rpx;
+    padding: 10rpx 15rpx;
+    color: #a4a4a4;
+}
+
+.qr-box {
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: center;
+    margin-right: 30rpx;
+    border-radius: 15rpx;
+    padding: 10rpx 15rpx;
+    color: #a4a4a4;
+}
+
+.search-box input {
+    float: left;
+    width: 90%;
+}
+
+.title-box {
+    text-align: center;
+    color: #fff;
+    font-size: 25rpx;
+}
+
+.title-img {
+    width: 350rpx;
+    height: 90rpx;
+    margin-bottom: 20rpx;
+}
+
+.line {
+    height: 20rpx;
+    background-color: #f7f7f7;
+}
+
+swiper {
+    height: 280rpx;
+}
+
+.swiper-item {
+    display: block;
+    height: 260rpx;
+    margin-left: 30rpx;
+    position: relative;
+}
+
+.swiper-item image {
+    width: 100%;
+    height: 260rpx;
+}
+
+.swiper-item .shop-name {
+    position: absolute;
+    top: 10rpx;
+    left: 15rpx;
+}
+
+.detail-box {
+    position: relative;
+    color: #FFFFFF;
+    font-size: 36rpx;
+}
+
+.member-title {
+    font-size: 33rpx;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 10rpx 35rpx 10rpx 30rpx;
+    margin-bottom: 10rpx;
+}
+
+.member-title2 {
+    font-size: 33rpx;
+    padding: 10rpx 35rpx 10rpx 30rpx;
+    margin-bottom: 10rpx;
+}
+
+.member-title text {
+    font-weight: 600;
+    letter-spacing: 5rpx;
+}
+
+.member-title2 text {
+    font-weight: 600;
+    letter-spacing: 5rpx;
+}
+
+.member-title button {
+    letter-spacing: 5rpx;
+    color: #666666;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: 25rpx;
+    line-height: 1.3;
+}
+
+.no-card-box {
+    text-align: center;
+}
+
+.no-card-box view {
+    font-size: 30rpx;
+    margin-top: -30rpx;
+    padding-bottom: 20rpx;
+    color: #a4a4a4;
+}
+
+.card-box {
+    text-align: center;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.card-box image {
+    width: 100%;
+    height: 270rpx;
+}
+
+.card-detail-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.shop-msg {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 25rpx;
+    margin-top: -20rpx;
+    height: 70%;
+}
+
+.card-msg-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 90rpx;
+    left: 15rpx;
+    font-size: 25rpx;
+    width: 100%;
+}
+
+.card-msg-box2 {
+    top: 170rpx;
+}
+
+.detail-name {
+    margin-bottom: 5rpx;
+    color: #e7e2e2;
+}
+
+.detail-text {
+    width: 50%;
+    font-size: 35rpx;
+}
+
+.banlance-msg {
+    margin-right: 40rpx;
+    margin-left: 40rpx;
+}
+
+.shop-msg view:last-child {
+    font-size: 30rpx;
+}
+
+.card-msg,.banlance-msg {
+    font-size: 25rpx;
+}
+
+.card-msg text,.banlance-msg text {
+    font-size: 40rpx;
+    padding-right: 5rpx;
+}
+
+.card-msg view:first-child,.banlance-msg view:first-child {
+    margin-bottom: 20rpx;
+}
+
+.tab-box {
+    font-size: 30rpx;
+}
+
+.tab-box .tab-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 10rpx 50rpx 10rpx 30rpx;
+}
+
+.tab-merchant-type {
+    display: flex;
+    justify-content: space-between;
+    height: 0;
+    opacity: 0;
+    background-color: #e8fac6;
+    padding: 10rpx 5rpx;
+}
+
+.tab-box li {
+    text-align: center;
+}
+
+.tab-box li image {
+    width: 18rpx;
+    height: 18rpx;
+    position: relative;
+    top: 2rpx;
+    left: 15rpx;
+}
+
+.tab-active {
+    color: #fda00a;
+    position: relative;
+}
+
+.tab-title-active {
+    transform: rotate(180deg);
+    transition: All 0.4s ease-in-out;
+}
+
+.tab-title-out {
+    transform: rotate(0deg);
+    transition: All 0.4s ease-in-out;
+}
+
+@-webkit-keyframes in {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+
+    100% {
+        height: auto;
+        opacity: 1;
+    }
+}
+
+@keyframes in {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+
+    100% {
+        height: auto;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes out {
+    0% {
+        height: auto;
+        opacity: 1;
+    }
+
+    100% {
+        height: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes out {
+    0% {
+        height: auto;
+        opacity: 1;
+    }
+
+    100% {
+        height: 0;
+        opacity: 0;
+    }
+}
+
+.tab-active-a {
+    color: #fda00a;
+}
+
+.tab-detail-active {
+    animation-fill-mode: both;
+    animation-duration: .5s;
+    animation-name: in;
+    margin-bottom: 10rpx;
+}
+
+.tab-detail-out {
+    animation-fill-mode: both;
+    animation-duration: .5s;
+    animation-name: out;
+}
+
+.tab-active::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -5rpx;
+    content: '';
+    display: block;
+    width: 30rpx;
+    border-bottom: 2px solid #fda00a;
+    border-radius: 10rpx;
+}
+
+.coupon-msg-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20rpx;
+    font-size: 35rpx;
+    border-bottom: 1rpx solid #ebebeb;
+    padding-bottom: 15rpx;
+    margin-bottom: 20rpx;
+}
+
+.coupons-box .coupon-msg-box:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+
+.coupon-img {
+    width: 250rpx;
+    height: 200rpx;
+    margin-right: 15rpx;
+    border-radius: 10px;
+}
+
+.coupon-limit {
+    color: #fda00a;
+    font-size: 25rpx;
+}
+
+.coupon-detail-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 190rpx;
+    width: 60%;
+}
+
+.coupon-detail-box view:last-child {
+    font-size: 25rpx;
+    color: #a4a4a4;
+    display: flex;
+    justify-content: space-between;
+}
+
+.no-circle {
+    font-size: 30rpx;
+    color: #808080;
+    text-align: center;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.no-circle image {
+    width: 100rpx;
+    height: 100rpx;
+    margin-bottom: 10rpx;
+}
+
+.coupon-btn-box {
+    z-index: 501;
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e6e6e6;
+    padding-top: 10rpx;
+    padding-bottom: 5rpx;
+}
+
+.coupon-btn-box button {
+    padding: 0 100rpx;
+}
+
+.coupon-btn-box button:first-child {
+    background-color: #dfdfdf!important;
+}
+
+.coupon-btn-box button:last-child {
+    background-color: #ff606a!important;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.activity-box {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15rpx;
+    padding-right: 15rpx;
+}
+
+.activity-detail {
+    position: relative;
+    width: 49%;
+}
+
+.activity-bg {
+    width: 100%;
+    height: 220rpx;
+}
+
+.activity-type {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    color: #fff;
+    font-size: 20rpx;
+    width: 100%;
+    height: 95%;
+    align-items: center;
+}
+
+.activity-type>view {
+    margin-left: 25rpx;
+}
+
+.activity-type>image {
+    margin-right: 25rpx;
+}
+
+.activity-type1 {
+    width: 82rpx;
+    height: 63rpx;
+}
+
+.activity-type2 {
+    width: 78rpx;
+    height: 64rpx;
+}
+
+.activity-name {
+    font-size: 30rpx;
+    margin-bottom: 15rpx;
+}

@@ -1,0 +1,81 @@
+<myLoading id="myLoading"></myLoading>
+<view class="house-select">
+    <view bindtap="huXingXuanZe" class="house-name">
+        <span class="house-title">户型:</span>
+        <span class="house-desc">{{houseType}}</span>
+    </view>
+    <view class="house-info">
+        <view class="house-info-type">
+            <picker bindchange="bindRoomPickerChange" range="{{rooms}}" value="{{index}}">
+                <view class="house-info-select">
+                    <span class="house-info-val">{{rooms[index]}}</span>
+                    <image class="house-info-xiala" src="../../image/wepy_pro/xiala.png"></image>
+                </view>
+            </picker>
+            <view class="house-title" style="margin:0rpx 20rpx;">室</view>
+            <picker bindchange="bindHallPickerChange" range="{{halls}}" value="{{hallIndex}}">
+                <view class="house-info-select">
+                    <span class="house-info-val">{{halls[hallIndex]}}</span>
+                    <image class="house-info-xiala" src="../../image/wepy_pro/xiala.png"></image>
+                </view>
+            </picker>
+            <view class="house-title" style="margin-left: 20rpx;">厅</view>
+        </view>
+        <view bindtap="queryHouseImageList" class="house-info-btn">
+            <span class="house-info-btn-val">玩转我的户型</span>
+            <image class="house-info-conversion" src="../../image/wepy_pro/Conversion.png"></image>
+        </view>
+    </view>
+</view>
+<view class="house-image">
+    <view wx:if="{{list.length==0&&!defaultShowSelect}}">
+        <view class="swiper-item">
+            <image class="swiper-item-initialpage" mode="aspectFit" src="https://dm.static.elab-plus.com/wepy_pro/Initialpage.png"></image>
+        </view>
+        <view class="house-image-tip" style="margin-bottom:47rpx;margin-top:102rpx">
+            <view>本组合在此户型下，</view>
+            <view>没有合适结果，请您重新选择</view>
+        </view>
+    </view>
+    <view wx:if="{{list.length>0&&!defaultShowSelect}}">
+        <view class="house-image-swiper">
+            <swiper bindchange="change" bindtransition="statusChange" class="house-swiper" current="{{current}}" indicatorDots="true">
+                <swiper-item wx:for="{{list}}" wx:for-index="idx" wx:key="index">
+                    <view bindtap="clickView" class="swiper-item" data-index="{{idx}}">
+                        <image class="swiper-item-content" mode="aspectFit" src="{{item.imageUrl}}"></image>
+                        <image catchtap="priviewPic" class="swiper-item-zoomin" data-index="{{idx}}" mode="aspectFit" src="../../image/wepy_pro/zoomin.png"></image>
+                        <view class="swiper-item-tool">
+                            <image catchtap="downLoad" class="swiper-item-download" data-index="{{idx}}" mode="aspectFit" src="../../image/wepy_pro/download_nor.png"></image>
+                            <image catchtap="like" class="swiper-item-like" data-index="{{idx}}" mode="aspectFit" src="{{imageLikesNew[idx]?'../../image/wepy_pro/like_sel.png':'../../image/wepy_pro/like_nor.png'}}"></image>
+                        </view>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="house-image-tip">
+            <view>户型功能间一键DIY，让您的空间魔法变身！您可以：</view>
+            <view class="house-image-tipB">· 为喜欢的户型点赞并分享·</view>
+            <view class="house-image-tipB">· 重新选择几室几厅，点击玩转按钮，再次尝试·</view>
+        </view>
+    </view>
+    <view wx:if="{{defaultShowSelect}}">
+        <view class="swiper-item">
+            <image class="swiper-item-null" mode="aspectFit" src="https://dm.static.elab-plus.com/wepy_pro/Empty.png"></image>
+        </view>
+        <view class="house-image-tip" style="margin-bottom:47rpx;margin-top:102rpx">
+            <view>选择几室几厅，</view>
+            <view>点击玩转按钮，玩转我的户型！</view>
+        </view>
+    </view>
+</view>
+<view class="house-bottom">
+  免责声明：本产品只按照设计学原理，提供户型空间布局的可行性方案，具体实施应以项目承重墙、结构、柱体等为准，不可作为装修施工依据、也不可作为交付标准。
+</view>
+<view class="shareCover" wx:if="{{isShare}}">
+    <text class="share-title">是否分享到朋友圈</text>
+    <view class="share-view">
+        <text bindtap="cancelShare" class="share-cancel">取消</text>
+        <button bindgetuserinfo="getUserInfo" class="share-confirm" openType="getUserInfo">确定</button>
+    </view>
+</view>
+<view class="mask2" wx:if="{{isShare}}"></view>

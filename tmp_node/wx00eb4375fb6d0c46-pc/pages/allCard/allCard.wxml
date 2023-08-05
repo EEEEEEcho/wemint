@@ -1,0 +1,37 @@
+<loading-component showLoading="{{showLoading}}"></loading-component>
+<view class="head-box">
+    <view class="my-message-box">
+        <image src="{{headImg}}"></image>
+        <view>
+            <view>{{myName}}</view>
+            <view class="pt-vip">普通会员</view>
+        </view>
+    </view>
+    <view class="card-num">
+        <text>{{merchantList.length}}</text>张会员卡</view>
+</view>
+<view class="all-card-box">
+    <view class="card-box" wx:for="{{merchantList}}" wx:key="{{ item.merchantId }}">
+        <view bindtap="bindViewTap" data-merchant="{{item}}">
+            <image src="./../../utils/imgs/card1.png" style="opacity: 0"></image>
+            <view class="card-detail-box">
+                <image src="./../../utils/imgs/card{{index<7?index+1:index%7+1}}.png"></image>
+                <view class="shop-name">商家：{{item.shortName}}</view>
+                <view class="card-msg-box">
+                    <view>
+                        <view class="detail-name">持卡时间</view>
+                        <view>{{item.createTime}}</view>
+                    </view>
+                    <view class="detail-text">优惠券：{{item.couponsNum}}张</view>
+                </view>
+                <view class="card-msg-box card-msg-box2">
+                    <view>
+                        <view class="detail-name">最近消费</view>
+                        <view>{{item.createTime}}</view>
+                    </view>
+                    <view class="detail-text">余额：{{item.availableAmount}}元</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

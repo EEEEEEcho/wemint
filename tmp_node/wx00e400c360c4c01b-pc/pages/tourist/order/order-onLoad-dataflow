@@ -1,0 +1,44 @@
+// \pages/tourist/order/order onLoad Data Flow
+digraph {
+	"12c42cb3d0c94a6387020c7fba3638cc" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	ef342dfaffb340cbb9436b0c5e6d6ef3 [label=SequenceExpression color=blue]
+	d3ed605be822424cb237bdef5ba76ae3 [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> " color=blue]
+	"7b90d03831e04788afe281758c0116b8" [label="FunctionCall,
+function name -> success,
+param -> a.,
+a,
+" color=blue]
+	"86710bfbf4f84ce0b8375f170e47bf38" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	fdd7ec43a2f4419cba2324ea8461aa23 [label="Object Properties
+{
+winWidth -> a.windowWidth
+winHeight -> a.windowHeight
+scrollHeight -> a.windowHeight + 500
+}" color=blue]
+	"86710bfbf4f84ce0b8375f170e47bf38" -> fdd7ec43a2f4419cba2324ea8461aa23
+	"7b90d03831e04788afe281758c0116b8" -> "86710bfbf4f84ce0b8375f170e47bf38"
+	d3ed605be822424cb237bdef5ba76ae3 -> "7b90d03831e04788afe281758c0116b8"
+	ef342dfaffb340cbb9436b0c5e6d6ef3 -> d3ed605be822424cb237bdef5ba76ae3
+	c3e6a68d84b54a399f24a40bd9587f6f [label="CallExpression,
+callee name -> this.fetchSearchList,
+param -> " color=blue]
+	"866ecdc663fa42abbd042120967abdc9" [label="FunctionCall,
+function name -> fetchSearchList,
+param -> " color=blue]
+	c21c01597cc4473a9e3388b516d6e1af [label="CallExpression,
+callee name -> a,
+param -> t.data.currentTab,
+t.data.searchPageNum,
+t.data.callbackcount,
+" color=blue]
+	"866ecdc663fa42abbd042120967abdc9" -> c21c01597cc4473a9e3388b516d6e1af
+	c3e6a68d84b54a399f24a40bd9587f6f -> "866ecdc663fa42abbd042120967abdc9"
+	ef342dfaffb340cbb9436b0c5e6d6ef3 -> c3e6a68d84b54a399f24a40bd9587f6f
+	"12c42cb3d0c94a6387020c7fba3638cc" -> ef342dfaffb340cbb9436b0c5e6d6ef3
+}

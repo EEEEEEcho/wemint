@@ -1,0 +1,43 @@
+// \pages/merchant/merchant getLocation Data Flow
+digraph {
+	e2a9ad683987472e898d201a9a5c7642 [label="FunctionCall,
+function name -> getLocation,
+param -> " color=blue]
+	ef576dbb35a24ed1be2d3587fa37459d [label="CallExpression,
+callee name -> wx.getLocation,
+param -> " color=blue]
+	"78ae015a843849efbbe0d8552b42afc6" [label="FunctionCall,
+function name -> success,
+param -> a.,
+a,
+" color=blue]
+	"8a15790aed5c4c3bb405ac0b3d1a8896" [label=VariableDeclarations color=blue]
+	"526a133e15194157aec3ba5000e1aded" [label="VariableDeclarator,
+left -> o,
+right -> a.latitude" color=blue]
+	"8a15790aed5c4c3bb405ac0b3d1a8896" -> "526a133e15194157aec3ba5000e1aded"
+	"6b4bcf1f202d4de6993a9b1580bfe685" [label="VariableDeclarator,
+left -> t,
+right -> a.longitude" color=blue]
+	"8a15790aed5c4c3bb405ac0b3d1a8896" -> "6b4bcf1f202d4de6993a9b1580bfe685"
+	"78ae015a843849efbbe0d8552b42afc6" -> "8a15790aed5c4c3bb405ac0b3d1a8896"
+	"56e85b1887be4620aa1461d0b57927ee" [label=SequenceExpression color=blue]
+	f900066b445c45a78ecf56ba91467df7 [label="CallExpression,
+callee name -> console.log,
+param -> '纬度:' + o,
+" color=blue]
+	"56e85b1887be4620aa1461d0b57927ee" -> f900066b445c45a78ecf56ba91467df7
+	c5fd0fb5aaf64432b97ad77463136a8c [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"1e69165835194065b461394298dab846" [label="Object Properties
+{
+latitude -> o
+longitude -> t
+}" color=blue]
+	c5fd0fb5aaf64432b97ad77463136a8c -> "1e69165835194065b461394298dab846"
+	"56e85b1887be4620aa1461d0b57927ee" -> c5fd0fb5aaf64432b97ad77463136a8c
+	"78ae015a843849efbbe0d8552b42afc6" -> "56e85b1887be4620aa1461d0b57927ee"
+	ef576dbb35a24ed1be2d3587fa37459d -> "78ae015a843849efbbe0d8552b42afc6"
+	e2a9ad683987472e898d201a9a5c7642 -> ef576dbb35a24ed1be2d3587fa37459d
+}

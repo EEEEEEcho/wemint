@@ -1,0 +1,17 @@
+// \pages/index/index searchInp Data Flow
+digraph {
+	"2a1843c6d6204caf99aa6249796b2fb6" [label="FunctionCall,
+function name -> searchInp,
+param -> t,
+t.,
+" color=blue]
+	"0c13b94f6b9045eba1bafd200bfb0b4b" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	f3ee3e684c1e4d018d86403240614d0b [label="Object Properties
+{
+keyword -> t.detail.value
+}" color=blue]
+	"0c13b94f6b9045eba1bafd200bfb0b4b" -> f3ee3e684c1e4d018d86403240614d0b
+	"2a1843c6d6204caf99aa6249796b2fb6" -> "0c13b94f6b9045eba1bafd200bfb0b4b"
+}

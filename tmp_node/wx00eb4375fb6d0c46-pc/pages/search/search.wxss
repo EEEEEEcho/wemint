@@ -1,0 +1,129 @@
+.search-box {
+    background-color: #eaeaea;
+    width: 65%;
+    display: flex;
+    align-items: center;
+    margin-left: 25rpx;
+    padding: 5rpx 15rpx;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.search-box image {
+    float: left;
+}
+
+.utils-box {
+    font-size: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30rpx;
+}
+
+.utils-box image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+}
+
+.search-btn {
+    padding: 9rpx 30rpx;
+    color: #fff;
+    background-color: #ff606a;
+    border: 1px solid #ff606a;
+    border-left: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.hot-search-box image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+}
+
+.hot-title {
+    padding-top: 20rpx;
+    padding-left: 80rpx;
+    font-size: 30rpx;
+}
+
+.hot-title text {
+    position: relative;
+    top: -3rpx;
+}
+
+.hot-shop {
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: space-between;
+    font-size: 30rpx;
+    padding-left: 70rpx;
+    padding-right: 70rpx;
+}
+
+.hot-shop view {
+    background-color: #eaeaea;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    padding: 10rpx 5rpx;
+    color: #676767;
+}
+
+.coupon-msg-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 30rpx;
+    font-size: 35rpx;
+    border-bottom: 1rpx solid #ebebeb;
+    padding-bottom: 15rpx;
+    margin-bottom: 20rpx;
+}
+
+.coupons-box {
+    margin-top: 35rpx;
+}
+
+.coupons-box .coupon-msg-box:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+
+.coupon-img {
+    width: 200rpx;
+    height: 200rpx;
+    margin-right: 15rpx;
+    border-radius: 10px;
+}
+
+.coupon-limit {
+    color: #fda00a;
+}
+
+.coupon-detail-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 190rpx;
+    width: 65%;
+}
+
+.coupon-detail-box view:last-child {
+    font-size: 25rpx;
+    color: #a4a4a4;
+    display: flex;
+    justify-content: space-between;
+}
+
+.no-card-box {
+    text-align: center;
+}
+
+.no-card-box view {
+    font-size: 30rpx;
+    margin-top: -30rpx;
+    padding-bottom: 20rpx;
+    color: #a4a4a4;
+}

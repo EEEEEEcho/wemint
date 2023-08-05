@@ -1,0 +1,34 @@
+// \pages/shop/categoryPage getTabHeight Data Flow
+digraph {
+	da882932d0874eaa99901fa165e83d68 [label="FunctionCall,
+function name -> getTabHeight,
+param -> " color=blue]
+	"2f8ec76eb23e418fb3c02a33e5ac12b2" [label=SequenceExpression color=blue]
+	de8c27f0046a4598b117f33df6ab618a [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"66b349a686974c69828cdd1947aaaaa0" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"5c314dbef14d4ad7b36977f566b6b618" [label="CallExpression,
+callee name -> parseInt,
+param -> wx.getSystemInfoSync().windowWidth - wx.getSystemInfoSync().windowWidth / 750 * 164,
+" color=blue]
+	"66b349a686974c69828cdd1947aaaaa0" -> "5c314dbef14d4ad7b36977f566b6b618"
+	"7d67a6d55b8644fcbd6f698ba2be3c4d" [label="CallExpression,
+callee name -> parseInt,
+param -> wx.getSystemInfoSync().windowWidth - wx.getSystemInfoSync().windowWidth / 750 * 164,
+" color=blue]
+	"66b349a686974c69828cdd1947aaaaa0" -> "7d67a6d55b8644fcbd6f698ba2be3c4d"
+	de8c27f0046a4598b117f33df6ab618a -> "66b349a686974c69828cdd1947aaaaa0"
+	"2f8ec76eb23e418fb3c02a33e5ac12b2" -> de8c27f0046a4598b117f33df6ab618a
+	"1bbe93d395f1433fb847d61709d036e3" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"02d8f74354c342bf945a2b92e0faeb8e" [label="Object Properties
+{
+tabHeight -> wx.getSystemInfoSync().windowHeight - wx.getSystemInfoSync().windowWidth / 750 * 106
+}" color=blue]
+	"1bbe93d395f1433fb847d61709d036e3" -> "02d8f74354c342bf945a2b92e0faeb8e"
+	"2f8ec76eb23e418fb3c02a33e5ac12b2" -> "1bbe93d395f1433fb847d61709d036e3"
+	da882932d0874eaa99901fa165e83d68 -> "2f8ec76eb23e418fb3c02a33e5ac12b2"
+}

@@ -1,0 +1,35 @@
+// \pages/shop/refundsuc loadrefundsreson Data Flow
+digraph {
+	"6b8fcffc8e53444aa29e0859dabb76de" [label="FunctionCall,
+function name -> loadrefundsreson,
+param -> " color=blue]
+	"5d8a7c3f47d84de1bf76d0cab76b80c9" [label="If Alternate" color=blue]
+	"9d7860a04b6e40308fd4a35730f649c5" [label=SequenceExpression color=blue]
+	acba0dcda2a84e0688bff2972bece3a1 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	bde24266f28348d89d1673adc1846e7e [label="Assignment,
+left -> r,
+right -> a.data.queryparams.orderid" color=blue]
+	acba0dcda2a84e0688bff2972bece3a1 -> bde24266f28348d89d1673adc1846e7e
+	"9d7860a04b6e40308fd4a35730f649c5" -> acba0dcda2a84e0688bff2972bece3a1
+	"8b6475228e554d8fab9dd96a21ceca40" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"40386323050a4116ad82ec2253bab154" [label="Assignment,
+left -> t,
+right -> a.data.queryparams.pkey" color=blue]
+	"8b6475228e554d8fab9dd96a21ceca40" -> "40386323050a4116ad82ec2253bab154"
+	"9d7860a04b6e40308fd4a35730f649c5" -> "8b6475228e554d8fab9dd96a21ceca40"
+	"5beb619bc6d54d20850812ceb799496a" [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	"4524de10c4354ec0ac7e25a04a92dc2b" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=rdetail&orderid=' + r + '&pkey=' + t
+}" color=blue]
+	"5beb619bc6d54d20850812ceb799496a" -> "4524de10c4354ec0ac7e25a04a92dc2b"
+	"9d7860a04b6e40308fd4a35730f649c5" -> "5beb619bc6d54d20850812ceb799496a"
+	"5d8a7c3f47d84de1bf76d0cab76b80c9" -> "9d7860a04b6e40308fd4a35730f649c5"
+	"6b8fcffc8e53444aa29e0859dabb76de" -> "5d8a7c3f47d84de1bf76d0cab76b80c9"
+}

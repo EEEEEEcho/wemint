@@ -1,0 +1,37 @@
+// \pages/teacher/layoutDetail/detail bindPlus Data Flow
+digraph {
+	"90889e36ceb447ba92f856b31755a57e" [label="FunctionCall,
+function name -> bindPlus,
+param -> t,
+t.,
+" color=blue]
+	f0f7daf85e1f4a04ad70d643eab55962 [label=VariableDeclarations color=blue]
+	"1f3cec9925d24903a9e37e0abef55c6a" [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.componentid" color=blue]
+	f0f7daf85e1f4a04ad70d643eab55962 -> "1f3cec9925d24903a9e37e0abef55c6a"
+	"239460d01b3b4913ad71fc3db2f86d53" [label="VariableDeclarator,
+left -> e,
+right -> this.data.carts" color=blue]
+	f0f7daf85e1f4a04ad70d643eab55962 -> "239460d01b3b4913ad71fc3db2f86d53"
+	"3ba43a8172a149d5a42db833893da248" [label="VariableDeclarator,
+left -> i,
+right -> e[a].count" color=blue]
+	f0f7daf85e1f4a04ad70d643eab55962 -> "3ba43a8172a149d5a42db833893da248"
+	"90889e36ceb447ba92f856b31755a57e" -> f0f7daf85e1f4a04ad70d643eab55962
+	ddc6bcf2fb494175832b0d870dff11b4 [label=SequenceExpression color=blue]
+	beba687017cf477cb1af8dc6041374de [label="Assignment,
+left -> e[a].count,
+right -> i" color=blue]
+	ddc6bcf2fb494175832b0d870dff11b4 -> beba687017cf477cb1af8dc6041374de
+	"434647c025c24aecbc58cd4c8caed36e" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	afd0f1a54b5845d7924a37722c96ec68 [label="Object Properties
+{
+carts -> e
+}" color=blue]
+	"434647c025c24aecbc58cd4c8caed36e" -> afd0f1a54b5845d7924a37722c96ec68
+	ddc6bcf2fb494175832b0d870dff11b4 -> "434647c025c24aecbc58cd4c8caed36e"
+	"90889e36ceb447ba92f856b31755a57e" -> ddc6bcf2fb494175832b0d870dff11b4
+}

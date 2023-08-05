@@ -1,0 +1,22 @@
+// \pages/index/index previewImage Data Flow
+digraph {
+	"4e87cb15004e4d9db0553ce61ceb078a" [label="FunctionCall,
+function name -> previewImage,
+param -> e.,
+e,
+" color=blue]
+	"05fb9fd91717426585685d9ce1ec55d4" [label="CallExpression,
+callee name -> index.saveRecord,
+param -> wat.data.userOppenId,
+wat.data.startPage.backgroundImg,
+" color=blue]
+	"4e87cb15004e4d9db0553ce61ceb078a" -> "05fb9fd91717426585685d9ce1ec55d4"
+	"0b270f5d0b144a75b4556a78c422377a" [label="CallExpression,
+callee name -> wx.previewImage,
+param -> " color=blue]
+	"4271cee5d8214c4fa41dd8010a5b4a21" [label="Object Properties
+{
+}" color=blue]
+	"0b270f5d0b144a75b4556a78c422377a" -> "4271cee5d8214c4fa41dd8010a5b4a21"
+	"4e87cb15004e4d9db0553ce61ceb078a" -> "0b270f5d0b144a75b4556a78c422377a"
+}

@@ -1,0 +1,29 @@
+// \pages/returndetail/returndetail SendGood Data Flow
+digraph {
+	"971f31a9967a42a3ad5cc915e13cdae0" [label="FunctionCall,
+function name -> SendGood,
+param -> e,
+e.,
+" color=blue]
+	"74e56a9731544be680aba155a78fdeb5" [label=VariableDeclarations color=blue]
+	ed04c578ab714873bed084c5acbc0474 [label="VariableDeclarator,
+left -> id,
+right -> e.currentTarget.dataset.id" color=blue]
+	"74e56a9731544be680aba155a78fdeb5" -> ed04c578ab714873bed084c5acbc0474
+	"971f31a9967a42a3ad5cc915e13cdae0" -> "74e56a9731544be680aba155a78fdeb5"
+	"59093a6bcd8b4d27847f712371729ba0" [label=VariableDeclarations color=blue]
+	"5fb8ff75fb8f4955aa65fb54afa72eb7" [label="VariableDeclarator,
+left -> skuid,
+right -> e.currentTarget.dataset.skuid" color=blue]
+	"59093a6bcd8b4d27847f712371729ba0" -> "5fb8ff75fb8f4955aa65fb54afa72eb7"
+	"971f31a9967a42a3ad5cc915e13cdae0" -> "59093a6bcd8b4d27847f712371729ba0"
+	"1ef28892959b42ec8a7e1746f35909dc" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"3e47978538cf4024b6f0dd3044c448f0" [label="Object Properties
+{
+url -> '../applysendgood/applysendgood?id=' + id + '&&skuId=' + skuid
+}" color=blue]
+	"1ef28892959b42ec8a7e1746f35909dc" -> "3e47978538cf4024b6f0dd3044c448f0"
+	"971f31a9967a42a3ad5cc915e13cdae0" -> "1ef28892959b42ec8a7e1746f35909dc"
+}

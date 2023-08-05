@@ -1,0 +1,27 @@
+// \pages/stu/activityPay/activityPay onPayCas Data Flow
+digraph {
+	"23ae810f28bb4018b208e652a180882c" [label="FunctionCall,
+function name -> onPayCas,
+param -> a.,
+a,
+" color=blue]
+	"782ed02ca52948c6898e858538a0a3b0" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"069fbb737d6b4edea587a31bdb193cd8" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"330fe9d00de748488170423686b721ea" [label="Object Properties
+{
+ca_id -> e.data.model.id
+user_name -> e.data.userName
+user_mobile -> e.data.mobile
+}" color=blue]
+	"069fbb737d6b4edea587a31bdb193cd8" -> "330fe9d00de748488170423686b721ea"
+	a1c8c33bcc35432f834635553c013cf2 [label="FunctionCall,
+function name -> success,
+param -> a,
+" color=blue]
+	"069fbb737d6b4edea587a31bdb193cd8" -> a1c8c33bcc35432f834635553c013cf2
+	"782ed02ca52948c6898e858538a0a3b0" -> "069fbb737d6b4edea587a31bdb193cd8"
+	"23ae810f28bb4018b208e652a180882c" -> "782ed02ca52948c6898e858538a0a3b0"
+}

@@ -1,0 +1,258 @@
+.modules {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10rpx;
+    padding-bottom: 40rpx;
+    justify-content: space-between;
+}
+
+.module {
+    width: 716rpx;
+    margin-left: 34rpx;
+}
+
+.header_body {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 30rpx 20rpx 20rpx;
+    height: 56rpx;
+    position: relative;
+}
+
+.avatar {
+    width: 56rpx;
+    height: 56rpx;
+    margin-right: 10rpx;
+    border-radius: 28rpx;
+}
+
+.wechatName {
+    width: 176rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 26rpx;
+    color: #51515c;
+}
+
+.category1,.category2,.category3 {
+    margin-right: 8rpx;
+    font-size: 32rpx;
+    color: #51515c;
+}
+
+.category3 {
+    letter-spacing: 2rpx;
+}
+
+.arrow {
+    width: 16rpx;
+    height: 27rpx;
+    position: absolute;
+    top: 14rpx;
+    right: 0;
+}
+
+.label {
+    display: inline-block;
+    font-size: 24rpx;
+    color: #aeaeb4;
+    margin-left: 20rpx;
+}
+
+.images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 16rpx 20rpx 0;
+    position: relative;
+}
+
+.picture {
+    width: 137rpx;
+    height: 154rpx;
+    border-radius: 24rpx;
+}
+
+.desk {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #282624;
+    opacity: 0.6;
+    color: #fff;
+    width: 138rpx;
+    height: 154rpx;
+    line-height: 154rpx;
+    border-radius: 24rpx;
+    text-align: center;
+}
+
+.chest {
+    position: absolute;
+    top: 0;
+    left: 155rpx;
+    background: #282624;
+    opacity: 0.6;
+    color: #fff;
+    width: 138rpx;
+    height: 154rpx;
+    line-height: 154rpx;
+    border-radius: 24rpx;
+    text-align: center;
+}
+
+.more_category {
+    width: 682rpx;
+    margin-left: 34rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categories {
+    width: 682rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.emptyView {
+    content: "";
+    width: 150rpx;
+}
+
+.eachCate {
+    width: 150rpx;
+    padding-bottom: 30rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cateImage {
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 24rpx;
+    background: #eee;
+    box-shadow: 0 0 2rpx 2rpx #c9c9c9;
+}
+
+.catename {
+    font-size: 28rpx;
+    color: #51515c;
+    margin-top: 20rpx;
+}
+
+.limitArrows {
+    width: 682rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.more {
+    font-size: 20rpx;
+    color: #fff;
+    background: #51515c;
+    padding: 6rpx 16rpx;
+    border-radius: 24rpx;
+    letter-spacing: 2rpx;
+}
+
+.limitArrow {
+    width: 29rpx;
+    height: 29rpx;
+}
+
+.homeFree {
+    width: 691rpx;
+    height: 198rpx;
+    margin-top: 20rpx;
+    margin-left: 34rpx;
+    margin-bottom: 26rpx;
+    border-radius: 26rpx;
+}
+
+.moduleTitle {
+    font-size: 46rpx;
+    letter-spacing: 4rpx;
+    font-weight: bold;
+    color: #51515c;
+}
+
+.main-content {
+    white-space: nowrap;
+}
+
+.scroll_view {
+    padding-top: 20rpx;
+    display: inline-block;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-flow: nowrap;
+    overflow: hidden;
+}
+
+.cate_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 160rpx;
+    border-radius: 24rpx;
+}
+
+.cate_list_style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 245rpx;
+    height: 343rpx;
+    margin-left: 5rpx;
+    border-radius: 24rpx;
+}
+
+.category_img_style {
+    width: 245rpx;
+    height: 343rpx;
+    border-radius: 24rpx;
+}
+
+.category_img {
+    background: #999999;
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 24rpx;
+}
+
+.category_text {
+    font-size: 28rpx;
+    color: #51515c;
+    margin-top: 15rpx;
+    padding-bottom: 15rpx;
+}
+
+.category_text_style1 {
+    font-size: 26rpx;
+    color: #51515c;
+    margin-top: 20rpx;
+    letter-spacing: 4rpx;
+}
+
+.category_text_style2 {
+    font-size: 18rpx;
+    color: #51515c;
+    padding-bottom: 20rpx;
+}

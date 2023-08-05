@@ -1,0 +1,23 @@
+// \pages/address/user-address/user-address delAddress Data Flow
+digraph {
+	"72d768969286472a9c228c94f55320f8" [label="FunctionCall,
+function name -> delAddress,
+param -> e,
+e.,
+" color=blue]
+	c520f3996a32421da2dfcad6ae3b5d36 [label=VariableDeclarations color=blue]
+	"36eb384ed9af408584910663e7987335" [label="VariableDeclarator,
+left -> d,
+right -> e.currentTarget.dataset.id" color=blue]
+	c520f3996a32421da2dfcad6ae3b5d36 -> "36eb384ed9af408584910663e7987335"
+	"72d768969286472a9c228c94f55320f8" -> c520f3996a32421da2dfcad6ae3b5d36
+	"8349ddd120a244a197b4a1b02791ef0d" [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	"88ea35ad9f684676b7512c3a0ac656a7" [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	"8349ddd120a244a197b4a1b02791ef0d" -> "88ea35ad9f684676b7512c3a0ac656a7"
+	"72d768969286472a9c228c94f55320f8" -> "8349ddd120a244a197b4a1b02791ef0d"
+}

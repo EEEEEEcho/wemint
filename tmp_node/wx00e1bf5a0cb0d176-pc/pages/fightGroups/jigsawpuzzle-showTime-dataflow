@@ -1,0 +1,30 @@
+// \pages/fightGroups/jigsawpuzzle showTime Data Flow
+digraph {
+	"31cc3405137e491d89d095c732f69959" [label="FunctionCall,
+function name -> showTime,
+param -> " color=blue]
+	"952a41c2560a44a1b0af47c098b80e02" [label="If Alternate" color=blue]
+	"9a1dc755195f47f985cce0b03e88b71e" [label=VariableDeclarations color=blue]
+	"4aba4293e95a453dac26d7662f8bab84" [label="VariableDeclarator,
+left -> o,
+right -> r.data.pintuanCategory" color=blue]
+	"9a1dc755195f47f985cce0b03e88b71e" -> "4aba4293e95a453dac26d7662f8bab84"
+	"952a41c2560a44a1b0af47c098b80e02" -> "9a1dc755195f47f985cce0b03e88b71e"
+	"128f2d44302b44259c595f9d8781e569" [label=SequenceExpression color=blue]
+	"9243297b3f9e4688992cd0ba662854ed" [label="CallExpression,
+callee name -> r.setData,
+param -> " color=blue]
+	"60ae75a7358e44c7a640cce26d0124c0" [label="Object Properties
+{
+pintuanCategory -> o
+}" color=blue]
+	"9243297b3f9e4688992cd0ba662854ed" -> "60ae75a7358e44c7a640cce26d0124c0"
+	"128f2d44302b44259c595f9d8781e569" -> "9243297b3f9e4688992cd0ba662854ed"
+	e0695e3ca0a947daa85af51dfbaa567d [label="CallExpression,
+callee name -> clearInterval,
+param -> r.data.interval,
+" color=blue]
+	"128f2d44302b44259c595f9d8781e569" -> e0695e3ca0a947daa85af51dfbaa567d
+	"952a41c2560a44a1b0af47c098b80e02" -> "128f2d44302b44259c595f9d8781e569"
+	"31cc3405137e491d89d095c732f69959" -> "952a41c2560a44a1b0af47c098b80e02"
+}

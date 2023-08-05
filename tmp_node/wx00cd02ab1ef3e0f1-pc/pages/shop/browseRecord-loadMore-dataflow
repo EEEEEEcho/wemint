@@ -1,0 +1,94 @@
+// \pages/shop/browseRecord loadMore Data Flow
+digraph {
+	"7897720ea3a54958baf566c3df40d374" [label="FunctionCall,
+function name -> loadMore,
+param -> " color=blue]
+	"4274646af9eb4d82bab55359af16a4d6" [label="If Alternate" color=blue]
+	"766220c1a39e4251a4eb3119594d8eae" [label="CallExpression,
+callee name -> this.getCommissionRecord,
+param -> " color=blue]
+	"6c084424fedb4f0da88b18b940defdb8" [label="FunctionCall,
+function name -> getCommissionRecord,
+param -> " color=blue]
+	"01a0735806e840c581061af0400511bb" [label=VariableDeclarations color=blue]
+	"560449b5196c47edb677e4d34bfd8a94" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"138fbbdeff26480da2d1896b8e951e6b" [label="Object Properties
+{
+}" color=blue]
+	"508bc03d9c834993953073ac5328b90f" [label="FunctionCall,
+function name -> success,
+param -> t,
+t.,
+" color=blue]
+	"835f5a2f60cd41fc98d0247b8aa5657c" [label=VariableDeclarations color=blue]
+	"5713412ee53b488c80856bbc5ffa8c8b" [label="VariableDeclarator,
+left -> a,
+right -> t.info.data" color=blue]
+	"835f5a2f60cd41fc98d0247b8aa5657c" -> "5713412ee53b488c80856bbc5ffa8c8b"
+	"274b911bc1d1439d81e84300c11450ee" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"84827fee091f4b2cb5c71ee8dd714064" [label="CallExpression,
+callee name -> parseInt,
+param -> t.info.total,
+" color=blue]
+	"274b911bc1d1439d81e84300c11450ee" -> "84827fee091f4b2cb5c71ee8dd714064"
+	"835f5a2f60cd41fc98d0247b8aa5657c" -> "274b911bc1d1439d81e84300c11450ee"
+	"508bc03d9c834993953073ac5328b90f" -> "835f5a2f60cd41fc98d0247b8aa5657c"
+	"0d9efbb8cb59491c98084f2a6ebece37" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"599258df4c6140d99e3b66ff70d56711" [label=SequenceExpression color=blue]
+	"921e6f2339924d30b7348404e3ac85bb" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	af0720374c7f49968bad66530bb24a7f [label=SequenceExpression color=blue]
+	a419f54d686b41a9aec10adabc45844f [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"5989189bda6f482c9710b4f3879ee7d2" [label="CallExpression,
+callee name -> o[s - 1].list.concat,
+param -> a[0].list,
+" color=blue]
+	a419f54d686b41a9aec10adabc45844f -> "5989189bda6f482c9710b4f3879ee7d2"
+	af0720374c7f49968bad66530bb24a7f -> a419f54d686b41a9aec10adabc45844f
+	b4f190cd9b034a97a50670d4d1353680 [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"9c74f9ed5deb4672aae81ac6ab375440" [label="CallExpression,
+callee name -> o.concat,
+param -> a.filter,
+" color=blue]
+	"61c059757ef541c8ab75c65e5ff695c8" [label="CallExpression,
+callee name -> a.filter,
+param -> " color=blue]
+	b9263690dac346a589a54f0f2f396d85 [label="FunctionCall,
+function name -> Anonymous Function,
+param -> t,
+" color=blue]
+	"61c059757ef541c8ab75c65e5ff695c8" -> b9263690dac346a589a54f0f2f396d85
+	"9c74f9ed5deb4672aae81ac6ab375440" -> "61c059757ef541c8ab75c65e5ff695c8"
+	b4f190cd9b034a97a50670d4d1353680 -> "9c74f9ed5deb4672aae81ac6ab375440"
+	af0720374c7f49968bad66530bb24a7f -> b4f190cd9b034a97a50670d4d1353680
+	"921e6f2339924d30b7348404e3ac85bb" -> af0720374c7f49968bad66530bb24a7f
+	b3b62dae2b714dfabb72f26961552240 [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	ae609b398cdc4d23a9b8eb8d3c4d4a08 [label="CallExpression,
+callee name -> o.concat,
+param -> a,
+" color=blue]
+	b3b62dae2b714dfabb72f26961552240 -> ae609b398cdc4d23a9b8eb8d3c4d4a08
+	"921e6f2339924d30b7348404e3ac85bb" -> b3b62dae2b714dfabb72f26961552240
+	"599258df4c6140d99e3b66ff70d56711" -> "921e6f2339924d30b7348404e3ac85bb"
+	"0d9efbb8cb59491c98084f2a6ebece37" -> "599258df4c6140d99e3b66ff70d56711"
+	"508bc03d9c834993953073ac5328b90f" -> "0d9efbb8cb59491c98084f2a6ebece37"
+	"138fbbdeff26480da2d1896b8e951e6b" -> "508bc03d9c834993953073ac5328b90f"
+	"560449b5196c47edb677e4d34bfd8a94" -> "138fbbdeff26480da2d1896b8e951e6b"
+	"01a0735806e840c581061af0400511bb" -> "560449b5196c47edb677e4d34bfd8a94"
+	"6c084424fedb4f0da88b18b940defdb8" -> "01a0735806e840c581061af0400511bb"
+	"766220c1a39e4251a4eb3119594d8eae" -> "6c084424fedb4f0da88b18b940defdb8"
+	"4274646af9eb4d82bab55359af16a4d6" -> "766220c1a39e4251a4eb3119594d8eae"
+	"7897720ea3a54958baf566c3df40d374" -> "4274646af9eb4d82bab55359af16a4d6"
+}

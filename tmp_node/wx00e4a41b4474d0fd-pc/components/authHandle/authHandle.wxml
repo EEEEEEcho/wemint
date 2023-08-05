@@ -1,0 +1,25 @@
+<view catchtouchmove="ture" class="mask2" wx:if="{{showPhoneModel||showInfoModel}}"></view>
+<view catchtouchmove="ture" class="model" wx:if="{{showPhoneModel}}">
+    <view class="modelTitle">
+        <image class="logo" src="{{logo}}"></image>
+        <text class="title">{{title}}</text>
+    </view>
+    <view class="modelBodyTitle">{{phoneTitle}}</view>
+    <view class="modelBody">感谢您关注{{title}}，{{phoneText}}</view>
+    <view class="btns">
+        <button bindtap="nextTimePhone" class="cancel" lang="zh_CN" plain="true">跳过</button>
+        <button bindgetphonenumber="getPhoneNumber" class="agree" lang="zh_CN" openType="getPhoneNumber" plain="true">允许</button>
+    </view>
+</view>
+<view catchtouchmove="ture" class="model" wx:if="{{showInfoModel}}">
+    <view class="modelTitle">
+        <image class="logo" src="{{logo}}"></image>
+        <text class="title">{{title}}</text>
+    </view>
+    <view class="modelBodyTitle">{{userTitle}}</view>
+    <view class="modelBody">感谢您关注{{title}}，{{userText}}</view>
+    <view class="btns">
+        <button bindtap="nextTimeInfo" class="cancel" lang="zh_CN" plain="true">跳过</button>
+        <button bindgetuserinfo="getUserInfo" class="agree" lang="zh_CN" openType="getUserInfo" plain="true">允许</button>
+    </view>
+</view>

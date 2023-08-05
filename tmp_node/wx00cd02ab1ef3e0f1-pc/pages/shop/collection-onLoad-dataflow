@@ -1,0 +1,101 @@
+// \pages/shop/collection onLoad Data Flow
+digraph {
+	"8f039c5b9ebb4f59b5ce019ebcb05ae2" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"993ea61b45144792af7eea50363e4ccd" [label=SequenceExpression color=blue]
+	"09a5a2f658f043bbb50ce1bebf407789" [label="CallExpression,
+callee name -> this.loadProduct,
+param -> " color=blue]
+	"48e1fc88d1304c478abeb67b4ac0a526" [label="FunctionCall,
+function name -> loadProduct,
+param -> " color=blue]
+	eb450030ca8f4cfc8b73678d3d1b129a [label="If Alternate" color=blue]
+	d3f3f5ff9c34406a96764f03473a8732 [label=VariableDeclarations color=blue]
+	"4de59ef3c134488b9f121aff39db46ad" [label="VariableDeclarator,
+left -> o,
+right -> a.data.total" color=blue]
+	d3f3f5ff9c34406a96764f03473a8732 -> "4de59ef3c134488b9f121aff39db46ad"
+	eb450030ca8f4cfc8b73678d3d1b129a -> d3f3f5ff9c34406a96764f03473a8732
+	a74be115edc540c4a483d5f315d47ab3 [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"1dda505f5534453a873ff1054571c18b" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"94e74384acb24ef68aa17c334d963d1a" [label="Assignment,
+left -> a.data.recordcount,
+right -> o" color=blue]
+	"1dda505f5534453a873ff1054571c18b" -> "94e74384acb24ef68aa17c334d963d1a"
+	a74be115edc540c4a483d5f315d47ab3 -> "1dda505f5534453a873ff1054571c18b"
+	eb450030ca8f4cfc8b73678d3d1b129a -> a74be115edc540c4a483d5f315d47ab3
+	cf0fe684f59845bbbae9a5937501542c [label=VariableDeclarations color=blue]
+	bf8f40f6d7c94ecc9dad4d0581a38c58 [label="VariableDeclarator,
+left -> s,
+right -> a.data.recordcount" color=blue]
+	cf0fe684f59845bbbae9a5937501542c -> bf8f40f6d7c94ecc9dad4d0581a38c58
+	fac25e1d24b743daa37b80306694f4a1 [label="VariableDeclarator,
+left -> l,
+right -> a.data.productlist.length" color=blue]
+	cf0fe684f59845bbbae9a5937501542c -> fac25e1d24b743daa37b80306694f4a1
+	eb450030ca8f4cfc8b73678d3d1b129a -> cf0fe684f59845bbbae9a5937501542c
+	"263f25d072c24955bb7c9d565709360c" [label="If Alternate" color=blue]
+	"02aabdc5b9e64bd5afb40c29143f0cfd" [label=VariableDeclarations color=blue]
+	b8556846476642d88412aa174bd2ae06 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	fa00f1661269436f9340c64bc16f3f93 [label="CallExpression,
+callee name -> Math.ceil,
+param -> l / a.data.pagesize,
+" color=blue]
+	b8556846476642d88412aa174bd2ae06 -> fa00f1661269436f9340c64bc16f3f93
+	"02aabdc5b9e64bd5afb40c29143f0cfd" -> b8556846476642d88412aa174bd2ae06
+	"5ad7631607b94359b2c5814a25a0d366" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"89fccf70bb7f44fd80139f22f9db2368" [label="ConditionalExpression,
+ conditional list -> a.data.queryparams.keyword" color=blue]
+	"5ad7631607b94359b2c5814a25a0d366" -> "89fccf70bb7f44fd80139f22f9db2368"
+	"02aabdc5b9e64bd5afb40c29143f0cfd" -> "5ad7631607b94359b2c5814a25a0d366"
+	"263f25d072c24955bb7c9d565709360c" -> "02aabdc5b9e64bd5afb40c29143f0cfd"
+	e3fde9af884e4996a5fe19d991b9b834 [label=SequenceExpression color=blue]
+	c48bd9931dbd40969823e84876be63fa [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	f7ccbc3643384cc381d744d03dab5ad9 [label="Assignment,
+left -> n,
+right -> '&sortcol=' + a.data.sortcol + '&sort=' + a.data.sort" color=blue]
+	c48bd9931dbd40969823e84876be63fa -> f7ccbc3643384cc381d744d03dab5ad9
+	e3fde9af884e4996a5fe19d991b9b834 -> c48bd9931dbd40969823e84876be63fa
+	"99f729396e12401a986909aa70037b45" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	"3c3455e90e654c2cb84d46a4636f575b" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=getProductCollList&key=' + c + '&page=' + i + '&pagesize=' + a.data.pagesize + n
+}" color=blue]
+	"99f729396e12401a986909aa70037b45" -> "3c3455e90e654c2cb84d46a4636f575b"
+	e3fde9af884e4996a5fe19d991b9b834 -> "99f729396e12401a986909aa70037b45"
+	"263f25d072c24955bb7c9d565709360c" -> e3fde9af884e4996a5fe19d991b9b834
+	eb450030ca8f4cfc8b73678d3d1b129a -> "263f25d072c24955bb7c9d565709360c"
+	"48e1fc88d1304c478abeb67b4ac0a526" -> eb450030ca8f4cfc8b73678d3d1b129a
+	"09a5a2f658f043bbb50ce1bebf407789" -> "48e1fc88d1304c478abeb67b4ac0a526"
+	"993ea61b45144792af7eea50363e4ccd" -> "09a5a2f658f043bbb50ce1bebf407789"
+	"6a04e4e234ec4f63975067973fcf1d06" [label="CallExpression,
+callee name -> this.showHeight,
+param -> " color=blue]
+	"8aa00e8733804738b2a7d0ea6efc6b7c" [label="FunctionCall,
+function name -> showHeight,
+param -> " color=blue]
+	"51b718ac88fc41c598707c49c3a66734" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"3e0b0840f12945f9a9f1ee32e8422f89" [label="Object Properties
+{
+showHeight -> 2 * wx.getSystemInfoSync().windowHeight - 98
+}" color=blue]
+	"51b718ac88fc41c598707c49c3a66734" -> "3e0b0840f12945f9a9f1ee32e8422f89"
+	"8aa00e8733804738b2a7d0ea6efc6b7c" -> "51b718ac88fc41c598707c49c3a66734"
+	"6a04e4e234ec4f63975067973fcf1d06" -> "8aa00e8733804738b2a7d0ea6efc6b7c"
+	"993ea61b45144792af7eea50363e4ccd" -> "6a04e4e234ec4f63975067973fcf1d06"
+	"8f039c5b9ebb4f59b5ce019ebcb05ae2" -> "993ea61b45144792af7eea50363e4ccd"
+}

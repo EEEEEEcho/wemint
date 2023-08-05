@@ -1,0 +1,410 @@
+@-webkit-keyframes open {
+    from {
+        transform: translateY(-860rpx);
+    }
+
+    to {
+        transform: translateY(0rpx);
+    }
+}
+
+@keyframes open {
+    from {
+        transform: translateY(-860rpx);
+    }
+
+    to {
+        transform: translateY(0rpx);
+    }
+}
+
+@-webkit-keyframes close {
+    from {
+        transform: translateY(0rpx);
+    }
+
+    to {
+        transform: translateY(-900rpx);
+    }
+}
+
+@keyframes close {
+    from {
+        transform: translateY(0rpx);
+    }
+
+    to {
+        transform: translateY(-900rpx);
+    }
+}
+
+.open {
+    animation: open 0.4s ease-in both;
+}
+
+.close {
+    animation: close 0.4s ease-in both;
+}
+
+@-webkit-keyframes showMask {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes showMask {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes hideMask {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes hideMask {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.showMask {
+    animation: showMask 0.4s ease-in-out both;
+}
+
+.hideMask {
+    animation: hideMask 0.4s ease-in-out both;
+}
+
+.coverScreen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.6);
+    overflow: hidden;
+}
+
+.section {
+    width: 682rpx;
+    position: fixed;
+    top: 320rpx;
+    left: 34rpx;
+    background: #fff;
+    border-radius: 24rpx;
+    overflow: hidden;
+    z-index: 1001;
+}
+
+.regionPicker {
+    margin: 30rpx;
+    justify-content: space-between;
+}
+
+.provinceGroup,.cityGroup,.townGroup {
+    width: 180rpx;
+    height: 300rpx;
+    text-align: center;
+}
+
+.province,.city,.town {
+    font-size: 28rpx;
+    color: #51515c;
+    margin-bottom: 14rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.selected {
+    font-size: 28rpx;
+    color: #fff;
+    background: #f1763a;
+    border-radius: 50rpx;
+    margin-bottom: 10rpx;
+}
+
+.over {
+    width: 498rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    background: #51515c;
+    border-radius: 40rpx;
+    margin: 30rpx 87rpx;
+    color: #ffffff;
+    font-size: 32rpx;
+}
+
+.bottomText {
+    color: #aeaeb4;
+    font-size: 28rpx;
+    text-align: center;
+    height: 30px;
+    letter-spacing: 2px;
+}
+
+.positionContainer {
+    padding-top: 30rpx;
+}
+
+.search {
+    width: 682rpx;
+    align-items: center;
+    margin-left: 34rpx;
+}
+
+.searchBar {
+    width: 542rpx;
+    height: 56rpx;
+    border-radius: 50rpx;
+    background: #fff;
+    align-items: center;
+    margin-left: 24rpx;
+    border: 1rpx solid #51515c;
+}
+
+.toFilter {
+    align-items: center;
+}
+
+.filter {
+    font-size: 26rpx;
+    color: #51515c;
+    margin-left: 20rpx;
+}
+
+.caretDowm {
+    width: 20rpx;
+    height: 20rpx;
+    margin: 4rpx 20rpx 0 8rpx;
+}
+
+.hr {
+    border-left: 1px solid #51515c;
+    height: 15rpx;
+}
+
+.megaloscope {
+    width: 28rpx;
+    height: 28rpx;
+    margin-left: auto;
+    margin-right: 20rpx;
+}
+
+.inputStyle {
+    border-left: 1px solid #51515c;
+    width: 300rpx;
+    font-size: 24rpx;
+    color: #51515c;
+    padding-left: 10rpx;
+}
+
+.placeholder {
+    font-size: 24rpx;
+    color: #ccc;
+    padding-left: 10rpx;
+}
+
+.searchFor,.searchCancle {
+    font-size: 26rpx;
+    color: #51515c;
+    margin-left: auto;
+    margin-right: 24rpx;
+}
+
+.swiper_images {
+    width: 682rpx;
+    margin-left: 34rpx;
+    height: 300rpx;
+    margin-top: 30rpx;
+    border-radius: 30rpx;
+    overflow: hidden;
+    position: relative;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+.swiperImg {
+    width: 682rpx;
+    height: 300rpx;
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 30rpx;
+}
+
+.dots {
+    position: absolute;
+    right: 30rpx;
+    bottom: 20rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    margin: 0 8rpx;
+    width: 26rpx;
+    height: 6rpx;
+    background: #aeaeb4;
+    transition: all 0.6s;
+}
+
+.active {
+    width: 26rpx;
+    height: 6rpx;
+    background: #fff;
+}
+
+.selectArea {
+    width: 642rpx;
+    margin: 20rpx;
+    align-items: center;
+}
+
+.inputCss {
+    font-size: 28rpx;
+    color: #51515c;
+}
+
+.nowCity {
+    font-weight: bold;
+    font-size: 28rpx;
+    color: #51515c;
+}
+
+.hr {
+    border-left: 2rpx solid black;
+    height: 36rpx;
+    margin: 0 30rpx;
+}
+
+.nowTown {
+    font-size: 28rpx;
+    color: #51515c;
+}
+
+.filterLogo {
+    margin-left: auto;
+    width: 20rpx;
+    height: 22rpx;
+}
+
+.filters {
+    font-size: 28rpx;
+    color: #51515c;
+    margin-left: 10rpx;
+}
+
+.filterArea {
+    margin-top: 50rpx;
+}
+
+.areaPart {
+    position: relative;
+    border-radius: 24rpx;
+    box-shadow: 2rpx 2rpx 2rpx 2rpx #efeeee;
+    width: 682rpx;
+    height: 360rpx;
+    margin-left: 34rpx;
+    background: #eee;
+}
+
+.picture1 {
+    width: 682rpx;
+    height: 220rpx;
+    border-top-left-radius: 24rpx;
+    border-top-right-radius: 24rpx;
+}
+
+.picture2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 682rpx;
+    height: 180rpx;
+}
+
+.areaName {
+    font-size: 32rpx;
+    color: #51515c;
+    letter-spacing: 2rpx;
+    font-weight: bold;
+    z-index: 2;
+    margin-top: 10rpx;
+    margin-left: 30rpx;
+}
+
+.areaPos {
+    align-items: center;
+    z-index: 2;
+    margin-top: 20rpx;
+    margin-left: 30rpx;
+}
+
+.areaPng {
+    width: 22rpx;
+    height: 28rpx;
+    margin-right: 15rpx;
+}
+
+.areaTxt {
+    font-size: 24rpx;
+    color: #aeaeb4;
+    width: 440rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.distance {
+    align-items: center;
+    margin-left: auto;
+}
+
+.distanceNum {
+    font-size: 26rpx;
+    color: #51515c;
+    margin-left: auto;
+}
+
+.distancePng {
+    width: 26rpx;
+    height: 26rpx;
+    margin-left: 6rpx;
+    margin-right: 20rpx;
+}
+
+.peopleCount {
+    font-size: 24rpx;
+    color: #fff;
+    border-radius: 50rpx;
+    background: #f1763a;
+    padding: 6rpx 18rpx;
+    position: absolute;
+    top: 166rpx;
+    left: 30rpx;
+}

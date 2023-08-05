@@ -1,0 +1,59 @@
+.goodItemLayout {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.goodImage {
+    width: 120rpx;
+    height: 120rpx;
+    margin: 24rpx;
+}
+
+.goodDetail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 32rpx 16rpx 24rpx 0rpx;
+}
+
+.goodTitle {
+    color: #666666;
+    font-size: 26rpx;
+    padding-bottom: 4rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.propertyLabel {
+    color: #999999;
+    font-size: 20rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.priceNumber {
+    margin-left: auto;
+    align-items: flex-end;
+    margin-right: 24rpx;
+    display: flex;
+    flex-direction: column;
+    margin-top: 24rpx;
+}
+
+.price {
+    color: #ed7b43;
+    font-size: 25rpx;
+}
+
+.number {
+    color: #999999;
+    font-size: 23rpx;
+}

@@ -1,0 +1,29 @@
+// \pages/poster/posterList/posterList formSubmit Data Flow
+digraph {
+	b3aa1881c5a44d09b570b28d48486f19 [label="FunctionCall,
+function name -> formSubmit,
+param -> t,
+t.,
+" color=blue]
+	"15174e2cd799436eb7c94079008ff173" [label=SequenceExpression color=blue]
+	d9212c27b64e453e993e2cbccba76c82 [label="CallExpression,
+callee name -> console.log,
+param -> t,
+" color=blue]
+	"15174e2cd799436eb7c94079008ff173" -> d9212c27b64e453e993e2cbccba76c82
+	b3aa1881c5a44d09b570b28d48486f19 -> "15174e2cd799436eb7c94079008ff173"
+	"9fa575818c1a4650b179ae43e2ec4eac" [label="CallExpression,
+callee name -> wx.downloadFile,
+param -> " color=blue]
+	d7b113d9ebe448358e0ee4d759a6f337 [label="Object Properties
+{
+url -> a.data.bgImg
+}" color=blue]
+	"9fa575818c1a4650b179ae43e2ec4eac" -> d7b113d9ebe448358e0ee4d759a6f337
+	"45802499df464a68a58d1adf1033754b" [label="FunctionCall,
+function name -> success,
+param -> t,
+" color=blue]
+	"9fa575818c1a4650b179ae43e2ec4eac" -> "45802499df464a68a58d1adf1033754b"
+	b3aa1881c5a44d09b570b28d48486f19 -> "9fa575818c1a4650b179ae43e2ec4eac"
+}

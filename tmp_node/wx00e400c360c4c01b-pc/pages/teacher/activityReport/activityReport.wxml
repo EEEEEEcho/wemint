@@ -1,0 +1,11 @@
+<view class="margintop5"></view>
+<view class="section">
+    <view>
+        <textarea bindinput="inputContent" class="textarea" maxlength="500" placeholder="请填写汇报内容" placeholderClass="placeholder-class" value="{{report_content}}"></textarea>
+    </view>
+    <view class="loginBtnView">
+        <form reportSubmit bindsubmit="addReport">
+            <button class="loginBtn" formType="submit">保 存</button>
+        </form>
+    </view>
+</view>

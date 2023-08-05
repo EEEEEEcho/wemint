@@ -1,0 +1,23 @@
+// \pages/user/dingdan removeOrder Data Flow
+digraph {
+	a3b3d7c17d8448bab2a4e83cbc8f393c [label="FunctionCall,
+function name -> removeOrder,
+param -> e,
+e.,
+" color=blue]
+	d91565c05fb24036a24cefcc8d71bdf2 [label=VariableDeclarations color=blue]
+	a6478931bdcd4b07bb456c38c9b444c3 [label="VariableDeclarator,
+left -> r,
+right -> e.currentTarget.dataset.orderId" color=blue]
+	d91565c05fb24036a24cefcc8d71bdf2 -> a6478931bdcd4b07bb456c38c9b444c3
+	a3b3d7c17d8448bab2a4e83cbc8f393c -> d91565c05fb24036a24cefcc8d71bdf2
+	e7c7ee6a45c14a04b1be491bc9575a9f [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	"7309eefcc7404612b66f08a3509517a0" [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	e7c7ee6a45c14a04b1be491bc9575a9f -> "7309eefcc7404612b66f08a3509517a0"
+	a3b3d7c17d8448bab2a4e83cbc8f393c -> e7c7ee6a45c14a04b1be491bc9575a9f
+}

@@ -1,0 +1,20 @@
+// \pages/stu/book/book onLoad Data Flow
+digraph {
+	"184952e645da45aea488fc85ea16b984" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"14824e1a50414494a18ab6b79d3a4580" [label="CallExpression,
+callee name -> this.fetchSearchList,
+param -> " color=blue]
+	"7b8870dba51c43729433b8f9ef6af03e" [label="FunctionCall,
+function name -> fetchSearchList,
+param -> " color=blue]
+	"317250fd2a53456d921382a3f1e08618" [label="CallExpression,
+callee name -> a,
+param -> t.data.searchPageNum,
+t.data.callbackcount,
+" color=blue]
+	"7b8870dba51c43729433b8f9ef6af03e" -> "317250fd2a53456d921382a3f1e08618"
+	"14824e1a50414494a18ab6b79d3a4580" -> "7b8870dba51c43729433b8f9ef6af03e"
+	"184952e645da45aea488fc85ea16b984" -> "14824e1a50414494a18ab6b79d3a4580"
+}

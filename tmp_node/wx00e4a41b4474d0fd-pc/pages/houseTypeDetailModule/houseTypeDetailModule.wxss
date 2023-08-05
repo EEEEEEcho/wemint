@@ -1,0 +1,530 @@
+.emptyView {
+    width: 100%;
+    height: 100rpx;
+}
+
+.houseTypeDetailModule-Body {
+    color: #fff;
+    height: 100vh;
+    border: box-sizing;
+}
+
+.houseTypeDetailModule-head {
+    position: relative;
+    width: 750rpx;
+}
+
+.houseTypeDetailModule-head-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.houseTypeDetailModule-head-top {
+    position: relative;
+    width: 100%;
+    height: 260rpx;
+}
+
+.houseTypeDetailModule-head-content {
+    position: relative;
+    width: 610rpx;
+    margin-left: 70rpx;
+}
+
+.houseTypeDetailModule-head-content-container {
+    position: relative;
+    width: 610rpx;
+}
+
+.houseTypeDetailModule-area-mark {
+    position: relative;
+    width: 100%;
+}
+
+.houseTypeDetailModule-area {
+    position: relative;
+    left: 0px;
+    margin-bottom: 15rpx;
+    width: 100%;
+}
+
+.houseTypeDetailModule-area p {
+    font-family: SourceHanSerifCN-Regular;
+    font-size: 40rpx;
+    color: #fff;
+    letter-spacing: 0;
+}
+
+.houseTypeDetailModule-mark {
+    position: relative;
+    margin: 15rpx 0rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.houseTypeDetailModule-mark2 {
+    position: relative;
+    margin: 15rpx 0rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.houseTypeDetailModule-mark-item {
+    display: inline-block;
+    background: #fff;
+    height: 40rpx;
+    box-shadow: 0 6rpx 30rpx 0 rgba(0,0,0,0.05);
+    border-radius: 18rpx;
+    text-align: center;
+    font-size: 0rpx;
+    margin: 4rpx;
+    overflow: hidden;
+}
+
+.houseTypeDetailModule-mark-item p {
+    font-family: PingFangSC-Regular;
+    font-size: 20rpx;
+    height: 40rpx;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    line-height: 40rpx;
+    vertical-align: center;
+    color: #322f33;
+    letter-spacing: 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.houseTypeDetailModule-area-divide {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    opacity: 0.2;
+    background-color: #fff;
+}
+
+.houseTypeDetailModule-room-information {
+    position: relative;
+    width: 100%;
+    margin-top: 16rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.houseTypeDetailModule-Params {
+    width: 100%;
+}
+
+.watchRoom-3D {
+    text-align: right;
+    padding: 0;
+    overflow: initial;
+    background: transparent;
+}
+
+.watchRoom-3D .TD_icon {
+    width: 142rpx;
+    height: 142rpx;
+}
+
+.houseTypeDetailModule-room-information-item {
+    width: 100%;
+    position: relative;
+    margin-top: 15rpx;
+    margin-bottom: 15rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.houseTypeDetailModule-room-information-item-title {
+    margin-left: 0rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    font-size: 24rpx;
+    width: 30%;
+}
+
+.houseTypeDetailModule-room-information-item-title p {
+    opacity: 0.51;
+    font-family: PingFangSC-Regular;
+    color: #fff;
+    height: 30rpx;
+    line-height: 30rpx;
+    vertical-align: center;
+    text-align: center;
+}
+
+.houseTypeDetailModule-room-information-item-content {
+    line-height: 30rpx;
+    font-size: 28rpx;
+    width: 70%;
+}
+
+.houseTypeDetailModule-room-information-item-content p {
+    font-family: PingFangSC-Regular;
+    color: #fff;
+    height: 30rpx;
+    line-height: 30rpx;
+    vertical-align: center;
+    text-align: center;
+}
+
+.houseTypeDetailModule-content {
+    position: relative;
+    width: 750vw;
+    margin-top: 20rpx;
+}
+
+.houseTypeDetailModule-content-title {
+    height: 80rpx;
+    width: 100vw;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    line-height: 80rpx;
+    background: #fff;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.tab-item {
+    display: inline-block;
+    text-align: center;
+}
+
+.tab-item p {
+    opacity: 0.6;
+    font-family: PingFangSC-Semibold;
+    font-size: 34rpx;
+    color: #211c22;
+    letter-spacing: 0;
+    line-height: 40rpx;
+}
+
+.tab-title {
+    width: 100%;
+    display: block;
+}
+
+.tab-item.active {
+    color: #2f69de;
+    position: relative;
+}
+
+.tab-item.active p {
+    font-size: 40rpx;
+    color: #211c22;
+    letter-spacing: 0;
+    line-height: 40rpx;
+    padding-bottom: 15rpx;
+    border-bottom: 5rpx solid #2f69de;
+    opacity: 1;
+}
+
+.tab-item.active:after {
+    content: "";
+    display: block;
+    background: #2f69de;
+    position: absolute;
+    bottom: 0;
+    left: 5rpx;
+}
+
+.tab-item.active p:after {
+    color: #211c22;
+    opacity: 1;
+}
+
+.item-ans {
+    width: 100%;
+    display: flex;
+    flex-grow: row no-wrap;
+    justify-content: space-between;
+    padding: 30rpx;
+    box-sizing: border-box;
+    height: 180rpx;
+    align-items: center;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.expertInfo {
+    font-size: 12px;
+    flex-grow: 2;
+    color: #b0b0b0;
+    line-height: 1.5em;
+}
+
+.expertInfo .name {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 6px;
+}
+
+.tab-content {
+    margin-top: 0rpx;
+    width: 100vw;
+    min-height: calc(100vh - 240rpx - 300rpx - 20rpx - 80rpx - 100rpx);
+}
+
+.houseDetail-atlas {
+    width: 750rpx;
+    height: 380rpx;
+    position: relative;
+}
+
+.houseDetail-atlas-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.houseDetail-atlas-image-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-180deg,rgba(50,47,51,0.00),rgba(50,47,51,0.60));
+}
+
+.houseDetail-atlas-image-description {
+    position: absolute;
+    width: 100%;
+    bottom: 50rpx;
+}
+
+.houseDetail-atlas-image-description-title {
+    position: relative;
+    width: 100%;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+}
+
+.houseDetail-atlas-image-description-title p {
+    font-size: 50rpx;
+    color: #fff;
+    height: 50rpx;
+    line-height: 50rpx;
+    vertical-align: center;
+    text-align: center;
+}
+
+.houseDetail-atlas-image-description-content {
+    position: relative;
+    opacity: 0.9;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #FFFFFF;
+    width: 100%;
+    text-align: center;
+    margin-top: 14rpx;
+}
+
+.houseDetail-atlas-image-description-content p {
+    font-size: 28rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    vertical-align: center;
+    text-align: center;
+}
+
+.bottom-description-container {
+    width: 100%;
+    height: 50rpx;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    background: #f4f4f4;
+}
+
+.bottom-description {
+    position: relative;
+    width: 600rpx;
+    margin-left: 75rpx;
+    text-align: center;
+    line-height: 14.5rpx;
+}
+
+.bottom-description p {
+    font-family: NotoSansCJKsc-Regular;
+    font-size: 14.5rpx;
+    color: #000;
+    height: 14.5rpx;
+    text-align: center;
+}
+
+.houseDetail-houseType {
+    position: relative;
+    width: 690rpx;
+    height: 590rpx;
+    font-size: 0rpx;
+    margin: 30rpx auto;
+    border-radius: 10rpx;
+    background: #F7F7F7;
+    box-shadow: 0 20rpx 40rpx 0 rgba(0,0,0,0.10);
+}
+
+.click-big-btn {
+    position: absolute;
+    top: 10rpx;
+    width: 44rpx;
+    height: 44rpx;
+    right: 10rpx;
+    z-index: 999;
+}
+
+.houseDetail-houseType-image {
+    position: relative;
+    border-radius: 10rpx;
+}
+
+.houseDetail-houseType-image-description {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    height: 30rpx;
+    line-height: 30rpx;
+    margin-top: 15rpx;
+    font-size: 24rpx;
+}
+
+.houseDetail-houseType-image-description p {
+    font-family: PingFangSC-Light;
+    font-size: 24rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    vertical-align: center;
+    color: #211c22;
+}
+
+.houseDetail-position {
+    position: relative;
+    width: 690rpx;
+    height: 390rpx;
+    margin: 30rpx auto;
+    border-radius: 10rpx;
+    background: #F7F7F7;
+    box-shadow: 0 20rpx 40rpx 0 rgba(0,0,0,0.10);
+}
+
+.houseDetail-position-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10rpx;
+}
+
+.myswipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.myload {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    box-sizing: border-box;
+}
+
+.myload .spinner {
+    display: inline-block;
+    width: 30rpx;
+    height: 30rpx;
+    background-color: white;
+    animation: rotateplane 1.5s infinite ease-in-out;
+}
+
+.diy {
+    background: #AD7C59;
+    border-radius: 40rpx;
+    border-radius: 40rpx;
+    width: 244rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-bottom: 30rpx;
+}
+
+@-webkit-keyframes rotateplane {
+    0% {
+        -webkit-transform: perspective(30rpx);
+    }
+
+    50% {
+        -webkit-transform: perspective(30rpx) rotateY(180deg);
+    }
+
+    100% {
+        -webkit-transform: perspective(30rpx) rotateY(180deg) rotateX(180deg);
+    }
+}
+
+@keyframes rotateplane {
+    0% {
+        transform: perspective(30rpx) rotateX(0deg) rotateY(0deg);
+    }
+
+    50% {
+        transform: perspective(30rpx) rotateX(-180.1deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: perspective(30rpx) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}
+
+.authBox {
+    width: 100%;
+    height: 900rpx;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 28rpx;
+    z-index: 9;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.authPhoneBtn {
+    width: 418rpx;
+    background: #B5825D;
+    border-radius: 45px;
+    height: 70rpx;
+    color: #fff;
+    font-size: 30rpx;
+    margin-top: 300rpx;
+}
+
+.show-td-btn {
+    position: relative;
+    top: -30rpx;
+    left: 10rpx;
+    display: flex;
+    line-height: 35rpx;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 20rpx;
+    color: #FFFFFF;
+    background: #AD7C59;
+    border-radius: 15px;
+    height: 35rpx;
+    width: 155rpx;
+}
+
+.mask {
+    background-color: red;
+}

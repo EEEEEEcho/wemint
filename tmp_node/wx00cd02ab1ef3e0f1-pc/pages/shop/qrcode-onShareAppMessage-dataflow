@@ -1,0 +1,13 @@
+// \pages/shop/qrcode onShareAppMessage Data Flow
+digraph {
+	"3e4402d17d824eac8938f03fef0b80e9" [label="FunctionCall,
+function name -> onShareAppMessage,
+param -> " color=blue]
+	"1fb6bc3c8bd44f85895fe6e91fd0e8e3" [label=ReturnExpression color=blue]
+	"6ae072966aaf494daef68d0eb0bcc3a7" [label="Object Properties
+{
+path -> '/pages/shop/qrcode?userID=' + this.data.userID
+}" color=blue]
+	"1fb6bc3c8bd44f85895fe6e91fd0e8e3" -> "6ae072966aaf494daef68d0eb0bcc3a7"
+	"3e4402d17d824eac8938f03fef0b80e9" -> "1fb6bc3c8bd44f85895fe6e91fd0e8e3"
+}

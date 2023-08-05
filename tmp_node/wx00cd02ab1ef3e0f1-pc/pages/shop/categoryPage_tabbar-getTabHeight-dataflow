@@ -1,0 +1,15 @@
+// \pages/shop/categoryPage_tabbar getTabHeight Data Flow
+digraph {
+	fedb22aac2554663b924a045113fe6e0 [label="FunctionCall,
+function name -> getTabHeight,
+param -> " color=blue]
+	c569655198624ebba585a438c3c263a6 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	bb845b59e0e6489d8e21b830cd50324d [label="Object Properties
+{
+tabHeight -> wx.getSystemInfoSync().windowHeight - wx.getSystemInfoSync().windowWidth / 750 * 110
+}" color=blue]
+	c569655198624ebba585a438c3c263a6 -> bb845b59e0e6489d8e21b830cd50324d
+	fedb22aac2554663b924a045113fe6e0 -> c569655198624ebba585a438c3c263a6
+}

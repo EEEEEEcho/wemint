@@ -1,0 +1,23 @@
+// \pages/sureOrder/sureOrder initOrderInfo Data Flow
+digraph {
+	"3fcc00c8d06445d2add8827266e64b51" [label="FunctionCall,
+function name -> initOrderInfo,
+param -> " color=blue]
+	"60c190b3f3e94526a80566f829ca6101" [label=VariableDeclarations color=blue]
+	"87c61c0c38d842d89a9bd0903ae3876c" [label="VariableDeclarator,
+left -> r,
+right -> this.data.isUserInfo" color=blue]
+	"60c190b3f3e94526a80566f829ca6101" -> "87c61c0c38d842d89a9bd0903ae3876c"
+	"3fcc00c8d06445d2add8827266e64b51" -> "60c190b3f3e94526a80566f829ca6101"
+	edb558e8d649462197a8c7757257651c [label=VariableDeclarations color=blue]
+	be9a6c4feb544c7f8ee732bb6d6a1eed [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"1880f5b99aa0422db1d475805d7926cb" [label="Object Properties
+{
+isUserInfo -> r
+}" color=blue]
+	be9a6c4feb544c7f8ee732bb6d6a1eed -> "1880f5b99aa0422db1d475805d7926cb"
+	edb558e8d649462197a8c7757257651c -> be9a6c4feb544c7f8ee732bb6d6a1eed
+	"3fcc00c8d06445d2add8827266e64b51" -> edb558e8d649462197a8c7757257651c
+}

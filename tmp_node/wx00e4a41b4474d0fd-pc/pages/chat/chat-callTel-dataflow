@@ -1,0 +1,15 @@
+// \pages/chat/chat callTel Data Flow
+digraph {
+	"43332b051dd540d98370ffc7c114ec66" [label="FunctionCall,
+function name -> callTel,
+param -> " color=blue]
+	cb7e9d7b10084bd8b2946b6191d1a830 [label="CallExpression,
+callee name -> wx.makePhoneCall,
+param -> " color=blue]
+	ea820ae793b847d4b0e05b616ddb41cf [label="Object Properties
+{
+phoneNumber -> e.data.adviserPhone
+}" color=blue]
+	cb7e9d7b10084bd8b2946b6191d1a830 -> ea820ae793b847d4b0e05b616ddb41cf
+	"43332b051dd540d98370ffc7c114ec66" -> cb7e9d7b10084bd8b2946b6191d1a830
+}

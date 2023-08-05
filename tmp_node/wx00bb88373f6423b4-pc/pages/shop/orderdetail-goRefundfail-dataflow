@@ -1,0 +1,27 @@
+// \pages/shop/orderdetail goRefundfail Data Flow
+digraph {
+	a3554d17a5204d7dae186328e0696961 [label="FunctionCall,
+function name -> goRefundfail,
+param -> t,
+t.,
+" color=blue]
+	ad4ec8ed47c84cc0a7696d2ae8b10fae [label=VariableDeclarations color=blue]
+	"819c37bbaaca466392f4049fe3315aba" [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.orderid" color=blue]
+	ad4ec8ed47c84cc0a7696d2ae8b10fae -> "819c37bbaaca466392f4049fe3315aba"
+	"794500cf0dc44f008d8dcfdc2250528f" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.pkey" color=blue]
+	ad4ec8ed47c84cc0a7696d2ae8b10fae -> "794500cf0dc44f008d8dcfdc2250528f"
+	a3554d17a5204d7dae186328e0696961 -> ad4ec8ed47c84cc0a7696d2ae8b10fae
+	"0965933ab1184d419f6ad68e477e0094" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"34c68de868a24a0893d314695f5da727" [label="Object Properties
+{
+url -> 'refundfail?orderid=' + a + '&pkey=' + e
+}" color=blue]
+	"0965933ab1184d419f6ad68e477e0094" -> "34c68de868a24a0893d314695f5da727"
+	a3554d17a5204d7dae186328e0696961 -> "0965933ab1184d419f6ad68e477e0094"
+}

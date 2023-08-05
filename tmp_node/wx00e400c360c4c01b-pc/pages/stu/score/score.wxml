@@ -1,0 +1,35 @@
+<view class="margintop5"></view>
+<view class="payView">
+    <view class="scatitle">
+        {{score}}
+    </view>
+    <view class="scatext">
+        当前积分
+    </view>
+</view>
+<view class="margintop100">
+    <view class="record">
+        <view>
+            <text class="placeholder-class">————</text>
+            <label>积分记录</label>
+            <text class="placeholder-class">————</text>
+        </view>
+    </view>
+</view>
+<view class="section">
+    <view class="wnr" wx:if="{{dataList.length==0}}">
+        <image src="http://p7mq9gjza.bkt.clouddn.com/non.png" style="width:276px; height:319px;"></image>
+    </view>
+    <scroll-view bindscrolltolower="searchScrollLower" scrollY="true" style="height: {{scrollHeight}}rpx;" wx:else>
+        <view class="currContent" wx:for="{{dataList}}" wx:key="activity">
+            <view class="currContent_list1">
+                <view class="lable">{{item.content}}</view>
+                <view class="placeholder-class">{{item.createtime}}</view>
+            </view>
+            <view class="currContent_list2" wx:if="{{item.type==0}}">+{{item.score}}</view>
+            <view class="currContent_list2" wx:else>-{{item.score}}</view>
+        </view>
+        <view class="loading" hidden="{{!searchLoading}}">正在载入...</view>
+        <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+    </scroll-view>
+</view>

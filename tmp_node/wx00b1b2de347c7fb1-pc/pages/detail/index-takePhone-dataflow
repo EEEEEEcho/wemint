@@ -1,0 +1,23 @@
+// \pages/detail/index takePhone Data Flow
+digraph {
+	fde832624b8548fa8d3cd88150f8b112 [label="FunctionCall,
+function name -> takePhone,
+param -> t,
+t.,
+" color=blue]
+	a33a5f5e97a1445f95675a9da61e56a9 [label=VariableDeclarations color=blue]
+	"2c14fb59f6e7496492be4e6219443182" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.phone" color=blue]
+	a33a5f5e97a1445f95675a9da61e56a9 -> "2c14fb59f6e7496492be4e6219443182"
+	fde832624b8548fa8d3cd88150f8b112 -> a33a5f5e97a1445f95675a9da61e56a9
+	"142c1c3bf8f543898142b675ebe2bf11" [label="CallExpression,
+callee name -> wx.makePhoneCall,
+param -> " color=blue]
+	"75d08a6b9e2b41f5b776043f060aa22e" [label="Object Properties
+{
+phoneNumber -> e
+}" color=blue]
+	"142c1c3bf8f543898142b675ebe2bf11" -> "75d08a6b9e2b41f5b776043f060aa22e"
+	fde832624b8548fa8d3cd88150f8b112 -> "142c1c3bf8f543898142b675ebe2bf11"
+}

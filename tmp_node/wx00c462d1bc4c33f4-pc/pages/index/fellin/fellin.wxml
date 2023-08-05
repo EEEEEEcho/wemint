@@ -1,0 +1,39 @@
+<view class="tabs">
+    <view class="tabs_title1">等待桌数</view>
+    <view class="tabs_line"></view>
+    <view class="tabs_title2">预计等待</view>
+</view>
+<view class="tabs_data">
+    <view class="tabs_data_text1">
+        <em class="color-orange">{{tableNum==null||tableNum==''?0:tableNum}}</em>
+        <em class="color-white">桌</em>
+    </view>
+    <view class="tabs_data_line"></view>
+    <view class="tabs_data_text2">
+        <em class="color-orange">{{minute==null||minute==''?0:minute}}</em>
+        <em class="color-white">分钟</em>
+    </view>
+</view>
+<button bindtap="queuingNumber" class="pdqh">排队取号</button>
+<view class="pdsm">
+    <view>.听到叫号请到前台</view>
+    <view>.过号不作废，顺延3桌安排</view>
+    <view>.排队取号成功后行程有变，到号前可取消排队</view>
+</view>
+<view class="zxrxBox">
+    <view class="zxrx">咨询热线：{{hotline}}</view>
+</view>
+<view class="dpdzBox">
+    <view class="contains">
+        <view class="dpdz">店铺地址：</view>
+        <view class="dpdz1">{{address}}</view>
+        <view class="clear"></view>
+    </view>
+</view>
+<view class="yysjBox">
+    <view class="yysj">营业时间：{{startTime}}-{{endTime}}</view>
+</view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

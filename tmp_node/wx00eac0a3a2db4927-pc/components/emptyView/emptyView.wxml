@@ -1,0 +1,4 @@
+<view class="emptyLayout" wx:if="{{isShow}}">
+    <image class="emptyImage" lazyLoad="true" mode="aspectFit" src="{{iconPath==''?defaultPath:iconPath}}"></image>
+    <text class="emptyText">{{textContent}}</text>
+</view>

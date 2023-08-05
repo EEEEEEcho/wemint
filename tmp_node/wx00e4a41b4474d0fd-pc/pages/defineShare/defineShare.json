@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "成功推荐",
+    "onReachBottomDistance": 50,
+    "usingComponents": {
+        "myLoading": "../../components/globalLoad/globalLoad",
+        "navbar": "/components/navbar/navbar",
+        "c-img": "../components/indexImg/indexImg"
+    }
+}

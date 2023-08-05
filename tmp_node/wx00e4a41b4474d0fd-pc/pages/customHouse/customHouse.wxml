@@ -1,0 +1,143 @@
+<myLoading id="myLoading"></myLoading>
+<view class="container">
+    <view class="customList" wx:if="{{customStep===1}}">
+        <view class="title">请选择一种户型</view>
+        <view bind:tap="onSelect" class="house-card" data-type="{{item.id}}" wx:for="{{houseTypes}}" wx:key="item.id">
+            <view class="house-type {{selectedType&&selectedType.id===item.id?'selected-type':''}}">
+                <view class="house-info">
+                    <c-img cclass="room-thumb" mode="scaleToFill" src="{{item.thumb}}"></c-img>
+                    <view class="info-type">
+                        <view class="type">{{item.name}}</view>
+            约<text class="area">{{item.area}}</text>㎡
+          </view>
+                    <view class="info-level">{{item.type==='1'?'双层':'平层'}}/层高{{item.height}}m</view>
+                </view>
+                <c-img cclass="house-thumb" mode="aspectFit" src="{{item.thumbSm}}"></c-img>
+            </view>
+            <view class="select-area">
+                <image class="select-icon" mode="scaleToFill" src="{{cdn}}/select.png" wx:if="{{selectedType&&selectedType.id===item.id}}"></image>
+                <image class="select-icon" mode="scaleToFill" src="{{cdn}}/un_select.png" wx:else></image>
+            </view>
+        </view>
+        <view class="bottom operate-step1 {{!selectedType?'operate-disable':''}}">
+            <view class="operate-state">已选择:{{selectedType.name}}</view>
+            <view bind:tap="onStep" class="operate-step">下一步</view>
+        </view>
+        <view class="mask" wx:if="{{popup}}">
+            <view class="popup">
+                <view class="h3 margin-4">只需<text class="focus">3</text>步</view>
+                <view class="h4 margin-4">轻松定制您的<text class="focus">心仪户型</text>
+                </view>
+                <view class="pop-step">
+                    <c-img cclass="step-indicate" src="{{cdn}}/step_indicate.png"></c-img>
+                    <view class="step-desc">
+                        <view class="step-title">STEP <text class="step-seq focus">1</text>
+                        </view>
+                        <view class="step-description">选择户型</view>
+                    </view>
+                </view>
+                <view class="pop-step">
+                    <c-img cclass="step-indicate" src="{{cdn}}/step_indicate.png"></c-img>
+                    <view class="step-desc">
+                        <view class="step-title">STEP <text class="step-seq focus">2</text>
+                        </view>
+                        <view class="step-description">选择个性化空间</view>
+                    </view>
+                </view>
+                <view class="pop-step">
+                    <c-img cclass="step-indicate step-end" src="{{cdn}}/step_end.png"></c-img>
+                    <view class="step-desc">
+                        <view class="step-title">STEP <text class="step-seq focus">3</text>
+                        </view>
+                        <view class="step-description">生成专属方案</view>
+                    </view>
+                </view>
+                <view bind:tap="onKnown" class="pop-btn">我知道了</view>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{customStep===2}}">
+        <view class="title">
+      {{selectedType.name}}-{{selectedType.area}}㎡
+      <view bind:tap="onHouseTypeUpdate" class="custom-btn" hidden="{{commentMode||drawMode}}">修改</view>
+        </view>
+        <view class="huxing" wx:if="{{drawMode}}">
+            <canvas bindtouchmove="drawMove" bindtouchstart="drawStart" canvasId="draw" class="draw" disableScroll="true" style="width: 750rpx;height:900rpx"></canvas>
+        </view>
+        <view class="huxing" wx:else>
+            <view catch:touchmove="touchmove" class="hx-img" disableScroll="true" style="width:{{imgWidth}}px;height:{{imgHeight}}px;top:{{imgTop}}px;left:{{imgLeft}}px">
+                <c-img bindloaded="loadImage" cStyle="width:100%;height:100%;" mode="aspectFit" src="{{customDetail.image3dPlane}}"></c-img>
+            </view>
+            <view bind:tap="seePlain" class="lt-corner plane">
+        查看平面图 <image class="icon-search" mode="scaleToFill" src="{{cdn}}/search.png"></image>
+            </view>
+            <image bind:tap="onRoute3D" class="rt-corner corner" mode="scaleToFill" src="{{cdn}}/3D.png" wx:if="{{customDetail.image3d}}"></image>
+            <view bind:tap="editSpace" class="space-indicator {{spaceIndicatorClass.spacetop}}" data-space="{{customDetail.spaces[0]}}">
+                <text class="space-name space-name-top">{{customDetail.spaces[0].name}}</text>
+                <image class="space-plus" mode="scaleToFill" src="{{cdn}}/update_plus.png"></image>
+            </view>
+            <view bind:tap="editSpace" class="space-indicator {{spaceIndicatorClass.spacebtm}}" data-space="{{customDetail.spaces[1]}}">
+                <image class="space-plus space-plus-left" mode="scaleToFill" src="{{cdn}}/update_plus.png"></image>
+                <text class="space-name">{{customDetail.spaces[1].name}}</text>
+            </view>
+            <view class="rb-corner corner" hidden="{{drawMode}}">
+                <image bind:tap="onRouteTheme" class="corner-btn" hidden="{{commentMode}}" src="{{cdn}}/style-button.png"></image>
+                <view bind:tap="onComment">
+                    <block wx:if="{{commentMode}}">
+                        <c-img cclass="comment-btn" mode="scaleToFill" src="{{cdn}}/exit_button.png"></c-img>退出批注
+          </block>
+                    <image class="corner-btn" mode="scaleToFill" src="{{cdn}}/comment-button.png" wx:else></image>
+                </view>
+                <image bind:tap="onDraw" class="corner-btn" hidden="{{houseTypeUpdate||spaceEdit||commentMode}}" src="{{cdn}}/draw-button.png"></image>
+            </view>
+            <view class="comment-area {{commentExpand?'':'comment-unfold'}}" wx:if="{{commentList.length}}">
+                <view bind:tap="toggleExpand" class="comment-title" wx:if="{{commentList.length>2}}">
+                    <block wx:if="{{commentExpand}}">
+            收起 <image class="icon-arrow" src="{{cdn}}/down.png"></image>
+                    </block>
+                    <block wx:else>
+            展开 <image class="icon-arrow" src="{{cdn}}/up.png"></image>
+                    </block>
+                </view>
+                <view class="{{commentExpand?'comment-wrapper-expand':'comment-wrapper'}}">
+                    <view class="comment-list">
+                        <view class="comment-item" data-id="{{item.id}}" data-index="{{idx}}" wx:for="{{commentList}}" wx:for-index="idx" wx:key="item">
+              {{item.commentText}}
+              <image bind:tap="delComment" class="icon-close" data-id="{{item.id}}" data-index="{{idx}}" mode="scaleToFill" src="{{cdn}}/close.png" wx:if="{{commentMode}}"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="bottom operate-comment" wx:if="{{commentMode}}">
+            <view class="input-box">
+                <input bindfocus="focusEvent" bindinput="bindKeyInput" class="input" value="{{inputComment}}"></input>
+                <c-img cclass="input-icon" mode="scaleToFill" src="{{cdn}}/comment_in_icon.png"></c-img>
+            </view>
+            <view bind:tap="sendComment" class="btn-send">发送</view>
+        </view>
+        <view class="bottom" wx:elif="{{drawMode}}">
+            <view bind:tap="resetDraw" class="flex-1 black">清除涂鸦</view>
+            <view bind:tap="onSaveDraw" class="flex-1 operate-save">完成涂鸦</view>
+        </view>
+        <view bind:tap="onSaveCustom" class="bottom operate-save" wx:else>
+      保存为我的定制方案
+    </view>
+        <view wx:if="{{guide}}">
+            <view class="cover-tip" wx:if="{{coverTip===1}}">
+                <image bind:tap="onCoverTip" class="cover-img" data-step="1" mode="scaleToFill" src="{{cdn}}/guide1.png"></image>
+            </view>
+            <view class="cover-tip" wx:if="{{coverTip===2}}">
+                <image bind:tap="onCoverTip" class="cover-img" data-step="2" mode="scaleToFill" src="{{cdn}}/guide2.png"></image>
+            </view>
+            <view class="cover-tip" wx:if="{{coverTip===3}}">
+                <image bind:tap="onCoverTip" class="cover-img" data-step="3" mode="scaleToFill" src="{{cdn}}/guide3.png"></image>
+            </view>
+            <view class="cover-tip" wx:if="{{coverTip===4}}">
+                <image bind:tap="onCoverTip" class="cover-img" data-step="4" mode="scaleToFill" src="{{cdn}}/guide4.png"></image>
+            </view>
+        </view>
+        <component-pick-up bind:oncancel="onHouseTypeDidUpdate" bind:onclose="onClosePickUp" bind:onselectchange="onSelect" bind:onsure="onHouseTypeDidUpdate" houseTypeSelected="{{selectedType}}" houseTypes="{{houseTypes}}" type="huxing" wx:if="{{houseTypeUpdate}}"></component-pick-up>
+        <component-pick-up bind:onclose="onClosePickUp" bind:onselectspacechange="onSelectSpaceChange" bind:onselectsubspacechange="onSelectSubSpaceChange" bind:onspacecancel="onSpaceDidUpdate" bind:onspacesure="onSpaceDidUpdate" spaceNames="{{spaceNames}}" spaceSelected="{{selectedSpace}}" spaceTypes="{{spaceTypes}}" type="space" wx:if="{{spaceEdit}}"></component-pick-up>
+    </block>
+</view>

@@ -1,0 +1,48 @@
+// \pages/customHouse/customHouse drawStart Data Flow
+digraph {
+	ade05b3176bc435e997fd248f5fe7f2b [label="FunctionCall,
+function name -> drawStart,
+param -> e,
+e.,
+" color=blue]
+	"0d94c771e4ba4949aab8cbcd7a3e48b5" [label=VariableDeclarations color=blue]
+	"11a241ea376c4e45b31bc920a348062b" [label="VariableDeclarator,
+left -> a,
+right -> this.data" color=blue]
+	"0d94c771e4ba4949aab8cbcd7a3e48b5" -> "11a241ea376c4e45b31bc920a348062b"
+	b985ce7ac18244e190f71af1d0f717ce [label="VariableDeclarator,
+left -> n,
+right -> a.canvasHeight" color=blue]
+	"0d94c771e4ba4949aab8cbcd7a3e48b5" -> b985ce7ac18244e190f71af1d0f717ce
+	"35e6b87f0a464579a1c0e8108836f1b5" [label="VariableDeclarator,
+left -> s,
+right -> a.canvasWidth" color=blue]
+	"0d94c771e4ba4949aab8cbcd7a3e48b5" -> "35e6b87f0a464579a1c0e8108836f1b5"
+	"80fc4ceaf55a4e36bc25674160a6fe43" [label="VariableDeclarator,
+left -> r,
+right -> a.lineWidth" color=blue]
+	"0d94c771e4ba4949aab8cbcd7a3e48b5" -> "80fc4ceaf55a4e36bc25674160a6fe43"
+	b4eecf6a4ef948d897d249e29e606998 [label="VariableDeclarator,
+left -> c,
+right -> a.lineColor" color=blue]
+	"0d94c771e4ba4949aab8cbcd7a3e48b5" -> b4eecf6a4ef948d897d249e29e606998
+	ade05b3176bc435e997fd248f5fe7f2b -> "0d94c771e4ba4949aab8cbcd7a3e48b5"
+	ab5ea277b95549f6bb1c330ff6d46301 [label=SequenceExpression color=blue]
+	d6b6559b6e0f48fa82e21905d3407eef [label="Assignment,
+left -> t.lineWidth,
+right -> r" color=blue]
+	ab5ea277b95549f6bb1c330ff6d46301 -> d6b6559b6e0f48fa82e21905d3407eef
+	ea26ca43a83e4e708cd5aace86d7205b [label="Assignment,
+left -> t.lineColor,
+right -> c" color=blue]
+	ab5ea277b95549f6bb1c330ff6d46301 -> ea26ca43a83e4e708cd5aace86d7205b
+	"0608edf1e402451db24e1be664552da5" [label="Assignment,
+left -> t.doodleStartX,
+right -> e.touches[0].x - s / 2" color=blue]
+	ab5ea277b95549f6bb1c330ff6d46301 -> "0608edf1e402451db24e1be664552da5"
+	f175dd3defe74ffc9766cc18db74d375 [label="Assignment,
+left -> t.doodleStartY,
+right -> e.touches[0].y - n / 2" color=blue]
+	ab5ea277b95549f6bb1c330ff6d46301 -> f175dd3defe74ffc9766cc18db74d375
+	ade05b3176bc435e997fd248f5fe7f2b -> ab5ea277b95549f6bb1c330ff6d46301
+}

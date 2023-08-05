@@ -1,0 +1,19 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="comment-container" style="margin-top: {{navH+status+10}}px;">
+    <view class="comment_panel" wx:for="{{dataList}}" wx:key="index">
+        <view class="user">
+            <image class="avatar" lazyLoad="true" mode="aspectFill" src="{{item.avatar}}"></image>
+            <text class="nickname">{{item.nickname}}</text>
+        </view>
+        <text class="date">{{comment.getTime(item.createdAt)}}</text>
+        <text class="content">{{item.content}}</text>
+        <view class="commentImages" wx:if="{{item.images.length>0}}">
+            <scroll-view scrollX class="scroll">
+                <view class="comment_img" wx:for="{{item.images}}" wx:for-item="dataItem" wx:key="dataIndex">
+                    <image bindtap="previewImg" class="img" data-images="{{item.images}}" data-index="{{dataIndex}}" lazyLoad="true" mode="aspectFill" src="{{dataItem}}"></image>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>
+<wxs module="comment" src="comment.wxs" />

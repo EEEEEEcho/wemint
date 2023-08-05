@@ -1,0 +1,19 @@
+<view class="floatPlug {{showTopFlag?'active':''}}" style="bottom:{{btnCount>=2&&!hasBottomBar?40:130}}rpx" wx:if="{{floatLayerInfo.Enable==1}}">
+    <view catchtap="{{floatLayerInfo.businessCardInfo.admin?'goToBusinessCardDetail':'goToCardList'}}" class="businessCard" wx:if="{{(floatLayerInfo.businessCardInfo.admin||floatLayerInfo.businessCardInfo.user)&&floatLayerInfo.showBusinessCard&&!floatLayerInfo.checkVersions}}">
+        <image class="goToBusinessCardBtn" src="/pages/template/images/mingpianrukou.png" wx:if="{{floatLayerInfo.businessCardInfo.admin}}"></image>
+        <image class="goToBusinessCardBtn" src="/pages/template/images/mingpianjia.png" wx:if="{{floatLayerInfo.businessCardInfo.user}}"></image>
+    </view>
+    <view catchtap="goToHomeIndex" class="homeIndex" wx:if="{{floatLayerInfo.EnableGoToHomeIndex==1}}">
+        <image class="goToHomeIndexBtn" src="/pages/template/images/homepage.png"></image>
+    </view>
+    <view class="kefu" wx:if="{{floatLayerInfo.EnableCustomService==1}}">
+        <contact-button sessionFrom="weapp" size="50" type="default-dark"></contact-button>
+        <image class="serviceBtn" src="/pages/template/images/online.png"></image>
+    </view>
+    <view catchtap="appPhoneCall" class="phoneCell" wx:if="{{floatLayerInfo.EnableTel==1&&floatLayerInfo.EnableNormalBtnShow==1}}">
+        <image class="phoneCellImg" src="/pages/template/images/phone.png"></image>
+    </view>
+    <view catchtap="scrollToTop" class="scrollTopBtn {{showTopFlag?'ShowTop':''}}" wx:if="{{floatLayerInfo.EnableNormalBtnShow==1}}">
+        <image class="scrollTopImg" src="/pages/template/images/gotop.png"></image>
+    </view>
+</view>

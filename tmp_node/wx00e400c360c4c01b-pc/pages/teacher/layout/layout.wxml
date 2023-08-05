@@ -1,0 +1,70 @@
+<view class="flex box box-tb box-align-center">
+    <view class="calendar pink-color box box-tb">
+        <view class="top-handle fs28 box box-lr box-align-center box-pack-center">
+            <view bindtap="handleCalendar" class="prev box box-rl" data-handle="prev">
+                <view class="prev-handle box box-lr box-align-center box-pack-center">《</view>
+            </view>
+            <view bindtap="chooseYearAndMonth" class="date-area box box-lr box-align-center box-pack-center">{{curYear||'--'}} 年 {{curMonth||'--'}} 月</view>
+            <view bindtap="handleCalendar" class="next box box-lr" data-handle="next">
+                <view class="next-handle box box-lr box-align-center box-pack-center">》</view>
+            </view>
+        </view>
+        <view class="weeks box box-lr  box-pack-center box-align-center">
+            <view class="flex week fs28 pink-color2" data-idx="{{index}}" wx:for="{{weeksCh}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="days box box-lr box-wrap">
+            <view class="grid white-color box box-align-center box-pack-center" data-idx="{{index}}" wx:if="{{hasEmptyGrid}}" wx:for="{{empytGrids}}" wx:key="{{index}}"></view>
+            <view bindtap="tapDayItem" class="grid white-color box box-align-center box-pack-center" data-idx="{{index}}" wx:for="{{days}}" wx:key="{{index}}">
+                <view class="day {{item.choosed?'border-radius pink-bg':''}} box box-align-center box-pack-center">{{item.day}}</view>
+            </view>
+        </view>
+    </view>
+    <view style="width:100%;">
+        <view class="margintop10"></view>
+        <scroll-view scrollY style="height: 650rpx;background-color: #F0F0F0;">
+            <view class="myCurr-view">
+                <view class="curr">
+                    <view class="currTitle">今日课程</view>
+                    <view class="currNo" wx:if="{{todayClass.length<=0}}">
+                        <image class="currNoIcon" src="../../../image/kecheng@2x.png"></image>今日没有课程
+            </view>
+                    <view bindtap="{{item.is_cancel>0?'layoutDetailView':''}}" class="currContent" data-ccl="{{item}}" data-ccm_id="{{item.ccm_id}}" data-class_time="{{item.class_time}}" wx:for="{{todayClass}}" wx:key="id">
+                        <view class="currContent_list1">{{item.time_str}}</view>
+                        <view class="currContent_list2">
+                            <image class="currContent_time" src="../../../image/me_line@2x.png"></image>
+                        </view>
+                        <view class="currContent_list3">
+                            <view class="lable">{{item.ccm_name}} {{item.enroll_num}}人</view>
+                            <view class="content"></view>
+                        </view>
+                        <view class="currContent_list4">
+                            <view wx:if="{{item.is_cancel==2}}">
+                      等待上课 
+                    </view>
+                            <view wx:else>
+                                <view wx:if="{{item.is_cancel<=0}}">
+                                    <button bindtap="layoutDetail" class="classCurr_view_but" data-ccm_id="{{item.ccm_id}}" data-class_time="{{item.class_time}}" hoverClass="classCurr_view_but_hover">去消课 ></button>
+                                </view>
+                                <view wx:else> 已消课 ></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+<view class="box box-tb commodity_attr_box" wx:if="{{showPicker}}">
+    <view class="picker-btns box box-lr box-pack-between box-align-center">
+        <view bindtap="tapPickerBtn" class="picker-btn picker-cancel" data-type="cancel">取消</view>
+        <view bindtap="tapPickerBtn" class="picker-btn picker-confirm" data-type="confirm">确定</view>
+    </view>
+    <picker-view bindchange="pickerChange" class="flex" indicatorStyle="height: 50px;" start="2018-01-01" style="width: 100%; height: 150px;" value="{{pickerValue}}">
+        <picker-view-column>
+            <view class="picker-view" style="line-height: 50px" wx:for="{{pickerYear}}" wx:key="*this">{{item}}年</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view class="picker-view" style="line-height: 50px" wx:for="{{pickerMonth}}" wx:key="*this">{{item}}月</view>
+        </picker-view-column>
+    </picker-view>
+</view>

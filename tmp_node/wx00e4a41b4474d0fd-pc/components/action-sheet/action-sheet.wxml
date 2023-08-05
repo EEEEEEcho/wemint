@@ -1,0 +1,27 @@
+<view bind:tap="onClose" class="mask">
+    <view catch:tap="onMenuTap" class="sheet" wx:if="{{showMenu}}">
+        <view class="title">
+      分享 <image bind:tap="onClose" class="icon-close" mode="scaleToFill" src="https://dm.static.elab-plus.com/wuXiW3/img/close_grey.png"></image>
+        </view>
+        <view class="share-menu">
+            <button catch:tap="onShareFriend" class="share-type transparent" hoverClass="none" openType="share">
+                <image class="share-img" mode="scaleToFill" src="https://dm.static.elab-plus.com/wuXiW3/img/wechat.png"></image>
+        分享给好友
+      </button>
+            <view bind:tap="onShareTimeline" class="share-type">
+                <image class="share-img" mode="scaleToFill" src="https://dm.static.elab-plus.com/wuXiW3/img/timeline.png"></image>
+        分享到朋友圈
+      </view>
+        </view>
+    </view>
+    <view catch:tap="onMenuTap" class="sheet" wx:if="{{timeline}}">
+        <view class="title">
+      分享到朋友圈
+      <image bind:tap="onClose" class="icon-close" mode="scaleToFill" src="https://dm.static.elab-plus.com/wuXiW3/img/close_grey.png"></image>
+        </view>
+        <c-img cclass="share-poster" mode="aspectFit" src="{{timelineSrc}}"></c-img>
+        <view class="share-tip">保存图片到手机后，可分享到朋友圈</view>
+        <view bind:tap="saveImage" class="share-btn" hidden="{{openSetting}}">保存图片</view>
+        <button bindopensetting="handleSetting" class="share-btn transparent" openType="openSetting" wx:if="{{openSetting}}">去授权</button>
+    </view>
+</view>

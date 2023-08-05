@@ -10,13 +10,13 @@ class MiniProgram:
 
     def __init__(self, base_path: str, name: str):
         self.base_path = base_path
-        # 小程序名称
+        # Mini program name.
         self.name = name
-        # 小程序代码所在目录
+        # Directory of the mini program code.
         self.path = base_path + os.sep + self.name
-        # 密钥泄露问题
+        # Key leakage detector.
         self.secret_leak_checker = SecretLeakChecker()
-        # 后门问题
+        # Backdoor detector
         self.backend_checker = BackendChecker()
         self.pages = list()
         self.parse_app_json()

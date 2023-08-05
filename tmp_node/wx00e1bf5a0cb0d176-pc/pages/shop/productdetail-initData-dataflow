@@ -1,0 +1,35 @@
+// \pages/shop/productdetail initData Data Flow
+digraph {
+	ee2131ed38f444449167dc43e53c2c28 [label="FunctionCall,
+function name -> initData,
+param -> " color=blue]
+	d2d79da00636479aa48604a673fbb290 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"34183513cd094499a0f423846a73b37b" [label="Assignment,
+left -> o,
+right -> a.data.queryparams.id" color=blue]
+	d2d79da00636479aa48604a673fbb290 -> "34183513cd094499a0f423846a73b37b"
+	ee2131ed38f444449167dc43e53c2c28 -> d2d79da00636479aa48604a673fbb290
+	"1effa9d5534d42048c68cc6fa6040673" [label=SequenceExpression color=blue]
+	"8c6ab46b882b4886b6bd7975ff4ebe3f" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	f27c4f38974e4947a53ba82ea8798dc2 [label="ConditionalExpression,
+ conditional list -> a.setData" color=blue]
+	bef68fcec5b64598af0fc758d793c54e [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	adece0df32cd4ccf9cca4a0bfc95e92a [label="Object Properties
+{
+url -> '/pages/phoneauthorization/index?getMobileNode=' + r + '&pageroute=' + n.route + '&id=' + o
+}" color=blue]
+	bef68fcec5b64598af0fc758d793c54e -> adece0df32cd4ccf9cca4a0bfc95e92a
+	f27c4f38974e4947a53ba82ea8798dc2 -> bef68fcec5b64598af0fc758d793c54e
+	"8c6ab46b882b4886b6bd7975ff4ebe3f" -> f27c4f38974e4947a53ba82ea8798dc2
+	"1effa9d5534d42048c68cc6fa6040673" -> "8c6ab46b882b4886b6bd7975ff4ebe3f"
+	"33c4a8e9c0bc4c63a6584575782f669c" [label="ConditionalExpression,
+ conditional list -> a.setData,a.setData" color=blue]
+	"1effa9d5534d42048c68cc6fa6040673" -> "33c4a8e9c0bc4c63a6584575782f669c"
+	ee2131ed38f444449167dc43e53c2c28 -> "1effa9d5534d42048c68cc6fa6040673"
+}

@@ -1,0 +1,130 @@
+.businessCard-box {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.businessCard-box .businessCard-title {
+    height: 96rpx;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.businessCard-box .businessCard-title .businessCard-icon {
+    font-size: 48rpx;
+    color: #ffa72a;
+    margin-right: 14rpx;
+}
+
+.businessCard-box .businessCard-title text {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.businessCard-box .businessCard-content,.businessCard-box .businessCard-info {
+    background: #fff;
+}
+
+.businessCard-box .businessCard-content .default-card {
+    width: 640rpx;
+    height: 340rpx;
+    margin: 50rpx auto;
+    border-radius: 10rpx;
+    box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.default-card image {
+    height: 160rpx;
+    width: 160rpx;
+}
+
+.default-card .default-title {
+    font-size: 26rpx;
+    color: #ff7200;
+    margin-top: 20rpx;
+}
+
+.businessCard-info .info-card {
+    width: 640rpx;
+    height: 340rpx;
+    margin: 46rpx auto;
+    border-radius: 10rpx;
+    box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.1);
+    position: relative;
+    padding: 0 48rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+
+.bottom-img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 18rpx;
+    width: 365rpx;
+}
+
+.info-card .info-card-left {
+    color: #666;
+}
+
+.info-card .info-card-left .CompanyName {
+    font-size: 28rpx;
+    line-height: 28rpx;
+    margin-top: 46rpx;
+}
+
+.info-card .info-card-left .personInfo {
+    display: flex;
+    margin-top: 70rpx;
+}
+
+.canWrap {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.canWrap .Position {
+    margin-top: 12rpx;
+}
+
+.canNoWrap {
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.info-card-left .personInfo .UserName {
+    font-size: 36rpx;
+    color: #ff7200;
+    font-weight: 500;
+    line-height: 36rpx;
+    margin-right: 28rpx;
+}
+
+.info-card-left .personInfo .Position {
+    font-size: 24rpx;
+    line-height: 24rpx;
+}
+
+.info-card .info-card-left .Mobile {
+    font-size: 28rpx;
+    line-height: 28rpx;
+    margin-top: 36rpx;
+}
+
+.info-card .info-card-right .PersonImg {
+    width: 160rpx;
+    border-radius: 4rpx;
+    position: absolute;
+    top: 110rpx;
+    right: 58rpx;
+    height: 160rpx;
+}

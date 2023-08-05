@@ -1,0 +1,17 @@
+// \pages/bindTel/bindTel getUserImgCode Data Flow
+digraph {
+	"0086ae04c37e4db99623dc511a1e3be8" [label="FunctionCall,
+function name -> getUserImgCode,
+param -> t,
+t.,
+" color=blue]
+	"5c318c1db11b44d89e81fd6a2a9cc6ce" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	fbdfa6f012f145daa8d56b5a7a88beb3 [label="Object Properties
+{
+inputImgCode -> t.detail.value
+}" color=blue]
+	"5c318c1db11b44d89e81fd6a2a9cc6ce" -> fbdfa6f012f145daa8d56b5a7a88beb3
+	"0086ae04c37e4db99623dc511a1e3be8" -> "5c318c1db11b44d89e81fd6a2a9cc6ce"
+}

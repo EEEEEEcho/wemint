@@ -1,0 +1,21 @@
+// \pages/shop/myinfomation getPhoneNumber Data Flow
+digraph {
+	"64a8920d1f0a451b8c5d7c99f806a461" [label="FunctionCall,
+function name -> getPhoneNumber,
+param -> " color=blue]
+	ba9cca43152d40c280ba590b7da3c9ea [label=VariableDeclarations color=blue]
+	f554630003fb49b5947531ca15b919b7 [label="VariableDeclarator,
+left -> o,
+right -> new a(s, i).decryptData" color=blue]
+	ba9cca43152d40c280ba590b7da3c9ea -> f554630003fb49b5947531ca15b919b7
+	"64a8920d1f0a451b8c5d7c99f806a461" -> ba9cca43152d40c280ba590b7da3c9ea
+	"18a8911b87804331ae36140b0dae5379" [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	"7d9e6c91286e40f5b62c27c216748a7f" [label="Object Properties
+{
+Mobile -> o.phoneNumber
+}" color=blue]
+	"18a8911b87804331ae36140b0dae5379" -> "7d9e6c91286e40f5b62c27c216748a7f"
+	"64a8920d1f0a451b8c5d7c99f806a461" -> "18a8911b87804331ae36140b0dae5379"
+}

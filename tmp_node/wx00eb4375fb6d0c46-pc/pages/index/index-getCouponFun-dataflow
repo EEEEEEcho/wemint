@@ -1,0 +1,11 @@
+// \pages/index/index getCouponFun Data Flow
+digraph {
+	"2f4b6f3118e44f72abe248c537ec13aa" [label="FunctionCall,
+function name -> getCouponFun,
+param -> " color=blue]
+	e7e49e7baab84ff1bddea3c2fc467e76 [label="CallExpression,
+callee name -> console.log,
+param -> this.data.couponDetail,
+" color=blue]
+	"2f4b6f3118e44f72abe248c537ec13aa" -> e7e49e7baab84ff1bddea3c2fc467e76
+}

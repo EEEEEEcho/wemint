@@ -1,0 +1,17 @@
+<view bindtap="detail" class="goods-list" data-id="{{item.cars_id}}" wx:for="{{list}}" wx:key="k1">
+    <view class="goods-list-item">
+        <view class="k40"></view>
+        <view class="goods-list-item-l">
+            <image class="img" mode="aspectfill" src="{{path}}{{item.carsinfo.img}}"></image>
+        </view>
+        <view class="goods-list-item-r">
+            <view class="goods-name">{{item.carsinfo.title}}</view>
+            <view class="goods-desc">{{item.time}}上架/{{item.carsinfo.ticket_status==1?'在售':'售罄'}}</view>
+            <view class="goods-price">
+                <view class="goods-price-l">{{item.carsinfo.price}}万</view>
+                <view class="goods-price-r"></view>
+            </view>
+        </view>
+        <view class="k40"></view>
+    </view>
+</view>

@@ -1,0 +1,19 @@
+// \pages/index/destine/destine bindTimeChange Data Flow
+digraph {
+	f4260b6c51244657aeec5ed7c21b89ef [label="FunctionCall,
+function name -> bindTimeChange,
+param -> t.,
+t,
+" color=blue]
+	"1da42119a2ef4f38a764ed546e9dc28b" [label=SequenceExpression color=blue]
+	bd61a0e741464d93b7206494b6b3aadf [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"9db4fc4464524ccb96d5797ecaef4eab" [label="Object Properties
+{
+times -> t.detail.value
+}" color=blue]
+	bd61a0e741464d93b7206494b6b3aadf -> "9db4fc4464524ccb96d5797ecaef4eab"
+	"1da42119a2ef4f38a764ed546e9dc28b" -> bd61a0e741464d93b7206494b6b3aadf
+	f4260b6c51244657aeec5ed7c21b89ef -> "1da42119a2ef4f38a764ed546e9dc28b"
+}

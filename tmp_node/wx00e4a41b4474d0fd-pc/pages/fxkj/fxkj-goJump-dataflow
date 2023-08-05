@@ -1,0 +1,38 @@
+// \pages/fxkj/fxkj goJump Data Flow
+digraph {
+	"211146b6f2b34a5b9f6249d311a71cc6" [label="FunctionCall,
+function name -> goJump,
+param -> a,
+a.,
+" color=blue]
+	bc6bbe0d618341fb8aa012a2cc2fb373 [label="If Alternate" color=blue]
+	e174b98ccabb4b13a97cdccc39079999 [label=VariableDeclarations color=blue]
+	"52f87d30bc6b47ccb6d4a9a16dce0532" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"8791950cdfbe49af8f2415b576a113df" [label="Object Properties
+{
+clkId -> a.currentTarget.dataset.clkid
+linkParam -> 'view=' + encodeURIComponent(a.currentTarget.dataset.jump) + '&title=' + a.currentTarget.dataset.title
+}" color=blue]
+	"98a84441784340ba905fd2919e32563b" [label="CallExpression,
+callee name -> encodeURIComponent,
+param -> a.currentTarget.dataset.jump,
+" color=blue]
+	"8791950cdfbe49af8f2415b576a113df" -> "98a84441784340ba905fd2919e32563b"
+	"52f87d30bc6b47ccb6d4a9a16dce0532" -> "8791950cdfbe49af8f2415b576a113df"
+	e174b98ccabb4b13a97cdccc39079999 -> "52f87d30bc6b47ccb6d4a9a16dce0532"
+	bc6bbe0d618341fb8aa012a2cc2fb373 -> e174b98ccabb4b13a97cdccc39079999
+	"8c10ec656cf042719a3e3df6372c7e24" [label=SequenceExpression color=blue]
+	"6422e2bfc8dd48849cc6c79d364e5bb8" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	e0f198a3f6ec474fa7dcd6df9b0f97a1 [label="Object Properties
+{
+url -> '../bearVideo/bearVideo?source=' + a.currentTarget.dataset.jump + '&title=' + a.currentTarget.dataset.title
+}" color=blue]
+	"6422e2bfc8dd48849cc6c79d364e5bb8" -> e0f198a3f6ec474fa7dcd6df9b0f97a1
+	"8c10ec656cf042719a3e3df6372c7e24" -> "6422e2bfc8dd48849cc6c79d364e5bb8"
+	bc6bbe0d618341fb8aa012a2cc2fb373 -> "8c10ec656cf042719a3e3df6372c7e24"
+	"211146b6f2b34a5b9f6249d311a71cc6" -> bc6bbe0d618341fb8aa012a2cc2fb373
+}

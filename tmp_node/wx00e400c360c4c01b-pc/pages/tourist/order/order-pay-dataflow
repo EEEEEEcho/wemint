@@ -1,0 +1,19 @@
+// \pages/tourist/order/order pay Data Flow
+digraph {
+	d99c461f61344469b2fcd9e7a9cdd5c3 [label="FunctionCall,
+function name -> pay,
+param -> a.,
+a,
+" color=blue]
+	c49a4e69891740a98f35ac704adce721 [label=VariableDeclarations color=blue]
+	"829aec36cb9c4c6185cbcaac61ee053f" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"98366ba2863d44188d6b5f7f03efd252" [label="CallExpression,
+callee name -> JSON.stringify,
+param -> a.currentTarget.dataset.model,
+" color=blue]
+	"829aec36cb9c4c6185cbcaac61ee053f" -> "98366ba2863d44188d6b5f7f03efd252"
+	c49a4e69891740a98f35ac704adce721 -> "829aec36cb9c4c6185cbcaac61ee053f"
+	d99c461f61344469b2fcd9e7a9cdd5c3 -> c49a4e69891740a98f35ac704adce721
+}

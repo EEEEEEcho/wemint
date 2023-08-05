@@ -1,0 +1,48 @@
+// \pages/shop/productdetail onLoad Data Flow
+digraph {
+	"7fb93b664edb498fb7e08a74119aacc4" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"633acc936aa342fb8ed009a200c72373" [label=SequenceExpression color=blue]
+	f6fe98a515d449e9be60ed8741ae71c3 [label="CallExpression,
+callee name -> t.registerGlobalFunctions,
+param -> s,
+" color=blue]
+	"633acc936aa342fb8ed009a200c72373" -> f6fe98a515d449e9be60ed8741ae71c3
+	"4000cfcbf29b4e78b4c1580379c6df46" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"2c98d02209754d4fac4c92f6a71fad6a" [label="CallExpression,
+callee name -> t.getPageUrl,
+param -> s,
+" color=blue]
+	"4000cfcbf29b4e78b4c1580379c6df46" -> "2c98d02209754d4fac4c92f6a71fad6a"
+	"633acc936aa342fb8ed009a200c72373" -> "4000cfcbf29b4e78b4c1580379c6df46"
+	"76a8a5bd4a4345a5a144b513f310a849" [label="CallExpression,
+callee name -> console.log,
+param -> s.data.queryparams,
+" color=blue]
+	"633acc936aa342fb8ed009a200c72373" -> "76a8a5bd4a4345a5a144b513f310a849"
+	"46a099083637446ba5f525e0d351ca07" [label="CallExpression,
+callee name -> this.getHeight,
+param -> " color=blue]
+	"6936b420177a4cf187a025c6b0993272" [label="FunctionCall,
+function name -> getHeight,
+param -> " color=blue]
+	"0796666772ae4d58847c2a938f59c2a1" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	ec4dbd1e9bf94baf8870c8b884dd0be1 [label="Object Properties
+{
+}" color=blue]
+	"8e39a9b9a3c940c5a14f42ea1686652c" [label="CallExpression,
+callee name -> parseInt,
+param -> wx.getSystemInfoSync().windowHeight - wx.getSystemInfoSync().windowWidth / 750,
+" color=blue]
+	ec4dbd1e9bf94baf8870c8b884dd0be1 -> "8e39a9b9a3c940c5a14f42ea1686652c"
+	"0796666772ae4d58847c2a938f59c2a1" -> ec4dbd1e9bf94baf8870c8b884dd0be1
+	"6936b420177a4cf187a025c6b0993272" -> "0796666772ae4d58847c2a938f59c2a1"
+	"46a099083637446ba5f525e0d351ca07" -> "6936b420177a4cf187a025c6b0993272"
+	"633acc936aa342fb8ed009a200c72373" -> "46a099083637446ba5f525e0d351ca07"
+	"7fb93b664edb498fb7e08a74119aacc4" -> "633acc936aa342fb8ed009a200c72373"
+}

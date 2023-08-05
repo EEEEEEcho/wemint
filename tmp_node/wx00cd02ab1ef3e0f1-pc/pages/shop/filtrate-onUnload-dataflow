@@ -1,0 +1,54 @@
+// \pages/shop/filtrate onUnload Data Flow
+digraph {
+	bf01cded37b2403f82e86d77667df723 [label="FunctionCall,
+function name -> onUnload,
+param -> " color=blue]
+	c41a6d434cba48ea9918ee1c23a0eb07 [label=SequenceExpression color=blue]
+	a8319ec2c6314f38807d78b5aec4bbd1 [label="CallExpression,
+callee name -> console.log,
+param -> this.data.startDate,
+" color=blue]
+	c41a6d434cba48ea9918ee1c23a0eb07 -> a8319ec2c6314f38807d78b5aec4bbd1
+	d81b3babe1db4208867cce9b4cc8fbe1 [label="CallExpression,
+callee name -> console.log,
+param -> this.data.endDate,
+" color=blue]
+	c41a6d434cba48ea9918ee1c23a0eb07 -> d81b3babe1db4208867cce9b4cc8fbe1
+	"8f33d44ca84d416ab0c924ec2f4e7a05" [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	d94479a87db84a84b499fa16f727c5ff [label="Object Properties
+{
+data -> this.data.startDate
+}" color=blue]
+	"8f33d44ca84d416ab0c924ec2f4e7a05" -> d94479a87db84a84b499fa16f727c5ff
+	c41a6d434cba48ea9918ee1c23a0eb07 -> "8f33d44ca84d416ab0c924ec2f4e7a05"
+	d532f0007de845b39df046f378554370 [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	"5bccb7a114f748b788e11705d1711d72" [label="Object Properties
+{
+data -> this.data.endDate
+}" color=blue]
+	d532f0007de845b39df046f378554370 -> "5bccb7a114f748b788e11705d1711d72"
+	c41a6d434cba48ea9918ee1c23a0eb07 -> d532f0007de845b39df046f378554370
+	"2215b0fbcf8e465aacb459f8d26e76ac" [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	"1e904fbcc6f84399af0fe66888302e68" [label="Object Properties
+{
+data -> this.data.chooseType
+}" color=blue]
+	"2215b0fbcf8e465aacb459f8d26e76ac" -> "1e904fbcc6f84399af0fe66888302e68"
+	c41a6d434cba48ea9918ee1c23a0eb07 -> "2215b0fbcf8e465aacb459f8d26e76ac"
+	"654a50bedf4945dcb96059b03df88a4e" [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	c9009b1a445d4b6b94de790dc0250705 [label="Object Properties
+{
+data -> this.data.chooseTypeText
+}" color=blue]
+	"654a50bedf4945dcb96059b03df88a4e" -> c9009b1a445d4b6b94de790dc0250705
+	c41a6d434cba48ea9918ee1c23a0eb07 -> "654a50bedf4945dcb96059b03df88a4e"
+	bf01cded37b2403f82e86d77667df723 -> c41a6d434cba48ea9918ee1c23a0eb07
+}

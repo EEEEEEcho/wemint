@@ -1,0 +1,91 @@
+<view class="fixedTopBorder"></view>
+<view class="container">
+    <view class="header-nav" wx:if="{{allowWithTypes.length!=1}}">
+        <text bindtap="{{!buttonClicked?'navbarTap':''}}" class="item yongjin {{currentTab==0?'active':''}}" data-idx="0">佣金提现</text>
+        <view class="record-line"></view>
+        <text bindtap="{{!buttonClicked?'navbarTap':''}}" class="item {{currentTab==1?'active':''}}" data-idx="1">余额提现</text>
+    </view>
+    <view class="commission-record" hidden="{{currentTab!=0}}">
+        <view style="height:96rpx;" wx:if="{{list.length==0}}"></view>
+        <view class="finance-img" wx:if="{{list.length==0}}">
+            <image mode="widthFix" src="../../images/blank_21.png"></image>
+            <text style="font-size:24rpx;color:#999">暂无任何记录</text>
+        </view>
+        <scroll-view bindscrolltolower="onProductListScroll" scrollY="true" style="height:{{scrollHeight}}px" wx:if="{{list.length!=0}}">
+            <view class="record-box" wx:for="{{newList}}" wx:key="*this">
+                <view class="yearMonth">
+                    <text>{{item.yearMonth}}</text>
+                </view>
+                <view class="record-content border1px" wx:for="{{item.list}}" wx:for-item="list" wx:key="*this">
+                    <view class="con-left">
+                        <view class="leftTop">
+                            <text>提现 - {{list.WithdrawWay==1?'微信':list.WithdrawWay==2?'支付宝':list.WithdrawWay==3?'银行卡':'微信'}}提现</text>
+                        </view>
+                        <view class="leftBottom">
+                            <text class="date">{{list.date}}</text>
+                            <text class="time">{{list.time}}</text>
+                        </view>
+                    </view>
+                    <view class="con-right">
+                        <view class="money">
+                            <text>￥{{list.Money}}</text>
+                        </view>
+                        <view class="withdrawaling">
+                            <text wx:if="{{list.State==0}}">提现中</text>
+                            <text class="done" wx:if="{{list.State==1}}">已完成</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="noMore" hidden="{{total!=recordcount}}" style="margin-top:{{total<=2?200:0}}rpx">
+                <view class="line"></view>
+                <text class="text">没有更多</text>
+                <view class="line"></view>
+            </view>
+        </scroll-view>
+        <view class="noMore" hidden="{{recordList.length!=recordcount}}" style="margin-top:34rpx">
+            <view class="line"></view>
+            <text class="text">没有更多</text>
+            <view class="line"></view>
+        </view>
+    </view>
+    <view class="balance-record" hidden="{{currentTab!=1}}">
+        <view style="height:96rpx;" wx:if="{{list.length==0}}"></view>
+        <view class="finance-img" wx:if="{{list.length==0}}">
+            <image mode="widthFix" src="../../images/blank_21.png"></image>
+            <text style="font-size:24rpx;color:#999">暂无任何记录</text>
+        </view>
+        <scroll-view bindscrolltolower="onProductListScroll" scrollY="true" style="height:{{scrollHeight}}px" wx:if="{{list.length!=0}}">
+            <view class="record-box" wx:for="{{newList}}" wx:key="*this">
+                <view class="yearMonth">
+                    <text>{{item.yearMonth}}</text>
+                </view>
+                <view class="record-content border1px" wx:for="{{item.list}}" wx:for-item="list" wx:key="*this">
+                    <view class="con-left">
+                        <view class="leftTop">
+                            <text>提现 - {{list.WithdrawWay==1?'微信':list.WithdrawWay==2?'支付宝':list.WithdrawWay==3?'银行卡':'微信'}}提现</text>
+                        </view>
+                        <view class="leftBottom">
+                            <text class="date">{{list.date}}</text>
+                            <text class="time">{{list.time}}</text>
+                        </view>
+                    </view>
+                    <view class="con-right">
+                        <view class="money">
+                            <text>￥{{list.Money}}</text>
+                        </view>
+                        <view class="withdrawaling">
+                            <text wx:if="{{list.State==0}}">提现中</text>
+                            <text class="done" wx:if="{{list.State==1}}">已完成</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="noMore" hidden="{{total!=recordcount}}" style="margin-top:34rpx">
+                <view class="line"></view>
+                <text class="text">没有更多</text>
+                <view class="line"></view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

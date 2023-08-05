@@ -1,0 +1,37 @@
+// \pages/productdetail/productdetail doCommit Data Flow
+digraph {
+	fecf864cdd9b485c81a8d997afcd3a64 [label="FunctionCall,
+function name -> doCommit,
+param -> e,
+e.,
+" color=blue]
+	"823a8dd266194710b630bae3f67aec3e" [label=VariableDeclarations color=blue]
+	"6dc882ef5e664c719264374b0bbe5ce0" [label="VariableDeclarator,
+left -> option,
+right -> e.currentTarget.dataset.option" color=blue]
+	"823a8dd266194710b630bae3f67aec3e" -> "6dc882ef5e664c719264374b0bbe5ce0"
+	fecf864cdd9b485c81a8d997afcd3a64 -> "823a8dd266194710b630bae3f67aec3e"
+	add6e756ba2c411492133c137b8a585e [label=VariableDeclarations color=blue]
+	"91fd92ab547d483aae394ed51dec727d" [label="VariableDeclarator,
+left -> amount,
+right -> this.data.buyAmount" color=blue]
+	add6e756ba2c411492133c137b8a585e -> "91fd92ab547d483aae394ed51dec727d"
+	fecf864cdd9b485c81a8d997afcd3a64 -> add6e756ba2c411492133c137b8a585e
+	"9f12110369834bbcbe2a9dbbe7b050ea" [label=VariableDeclarations color=blue]
+	"8786287bcda74810888b2eec2c757c4b" [label="VariableDeclarator,
+left -> skuid,
+right -> this.data.selectedSku" color=blue]
+	"9f12110369834bbcbe2a9dbbe7b050ea" -> "8786287bcda74810888b2eec2c757c4b"
+	fecf864cdd9b485c81a8d997afcd3a64 -> "9f12110369834bbcbe2a9dbbe7b050ea"
+	c6a5bb94495c41c9ade6872ef89d091d [label="If Alternate" color=blue]
+	"86dbef8544884fa8ab8e4f5bbc177c54" [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	df520a9265604b10b1b8660a68ae2935 [label="Object Properties
+{
+url -> '../submitorder/submitorder?productsku=' + skuid + '&buyamount=' + amount + '&frompage=1'
+}" color=blue]
+	"86dbef8544884fa8ab8e4f5bbc177c54" -> df520a9265604b10b1b8660a68ae2935
+	c6a5bb94495c41c9ade6872ef89d091d -> "86dbef8544884fa8ab8e4f5bbc177c54"
+	fecf864cdd9b485c81a8d997afcd3a64 -> c6a5bb94495c41c9ade6872ef89d091d
+}

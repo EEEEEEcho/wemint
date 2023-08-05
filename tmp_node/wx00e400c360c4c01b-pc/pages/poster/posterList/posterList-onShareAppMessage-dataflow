@@ -1,0 +1,34 @@
+// \pages/poster/posterList/posterList onShareAppMessage Data Flow
+digraph {
+	e86a6fed16ea4f7cb119e7fafd47ca51 [label="FunctionCall,
+function name -> onShareAppMessage,
+param -> " color=blue]
+	"3fb5b12dc9634ab4b6aa620852b7fe57" [label=ReturnExpression color=blue]
+	eb66a9c4c7fb443a9d5a2604d99c0258 [label="Object Properties
+{
+}" color=blue]
+	"60b944a0414641dc83fd4bb3176c015f" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> t,
+t.,
+" color=blue]
+	d0e37d8d2ba342a1a844a66f21b475f3 [label="CallExpression,
+callee name -> console.log,
+param -> t,
+" color=blue]
+	"60b944a0414641dc83fd4bb3176c015f" -> d0e37d8d2ba342a1a844a66f21b475f3
+	eb66a9c4c7fb443a9d5a2604d99c0258 -> "60b944a0414641dc83fd4bb3176c015f"
+	c15e5574b5f04d399e9b17af7cbdcf24 [label="FunctionCall,
+function name -> Anonymous Function,
+param -> t,
+t.,
+" color=blue]
+	"9b332e79fb4b4d00ba26f86399289e22" [label="CallExpression,
+callee name -> console.log,
+param -> t,
+" color=blue]
+	c15e5574b5f04d399e9b17af7cbdcf24 -> "9b332e79fb4b4d00ba26f86399289e22"
+	eb66a9c4c7fb443a9d5a2604d99c0258 -> c15e5574b5f04d399e9b17af7cbdcf24
+	"3fb5b12dc9634ab4b6aa620852b7fe57" -> eb66a9c4c7fb443a9d5a2604d99c0258
+	e86a6fed16ea4f7cb119e7fafd47ca51 -> "3fb5b12dc9634ab4b6aa620852b7fe57"
+}

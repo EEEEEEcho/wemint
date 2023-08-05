@@ -1,0 +1,56 @@
+// \pages/shop/orderdetail onLoad Data Flow
+digraph {
+	d2d02e1c272449abaa6983800079cb90 [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	a4d66ac130d44fccb8e6f1c920dfe828 [label=SequenceExpression color=blue]
+	"362c956a55284270b3a4bdd0e13a9fa2" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"526ffda010434f27929238e18781c7ee" [label="CallExpression,
+callee name -> t.getPageUrl,
+param -> n,
+" color=blue]
+	"362c956a55284270b3a4bdd0e13a9fa2" -> "526ffda010434f27929238e18781c7ee"
+	a4d66ac130d44fccb8e6f1c920dfe828 -> "362c956a55284270b3a4bdd0e13a9fa2"
+	d4dbbb5fa21a43bfa12580b206d7b81f [label="CallExpression,
+callee name -> t.registerGlobalFunctions,
+param -> n,
+" color=blue]
+	a4d66ac130d44fccb8e6f1c920dfe828 -> d4dbbb5fa21a43bfa12580b206d7b81f
+	bfe853854e844417bca4c41024d05ec2 [label="CallExpression,
+callee name -> this.loadOrder,
+param -> " color=blue]
+	"05bbea1ba2ea44159512d8d6c09d2eb1" [label="FunctionCall,
+function name -> loadOrder,
+param -> " color=blue]
+	cc5f7d1c1be648d7bfd2d4e0e8c6fbaa [label="If Alternate" color=blue]
+	"2b57cdcc5a73496d8bfb33e9a1f18d44" [label=SequenceExpression color=blue]
+	"6668e99f8af84f8f83143d2c2d74e0bd" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"2fea27e96a3648a5b1c7c0afa4a32376" [label="Assignment,
+left -> e,
+right -> a.data.queryparams.id" color=blue]
+	"6668e99f8af84f8f83143d2c2d74e0bd" -> "2fea27e96a3648a5b1c7c0afa4a32376"
+	"2b57cdcc5a73496d8bfb33e9a1f18d44" -> "6668e99f8af84f8f83143d2c2d74e0bd"
+	"198a1aefc47a494bb2efdc54d3593218" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	"639ad016e400452ebcd1a9287f80123f" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=OrderDetail&ID=' + e
+}" color=blue]
+	"198a1aefc47a494bb2efdc54d3593218" -> "639ad016e400452ebcd1a9287f80123f"
+	"16e123377dd34b44a3e8ad3a0c955169" [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	"198a1aefc47a494bb2efdc54d3593218" -> "16e123377dd34b44a3e8ad3a0c955169"
+	"2b57cdcc5a73496d8bfb33e9a1f18d44" -> "198a1aefc47a494bb2efdc54d3593218"
+	cc5f7d1c1be648d7bfd2d4e0e8c6fbaa -> "2b57cdcc5a73496d8bfb33e9a1f18d44"
+	"05bbea1ba2ea44159512d8d6c09d2eb1" -> cc5f7d1c1be648d7bfd2d4e0e8c6fbaa
+	bfe853854e844417bca4c41024d05ec2 -> "05bbea1ba2ea44159512d8d6c09d2eb1"
+	a4d66ac130d44fccb8e6f1c920dfe828 -> bfe853854e844417bca4c41024d05ec2
+	d2d02e1c272449abaa6983800079cb90 -> a4d66ac130d44fccb8e6f1c920dfe828
+}

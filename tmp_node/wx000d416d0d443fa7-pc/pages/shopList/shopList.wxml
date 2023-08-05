@@ -1,0 +1,14 @@
+<view class="container ListContainer">
+    <navigator class="searchBg" url="../search/search">
+        <view class="search">
+            <icon size="14" type="search"></icon>
+            <text class="fs_14 fc_lgray">按店名、商品名搜索</text>
+        </view>
+    </navigator>
+    <swiper autoplay="{{autoplay}}" class="banner" duration="{{duration}}" indicatorActiveColor="white" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+        <swiper-item wx:for="{{imgUrls}}">
+            <image bindtap="bannerLink" class="slide-image" data-bannerId="{{item.banner_id}}" height="150" src="{{item.banner_pic}}" width="355"></image>
+        </swiper-item>
+    </swiper>
+    <list sortList="{{sortList}}"></list>
+</view>

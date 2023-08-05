@@ -1,0 +1,36 @@
+.section {
+    padding: 5px 5px 5px 5px;
+}
+
+.btMyIcon {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20rpx;
+}
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.userinfo-avatar {
+    width: 97rpx;
+    height: 97rpx;
+    border-radius: 50%;
+}
+
+.userinfo-nickname {
+    color: #4F4F4F;
+    font-size: 12px;
+}
+
+.payBtn {
+    width: 100%;
+    border-radius: 25px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

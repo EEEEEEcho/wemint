@@ -1,0 +1,20 @@
+// \pages/shop/square closeWarmTips Data Flow
+digraph {
+	af388857d9c24bf1a81f7712d8156299 [label="FunctionCall,
+function name -> closeWarmTips,
+param -> t,
+t.,
+" color=blue]
+	"2bea67d48c6e4c0f89d3e6a10e111092" [label=VariableDeclarations color=blue]
+	"1cd1cb1466754587afae1eace99ef660" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.typeway" color=blue]
+	"2bea67d48c6e4c0f89d3e6a10e111092" -> "1cd1cb1466754587afae1eace99ef660"
+	af388857d9c24bf1a81f7712d8156299 -> "2bea67d48c6e4c0f89d3e6a10e111092"
+	bf758d29a9764f88bed540596aca6d0b [label="ConditionalExpression,
+ conditional list -> this.setData" color=blue]
+	"006410494d8647deb9354c652fca05da" [label="ConditionalExpression,
+ conditional list -> this.setData" color=blue]
+	bf758d29a9764f88bed540596aca6d0b -> "006410494d8647deb9354c652fca05da"
+	af388857d9c24bf1a81f7712d8156299 -> bf758d29a9764f88bed540596aca6d0b
+}

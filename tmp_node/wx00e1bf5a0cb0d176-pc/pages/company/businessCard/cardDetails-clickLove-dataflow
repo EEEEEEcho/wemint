@@ -1,0 +1,28 @@
+// \pages/company/businessCard/cardDetails clickLove Data Flow
+digraph {
+	"61ae03f42e384ebe81d1bb8d60c2e9fa" [label="FunctionCall,
+function name -> clickLove,
+param -> t,
+t.,
+" color=blue]
+	"07b869b6adb2466894f259efb0077b2d" [label=VariableDeclarations color=blue]
+	ff4ee02103d942939d74cc7b7c349166 [label="VariableDeclarator,
+left -> s,
+right -> t.currentTarget.dataset.articleid" color=blue]
+	"07b869b6adb2466894f259efb0077b2d" -> ff4ee02103d942939d74cc7b7c349166
+	"61ae03f42e384ebe81d1bb8d60c2e9fa" -> "07b869b6adb2466894f259efb0077b2d"
+	"0cf9c427fc554810879e5828402cbc66" [label="CallExpression,
+callee name -> a.sendRequest,
+param -> " color=blue]
+	"4f3af595255b45728a8ef6cb7d359002" [label="Object Properties
+{
+ArticleID -> s
+}" color=blue]
+	"0cf9c427fc554810879e5828402cbc66" -> "4f3af595255b45728a8ef6cb7d359002"
+	"7fbfd8cbaedb4a59a1fcd568c8a871cd" [label="FunctionCall,
+function name -> success,
+param -> t,
+" color=blue]
+	"0cf9c427fc554810879e5828402cbc66" -> "7fbfd8cbaedb4a59a1fcd568c8a871cd"
+	"61ae03f42e384ebe81d1bb8d60c2e9fa" -> "0cf9c427fc554810879e5828402cbc66"
+}

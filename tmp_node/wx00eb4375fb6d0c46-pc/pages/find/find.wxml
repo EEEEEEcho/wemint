@@ -1,0 +1,30 @@
+<map showLocation bindcontroltap="controltap" bindmarkertap="calloutTap" bindregionchange="regionChange" bindtap="hideDetail" circles="{{circles}}" class="mapStyle" controls="{{controls}}" data-detail="{{mapCouponDetail}}" id="map" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" scale="17"></map>
+<view style="overflow: visible">
+    <cover-view bindtap="toGetCoupon" class="map-coupon-detail" wx:if="{{showMapCouponDetail}}">
+        <cover-view class="map-coupon-base">
+            <cover-view>
+                <cover-image alt="" class="coupons-banner" src="{{mapCouponDetail.couponsBanner}}"></cover-image>
+            </cover-view>
+            <cover-view class="couppon-title-adress">
+                <cover-view class="coupon-title">{{mapCouponDetail.name}}({{mapCouponDetail.couponsTitle}})</cover-view>
+                <cover-view class="coupon-adress">地址：{{mapCouponDetail.address}}</cover-view>
+            </cover-view>
+        </cover-view>
+        <cover-view class="map-coupon-tip">
+            <cover-view class="map-coupon-tip-text" wx:if="{{!isCheck}}">您好，这里有{{mapCouponDetail.type==4?'体验券':mapCouponDetail.type==3?mapCouponDetail.amount+'折优惠券':mapCouponDetail.amount+'元优惠券'}}！快点击领取吧！</cover-view>
+            <cover-view class="coupon-image-box">
+                <cover-image alt="" class="coupon-image" src="{{item}}" wx:for="{{mapCouponDetailImg}}" wx:key="{{ item.id }}"></cover-image>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+</view>
+<view class="dialog-container" wx:if="{{!isAuthor}}">
+    <view class="dialog-mask"></view>
+    <view class="dialog-info">
+        <view class="dialog-title">温馨提示</view>
+        <view class="dialog-content">小程序需要您的位置信息才能提供更好的服务哦</view>
+        <view class="dialog-footer">
+            <button bindtap="choseAdress" class="dialog-btn">确定</button>
+        </view>
+    </view>
+</view>

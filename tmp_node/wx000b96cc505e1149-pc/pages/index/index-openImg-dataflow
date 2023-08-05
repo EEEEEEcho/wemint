@@ -1,0 +1,25 @@
+// \pages/index/index openImg Data Flow
+digraph {
+	"45294edffe2248d1a323792a84a63cb0" [label="FunctionCall,
+function name -> openImg,
+param -> e.,
+e,
+" color=blue]
+	f82ec7e7f21943ccb47aace445fbd0c5 [label="CallExpression,
+callee name -> console.log,
+param -> e.currentTarget.appname,
+" color=blue]
+	"45294edffe2248d1a323792a84a63cb0" -> f82ec7e7f21943ccb47aace445fbd0c5
+	cea6c61375544f039fba6045bb144d7b [label="CallExpression,
+callee name -> index.saveRecord,
+param -> that.data.userOppenId,
+e.currentTarget.dataset.target,
+e.currentTarget.dataset.appname,
+" color=blue]
+	"8b8401ed62144056aabd6a4e4d05c6fe" [label="Object Properties
+{
+id -> e.currentTarget.dataset.event
+}" color=blue]
+	cea6c61375544f039fba6045bb144d7b -> "8b8401ed62144056aabd6a4e4d05c6fe"
+	"45294edffe2248d1a323792a84a63cb0" -> cea6c61375544f039fba6045bb144d7b
+}

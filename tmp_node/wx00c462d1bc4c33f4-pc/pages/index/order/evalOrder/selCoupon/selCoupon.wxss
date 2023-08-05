@@ -1,0 +1,155 @@
+.yhq {
+    padding-bottom: 20px;
+}
+
+.yhqBox {
+    margin-top: 30px;
+    width: 94%;
+}
+
+.yhqC {
+    color: #fff;
+    border-left: 4px #ffbf00 solid;
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+.yhq_img {
+    width: 100px;
+    height: 16px;
+    margin-left: 8px;
+}
+
+.coupon {
+    box-sizing: border-box;
+    background: #555;
+    margin: 0 auto 30px;
+    border-radius: 8px;
+    height: 115px;
+    width: 84%;
+}
+
+.left2_quan {
+    color: #777;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.right_bg2 {
+    background: #666;
+    float: right;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    height: 110px;
+    width: 10%;
+    box-sizing: border-box;
+}
+
+.right_bg2_text2 {
+    text-align: center;
+    color: #3d3d3d;
+    padding-top: 16px;
+    font-size: 18px;
+}
+
+.yhqC {
+    color: #fff;
+    border-left: 4px #ffbf00 solid;
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+.yhq_img {
+    width: 140px;
+    height: 16px;
+}
+
+.couponBox {
+    width: 90%;
+    float: left;
+    padding: 5px 0;
+}
+
+.left1 {
+    background: #444;
+    border-radius: 0 30px 30px 0;
+    box-sizing: border-box;
+    height: 60px;
+    width: 45%;
+    margin-top: 5px;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.left1_quan {
+    color: #ffbf21;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.left1_man1 {
+    color: #aaa;
+    font-size: 14px;
+    text-align: center;
+}
+
+.left2_man2 {
+    color: #777;
+    font-size: 14px;
+    text-align: center;
+}
+
+.center1 {
+    float: left;
+    text-align: center;
+    width: 55%;
+    box-sizing: border-box;
+}
+
+.center1_zhe,.center2_zhe2 {
+    padding-top: 12px;
+    color: #ffbf21;
+    font-style: italic;
+    font-size: 32px;
+}
+
+.center2_zhe2 {
+    color: #777;
+}
+
+.center1_date,.center2_date2 {
+    float: left;
+    color: #ffbf21;
+    font-size: 14px;
+    text-align: right;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    box-sizing: border-box;
+    padding-right: 10px;
+}
+
+.center2_date2 {
+    color: #777;
+}
+
+.right_bg1 {
+    background: #ffbf21;
+    float: right;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    height: 115px;
+    width: 10%;
+}
+
+.right_bg1_text1 {
+    text-align: center;
+    color: #363030;
+    padding-top: 20px;
+    font-size: 18px;
+    box-sizing: border-box;
+}

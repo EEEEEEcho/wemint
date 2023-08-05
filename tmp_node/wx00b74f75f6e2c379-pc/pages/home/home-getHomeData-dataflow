@@ -1,0 +1,18 @@
+// \pages/home/home getHomeData Data Flow
+digraph {
+	"5e1544c4fed04699b2e1c6b612f00d5d" [label="FunctionCall,
+function name -> getHomeData,
+param -> " color=blue]
+	a8ee924eb532402c81ececeee09fb3bc [label="If Alternate" color=blue]
+	ff8d6528788b40cc8ccad084230dce3c [label="CallExpression,
+callee name -> that.getHomeProductData,
+param -> that.data.pageIndex,
+" color=blue]
+	a8ee924eb532402c81ececeee09fb3bc -> ff8d6528788b40cc8ccad084230dce3c
+	"1daad2a806754c689e7389f7244c985f" [label="CallExpression,
+callee name -> that.CheckVersionNumber,
+param -> that,
+" color=blue]
+	a8ee924eb532402c81ececeee09fb3bc -> "1daad2a806754c689e7389f7244c985f"
+	"5e1544c4fed04699b2e1c6b612f00d5d" -> a8ee924eb532402c81ececeee09fb3bc
+}

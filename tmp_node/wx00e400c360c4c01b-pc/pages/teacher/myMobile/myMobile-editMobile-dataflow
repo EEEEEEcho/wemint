@@ -1,0 +1,19 @@
+// \pages/teacher/myMobile/myMobile editMobile Data Flow
+digraph {
+	"814430785ff84841a8d095812af80098" [label="FunctionCall,
+function name -> editMobile,
+param -> " color=blue]
+	"4a1d5e4db56849c2aac2c76013010f91" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"332f3ad8f9d442bdbf251e6385d451f4" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	cc8f99e0eaa44c2186909a9fe6d4d692 [label="Object Properties
+{
+tId -> e.data.id
+mobile -> e.data.mobile
+}" color=blue]
+	"332f3ad8f9d442bdbf251e6385d451f4" -> cc8f99e0eaa44c2186909a9fe6d4d692
+	"4a1d5e4db56849c2aac2c76013010f91" -> "332f3ad8f9d442bdbf251e6385d451f4"
+	"814430785ff84841a8d095812af80098" -> "4a1d5e4db56849c2aac2c76013010f91"
+}

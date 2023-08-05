@@ -1,0 +1,74 @@
+page {
+    background-color: #fff;
+}
+
+.setting_container {
+    -webkit-overflow-scrolling: touch;
+}
+
+.panel {
+    box-shadow: 0 0 16rpx #f0f0f0;
+    width: 682rpx;
+    border-radius: 24rpx;
+    display: flex;
+    flex-direction: column;
+    margin-left: 34rpx;
+}
+
+.personinfo,.telephone,.delivery,.aboutus,.version {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    height: 86rpx;
+}
+
+.last {
+    border-bottom: none;
+}
+
+.personinfo_txt,.tel_txt,.delivery_txt,.aboutus_txt,.version_txt {
+    font-size: 26rpx;
+    color: #51515c;
+    margin-left: 30rpx;
+}
+
+.tel_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tel,.version_num {
+    font-size: 26rpx;
+    color: #aeaeb4;
+    margin-right: 10rpx;
+}
+
+.arrow_right {
+    width: 14rpx;
+    height: 24rpx;
+    margin-right: 30rpx;
+}
+
+.aboutus_panel {
+    margin-top: 40rpx;
+}
+
+.version_num {
+    margin-right: 30rpx;
+}
+
+.btn {
+    width: 682rpx;
+    height: 88rpx;
+    border-radius: 50rpx;
+    font-size: 36rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 88rpx;
+    background: #51515c;
+    margin-left: 34rpx;
+    margin-top: 50rpx;
+}

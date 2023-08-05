@@ -1,0 +1,58 @@
+<view class="container">
+    <form bindsubmit="fromsubmit" contentType="multipart/form-data" reportSubmit="true">
+        <view>
+            <view class="baitiao"></view>
+            <view class="refund" style="display:{{refundsinfo.Status==1?'none':'block'}}">
+                <radio-group bindchange="getRadioData" name="DeliveryGood">
+                    <view class="refund-not border1px {{radioFlag?'active':''}}">
+                        <view class="refund-not-txt ">
+                            <text class=" iconfont icon-iconfont_delivering"></text>
+                            <text class="not-txt">未收到货</text>
+                        </view>
+                        <view class="refund-not-btn">
+                            <checkbox checked="{{radioFlag}}" value="0"></checkbox>
+                            <icon bindtap="changeRadioData" class="iconText" color="{{radioFlag?'#ff7200':'#ddd'}}" data-index="1" size="20" type="{{radioFlag?'success':'circle'}}"></icon>
+                        </view>
+                    </view>
+                    <view class="refund-not {{!radioFlag?'active':''}} ">
+                        <view class="refund-not-txt ">
+                            <text class=" iconfont icon-iconfont_package-get"></text>
+                            <text class="not-txt">已收到货</text>
+                        </view>
+                        <view class="refund-not-btn">
+                            <checkbox checked="{{!radioFlag}}" value="1"></checkbox>
+                            <icon bindtap="changeRadioData" class="iconText" color="{{!radioFlag?'#ff7200':'#ddd'}}" data-index="2" size="20" type="{{!radioFlag?'success':'circle'}}"></icon>
+                        </view>
+                    </view>
+                </radio-group>
+            </view>
+        </view>
+        <view class="baitiao"></view>
+        <view class="amount">
+            <view class="amount-item">可退金额 <text class="amount-tit">￥{{refundsinfo.RtnMoney}}</text>
+            </view>
+            <view class="amount-detail">
+                <text class="amount-icon">*</text>该产品仅退回实付金额,已使用的积分和优惠券将不于退还！</view>
+        </view>
+        <view class="baitiao"></view>
+        <view class="refunds">
+      退货/款原因
+          <textarea autoHeight class="refunds-item" name="refundsReason" placeholder="需填写退货款原因，限200字内" type="text" value="{{refundsinfo.Reason}}"></textarea>
+            <input name="refundsOrderID" style="display: none" type="hidden" value="{{refundsinfo.orderid}}"></input>
+            <input name="refundsPKey" style="display: none" type="hidden" value="{{refundsinfo.pkey}}"></input>
+            <input name="refundsEdit" style="display:none" type="hidden" value="{{refundsinfo.edit}}"></input>
+        </view>
+        <view class="images-pics" style="display:{{!radioFlag?'block':'none'}}">
+            <view class="images-pic" wx:for="{{upload_picture_list}}">
+                <image bindtap="closepic" class="jiaotou" data-item="{{item}}" src="../../images/close_pic.png"></image>
+                <view class="img">
+                    <image class="pic" mode="widthFix" src="{{item}}"></image>
+                </view>
+            </view>
+            <view class="images-pic">
+                <image bindtap="uploadpic" mode="widthFix" src="../../images/btn_uploadpic.jpg"></image>
+            </view>
+        </view>
+        <button class="submit" formType="submit">提交</button>
+    </form>
+</view>

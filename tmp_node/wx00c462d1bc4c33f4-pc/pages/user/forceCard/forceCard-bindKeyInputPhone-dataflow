@@ -1,0 +1,19 @@
+// \pages/user/forceCard/forceCard bindKeyInputPhone Data Flow
+digraph {
+	"2a57c872f424487084ed4a4a7406d915" [label="FunctionCall,
+function name -> bindKeyInputPhone,
+param -> a,
+a.,
+" color=blue]
+	"2d2452889c5b4a0d8664c2f83562ed66" [label=SequenceExpression color=blue]
+	"9f73e10de9da4a45bad652586ca18f97" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"5a7bcb96ae354e24809655a35036143a" [label="Object Properties
+{
+tele -> a.detail.value
+}" color=blue]
+	"9f73e10de9da4a45bad652586ca18f97" -> "5a7bcb96ae354e24809655a35036143a"
+	"2d2452889c5b4a0d8664c2f83562ed66" -> "9f73e10de9da4a45bad652586ca18f97"
+	"2a57c872f424487084ed4a4a7406d915" -> "2d2452889c5b4a0d8664c2f83562ed66"
+}

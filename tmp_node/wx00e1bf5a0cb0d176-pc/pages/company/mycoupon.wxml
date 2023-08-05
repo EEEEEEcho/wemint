@@ -1,0 +1,110 @@
+<view class="fixedTopBorder"></view>
+<view class="container">
+    <view class="navbar border1px">
+        <text catchtap="switchNavbar" class="item {{currentTab=='1'?'active':''}}" data-idx="1" data-use="1">未使用</text>
+        <text catchtap="switchNavbar" class="item {{currentTab=='2'?'active':''}}" data-idx="2" data-use="2">已使用</text>
+        <text catchtap="switchNavbar" class="item {{currentTab=='3'?'active':''}}" data-idx="3" data-use="3">已过期</text>
+    </view>
+    <view class="coupon-list">
+        <scroll-view bindscrolltolower="onProductListScroll" class="coupon1" lowerThreshold="20" scrollY="true" style="height:{{scrollHeight}}px;display:{{currentTab=='1'?'block':'none'}}" xw:if="item.Status == 1">
+            <view class="couponGetOver" wx:if="{{mylist.length==0}}">
+                <image mode="widthFix" src="{{baseUrl}}/images/wxapp/blank_10.png"></image>
+                <text>没有优惠劵</text>
+            </view>
+            <view class="coupon-item" style="" wx:for="{{mylist}}" wx:key="*this">
+                <view catchtap="getCouponId" class="item-head common-corner" data-id="{{item.ItemID}}">
+                    <view class="item-head-left" data-id="{{item.ItemID}}">
+                        <view class="code-item" data-id="{{item.ItemID}}">
+                            <text class="money-num-text" data-id="{{item.ItemID}}" style="font-size:{{item.Type==0?70:60}}rpx">
+                {{item.Amount>=10000&&item.Type=='1'?item.Amount/10000:item.Amount-0}}
+              </text>
+                            <text class="unit" data-id="{{item.ItemID}}">
+                {{item.Amount>=10000&&item.Type=='1'?'万':''}}{{item.Type==0?'折':'元'}}
+              </text>
+                        </view>
+                    </view>
+                    <view class="item-head-right" data-id="{{item.ItemID}}">
+                        <text class="use-money" data-id="{{item.ItemID}}">{{item.OrderMoney==='0.00'||item.OrderMoney==0?'无使用门槛':'满'+item.OrderMoney-0+'元可用'}} {{item.IsProductLimit==='1'?' 指定商品可用':'  全场商品可用'}}</text>
+                        <text class="title-text one" data-id="{{item.ItemID}}">{{item.Title}}</text>
+                        <text class="time" data-id="{{item.ItemID}}">有效期至：{{item.ExTime}}</text>
+                        <text class="time" data-id="{{item.ItemID}}" wx:if="{{item.CanUseWeek}}">限定特定时间段使用</text>
+                    </view>
+                </view>
+                <view class="btn-list">
+                    <view catchtap="goProductList" class="product-list-btn" data-id="{{item.ItemID}}" wx:if="{{item.Status==0}}">进入商场使用</view>
+                    <view catchtap="getCouponId" class="erwei-btn" data-id="{{item.ItemID}}" wx:if="{{item.Status==0}}">扫码使用</view>
+                    <view wx:if="{{item.Status==2}}">注: 活动赠送的优惠券 在活动订单交易成功后可使用</view>
+                </view>
+            </view>
+            <view style="height: 170rpx"></view>
+        </scroll-view>
+        <scroll-view bindscrolltolower="onProductListScroll" class="coupon1" lowerThreshold="20" scrollY="true" style="height:{{scrollHeight}}px;display:{{currentTab=='2'?'block':'none'}}" xw:if="item.Status == 1">
+            <view class="couponGetOver" wx:if="{{mylist.length==0}}">
+                <image mode="widthFix" src="{{baseUrl}}/images/wxapp/blank_10.png"></image>
+                <text>亲,没有使用的优惠券</text>
+            </view>
+            <view class="coupon-item " wx:for="{{mylist}}" wx:key="*this">
+                <view class="item-head noborder">
+                    <view class="item-head-left">
+                        <view class="code-item">
+                            <text class="money-num-text color999" style="font-size:{{item.Type==0?70:60}}rpx">
+                {{item.Amount>=10000&&item.Type=='1'?item.Amount/10000:item.Amount-0}}
+              </text>
+                            <text class="unit color999">
+                {{item.Amount>=10000&&item.Type=='1'?'万':''}}{{item.Type==0?'折':'元'}}
+              </text>
+                        </view>
+                    </view>
+                    <view class="item-head-right">
+                        <text class="use-money color999">{{item.OrderMoney==='0.00'||item.OrderMoney==0?'无使用门槛':'满'+item.OrderMoney-0+'元可用'}} {{item.IsProductLimit==='1'?'指定商品可用':' 全场商品可用'}}</text>
+                        <text class="title-text color999">{{item.Title}}</text>
+                        <text class="time color999">有效期至：{{item.ExTime}}</text>
+                        <text class="time color999" wx:if="{{item.CanUseWeek}}">限定特定时间段使用</text>
+                    </view>
+                    <view class="title-img">
+                        <image mode="widthFix" src="{{baseUrl}}/images/wxapp/couponstate_11.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view style="height: 170rpx"></view>
+        </scroll-view>
+        <scroll-view xw:else bindscrolltolower="onProductListScroll" class="coupon1" lowerThreshold="20" scrollY="true" style="height:{{scrollHeight}}px;display:{{currentTab=='3'?'block':'none'}}">
+            <view class="couponGetOver" wx:if="{{mylist.length==0}}">
+                <image mode="widthFix" src="{{baseUrl}}/images/wxapp/blank_10.png"></image>
+                <text>亲,没有过期的优惠券</text>
+            </view>
+            <view class="coupon-item" wx:for="{{mylist}}" wx:key="*this">
+                <view class="item-head noborder">
+                    <view class="item-head-left">
+                        <view class="code-item">
+                            <text class="money-num-text color999" style="font-size:{{item.Type==0?70:60}}rpx">
+                {{item.Amount>=10000&&item.Type=='1'?item.Amount/10000:item.Amount-0}}
+              </text>
+                            <text class="unit color999">
+                {{item.Amount>=10000&&item.Type=='1'?'万':''}}{{item.Type==0?'折':'元'}}
+              </text>
+                        </view>
+                    </view>
+                    <view class="item-head-right">
+                        <text class="use-money">{{item.OrderMoney==='0.00'||item.OrderMoney==0?'无使用门槛':'满'+item.OrderMoney-0+'元可用'}} {{item.IsProductLimit==='1'?'指定商品可用':' 全场商品可用'}}</text>
+                        <text class="title-text color999">{{item.Title}}</text>
+                        <text class="time color999">有效期至：{{item.ExTime}}</text>
+                        <text class="time" wx:if="{{item.CanUseWeek}}">限定特定时间段使用</text>
+                    </view>
+                    <view class="title-img">
+                        <image mode="widthFix" src="{{baseUrl}}/images/wxapp/couponstate_07.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view style="height: 170rpx"></view>
+        </scroll-view>
+    </view>
+    <view class="common-coupon-btn-bg {{mylist.length>3?'active':''}}">
+        <view catchtap="goTocouponCenter" class="common-coupon-btn  item3">
+      领取更多优惠券
+    </view>
+    </view>
+</view>
+<include src="/pages/template/getUserInfo.wxml"></include>
+<include src="/pages/common/popout/index.wxml"></include>
+<include src="/pages/common/phoneauthorization/index.wxml"></include>

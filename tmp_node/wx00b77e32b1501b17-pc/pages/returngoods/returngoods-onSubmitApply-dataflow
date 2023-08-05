@@ -1,0 +1,17 @@
+// \pages/returngoods/returngoods onSubmitApply Data Flow
+digraph {
+	"40b29096e09b42d8b59d469db5bc38fb" [label="FunctionCall,
+function name -> onSubmitApply,
+param -> t.,
+t,
+" color=blue]
+	"92fdaad82411453c9a6860df8604c3e3" [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	e4d4efb3a87b463fb9b014a67c8e2a9e [label="FunctionCall,
+function name -> success,
+param -> t,
+" color=blue]
+	"92fdaad82411453c9a6860df8604c3e3" -> e4d4efb3a87b463fb9b014a67c8e2a9e
+	"40b29096e09b42d8b59d469db5bc38fb" -> "92fdaad82411453c9a6860df8604c3e3"
+}

@@ -1,0 +1,17 @@
+// \pages/fightGroups/productdetail/index navbarTap Data Flow
+digraph {
+	"9fd4f20eaa2b4aaa8a9665641f7f53e6" [label="FunctionCall,
+function name -> navbarTap,
+param -> t,
+t.,
+" color=blue]
+	"66654aba1cfe4f18ac7374b4b9d095ce" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"5274890354b848f4bee691c7e16b5293" [label="Object Properties
+{
+currentTab -> t.currentTarget.dataset.idx
+}" color=blue]
+	"66654aba1cfe4f18ac7374b4b9d095ce" -> "5274890354b848f4bee691c7e16b5293"
+	"9fd4f20eaa2b4aaa8a9665641f7f53e6" -> "66654aba1cfe4f18ac7374b4b9d095ce"
+}

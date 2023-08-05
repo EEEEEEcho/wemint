@@ -1,0 +1,47 @@
+<view class="yhq">
+    <view class="yhqBox">
+        <view class="yhqTitle">
+            <view class="yhqC">领券中心
+        <image class="yhq_img" src="/images/couponsCenter.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="coupon" wx:for="{{coupones}}" wx:key="key">
+    <form reportSubmit bindsubmit="getIt" data-card-id="{{coupones[index].cardId}}" data-put-id="{{coupones[index].putId}}" data-voucherRestrict-id="{{coupones[index].voucherRestrict}}" wx:if="{{coupones[index].couponType=='2'&&coupones[index].validityBegin*1>=0||coupones[index].couponType=='2'&&coupones[index].validityBegin<=nowDate}}">
+        <button class="couponBox" data-card-id="{{coupones[index].cardId}}" data-put-id="{{coupones[index].putId}}" data-voucherRestrict-id="{{coupones[index].voucherRestrict}}" formType="submit" wx:if="{{coupones[index].couponType=='2'&&coupones[index].validityBegin*1>=0||coupones[index].couponType=='2'&&coupones[index].validityBegin<=nowDate}}">
+            <view class="left1">
+                <view class="left1_quan">{{coupones[index].couponName}}</view>
+                <view class="left1_man1">消费满{{coupones[index].miniMoney}}元可用</view>
+            </view>
+            <view class="center1">
+                <view class="center1_zhe">{{coupones[index].derateMoney}}折</view>
+            </view>
+            <view class="center1_date1" wx:if="{{coupones[index].validityType=='DATE_TYPE_FIX_TERM'}}">自领取{{coupones[index].validityBegin=='0'?'之日':'后'+coupones[index].validityBegin+'日'}}起{{coupones[index].validityEnd}}天有效</view>
+            <view class="center1_date" wx:else>{{coupones[index].validityBegin}}至{{coupones[index].validityEnd}}</view>
+        </button>
+    </form>
+    <view class="right_bg1" wx:if="{{coupones[index].couponType=='2'}}">
+        <view class="right_bg1_text1" data-index="{{index}}">可领取</view>
+    </view>
+    <form reportSubmit bindsubmit="getIt" data-card-id="{{coupones[index].cardId}}" data-put-id="{{coupones[index].putId}}" data-voucherRestrict-id="{{coupones[index].voucherRestrict}}" wx:if="{{coupones[index].couponType=='4'&&coupones[index].validityBegin*1>=0||coupones[index].couponType=='4'&&coupones[index].validityBegin<=nowDate}}">
+        <button class="couponBox" data-card-id="{{coupones[index].cardId}}" data-put-id="{{coupones[index].putId}}" data-voucherRestrict-id="{{coupones[index].voucherRestrict}}" formType="submit" wx:if="{{coupones[index].couponType=='4'&&coupones[index].validityBegin*1>=0||coupones[index].couponType=='4'&&coupones[index].validityBegin<=nowDate}}">
+            <view class="left1">
+                <view class="left1_quan">{{coupones[index].couponName}}</view>
+                <view class="left1_man1">消费满{{coupones[index].miniMoney}}元可用</view>
+            </view>
+            <view class="center1">
+                <view class="center1_zhe">{{coupones[index].derateMoney}}元</view>
+            </view>
+            <view class="center1_date1" wx:if="{{coupones[index].validityType=='DATE_TYPE_FIX_TERM'}}">自领取{{coupones[index].validityBegin=='0'?'之日':'后'+coupones[index].validityBegin+'日'}}起{{coupones[index].validityEnd}}天有效</view>
+            <view class="center1_date" wx:else>{{coupones[index].validityBegin}}至{{coupones[index].validityEnd}}</view>
+        </button>
+    </form>
+    <view class="right_bg1" wx:if="{{coupones[index].couponType=='4'}}">
+        <view class="right_bg1_text1" data-index="{{index}}">可领取</view>
+    </view>
+</view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

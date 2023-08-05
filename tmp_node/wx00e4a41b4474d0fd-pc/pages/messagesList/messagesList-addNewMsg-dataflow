@@ -1,0 +1,16 @@
+// \pages/messagesList/messagesList addNewMsg Data Flow
+digraph {
+	"2ac13db592794227a697ea5621697fb9" [label="FunctionCall,
+function name -> addNewMsg,
+param -> " color=blue]
+	b6acc329e9fd49089f187d21f277e8c2 [label="CallExpression,
+callee name -> console.log,
+param -> o.data.adviserList,
+" color=blue]
+	"2ac13db592794227a697ea5621697fb9" -> b6acc329e9fd49089f187d21f277e8c2
+	"69f529d8265c499f8885bd0548e060fa" [label="CallExpression,
+callee name -> console.log,
+param -> o.data.isSentAdviserList,
+" color=blue]
+	"2ac13db592794227a697ea5621697fb9" -> "69f529d8265c499f8885bd0548e060fa"
+}

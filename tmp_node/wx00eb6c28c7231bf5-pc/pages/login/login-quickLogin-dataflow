@@ -1,0 +1,17 @@
+// \pages/login/login quickLogin Data Flow
+digraph {
+	c79603e9319149a2bfa6002f26ea7e14 [label="FunctionCall,
+function name -> quickLogin,
+param -> a,
+a.,
+" color=blue]
+	"6f6c0d54bdf845b595b789ec0e7e5fae" [label="CallExpression,
+callee name -> e.getWxUserInfo,
+param -> " color=blue]
+	a0f9bad04ae741238e28737b439754e8 [label="FunctionCall,
+function name -> Anonymous Function,
+param -> a,
+" color=blue]
+	"6f6c0d54bdf845b595b789ec0e7e5fae" -> a0f9bad04ae741238e28737b439754e8
+	c79603e9319149a2bfa6002f26ea7e14 -> "6f6c0d54bdf845b595b789ec0e7e5fae"
+}

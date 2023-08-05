@@ -1,0 +1,11 @@
+// \pages/shop/shopcart getCoupon Data Flow
+digraph {
+	"53f65acd3f344337a981b51ffbba9e12" [label="FunctionCall,
+function name -> getCoupon,
+param -> " color=blue]
+	"4b2ca0cf4e8e4affa06e675ac98d14aa" [label=SequenceExpression color=blue]
+	"82df4c59ce9a4c929a669ea822aa7018" [label="ConditionalExpression,
+ conditional list -> a.setData,a.couponCollection" color=blue]
+	"4b2ca0cf4e8e4affa06e675ac98d14aa" -> "82df4c59ce9a4c929a669ea822aa7018"
+	"53f65acd3f344337a981b51ffbba9e12" -> "4b2ca0cf4e8e4affa06e675ac98d14aa"
+}

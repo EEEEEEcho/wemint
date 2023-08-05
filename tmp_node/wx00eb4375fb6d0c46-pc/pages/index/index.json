@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "探惠",
+    "navigationStyle": "default",
+    "backgroundColor": "#FFFFFF",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#fff",
+    "onReachBottomDistance": 60,
+    "usingComponents": {
+        "loading-component": "/pages/components/loading/loading",
+        "detail-component": "/pages/components/couponDetail/couponDetail"
+    }
+}

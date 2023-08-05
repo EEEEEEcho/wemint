@@ -1,0 +1,101 @@
+<view class="container fs_14">
+    <view class="orderHeader">
+        <view class="orderHeaderProcess widC_90 fs_12 fc_mgray">
+            <view class="orderStep {{_step=='step1'||_step=='step2'||_step=='step3'||_step=='step4'?'stepOn':''}}">
+                <view class="orderImg {{_step=='step1'||_step=='step2'||_step=='step3'||_step=='step4'?'imgOn':''}}">
+                    <image src="../../images/order_submit.png"></image>
+                </view>
+                <view>提交中</view>
+            </view>
+            <view class="rowLine {{_step=='step1'||_step=='step2'||_step=='step3'||_step=='step4'?'linOn':''}}"></view>
+            <view class="finishStep {{_step=='step2'||_step=='step3'||_step=='step4'?'stepOn':''}}">
+                <view class="orderImg {{_step=='step2'||_step=='step3'||_step=='step4'?'imgOn':''}}">
+                    <image src="../../images/order_accept.png"></image>
+                </view>
+                <view>已受理</view>
+            </view>
+            <view class="rowLine {{_step=='step2'||_step=='step3'||_step=='step4'?'linOn':''}}"></view>
+            <view class="wayStep {{_step=='step3'||_step=='step4'?'stepOn':''}}">
+                <view class="orderImg {{_step=='step3'||_step=='step4'?'imgOn':''}}">
+                    <image src="../../images/order_send.png"></image>
+                </view>
+                <view>配送中</view>
+            </view>
+            <view class="rowLine {{_step=='step3'||_step=='step4'?'linOn':''}}"></view>
+            <view class="succeStep {{_step=='step4'?'stepOn':''}}">
+                <view class="orderImg {{_step=='step4'?'imgOn':''}}">
+                    <image src="../../images/order_success.png"></image>
+                </view>
+                <view>成功！</view>
+            </view>
+        </view>
+    </view>
+    <view class="orderIntroduce">
+        <view class="widC_90">
+            <view class="shopName fb">店铺：{{shopName}}</view>
+            <view class="orderNum">单号：{{orderNum}}</view>
+            <view class="orderTime">下单时间：{{orderTime}}</view>
+        </view>
+    </view>
+    <view class="userInfo">
+        <view class="widC_90">
+            <view>
+                <icon class="iconfont icon-geren fs_20"></icon>
+                <text class="fb">  {{userName}}</text>
+            </view>
+            <view>
+                <icon class="iconfont icon-dianhua fs_20"></icon>  {{userTel}}</view>
+            <view>
+                <icon class="iconfont icon-dizhi fs_20"></icon>  {{userAddress}}</view>
+            <view wx:if="{{description==0?false:true}}">备注：{{description}}</view>
+            <view>{{sendWay}}：{{send_time}}</view>
+        </view>
+    </view>
+    <view class="goodsInfo">
+        <view class="widC_90">
+            <view class="goodsChoose" wx:for="{{order_item}}">
+                <view class="goodsNmae">{{item.goods_name}}<text wx:if="{{item.isShowGoodsNote}}">({{item.note}})</text>
+                </view>
+                <view class="goodsSum">x {{item.goods_num}}</view>
+                <view class="goodsPrice fc_red">￥{{item.goods_price}}</view>
+            </view>
+            <view class="goodsSubtotal">
+                <view>
+                    <text class="fb">小计：</text>共{{goodsSum}}份</view>
+                <view class="fb fc_red">￥{{amount}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="goodsElseCost">
+        <view class="widC_90">
+            <view class="elseDiscount">
+                <view wx:if="{{discount==0?false:true}}">优惠： <text class="fc_green">-{{discount}}</text>
+                </view>
+                <view wx:if="{{pakage==0?false:true}}">打包： <text class="fc_red">+{{pakage}}</text>
+                </view>
+                <view wx:if="{{distribution==0?false:true}}">配送： <text class="fc_red">+{{distribution}}</text>
+                </view>
+                <view wx:if="{{addition==0?false:true}}">附加： <text class="fc_red">+{{addition}}</text>
+                </view>
+                <view wx:if="{{deduction==0?false:true}}">抵扣： <text class="fc_green">-{{deduction}}</text>
+                </view>
+            </view>
+            <view class="finalPrice fb">总计： <text class="fc_red"> ￥{{total_price}}</text>
+            </view>
+            <view class="payWay">({{pay_methodText}})</view>
+        </view>
+    </view>
+    <view class="hadRefund" wx:if="{{hadRefund}}">已经退款</view>
+    <view class="hadUndo" wx:if="{{isShowUndo}}">已经撤销</view>
+    <view class="orderTabBar" wx:if="{{!hadRefund&&!isShowUndo}}">
+        <view bindtap="openCallShop" wx:if="{{isShowAsk}}">询问</view>
+        <view bindtap="toRemark" data-name="{{shopName}}" data-num="{{orderNum}}" wx:if="{{isShowCommented}}">评论</view>
+        <view bindtap="sureGoods" class="sureGoods" wx:if="{{isShowSure}}">确认收货</view>
+    </view>
+    <view bindtap="closeMask" class="maskLayer" wx:if="{{shopTel}}">
+        <view catchtap="handleTap" class="shopTel">
+            <view class="shopTelTitle fs_16">商家电话</view>
+            <view bindtap="callTel" class="shopTelContact fs_16 fc_lblue">{{nowShopTel}}</view>
+        </view>
+    </view>
+</view>

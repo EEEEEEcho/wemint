@@ -1,0 +1,10 @@
+<view catchtap="{{copyrightInfo.Default=='1'&&appinfo.Industry=='shoplite'&&appinfo.IsZhiYing=='1'?'navTo':''}}" class="copyright {{copyrightInfo.copyrightClassName}}" data-linktype="Copyright" wx:if="{{copyrightInfo.Enable==1}}">
+    <view class="common">
+        <view class="section-1" wx:if="{{copyrightInfo.ShowIcon==1}}">
+            <image class="icon" mode="aspectFit" src="{{copyrightInfo.IconPath}}"></image>
+        </view>
+        <view class="section-2">
+            {{copyrightInfo.Intro}}
+        </view>
+    </view>
+</view>

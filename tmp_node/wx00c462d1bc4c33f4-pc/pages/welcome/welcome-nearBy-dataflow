@@ -1,0 +1,19 @@
+// \pages/welcome/welcome nearBy Data Flow
+digraph {
+	"22ba4247d27d4e71ac4f5e8530b7f705" [label="FunctionCall,
+function name -> nearBy,
+param -> t.,
+t,
+" color=blue]
+	"7001a06bd51f4e52a846eadda2cd7d78" [label=SequenceExpression color=blue]
+	be40ba5a9a0c4b738db0a6a7c0c67f94 [label="CallExpression,
+callee name -> wx.getStorage,
+param -> " color=blue]
+	"4e84f7c7c1c6411f91699057de59d60b" [label="FunctionCall,
+function name -> success,
+param -> t,
+" color=blue]
+	be40ba5a9a0c4b738db0a6a7c0c67f94 -> "4e84f7c7c1c6411f91699057de59d60b"
+	"7001a06bd51f4e52a846eadda2cd7d78" -> be40ba5a9a0c4b738db0a6a7c0c67f94
+	"22ba4247d27d4e71ac4f5e8530b7f705" -> "7001a06bd51f4e52a846eadda2cd7d78"
+}

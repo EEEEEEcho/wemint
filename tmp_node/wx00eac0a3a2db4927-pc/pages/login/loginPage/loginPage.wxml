@@ -1,0 +1,17 @@
+<view class="getReadyImage">
+    <view class="readyBackList" style="width:{{listWidth}}px;height:{{listHeight}}px;left:{{leftX}}px;top:{{topY}}px">
+        <view class="getReadyBack">
+            <view class="scroll"></view>
+        </view>
+    </view>
+    <view class="loginPageTitle column">
+        <image class="loginPageTop" src="http://oss.shangmian.xin/ic_weixin_applets_login_page_title_20191019.png"></image>
+        <view class="loginPageSubmit">
+            <image class="submitImage" src="http://oss.shangmian.xin/ic_weixin_applets_login_page_submit.png"></image>
+            <button bindgetphonenumber="getPhoneNumber" class="phoneNumber" openType="getPhoneNumber"></button>
+        </view>
+        <image class="loginPageBottom" src="http://oss.shangmian.xin/ic_weixin_applets_login_page_bottom_title_20191104.png"></image>
+    </view>
+</view>
+<loading-view isShow="{{isShowLoad}}"></loading-view>
+<get-user isShow="{{isShowUserInfo}}" preOptions="{{preOptions}}" setUserInfo="{{setUserInfo}}"></get-user>

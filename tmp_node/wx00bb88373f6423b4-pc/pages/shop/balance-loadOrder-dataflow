@@ -1,0 +1,42 @@
+// \pages/shop/balance loadOrder Data Flow
+digraph {
+	f3235b84ac424f4d902452b61e90acd2 [label="FunctionCall,
+function name -> loadOrder,
+param -> " color=blue]
+	"3d9a01422ae24e9daa8ae82dc48963aa" [label="If Alternate" color=blue]
+	"23c6ea4ab1ab4d11b3691819f2117220" [label=VariableDeclarations color=blue]
+	a94af672711843b389ccf75fc4d72eda [label="VariableDeclarator,
+left -> i,
+right -> e.data.recordcount" color=blue]
+	"23c6ea4ab1ab4d11b3691819f2117220" -> a94af672711843b389ccf75fc4d72eda
+	a91f9566a1f744399802811ee21159ce [label="VariableDeclarator,
+left -> o,
+right -> e.data.orderlist.length" color=blue]
+	"23c6ea4ab1ab4d11b3691819f2117220" -> a91f9566a1f744399802811ee21159ce
+	"3d9a01422ae24e9daa8ae82dc48963aa" -> "23c6ea4ab1ab4d11b3691819f2117220"
+	"44e96647a5414c1b9461175212231940" [label="If Alternate" color=blue]
+	"079a7aadafee45c08582ce61a478e9fe" [label=VariableDeclarations color=blue]
+	eb570fdf7c58463dbc98312aa2c22733 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	bcb2a61486a84b7fb9742dbb415a459b [label="CallExpression,
+callee name -> Math.ceil,
+param -> o / e.data.pagesize,
+" color=blue]
+	eb570fdf7c58463dbc98312aa2c22733 -> bcb2a61486a84b7fb9742dbb415a459b
+	"079a7aadafee45c08582ce61a478e9fe" -> eb570fdf7c58463dbc98312aa2c22733
+	"44e96647a5414c1b9461175212231940" -> "079a7aadafee45c08582ce61a478e9fe"
+	b0019b3f02964eec9020cfc096361634 [label=SequenceExpression color=blue]
+	ac31ca3ea3474c3488d5d1f8d6f56195 [label="CallExpression,
+callee name -> a.sendRequest,
+param -> " color=blue]
+	dece6b2289df4c75a2b4b2efab563c3b [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=getFinance&page=' + s + '&pagesize=' + e.data.pagesize
+}" color=blue]
+	ac31ca3ea3474c3488d5d1f8d6f56195 -> dece6b2289df4c75a2b4b2efab563c3b
+	b0019b3f02964eec9020cfc096361634 -> ac31ca3ea3474c3488d5d1f8d6f56195
+	"44e96647a5414c1b9461175212231940" -> b0019b3f02964eec9020cfc096361634
+	"3d9a01422ae24e9daa8ae82dc48963aa" -> "44e96647a5414c1b9461175212231940"
+	f3235b84ac424f4d902452b61e90acd2 -> "3d9a01422ae24e9daa8ae82dc48963aa"
+}

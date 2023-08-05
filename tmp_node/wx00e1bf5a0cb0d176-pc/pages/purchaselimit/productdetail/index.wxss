@@ -1,0 +1,91 @@
+page {
+    background: #fff;
+}
+
+.slide-image {
+    display: block;
+    width: 100%;
+}
+
+.product-top {
+    position: relative;
+}
+
+.product-top .secondkill {
+    position: absolute;
+    height: 48rpx;
+    line-height: 48rpx;
+    padding: 10rpx 26rpx;
+    color: #fff;
+    font-size: 24rpx;
+    border-top-right-radius: 4rpx;
+    top: -62rpx;
+    left: 0;
+    background-color: #ff43b6;
+}
+
+.product-top .pice {
+    height: 90rpx;
+    display: flex;
+    justify-content: space-between;
+    background: -webkit-gradient(to right,#ff43b6 0%,#ca2aff 100%);
+    background: linear-gradient(to right,#ff43b6 0%,#ca2aff 100%);
+    align-items: center;
+    padding: 0 26rpx;
+    color: #fff;
+}
+
+.freight-detail {
+    height: 96rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.time-txt {
+    font-size: 22rpx;
+    color: #f7e0fb;
+}
+
+.time {
+    font-size: 22rpx;
+    margin-top: 6rpx;
+    color: #f7e0fb;
+}
+
+.pice_r .time text {
+    height: 32rpx;
+    width: 32rpx;
+    padding: 2rpx;
+    background: #fff;
+    border-radius: 4rpx;
+    color: #b220dd;
+    font-size: 24rpx;
+    text-align: center;
+    line-height: 32rpx;
+    display: inline-block;
+}
+
+.footnav .footRight {
+    flex: 1;
+    height: 98rpx;
+    background-color: #ff4c5b;
+    color: #fff;
+    font-size: 30rpx;
+    text-align: center;
+    line-height: 98rpx;
+}
+
+scroll-view {
+    margin-bottom: 98rpx;
+}
+
+.container .particulars-page .particulars-content .wxParse-p {
+    width: 100%;
+}
+
+.wxParse-img {
+    display: block;
+    font-size: 0;
+    margin-top: -1px;
+}

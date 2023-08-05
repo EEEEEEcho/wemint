@@ -1,0 +1,8 @@
+<view class="tabbar">
+    <navigator class="tabbar__item" style="width: {{pageData.ShowWay}}" url="{{item.Link}}" wx:for="{{pageData.Item}}">
+        <view class="tabbar__icon">
+            <image src="{{item.Img}}"></image>
+        </view>
+        <view class="tabbar__label">{{item.DisplayText}}</view>
+    </navigator>
+</view>

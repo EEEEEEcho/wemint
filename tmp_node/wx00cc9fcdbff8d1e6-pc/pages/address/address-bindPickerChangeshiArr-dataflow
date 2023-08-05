@@ -1,0 +1,26 @@
+// \pages/address/address bindPickerChangeshiArr Data Flow
+digraph {
+	"29b4c40ecf0848be819b56915e8b5fc1" [label="FunctionCall,
+function name -> bindPickerChangeshiArr,
+param -> a,
+a.,
+" color=blue]
+	"3d9eb4ab3bf649beb62f460fd6d6e860" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	c2707c0b147541c3a83e36a11c04c84f [label="Object Properties
+{
+shiIndex -> a.detail.value
+}" color=blue]
+	"3d9eb4ab3bf649beb62f460fd6d6e860" -> c2707c0b147541c3a83e36a11c04c84f
+	"29b4c40ecf0848be819b56915e8b5fc1" -> "3d9eb4ab3bf649beb62f460fd6d6e860"
+	da3426e7b95443789fcca1d076f44f84 [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"34ff705624c24d0d961625ae99462d2f" [label="Object Properties
+{
+city -> a.detail.value
+}" color=blue]
+	da3426e7b95443789fcca1d076f44f84 -> "34ff705624c24d0d961625ae99462d2f"
+	"29b4c40ecf0848be819b56915e8b5fc1" -> da3426e7b95443789fcca1d076f44f84
+}

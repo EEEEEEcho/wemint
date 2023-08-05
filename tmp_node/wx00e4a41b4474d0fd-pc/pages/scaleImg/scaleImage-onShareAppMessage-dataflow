@@ -1,0 +1,15 @@
+// \pages/scaleImg/scaleImage onShareAppMessage Data Flow
+digraph {
+	"0433db2a96ee406886faa199e25ca16e" [label="FunctionCall,
+function name -> onShareAppMessage,
+param -> " color=blue]
+	"934ae427b2b943089055e7676ef78ba9" [label=ReturnExpression color=blue]
+	"1dae5d6561f94653af406a08dc4ac9f1" [label=SequenceExpression color=blue]
+	c50b196eca264a6ba5fb807e3c3800dc [label="Object Properties
+{
+path -> '/pages/scaleImg/scaleImage?shareToken=' + c.globalData.shareToken + '&type=' + this.data.type + '&imageId=' + t + '&btnColor=' + this.data.btnColor + '&lineColor=' + this.data.lineColor + '&textColor=' + this.data.textColor
+}" color=blue]
+	"1dae5d6561f94653af406a08dc4ac9f1" -> c50b196eca264a6ba5fb807e3c3800dc
+	"934ae427b2b943089055e7676ef78ba9" -> "1dae5d6561f94653af406a08dc4ac9f1"
+	"0433db2a96ee406886faa199e25ca16e" -> "934ae427b2b943089055e7676ef78ba9"
+}

@@ -1,0 +1,19 @@
+// \pages/circle/circle giveLike Data Flow
+digraph {
+	a6365a6357f1477fa3321322577f8de0 [label="FunctionCall,
+function name -> giveLike,
+param -> e.,
+e,
+" color=blue]
+	"80ca145f86f942b69a1aeed37bddcfd8" [label=VariableDeclarations color=blue]
+	"4324fdbed1cf43c6841486212cebd16b" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"06ef46fd019b442fa7f207dfe63ecc44" [label="Object Properties
+{
+benefitCircleId -> e.currentTarget.dataset.benefitcircleid
+}" color=blue]
+	"4324fdbed1cf43c6841486212cebd16b" -> "06ef46fd019b442fa7f207dfe63ecc44"
+	"80ca145f86f942b69a1aeed37bddcfd8" -> "4324fdbed1cf43c6841486212cebd16b"
+	a6365a6357f1477fa3321322577f8de0 -> "80ca145f86f942b69a1aeed37bddcfd8"
+}

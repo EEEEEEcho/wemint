@@ -1,0 +1,24 @@
+// \pages/shop/square isdefaultStores Data Flow
+digraph {
+	"4b05d52124f54440a0018e13f3701137" [label="FunctionCall,
+function name -> isdefaultStores,
+param -> " color=blue]
+	cf94d86ce4d64deb9c5e8e188816c99b [label=VariableDeclarations color=blue]
+	"5eb1363f609f48b2b7c089c035a48db3" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	a9b7e1cd2cb8496f812226d598e5529c [label="ConditionalExpression,
+ conditional list -> a.data.defaultAddr.ID" color=blue]
+	"5eb1363f609f48b2b7c089c035a48db3" -> a9b7e1cd2cb8496f812226d598e5529c
+	cf94d86ce4d64deb9c5e8e188816c99b -> "5eb1363f609f48b2b7c089c035a48db3"
+	"4b05d52124f54440a0018e13f3701137" -> cf94d86ce4d64deb9c5e8e188816c99b
+	"97b14d0ae8c14beb8f381341b4cb3cfa" [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	c2f9db1a14504302ba29e8f16799eb01 [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=getCityDistributionStore&addressId=' + i + '&cargo_price=' + a.data.getPriceInfo.ordermoney
+}" color=blue]
+	"97b14d0ae8c14beb8f381341b4cb3cfa" -> c2f9db1a14504302ba29e8f16799eb01
+	"4b05d52124f54440a0018e13f3701137" -> "97b14d0ae8c14beb8f381341b4cb3cfa"
+}

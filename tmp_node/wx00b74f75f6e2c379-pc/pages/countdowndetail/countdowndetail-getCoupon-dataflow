@@ -1,0 +1,14 @@
+// \pages/countdowndetail/countdowndetail getCoupon Data Flow
+digraph {
+	"260528cbbc3b4cc9ab5129b1c2a9fda0" [label="FunctionCall,
+function name -> getCoupon,
+param -> e,
+e.,
+" color=blue]
+	"0ceab6a0d57244dcb930be6ffc505b5c" [label=VariableDeclarations color=blue]
+	afc8ce6facad44f8829e62a025fff6b7 [label="VariableDeclarator,
+left -> couponid,
+right -> e.currentTarget.id" color=blue]
+	"0ceab6a0d57244dcb930be6ffc505b5c" -> afc8ce6facad44f8829e62a025fff6b7
+	"260528cbbc3b4cc9ab5129b1c2a9fda0" -> "0ceab6a0d57244dcb930be6ffc505b5c"
+}

@@ -1,0 +1,15 @@
+// \pages/houseTypeDetail/houseTypeDetail heightHandle Data Flow
+digraph {
+	a70c9cef12a24504bd1cf65661ac5f77 [label="FunctionCall,
+function name -> heightHandle,
+param -> e,
+e.,
+" color=blue]
+	"52e32a3d2fb94d9cb59d5d518f3a5be4" [label=SequenceExpression color=blue]
+	"8a248b7a79514fabb0734ddd6db0a52c" [label="CallExpression,
+callee name -> console.warn,
+param -> e,
+" color=blue]
+	"52e32a3d2fb94d9cb59d5d518f3a5be4" -> "8a248b7a79514fabb0734ddd6db0a52c"
+	a70c9cef12a24504bd1cf65661ac5f77 -> "52e32a3d2fb94d9cb59d5d518f3a5be4"
+}

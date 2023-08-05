@@ -1,0 +1,14 @@
+<view class="margintop5"></view>
+<view class="container">
+    <view class="sel">
+        <input bindinput="phoneInput" class="inputText" focus="{{focus1}}" placeholder="原密码"></input>
+    </view>
+    <view class="line"></view>
+    <view class="sel">
+        <input class="inputText" placeholder="新密码"></input>
+    </view>
+    <view class="line"></view>
+    <view class="loginBtnView">
+        <button bindtap="binding" class="loginBtn" disabled="{{disabled}}" loading="{{loading}}" plain="{{plain}}" size="{{primarySize}}">修改</button>
+    </view>
+</view>

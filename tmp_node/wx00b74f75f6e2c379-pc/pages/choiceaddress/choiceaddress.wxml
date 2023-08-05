@@ -1,0 +1,25 @@
+<view hidden="{{AddressCount==0}}">
+    <radio-group bindchange="onAddressCheck" class="radio-group mt24">
+        <view class="addresslist" data-addressdata="{{item}}" wx:for="{{AddressList}}" wx:key="ShippingId">
+            <view class="addressdetail pl24 pr24 mb24">
+                <view catchtap="bindEditAddressTap" class="addressname pt24 pb8" data-addressdata="{{item}}">
+                    <view class="addressnamel">{{item.ShipTo}}，{{item.CellPhone}}</view>
+                </view>
+                <view catchtap="bindEditAddressTap" class="addresscont" data-addressdata="{{item}}">{{item.FullAddress}}</view>
+                <view class="addressmor pt24 pb24">
+                    <view class="addressmorl">
+                        <radio class="font28" color="#333333" value="{{item.ShippingId}}">
+            选择地址
+            </radio>
+                    </view>
+                    <view catchtap="bindDeleteAddressTap" class="addressmorr" data-shippingid="{{item.ShippingId}}">
+                        <view class="iconfont icon__trash"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </radio-group>
+</view>
+<view class="xinzheng">
+    <button bindtap="onAddShippingAddress" hidden="{{AddressCount>=5}}">添加收货地址</button>
+</view>

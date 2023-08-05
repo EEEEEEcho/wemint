@@ -1,0 +1,33 @@
+// \pages/shop/shopcart touchStart Data Flow
+digraph {
+	ce70918cc5ed4d5ab29228accbfa74be [label="FunctionCall,
+function name -> touchStart,
+param -> t,
+t.,
+" color=blue]
+	c2b60e6defc24f549a65d6b61df13ed8 [label="If Alternate" color=blue]
+	"0ab5e5bb4d6b4189b17927feebf6f4f5" [label=VariableDeclarations color=blue]
+	"5915a0a20d02463dbd501153358bc46e" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.index" color=blue]
+	"0ab5e5bb4d6b4189b17927feebf6f4f5" -> "5915a0a20d02463dbd501153358bc46e"
+	"89750504bfdf4e8f89e41f853b74d13a" [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.idx" color=blue]
+	"0ab5e5bb4d6b4189b17927feebf6f4f5" -> "89750504bfdf4e8f89e41f853b74d13a"
+	c2b60e6defc24f549a65d6b61df13ed8 -> "0ab5e5bb4d6b4189b17927feebf6f4f5"
+	"3e958e6963a74737ac83c6ec7040ea8f" [label=SequenceExpression color=blue]
+	d546bea8d3874b0ba1deefbe30e15c6a [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"35cc83ba7ecd41059526a7487ae23622" [label="Object Properties
+{
+startX -> t.touches[0].clientX
+startY -> t.touches[0].clientY
+showList -> this.data.showList
+}" color=blue]
+	d546bea8d3874b0ba1deefbe30e15c6a -> "35cc83ba7ecd41059526a7487ae23622"
+	"3e958e6963a74737ac83c6ec7040ea8f" -> d546bea8d3874b0ba1deefbe30e15c6a
+	c2b60e6defc24f549a65d6b61df13ed8 -> "3e958e6963a74737ac83c6ec7040ea8f"
+	ce70918cc5ed4d5ab29228accbfa74be -> c2b60e6defc24f549a65d6b61df13ed8
+}

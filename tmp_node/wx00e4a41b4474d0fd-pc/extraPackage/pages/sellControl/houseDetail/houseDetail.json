@@ -1,0 +1,8 @@
+{
+    "disableScroll": true,
+    "usingComponents": {
+        "c-img": "../../../../components/img/img",
+        "myLoading": "../../../../components/globalLoad/globalLoad",
+        "navbar": "/components/navbar/navbar"
+    }
+}

@@ -1,0 +1,27 @@
+// \pages/shop/orderdetail goRefunds Data Flow
+digraph {
+	fe6bb33307cf4a978470652f4ac46935 [label="FunctionCall,
+function name -> goRefunds,
+param -> t,
+t.,
+" color=blue]
+	"7a4cf0e2affe41258f10164c27902175" [label=VariableDeclarations color=blue]
+	"251fe518ba4241779ae51b013cfcd958" [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.orderid" color=blue]
+	"7a4cf0e2affe41258f10164c27902175" -> "251fe518ba4241779ae51b013cfcd958"
+	"41c84bdbc4b848c09e9770c11e2fdbde" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.pkey" color=blue]
+	"7a4cf0e2affe41258f10164c27902175" -> "41c84bdbc4b848c09e9770c11e2fdbde"
+	fe6bb33307cf4a978470652f4ac46935 -> "7a4cf0e2affe41258f10164c27902175"
+	fb8bacaa1acd423796730ee4c2677802 [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"9805311c7d694342b7413569d2fa91e5" [label="Object Properties
+{
+url -> 'refundreson?orderid=' + a + '&pkey=' + e
+}" color=blue]
+	fb8bacaa1acd423796730ee4c2677802 -> "9805311c7d694342b7413569d2fa91e5"
+	fe6bb33307cf4a978470652f4ac46935 -> fb8bacaa1acd423796730ee4c2677802
+}

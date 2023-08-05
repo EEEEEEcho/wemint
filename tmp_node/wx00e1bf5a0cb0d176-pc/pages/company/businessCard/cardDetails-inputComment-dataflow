@@ -1,0 +1,17 @@
+// \pages/company/businessCard/cardDetails inputComment Data Flow
+digraph {
+	"825d04619bc343dbb91c6aefe66f1803" [label="FunctionCall,
+function name -> inputComment,
+param -> a.,
+a,
+" color=blue]
+	"2b449ceedb9a4beaad45d0f27c62be3d" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"61c78fe555b041eca44287c587dab98a" [label="Object Properties
+{
+commentcontent -> a.detail.value
+}" color=blue]
+	"2b449ceedb9a4beaad45d0f27c62be3d" -> "61c78fe555b041eca44287c587dab98a"
+	"825d04619bc343dbb91c6aefe66f1803" -> "2b449ceedb9a4beaad45d0f27c62be3d"
+}

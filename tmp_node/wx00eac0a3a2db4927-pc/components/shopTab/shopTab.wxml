@@ -1,0 +1,6 @@
+<view class="shopTab row">
+    <view bindtap="onItemClick" class="itemLayout" data-index="{{index}}" wx:for="{{dataList}}" wx:for-item="dataItem" wx:key="index">
+        <text class="itemText">{{dataItem}}</text>
+        <view class="itemLine" wx:if="{{selectedIndex===index}}"></view>
+    </view>
+</view>

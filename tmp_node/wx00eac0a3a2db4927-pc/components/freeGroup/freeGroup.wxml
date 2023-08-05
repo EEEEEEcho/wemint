@@ -1,0 +1,23 @@
+<view class="panel" wx:if="{{exemptionListData.data.length!=0}}">
+    <view class="param_title">
+        <text class="title">{{userTotal}}人正在参与免单</text>
+        <text catchtap="onFreeGroupList" class="moreFree">更多拼团免单</text>
+        <image class="more_arrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+    </view>
+    <view class="free_list" wx:for="{{exemptionListData.data}}" wx:key="index">
+        <view class="free_time">
+            <image class="free_avatar" mode="aspectFill" src="{{user.avatar}}" style="margin-left:{{index>0?'-48rpx':'0rpx'}}" wx:for="{{item.users}}" wx:for-item="user" wx:key="{{index}}"></image>
+            <text class="nickName" wx:if="{{item.users.length==1}}">{{item.users[0].nickname}}</text>
+            <text class="free_last" style="margin-left: auto">剩</text>
+            <text class="free_day">{{exemptionTime[index].freeDay}}</text>
+            <text class="free_last last_margin">天</text>
+            <text class="free_date">{{exemptionTime[index].freeHour}}</text>
+            <text class="free_break">:</text>
+            <text class="free_date">{{exemptionTime[index].freeMinute}}</text>
+            <text class="free_break">:</text>
+            <text class="free_date">{{exemptionTime[index].freeSecond}}</text>
+            <text catchtap="joinFree" class="join_free" data-group-uuid="{{item.groupUuid}}">参与免单</text>
+        </view>
+    </view>
+</view>
+<free-group-list bindonJoinFree="onJoinFree" goodsUuid="{{goodsUuid}}" id="freeGroupList" isShow="{{isFreeGroupList}}"></free-group-list>

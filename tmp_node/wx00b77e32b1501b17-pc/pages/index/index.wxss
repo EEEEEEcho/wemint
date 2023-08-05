@@ -1,0 +1,107 @@
+.weui-tabbar .weui-tabbar__icon {
+    background-size: 100%;
+}
+
+.nav-icon-link {
+    padding: 28rpx 10rpx;
+    display: block;
+}
+
+.weui-grid__icon {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.weui-grid__icon image {
+    width: 100%;
+    height: 100%;
+}
+
+.weui-grid__label {
+    color: #707070;
+    font-size: 24rpx;
+}
+
+.index-panel__title {
+    text-align: center;
+    font-size: 24rpx;
+    color: #707070;
+}
+
+.index-panel__title i {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.index-panel__title span {
+    vertical-align: middle;
+}
+
+.index-panel__title .icon-hot {
+    background-size: contain;
+}
+
+.index-panel__title .icon-new {
+    background-size: contain;
+}
+
+.index-panel__title .graphic__item {
+    display: block;
+}
+
+.swiper-pagination-wrap {
+    position: absolute;
+    bottom: 3px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-pagination-wrap .swiper-pagination {
+    position: inherit;
+    left: inherit;
+    bottom: inherit;
+    line-height: 14px;
+    padding: 0 2px;
+    background-color: rgba(255,255,255,.2);
+    border-radius: 15px;
+}
+
+.swiper-pagination-wrap .swiper-pagination-bullet {
+    margin: 0 3px;
+    position: relative;
+    top: -2px;
+}
+
+.icon_hot,.icon_new {
+    width: 30rpx;
+    height: 30rpx;
+    vertical-align: middle;
+    margin-right: 6rpx;
+    position: relative;
+    top: -2rpx;
+}
+
+.img375x300 {
+    width: 375rpx;
+    height: 300rpx;
+}
+
+.img375x150 {
+    width: 375rpx;
+    height: 150rpx;
+}
+
+.img250x390 {
+    width: 250rpx;
+    height: 390rpx;
+}
+
+.img750x300 {
+    width: 750rpx;
+    height: 300rpx;
+}

@@ -1,0 +1,17 @@
+// \pages/teacher/activityWrite/activityWrite inputTitle Data Flow
+digraph {
+	d22085eae5814331a09071a351087966 [label="FunctionCall,
+function name -> inputTitle,
+param -> t,
+t.,
+" color=blue]
+	e404f158694941a6a0d497e8e4ed30dd [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"15f824f683944f8da39496e612421f9c" [label="Object Properties
+{
+title -> t.detail.value
+}" color=blue]
+	e404f158694941a6a0d497e8e4ed30dd -> "15f824f683944f8da39496e612421f9c"
+	d22085eae5814331a09071a351087966 -> e404f158694941a6a0d497e8e4ed30dd
+}

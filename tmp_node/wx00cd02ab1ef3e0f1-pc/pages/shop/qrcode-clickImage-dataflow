@@ -1,0 +1,35 @@
+// \pages/shop/qrcode clickImage Data Flow
+digraph {
+	"97c4c678b1ad4cf0a6482616d7a624d0" [label="FunctionCall,
+function name -> clickImage,
+param -> e.,
+e,
+" color=blue]
+	"85fbe937b70a4b11b045c5a8604b87b0" [label="CallExpression,
+callee name -> console.log,
+param -> e,
+" color=blue]
+	"97c4c678b1ad4cf0a6482616d7a624d0" -> "85fbe937b70a4b11b045c5a8604b87b0"
+	"23bb2168013c402792124228229eccc9" [label=VariableDeclarations color=blue]
+	aaddaa2b380c4707910a026783ea450f [label="VariableDeclarator,
+left -> o,
+right -> e.target.dataset.src" color=blue]
+	"23bb2168013c402792124228229eccc9" -> aaddaa2b380c4707910a026783ea450f
+	"97c4c678b1ad4cf0a6482616d7a624d0" -> "23bb2168013c402792124228229eccc9"
+	"7f3b556388704b59b276432e07b0fc61" [label=SequenceExpression color=blue]
+	"29ded2ed942e43c4b198904c207b6c06" [label="CallExpression,
+callee name -> console.log,
+param -> o,
+" color=blue]
+	"7f3b556388704b59b276432e07b0fc61" -> "29ded2ed942e43c4b198904c207b6c06"
+	"0990a07dcb4e42fdb8cf8819a1b7903b" [label="CallExpression,
+callee name -> wx.previewImage,
+param -> " color=blue]
+	"9884c8ef2c364c51a745a3f4fea52eb0" [label="Object Properties
+{
+current -> o
+}" color=blue]
+	"0990a07dcb4e42fdb8cf8819a1b7903b" -> "9884c8ef2c364c51a745a3f4fea52eb0"
+	"7f3b556388704b59b276432e07b0fc61" -> "0990a07dcb4e42fdb8cf8819a1b7903b"
+	"97c4c678b1ad4cf0a6482616d7a624d0" -> "7f3b556388704b59b276432e07b0fc61"
+}

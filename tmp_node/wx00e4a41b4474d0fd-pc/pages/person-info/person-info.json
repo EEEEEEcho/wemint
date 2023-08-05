@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "补充信息",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "usingComponents": {
+        "myLoading": "../../components/globalLoad/globalLoad",
+        "navbar": "/components/navbar/navbar",
+        "c-img": "../components/indexImg/indexImg"
+    }
+}

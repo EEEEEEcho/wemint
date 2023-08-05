@@ -1,0 +1,225 @@
+.houseTypeModule-container {
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.houseTypeDetailModule-content-title {
+    position: fixed;
+    height: 100rpx;
+    width: 100vw;
+    box-sizing: border-box;
+    overflow: hidden;
+    line-height: 80rpx;
+    background: #fff;
+    font-size: 16px;
+    white-space: nowrap;
+    z-index: 99;
+}
+
+.tab-item {
+    display: inline-block;
+    text-align: center;
+}
+
+.tab-item p {
+    opacity: 0.6;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #211c22;
+    letter-spacing: 0;
+    text-align: center;
+    display: block;
+}
+
+.tab-item.active {
+    color: #2f69de;
+    position: relative;
+}
+
+.tab-item.active p {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #211c22;
+    text-align: center;
+    padding-bottom: 15rpx;
+    border-bottom: 5rpx solid #2f69de;
+    opacity: 1;
+}
+
+.tab-item.active:after {
+    content: "";
+    display: block;
+    background: #211c22;
+    position: absolute;
+    bottom: 0;
+    left: 5rpx;
+}
+
+.tab-item.active p:after {
+    color: #211c22;
+    opacity: 1;
+}
+
+.item-ans {
+    width: 100%;
+    display: flex;
+    flex-grow: row no-wrap;
+    justify-content: space-between;
+    padding: 30rpx;
+    box-sizing: border-box;
+    height: 180rpx;
+    align-items: center;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.expertInfo {
+    font-size: 12px;
+    flex-grow: 2;
+    color: #b0b0b0;
+    line-height: 1.5em;
+}
+
+.expertInfo .name {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 6px;
+}
+
+.tab-content {
+    top: 120rpx;
+    padding-top: 120rpx;
+}
+
+.houseTypeItem {
+    position: relative;
+    width: 690rpx;
+    margin-left: 30rpx;
+    height: 380rpx;
+    margin-bottom: 30rpx;
+}
+
+.houseTypeItem .vrlogo {
+    width: 64rpx;
+    height: 61rpx;
+    position: absolute;
+    right: 20rpx;
+    top: 20rpx;
+}
+
+.houseTypeItem-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rpx 10rpx 0rpx 0rpx;
+}
+
+.houseTypeItem-bg-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    background-image: linear-gradient(-180deg,rgba(0,0,0,0.00) 3%,#322f33 94%);
+    border-radius: 10rpx 10rpx 0rpx 0rpx;
+}
+
+.houseTypeItem-content {
+    position: absolute;
+    width: 650rpx;
+    bottom: 20rpx;
+    left: 20rpx;
+}
+
+.houseTypeImage {
+    position: absolute;
+    left: 0rpx;
+    bottom: 0rpx;
+    width: 160rpx;
+    height: 160rpx;
+}
+
+.houseTypeInformation {
+    width: 470rpx;
+    height: 160rpx;
+    position: absolute;
+    margin-left: 180rpx;
+    bottom: 0rpx;
+}
+
+.houseTypeInformation-content {
+    position: absolute;
+    left: 0rpx;
+    bottom: 0rpx;
+    margin-bottom: 10rpx;
+}
+
+.houseTypeInformation-area {
+    position: relative;
+    width: 100%;
+}
+
+.houseTypeInformation-area-title {
+    display: inline-block;
+    position: relative;
+    font-family: SourceHanSerifCN-Regular;
+    font-size: 40rpx;
+    color: #fff;
+    letter-spacing: 0;
+    text-align: left;
+}
+
+.houseTypeInformation-area-unit {
+    font-family: SourceHanSerifCN-Regular;
+    display: inline-block;
+    position: relative;
+    font-size: 40rpx;
+    color: #fff;
+    margin-left: 14rpx;
+}
+
+.houseTypeInformation-area-desc {
+    position: absolute;
+    right: 0rpx;
+    bottom: 0rpx;
+}
+
+.houseTypeInformation-area-desc p {
+    font-family: PingFangSC-Regular;
+    font-size: 20rpx;
+    color: #fff;
+    text-align: right;
+}
+
+.houseTypeInformation-content-container {
+    position: relative;
+}
+
+.divide-line {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    opacity: 0.7;
+}
+
+.houseTypeInformation-room {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 10rpx;
+}
+
+.houseTypeInformation-room .text {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #fff;
+    text-align: left;
+}
+
+.houseTypeInformation-body {
+    position: absolute;
+    width: 100%;
+    bottom: 20rpx;
+    left: 0rpx;
+}

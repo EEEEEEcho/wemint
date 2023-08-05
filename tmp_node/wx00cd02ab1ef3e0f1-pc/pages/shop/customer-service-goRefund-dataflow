@@ -1,0 +1,59 @@
+// \pages/shop/customer-service goRefund Data Flow
+digraph {
+	"920e9b0f2f6548d2990c0ee4357f5e63" [label="FunctionCall,
+function name -> goRefund,
+param -> t,
+t.,
+" color=blue]
+	"210851f66343467b8de8114f9044527c" [label=VariableDeclarations color=blue]
+	"5091cb9ba1cc4ca5b4dbe7a424443fe6" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.orderid" color=blue]
+	"210851f66343467b8de8114f9044527c" -> "5091cb9ba1cc4ca5b4dbe7a424443fe6"
+	"493e2a4d380e4c5e93bf9bb58bc4b827" [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.pkey" color=blue]
+	"210851f66343467b8de8114f9044527c" -> "493e2a4d380e4c5e93bf9bb58bc4b827"
+	"05ed5ca579744d0890f4fc887f00745e" [label="VariableDeclarator,
+left -> r,
+right -> t.currentTarget.dataset.status" color=blue]
+	"210851f66343467b8de8114f9044527c" -> "05ed5ca579744d0890f4fc887f00745e"
+	fb70ac04f24843bcb49f7a6ec5212ea7 [label="VariableDeclarator,
+left -> o,
+right -> t.currentTarget.dataset.RefundProStatus" color=blue]
+	"210851f66343467b8de8114f9044527c" -> fb70ac04f24843bcb49f7a6ec5212ea7
+	"920e9b0f2f6548d2990c0ee4357f5e63" -> "210851f66343467b8de8114f9044527c"
+	"5834158b15de465597690398e3255136" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"7b7de5fb7917404c828520a1a99b4ea7" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"92c7e71ec0cb4fb4bfad48e69a227554" [label="Object Properties
+{
+url -> 'refundsuc?orderid=' + e + '&pkey=' + a
+}" color=blue]
+	"7b7de5fb7917404c828520a1a99b4ea7" -> "92c7e71ec0cb4fb4bfad48e69a227554"
+	"5834158b15de465597690398e3255136" -> "7b7de5fb7917404c828520a1a99b4ea7"
+	"94377ec1d5c94debb2252e60acac7593" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"9ef99cffb2844670abc720ed3bf4ec17" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	e6312477046d4e099aed6c900d3e7eb0 [label="Object Properties
+{
+url -> 'refundfail?orderid=' + e + '&pkey=' + a
+}" color=blue]
+	"9ef99cffb2844670abc720ed3bf4ec17" -> e6312477046d4e099aed6c900d3e7eb0
+	"94377ec1d5c94debb2252e60acac7593" -> "9ef99cffb2844670abc720ed3bf4ec17"
+	"3947b71fbf424e1b8dd2fa144a6830c2" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"9467019da09b4805bdef89f8374b9df2" [label="Object Properties
+{
+url -> 'refund?orderid=' + e + '&pkey=' + a
+}" color=blue]
+	"3947b71fbf424e1b8dd2fa144a6830c2" -> "9467019da09b4805bdef89f8374b9df2"
+	"94377ec1d5c94debb2252e60acac7593" -> "3947b71fbf424e1b8dd2fa144a6830c2"
+	"5834158b15de465597690398e3255136" -> "94377ec1d5c94debb2252e60acac7593"
+	"920e9b0f2f6548d2990c0ee4357f5e63" -> "5834158b15de465597690398e3255136"
+}

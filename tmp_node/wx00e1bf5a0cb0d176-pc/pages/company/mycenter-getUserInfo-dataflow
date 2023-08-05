@@ -1,0 +1,47 @@
+// \pages/company/mycenter getUserInfo Data Flow
+digraph {
+	ca11db06b5004258b15a4f48867db9da [label="FunctionCall,
+function name -> getUserInfo,
+param -> " color=blue]
+	"53b37380e611492ea5cfb0665360fad3" [label=VariableDeclarations color=blue]
+	c197f6afa4cc428e8b3e9274213e00bf [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	a5d7025c04f8437b9a98635ff64689ff [label="Object Properties
+{
+}" color=blue]
+	dcb6c51e3c9e4e9c89655e9a20198c3f [label="FunctionCall,
+function name -> success,
+param -> e.,
+e,
+" color=blue]
+	f357a114515e4ca2a0de81ab1214ca28 [label="If Alternate" color=blue]
+	"8ff0002088d24076bf64704e76705f7f" [label=VariableDeclarations color=blue]
+	"29f4dbb6aa1b42e9b02250e16a5e046d" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"079b6b28a745431abdcd9260ec525ba4" [label="CallExpression,
+callee name -> parseInt,
+param -> e.info.UserType,
+" color=blue]
+	"29f4dbb6aa1b42e9b02250e16a5e046d" -> "079b6b28a745431abdcd9260ec525ba4"
+	"8ff0002088d24076bf64704e76705f7f" -> "29f4dbb6aa1b42e9b02250e16a5e046d"
+	f357a114515e4ca2a0de81ab1214ca28 -> "8ff0002088d24076bf64704e76705f7f"
+	e6e56005d74f4ab5a09950beb1998e0c [label=SequenceExpression color=blue]
+	f2eb2aaea7d74964ae560fc0f651ee18 [label="CallExpression,
+callee name -> a.setData,
+param -> " color=blue]
+	ccb1fd3211344acca03aab79f5b39bb3 [label="Object Properties
+{
+levelName -> e.info.UserLevel
+infoUserID -> e.info.UserID
+}" color=blue]
+	f2eb2aaea7d74964ae560fc0f651ee18 -> ccb1fd3211344acca03aab79f5b39bb3
+	e6e56005d74f4ab5a09950beb1998e0c -> f2eb2aaea7d74964ae560fc0f651ee18
+	f357a114515e4ca2a0de81ab1214ca28 -> e6e56005d74f4ab5a09950beb1998e0c
+	dcb6c51e3c9e4e9c89655e9a20198c3f -> f357a114515e4ca2a0de81ab1214ca28
+	a5d7025c04f8437b9a98635ff64689ff -> dcb6c51e3c9e4e9c89655e9a20198c3f
+	c197f6afa4cc428e8b3e9274213e00bf -> a5d7025c04f8437b9a98635ff64689ff
+	"53b37380e611492ea5cfb0665360fad3" -> c197f6afa4cc428e8b3e9274213e00bf
+	ca11db06b5004258b15a4f48867db9da -> "53b37380e611492ea5cfb0665360fad3"
+}

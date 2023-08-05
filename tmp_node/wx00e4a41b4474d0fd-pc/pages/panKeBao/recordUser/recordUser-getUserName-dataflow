@@ -1,0 +1,26 @@
+// \pages/panKeBao/recordUser/recordUser getUserName Data Flow
+digraph {
+	"25303fe2697342afad0254719a52a9e0" [label="FunctionCall,
+function name -> getUserName,
+param -> e,
+e.,
+" color=blue]
+	ef42f60d95624b499e0ae6af5d20c2fa [label=VariableDeclarations color=blue]
+	"0840183bf7284b7ea48567b121925db0" [label="VariableDeclarator,
+left -> t,
+right -> e.detail.value" color=blue]
+	ef42f60d95624b499e0ae6af5d20c2fa -> "0840183bf7284b7ea48567b121925db0"
+	"25303fe2697342afad0254719a52a9e0" -> ef42f60d95624b499e0ae6af5d20c2fa
+	"638282a48fab49c486487a1a0520521d" [label="ConditionalExpression,
+ conditional list -> this.setData" color=blue]
+	fee9f4bbc30a48eea55465905b909815 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"71a0e0e5c25d4e5d9d635959b6493e76" [label="Object Properties
+{
+userName -> t
+}" color=blue]
+	fee9f4bbc30a48eea55465905b909815 -> "71a0e0e5c25d4e5d9d635959b6493e76"
+	"638282a48fab49c486487a1a0520521d" -> fee9f4bbc30a48eea55465905b909815
+	"25303fe2697342afad0254719a52a9e0" -> "638282a48fab49c486487a1a0520521d"
+}

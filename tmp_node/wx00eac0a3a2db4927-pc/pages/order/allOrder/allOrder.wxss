@@ -1,0 +1,182 @@
+page {
+    background-color: #f4f4f4;
+}
+
+.orderList {
+    width: 100%;
+    align-items: center;
+    margin-top: 4%;
+}
+
+.topLayout {
+    width: 100%;
+    height: 100rpx;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+}
+
+.searchLayout {
+    width: 92%;
+    height: 58rpx;
+    background: #f4f4f4;
+    border-radius: 32rpx;
+    align-items: center;
+}
+
+.searchIcon {
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 24rpx;
+}
+
+.searchInput {
+    flex: 1;
+    height: 40rpx;
+    margin: 0rpx 16rpx;
+    color: #51515c;
+    font-size: 26rpx;
+}
+
+.text_style {
+    font-size: 14px;
+    color: #aeaeb4;
+    width: 540rpx;
+    margin-left: 6rpx;
+}
+
+.placeholder {
+    color: #c4c4c4;
+    font-size: 26rpx;
+}
+
+.itemLayout {
+    width: 92%;
+    border-radius: 13rpx;
+    box-shadow: 0rpx 0rpx 16rpx #f0f0f0;
+    margin-bottom: 24rpx;
+    background: #ffffff;
+}
+
+.shopLayout {
+    width: 100%;
+    align-items: center;
+}
+
+.shopLogo {
+    width: 56rpx;
+    height: 56rpx;
+    border-radius: 28rpx;
+    margin: 16rpx 16rpx 16rpx 24rpx;
+}
+
+.shopName {
+    flex: 1;
+    color: #3f3f3f;
+    font-size: 25rpx;
+    font-weight: bold;
+}
+
+.statusLayout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+}
+
+.deposit {
+    width: 25rpx;
+    height: 25rpx;
+}
+
+.status {
+    font-size: 25rpx;
+    color: #ed7b43;
+    margin-left: 16rpx;
+    margin-right: 24rpx;
+}
+
+.goodItemLayout {
+    width: 100%;
+    align-items: center;
+}
+
+.goodImage {
+    width: 112rpx;
+    height: 112rpx;
+    margin: 24rpx;
+}
+
+.goodDetail {
+}
+
+.goodTitle {
+    color: #666666;
+    font-size: 26rpx;
+    padding-bottom: 4rpx;
+}
+
+.propertyLabel {
+    color: #999999;
+    font-size: 20rpx;
+}
+
+.priceNumber {
+    margin-left: auto;
+    align-items: flex-end;
+    margin-right: 24rpx;
+}
+
+.price {
+    color: #999999;
+    font-size: 23rpx;
+}
+
+.number {
+    color: #999999;
+    font-size: 23rpx;
+}
+
+.totalLayout {
+    justify-content: flex-end;
+    padding: 16rpx;
+}
+
+.goodNumber {
+    font-size: 26rpx;
+    color: #666666;
+    padding-right: 16rpx;
+}
+
+.itemBottom {
+    flex: 1;
+    padding: 24rpx;
+    align-items: center;
+}
+
+.seeDetail {
+    flex: 1;
+    color: #3f3f3f;
+    font-size: 26rpx;
+}
+
+.grayButton {
+    padding: 0 16rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+    font-size: 24rpx;
+    color: #999999;
+    border: 1px solid #eeeeee;
+    border-radius: 22rpx;
+}
+
+.redButton {
+    padding: 0 16rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+    font-size: 24rpx;
+    color: #ed7b43;
+    border: 1px solid #ed7b43;
+    border-radius: 22rpx;
+    margin: 0rpx 0rpx 0rpx 16rpx;
+}

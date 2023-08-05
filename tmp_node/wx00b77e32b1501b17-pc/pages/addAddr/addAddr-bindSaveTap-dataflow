@@ -1,0 +1,25 @@
+// \pages/addAddr/addAddr bindSaveTap Data Flow
+digraph {
+	fd4262ffa5f24d63a72f4813b8195591 [label="FunctionCall,
+function name -> bindSaveTap,
+param -> e,
+e.,
+" color=blue]
+	b2fde0df0d6342f8b500ec86727267ed [label="If Alternate" color=blue]
+	"3c230f5804ff4c45a53f05328226576b" [label=VariableDeclarations color=blue]
+	"0d7db2d76d7d4e109d5729bbb19a1fa1" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	b6356cddc98241d897cfd171bca15321 [label="Object Properties
+{
+name -> a.data.name
+mobile -> a.data.mobile
+school -> a.data.school
+grade -> a.data.grade
+birth_date -> a.data.birth_date
+}" color=blue]
+	"0d7db2d76d7d4e109d5729bbb19a1fa1" -> b6356cddc98241d897cfd171bca15321
+	"3c230f5804ff4c45a53f05328226576b" -> "0d7db2d76d7d4e109d5729bbb19a1fa1"
+	b2fde0df0d6342f8b500ec86727267ed -> "3c230f5804ff4c45a53f05328226576b"
+	fd4262ffa5f24d63a72f4813b8195591 -> b2fde0df0d6342f8b500ec86727267ed
+}

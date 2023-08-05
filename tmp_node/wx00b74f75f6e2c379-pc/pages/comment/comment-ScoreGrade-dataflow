@@ -1,0 +1,29 @@
+// \pages/comment/comment ScoreGrade Data Flow
+digraph {
+	"3f69a3de9f8542449469dd58504880bb" [label="FunctionCall,
+function name -> ScoreGrade,
+param -> e,
+e.,
+" color=blue]
+	e4db9db529674bf0b5e21dd41a6d87bc [label=VariableDeclarations color=blue]
+	"71da1af7db7c4aa1978a9698e3d421c5" [label="VariableDeclarator,
+left -> grade,
+right -> e.currentTarget.dataset.grade" color=blue]
+	e4db9db529674bf0b5e21dd41a6d87bc -> "71da1af7db7c4aa1978a9698e3d421c5"
+	"3f69a3de9f8542449469dd58504880bb" -> e4db9db529674bf0b5e21dd41a6d87bc
+	cf7e1e8625c145e49aa6cb0bdef56ecb [label=VariableDeclarations color=blue]
+	"5d11a04e63184fa491c12f1ada7ca125" [label="VariableDeclarator,
+left -> idx,
+right -> e.currentTarget.dataset.index" color=blue]
+	cf7e1e8625c145e49aa6cb0bdef56ecb -> "5d11a04e63184fa491c12f1ada7ca125"
+	"3f69a3de9f8542449469dd58504880bb" -> cf7e1e8625c145e49aa6cb0bdef56ecb
+	eed0a78ddc3c4ca59b8351ca7ea0781a [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"827a339244be42a38e0ce11160c619a7" [label="CallExpression,
+callee name -> parseInt,
+param -> grade,
+" color=blue]
+	eed0a78ddc3c4ca59b8351ca7ea0781a -> "827a339244be42a38e0ce11160c619a7"
+	"3f69a3de9f8542449469dd58504880bb" -> eed0a78ddc3c4ca59b8351ca7ea0781a
+}

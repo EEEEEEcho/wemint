@@ -1,0 +1,15 @@
+// \pages/shop/square getDefaultAddr Data Flow
+digraph {
+	f2e65edf72ed4d1cbe03165c3ebea027 [label="FunctionCall,
+function name -> getDefaultAddr,
+param -> " color=blue]
+	d6af58131d654a9abdd8ff1bc628be3d [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	"5226af068d964857a01f91a447b6aff0" [label="FunctionCall,
+function name -> fail,
+param -> t,
+" color=blue]
+	d6af58131d654a9abdd8ff1bc628be3d -> "5226af068d964857a01f91a447b6aff0"
+	f2e65edf72ed4d1cbe03165c3ebea027 -> d6af58131d654a9abdd8ff1bc628be3d
+}

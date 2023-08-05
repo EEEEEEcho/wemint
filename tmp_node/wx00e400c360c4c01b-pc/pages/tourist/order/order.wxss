@@ -1,0 +1,136 @@
+page {
+    background-color: #F0F0F0;
+}
+
+.swiper-tab {
+    width: 100%;
+    text-align: center;
+    line-height: 80rpx;
+    background-color: #fff;
+}
+
+.swiper-tab-list {
+    font-size: 30rpx;
+    display: inline-block;
+    width: 33.33%;
+    color: #777777;
+}
+
+.on {
+    color: #E14848;
+    border-bottom: 5rpx solid #E14848;
+}
+
+.swiper-box {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.currContent {
+    display: flex;
+    background-color: #fff;
+    padding: 10rpx 10rpx 10rpx 10rpx;
+    width: 98%;
+}
+
+.currContent_list1 {
+    width: 80%;
+    font-size: 30rpx;
+    color: #696969;
+    padding: 10rpx 10rpx 10rpx 10rpx;
+    border-bottom: 1px solid #efefef;
+}
+
+.currContent_list1 .time {
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+}
+
+.currContent_list2 {
+    width: 20%;
+    padding-top: 20rpx;
+    display: flex;
+    color: red;
+    justify-content: center;
+    border-bottom: 1px solid #efefef;
+}
+
+.currContent_list3 {
+    width: 20%;
+    padding-top: 20rpx;
+    display: flex;
+    color: #f8ac59;
+    justify-content: center;
+    border-bottom: 1px solid #efefef;
+}
+
+.obtn {
+    background-color: #fff;
+    padding: 10rpx 10rpx 10rpx 10rpx;
+    width: 98%;
+}
+
+.btnTitle {
+    font-size: 35rpx;
+    font-weight: 600;
+}
+
+.btnbtm {
+    display: flex;
+}
+
+.btMoney {
+    width: 40%;
+    padding-top: 30rpx;
+    color: #E14848;
+}
+
+.btn {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 25rpx;
+}
+
+.classCurr_view_but {
+    font-size: 25rpx;
+    color: #f8ac59;
+    background-color: #fff;
+    border: 1px solid #f8ac59;
+    height: 60rpx;
+    width: 150rpx;
+    border-radius: 25px;
+}
+
+.classCurr_view_but_hover {
+    font-size: 25rpx;
+    color: #fff;
+    background-color: #f8ac59;
+    border: 1px solid #fff;
+    width: 160rpx;
+    height: 60rpx;
+    border-radius: 25px;
+}
+
+.classCurr_view_but_del {
+    font-size: 25rpx;
+    color: #9D9D9D;
+    background-color: #fff;
+    border: 1px solid #9D9D9D;
+    width: 170rpx;
+    height: 60rpx;
+    border-radius: 25px;
+}
+
+.classCurr_view_but_hover_del {
+    font-size: 25rpx;
+    color: #fff;
+    background-color: #9D9D9D;
+    border: 1px solid #fff;
+    width: 170rpx;
+    height: 60rpx;
+    border-radius: 25px;
+}

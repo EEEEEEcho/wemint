@@ -1,0 +1,10 @@
+<template name="ModulePay">
+    <view class="box">
+        <view class="check">
+            <view class="checkFont">{{m.Param_StoreName}}</view>
+            <navigator url="/pages/shop/paymentPage">
+                <button class="checkBtn" style="color:{{m.Param_ButtonFontColor}};background-color:{{m.Param_ButtonBgColor}};">{{m.Param_ButtonText}}</button>
+            </navigator>
+        </view>
+    </view>
+</template>

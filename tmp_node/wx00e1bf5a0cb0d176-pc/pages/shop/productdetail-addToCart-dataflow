@@ -1,0 +1,32 @@
+// \pages/shop/productdetail addToCart Data Flow
+digraph {
+	"11c40e9f76864c3e8f251e7540d57b67" [label="FunctionCall,
+function name -> addToCart,
+param -> " color=blue]
+	"8a72cd5d3b5a402cbaada1e966309044" [label="If Alternate" color=blue]
+	d3c95fb946984f38bc8076f4bff2ff25 [label=VariableDeclarations color=blue]
+	a93b1b6ef0014c09a1f6efeb74cd82df [label="VariableDeclarator,
+left -> i,
+right -> a.data.LimitNumberData" color=blue]
+	d3c95fb946984f38bc8076f4bff2ff25 -> a93b1b6ef0014c09a1f6efeb74cd82df
+	"8a72cd5d3b5a402cbaada1e966309044" -> d3c95fb946984f38bc8076f4bff2ff25
+	"146428ea3c524f6da9c2f2ce22b27f75" [label=VariableDeclarations color=blue]
+	"62dc3b0a7ae04e7097dd575dfa98d9ed" [label="VariableDeclarator,
+left -> o,
+right -> a.data.cartnum" color=blue]
+	"146428ea3c524f6da9c2f2ce22b27f75" -> "62dc3b0a7ae04e7097dd575dfa98d9ed"
+	"8a72cd5d3b5a402cbaada1e966309044" -> "146428ea3c524f6da9c2f2ce22b27f75"
+	b123774bc9c340cd8f54b549fc297e7c [label=SequenceExpression color=blue]
+	"6082188d20604e86936046292713a0d4" [label="CallExpression,
+callee name -> e.addToShopCart,
+param -> " color=blue]
+	be2dadbba5a2455287981ffd90bf84df [label="Object Properties
+{
+num -> this.data.count
+sku_id -> this.data.SkuID
+}" color=blue]
+	"6082188d20604e86936046292713a0d4" -> be2dadbba5a2455287981ffd90bf84df
+	b123774bc9c340cd8f54b549fc297e7c -> "6082188d20604e86936046292713a0d4"
+	"8a72cd5d3b5a402cbaada1e966309044" -> b123774bc9c340cd8f54b549fc297e7c
+	"11c40e9f76864c3e8f251e7540d57b67" -> "8a72cd5d3b5a402cbaada1e966309044"
+}

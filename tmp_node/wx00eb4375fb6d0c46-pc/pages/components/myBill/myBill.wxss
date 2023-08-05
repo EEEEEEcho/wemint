@@ -1,0 +1,27 @@
+.bill-box {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.bill-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bill-box .bill-detail:not(:last-child) {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.shop-name {
+    color: #535353;
+    font-size: 35rpx;
+    margin-bottom: 7rpx;
+}
+
+.pay-time {
+    color: #a3a3a3;
+    font-size: 25rpx;
+}

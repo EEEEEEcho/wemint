@@ -1,0 +1,61 @@
+// \pages/sureOrder/sureOrder chooseWay Data Flow
+digraph {
+	"6c953b16cd604e2c82840efe7b1e03e8" [label="FunctionCall,
+function name -> chooseWay,
+param -> e.,
+e,
+" color=blue]
+	"4dbf4bc24862473194f7645f9d09ab9b" [label=VariableDeclarations color=blue]
+	a1f1a137a4ee4587b3a498b5af9dde06 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"7cc83c8358164ce38ddb5dcd0d23b500" [label="+e.detail.value" color=blue]
+	a1f1a137a4ee4587b3a498b5af9dde06 -> "7cc83c8358164ce38ddb5dcd0d23b500"
+	"4dbf4bc24862473194f7645f9d09ab9b" -> a1f1a137a4ee4587b3a498b5af9dde06
+	"6c953b16cd604e2c82840efe7b1e03e8" -> "4dbf4bc24862473194f7645f9d09ab9b"
+	"84c5db02fbf14f00aa716d2bfaa0d7d0" [label=SequenceExpression color=blue]
+	a56576e33f5f4825ad8f9a1eb20b8e7a [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	cb7c942ed1d546a3acf21c315cfb4231 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"48d68e23eb414973afb5da9aa7fc9105" [label=SequenceExpression color=blue]
+	"3c15810c1052452fa2c80251b2d47370" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	e3e2282c23d44d44a06e59d326e29b82 [label="Object Properties
+{
+fee -> this.data.oldFee
+}" color=blue]
+	"3c15810c1052452fa2c80251b2d47370" -> e3e2282c23d44d44a06e59d326e29b82
+	"48d68e23eb414973afb5da9aa7fc9105" -> "3c15810c1052452fa2c80251b2d47370"
+	cb7c942ed1d546a3acf21c315cfb4231 -> "48d68e23eb414973afb5da9aa7fc9105"
+	a56576e33f5f4825ad8f9a1eb20b8e7a -> cb7c942ed1d546a3acf21c315cfb4231
+	"84c5db02fbf14f00aa716d2bfaa0d7d0" -> a56576e33f5f4825ad8f9a1eb20b8e7a
+	"331fa891d62340c8bc1ca5576368ad97" [label="CallExpression,
+callee name -> this.changeOrderPrice,
+param -> " color=blue]
+	"7a40a95e9b9c4f3fa12ddca0e487227b" [label="FunctionCall,
+function name -> changeOrderPrice,
+param -> " color=blue]
+	d713ce6a4d9c43b5a20a1e9e63a6c17b [label=VariableDeclarations color=blue]
+	a0e31b8009284622baa6c598ca64585f [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"886d740efc0044c6aee55646d1b20d3b" [label="+this.data.fee" color=blue]
+	a0e31b8009284622baa6c598ca64585f -> "886d740efc0044c6aee55646d1b20d3b"
+	d713ce6a4d9c43b5a20a1e9e63a6c17b -> a0e31b8009284622baa6c598ca64585f
+	"7a40a95e9b9c4f3fa12ddca0e487227b" -> d713ce6a4d9c43b5a20a1e9e63a6c17b
+	"331fa891d62340c8bc1ca5576368ad97" -> "7a40a95e9b9c4f3fa12ddca0e487227b"
+	"84c5db02fbf14f00aa716d2bfaa0d7d0" -> "331fa891d62340c8bc1ca5576368ad97"
+	"98ab24906d4245098fb1d312276b787d" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	a9f5b5ee5fbd44fb9dc82abd95a96f47 [label="Object Properties
+{
+wayIndex -> e.detail.value
+}" color=blue]
+	"98ab24906d4245098fb1d312276b787d" -> a9f5b5ee5fbd44fb9dc82abd95a96f47
+	"84c5db02fbf14f00aa716d2bfaa0d7d0" -> "98ab24906d4245098fb1d312276b787d"
+	"6c953b16cd604e2c82840efe7b1e03e8" -> "84c5db02fbf14f00aa716d2bfaa0d7d0"
+}

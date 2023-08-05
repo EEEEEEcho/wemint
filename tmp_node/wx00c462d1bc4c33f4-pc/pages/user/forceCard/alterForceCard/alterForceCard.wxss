@@ -1,0 +1,186 @@
+.cardBox {
+    width: 300px;
+    height: 150px;
+    border-radius: 8px;
+    background: #666;
+    margin: 20px auto;
+}
+
+.cardNumber {
+    float: right;
+    padding-right: 24px;
+    font-size: 14px;
+    padding-top: 70px;
+    color: #fff;
+}
+
+.cardName {
+    color: #fff;
+    font-size: 18px;
+    padding-top: 20px;
+    padding-left: 24px;
+    line-height: 20px;
+    float: left;
+    max-width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.viphycard {
+    color: #fff;
+    font-size: 14px;
+    padding-right: 24px;
+    float: right;
+    padding-top: 22px;
+    line-height: 20px;
+}
+
+.addInfo {
+    box-sizing: border-box;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.nameBox {
+    box-sizing: border-box;
+    border-bottom: 1px #666 solid;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    box-sizing: border-box;
+    border-left: 4px #ffbf20 solid;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #fff;
+    flex: 0 0 25%;
+}
+
+.sexRadio {
+    float: left;
+    margin-left: 6px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.telBox {
+    border-bottom: 1px #666 solid;
+    padding-bottom: 38px;
+    margin-top: 16px;
+}
+
+.telInput {
+    font-size: 14px;
+    color: #ccc;
+    flex: 0 0 75%;
+}
+
+.saveInfo {
+    background: #777;
+    color: #ffbf20;
+    width: 86%;
+    margin: 60px auto;
+}
+
+input[type="radio"]+label::before {
+    content: "\a0";
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    width: 1em;
+    height: 1em;
+    margin-right: .4em;
+    border-radius: 50%;
+    border: 1px solid #01cd78;
+    text-indent: .15em;
+    line-height: 1;
+}
+
+input[type="radio"] {
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
+
+radio .wx-radio-input.wx-radio-input-checked::after {
+    background-color: #01cd78;
+    background-clip: content-box;
+    padding: .2em;
+}
+
+.ad_popError {
+    background: #de352d;
+    color: #fff;
+    height: 58rpx;
+    line-height: 58rpx;
+    font-size: 24rpx;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+.hytq {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.first {
+    box-sizing: border-box;
+    padding: 20px 30px;
+    width: 100%;
+    border-bottom: 1px #666 solid;
+}
+
+.flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+.flex1 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+.title-index {
+    font-size: 42px;
+    font-style: italic;
+    color: #ffbf21;
+}
+
+.title-item {
+    padding-left: 16px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.title-item1 {
+    padding-right: 16px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.content-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    color: #999;
+    font-size: 12px;
+}
+
+.content-item1 {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    color: #999;
+    font-size: 12px;
+}

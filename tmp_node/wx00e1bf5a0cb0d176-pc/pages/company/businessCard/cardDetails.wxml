@@ -1,0 +1,314 @@
+<view class="fixedTopBorder"></view>
+<view catchtap="toLeaveWrod" class="leave-word-tips {{haveMessageCount?'show-word-tips':''}}" wx:if="{{messageCount>0&&cardchoice==0&&!incard}}">
+    <view class="tips-box flexBox flexAlign flexJustifyBetween">
+        <view class="word-tips-left flexBox flexAlign">
+            <text class="iconfont icon-iconfont_contact"></text>
+            <text class="tips-num">您有{{messageCount>99?'99+':messageCount}}条未读新消息</text>
+        </view>
+        <view class="word-tips-right">
+            <text>查看</text>
+            <text class="iconfont icon-iconfont_arrow-right"></text>
+        </view>
+    </view>
+</view>
+<view class="business-card pian-copys" style="bottom: 260rpx;" wx:if="{{isShare&&cardchoice==1||isFromWorkBench&&cardchoice==1}}">
+    <form reportSubmit bindsubmit="from_send">
+        <button bindtap="toWrokBench" class="business-card-btn" formType="submit" hoverClass="none" style="bottom: 260rpx;">
+            <image src="{{baseUrl}}/images/wxapp/gongzuotairukou_62.png"></image>
+        </button>
+    </form>
+    <view class="messageTotal" wx:if="{{mesCount>0}}">{{mesCount>99?'...':mesCount}}</view>
+</view>
+<view catchtap="toLeaveWrod" class="business-card leave-word" data-tbphone="2" style="bottom: 260rpx;" wx:if="{{currentTab==0&&cardchoice==0&&!incard}}">
+    <form reportSubmit bindsubmit="from_send">
+        <button class="business-card-btn" formType="submit" hoverClass="none" style="bottom: 260rpx;">
+            <image class="serviceBtn" src="/pages/template/images/online.png"></image>
+        </button>
+    </form>
+    <view class="messageTotal">{{messageCount>99?'...':messageCount}}</view>
+</view>
+<view bindtap="businessCardsList" class="business-card pian-copys" wx:if="{{currentTab==0}}">
+    <form reportSubmit bindsubmit="from_send">
+        <button class="business-card-btn" formType="submit" hoverClass="none">
+            <image src="/pages/template/images/mingpianjia.png"></image>
+        </button>
+    </form>
+</view>
+<swiper bindchange="switchTab" class="tab-content" current="{{currentTab}}" duration="300" style="height: {{!showForm?winHeight:afterWinHeight}}rpx;">
+    <swiper-item>
+        <scroll-view enableBackToTop="true" scrollY="true" style="height: 100%;position:relative;">
+            <view class="sss">
+                <view class="carddetails container" wx:if="{{!hideLoading}}">
+                    <view class="carddetails-imgc" wx:if="{{incard||isOverTime}}">
+                        <image mode="widthFix" src="{{baseUrl}}/images/wxapp/mingpianxiagnqing.png"></image>
+                        <view class="blank-title">{{isOverTime?'名片被外星人收走了！！！':'名片飞走了！'}}</view>
+                    </view>
+                    <view class="carddetails-content" wx:else>
+                        <view class="carddetails-top">
+                            <view class="carddetails-img">
+                                <view style="padding: 0 42rpx;">
+                                    <view class="carddetail">
+                                        <view class="img-content">
+                                            <image mode="widthFix" src="{{baseUrl}}/{{cardcontent.PersonImg}}"></image>
+                                            <view bindtap="goeditCard" class="redact" wx:if="{{cardchoice==='1'}}">
+                                                <form reportSubmit bindsubmit="from_send">
+                                                    <button class="redact-btn" formType="submit" hoverClass="none">
+                                                        <text class=" iconfont icon-bianji"></text> 编辑
+                          </button>
+                                                </form>
+                                            </view>
+                                        </view>
+                                        <view class="card-my">
+                                            <view class="card-company sizec colora">{{cardcontent.CompanyName}}</view>
+                                            <view class="card-name">
+                                                <text class="card-names">{{cardcontent.UserName}}</text>
+                                                <text class="colorb card-post sizea ">{{cardcontent.Position}}</text>
+                                            </view>
+                                            <view class="card-phone sizea colora">{{cardcontent.Mobile}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view catchtap="openDetail" class="cardDetail-info" wx:if="{{informationAllHiding}}">
+                                    <text class="cardDetail-info-title">{{openDetailFlag?'收起以下':'展示全部'}}名片信息</text>
+                                    <text class="iconfont {{openDetailFlag?'icon-shang':'icon-arrow-down'}}"></text>
+                                </view>
+                                <view class="personalinformation" wx:if="{{informationAllHiding&&openDetailFlag}}">
+                                    <view class="personalinfor">
+                                        <view class="personalinformation-l" wx:if="{{cardcontent.WeChat!==''}}">
+                                            <view class="formation">
+                                                <text class="sizec colorb weixin">微信</text>
+                                                <text class="sizec colora  extent">{{cardcontent.WeChat}}</text>
+                                            </view>
+                                            <view bindtap="copyTBL" class="detail_r" data-tbtype="7" data-text="{{cardcontent.WeChat}}">
+                                                <form reportSubmit bindsubmit="from_send">
+                                                    <button class="duplication" formType="submit" hoverClass="none">复制</button>
+                                                </form>
+                                            </view>
+                                        </view>
+                                        <view class="personalinformation-l" wx:if="{{cardcontent.Email!==''}}">
+                                            <view class="formation">
+                                                <text class="sizec colorb weixin">邮箱</text>
+                                                <text class="sizec colora extent">{{cardcontent.Email}}</text>
+                                            </view>
+                                            <view bindtap="copyTBL" class="detail_r" data-tbtype="9" data-text="{{cardcontent.Email}}">
+                                                <form reportSubmit bindsubmit="from_send">
+                                                    <button class="duplication" formType="submit" hoverClass="none">复制</button>
+                                                </form>
+                                            </view>
+                                        </view>
+                                        <view class="personalinformation-l" wx:if="{{cardcontent.QQ!==''}}">
+                                            <view class="formation">
+                                                <text class="sizec colorb weixin">QQ</text>
+                                                <text class="sizec colora extent">{{cardcontent.QQ}}</text>
+                                            </view>
+                                            <view bindtap="copyTBL" class="detail_r" data-tbtype="8" data-text="{{cardcontent.QQ}}">
+                                                <form reportSubmit bindsubmit="from_send">
+                                                    <button class="duplication" formType="submit" hoverClass="none">复制</button>
+                                                </form>
+                                            </view>
+                                        </view>
+                                        <view class="personalinformation-l" wx:if="{{cardcontent.checkAddress==='1'}}">
+                                            <view class="formation">
+                                                <text class="sizec colorb weixin">地址</text>
+                                                <text class="sizec colora extent">{{cardcontent.AreaList}}</text>
+                                            </view>
+                                            <view catchtap="navigationalmap" class="detail_r">
+                                                <form reportSubmit bindsubmit="from_send">
+                                                    <button class="duplication" formType="submit" hoverClass="none">导航</button>
+                                                </form>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="other-information {{openDetailFlag||!informationAllHiding?'mt42':''}}">
+                                    <form reportSubmit bindsubmit="from_send" class="information-bottom-form">
+                                        <view class="information-bottom" wx:if="{{cardchoice==='0'}}">
+                                            <button bindtap="calling" class="making-call" formType="submit" hoverClass="none" type="default">拨打电话</button>
+                                            <button bindtap="phoneNumTap" class="address-book" data-tbphone="1" formType="submit" hoverClass="none" type="default">保存到手机通讯录</button>
+                                        </view>
+                                        <view class="information-bottom shares" wx:if="{{cardchoice==='1'}}">
+                                            <button catchtap="shareHfive" class="making-call" formType="submit" hoverClass="none" type="default">名片海报</button>
+                                            <button catchtap="sharetoFriend" class="address-book" formType="submit" hoverClass="none" openType="share" type="default">
+                        发送名片
+                      </button>
+                                        </view>
+                                    </form>
+                                    <view class="likenum-int">
+                                        <view bindtap="{{cardchoice==='1'?'goAccessRecord':''}}" class="likenum-int-l">
+                                            <form reportSubmit bindsubmit="from_send">
+                                                <button class="likenum-int-btn" formType="submit" hoverClass="none">
+                                                    <view class="int-imgs">
+                                                        <view class="int-img" wx:if="{{recordImage.length<1}}">
+                                                            <image mode="widthFix" src="{{baseUrl}}/images/wxapp/touxiang.jpg"></image>
+                                                        </view>
+                                                        <view class="int-img" wx:if="{{index<5&&recordImage.length>0}}" wx:for="{{recordImage}}" wx:key="index">
+                                                            <image mode="widthFix" src="{{item.Image}}"></image>
+                                                        </view>
+                                                        <view class="int-img" wx:if="{{recordImage.length>=6}}">
+                                                            <text class="iconfont icon-dian"></text>
+                                                        </view>
+                                                    </view>
+                                                    <view class="browse" wx:if="{{recordImage.length>0}}">已有{{Popularity}}次浏览</view>
+                                                    <view class="browse" wx:else>发送名片，能让更多人浏览哦~</view>
+                                                </button>
+                                            </form>
+                                        </view>
+                                        <view class="likenum-int-r">
+                                            <form reportSubmit bindsubmit="from_send">
+                                                <view bindtap="giveThumbs" class="praise {{PostLikesStatus?'business-col':''}}">
+                                                    <button class="sixeq colorb fenxiang  {{PostLikesStatus?'business-col':''}}" formType="submit" hoverClass="none" type="default">
+                                                        <view class=" iconfont icon-caozuo-dianzan sixeq  colorb {{PostLikesStatus?'business-col':''}}"></view>
+                            赞{{cardcontentLikes}}
+                          </button>
+                                                </view>
+                                            </form>
+                                            <view class="transpond colorb">
+                                                <form reportSubmit bindsubmit="from_send">
+                                                    <button catchtap="sharetoFriend" class="sixeq colorb fenxiang" formType="submit" hoverClass="none" openType="share" type="default">
+                                                        <view class=" iconfont  icon-zhuanfa colorb"></view>
+                            转发{{Transpond}}
+                          </button>
+                                                </form>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="spacing" wx:if="{{cardcontent.Bio||cardcontent.Recording}}"></view>
+                            <view class="person-bio-recording" wx:if="{{cardcontent.Bio||cardcontent.Recording}}">
+                                <view class="personalinformation-t border1px">
+                                    <text class="iconfont icon-me sizef"></text>
+                                    <text class="sized">个人简介</text>
+                                </view>
+                                <view class="person-info-box">
+                                    <view class="person-bio" wx:if="{{cardcontent.Bio}}">
+                                        <text decode="{{true}}" space="ensp">{{cardcontent.Bio}}</text>
+                                    </view>
+                                    <view class="audio-box" wx:if="{{cardcontent.Recording}}">
+                                        <view catchtap="playAudio" class="iconfont {{!isPlay?'icon-bofang-':'icon-tingzhi'}}"></view>
+                                        <view class="audio-box-right">
+                                            <view class="audio-name">我的语音介绍</view>
+                                            <progress activeColor="#ff7200" class="signature_audio_progress" percent="{{music.percent}}" strokeWidth="2">
+                                                <view class="signature_audio_play_btn" style="left:{{music.left}}rpx;top: {{circleTop}}rpx;">
+                                                    <view class="signature_audio_play_btn_innerA"></view>
+                                                    <view class="signature_audio_play_btn_innerB"></view>
+                                                </view>
+                                            </progress>
+                                            <view class="audio-time">
+                                                <view class="signature_audio_start">{{music.playtime}}</view>
+                                                <view class="signature_audio_duration">{{music.duration}}</view>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="spacing" wx:if="{{moreImg.length>0}}"></view>
+                            <view class="mypicture" wx:if="{{moreImg.length>0}}">
+                                <view class="mypicture-c" wx:for="{{moreImg}}" wx:key="index">
+                                    <image bindtap="mypictureClickImg" class="mypicture-j" data-index="{{index}}" mode="widthFix" src="{{item}}"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <scroll-view scrollY="true" style="height: 100%;">
+            <view bindtouchstart="touchstart" class="container">
+                <view class="dynamic-box">
+                    <view class="default-off" wx:if="{{dynamicBlank}}">
+                        <image mode="widthFix" src="{{baseUrl}}/images/wxapp/dynamic.png"></image>
+                        <view class="blank-title">暂无动态</view>
+                    </view>
+                    <scroll-view scrollY bindscrolltolower="loadMoreData" enableBackToTop="true" lowerThreshold="20" style="height: {{winHeight}}rpx; box-sizing:border-box" wx:if="{{!dynamicBlank}}">
+                        <view class="dynamic-item {{dynamicList.length-1!=index?'border1px':''}}" wx:for="{{dynamicList}}" wx:key="index">
+                            <view class="siteLogo-image">
+                                <image src="{{siteLogo}}"></image>
+                            </view>
+                            <view class="dynamic-right {{item.NickNameText||item.CommentList.length>0?'mb30':'mb10'}}">
+                                <view class="companyName-transpond">
+                                    <text class="companyName">{{companyName}}</text>
+                                    <button catchtap="sharetoFriend" class="transpond" data-ArticleID="{{item.ArticleID}}" data-img="{{item.ImgBig}}" data-title="{{item.Title}}" hoverClass="none" openType="share" type="default">
+                    转发
+                  </button>
+                                </view>
+                                <view catchtap="toNewsDetails" class="article-info" data-ArticleID="{{item.ArticleID}}">
+                                    <view class="article-info-image">
+                                        <image binderror="errArticleImg" data-err-img="/images/wxapp/article-default.png" data-err-index="{{index}}" mode="aspectFill" src="{{baseUrl}}{{item.ImgBig}}"></image>
+                                    </view>
+                                    <view class="article-info-title">{{item.Title}}</view>
+                                </view>
+                                <view class="date-comment">
+                                    <view class="publish-time">{{item.PublishTimeText}}</view>
+                                    <view class="comment-fn">
+                                        <view class="comment-fn-box">
+                                            <view class="pop-up-box {{showPopFlag&&index==currentIndex&&item.showPop?'show-pop-left':'hide-pop-right'}}">
+                                                <view catchtap="clickLove" class="zan-fn" data-ArticleID="{{item.ArticleID}}">
+                                                    <text class="iconfont icon-heart"></text>
+                                                    <text class="love">喜欢</text>
+                                                </view>
+                                                <view catchtap="toComment" class="com-fn" data-ArticleID="{{item.ArticleID}}">
+                                                    <text class="iconfont icon-pinglun1"></text>
+                                                    <text class="pinglun">评论</text>
+                                                </view>
+                                            </view>
+                                        </view>
+                                        <view catchtap="TouchDiscuss" class="iconfont icon-pinglun" data-index="{{index}}" data-isone="{{index==0?true:false}}"></view>
+                                    </view>
+                                </view>
+                                <view class="like-comment">
+                                    <view class="nickNameText {{item.CommentList.length>0?'border1px':''}}" wx:if="{{item.NickNameText}}">
+                                        <view class="arrows"></view>
+                                        <text class="iconfont icon-heart"></text>
+                                        <text class="nickname-text">{{item.NickNameText}}</text>
+                                    </view>
+                                    <view class="commentList" wx:if="{{item.CommentList.length>0}}">
+                                        <view class="arrows" wx:if="{{!item.NickNameText}}"></view>
+                                        <view class="comment-content" wx:for="{{item.CommentList}}" wx:for-item="v" wx:key="index">
+                                            <text class="username">{{v.nickname}}</text>
+                                            <text class="user-content">{{v.comment}}</text>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </scroll-view>
+                    <form bindsubmit="sendComment" class="formComment" id="fromID" reportSubmit="true" wx:if="{{showForm}}">
+                        <view class="form-box">
+                            <input adjustPosition="false" bindconfirm="sendclose" bindinput="inputComment" confirmHold="{{canhold}}" confirmType="send" cursorSpacing="{{modelType?60:6}}" focus="true" id="finput" maxlength="-1" name="commentcontent" placeholder="评论" type="text" value="{{commentcontent}}"></input>
+                            <button class="sendBtn {{commentcontent==''?'op6':'changeColor'}}" formType="submit" hoverClass="none" id="fsend" type="default">发送</button>
+                        </view>
+                    </form>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+</swiper>
+<view class="business-bottom" wx:if="{{!showForm&&!incard&&!isOverTime}}">
+    <view catchtap="swichNav" class="business-con" data-current="0">
+        <form reportSubmit bindsubmit="from_send">
+            <button class="bottom-nav-btn" formType="submit" hoverClass="none">
+                <view class="iconfont icon-mingpian-copy pian-copy business-col" wx:if="{{currentTab==0}}"></view>
+                <view class="iconfont icon-mingpian no_active" wx:if="{{currentTab!=0}}"></view>
+                <view class="colorb sizeg {{currentTab==0?'business-col':'no_active'}}">名片</view>
+            </button>
+        </form>
+    </view>
+    <view catchtap="swichNav" class="business-con" data-current="1">
+        <form reportSubmit bindsubmit="from_send">
+            <button class="bottom-nav-btn" formType="submit" hoverClass="none">
+                <view class="iconfont icon-caidan-dongtai- pian-copys" wx:if="{{currentTab!=1}}"></view>
+                <view class="iconfont icon-tubiaozhizuomoban- is_active pian-copy" wx:if="{{currentTab==1}}"></view>
+                <view class="colorb sizeg {{currentTab==1?'is_active':'no_active'}}">动态</view>
+            </button>
+        </form>
+    </view>
+    <view bindtap="goeditCardindex" class="business-con aa">
+        <view class="iconfont icon-iconfont_homepage pian-copy"></view>
+        <view class="colorb sizeg">商城</view>
+    </view>
+</view>
+<include src="/pages/template/getUserInfo.wxml"></include>
+<include src="/pages/common/popout/index.wxml"></include>

@@ -1,0 +1,26 @@
+// \pages/teacher/layoutStuBx/layoutStu searchScrollLower Data Flow
+digraph {
+	"20830a581c1e4e22be289ed9d4c64c6f" [label="FunctionCall,
+function name -> searchScrollLower,
+param -> " color=blue]
+	"8f7c6fdcab234c889b2cd3d49e75b96a" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"83a96f819ba641ddac4baf1ca314b263" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"83a96f819ba641ddac4baf1ca314b263" -> "3c6a52e0553c4f4187a220048f0f468d"
+	"8f7c6fdcab234c889b2cd3d49e75b96a" -> "83a96f819ba641ddac4baf1ca314b263"
+	"914417c9217d41bca8c6cf07f2084316" [label=SequenceExpression color=blue]
+	"923ec8484824436a8614832f351210b9" [label="CallExpression,
+callee name -> a.setData,
+param -> " color=blue]
+	b1fc947c359f4aaa812692fa63ac243e [label="Object Properties
+{
+searchPageNum -> a.data.searchPageNum + 1
+}" color=blue]
+	"923ec8484824436a8614832f351210b9" -> b1fc947c359f4aaa812692fa63ac243e
+	"914417c9217d41bca8c6cf07f2084316" -> "923ec8484824436a8614832f351210b9"
+	"8f7c6fdcab234c889b2cd3d49e75b96a" -> "914417c9217d41bca8c6cf07f2084316"
+	"20830a581c1e4e22be289ed9d4c64c6f" -> "8f7c6fdcab234c889b2cd3d49e75b96a"
+}

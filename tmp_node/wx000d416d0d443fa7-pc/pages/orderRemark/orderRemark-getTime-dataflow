@@ -1,0 +1,14 @@
+// \pages/orderRemark/orderRemark getTime Data Flow
+digraph {
+	"96f87cb816644db99f7d39b79d46b4cb" [label="FunctionCall,
+function name -> getTime,
+param -> t,
+t.,
+" color=blue]
+	a1a4b4bfccf44c3f9563dee0f52ca41e [label=VariableDeclarations color=blue]
+	"986f9df1d33247498013d7a738b4b368" [label="VariableDeclarator,
+left -> a,
+right -> t.detail.x" color=blue]
+	a1a4b4bfccf44c3f9563dee0f52ca41e -> "986f9df1d33247498013d7a738b4b368"
+	"96f87cb816644db99f7d39b79d46b4cb" -> a1a4b4bfccf44c3f9563dee0f52ca41e
+}

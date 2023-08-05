@@ -1,0 +1,19 @@
+// \pages/teacher/layoutStu/layoutStu wxSearchInput Data Flow
+digraph {
+	"03ad32f7ecf74785bb4c2164417ec5a9" [label="FunctionCall,
+function name -> wxSearchInput,
+param -> a.,
+a,
+" color=blue]
+	ee98072ff4da404daab2f18b88bde6cb [label=SequenceExpression color=blue]
+	"5b432fb713474937b5a6ab6902bcb95b" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"8874bfb6873e4468b519a0e9caff3ee1" [label="Object Properties
+{
+keyword -> a.detail.value
+}" color=blue]
+	"5b432fb713474937b5a6ab6902bcb95b" -> "8874bfb6873e4468b519a0e9caff3ee1"
+	ee98072ff4da404daab2f18b88bde6cb -> "5b432fb713474937b5a6ab6902bcb95b"
+	"03ad32f7ecf74785bb4c2164417ec5a9" -> ee98072ff4da404daab2f18b88bde6cb
+}

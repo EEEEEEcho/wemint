@@ -1,0 +1,22 @@
+// \pages/submitorder/submitorder bindPickerChange Data Flow
+digraph {
+	c2f56b060b744065bd0f83e4a0a3af22 [label="FunctionCall,
+function name -> bindPickerChange,
+param -> " color=blue]
+	f0f63ef06256489f82565d6561684a71 [label=VariableDeclarations color=blue]
+	ae18a893f1ba40edba4e59b6d152831c [label="VariableDeclarator,
+left -> n,
+right -> o.data.CouponList[a]" color=blue]
+	f0f63ef06256489f82565d6561684a71 -> ae18a893f1ba40edba4e59b6d152831c
+	c2f56b060b744065bd0f83e4a0a3af22 -> f0f63ef06256489f82565d6561684a71
+	c9a5ad45c05a4c5a8d411352b7769a9c [label="CallExpression,
+callee name -> o.setData,
+param -> " color=blue]
+	"997a9cbbe5c5485fb070e460a89b794c" [label="Object Properties
+{
+DefaultCouponCode -> n.ClaimCode
+DefaultCouponPrice -> n.Price
+}" color=blue]
+	c9a5ad45c05a4c5a8d411352b7769a9c -> "997a9cbbe5c5485fb070e460a89b794c"
+	c2f56b060b744065bd0f83e4a0a3af22 -> c9a5ad45c05a4c5a8d411352b7769a9c
+}

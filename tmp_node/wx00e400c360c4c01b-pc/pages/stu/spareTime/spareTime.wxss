@@ -1,0 +1,70 @@
+.payView {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scatitle {
+    font-size: 50rpx;
+    font-weight: 700;
+    background-color: #fff;
+    padding-top: 30rpx;
+}
+
+.scatext {
+    font-size: 35rpx;
+    font-weight: 500;
+    background-color: #fff;
+    padding-top: 20rpx;
+    padding-bottom: 10rpx;
+}
+
+.record {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20rpx;
+}
+
+.record label {
+    font-size: 40rpx;
+    font-weight: 600;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+}
+
+.currContent {
+    display: flex;
+    height: 80rpx;
+    padding-top: 10rpx;
+}
+
+.currContent_time {
+    margin-top: 15rpx;
+    width: 15rpx;
+    height: 80rpx;
+}
+
+.currContent_list2 {
+    display: flex;
+    justify-content: center;
+    width: 5%;
+}
+
+.currContent_list3 {
+    width: 90%;
+    padding-left: 10rpx;
+    display: flex;
+    justify-content: center;
+    font-size: 30rpx;
+    font-weight: 400;
+}
+
+.currContent_list3 .lable {
+    width: 40%;
+}
+
+.currContent_list3 .lable2 {
+    width: 20%;
+    text-align: center;
+}

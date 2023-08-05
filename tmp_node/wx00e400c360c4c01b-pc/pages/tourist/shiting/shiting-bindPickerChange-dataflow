@@ -1,0 +1,17 @@
+// \pages/tourist/shiting/shiting bindPickerChange Data Flow
+digraph {
+	"050a01f415cf4c78ac47cbdd97e9add4" [label="FunctionCall,
+function name -> bindPickerChange,
+param -> t,
+t.,
+" color=blue]
+	e46c860065e74ee08d8f24dd63113e63 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"0b1062e3d1b247ea8f63c866f01cbe44" [label="Object Properties
+{
+index -> t.detail.value
+}" color=blue]
+	e46c860065e74ee08d8f24dd63113e63 -> "0b1062e3d1b247ea8f63c866f01cbe44"
+	"050a01f415cf4c78ac47cbdd97e9add4" -> e46c860065e74ee08d8f24dd63113e63
+}

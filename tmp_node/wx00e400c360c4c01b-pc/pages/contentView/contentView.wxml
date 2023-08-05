@@ -1,0 +1,6 @@
+<view class="section">
+    <view class="scatitle">{{model.title}}</view>
+    <view class="scacontent">
+         {{model.content}}
+      </view>
+</view>

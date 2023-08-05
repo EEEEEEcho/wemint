@@ -1,0 +1,90 @@
+// \pages/shop/square onCouponChange Data Flow
+digraph {
+	b5d8ead693e544fdbe28062a531bdf93 [label="FunctionCall,
+function name -> onCouponChange,
+param -> e.,
+e,
+" color=blue]
+	"5b9b6af6261d4edfa2ef82b96416455a" [label=VariableDeclarations color=blue]
+	"352d5e948423459badf085656b2007fa" [label="VariableDeclarator,
+left -> t,
+right -> e.currentTarget.dataset.type" color=blue]
+	"5b9b6af6261d4edfa2ef82b96416455a" -> "352d5e948423459badf085656b2007fa"
+	cb4f6d0bea8248adac864636a7c10e7d [label="VariableDeclarator,
+left -> a,
+right -> e.currentTarget.dataset.itemid" color=blue]
+	"5b9b6af6261d4edfa2ef82b96416455a" -> cb4f6d0bea8248adac864636a7c10e7d
+	d62583b6888048fb8099bd1c46a51a7b [label="VariableDeclarator,
+left -> n,
+right -> e.currentTarget.dataset.amount" color=blue]
+	"5b9b6af6261d4edfa2ef82b96416455a" -> d62583b6888048fb8099bd1c46a51a7b
+	c2ba75c28aef4b4ab1c0980d022157a9 [label="VariableDeclarator,
+left -> i,
+right -> e.currentTarget.dataset.idx" color=blue]
+	"5b9b6af6261d4edfa2ef82b96416455a" -> c2ba75c28aef4b4ab1c0980d022157a9
+	b5d8ead693e544fdbe28062a531bdf93 -> "5b9b6af6261d4edfa2ef82b96416455a"
+	"4b7cbd155f1d4cc99a8a81f1b2c56830" [label="If Alternate" color=blue]
+	"33bcef23d69e464eb95d615c34c12a95" [label=VariableDeclarations color=blue]
+	"77e451073c87412ca4a1772c2955f283" [label="VariableDeclarator,
+left -> o,
+right -> this.data.squareInfo.coupons[i]" color=blue]
+	"33bcef23d69e464eb95d615c34c12a95" -> "77e451073c87412ca4a1772c2955f283"
+	"4b7cbd155f1d4cc99a8a81f1b2c56830" -> "33bcef23d69e464eb95d615c34c12a95"
+	"17a03946ced64768b4018fa331ac78fd" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	ab3c6954f7d3400784da176c3f25877d [label="Object Properties
+{
+ItemID -> o.ItemID
+}" color=blue]
+	a19c299e05224b37bb4646fcc5cbb659 [label="ConditionalExpression,
+ conditional list -> o.Amount / 10 + '折','订单满' + o.OrderMoney + '元减' + o.Amount + '元'" color=blue]
+	ab3c6954f7d3400784da176c3f25877d -> a19c299e05224b37bb4646fcc5cbb659
+	"17a03946ced64768b4018fa331ac78fd" -> ab3c6954f7d3400784da176c3f25877d
+	"4b7cbd155f1d4cc99a8a81f1b2c56830" -> "17a03946ced64768b4018fa331ac78fd"
+	b5d8ead693e544fdbe28062a531bdf93 -> "4b7cbd155f1d4cc99a8a81f1b2c56830"
+	a420f100b2904e08be10eeb62ac8f4a6 [label=SequenceExpression color=blue]
+	"21505d11f8b046e49d6fb083c2ec427e" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"19a54fa2e9524cb5abc3b5d939428fbc" [label="Object Properties
+{
+}" color=blue]
+	"5436e1b5f6b945bfb54f5992485407b2" [label="!this.data.couponinfoFlag" color=blue]
+	"19a54fa2e9524cb5abc3b5d939428fbc" -> "5436e1b5f6b945bfb54f5992485407b2"
+	"90ef23c8a76146d19f5b479286401edb" [label="!this.data.textareaFlag" color=blue]
+	"19a54fa2e9524cb5abc3b5d939428fbc" -> "90ef23c8a76146d19f5b479286401edb"
+	"21505d11f8b046e49d6fb083c2ec427e" -> "19a54fa2e9524cb5abc3b5d939428fbc"
+	a420f100b2904e08be10eeb62ac8f4a6 -> "21505d11f8b046e49d6fb083c2ec427e"
+	"5a9815516d0549a496ed4eaee2c3eb1a" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	ba725142de7447aabd657af65575f8af [label="Object Properties
+{
+Type -> t
+ItemID -> a
+Amount -> n
+}" color=blue]
+	"5a9815516d0549a496ed4eaee2c3eb1a" -> ba725142de7447aabd657af65575f8af
+	a420f100b2904e08be10eeb62ac8f4a6 -> "5a9815516d0549a496ed4eaee2c3eb1a"
+	a7634593fdda4ce6bf49260a15a85397 [label="CallExpression,
+callee name -> this.reCalMoney,
+param -> " color=blue]
+	"1d332ec7e1c045229679f254ed8a9e8a" [label="FunctionCall,
+function name -> reCalMoney,
+param -> " color=blue]
+	cd6b0b6147294219aa83f764194d3639 [label=SequenceExpression color=blue]
+	"7b3dbfde259c44a187a313cd2cd7ba4c" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	d49c750fc08d43caa515af892bdd8552 [label="Object Properties
+{
+squareInfo -> this.data.squareInfo
+}" color=blue]
+	"7b3dbfde259c44a187a313cd2cd7ba4c" -> d49c750fc08d43caa515af892bdd8552
+	cd6b0b6147294219aa83f764194d3639 -> "7b3dbfde259c44a187a313cd2cd7ba4c"
+	"1d332ec7e1c045229679f254ed8a9e8a" -> cd6b0b6147294219aa83f764194d3639
+	a7634593fdda4ce6bf49260a15a85397 -> "1d332ec7e1c045229679f254ed8a9e8a"
+	a420f100b2904e08be10eeb62ac8f4a6 -> a7634593fdda4ce6bf49260a15a85397
+	b5d8ead693e544fdbe28062a531bdf93 -> a420f100b2904e08be10eeb62ac8f4a6
+}

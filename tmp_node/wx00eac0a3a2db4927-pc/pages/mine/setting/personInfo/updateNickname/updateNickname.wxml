@@ -1,0 +1,8 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view style="margin-top: {{navH+status+10}}px;">
+    <view class="nickname">
+        <view catchtap="getBlur" class="text_style" wx:if="{{!isShowInput}}">{{nickname}}</view>
+        <input bindblur="blurInput" bindinput="keepUpdate" class="name" focus="true" placeholderClass="placeholder" value="{{nickname}}" wx:else></input>
+    </view>
+    <view catchtap="confirm" class="btn" disabled="{{isDisabled}}" style="{{isDisabled?'':'opacity:0.2'}}">保存</view>
+</view>

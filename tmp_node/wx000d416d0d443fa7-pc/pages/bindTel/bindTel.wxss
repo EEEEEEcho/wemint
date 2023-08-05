@@ -1,0 +1,52 @@
+.bindTelPage {
+    font-size: 14px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.bindTelPage input {
+    padding: 10rpx;
+}
+
+.bindTelTitle {
+    text-align: center;
+    margin: 40rpx;
+    color: #ff9800;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.bindTelBtm {
+    border-bottom: 1rpx solid #ff9800;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20rpx 0;
+}
+
+.bindTelBtm .codeImg {
+    width: 120rpx;
+    height: 60rpx;
+}
+
+.bindTelBtm view {
+    font-size: 12px;
+    width: 140rpx;
+    text-align: center;
+    background-color: #ff9800;
+    color: white;
+    border-radius: 10rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.submitBtn {
+    width: 300rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 80rpx auto;
+    text-align: center;
+    color: white;
+    background-color: #ff9800;
+    border-radius: 10rpx;
+}

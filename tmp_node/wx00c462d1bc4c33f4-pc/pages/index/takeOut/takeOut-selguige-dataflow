@@ -1,0 +1,44 @@
+// \pages/index/takeOut/takeOut selguige Data Flow
+digraph {
+	fd0db5d98e6b4a6ebe7b20cad76820d6 [label="FunctionCall,
+function name -> selguige,
+param -> o.,
+o,
+" color=blue]
+	"2b1ff3378133498cadb8f83f7a2f91d6" [label=VariableDeclarations color=blue]
+	"55a0ab8145594f728422ad3a295c345d" [label="VariableDeclarator,
+left -> t,
+right -> o.currentTarget.dataset.foodSize" color=blue]
+	"2b1ff3378133498cadb8f83f7a2f91d6" -> "55a0ab8145594f728422ad3a295c345d"
+	f2e9cadf1014483497c9ce7e286c5e25 [label="VariableDeclarator,
+left -> a,
+right -> o.currentTarget.dataset.indx" color=blue]
+	"2b1ff3378133498cadb8f83f7a2f91d6" -> f2e9cadf1014483497c9ce7e286c5e25
+	"83c2c8e3afb640df92bc2f7c281cb403" [label="VariableDeclarator,
+left -> r,
+right -> o.currentTarget.dataset.guigeIndex" color=blue]
+	"2b1ff3378133498cadb8f83f7a2f91d6" -> "83c2c8e3afb640df92bc2f7c281cb403"
+	dd478560c40a4c4c899dacc1f8fd0b12 [label="VariableDeclarator,
+left -> d,
+right -> o.currentTarget.dataset.foodsizelist" color=blue]
+	"2b1ff3378133498cadb8f83f7a2f91d6" -> dd478560c40a4c4c899dacc1f8fd0b12
+	fd0db5d98e6b4a6ebe7b20cad76820d6 -> "2b1ff3378133498cadb8f83f7a2f91d6"
+	"9719d195772441c4a8ce9c6a15210a57" [label=SequenceExpression color=blue]
+	"37767b441b47495ba3bc5a484954b4ff" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	be03b2da35884321b4850c1dd096eb38 [label="Object Properties
+{
+foodSize -> t
+foodSizeList -> d
+indx -> a
+}" color=blue]
+	"37767b441b47495ba3bc5a484954b4ff" -> be03b2da35884321b4850c1dd096eb38
+	"9719d195772441c4a8ce9c6a15210a57" -> "37767b441b47495ba3bc5a484954b4ff"
+	"025db1cffab6454d94d1f05f5290715c" [label="CallExpression,
+callee name -> console.log,
+param -> a,
+" color=blue]
+	"9719d195772441c4a8ce9c6a15210a57" -> "025db1cffab6454d94d1f05f5290715c"
+	fd0db5d98e6b4a6ebe7b20cad76820d6 -> "9719d195772441c4a8ce9c6a15210a57"
+}

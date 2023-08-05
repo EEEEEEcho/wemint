@@ -1,0 +1,34 @@
+// \pages/cars/index pailiang Data Flow
+digraph {
+	c6b3621d0d30420ca22a833a77b5be81 [label="FunctionCall,
+function name -> pailiang,
+param -> a.,
+a,
+" color=blue]
+	bc42959136fe4eef8203993fa03de67d [label=SequenceExpression color=blue]
+	"378d8ac6b62241009d263c04ac9d0590" [label="CallExpression,
+callee name -> console.log,
+param -> a,
+" color=blue]
+	bc42959136fe4eef8203993fa03de67d -> "378d8ac6b62241009d263c04ac9d0590"
+	"6ed07864920b4b4da3b7a465ff3eeb31" [label="CallExpression,
+callee name -> console.log,
+param -> a.detail.value,
+" color=blue]
+	bc42959136fe4eef8203993fa03de67d -> "6ed07864920b4b4da3b7a465ff3eeb31"
+	"667d16f887014a00b17ad1fd257b7e28" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	adf0d7052d62456fbd4d7644e782deac [label="Object Properties
+{
+plindex -> a.detail.value
+}" color=blue]
+	"667d16f887014a00b17ad1fd257b7e28" -> adf0d7052d62456fbd4d7644e782deac
+	bc42959136fe4eef8203993fa03de67d -> "667d16f887014a00b17ad1fd257b7e28"
+	"85b5236fbfc14c5481add55848aa20b6" [label="CallExpression,
+callee name -> console.log,
+param -> this.data.pailiang,
+" color=blue]
+	bc42959136fe4eef8203993fa03de67d -> "85b5236fbfc14c5481add55848aa20b6"
+	c6b3621d0d30420ca22a833a77b5be81 -> bc42959136fe4eef8203993fa03de67d
+}

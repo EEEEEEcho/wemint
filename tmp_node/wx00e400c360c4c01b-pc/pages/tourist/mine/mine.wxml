@@ -1,0 +1,21 @@
+<view>
+    <image src="../../../image/t_me_head.png" style="width:100%;height:400rpx;">背景图</image>
+    <view class="header">
+        <image bindtap="myIndex" class="avatar" src="{{userInfo.avatarUrl}}"></image>
+        <view class="nickname">{{userInfo.nickName}}</view>
+    </view>
+    <view class="section">
+        <view bindtap="order" class="line judgement">
+            <view class="block">
+                <image src="../../../image/me_dingdan@2x.png"></image> 
+          我的订单
+        </view>
+        </view>
+        <view bindtap="activity" class="line judgement">
+            <view class="block">
+                <image src="../../../image/me_huodong@2x.png"></image> 
+          我参与的活动
+        </view>
+        </view>
+    </view>
+</view>

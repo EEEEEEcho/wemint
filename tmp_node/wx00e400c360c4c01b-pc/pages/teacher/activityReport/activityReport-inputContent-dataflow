@@ -1,0 +1,17 @@
+// \pages/teacher/activityReport/activityReport inputContent Data Flow
+digraph {
+	daff7c3642044545acdad929aaa279d1 [label="FunctionCall,
+function name -> inputContent,
+param -> t,
+t.,
+" color=blue]
+	c529a54f5fdf42eaa7a9ed4a14c71f41 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	f7bc7b6b903a47baac945a7b352237c9 [label="Object Properties
+{
+report_content -> t.detail.value
+}" color=blue]
+	c529a54f5fdf42eaa7a9ed4a14c71f41 -> f7bc7b6b903a47baac945a7b352237c9
+	daff7c3642044545acdad929aaa279d1 -> c529a54f5fdf42eaa7a9ed4a14c71f41
+}

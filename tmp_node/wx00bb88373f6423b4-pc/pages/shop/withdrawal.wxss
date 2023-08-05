@@ -1,0 +1,337 @@
+page {
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.container .withdrawal-amount {
+    padding: 22rpx 0 36rpx 26rpx;
+    font-size: 26rpx;
+    line-height: 26rpx;
+    color: #999;
+}
+
+.container .amount-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100rpx;
+    position: relative;
+    padding: 0 26rpx;
+}
+
+.container .withdrawal-tips .tips-left .overwithdrawal {
+    color: #ff7200;
+}
+
+.container .amount-input input {
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.container .amount-input .iconPrice {
+    font-size: 36rpx;
+    color: #333;
+    position: absolute;
+    top: 20rpx;
+}
+
+.container .amount-input input {
+    font-size: 60rpx;
+    color: #333;
+    font-weight: bold;
+    margin-left: 56rpx;
+    height: 60rpx;
+}
+
+.container .amount-input .record {
+    width: 160rpx;
+    height: 60rpx;
+    border: 1px solid #ddd;
+    border-radius: 44rpx;
+    text-align: center;
+    line-height: 60rpx;
+    font-size: 26rpx;
+    color: #666;
+}
+
+.container .amount-input .record .record-btn {
+    width: 120rpx;
+    height: 60rpx;
+}
+
+.container .withdrawal-tips {
+    height: 88rpx;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24rpx;
+    color: #999;
+    padding: 0 26rpx;
+}
+
+.container .withdrawal-tips .tips-right {
+    height: 88rpx;
+    display: flex;
+    line-height: 88rpx;
+}
+
+.container .withdrawal-tips .chargeColor {
+    color: #ff7200;
+}
+
+#overflow-amount,#less-amount {
+    color: #ff7200;
+}
+
+.container .withdrawal-tips .tips-right icon {
+    font-size: 38rpx;
+    line-height: 38rpx;
+    color: #ff7200;
+    margin-left: 10rpx;
+    margin-top: 10rpx;
+}
+
+.container .withdrawal-line {
+    height: 20rpx;
+    background-color: #f4f4f4;
+}
+
+.container .withdrawal-choose {
+    padding: 0 26rpx;
+    display: flex;
+    justify-content: space-between;
+    height: 96rpx;
+    line-height: 96rpx;
+}
+
+.container .withdrawal-choose .choose-left {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.container .withdrawal-choose .choose-right {
+    display: flex;
+    align-items: center;
+}
+
+.container .withdrawal-choose .choose-right text {
+    font-size: 26rpx;
+    color: #333;
+    margin-left: 14rpx;
+}
+
+.icon-weixinzhifu {
+    font-size: 48rpx;
+    color: #13b83a;
+}
+
+.icon-ai-pay-copy {
+    font-size: 48rpx;
+    color: #ff7200;
+}
+
+.icon-zhifubao {
+    font-size: 48rpx;
+    color: #009fe9;
+}
+
+.icon-iconfont_arrow-right {
+    font-size: 26rpx;
+    color: #999;
+    margin-left: 10rpx;
+}
+
+.container .bank-msg .choose-bank,.container .alipay-msg .alipay-accounts,.container .alipay-msg .alipay-name {
+    height: 96rpx;
+    line-height: 96rpx;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 26rpx;
+}
+
+.container .bank-msg .choose-bank .choose-right {
+    display: flex;
+    align-items: center;
+}
+
+.container .bank-msg .choose-bank .choose-right .bank {
+    margin-left: 10rpx;
+}
+
+.container .bank-msg .choose-bank image {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.container .bank-msg .choose-bank .choose-right input,.container .alipay-msg .alipay-accounts .alipay-right input,.container .alipay-msg .alipay-name .alipay-right input {
+    height: 96rpx;
+    line-height: 96rpx;
+    width: 540rpx;
+}
+
+.container .bank-msg .choose-bank .choose-left,.container .bank-msg .choose-bank .choose-right text,.container .alipay-msg .alipay-accounts,.container .alipay-msg .alipay-name {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.container .bank-msg input,.container .alipay-msg input {
+    color: #666;
+    text-align: right;
+}
+
+.container .withdrawal-btn {
+    width: 100%;
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+.container .withdrawal-btn .btn {
+    background-color: #999;
+    font-size: 36rpx;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+}
+
+.container .withdrawal-btn .canbeat {
+    background-color: #ff7200;
+}
+
+.container .mark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+    z-index: 100;
+    display: none;
+}
+
+.container .explain-tips {
+    width: 580rpx;
+    height: 434rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-70%);
+    z-index: 101;
+    display: none;
+    box-sizing: border-box;
+}
+
+.container .explain-tips .explain-title {
+    width: 100%;
+    text-align: center;
+    margin: 34rpx 0 40rpx 0;
+    font-size: 32rpx;
+    line-height: 32rpx;
+    color: #333;
+}
+
+.container .explain-tips .explain-content {
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color: #666;
+    padding: 0 40rpx 40rpx;
+}
+
+.container .explain-tips .explain-content .first,.container .explain-tips .explain-content .second {
+    margin-bottom: 24rpx;
+}
+
+.container .explain-tips .explain-content .second {
+    line-height: 48rpx;
+}
+
+.container .explain-tips .sure-btn {
+    width: 100%;
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #ff7200;
+}
+
+.container .choose-box {
+    position: fixed;
+    bottom: 0;
+    transform: translateY(100%);
+    transition: all 0.3s linear;
+    width: 100%;
+    background-color: #fff;
+    z-index: 101;
+}
+
+.container .choose-box .chooseBox-title {
+    height: 96rpx;
+    line-height: 96rpx;
+    width: 100%;
+    text-align: center;
+    font-size: 30rpx;
+    color: #666;
+}
+
+.container .choose-box .choose-way .alipay,.container .choose-box .choose-way .weixin,.container .choose-box .choose-way .bankcard {
+    height: 96rpx;
+    line-height: 96rpx;
+    padding: 0 26rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .choose-box .choose-way .alipay .alipaychoose-left,.container .choose-box .choose-way .weixin .weixin-left,.container .choose-box .choose-way .bankcard .bankcard-left {
+    display: flex;
+    align-items: center;
+}
+
+.choose-way text {
+    font-size: 26rpx;
+    color: #333;
+}
+
+.choose-way .duigou {
+    font-size: 32rpx;
+    color: #ff7200;
+}
+
+.container .choose-box .choose-way icon {
+    margin-right: 14rpx;
+}
+
+.container .choose-box .confirm {
+    height: 88rpx;
+    line-height: 88rpx;
+    width: 100%;
+    text-align: center;
+    font-size: 36rpx;
+    color: #fff;
+    background-color: #ff7200;
+}
+
+.container .showModel {
+    display: block;
+    transition: all 1s linear;
+}
+
+.container .showChooseModel {
+    position: fixed;
+    bottom: 0;
+    transform: translateY(0);
+    transition: all 0.3s linear;
+    z-index: 200;
+    width: 100%;
+}

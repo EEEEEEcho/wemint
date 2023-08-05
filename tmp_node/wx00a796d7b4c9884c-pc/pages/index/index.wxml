@@ -1,0 +1,75 @@
+<view class="max1">
+    <view class="search">
+        <button bindtap="search" class="cjjz">
+            <image src="../../images/seac1.png"></image>
+        </button>
+        <input bindconfirm="search" bindinput="searchInp" placeholder="请输入关键字" type="text" value="{{keyword}}"></input>
+    </view>
+</view>
+<view class="page-section page-section-spacing swiper">
+    <swiper bindchange="swiperChange" current="{{currentSwiper}}" nextMargin="10px" previousMargin="10px" style="width:{{width}}px;height:{{height}}px">
+        <swiper-item style="text-align:center;" wx:for="{{ads}}" wx:key="*this">
+            <image mode="widthFix" src="{{url}}{{item.picurl}}" style="width:100%; border-radius:10px;"></image>
+        </swiper-item>
+    </swiper>
+    <view class="dots">
+        <view class="dot{{index==currentSwiper?' active':''}}" wx:for="{{ads}}" wx:key="*this">{{index}}</view>
+    </view>
+</view>
+<view style="height:0px; clear:both;"></view>
+<view class="list1">
+    <view class="list1_1" wx:for="{{goodsCategory}}" wx:key="*this">
+        <navigator bindtap="tiaozhuan" class="navig" data-cid="{{item.id}}" hoverClass="none" openType="switchTab">
+            <image mode="widthFix" src="{{url}}{{item.picurl}}" style="width:100%;"></image>
+            <view class="font1">{{item.classname}}</view>
+        </navigator>
+    </view>
+</view>
+<view class="m_cokk">
+    <view class="m_cokk_a">
+        <navigator class="navig" hoverClass="none" url="../prodlist/prodlist?cid=0&&flag=news">
+            新品上市<view class="font1">
+                <image mode="widthFix" src="../../images/more1.jpg" style="width:13px; height:23px; float:right;"></image>
+            </view>
+        </navigator>
+    </view>
+</view>
+<view class="m_swiper">
+    <view class="scroll-view-xx" style="width:100%; ">
+        <view class="scroll-view-x" wx:for="{{goods_new}}" wx:for-item="gn" wx:key="*this">
+            <view class="scroll-x-item prodnav">
+                <navigator class="navig" hoverClass="none" url="../prodshow/prodshow?cid={{gn.classid}}&id={{gn.id}}">
+                    <image mode="widthFix" src="{{url}}{{gn.phone_picurl}}" style="width:100%;"></image>
+                    <view class="font1">{{gn.title}}</view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="m_linebg"></view>
+<block wx:for="{{goods_type}}" wx:key="type">
+    <view class="m_cokk">
+        <view class="m_cokk_a">
+            <navigator class="navig" hoverClass="none" url="../prodlist/prodlist?cid={{item['id']}}&&flag=''">
+            {{item.classname}}<view class="font1">
+                    <image mode="widthFix" src="../../images/more1.jpg" style="width:13px; height:23px; float:right;"></image>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view class="m_box1">
+        <view class="m_box1_1">
+            <navigator class="navig" url="../prodlist/prodlist?cid={{item['id']}}&&flag=''">
+                <image mode="widthFix" src="{{url}}{{item.banner_pic}}" style="width:100%;"></image>
+            </navigator>
+        </view>
+        <view class="m_box1_2" wx:for="{{item.item}}" wx:for-item="g" wx:key="*this">
+            <navigator class="navig" hoverClass="none" url="../prodshow/prodshow?cid={{g.classid}}&id={{g.id}}">
+                <image mode="widthFix" src="{{url}}{{g.phone_picurl}}" style="width:100%;"></image>
+                <view class="h3">{{g.title}}</view>
+                <view class="h4">¥{{g.salesprice}}</view>
+            </navigator>
+        </view>
+    </view>
+    <view class="m_linebg" wx:if="{{index!=goods_type.length-1}}"></view>
+</block>

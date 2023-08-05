@@ -1,0 +1,56 @@
+// \pages/company/mycoupon loadMyList Data Flow
+digraph {
+	e1070edaba4748a4992796dff8b2ef00 [label="FunctionCall,
+function name -> loadMyList,
+param -> " color=blue]
+	"3e38a568b99f4493ad19dc26b1611457" [label=VariableDeclarations color=blue]
+	"55a443b8ae104fb08074c3fbf124d6a2" [label="VariableDeclarator,
+left -> e,
+right -> s.data.myrecordcount" color=blue]
+	"3e38a568b99f4493ad19dc26b1611457" -> "55a443b8ae104fb08074c3fbf124d6a2"
+	d4f5b566d12e4daa9d545003e5047857 [label="VariableDeclarator,
+left -> i,
+right -> s.data.mylist.length" color=blue]
+	"3e38a568b99f4493ad19dc26b1611457" -> d4f5b566d12e4daa9d545003e5047857
+	e1070edaba4748a4992796dff8b2ef00 -> "3e38a568b99f4493ad19dc26b1611457"
+	"553de3624c0947faba16094a1b5e8f0c" [label="If Alternate" color=blue]
+	"55908b4c964f4e519f2d9cadc577d669" [label=VariableDeclarations color=blue]
+	"62e0f6269cde4051a640efc7fcca9a6c" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	e338ea8ddffa4e7bab1525a8a8566612 [label="CallExpression,
+callee name -> Math.ceil,
+param -> i / s.data.mypagesize,
+" color=blue]
+	"62e0f6269cde4051a640efc7fcca9a6c" -> e338ea8ddffa4e7bab1525a8a8566612
+	"55908b4c964f4e519f2d9cadc577d669" -> "62e0f6269cde4051a640efc7fcca9a6c"
+	"553de3624c0947faba16094a1b5e8f0c" -> "55908b4c964f4e519f2d9cadc577d669"
+	"6667f3de8d364ece8cf65f446d68db7e" [label=SequenceExpression color=blue]
+	c288ff0d26424a4dae2cf07da83b6fc2 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	afd98919c91d4a3e994751ecfb8ae45c [label="Assignment,
+left -> r,
+right -> '&sortcol=' + s.data.sortcol + '&sort=' + s.data.sort" color=blue]
+	c288ff0d26424a4dae2cf07da83b6fc2 -> afd98919c91d4a3e994751ecfb8ae45c
+	"6667f3de8d364ece8cf65f446d68db7e" -> c288ff0d26424a4dae2cf07da83b6fc2
+	a76478f27c444c4596c853a5c3fd8030 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"4559bcecec9642f5a539fe96f8631ce7" [label="Assignment,
+left -> s.data.use,
+right -> s.data.queryparams.use" color=blue]
+	a76478f27c444c4596c853a5c3fd8030 -> "4559bcecec9642f5a539fe96f8631ce7"
+	"6667f3de8d364ece8cf65f446d68db7e" -> a76478f27c444c4596c853a5c3fd8030
+	df31aa6c16724d618af08810e8d6bdec [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	"67b19c1fbc874a4db75a4867f12fa97c" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ServiceApi&a=getUserCouponList&page=' + o + '&pagesize=' + s.data.mypagesize + r
+}" color=blue]
+	df31aa6c16724d618af08810e8d6bdec -> "67b19c1fbc874a4db75a4867f12fa97c"
+	"6667f3de8d364ece8cf65f446d68db7e" -> df31aa6c16724d618af08810e8d6bdec
+	"553de3624c0947faba16094a1b5e8f0c" -> "6667f3de8d364ece8cf65f446d68db7e"
+	e1070edaba4748a4992796dff8b2ef00 -> "553de3624c0947faba16094a1b5e8f0c"
+}

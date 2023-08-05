@@ -1,0 +1,15 @@
+<view class="card">
+    <view bindtap="onDetail" class="cardItem" data-card-uuid="{{card.cardUuid}}" wx:for="{{cardList}}" wx:for-item="card" wx:key="index">
+        <image class="cardBg" lazyLoad="true" src="http://oss.shangmian.xin/weixin_applets_card_brown_bg.png" wx:if="{{index%2===0}}"></image>
+        <image class="cardBg" lazyLoad="true" src="http://oss.shangmian.xin/weixin_applets_card_blue_bg.png" wx:if="{{index%2===1}}"></image>
+        <view class="cardContent">
+            <view class="cardTitleLayout">
+                <text class="cardTitle">{{card.title}}</text>
+                <text class="cardRemark">{{card.instructions}}</text>
+            </view>
+            <text class="effectiveTime">有效期{{cardFilter.getDay(card.expirationTime)}}天</text>
+        </view>
+    </view>
+    <empty isShow="{{cardList.length==0}}" textContent="您还没有可用优惠卡哦"></empty>
+</view>
+<wxs module="cardFilter" src="card.wxs" />

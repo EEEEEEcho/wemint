@@ -1,0 +1,31 @@
+// \pages/user/myCash/myCash doWxPay Data Flow
+digraph {
+	e656eb27b913418e9f5e578fcb99d455 [label="FunctionCall,
+function name -> doWxPay,
+param -> " color=blue]
+	fa74833c481b4975a45f108f2afb0f86 [label=SequenceExpression color=blue]
+	d65b7006b2ac46bcb4359ff93d7b89e4 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"330f0bb0cf964535a3402f1eed6b466a" [label=SequenceExpression color=blue]
+	"6d22ae0b902e43e8b3af391ecda0efbd" [label="CallExpression,
+callee name -> wx.requestPayment,
+param -> " color=blue]
+	"96ee660272b64c288d9c9324e611af6d" [label="FunctionCall,
+function name -> fail,
+param -> a,
+a.,
+" color=blue]
+	"6424c0ca601f4a46b7085abb99f2614b" [label=SequenceExpression color=blue]
+	fbe5fc2d52534548880860214db0b4e8 [label="CallExpression,
+callee name -> console.log,
+param -> a,
+" color=blue]
+	"6424c0ca601f4a46b7085abb99f2614b" -> fbe5fc2d52534548880860214db0b4e8
+	"96ee660272b64c288d9c9324e611af6d" -> "6424c0ca601f4a46b7085abb99f2614b"
+	"6d22ae0b902e43e8b3af391ecda0efbd" -> "96ee660272b64c288d9c9324e611af6d"
+	"330f0bb0cf964535a3402f1eed6b466a" -> "6d22ae0b902e43e8b3af391ecda0efbd"
+	d65b7006b2ac46bcb4359ff93d7b89e4 -> "330f0bb0cf964535a3402f1eed6b466a"
+	fa74833c481b4975a45f108f2afb0f86 -> d65b7006b2ac46bcb4359ff93d7b89e4
+	e656eb27b913418e9f5e578fcb99d455 -> fa74833c481b4975a45f108f2afb0f86
+}

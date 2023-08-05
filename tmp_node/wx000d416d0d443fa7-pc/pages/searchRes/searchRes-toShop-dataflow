@@ -1,0 +1,27 @@
+// \pages/searchRes/searchRes toShop Data Flow
+digraph {
+	"22af2b0c0e2a44a2811ce9be9236bda9" [label="FunctionCall,
+function name -> toShop,
+param -> t,
+t.,
+" color=blue]
+	"7e35fa9474a04269b739311f216d63ce" [label=VariableDeclarations color=blue]
+	"66ec083d4cd14cdab2b6aecffd24c58d" [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.id" color=blue]
+	"7e35fa9474a04269b739311f216d63ce" -> "66ec083d4cd14cdab2b6aecffd24c58d"
+	"66788d6e45e04150abcea8c5bb8f983b" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.token" color=blue]
+	"7e35fa9474a04269b739311f216d63ce" -> "66788d6e45e04150abcea8c5bb8f983b"
+	"22af2b0c0e2a44a2811ce9be9236bda9" -> "7e35fa9474a04269b739311f216d63ce"
+	f86e3fb7f4d04a9dbcccb616236d7caa [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"2c2b5a10ef044954b2424a11a76a38a0" [label="Object Properties
+{
+url -> '../shopDetail/shopDetail?shoptoken=' + e + '&shopid=' + a
+}" color=blue]
+	f86e3fb7f4d04a9dbcccb616236d7caa -> "2c2b5a10ef044954b2424a11a76a38a0"
+	"22af2b0c0e2a44a2811ce9be9236bda9" -> f86e3fb7f4d04a9dbcccb616236d7caa
+}

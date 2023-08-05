@@ -1,0 +1,50 @@
+<view class="container">
+    <view class="beMember">
+        <view class="beMember-img">
+            <image mode="widthFix" src="../../images/fenxiao.jpg"></image>
+        </view>
+        <view class="conRule">
+            <view class="rule-left">
+                <icon class="iconfont other-icon icon-wenhao-copy"></icon>
+            </view>
+            <view class="rule-right">
+                <view class="rule1">
+                    <text>如何成为分销员</text>
+                </view>
+                <view class="rule2">
+                    <text>满足以下一个条件就可以成为分销员</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="condition border1px">
+        <view class="condition-left">
+            <view class="circle"></view>
+            <view class="condition-con">
+                <text>消费满</text>
+                <text class="price">{{minConsumption}}</text>
+                <text>元</text>
+            </view>
+        </view>
+        <view class="condition-right">
+            <navigator hoverClass="none" openType="navigate" url="/pages/shop/productlist">
+                <text>去逛逛</text>
+            </navigator>
+        </view>
+    </view>
+    <view class="condition" wx:if="{{enablePrestore===1}}">
+        <view class="condition-left">
+            <view class="circle"></view>
+            <view class="condition-con">
+                <text>充值满</text>
+                <text class="price">{{minPrestore}}</text>
+                <text>元</text>
+            </view>
+        </view>
+        <view class="condition-right">
+            <view bindtap="toRecharge">
+                <text>去充值</text>
+            </view>
+        </view>
+    </view>
+</view>

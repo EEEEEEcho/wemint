@@ -1,0 +1,35 @@
+// \pages/shop/collection allCheckedBtn Data Flow
+digraph {
+	"959ce4128a5b4c1484da8754d6e870d9" [label="FunctionCall,
+function name -> allCheckedBtn,
+param -> t,
+t.,
+" color=blue]
+	"3fb78a784d5f4ce8828710fa04d8f044" [label=SequenceExpression color=blue]
+	bcad638d9817442fb3998db377d5553c [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	a7b699fba91f47f080209bab94eb759f [label="!e.data.allChecked" color=blue]
+	bcad638d9817442fb3998db377d5553c -> a7b699fba91f47f080209bab94eb759f
+	"3fb78a784d5f4ce8828710fa04d8f044" -> bcad638d9817442fb3998db377d5553c
+	"382159b4ed414f9e81377167bf6c154e" [label="CallExpression,
+callee name -> e.data.newList.List.forEach,
+param -> " color=blue]
+	"237eeb1da5d245bc97a13512d3f48b3d" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> t,
+" color=blue]
+	"382159b4ed414f9e81377167bf6c154e" -> "237eeb1da5d245bc97a13512d3f48b3d"
+	"3fb78a784d5f4ce8828710fa04d8f044" -> "382159b4ed414f9e81377167bf6c154e"
+	bbc401c3717b43a38cb99dae4f0aaa39 [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"9ecff77c7f6e47e7b11eaf0750ab3c9b" [label="Object Properties
+{
+newList -> e.data.newList
+allChecked -> e.data.allChecked
+}" color=blue]
+	bbc401c3717b43a38cb99dae4f0aaa39 -> "9ecff77c7f6e47e7b11eaf0750ab3c9b"
+	"3fb78a784d5f4ce8828710fa04d8f044" -> bbc401c3717b43a38cb99dae4f0aaa39
+	"959ce4128a5b4c1484da8754d6e870d9" -> "3fb78a784d5f4ce8828710fa04d8f044"
+}

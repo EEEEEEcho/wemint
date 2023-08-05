@@ -1,0 +1,38 @@
+// \pages/poster/posterList/posterList createNewImg Data Flow
+digraph {
+	c1b78ad9816f4d768b800f33415e300e [label="FunctionCall,
+function name -> createNewImg,
+param -> " color=blue]
+	"145ca43685f7414badc7b58d02331721" [label=SequenceExpression color=blue]
+	"7dba5e72db8748eab120b12b063a3bf8" [label="CallExpression,
+callee name -> a.drawImage,
+param -> t.data.bgWidth,
+t.data.bgHeight,
+" color=blue]
+	"145ca43685f7414badc7b58d02331721" -> "7dba5e72db8748eab120b12b063a3bf8"
+	"97810f5060ee4fd8bee60e05f7d2dc66" [label="CallExpression,
+callee name -> this.setImagePic,
+param -> " color=blue]
+	"045d42116e53412ab21d4761a20258b0" [label="FunctionCall,
+function name -> setImagePic,
+param -> " color=blue]
+	b0ad7d2a43be439d9011d4017c06eff7 [label=VariableDeclarations color=blue]
+	d2a3c9e4e39e4062b26322e21a825dae [label="VariableDeclarator,
+left -> e,
+right -> a.data.bgWidth" color=blue]
+	b0ad7d2a43be439d9011d4017c06eff7 -> d2a3c9e4e39e4062b26322e21a825dae
+	a4d9a24a930043c8a2898ab625a0fde6 [label="VariableDeclarator,
+left -> i,
+right -> a.data.bgHeight" color=blue]
+	b0ad7d2a43be439d9011d4017c06eff7 -> a4d9a24a930043c8a2898ab625a0fde6
+	"045d42116e53412ab21d4761a20258b0" -> b0ad7d2a43be439d9011d4017c06eff7
+	f0f480faa5ff4ad6ada18512108f36ab [label="CallExpression,
+callee name -> t.drawImage,
+param -> e,
+i,
+" color=blue]
+	"045d42116e53412ab21d4761a20258b0" -> f0f480faa5ff4ad6ada18512108f36ab
+	"97810f5060ee4fd8bee60e05f7d2dc66" -> "045d42116e53412ab21d4761a20258b0"
+	"145ca43685f7414badc7b58d02331721" -> "97810f5060ee4fd8bee60e05f7d2dc66"
+	c1b78ad9816f4d768b800f33415e300e -> "145ca43685f7414badc7b58d02331721"
+}

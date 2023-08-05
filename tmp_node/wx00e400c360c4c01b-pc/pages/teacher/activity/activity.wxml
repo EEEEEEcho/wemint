@@ -1,0 +1,27 @@
+<view class="margintop5"></view>
+<view class="wnr" wx:if="{{activityList.length==0}}">
+    <image src="http://p7mq9gjza.bkt.clouddn.com/non.png" style="width:276px; height:319px;"></image>
+</view>
+<scroll-view bindscrolltolower="searchScrollLower" scrollY="true" style="height: {{scrollHeight}}rpx;" wx:else>
+    <view class="section" wx:for="{{activityList}}" wx:for-index="idx" wx:key="activity">
+        <view bindtap="activityView" class="bookList" data-id="{{item.id}}" data-model="{{item}}">
+            <view class="bookListContent">
+                <view class="lable">{{item.title}}</view>
+                <view class="text">活动地点：{{item.activity_address}}</view>
+                <view class="text">活动时间：{{item.star_time}}至{{item.end_time}}</view>
+                <view bindtap="view" class="text">已有<text class="bookListState">{{item.cpcList.length}}</text>位学生报名</view>
+            </view>
+            <view class="bookList_right">
+                <image src="../../../image/arrows_right@2x.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="loading" hidden="{{!searchLoading}}">正在载入...</view>
+    <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+</scroll-view>
+<view style="padding-bottom: 50rpx;"></view>
+<view class="address-add">
+    <form reportSubmit bindsubmit="activityWrite">
+        <button class="Btn" formType="submit" size="default">创建活动</button>
+    </form>
+</view>

@@ -1,0 +1,13 @@
+<myLoading id="myLoading"></myLoading>
+<view class="container">
+    <c-img cclass="theme-effect" mode="scaleToFill" src="{{colorList[selectTheme].effect}}"></c-img>
+    <view class="bottom">
+        <view class="theme-list">
+            <view bind:tap="onSelect" class="theme" data-id="{{idx}}" wx:for="{{colorList}}" wx:for-index="idx" wx:key="item.name">
+                <view class="{{idx===selectTheme?'selected-theme':''}} theme-img" style="background: {{item.color}}"></view>
+                <view class="{{idx===selectTheme?'selected':''}}">{{item.name}}</view>
+            </view>
+        </view>
+        <image bind:tap="onBack" class="close" mode="scaleToFill" src="{{cdn}}/off_icon.png"></image>
+    </view>
+</view>

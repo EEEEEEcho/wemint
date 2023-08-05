@@ -1,0 +1,51 @@
+// \pages/fightGroups/square/index changeShowLbsShop Data Flow
+digraph {
+	"3d6fc68edbdd422282f8e9ad234254ca" [label="FunctionCall,
+function name -> changeShowLbsShop,
+param -> " color=blue]
+	"46318dd155d24b2692c9c556321b2bf9" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"280fc76fc4cf4acab496185e4c626943" [label="CallExpression,
+callee name -> wx.getLocation,
+param -> " color=blue]
+	"51463eab59434737adef3868648d7a4d" [label="FunctionCall,
+function name -> success,
+param -> t,
+t.,
+" color=blue]
+	"8649ca4e849d42cdb3c72034631e6707" [label=SequenceExpression color=blue]
+	e29fe8866d374094b41745c19d4d0ffa [label="Assignment,
+left -> i,
+right -> t.latitude" color=blue]
+	"8649ca4e849d42cdb3c72034631e6707" -> e29fe8866d374094b41745c19d4d0ffa
+	"0303e19065044af38ce15361b0f28215" [label="Assignment,
+left -> a,
+right -> t.longitude" color=blue]
+	"8649ca4e849d42cdb3c72034631e6707" -> "0303e19065044af38ce15361b0f28215"
+	"51463eab59434737adef3868648d7a4d" -> "8649ca4e849d42cdb3c72034631e6707"
+	"280fc76fc4cf4acab496185e4c626943" -> "51463eab59434737adef3868648d7a4d"
+	"46318dd155d24b2692c9c556321b2bf9" -> "280fc76fc4cf4acab496185e4c626943"
+	"3d6fc68edbdd422282f8e9ad234254ca" -> "46318dd155d24b2692c9c556321b2bf9"
+	a969cb42ce6441db90f02b55bc6df3d2 [label=VariableDeclarations color=blue]
+	"85f5cc37fcb64f8392656bfb33cdc58c" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"4b488b135a4249908eb4ae5ebf9cbd25" [label="CallExpression,
+callee name -> Math.ceil,
+param -> o / e.data.pageSize,
+" color=blue]
+	"85f5cc37fcb64f8392656bfb33cdc58c" -> "4b488b135a4249908eb4ae5ebf9cbd25"
+	a969cb42ce6441db90f02b55bc6df3d2 -> "85f5cc37fcb64f8392656bfb33cdc58c"
+	"3d6fc68edbdd422282f8e9ad234254ca" -> a969cb42ce6441db90f02b55bc6df3d2
+	a071d6ca57b84130988aa48765977723 [label=SequenceExpression color=blue]
+	"175506982f1e4a8bb7935e212a84def3" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	e8c5532bcdc940f8946e6eca70df3a83 [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=getLbsStoreList&lng=' + a + '&lat=' + i + '&page=' + n + '&pageSize=' + e.data.pageSize
+}" color=blue]
+	"175506982f1e4a8bb7935e212a84def3" -> e8c5532bcdc940f8946e6eca70df3a83
+	a071d6ca57b84130988aa48765977723 -> "175506982f1e4a8bb7935e212a84def3"
+	"3d6fc68edbdd422282f8e9ad234254ca" -> a071d6ca57b84130988aa48765977723
+}

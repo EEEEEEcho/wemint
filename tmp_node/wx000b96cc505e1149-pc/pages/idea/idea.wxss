@@ -1,0 +1,71 @@
+page {
+    background-color: #EEEDF3;
+}
+
+.bestview {
+    width: 90%;
+    margin: auto;
+}
+
+.textview {
+    padding-top: 24px;
+}
+
+.text {
+    font-size: 0.9em;
+    color: #3072B2;
+    font-family: “Microsoft YaHei”!important;
+    font-weight: 900;
+}
+
+.inputview {
+    margin-top: 16px;
+    border: 1px solid #C2C2C2;
+    height: 40px;
+    border-radius: 6px;
+    background: #FFFFFF;
+}
+
+.input {
+    font-size: 0.9em;
+    padding-left: 10px;
+    padding-top: 6px;
+    font-family: “Microsoft YaHei”!important;
+}
+
+.textareaview {
+    margin-top: 16px;
+    border: 1px solid #C2C2C2;
+    height: 200px;
+    border-radius: 6px;
+    background: #FFFFFF;
+}
+
+.textarea {
+    padding-left: 10px;
+    padding-top: 13px;
+    font-size: 0.9em;
+    font-family: “Microsoft YaHei”!important;
+}
+
+.textview2 {
+    padding-top: 12px;
+}
+
+.text2 {
+    font-family: “Microsoft YaHei”!important;
+    font-size: 0.9em;
+    color: #8F808F;
+}
+
+.buttonview {
+    padding-top: 17px;
+}
+
+.btn {
+    background: #3072B2;
+}
+
+.text3 {
+    color: #FFFFFF;
+}

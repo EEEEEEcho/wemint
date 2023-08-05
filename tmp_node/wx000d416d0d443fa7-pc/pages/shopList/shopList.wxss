@@ -1,0 +1,29 @@
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.searchBg {
+    background-color: #ff9800;
+    padding: 20rpx 0;
+}
+
+.search {
+    width: 80%;
+    margin: 0 auto 20rpx;
+    padding: 10rpx;
+    background-color: white;
+    border-radius: 10rpx;
+    display: flex;
+    align-items: center;
+}
+
+.search icon {
+    margin-right: 20rpx;
+}
+
+.banner {
+    width: 750rpx;
+    height: 375rpx;
+}

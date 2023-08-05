@@ -1,0 +1,15 @@
+// \pages/index/takeOut/queryFood/queryFood addCount Data Flow
+digraph {
+	ab2c2cf8d22a4bb6b094950c291f7cb7 [label="FunctionCall,
+function name -> addCount,
+param -> o.,
+o,
+" color=blue]
+	"1687b5b17ff441cebd79fb14cdda8ace" [label=SequenceExpression color=blue]
+	e264559e4e5043e6967b3b3179c59ead [label="CallExpression,
+callee name -> e.setFoodInfo,
+param -> o,
+" color=blue]
+	"1687b5b17ff441cebd79fb14cdda8ace" -> e264559e4e5043e6967b3b3179c59ead
+	ab2c2cf8d22a4bb6b094950c291f7cb7 -> "1687b5b17ff441cebd79fb14cdda8ace"
+}

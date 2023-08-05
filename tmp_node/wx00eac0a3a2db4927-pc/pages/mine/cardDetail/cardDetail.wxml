@@ -1,0 +1,24 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="cardDetail column" style="margin-top: {{navH+status}}px">
+    <view class="cardTopLayout">
+        <image class="cardBg" src="http://oss.shangmian.xin/weixin_applets_card_brown_top.png"></image>
+        <text class="cardTitle">{{cardDetail.title}}</text>
+        <text class="cardRemark">{{cardDetail.instructions}}</text>
+        <text class="cardTime">有效期{{cardFilter.getDay(cardDetail.expirationTime)}}天</text>
+        <text class="limitedTime">限时专享</text>
+    </view>
+    <canvas canvasId="qrCode" class="qrCode"></canvas>
+    <view class="privilegeLayout row">
+        <view class="privilegeLine"></view>
+        <text class="privilegeTitle">特权说明</text>
+        <view class="privilegeLine"></view>
+    </view>
+    <text class="ruleText">{{cardDetail.franchise}}</text>
+    <view class="privilegeLayout row">
+        <view class="privilegeLine"></view>
+        <text class="privilegeTitle">使用须知</text>
+        <view class="privilegeLine"></view>
+    </view>
+    <text class="ruleText">{{cardDetail.instructions}}</text>
+</view>
+<wxs module="cardFilter" src="cardDetail.wxs" />

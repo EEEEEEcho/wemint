@@ -1,0 +1,23 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="address_container overflow" style="margin-top: {{navH+status+10}}px;">
+    <view class="address_group">
+        <view class="address {{index==addressList.length-1?'last_address':''}}" wx:for="{{addressList}}">
+            <view catchtap="onSelectAddress" class="address_info" data-index="{{index}}">
+                <view class="address_user">{{item.name}} {{item.mobile}}</view>
+                <view class="absolute_address">{{item.province}}{{item.city}}{{item.area}}{{item.addressDetail}}</view>
+            </view>
+            <view class="hr"></view>
+            <view class="address_btns">
+                <view catchtap="toChange" class="address_selected" data-addressUuid="{{item.addressUuid}}" data-addressid="{{index}}">
+                    <image class="selected_img" src="{{item.isDefault==1?'http://oss.shangmian.xin/weixin_applets_cart_oval_fill.png':'http://oss.shangmian.xin/weixin_applets_cart_oval.png'}}"></image>
+                    <text class="selected_txt">设为默认地址</text>
+                </view>
+                <view class="btn">
+                    <view catchtap="toEditNewAddress" class="edit" data-addressUuid="{{item.addressUuid}}" data-addressid="{{index}}">编辑</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <empty iconPath="http://oss.shangmian.xin/weixin_applets_icon_empty_view.png" isShow="{{addressList.length==0}}" textContent="没有收货地址信息"></empty>
+    <view catchtap="toAddNewAddress" class="addAddress">添加地址</view>
+</view>

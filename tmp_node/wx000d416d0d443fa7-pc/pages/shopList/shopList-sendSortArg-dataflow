@@ -1,0 +1,17 @@
+// \pages/shopList/shopList sendSortArg Data Flow
+digraph {
+	"3eb6f079b26b421a85723213f3ecde8b" [label="FunctionCall,
+function name -> sendSortArg,
+param -> " color=blue]
+	ab04a14d50464e8faec67bd77f6b4027 [label=VariableDeclarations color=blue]
+	"10a30bce17814ef9980b7d1828b7b8dd" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	a4500a1bf63b43b3be881086bc3d729c [label="Object Properties
+{
+sortid -> this.data.listId
+}" color=blue]
+	"10a30bce17814ef9980b7d1828b7b8dd" -> a4500a1bf63b43b3be881086bc3d729c
+	ab04a14d50464e8faec67bd77f6b4027 -> "10a30bce17814ef9980b7d1828b7b8dd"
+	"3eb6f079b26b421a85723213f3ecde8b" -> ab04a14d50464e8faec67bd77f6b4027
+}

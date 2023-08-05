@@ -1,0 +1,18 @@
+// \pages/shopDetail/shopDetail chooseSort Data Flow
+digraph {
+	"51e6d16c65264e76b4525a3a6b76fa5b" [label="FunctionCall,
+function name -> chooseSort,
+param -> o,
+o.,
+" color=blue]
+	"4377912365004f72b9f23ee96885967a" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	eb7a5554ed3947aebea0c538aa494017 [label="Object Properties
+{
+_id -> o.target.dataset.id
+_name -> o.target.dataset.name
+}" color=blue]
+	"4377912365004f72b9f23ee96885967a" -> eb7a5554ed3947aebea0c538aa494017
+	"51e6d16c65264e76b4525a3a6b76fa5b" -> "4377912365004f72b9f23ee96885967a"
+}

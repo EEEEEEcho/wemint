@@ -1,0 +1,33 @@
+// \pages/bindTel/bindTel sendTelCode Data Flow
+digraph {
+	d691920962bb41efbb86aa9b46258290 [label="FunctionCall,
+function name -> sendTelCode,
+param -> e.,
+e,
+" color=blue]
+	"189e0311bac04532a51f7e7ddddb2e3e" [label=VariableDeclarations color=blue]
+	a1e84af3779c465ab99f323bfc5b290f [label="VariableDeclarator,
+left -> i,
+right -> this.data.inputTel" color=blue]
+	"189e0311bac04532a51f7e7ddddb2e3e" -> a1e84af3779c465ab99f323bfc5b290f
+	"3948e431c7fe430382829145ab24e4b3" [label="VariableDeclarator,
+left -> d,
+right -> this.data.inputImgCode" color=blue]
+	"189e0311bac04532a51f7e7ddddb2e3e" -> "3948e431c7fe430382829145ab24e4b3"
+	d691920962bb41efbb86aa9b46258290 -> "189e0311bac04532a51f7e7ddddb2e3e"
+	d9fedc8420384dd79528c3ce3c53f326 [label="If Alternate" color=blue]
+	"45434c4fc7a1405fa0275a8e08e25298" [label=VariableDeclarations color=blue]
+	"0a11aea76e194bda9b0d3d71c6aceda0" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	a7695b99107644b8b44c741972fc1997 [label="Object Properties
+{
+tel -> i
+vid -> a.data.vid
+image_code -> d
+}" color=blue]
+	"0a11aea76e194bda9b0d3d71c6aceda0" -> a7695b99107644b8b44c741972fc1997
+	"45434c4fc7a1405fa0275a8e08e25298" -> "0a11aea76e194bda9b0d3d71c6aceda0"
+	d9fedc8420384dd79528c3ce3c53f326 -> "45434c4fc7a1405fa0275a8e08e25298"
+	d691920962bb41efbb86aa9b46258290 -> d9fedc8420384dd79528c3ce3c53f326
+}

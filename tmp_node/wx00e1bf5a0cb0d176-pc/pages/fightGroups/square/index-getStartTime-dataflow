@@ -1,0 +1,17 @@
+// \pages/fightGroups/square/index getStartTime Data Flow
+digraph {
+	"7b40eced243246a4b15e2bda3fb89b18" [label="FunctionCall,
+function name -> getStartTime,
+param -> " color=blue]
+	f40c806f1abb4d3da553a5306e17336d [label=VariableDeclarations color=blue]
+	"799bc693b1e04e628890f7dc2c7e9dff" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"7785525ee2e446d4b4cad1d7d7b1fdb8" [label="CallExpression,
+callee name -> parseInt,
+param -> t.data.pickupInfo.ShopPickupTime,
+" color=blue]
+	"799bc693b1e04e628890f7dc2c7e9dff" -> "7785525ee2e446d4b4cad1d7d7b1fdb8"
+	f40c806f1abb4d3da553a5306e17336d -> "799bc693b1e04e628890f7dc2c7e9dff"
+	"7b40eced243246a4b15e2bda3fb89b18" -> f40c806f1abb4d3da553a5306e17336d
+}

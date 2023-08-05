@@ -1,0 +1,100 @@
+// \pages/shopDetail/shopDetail reduceOne Data Flow
+digraph {
+	"4a9883e00e014ba9bdc7a985f2e7b290" [label="FunctionCall,
+function name -> reduceOne,
+param -> t,
+t.,
+" color=blue]
+	"30d273c2f31a4f06ab6a3fae45f35425" [label="If Alternate" color=blue]
+	"050c1bea8fca49c2aa47a77d07f78055" [label=VariableDeclarations color=blue]
+	de5e4bb1198f43c8af57824dbdf99c1d [label="VariableDeclarator,
+left -> e,
+right -> this.getNowShopCar" color=blue]
+	"050c1bea8fca49c2aa47a77d07f78055" -> de5e4bb1198f43c8af57824dbdf99c1d
+	cef356d3be15479283258889422675a9 [label="VariableDeclarator,
+left -> a,
+right -> t.target.dataset.item" color=blue]
+	"050c1bea8fca49c2aa47a77d07f78055" -> cef356d3be15479283258889422675a9
+	c62ed54647424ac198bf90c055a303ba [label="VariableDeclarator,
+left -> i,
+right -> this.compareReduceShopCar" color=blue]
+	b1cd9719c0834164889fe6633e9f9c38 [label="CallExpression,
+callee name -> this.compareReduceShopCar,
+param -> a,
+e,
+" color=blue]
+	c62ed54647424ac198bf90c055a303ba -> b1cd9719c0834164889fe6633e9f9c38
+	"050c1bea8fca49c2aa47a77d07f78055" -> c62ed54647424ac198bf90c055a303ba
+	"82ecf4dcb6ca4fcfa69a029b57d0173a" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"01ae276bb78940a8be3dd3bf545d20b2" [label=SequenceExpression color=blue]
+	"7ae28daa8e89442b9e0bcc0eb2eaf1bb" [label="CallExpression,
+callee name -> this.changeShopCar,
+param -> i,
+" color=blue]
+	"01ae276bb78940a8be3dd3bf545d20b2" -> "7ae28daa8e89442b9e0bcc0eb2eaf1bb"
+	"0337126016754137bbca7ea5b88fde22" [label="CallExpression,
+callee name -> this.changeNowGoods,
+param -> i,
+" color=blue]
+	"01ae276bb78940a8be3dd3bf545d20b2" -> "0337126016754137bbca7ea5b88fde22"
+	"82ecf4dcb6ca4fcfa69a029b57d0173a" -> "01ae276bb78940a8be3dd3bf545d20b2"
+	"050c1bea8fca49c2aa47a77d07f78055" -> "82ecf4dcb6ca4fcfa69a029b57d0173a"
+	"23e5eacd620f4e46918c5992c92e023f" [label="VariableDeclarator,
+left -> d,
+right -> this.changeAllGoods" color=blue]
+	"424e3aea1b5e4940ac34a14aa2e20511" [label="CallExpression,
+callee name -> this.changeAllGoods,
+param -> i,
+" color=blue]
+	"23e5eacd620f4e46918c5992c92e023f" -> "424e3aea1b5e4940ac34a14aa2e20511"
+	"050c1bea8fca49c2aa47a77d07f78055" -> "23e5eacd620f4e46918c5992c92e023f"
+	"36cfeed196974e73bf89ce772861417f" [label="VariableDeclarator,
+left -> n,
+right -> this.priceTotal" color=blue]
+	"050c1bea8fca49c2aa47a77d07f78055" -> "36cfeed196974e73bf89ce772861417f"
+	"203733fe2c10464d8b026f8d975b4008" [label="VariableDeclarator,
+left -> h,
+right -> this.nowSum" color=blue]
+	"050c1bea8fca49c2aa47a77d07f78055" -> "203733fe2c10464d8b026f8d975b4008"
+	a8d5d21fa58b4e47bc5dea0ad75e773a [label="VariableDeclarator,
+left -> c,
+right -> this.getNowShopCar" color=blue]
+	"050c1bea8fca49c2aa47a77d07f78055" -> a8d5d21fa58b4e47bc5dea0ad75e773a
+	"30d273c2f31a4f06ab6a3fae45f35425" -> "050c1bea8fca49c2aa47a77d07f78055"
+	"0432a88c544e472d8d00dd48b2ec642c" [label=SequenceExpression color=blue]
+	"388d9b6a85f6467995083f1f37500b79" [label="CallExpression,
+callee name -> this.isEmptyCar,
+param -> c,
+" color=blue]
+	"0432a88c544e472d8d00dd48b2ec642c" -> "388d9b6a85f6467995083f1f37500b79"
+	"7569db9f674541a5a11beb3db5f7d229" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"0f59396826f74ada853f5d97180a5487" [label=SequenceExpression color=blue]
+	"3713c86ab27f4634a130d259f5404fde" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	c9ba77a2f1624903bf2cec73f7d517c1 [label="Object Properties
+{
+sumPrice -> n
+nowShopCar -> c
+}" color=blue]
+	"3713c86ab27f4634a130d259f5404fde" -> c9ba77a2f1624903bf2cec73f7d517c1
+	"0f59396826f74ada853f5d97180a5487" -> "3713c86ab27f4634a130d259f5404fde"
+	e793416078b745dcbb7e3403b72cc856 [label="CallExpression,
+callee name -> o,
+param -> h,
+" color=blue]
+	"0f59396826f74ada853f5d97180a5487" -> e793416078b745dcbb7e3403b72cc856
+	"34e2630df1b248369df03157497d9bd6" [label="CallExpression,
+callee name -> o,
+param -> d,
+" color=blue]
+	"0f59396826f74ada853f5d97180a5487" -> "34e2630df1b248369df03157497d9bd6"
+	"7569db9f674541a5a11beb3db5f7d229" -> "0f59396826f74ada853f5d97180a5487"
+	"0432a88c544e472d8d00dd48b2ec642c" -> "7569db9f674541a5a11beb3db5f7d229"
+	"30d273c2f31a4f06ab6a3fae45f35425" -> "0432a88c544e472d8d00dd48b2ec642c"
+	"4a9883e00e014ba9bdc7a985f2e7b290" -> "30d273c2f31a4f06ab6a3fae45f35425"
+}

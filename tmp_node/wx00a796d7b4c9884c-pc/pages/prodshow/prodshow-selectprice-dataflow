@@ -1,0 +1,23 @@
+// \pages/prodshow/prodshow selectprice Data Flow
+digraph {
+	eb3d2c7eb59d416694b846f57c03cddb [label="FunctionCall,
+function name -> selectprice,
+param -> " color=blue]
+	"0c841057c21045c7be4fd93acdd12d4a" [label=SequenceExpression color=blue]
+	e90bcc904ea7462dbb5cebbd70e2acd9 [label="CallExpression,
+callee name -> console.log,
+param -> a.data.selectedId,
+" color=blue]
+	"0c841057c21045c7be4fd93acdd12d4a" -> e90bcc904ea7462dbb5cebbd70e2acd9
+	"98a5525eb89e47a08c4b67083f79fa5d" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"06ee0ac8b6334e909a912f33bbb35e13" [label="Object Properties
+{
+id -> a.data.goods.id
+norm -> a.data.mergeId
+}" color=blue]
+	"98a5525eb89e47a08c4b67083f79fa5d" -> "06ee0ac8b6334e909a912f33bbb35e13"
+	"0c841057c21045c7be4fd93acdd12d4a" -> "98a5525eb89e47a08c4b67083f79fa5d"
+	eb3d2c7eb59d416694b846f57c03cddb -> "0c841057c21045c7be4fd93acdd12d4a"
+}

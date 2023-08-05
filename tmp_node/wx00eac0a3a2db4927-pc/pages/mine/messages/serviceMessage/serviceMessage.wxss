@@ -1,0 +1,130 @@
+page {
+    background: #f4f4f4;
+}
+
+.headline {
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 24rpx;
+    background: #fff;
+    width: 682rpx;
+    height: 124rpx;
+    margin-left: 34rpx;
+    margin-top: 30rpx;
+    margin-bottom: 20rpx;
+}
+
+.pro_info {
+    margin-left: 24rpx;
+    align-items: center;
+    justify-content: center;
+}
+
+.pro_img {
+    margin-right: 20rpx;
+    width: 64rpx;
+    height: 64rpx;
+    border-radius: 32rpx;
+}
+
+.pro_status {
+    font-size: 33rpx;
+    color: #51515c;
+}
+
+.service {
+    margin-right: 26rpx;
+    align-items: center;
+    justify-content: center;
+}
+
+.hr {
+    width: 1px;
+    height: 64rpx;
+    border-radius: 24rpx;
+    background: #ccc;
+    margin-right: 18rpx;
+}
+
+.contact {
+    align-items: center;
+    justify-content: center;
+}
+
+.contact_img {
+    width: 83rpx;
+    height: 83rpx;
+}
+
+.serviceContent {
+    width: 682rpx;
+    background: #fff;
+    border-radius: 24rpx;
+    margin-left: 34rpx;
+    margin-top: 30rpx;
+    margin-bottom: 40rpx;
+}
+
+.service_info {
+    width: 682rpx;
+}
+
+.service_time {
+    width: 132rpx;
+    margin: 30rpx 10rpx 26rpx 24rpx;
+}
+
+.service_place {
+    margin-top: 30rpx;
+    margin-bottom: 56rpx;
+    position: relative;
+}
+
+.date {
+    font-size: 22rpx;
+    color: #666666;
+}
+
+.service_status {
+    font-size: 24rpx;
+    color: #666666;
+    margin-left: 10rpx;
+    padding-right: 24rpx;
+}
+
+.time {
+    font-size: 22rpx;
+    color: #999999;
+    margin-top: 13rpx;
+}
+
+.service_hr {
+    border-left: 1px dashed #ccc;
+    margin: 0rpx 27rpx;
+}
+
+.dot {
+    position: absolute;
+    left: -30rpx;
+    top: 0;
+    width: 10rpx;
+    height: 10rpx;
+    border-radius: 6rpx;
+    background: #999;
+}
+
+.recommend {
+    background: #fff;
+    width: 100%;
+}
+
+.commendTitle {
+    width: 90%;
+    margin-left: 4%;
+    text-align: center;
+    display: inline-block;
+    margin-top: 51rpx;
+    font-size: 42rpx;
+    font-weight: bold;
+    color: #51515c;
+}

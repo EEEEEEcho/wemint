@@ -1,0 +1,17 @@
+// \pages/user/shippingAddress/addAddress/addAddress bindTelInput Data Flow
+digraph {
+	"770d20ff27f44e34a0b6f1934cea3665" [label="FunctionCall,
+function name -> bindTelInput,
+param -> a,
+a.,
+" color=blue]
+	bafeb552759447f590d9d7b4b1174755 [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	a65b6c4fc24a436aa33dbe7fff7a074f [label="Object Properties
+{
+telphone -> a.detail.value
+}" color=blue]
+	bafeb552759447f590d9d7b4b1174755 -> a65b6c4fc24a436aa33dbe7fff7a074f
+	"770d20ff27f44e34a0b6f1934cea3665" -> bafeb552759447f590d9d7b4b1174755
+}

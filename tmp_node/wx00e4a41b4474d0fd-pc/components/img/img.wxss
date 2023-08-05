@@ -1,0 +1,72 @@
+.self {
+    width: 100%;
+    height: 100%;
+}
+
+.loading {
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.containView {
+    position: relative;
+}
+
+.containView .error {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.myload {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    color: rgb(235,237,239);
+    font-size: 24rpx;
+}
+
+.myload .spinner {
+    display: inline-block;
+    width: 30rpx;
+    height: 30rpx;
+    background-color: white;
+    animation: rotateplane 1.5s infinite ease-in-out;
+}
+
+@-webkit-keyframes rotateplane {
+    0% {
+        -webkit-transform: perspective(30rpx);
+    }
+
+    50% {
+        -webkit-transform: perspective(30rpx) rotateY(180deg);
+    }
+
+    100% {
+        -webkit-transform: perspective(30rpx) rotateY(180deg) rotateX(180deg);
+    }
+}
+
+@keyframes rotateplane {
+    0% {
+        transform: perspective(30rpx) rotateX(0deg) rotateY(0deg);
+    }
+
+    50% {
+        transform: perspective(30rpx) rotateX(-180.1deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: perspective(30rpx) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}

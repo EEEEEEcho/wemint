@@ -1,0 +1,21 @@
+// \pages/search/search removeKeyWord Data Flow
+digraph {
+	"61674a8d89c34c3fb68a65197d2b7408" [label="FunctionCall,
+function name -> removeKeyWord,
+param -> e,
+e.,
+" color=blue]
+	"43ed21c453b6421bb1e0b8fe8be85824" [label=VariableDeclarations color=blue]
+	"96e226a375c946bab469ba92f872a31a" [label="VariableDeclarator,
+left -> keyword,
+right -> e.currentTarget.dataset.keyword" color=blue]
+	"43ed21c453b6421bb1e0b8fe8be85824" -> "96e226a375c946bab469ba92f872a31a"
+	"61674a8d89c34c3fb68a65197d2b7408" -> "43ed21c453b6421bb1e0b8fe8be85824"
+	b8c1422347c0408da284ddbc13465656 [label="If Alternate" color=blue]
+	"3369dc40edaf4f20a2b71f79f8981388" [label="CallExpression,
+callee name -> this.removeByValue,
+param -> keyword,
+" color=blue]
+	b8c1422347c0408da284ddbc13465656 -> "3369dc40edaf4f20a2b71f79f8981388"
+	"61674a8d89c34c3fb68a65197d2b7408" -> b8c1422347c0408da284ddbc13465656
+}

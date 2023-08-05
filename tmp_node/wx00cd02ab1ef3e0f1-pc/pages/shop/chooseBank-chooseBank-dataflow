@@ -1,0 +1,22 @@
+// \pages/shop/chooseBank chooseBank Data Flow
+digraph {
+	bb8a33e55b684685be574f77cd6541d4 [label="FunctionCall,
+function name -> chooseBank,
+param -> a.,
+a,
+" color=blue]
+	bef2c4bc236e4fafafffd87aac259dcd [label="CallExpression,
+callee name -> console.log,
+param -> a,
+" color=blue]
+	bb8a33e55b684685be574f77cd6541d4 -> bef2c4bc236e4fafafffd87aac259dcd
+	"854b59781e2c45d7a02aae989d2217bc" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"2206364ebae64af8b9ce019cada7542e" [label="Object Properties
+{
+chooseWay -> a.currentTarget.dataset.idx
+}" color=blue]
+	"854b59781e2c45d7a02aae989d2217bc" -> "2206364ebae64af8b9ce019cada7542e"
+	bb8a33e55b684685be574f77cd6541d4 -> "854b59781e2c45d7a02aae989d2217bc"
+}

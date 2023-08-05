@@ -1,0 +1,17 @@
+// \pages/teacher/parentCircle/parentCircle addContent Data Flow
+digraph {
+	c2c10e2ee6a942baa6ca876f3a53bb60 [label="FunctionCall,
+function name -> addContent,
+param -> t,
+t.,
+" color=blue]
+	c8a8a322bf1b476bbc347921b183d4ba [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"3483d69e26374a12b48b2ef1f4b58f9d" [label="Object Properties
+{
+content -> t.detail.value
+}" color=blue]
+	c8a8a322bf1b476bbc347921b183d4ba -> "3483d69e26374a12b48b2ef1f4b58f9d"
+	c2c10e2ee6a942baa6ca876f3a53bb60 -> c8a8a322bf1b476bbc347921b183d4ba
+}

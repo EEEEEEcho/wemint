@@ -1,0 +1,19 @@
+<view bindtap="detail" class="goods-list" data-id="{{item.id}}" wx:for="{{list}}" wx:key="k1">
+    <view class="goods-list-item">
+        <view class="k40"></view>
+        <view class="goods-list-item-l">
+            <image class="img" mode="aspectfill" src="{{path}}{{item.img}}"></image>
+        </view>
+        <view class="goods-list-item-r">
+            <view class="goods-name">{{item.title}}</view>
+            <view class="goods-desc" wx:if="{{item.ticket_status==0}}">{{item.date}}上架/售罄</view>
+            <view class="goods-desc" wx:if="{{item.ticket_status==1}}">{{item.date}}上架/在售</view>
+            <view class="goods-desc" wx:if="{{item.ticket_status==2}}">{{item.date}}上架/交易中</view>
+            <view class="goods-price">
+                <view class="goods-price-l">{{item.price}}万</view>
+                <view class="goods-price-r">已有{{item.yuyueshu}}人预约</view>
+            </view>
+        </view>
+        <view class="k40"></view>
+    </view>
+</view>

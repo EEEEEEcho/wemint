@@ -1,0 +1,20 @@
+// \pages/company/businessCard/cardDetails addComment Data Flow
+digraph {
+	"3f783146b1ee467186a60085aba71977" [label="FunctionCall,
+function name -> addComment,
+param -> " color=blue]
+	a5c58fa9fc1545329f84a3060473e82c [label=VariableDeclarations color=blue]
+	c90ecb8ccacc47f3abd62fcd473ab180 [label="VariableDeclarator,
+left -> s,
+right -> e.data.articleID" color=blue]
+	a5c58fa9fc1545329f84a3060473e82c -> c90ecb8ccacc47f3abd62fcd473ab180
+	c661e99026904942a134aec6982e8ce1 [label="VariableDeclarator,
+left -> i,
+right -> e.data.currentIndex" color=blue]
+	a5c58fa9fc1545329f84a3060473e82c -> c661e99026904942a134aec6982e8ce1
+	"530f676d3beb438f8000bd25f0b242b6" [label="VariableDeclarator,
+left -> n,
+right -> e.data.dynamicList" color=blue]
+	a5c58fa9fc1545329f84a3060473e82c -> "530f676d3beb438f8000bd25f0b242b6"
+	"3f783146b1ee467186a60085aba71977" -> a5c58fa9fc1545329f84a3060473e82c
+}

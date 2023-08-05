@@ -1,0 +1,45 @@
+<view catchtouchmove="preventTouchMove" class="goodSkus flexColumn {{options?'showMask':'hideMask'}}" wx:if="{{isShow}}">
+    <view class="skusLayout {{options?'open':'close'}}" wx:if="{{isShow}}">
+        <view class="bottomLayout flexColumn">
+            <view class="shadowLayout"></view>
+            <view class="contentLayout flexColumn">
+                <view class="priceLayout flexColumn">
+                    <text class="salePrice">¥ {{popupPrice/100}}</text>
+                    <text class="standard">{{standard}}</text>
+                </view>
+                <view class="lineStyle" style="margin-top: 56rpx;margin-bottom: 28rpx;"></view>
+                <scroll-view scrollY style="min-height: 100rpx;max-height: 460rpx;">
+                    <view class="firstLevel flexColumn" wx:for="{{showSkus}}" wx:for-index="i" wx:for-item="skusItem">
+                        <text class="titleLabel">{{skusItem.title}}</text>
+                        <view class="skusContent flexRow">
+                            <view class="skusItem flexRow" wx:for="{{skusItem.properties}}" wx:for-index="j" wx:for-item="param">
+                                <view bindtap="onSelectItem" class="flexRow {{param.selectItem?'skusSelect':'skusNormal'}}" data-i="{{i}}" data-j="{{j}}" wx:if="{{param.isClick}}">
+                                    <image class="skusImage" src="{{param.icon!=null&&param.icon!=''?param.icon:param.img}}" wx:if="{{param.img!=null&&param.img!=''||param.icon!=null&&param.icon!=''}}"></image>
+                                    <text class="skusText">{{param.value}}</text>
+                                </view>
+                                <view class="skusBlock flexRow" wx:if="{{!param.isClick}}">
+                                    <image class="skusImage" src="{{param.icon!=null&&param.icon!=''?param.icon:param.img}}" wx:if="{{param.img!=null&&param.img!=''||param.icon!=null&&param.icon!=''}}"></image>
+                                    <text class="skusText">{{param.value}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+                <view class="lineStyle" wx:if="{{!isFree}}"></view>
+                <view class="quantityLayout flexRow" wx:if="{{!isFree}}">
+                    <text class="number">数量</text>
+                    <view class="addSubtract flexRow">
+                        <image bindtap="onMinus" class="minus" mode="aspectFit" src="http://oss.shangmian.xin/weixin_applets_good_detail_minus.png"></image>
+                        <text class="digital">{{goodNum}}</text>
+                        <image bindtap="onPlus" class="plus" mode="aspectFit" src="http://oss.shangmian.xin/weixin_applets_good_detail_add.png"></image>
+                    </view>
+                </view>
+                <view catchtap="onSure" class="sureSubmit {{isIphoneX?'isIPX':''}}" style="background: {{selectOnly==-1?'#aeaeb4':'#ed7b43'}}">{{isCart?'加入购物车':goodsInfo.payType==2&&!isFree?'定金购买':'立即购买'}}</view>
+            </view>
+            <image class="goodImage" lazyLoad="true" mode="aspectFill" src="{{goodImage}}"></image>
+            <view bindtap="onClose" class="closeImageLayout">
+                <image class="closeImage" src="http://oss.shangmian.xin/weixin_applets_icon_close.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

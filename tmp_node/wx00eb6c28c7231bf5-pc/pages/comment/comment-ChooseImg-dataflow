@@ -1,0 +1,56 @@
+// \pages/comment/comment ChooseImg Data Flow
+digraph {
+	"539234c09dad4a0aacca68dcbcb49699" [label="FunctionCall,
+function name -> ChooseImg,
+param -> e,
+e.,
+" color=blue]
+	"71bbde57de5443398b3910abb9f836fd" [label=VariableDeclarations color=blue]
+	"72763bac351b459092f2e223d15a3070" [label="VariableDeclarator,
+left -> t,
+right -> a.data.UserCredentials" color=blue]
+	"71bbde57de5443398b3910abb9f836fd" -> "72763bac351b459092f2e223d15a3070"
+	bfab60983f3949508e0215b805467258 [label="VariableDeclarator,
+left -> r,
+right -> e.currentTarget.dataset.index" color=blue]
+	"71bbde57de5443398b3910abb9f836fd" -> bfab60983f3949508e0215b805467258
+	"98b63194c50b4a1c9fd9924ae7867f5c" [label="VariableDeclarator,
+left -> s,
+right -> e.currentTarget.dataset.coloum" color=blue]
+	"71bbde57de5443398b3910abb9f836fd" -> "98b63194c50b4a1c9fd9924ae7867f5c"
+	"539234c09dad4a0aacca68dcbcb49699" -> "71bbde57de5443398b3910abb9f836fd"
+	cfd1fbb37bb5439da71715abaa3dfbb4 [label="CallExpression,
+callee name -> wx.chooseImage,
+param -> " color=blue]
+	"6fc9cd728e88480a9aee94b358c44d54" [label="FunctionCall,
+function name -> success,
+param -> e,
+e.,
+" color=blue]
+	da6f34204f2348598d8bd79ae9d3b041 [label=VariableDeclarations color=blue]
+	a1a84398e4884669b196ad44ab491b44 [label="VariableDeclarator,
+left -> n,
+right -> e.tempFilePaths[0]" color=blue]
+	da6f34204f2348598d8bd79ae9d3b041 -> a1a84398e4884669b196ad44ab491b44
+	"6fc9cd728e88480a9aee94b358c44d54" -> da6f34204f2348598d8bd79ae9d3b041
+	"30b60f7adb70465f8d607edc48a99725" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"5ee8dfc5dcfc429a8e09660f55835c0c" [label="Assignment,
+left -> t[r].img1,
+right -> n" color=blue]
+	"30b60f7adb70465f8d607edc48a99725" -> "5ee8dfc5dcfc429a8e09660f55835c0c"
+	"8eec6d2b230549db8dbb70c3cc11b5b0" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	e29809b3e8254616bbfff51b30203d45 [label="Assignment,
+left -> t[r].img2,
+right -> n" color=blue]
+	"8eec6d2b230549db8dbb70c3cc11b5b0" -> e29809b3e8254616bbfff51b30203d45
+	a5c5bee164ba45b8bd8c3b54806f6c50 [label="Assignment,
+left -> t[r].img3,
+right -> n" color=blue]
+	"8eec6d2b230549db8dbb70c3cc11b5b0" -> a5c5bee164ba45b8bd8c3b54806f6c50
+	"30b60f7adb70465f8d607edc48a99725" -> "8eec6d2b230549db8dbb70c3cc11b5b0"
+	"6fc9cd728e88480a9aee94b358c44d54" -> "30b60f7adb70465f8d607edc48a99725"
+	cfd1fbb37bb5439da71715abaa3dfbb4 -> "6fc9cd728e88480a9aee94b358c44d54"
+	"539234c09dad4a0aacca68dcbcb49699" -> cfd1fbb37bb5439da71715abaa3dfbb4
+}

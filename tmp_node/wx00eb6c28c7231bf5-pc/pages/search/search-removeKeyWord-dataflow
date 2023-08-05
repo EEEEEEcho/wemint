@@ -1,0 +1,25 @@
+// \pages/search/search removeKeyWord Data Flow
+digraph {
+	eb409a4e9768441f830ed0ef085a6de2 [label="FunctionCall,
+function name -> removeKeyWord,
+param -> e,
+e.,
+" color=blue]
+	"0ece0cbe51854f51adbb72dacf9e6a1a" [label=VariableDeclarations color=blue]
+	aa72f948333344328d957c363a4c2147 [label="VariableDeclarator,
+left -> t,
+right -> e.currentTarget.dataset.keyword" color=blue]
+	"0ece0cbe51854f51adbb72dacf9e6a1a" -> aa72f948333344328d957c363a4c2147
+	eb409a4e9768441f830ed0ef085a6de2 -> "0ece0cbe51854f51adbb72dacf9e6a1a"
+	"33861c21a0dc4041a40c5a1718093c42" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"33e758657e3c41a7b6407492593f0e19" [label=SequenceExpression color=blue]
+	a52545b959f14e95a8bb90cb89619921 [label="CallExpression,
+callee name -> this.removeByValue,
+param -> t,
+" color=blue]
+	"33e758657e3c41a7b6407492593f0e19" -> a52545b959f14e95a8bb90cb89619921
+	"33861c21a0dc4041a40c5a1718093c42" -> "33e758657e3c41a7b6407492593f0e19"
+	eb409a4e9768441f830ed0ef085a6de2 -> "33861c21a0dc4041a40c5a1718093c42"
+}

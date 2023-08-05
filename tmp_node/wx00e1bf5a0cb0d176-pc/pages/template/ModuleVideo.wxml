@@ -1,0 +1,35 @@
+<template name="ModuleVideo">
+    <view class="layout-101">
+        <view wx:if="{{m.WxappShow}}">
+            <view style="position:relative;{{extendMethod.calHeight(m.Proportion,globaldata.sysInfo.windowWidth)}};">
+                <view class="video-img1" style="background-image:url(\"{{globaldata.appGlobalData.siteBaseUrl}}{{m.VideoImg}}\");background-color:darkgrey">
+                    <view wx:if="{{m.VideoText!=''}}">
+                        <view style="background-color:rgba(0,0,0,0.3);height:40px;z-index:50;line-height:29px">
+                            <p style="font-family:\"SimSun\";position:absolute;left:0%;top:0%;padding-left:10px;padding-top:5px;font-size:14px;color:#ffffff;width:96%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">{{m.VideoText}}</p>
+                        </view>
+                    </view>
+                    <i bindtap="ImgchangeVideo" class="m-iconfont m-icon-bofang" data-ModuleID="{{m.ModuleID}}" style="z-index:99999;position:absolute;top:42%;left:44%;color:#ffffff;font-size:42px;"></i>
+                </view>
+            </view>
+        </view>
+        <view wx:else>
+            <video autoplay="autoplay" bindpause="showtext" bindplay="hidetext" controls="controls" src="{{m.Video}}" style="{{extendMethod.calHeight(m.Proportion,globaldata.sysInfo.windowWidth)}};width:100%;"></video>
+        </view>
+    </view>
+</template>
+<wxs module="extendMethod">
+var calHeight = (function(Proportion, width) {
+    if (Proportion == '4:3') {
+        return ("height:" + (width * (0.75)) + "px")
+    } else if (Proportion == '16:10') {
+        return ("height:" + (width * (0.625)) + "px")
+    } else if (Proportion == '16:9') {
+        return ("height:" + (width * (0.5625)) + "px")
+    } else {
+        return ("height:209px")
+    }
+});
+module.exports = ({
+    calHeight: calHeight,
+});
+</wxs>

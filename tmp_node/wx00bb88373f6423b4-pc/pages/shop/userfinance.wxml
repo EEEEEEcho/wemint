@@ -1,0 +1,30 @@
+<view class="container">
+    <view style="display:none;"></view>
+    <view class="finance-img" style="display:none;">
+        <image mode="widthFix" src="{{baseUrl}}/images/wxapp/blank_21.png"></image>
+        <text style="font-size:24rpx;color:#999">暂无任何记录</text>
+    </view>
+    <scroll-view scrollY="true">
+        <view class="finance-box" wx:for="{{FinanceList}}" wx:key="*this">
+            <view class="yearMonth">
+                <text>{{item.time}}</text>
+            </view>
+            <view class="finance-content border1px" wx:for="{{item.list}}" wx:for-item="list" wx:key="*this">
+                <view class="con-left">
+                    <view class="leftTop">
+                        <text>{{list.About}}</text>
+                    </view>
+                    <view class="leftBottom">
+                        <text class="date">{{list.date}}</text>
+                        <text class="time">{{list.time}}</text>
+                    </view>
+                </view>
+                <view class="con-right">
+                    <text>{{list.Money>0?'+':''}}{{list.Money}}</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<import src="/pages/footnav.wxml"></import>
+<template is="footnav" data="{{pageurl:pageurl,shopcart:shopcart}}"></template>

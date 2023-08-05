@@ -1,0 +1,97 @@
+@import "../../wxParse/wxParse.wxss";
+
+.weui-media-box__thumb {
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.mymedia {
+    -webkit-box-align: start;
+    align-items: flex-start;
+}
+
+.mymedia .weui-media-box__hd {
+    width: 150rpx;
+    height: 150rpx;
+    margin-right: 20rpx;
+}
+
+.weui-badge {
+    border-radius: 3px;
+    padding: 1px 2px;
+}
+
+.weui-textarea {
+    border: 1px solid #eee;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.yhzbox {
+    background-color: #fbfbfb;
+    padding: 10px;
+    position: relative;
+    border-radius: 5px;
+    margin-top: -0.8rem;
+}
+
+.yhzbox:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 15px;
+    bottom: 100%;
+    border-width: 8px;
+    border-style: dotted;
+    border-color: transparent transparent #fbfbfb transparent;
+}
+
+.yhzbox .badge {
+    border: 1px solid #f29b76;
+    color: #f29b76;
+    border-radius: 2px;
+    padding: 0 4px;
+}
+
+.mymedia:before {
+    display: none;
+}
+
+.weui-media-box__bd {
+    -webkit-box-flex: 1;
+    flex: 1;
+    min-width: 0;
+    padding-right: 20rpx;
+}
+
+.weui-cell_link {
+    color: #333;
+}
+
+.bigprice {
+    font-weight: bold;
+}
+
+.text-gray {
+    color: #898989;
+}
+
+.goods-title {
+    line-height: 1.4em;
+    overflow: hidden;
+    margin-bottom: 20rpx;
+}
+
+.weui-media-box__ft {
+    position: relative;
+    top: -4rpx;
+}
+
+.zytext {
+    color: #333;
+}
+
+.mr10 {
+    margin-right: 10rpx;
+}

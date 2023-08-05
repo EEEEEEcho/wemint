@@ -1,0 +1,29 @@
+// \pages/houseDIY/houseDIY like Data Flow
+digraph {
+	a2918644331844519e9dc38479b33bfa [label="FunctionCall,
+function name -> like,
+param -> e,
+e.,
+" color=blue]
+	b7d72fe4c96f47d7be940c489314a404 [label=SequenceExpression color=blue]
+	"10c63e53782d4d81b47f48fc97305fc5" [label="CallExpression,
+callee name -> console.log,
+param -> e.currentTarget.dataset.index,
+" color=blue]
+	b7d72fe4c96f47d7be940c489314a404 -> "10c63e53782d4d81b47f48fc97305fc5"
+	"72e485f1daf5413295bc5d4c2a54e8f7" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"0e9e59ad3df546928fe7fb363b9a22f7" [label="Object Properties
+{
+currentShareIndex -> e.currentTarget.dataset.index
+}" color=blue]
+	"72e485f1daf5413295bc5d4c2a54e8f7" -> "0e9e59ad3df546928fe7fb363b9a22f7"
+	b7d72fe4c96f47d7be940c489314a404 -> "72e485f1daf5413295bc5d4c2a54e8f7"
+	"1598ceee2c1e4c6c9a503f6ff8ffd200" [label="CallExpression,
+callee name -> this.likeImage,
+param -> this.data.currentShareIndex,
+" color=blue]
+	b7d72fe4c96f47d7be940c489314a404 -> "1598ceee2c1e4c6c9a503f6ff8ffd200"
+	a2918644331844519e9dc38479b33bfa -> b7d72fe4c96f47d7be940c489314a404
+}

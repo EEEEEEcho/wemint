@@ -1,0 +1,46 @@
+// \pages/map/map selectedClick Data Flow
+digraph {
+	b4c4e4bcd6914c3d8958ce34b24d23bc [label="FunctionCall,
+function name -> selectedClick,
+param -> " color=blue]
+	ec12655a6b824289bc3db6a5053076a1 [label="CallExpression,
+callee name -> wx.getSetting,
+param -> " color=blue]
+	"3a9fc131f9ea41aaa0ef017fbbb94ca4" [label="FunctionCall,
+function name -> success,
+param -> " color=blue]
+	da739ac5b5034c82a3626e39e1d894f3 [label=SequenceExpression color=blue]
+	c9ad7c532f5a4371803d8f06f397277c [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"8072fc858cca4968a345795bccc43384" [label="CallExpression,
+callee name -> wx.getLocation,
+param -> " color=blue]
+	"432054c7b8f84649b9e686b925e75b1a" [label="FunctionCall,
+function name -> success,
+param -> t.,
+t,
+" color=blue]
+	bedca6675c744bfd989ec923a5a0f2ad [label=SequenceExpression color=blue]
+	c1c5d0f95ae04ccca7fc6013c094d6a2 [label="CallExpression,
+callee name -> console.log,
+param -> t,
+" color=blue]
+	bedca6675c744bfd989ec923a5a0f2ad -> c1c5d0f95ae04ccca7fc6013c094d6a2
+	"7ab193ccb4274050b168551133eda2f4" [label="CallExpression,
+callee name -> wx.getStorage,
+param -> " color=blue]
+	"5b31149c3fba4a7fbdc585ce10929a88" [label="FunctionCall,
+function name -> success,
+param -> t,
+" color=blue]
+	"7ab193ccb4274050b168551133eda2f4" -> "5b31149c3fba4a7fbdc585ce10929a88"
+	bedca6675c744bfd989ec923a5a0f2ad -> "7ab193ccb4274050b168551133eda2f4"
+	"432054c7b8f84649b9e686b925e75b1a" -> bedca6675c744bfd989ec923a5a0f2ad
+	"8072fc858cca4968a345795bccc43384" -> "432054c7b8f84649b9e686b925e75b1a"
+	c9ad7c532f5a4371803d8f06f397277c -> "8072fc858cca4968a345795bccc43384"
+	da739ac5b5034c82a3626e39e1d894f3 -> c9ad7c532f5a4371803d8f06f397277c
+	"3a9fc131f9ea41aaa0ef017fbbb94ca4" -> da739ac5b5034c82a3626e39e1d894f3
+	ec12655a6b824289bc3db6a5053076a1 -> "3a9fc131f9ea41aaa0ef017fbbb94ca4"
+	b4c4e4bcd6914c3d8958ce34b24d23bc -> ec12655a6b824289bc3db6a5053076a1
+}

@@ -1,0 +1,37 @@
+// \pages/search/search gotoSearch Data Flow
+digraph {
+	fc28775d0e2644169bfa25e12ee94cdc [label="FunctionCall,
+function name -> gotoSearch,
+param -> " color=blue]
+	bcd3e77b6b094ec9bd3e820f27c963c5 [label="If Alternate" color=blue]
+	d278269f63054dcdac662868f94204af [label=VariableDeclarations color=blue]
+	e6aa3ba3485f4a95a156c73996ddc872 [label="VariableDeclarator,
+left -> a,
+right -> t.data.GoToUrl + '?keyword=' + e" color=blue]
+	d278269f63054dcdac662868f94204af -> e6aa3ba3485f4a95a156c73996ddc872
+	bcd3e77b6b094ec9bd3e820f27c963c5 -> d278269f63054dcdac662868f94204af
+	"9487b038b0c546129ed83011132b1d1b" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	b5e363460765489e839bcf8a0f8901d0 [label=SequenceExpression color=blue]
+	"0ba6fa3f6b9646f5b7f2cb33fe01a261" [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	fe95f0c9922d41c5995043b2912ff6b9 [label="Object Properties
+{
+url -> a
+}" color=blue]
+	"0ba6fa3f6b9646f5b7f2cb33fe01a261" -> fe95f0c9922d41c5995043b2912ff6b9
+	b5e363460765489e839bcf8a0f8901d0 -> "0ba6fa3f6b9646f5b7f2cb33fe01a261"
+	"9487b038b0c546129ed83011132b1d1b" -> b5e363460765489e839bcf8a0f8901d0
+	"969f0e5ff1e84014b90eef05a685405d" [label="CallExpression,
+callee name -> wx.switchTab,
+param -> " color=blue]
+	"2d4a9c1d7291458d9296b6ac07d68896" [label="Object Properties
+{
+url -> a
+}" color=blue]
+	"969f0e5ff1e84014b90eef05a685405d" -> "2d4a9c1d7291458d9296b6ac07d68896"
+	"9487b038b0c546129ed83011132b1d1b" -> "969f0e5ff1e84014b90eef05a685405d"
+	bcd3e77b6b094ec9bd3e820f27c963c5 -> "9487b038b0c546129ed83011132b1d1b"
+	fc28775d0e2644169bfa25e12ee94cdc -> bcd3e77b6b094ec9bd3e820f27c963c5
+}

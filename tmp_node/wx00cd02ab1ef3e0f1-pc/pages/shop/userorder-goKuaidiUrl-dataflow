@@ -1,0 +1,27 @@
+// \pages/shop/userorder goKuaidiUrl Data Flow
+digraph {
+	ee71050f7d9a4f17bdf93de8c3e6bfda [label="FunctionCall,
+function name -> goKuaidiUrl,
+param -> t,
+t.,
+" color=blue]
+	"3adc6cdf9fd04412a1413fe1698e22c3" [label=VariableDeclarations color=blue]
+	d879c39228424f0db35c5ba22318bf21 [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.company" color=blue]
+	"3adc6cdf9fd04412a1413fe1698e22c3" -> d879c39228424f0db35c5ba22318bf21
+	"60dc52f8a7554a518d226921d644ff88" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.postid" color=blue]
+	"3adc6cdf9fd04412a1413fe1698e22c3" -> "60dc52f8a7554a518d226921d644ff88"
+	ee71050f7d9a4f17bdf93de8c3e6bfda -> "3adc6cdf9fd04412a1413fe1698e22c3"
+	d29dab3855244b2db253a6ba9bacc2ac [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"4bd7cc31eed44f3fa757f90875956913" [label="Object Properties
+{
+url -> 'kuaidi100?company=' + a + '&postid=' + e
+}" color=blue]
+	d29dab3855244b2db253a6ba9bacc2ac -> "4bd7cc31eed44f3fa757f90875956913"
+	ee71050f7d9a4f17bdf93de8c3e6bfda -> d29dab3855244b2db253a6ba9bacc2ac
+}

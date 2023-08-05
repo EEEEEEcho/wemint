@@ -1,0 +1,48 @@
+// \pages/purchaselimit/purchaselimit/index onReachBottom Data Flow
+digraph {
+	"73f2df1f74314a5f9ef7d7636bdb51b7" [label="FunctionCall,
+function name -> onReachBottom,
+param -> " color=blue]
+	aae93700468a4ba09b7f40621c3a538b [label="CallExpression,
+callee name -> this.moreSecKillPro,
+param -> " color=blue]
+	"5b1ae00669c54f77be829ce5cf7fbaab" [label="FunctionCall,
+function name -> moreSecKillPro,
+param -> " color=blue]
+	"3df667be2c3a4c59ab7b4d316f315cc4" [label=VariableDeclarations color=blue]
+	"4e8b48d719c540f79bb72415a36ddb77" [label="VariableDeclarator,
+left -> e,
+right -> a.data.productListByCate.id" color=blue]
+	"3df667be2c3a4c59ab7b4d316f315cc4" -> "4e8b48d719c540f79bb72415a36ddb77"
+	c165f354dcd64e85be7f5122c25f734a [label="VariableDeclarator,
+left -> r,
+right -> a.data.reload" color=blue]
+	"3df667be2c3a4c59ab7b4d316f315cc4" -> c165f354dcd64e85be7f5122c25f734a
+	d4cd0a5fac29436ba674dfbe2bf27989 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	d2632490dc4d419fb3fd9ff562d05d8c [label="CallExpression,
+callee name -> Math.ceil,
+param -> a.data.productListByCate.data.length / 20,
+" color=blue]
+	d4cd0a5fac29436ba674dfbe2bf27989 -> d2632490dc4d419fb3fd9ff562d05d8c
+	"3df667be2c3a4c59ab7b4d316f315cc4" -> d4cd0a5fac29436ba674dfbe2bf27989
+	"5b1ae00669c54f77be829ce5cf7fbaab" -> "3df667be2c3a4c59ab7b4d316f315cc4"
+	"3c87315c384845fea8ca87f8970e3c4c" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	a13a5c3849854e92bad366709b8e9ad6 [label=SequenceExpression color=blue]
+	"2e947af1cd244d578d9f5c3a8c4c3fc1" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	ff2a3dccaffd48e2a3f095d1e030df28 [label="Object Properties
+{
+url -> '/index.php?c=front/WxApp/SecKill&a=getProductsList&activeId=' + e + '&page=' + s
+}" color=blue]
+	"2e947af1cd244d578d9f5c3a8c4c3fc1" -> ff2a3dccaffd48e2a3f095d1e030df28
+	a13a5c3849854e92bad366709b8e9ad6 -> "2e947af1cd244d578d9f5c3a8c4c3fc1"
+	"3c87315c384845fea8ca87f8970e3c4c" -> a13a5c3849854e92bad366709b8e9ad6
+	"5b1ae00669c54f77be829ce5cf7fbaab" -> "3c87315c384845fea8ca87f8970e3c4c"
+	aae93700468a4ba09b7f40621c3a538b -> "5b1ae00669c54f77be829ce5cf7fbaab"
+	"73f2df1f74314a5f9ef7d7636bdb51b7" -> aae93700468a4ba09b7f40621c3a538b
+}

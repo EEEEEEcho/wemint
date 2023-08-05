@@ -1,0 +1,11 @@
+// \pages/teacher/layoutDetail/detail wxSerchFocus Data Flow
+digraph {
+	abeaf503e36147048b84887fef460fe7 [label="FunctionCall,
+function name -> wxSerchFocus,
+param -> " color=blue]
+	d5f091df5fcb4b9189b8ebb3761ef84e [label="CallExpression,
+callee name -> s.wxSearchFocus,
+param -> a,
+" color=blue]
+	abeaf503e36147048b84887fef460fe7 -> d5f091df5fcb4b9189b8ebb3761ef84e
+}

@@ -1,0 +1,17 @@
+// \pages/index/index itemChange Data Flow
+digraph {
+	"5786715e24644eb488afabce640ca745" [label="FunctionCall,
+function name -> itemChange,
+param -> t.,
+t,
+" color=blue]
+	"82dc86e45a8e42d6b36d7f7660268cac" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"21aba87ad1d54413b0b275d926be4399" [label="Object Properties
+{
+thisItem -> t.detail.current
+}" color=blue]
+	"82dc86e45a8e42d6b36d7f7660268cac" -> "21aba87ad1d54413b0b275d926be4399"
+	"5786715e24644eb488afabce640ca745" -> "82dc86e45a8e42d6b36d7f7660268cac"
+}

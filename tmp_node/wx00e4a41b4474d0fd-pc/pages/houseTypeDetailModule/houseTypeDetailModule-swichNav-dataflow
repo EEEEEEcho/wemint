@@ -1,0 +1,32 @@
+// \pages/houseTypeDetailModule/houseTypeDetailModule swichNav Data Flow
+digraph {
+	"10e9b872b6da432c91d4864a1d3dd0b4" [label="FunctionCall,
+function name -> swichNav,
+param -> e,
+e.,
+" color=blue]
+	"5f4c7218b39e4922a55897cc9c8c34e5" [label=VariableDeclarations color=blue]
+	"3aa0884ed7f64f23aac7602f1b303c7d" [label="VariableDeclarator,
+left -> a,
+right -> e.currentTarget.dataset.current" color=blue]
+	"5f4c7218b39e4922a55897cc9c8c34e5" -> "3aa0884ed7f64f23aac7602f1b303c7d"
+	"1431c1da39f34e919baa6c9c8e9232c5" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"7e4648eb2c6c4b689c1c13dfb5fc8ec6" [label="Object Properties
+{
+tabName -> e.currentTarget.dataset.item
+}" color=blue]
+	"1431c1da39f34e919baa6c9c8e9232c5" -> "7e4648eb2c6c4b689c1c13dfb5fc8ec6"
+	"5f4c7218b39e4922a55897cc9c8c34e5" -> "1431c1da39f34e919baa6c9c8e9232c5"
+	"10e9b872b6da432c91d4864a1d3dd0b4" -> "5f4c7218b39e4922a55897cc9c8c34e5"
+	"5ce1745b3bc342ffb6aff09a256437f4" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"45d1d8d345e14eacad3480648fe7bdea" [label="Object Properties
+{
+currentTab -> a
+}" color=blue]
+	"5ce1745b3bc342ffb6aff09a256437f4" -> "45d1d8d345e14eacad3480648fe7bdea"
+	"10e9b872b6da432c91d4864a1d3dd0b4" -> "5ce1745b3bc342ffb6aff09a256437f4"
+}

@@ -1,0 +1,26 @@
+<view bindtap="detail" class="goods-list" data-id="{{item.cars_id}}" wx:for="{{list}}" wx:key="k1">
+    <view class="goods-list-item">
+        <view class="k40"></view>
+        <view class="goods-list-item-l">
+            <image class="img" mode="aspectfill" src="{{path}}{{item.carsinfo.img}}"></image>
+        </view>
+        <view class="goods-list-item-r">
+            <view class="goods-name">{{item.carsinfo.title}}</view>
+            <view class="goods-desc">预约账号: {{item.hidephone}}</view>
+            <view class="goods-price">
+                <view class="goods-price-r" wx:if="{{item.status==1}}">目前排在第<text style="color:#f45">{{item.rank}}</text>顺位</view>
+            </view>
+        </view>
+        <view class="clear"></view>
+        <view class="goods-price-l" wx:if="{{item.status==1}}">预约中</view>
+        <view class="goods-price-l" wx:if="{{item.status==2}}">交易中</view>
+        <view class="goods-price-l" wx:if="{{item.status==3}}">交易成功</view>
+        <view class="goods-price-l" wx:if="{{item.status==-1}}">他人成交了,预约已自动取消</view>
+        <view class="goods-list-item-b">
+            <view class="goods-list-item-b-l" wx:if="{{item.clock==-1}}">排位中</view>
+            <view class="goods-list-item-b-l" wx:if="{{item.clock!=-1}}">距离预约被取消还剩: {{item.clock}}</view>
+            <view catchtap="cancel" class="goods-list-item-b-r" data-id="{{item.id}}" wx:if="{{item.status==1||item.status==2}}">取消预约</view>
+        </view>
+        <view class="k10"></view>
+    </view>
+</view>

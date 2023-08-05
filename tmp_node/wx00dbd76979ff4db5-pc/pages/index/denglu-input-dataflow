@@ -1,0 +1,17 @@
+// \pages/index/denglu input Data Flow
+digraph {
+	"0aa98e5704ef4948bdb69b7ad73f2228" [label="FunctionCall,
+function name -> input,
+param -> t.,
+t,
+" color=blue]
+	e61c770f950642c0b79da10acdb7a4f1 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"7b2b3bbca20646da9863fd3f9003bd5f" [label="Object Properties
+{
+phone -> t.detail.value
+}" color=blue]
+	e61c770f950642c0b79da10acdb7a4f1 -> "7b2b3bbca20646da9863fd3f9003bd5f"
+	"0aa98e5704ef4948bdb69b7ad73f2228" -> e61c770f950642c0b79da10acdb7a4f1
+}

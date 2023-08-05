@@ -1,0 +1,23 @@
+// \pages/orders/orders toOrderDetail Data Flow
+digraph {
+	"7fe675cdbbd0442990eebbd7b9493ebe" [label="FunctionCall,
+function name -> toOrderDetail,
+param -> e.,
+e,
+" color=blue]
+	"2bffc09e265442d1be7675bd5e6fb173" [label=VariableDeclarations color=blue]
+	"0f7142216a524196af9e6310a28e71bc" [label="VariableDeclarator,
+left -> t,
+right -> e.currentTarget.dataset.id" color=blue]
+	"2bffc09e265442d1be7675bd5e6fb173" -> "0f7142216a524196af9e6310a28e71bc"
+	"7fe675cdbbd0442990eebbd7b9493ebe" -> "2bffc09e265442d1be7675bd5e6fb173"
+	"5a422f08569b4e09b705257b33bb79c4" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"64c811caf77143cebfe62a3f7742ca60" [label="Object Properties
+{
+url -> '../orderDetail/orderDetail?orderId=' + t
+}" color=blue]
+	"5a422f08569b4e09b705257b33bb79c4" -> "64c811caf77143cebfe62a3f7742ca60"
+	"7fe675cdbbd0442990eebbd7b9493ebe" -> "5a422f08569b4e09b705257b33bb79c4"
+}

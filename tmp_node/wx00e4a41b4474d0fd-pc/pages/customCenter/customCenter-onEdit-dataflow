@@ -1,0 +1,25 @@
+// \pages/customCenter/customCenter onEdit Data Flow
+digraph {
+	"4809a405c9e5428ea577af49d5dd5d70" [label="FunctionCall,
+function name -> onEdit,
+param -> e,
+e.,
+" color=blue]
+	d351d5b12c2a41719c1b2892669812ee [label=VariableDeclarations color=blue]
+	"83abfe0bee8a496fa0663bfc775152a3" [label="VariableDeclarator,
+left -> t,
+right -> '/pages/customHouse/customHouse?update=1&id=' + e.currentTarget.dataset.id" color=blue]
+	d351d5b12c2a41719c1b2892669812ee -> "83abfe0bee8a496fa0663bfc775152a3"
+	"4809a405c9e5428ea577af49d5dd5d70" -> d351d5b12c2a41719c1b2892669812ee
+	"59cbe7b7837c45599eaec8c96122e452" [label=SequenceExpression color=blue]
+	"5b5ae6b5eb7644bfa66499982fb55827" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	f46c44ebd073466fba73effd39b77140 [label="Object Properties
+{
+url -> t
+}" color=blue]
+	"5b5ae6b5eb7644bfa66499982fb55827" -> f46c44ebd073466fba73effd39b77140
+	"59cbe7b7837c45599eaec8c96122e452" -> "5b5ae6b5eb7644bfa66499982fb55827"
+	"4809a405c9e5428ea577af49d5dd5d70" -> "59cbe7b7837c45599eaec8c96122e452"
+}

@@ -1,0 +1,46 @@
+// \pages/user/couponsCenter/couponsCenter getIt Data Flow
+digraph {
+	"4cd46222f29a4842976f2e2dd4b5a584" [label="FunctionCall,
+function name -> getIt,
+param -> t.,
+t,
+" color=blue]
+	"4818a45fbe1545ec8de29c8c13be31e3" [label="CallExpression,
+callee name -> console.log,
+param -> t.detail.formId,
+" color=blue]
+	"4cd46222f29a4842976f2e2dd4b5a584" -> "4818a45fbe1545ec8de29c8c13be31e3"
+	"49cd9b6160aa47418c9880dbefceff79" [label=VariableDeclarations color=blue]
+	f71dab4eef1447f7a5a9c319e520a986 [label="VariableDeclarator,
+left -> n,
+right -> t.detail.formId" color=blue]
+	"49cd9b6160aa47418c9880dbefceff79" -> f71dab4eef1447f7a5a9c319e520a986
+	"97ef5cfae2694cf99a12813454380dfd" [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.cardId" color=blue]
+	"49cd9b6160aa47418c9880dbefceff79" -> "97ef5cfae2694cf99a12813454380dfd"
+	d0f409adac28427ea0717096a209dd67 [label="VariableDeclarator,
+left -> s,
+right -> t.currentTarget.dataset.putId" color=blue]
+	"49cd9b6160aa47418c9880dbefceff79" -> d0f409adac28427ea0717096a209dd67
+	"8a2af05b032f4320974cf93f06af41b2" [label="VariableDeclarator,
+left -> c,
+right -> t.currentTarget.dataset.voucherrestrictId" color=blue]
+	"49cd9b6160aa47418c9880dbefceff79" -> "8a2af05b032f4320974cf93f06af41b2"
+	"4cd46222f29a4842976f2e2dd4b5a584" -> "49cd9b6160aa47418c9880dbefceff79"
+	a98b804834a44116ac48e7c1849daa62 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	e17aac5f39ba4ee4b756061ed77f4446 [label=SequenceExpression color=blue]
+	"957ca5e97d8a4014882a2c0b0bf5af0c" [label="CallExpression,
+callee name -> wx.getStorage,
+param -> " color=blue]
+	"45eb09c6f6834587a1f912126abc5bba" [label="FunctionCall,
+function name -> success,
+param -> t,
+" color=blue]
+	"957ca5e97d8a4014882a2c0b0bf5af0c" -> "45eb09c6f6834587a1f912126abc5bba"
+	e17aac5f39ba4ee4b756061ed77f4446 -> "957ca5e97d8a4014882a2c0b0bf5af0c"
+	a98b804834a44116ac48e7c1849daa62 -> e17aac5f39ba4ee4b756061ed77f4446
+	"4cd46222f29a4842976f2e2dd4b5a584" -> a98b804834a44116ac48e7c1849daa62
+}

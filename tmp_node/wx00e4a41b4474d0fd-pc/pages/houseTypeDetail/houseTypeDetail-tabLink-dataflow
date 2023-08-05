@@ -1,0 +1,26 @@
+// \pages/houseTypeDetail/houseTypeDetail tabLink Data Flow
+digraph {
+	eeaa07fc9ba9408faabc53ddeecfcb56 [label="FunctionCall,
+function name -> tabLink,
+param -> e,
+e.,
+" color=blue]
+	"92e924d161604546af1ab4e91748fcaf" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"5b515ad2015542628f7068fe876764db" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"900d70a575ec44d6a7878059be23360b" [label="Object Properties
+{
+url -> '../webView/webView?view=' + encodeURIComponent(a)
+}" color=blue]
+	"5b515ad2015542628f7068fe876764db" -> "900d70a575ec44d6a7878059be23360b"
+	"2948f75d656b4781b389f5d3ccf2e4b8" [label="FunctionCall,
+function name -> fail,
+param -> e,
+" color=blue]
+	"5b515ad2015542628f7068fe876764db" -> "2948f75d656b4781b389f5d3ccf2e4b8"
+	"92e924d161604546af1ab4e91748fcaf" -> "5b515ad2015542628f7068fe876764db"
+	eeaa07fc9ba9408faabc53ddeecfcb56 -> "92e924d161604546af1ab4e91748fcaf"
+}

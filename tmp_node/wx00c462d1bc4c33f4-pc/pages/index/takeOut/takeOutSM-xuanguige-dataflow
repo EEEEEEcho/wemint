@@ -1,0 +1,35 @@
+// \pages/index/takeOut/takeOutSM xuanguige Data Flow
+digraph {
+	b5c4ce66831849e6b948a99df8c1d2b3 [label="FunctionCall,
+function name -> xuanguige,
+param -> e.,
+e,
+" color=blue]
+	"4beefcf9a38a4735a01304feac1b5378" [label=VariableDeclarations color=blue]
+	dd26e5fb12464cf7b7cd4cab1b3b6e3b [label="VariableDeclarator,
+left -> a,
+right -> e.currentTarget.dataset.foodCount" color=blue]
+	"4beefcf9a38a4735a01304feac1b5378" -> dd26e5fb12464cf7b7cd4cab1b3b6e3b
+	e685bcfe2d25402285cb075eb37081ea [label="VariableDeclarator,
+left -> o,
+right -> e.currentTarget.dataset.foodPrice" color=blue]
+	"4beefcf9a38a4735a01304feac1b5378" -> e685bcfe2d25402285cb075eb37081ea
+	ba2c63c8a7c742ee95d051499ff14cbc [label="VariableDeclarator,
+left -> r,
+right -> e.currentTarget.dataset.foodId" color=blue]
+	"4beefcf9a38a4735a01304feac1b5378" -> ba2c63c8a7c742ee95d051499ff14cbc
+	b5c4ce66831849e6b948a99df8c1d2b3 -> "4beefcf9a38a4735a01304feac1b5378"
+	"870321d99925487da85395f52f125114" [label=SequenceExpression color=blue]
+	fa0b18b8deba4e4b88c977347830401f [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	"189ce0a09c7a438f8dc845cac53a917f" [label="Object Properties
+{
+guige -> r
+foodCount -> a
+foodPrice -> o
+}" color=blue]
+	fa0b18b8deba4e4b88c977347830401f -> "189ce0a09c7a438f8dc845cac53a917f"
+	"870321d99925487da85395f52f125114" -> fa0b18b8deba4e4b88c977347830401f
+	b5c4ce66831849e6b948a99df8c1d2b3 -> "870321d99925487da85395f52f125114"
+}

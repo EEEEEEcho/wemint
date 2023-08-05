@@ -1,0 +1,14 @@
+<view class="fixedTopBorder"></view>
+<view class="container">
+    <view class="recharge-amount">充值金额</view>
+    <form bindsubmit="{{!buttonClicked?'formSubmit':''}}">
+        <view class="amount-input border1px">
+            <view class="iconPrice">￥</view>
+            <input bindinput="moneyInput" focus="true" name="money" placeholder="请输入充值金额" placeholderStyle="color:#999;font-size:28rpx;font-weight:normal;" type="digit"></input>
+        </view>
+        <view class="btn">
+            <button class="recharge-btn" formType="submit">立即充值</button>
+        </view>
+    </form>
+</view>
+<include src="/pages/common/paymentresult.wxml"></include>

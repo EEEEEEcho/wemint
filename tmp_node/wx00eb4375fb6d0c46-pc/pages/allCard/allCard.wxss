@@ -1,0 +1,140 @@
+.head-box {
+    background-color: #ffc80b;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10rpx 30rpx 40rpx;
+}
+
+.my-message-box {
+    display: flex;
+    align-items: center;
+}
+
+.pt-vip {
+    font-size: 25rpx;
+    margin-top: 10rpx;
+}
+
+.card-num {
+    font-size: 20rpx;
+    letter-spacing: 5rpx;
+    color: #333333;
+}
+
+.card-num text {
+    font-size: 60rpx;
+    margin-right: 10rpx;
+    color: #000;
+}
+
+.my-message-box image {
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 100%;
+    margin-right: 20rpx;
+}
+
+.all-card-box {
+    padding-top: 20rpx;
+    background-color: #fff;
+    border-top-left-radius: 28rpx;
+    border-top-right-radius: 28rpx;
+    margin-top: -22rpx;
+}
+
+.card-box {
+    text-align: center;
+    position: relative;
+    width: 85%;
+    margin: 10rpx auto 20rpx;
+}
+
+.card-box image {
+    width: 100%;
+    height: 260rpx;
+}
+
+.card-detail-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.shop-msg {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 25rpx;
+    margin-top: -20rpx;
+    height: 70%;
+}
+
+.banlance-msg {
+    margin-right: 40rpx;
+    margin-left: 40rpx;
+}
+
+.shop-msg view:last-child {
+    font-size: 30rpx;
+}
+
+.card-msg,.banlance-msg {
+    font-size: 25rpx;
+}
+
+.card-msg text,.banlance-msg text {
+    font-size: 40rpx;
+    padding-right: 5rpx;
+}
+
+.card-msg view:first-child,.banlance-msg view:first-child {
+    margin-bottom: 20rpx;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.shop-name {
+    position: absolute;
+    top: 10rpx;
+    left: 35rpx;
+}
+
+.card-msg-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 90rpx;
+    left: 35rpx;
+    font-size: 25rpx;
+    width: 100%;
+    text-align: left;
+}
+
+.card-msg-box2 {
+    top: 170rpx;
+}
+
+.detail-name {
+    margin-bottom: 5rpx;
+    color: #e7e2e2;
+}
+
+.detail-text {
+    margin-left: 200rpx;
+    font-size: 35rpx;
+}

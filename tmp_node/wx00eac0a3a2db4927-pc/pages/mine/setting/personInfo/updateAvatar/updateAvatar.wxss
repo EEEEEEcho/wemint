@@ -1,0 +1,28 @@
+page {
+    background: #51515c;
+}
+
+.update_avatar_container {
+    align-items: center;
+}
+
+.largeAvatar {
+    margin-top: 129rpx;
+}
+
+.avatar {
+    width: 748rpx;
+    height: 749rpx;
+}
+
+.changeBtn {
+    width: 322rpx;
+    height: 74rpx;
+    font-size: 32rpx;
+    color: #3f3f3f;
+    background: #fff;
+    border-radius: 50rpx;
+    text-align: center;
+    line-height: 74rpx;
+    margin-top: 118rpx;
+}

@@ -1,0 +1,44 @@
+// \pages/mine/resetinfo bindphone Data Flow
+digraph {
+	a040016bf0ed47b797e44ddc1bf04d0d [label="FunctionCall,
+function name -> bindphone,
+param -> " color=blue]
+	"3851c4d1950749bfb43f7485572e81a0" [label=VariableDeclarations color=blue]
+	"47f975448906402685c33b537893b6b7" [label="VariableDeclarator,
+left -> a,
+right -> o.data.sendphone" color=blue]
+	"3851c4d1950749bfb43f7485572e81a0" -> "47f975448906402685c33b537893b6b7"
+	"4dcfa85fb83a49edafc4377180fe5d75" [label="VariableDeclarator,
+left -> n,
+right -> o.data.yzm.replace" color=blue]
+	"3851c4d1950749bfb43f7485572e81a0" -> "4dcfa85fb83a49edafc4377180fe5d75"
+	a040016bf0ed47b797e44ddc1bf04d0d -> "3851c4d1950749bfb43f7485572e81a0"
+	"6d219360345a44bf84fcda9008669aad" [label=ReturnExpression color=blue]
+	"0880b7f8b42546868bf2f02332893977" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"45339d00267e403ebbd43805ba2224d5" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	da1989353105402989690f5f1eac8721 [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	b0d615d099384e32a28a666f746d7022 [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	b13a7329d6624d09928dfbc191d90bdd [label=SequenceExpression color=blue]
+	"6f0178a472bb4a97b413288b8e167a81" [label=voidNone color=blue]
+	"0a8e567fa8d4450997489ad80d8b8c9c" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	a671ef1f3f4b4588a1c8ae40282162f2 [label="Object Properties
+{
+phone -> a
+yzm -> n
+}" color=blue]
+	"0a8e567fa8d4450997489ad80d8b8c9c" -> a671ef1f3f4b4588a1c8ae40282162f2
+	"6f0178a472bb4a97b413288b8e167a81" -> "0a8e567fa8d4450997489ad80d8b8c9c"
+	b13a7329d6624d09928dfbc191d90bdd -> "6f0178a472bb4a97b413288b8e167a81"
+	b0d615d099384e32a28a666f746d7022 -> b13a7329d6624d09928dfbc191d90bdd
+	da1989353105402989690f5f1eac8721 -> b0d615d099384e32a28a666f746d7022
+	"45339d00267e403ebbd43805ba2224d5" -> da1989353105402989690f5f1eac8721
+	"0880b7f8b42546868bf2f02332893977" -> "45339d00267e403ebbd43805ba2224d5"
+	"6d219360345a44bf84fcda9008669aad" -> "0880b7f8b42546868bf2f02332893977"
+	a040016bf0ed47b797e44ddc1bf04d0d -> "6d219360345a44bf84fcda9008669aad"
+}

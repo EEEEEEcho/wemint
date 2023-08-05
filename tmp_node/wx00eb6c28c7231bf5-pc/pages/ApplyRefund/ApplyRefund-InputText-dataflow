@@ -1,0 +1,19 @@
+// \pages/ApplyRefund/ApplyRefund InputText Data Flow
+digraph {
+	c8a53e5a6bbf4872a7f3536da6807be9 [label="FunctionCall,
+function name -> InputText,
+param -> e,
+e.,
+" color=blue]
+	af3db34f4685485cad13c50da536ed0d [label=VariableDeclarations color=blue]
+	be015e36576749dba21877f6c17ddeba [label="VariableDeclarator,
+left -> t,
+right -> e.currentTarget.dataset.names" color=blue]
+	af3db34f4685485cad13c50da536ed0d -> be015e36576749dba21877f6c17ddeba
+	"96a9e45fb8374174bbc0a960025331d5" [label="VariableDeclarator,
+left -> n,
+right -> e.detail.value" color=blue]
+	af3db34f4685485cad13c50da536ed0d -> "96a9e45fb8374174bbc0a960025331d5"
+	c8a53e5a6bbf4872a7f3536da6807be9 -> af3db34f4685485cad13c50da536ed0d
+	c8a53e5a6bbf4872a7f3536da6807be9 -> a9a2f52ddad74562b65256256a08af53
+}

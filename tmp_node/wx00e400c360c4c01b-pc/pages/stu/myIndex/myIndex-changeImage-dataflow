@@ -1,0 +1,49 @@
+// \pages/stu/myIndex/myIndex changeImage Data Flow
+digraph {
+	"514abcc2dd8b4ed693b661288e341c69" [label="FunctionCall,
+function name -> changeImage,
+param -> " color=blue]
+	"44006bf882d54beb9677d2ae554c218d" [label=SequenceExpression color=blue]
+	"181023d751ef425baeca7e34283e8641" [label="CallExpression,
+callee name -> wx.chooseImage,
+param -> " color=blue]
+	"3db3e3f73426422c883ccde4c6bf1a8c" [label="FunctionCall,
+function name -> success,
+param -> a.,
+a,
+" color=blue]
+	dee516db630e4a68b4316103d6be9210 [label=VariableDeclarations color=blue]
+	"01dcfc150a4942ed81f21d618ca875d1" [label="VariableDeclarator,
+left -> n,
+right -> a.tempFilePaths[0]" color=blue]
+	dee516db630e4a68b4316103d6be9210 -> "01dcfc150a4942ed81f21d618ca875d1"
+	"3db3e3f73426422c883ccde4c6bf1a8c" -> dee516db630e4a68b4316103d6be9210
+	e8cd3f5fdacf434d8ed13f861097ce26 [label=SequenceExpression color=blue]
+	"4786907a0bc34ac9a200abb4d71e6e19" [label="CallExpression,
+callee name -> console.log,
+param -> n,
+" color=blue]
+	e8cd3f5fdacf434d8ed13f861097ce26 -> "4786907a0bc34ac9a200abb4d71e6e19"
+	"7bc68cc660574b42a7a806bede0397a4" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"03853c3dcfdb4e8785014dbaeeae1dbd" [label="CallExpression,
+callee name -> t.upload,
+param -> n,
+" color=blue]
+	"68f214d5bb3b45449cd223efd05a3f55" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> a,
+" color=blue]
+	"03853c3dcfdb4e8785014dbaeeae1dbd" -> "68f214d5bb3b45449cd223efd05a3f55"
+	"8386e639191e4dea9b2d4fca6ac8f7e1" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> a,
+" color=blue]
+	"03853c3dcfdb4e8785014dbaeeae1dbd" -> "8386e639191e4dea9b2d4fca6ac8f7e1"
+	"7bc68cc660574b42a7a806bede0397a4" -> "03853c3dcfdb4e8785014dbaeeae1dbd"
+	e8cd3f5fdacf434d8ed13f861097ce26 -> "7bc68cc660574b42a7a806bede0397a4"
+	"3db3e3f73426422c883ccde4c6bf1a8c" -> e8cd3f5fdacf434d8ed13f861097ce26
+	"181023d751ef425baeca7e34283e8641" -> "3db3e3f73426422c883ccde4c6bf1a8c"
+	"44006bf882d54beb9677d2ae554c218d" -> "181023d751ef425baeca7e34283e8641"
+	"514abcc2dd8b4ed693b661288e341c69" -> "44006bf882d54beb9677d2ae554c218d"
+}

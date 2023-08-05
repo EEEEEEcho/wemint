@@ -1,0 +1,1 @@
+{"type": "MemberExpression", "start": 1419, "end": 1428, "object": {"type": "Identifier", "start": 1419, "end": 1420, "name": "e"}, "property": {"type": "Identifier", "start": 1421, "end": 1428, "name": "setData"}, "computed": false, "optional": false}

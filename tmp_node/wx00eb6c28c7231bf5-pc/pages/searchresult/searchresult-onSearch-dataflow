@@ -1,0 +1,15 @@
+// \pages/searchresult/searchresult onSearch Data Flow
+digraph {
+	a5ad4c61fdcc4380b0e6f44ad5584118 [label="FunctionCall,
+function name -> onSearch,
+param -> a,
+a.,
+" color=blue]
+	"1a4cffa06cc04a7c8ec435849b39f11b" [label=SequenceExpression color=blue]
+	e15c9750edc9488fb0d42ca5de78c96d [label="CallExpression,
+callee name -> t.loadData,
+param -> t,
+" color=blue]
+	"1a4cffa06cc04a7c8ec435849b39f11b" -> e15c9750edc9488fb0d42ca5de78c96d
+	a5ad4c61fdcc4380b0e6f44ad5584118 -> "1a4cffa06cc04a7c8ec435849b39f11b"
+}

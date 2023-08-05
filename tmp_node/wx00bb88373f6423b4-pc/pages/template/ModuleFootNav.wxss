@@ -1,0 +1,28 @@
+.ModuleFootNavSpace {
+    width: 100%;
+    height: 100rpx;
+}
+
+.ModuleFootNav {
+    position: fixed;
+    bottom: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100rpx;
+    padding: 10rpx 0 6rpx 0;
+}
+
+.ModuleFootNav .nav-item {
+    text-align: center;
+    float: left;
+}
+
+.ModuleFootNav .image {
+    margin: 0 auto;
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.ModuleFootNav .text {
+    font-size: 26rpx;
+}

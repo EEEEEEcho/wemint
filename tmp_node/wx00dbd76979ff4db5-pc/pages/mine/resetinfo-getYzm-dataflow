@@ -1,0 +1,26 @@
+// \pages/mine/resetinfo getYzm Data Flow
+digraph {
+	af2bbd05f7814e278564d07d63134e14 [label="FunctionCall,
+function name -> getYzm,
+param -> " color=blue]
+	"2c22992362464ca5b159ef87a3bdc6b8" [label="CallExpression,
+callee name -> this.timeout,
+param -> " color=blue]
+	"6477e28e809d4dcbaa693ba0c4589daa" [label="FunctionCall,
+function name -> timeout,
+param -> " color=blue]
+	a515406229a54cc198cca39a20b7295e [label=SequenceExpression color=blue]
+	"682fa9fce6a34c87831c9f949b4268d5" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	"11d7014b43e8402995de31bece253a3b" [label="Object Properties
+{
+text -> t.data.second
+second -> t.data.second - 1
+}" color=blue]
+	"682fa9fce6a34c87831c9f949b4268d5" -> "11d7014b43e8402995de31bece253a3b"
+	a515406229a54cc198cca39a20b7295e -> "682fa9fce6a34c87831c9f949b4268d5"
+	"6477e28e809d4dcbaa693ba0c4589daa" -> a515406229a54cc198cca39a20b7295e
+	"2c22992362464ca5b159ef87a3bdc6b8" -> "6477e28e809d4dcbaa693ba0c4589daa"
+	af2bbd05f7814e278564d07d63134e14 -> "2c22992362464ca5b159ef87a3bdc6b8"
+}

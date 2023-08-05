@@ -1,0 +1,17 @@
+// \pages/tourist/shiting/shiting phoneInput Data Flow
+digraph {
+	d6ec0dd46a70454dbac832f41b48273e [label="FunctionCall,
+function name -> phoneInput,
+param -> t,
+t.,
+" color=blue]
+	bce8ec8e47554545a638edb8d7492110 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"4f95cf7480e34c388713db050fec048b" [label="Object Properties
+{
+phone -> t.detail.value
+}" color=blue]
+	bce8ec8e47554545a638edb8d7492110 -> "4f95cf7480e34c388713db050fec048b"
+	d6ec0dd46a70454dbac832f41b48273e -> bce8ec8e47554545a638edb8d7492110
+}

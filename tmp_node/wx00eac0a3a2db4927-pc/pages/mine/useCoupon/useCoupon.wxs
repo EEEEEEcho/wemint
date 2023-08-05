@@ -1,0 +1,113 @@
+module.exports = ({
+    getTime: (function(time) {
+        if ((time + '').length === 10) {
+            time = +time * 1000
+        };
+        var date = getDate(time);
+        var y = date.getFullYear();
+        var m = date.getMonth() + 1;
+        m = m < 10 ? ('0' + m) : m;
+        var d = date.getDate();
+        d = d < 10 ? ('0' + d) : d;
+        return (y + '-' + m + '-' + d)
+    }),
+    getCouponType: (function(coupon) {
+        var text = '';
+        if (coupon.publisher == 1) {
+            switch (coupon.displayChannel) {
+                case 0:
+                    ;
+                case 1:
+                    ;
+                case 2:
+                    if (coupon.type == 1) {
+                        text = '平台红包'
+                    } else if (coupon.type == 2) {
+                        text = '平台礼包'
+                    };
+                    break;
+                case 3:
+                    text = '平台礼包';
+                    break;
+            }
+        } else {
+            switch (coupon.displayChannel) {
+                case 0:
+                    ;
+                case 1:
+                    ;
+                case 2:
+                    if (coupon.type == 1) {
+                        text = '优惠券'
+                    } else if (coupon.type == 2) {
+                        text = '兑换劵'
+                    };
+                    break;
+                case 3:
+                    text = '兑换劵';
+                    break;
+            }
+        };
+        return (text)
+    }),
+    getCouponTitle: (function(coupon) {
+        var text = '';
+        if (coupon.publisher == 1) {
+            switch (coupon.displayChannel) {
+                case 0:
+                    ;
+                case 1:
+                    ;
+                case 2:
+                    if (coupon.type == 1) {
+                        text = '平台通用红包'
+                    } else if (coupon.type == 2) {
+                        text = '平台通用礼品'
+                    };
+                    break;
+                case 3:
+                    text = '平台通用礼品';
+                    break;
+            }
+        } else {
+            text = coupon.name
+        };
+        return (text)
+    }),
+    isShowLabel: (function(coupon) {
+        switch (coupon.displayChannel) {
+            case 0:
+                ;
+            case 1:
+                ;
+            case 2:
+                if (coupon.type == 1) {
+                    return (true)
+                } else if (coupon.type == 2) {
+                    return (false)
+                };
+                break;
+            case 3:
+                return (false);
+                break;
+        }
+    }),
+    getPrice: (function(coupon) {
+        switch (coupon.displayChannel) {
+            case 0:
+                ;
+            case 1:
+                ;
+            case 2:
+                if (coupon.type == 1) {
+                    return (coupon.denomination / 100)
+                } else if (coupon.type == 2) {
+                    return (coupon.name)
+                };
+                break;
+            case 3:
+                return (coupon.name);
+                break;
+        }
+    }),
+});

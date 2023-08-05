@@ -1,0 +1,21 @@
+// \pages/returngoods/returngoods onDelPic Data Flow
+digraph {
+	"35c7be66ff204090bdbcd117a9fa1fa5" [label="FunctionCall,
+function name -> onDelPic,
+param -> t.,
+t,
+" color=blue]
+	df3ebf39b14f42dd9955196c29e55ece [label="Assignment,
+left -> e,
+right -> this.data.TempPics" color=blue]
+	"35c7be66ff204090bdbcd117a9fa1fa5" -> df3ebf39b14f42dd9955196c29e55ece
+	"6620f26ecda84bc9a631fb5b4ee60abc" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"9b517bafbb7f40aabd3f810ef0a9144d" [label="Object Properties
+{
+TempPics -> e
+}" color=blue]
+	"6620f26ecda84bc9a631fb5b4ee60abc" -> "9b517bafbb7f40aabd3f810ef0a9144d"
+	"35c7be66ff204090bdbcd117a9fa1fa5" -> "6620f26ecda84bc9a631fb5b4ee60abc"
+}

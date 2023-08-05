@@ -1,0 +1,70 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="cover_screen" wx:if="{{isShowModel}}"></view>
+<view class="distribution column" style="margin-top: {{navH+status+10}}px;">
+    <view class="topLayout row">
+        <text class="leftLabel">{{disUserInfo.name}}</text>
+        <text class="nickName">{{disUserInfo.weixinNickname}}</text>
+        <image class="avatar" mode="aspectFill" src="{{disUserInfo.weixinAvatar}}"></image>
+    </view>
+    <view class="incomeLayout">
+        <image class="incomeBg" src="http://oss.shangmian.xin/weixin_applets_mine_distribution_income_bg.png"></image>
+        <view class="incomeContent column">
+            <text class="estimateText">今日预估收益:</text>
+            <view class="incomeCenter row">
+                <text class="incomeMoney">{{disUserInfo.proIncome}}</text>
+                <text class="incomeSuffix">(元)</text>
+            </view>
+            <view class="statisticsLayout row">
+                <view class="row statisticsFlex">
+                    <image class="accessImage" src="http://oss.shangmian.xin/weixin_applets_mine_fillet_access.png"></image>
+                    <text class="accessText">昨日访问</text>
+                </view>
+                <view class="row statisticsFlex">
+                    <image class="accessImage" src="http://oss.shangmian.xin/weixin_applets_mine_fillet_order.png"></image>
+                    <text class="accessText">今日订单</text>
+                </view>
+                <view class="row statisticsFlex">
+                    <image class="accessImage" src="http://oss.shangmian.xin/weixin_applets_mine_fillet_renminbi.png"></image>
+                    <text class="accessText">钱包余额</text>
+                </view>
+            </view>
+            <view class="statisticNumber row">
+                <text class="numberText">{{disUserInfo.yesterdayVisit}}</text>
+                <text class="numberText">{{disUserInfo.todayOrder}}</text>
+                <text class="numberText">{{disUserInfo.balance}}</text>
+            </view>
+        </view>
+    </view>
+    <text class="service">分销服务</text>
+    <view class="featuresLayout column">
+        <view bindtap="toPage" class="featuresRow row" data-type="选品推荐">
+            <image class="featuresImage" src="http://oss.shangmian.xin/weixin_applets_mine_distribution_recommend.png"></image>
+            <text class="featuresLabel">选品推荐</text>
+            <image class="featuresArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+        </view>
+        <view class="lineStyle"></view>
+        <view bindtap="toPage" class="featuresRow row" data-type="推广订单">
+            <image class="featuresImage" src="http://oss.shangmian.xin/weixin_applets_mine_distribution_order.png"></image>
+            <text class="featuresLabel">推广订单</text>
+            <image class="featuresArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+        </view>
+        <view class="lineStyle"></view>
+        <view bindtap="toPage" class="featuresRow row" data-type="我的客户">
+            <image class="featuresImage" src="http://oss.shangmian.xin/weixin_applets_mine_distribution_client.png"></image>
+            <text class="featuresLabel">我的客户</text>
+            <image class="featuresArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+        </view>
+        <view class="lineStyle"></view>
+        <view bindtap="toPage" class="featuresRow row" data-type="余额提现">
+            <image class="featuresImage" src="http://oss.shangmian.xin/weixin_applets_mine_distribution_balance.png"></image>
+            <text class="featuresLabel">余额提现</text>
+            <image class="featuresArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+        </view>
+        <view class="lineStyle" wx:if="{{disUserInfo.isOpen==1}}"></view>
+        <view bindtap="toPage" class="featuresRow row" data-type="账号管理" wx:if="{{disUserInfo.isOpen==1}}">
+            <image class="featuresImage" src="http://oss.shangmian.xin/weixin_applets_sub_account.png"></image>
+            <text class="featuresLabel">子账号管理</text>
+            <image class="featuresArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+        </view>
+    </view>
+</view>

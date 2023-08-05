@@ -1,0 +1,17 @@
+// \pages/fightGroups/fightgroups minThreeNum Data Flow
+digraph {
+	ea97d692704f49bc990d089d48c3ff44 [label="FunctionCall,
+function name -> minThreeNum,
+param -> " color=blue]
+	"2d0201df0533478eb58c235040fbac34" [label=ReturnExpression color=blue]
+	b7eaedfc820843b8bba6573c0e1756ef [label=SequenceExpression color=blue]
+	"8029cd939c2f48e68defebf62497ca90" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"17c966f0ccf44fc2a8668333cdd03b1e" [label="ConditionalExpression,
+ conditional list -> this.data.pinTuanInventory" color=blue]
+	"8029cd939c2f48e68defebf62497ca90" -> "17c966f0ccf44fc2a8668333cdd03b1e"
+	b7eaedfc820843b8bba6573c0e1756ef -> "8029cd939c2f48e68defebf62497ca90"
+	"2d0201df0533478eb58c235040fbac34" -> b7eaedfc820843b8bba6573c0e1756ef
+	ea97d692704f49bc990d089d48c3ff44 -> "2d0201df0533478eb58c235040fbac34"
+}

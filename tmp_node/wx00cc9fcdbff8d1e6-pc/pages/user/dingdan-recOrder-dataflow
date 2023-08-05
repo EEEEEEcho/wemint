@@ -1,0 +1,23 @@
+// \pages/user/dingdan recOrder Data Flow
+digraph {
+	af9b6414906349b2beff08129352c27b [label="FunctionCall,
+function name -> recOrder,
+param -> e,
+e.,
+" color=blue]
+	"87d442a3b54740a89672d3356cda7ed5" [label=VariableDeclarations color=blue]
+	"51238ad1811745c693a54d39d0ae30ab" [label="VariableDeclarator,
+left -> r,
+right -> e.currentTarget.dataset.orderId" color=blue]
+	"87d442a3b54740a89672d3356cda7ed5" -> "51238ad1811745c693a54d39d0ae30ab"
+	af9b6414906349b2beff08129352c27b -> "87d442a3b54740a89672d3356cda7ed5"
+	"9693862752c64f7e9edbdf56f14add38" [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	a4a7b057323a49b0b78cc31db81f4678 [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	"9693862752c64f7e9edbdf56f14add38" -> a4a7b057323a49b0b78cc31db81f4678
+	af9b6414906349b2beff08129352c27b -> "9693862752c64f7e9edbdf56f14add38"
+}

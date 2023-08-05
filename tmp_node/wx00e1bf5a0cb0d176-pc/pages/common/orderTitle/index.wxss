@@ -1,0 +1,9 @@
+.title {
+    background: #d61212;
+    padding-top: 36rpx;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 32rpx;
+    height: 180rpx;
+    padding-left: 32rpx;
+}

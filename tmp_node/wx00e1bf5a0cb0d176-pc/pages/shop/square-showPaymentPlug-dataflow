@@ -1,0 +1,43 @@
+// \pages/shop/square showPaymentPlug Data Flow
+digraph {
+	"568081236dac4e9fbcf1e55fe2820926" [label="FunctionCall,
+function name -> showPaymentPlug,
+param -> " color=blue]
+	"5981e477f03240cb895e3a678d5b44d2" [label="If Alternate" color=blue]
+	f526333026c94cdbbd9020c8bd8bc969 [label=VariableDeclarations color=blue]
+	c4a26bd50e7a47fcb8a7d29786bfa3e2 [label="VariableDeclarator,
+left -> a,
+right -> t.data.pickupType" color=blue]
+	f526333026c94cdbbd9020c8bd8bc969 -> c4a26bd50e7a47fcb8a7d29786bfa3e2
+	"5981e477f03240cb895e3a678d5b44d2" -> f526333026c94cdbbd9020c8bd8bc969
+	"59365db224484e6b86be066d741ed4d8" [label="If Alternate" color=blue]
+	e5a3eebda53c43beabce3c3d7978156e [label=VariableDeclarations color=blue]
+	e4a278557f0b4ce49907e7b48ef1aac6 [label="VariableDeclarator,
+left -> i,
+right -> this.data" color=blue]
+	e5a3eebda53c43beabce3c3d7978156e -> e4a278557f0b4ce49907e7b48ef1aac6
+	"9733acafd8814560ba4f6833c178cb31" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	bf44f34769ac4b05814fe7f11221c8cb [label="Object Properties
+{
+LbsShopName -> i.LbsShopName
+LbsShopId -> i.LbsShopId
+Mobile -> i.Mobile
+NickName -> i.NickName
+}" color=blue]
+	"9733acafd8814560ba4f6833c178cb31" -> bf44f34769ac4b05814fe7f11221c8cb
+	e5a3eebda53c43beabce3c3d7978156e -> "9733acafd8814560ba4f6833c178cb31"
+	"59365db224484e6b86be066d741ed4d8" -> e5a3eebda53c43beabce3c3d7978156e
+	"5981e477f03240cb895e3a678d5b44d2" -> "59365db224484e6b86be066d741ed4d8"
+	c08d26f31ba046f781a5d590f2c77a9e [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"1fca9ec19b3d444782a5470626b2eb80" [label="Object Properties
+{
+balanceflagNum -> this.data.balanceNumber - this.data.orderPrice < 0
+}" color=blue]
+	c08d26f31ba046f781a5d590f2c77a9e -> "1fca9ec19b3d444782a5470626b2eb80"
+	"5981e477f03240cb895e3a678d5b44d2" -> c08d26f31ba046f781a5d590f2c77a9e
+	"568081236dac4e9fbcf1e55fe2820926" -> "5981e477f03240cb895e3a678d5b44d2"
+}

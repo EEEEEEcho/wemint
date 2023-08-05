@@ -1,0 +1,74 @@
+// \pages/user/dingdan onLoad Data Flow
+digraph {
+	"4e9fe0b301744719a425cdc2986031e5" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	"333527241fd94726864e243ed68d4f80" [label=SequenceExpression color=blue]
+	e94c5cb74d734b7a9adf429ca6631793 [label="CallExpression,
+callee name -> this.initSystemInfo,
+param -> " color=blue]
+	"8361dec93b1c4046b0444198717d8e83" [label="FunctionCall,
+function name -> initSystemInfo,
+param -> " color=blue]
+	"28d30a8754f94df58efd391d800fbee5" [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> " color=blue]
+	eb24c71d8fef44c1a361d1992bd418d7 [label="FunctionCall,
+function name -> success,
+param -> e,
+e.,
+" color=blue]
+	"1f0831cdf11140958516d0779d3583bf" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	dad11e2286154aba8aec0c1f68e856d8 [label="Object Properties
+{
+winWidth -> e.windowWidth
+winHeight -> e.windowHeight
+}" color=blue]
+	"1f0831cdf11140958516d0779d3583bf" -> dad11e2286154aba8aec0c1f68e856d8
+	eb24c71d8fef44c1a361d1992bd418d7 -> "1f0831cdf11140958516d0779d3583bf"
+	"28d30a8754f94df58efd391d800fbee5" -> eb24c71d8fef44c1a361d1992bd418d7
+	"8361dec93b1c4046b0444198717d8e83" -> "28d30a8754f94df58efd391d800fbee5"
+	e94c5cb74d734b7a9adf429ca6631793 -> "8361dec93b1c4046b0444198717d8e83"
+	"333527241fd94726864e243ed68d4f80" -> e94c5cb74d734b7a9adf429ca6631793
+	b7d0f34ef92e4ec5a5d5f5c4e0b58c18 [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"7e7d2ef06f114506bc680da495622757" [label="CallExpression,
+callee name -> this.loadReturnOrderList,
+param -> " color=blue]
+	a755be6375c049f1870300adebc55eca [label="FunctionCall,
+function name -> loadReturnOrderList,
+param -> " color=blue]
+	"45d1111e32ac4351be256bd289b0d11f" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	b302368adbba42afb2a6e7b13618d607 [label="Object Properties
+{
+page -> e.data.refundpage
+}" color=blue]
+	"45d1111e32ac4351be256bd289b0d11f" -> b302368adbba42afb2a6e7b13618d607
+	a755be6375c049f1870300adebc55eca -> "45d1111e32ac4351be256bd289b0d11f"
+	"7e7d2ef06f114506bc680da495622757" -> a755be6375c049f1870300adebc55eca
+	b7d0f34ef92e4ec5a5d5f5c4e0b58c18 -> "7e7d2ef06f114506bc680da495622757"
+	d3764a54f2d1450c96355e4ddd5d0fcf [label="CallExpression,
+callee name -> this.loadOrderList,
+param -> " color=blue]
+	"5de06440f33c4d99b4b1ab5c3c760664" [label="FunctionCall,
+function name -> loadOrderList,
+param -> " color=blue]
+	d54ecf8c7ed540109be657c03bd0e8ba [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"28d860c735d3418ab69d5f61fdfdf4fd" [label="Object Properties
+{
+order_type -> e.data.isStatus
+page -> e.data.page
+}" color=blue]
+	d54ecf8c7ed540109be657c03bd0e8ba -> "28d860c735d3418ab69d5f61fdfdf4fd"
+	"5de06440f33c4d99b4b1ab5c3c760664" -> d54ecf8c7ed540109be657c03bd0e8ba
+	d3764a54f2d1450c96355e4ddd5d0fcf -> "5de06440f33c4d99b4b1ab5c3c760664"
+	b7d0f34ef92e4ec5a5d5f5c4e0b58c18 -> d3764a54f2d1450c96355e4ddd5d0fcf
+	"333527241fd94726864e243ed68d4f80" -> b7d0f34ef92e4ec5a5d5f5c4e0b58c18
+	"4e9fe0b301744719a425cdc2986031e5" -> "333527241fd94726864e243ed68d4f80"
+}

@@ -1,0 +1,208 @@
+<view class="container {{copyrightInfo.contentClassName}}" wx:if="{{!showAddrManage}}">
+    <view>
+        <view class="person-info">
+            <view class="person-content">
+                <navigator hoverClass="none" openType="navigate" url="/pages/shop/myinfomation">
+                    <view class="person-img">
+                        <image src="{{HeadImg}}"></image>
+                    </view>
+                </navigator>
+                <view class="person-text">
+                    <view class="person-name one">{{mycenterdata.NickName}}</view>
+                </view>
+                <view class="person-member" wx:if="{{levelName}}">
+                    <text class="iconfont icon-iconfont_rank"></text>
+                    <text class="member one">{{levelName}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="data-list">
+            <view class="phoneauthorization" wx:if="{{!failure}}">
+                <view class="binding">为了更好的体验请绑定手机</view>
+                <view class="zation">
+                    <button bindgetphonenumber="getPhoneNumber" bindtap="turnOff" openType="getPhoneNumber" type="primary">绑定</button>
+                </view>
+            </view>
+            <view bindtap="buttonClicked" class="data-item borderBtm ">
+                <navigator class="navText border1px" hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/order/orderlist/index">
+                    <view class="data-name">我的订单</view>
+                    <view>
+                        <text class="couponnum">查看全部订单</text>
+                        <text class="iconfont iconfont icon-iconfont_arrow-right"></text>
+                    </view>
+                </navigator>
+            </view>
+            <view bindtap="buttonClicked" class="data-list-state">
+                <view class="state">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/order/orderlist/index?status=0">
+                        <text class="state-icon iconfont  icon-iconfont_unpay"></text>
+                        <text class="state-tit">待付款</text>
+                        <text class="nuber {{Count.NoPay=='0'||Count.NoPay==null?'active':''}}">{{Count.NoPay>'99'?'...':Count.NoPay}}</text>
+                    </navigator>
+                </view>
+                <view bindtap="buttonClicked" class="state">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/order/orderlist/index?status=1,5,7">
+                        <text class="state-icon iconfont  icon-iconfont_ready-deliv"></text>
+                        <text class="state-tit">待发货</text>
+                        <text class="nuber {{Count.NoFH=='0'||Count.NoFH==null?'active':''}} ">{{Count.NoFH>'99'?'...':Count.NoFH}}</text>
+                    </navigator>
+                </view>
+                <view bindtap="buttonClicked" class="state">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/order/orderlist/index?status=3,8,9">
+                        <text class="state-icon iconfont icon-iconfont_delivery"></text>
+                        <text class="state-tit">待收货</text>
+                        <text class="nuber {{Count.NoSH=='0'||Count.NoSH==null?'active':''}} ">{{Count.NoSH>'99'?'...':Count.NoSH}}</text>
+                    </navigator>
+                </view>
+                <view bindtap="buttonClicked" class="state">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/order/orderlist/index?status=2">
+                        <text class="state-icon iconfont icon-iconfont_complete"></text>
+                        <text class="state-tit">已完成</text>
+                    </navigator>
+                </view>
+                <view bindtap="buttonClicked" class="state">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/refund/refundlist/index?status=-1">
+                        <text class="state-icon iconfont icon-iconfont_return"></text>
+                        <text class="state-tit">售后</text>
+                    </navigator>
+                </view>
+            </view>
+            <view bindtap="buttonClicked" class="data-item borderBtm " wx:if="{{cityWideDataFlag}}">
+                <navigator class="navText border1px" hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/order/orderlist/index?distributionFlag=1">
+                    <view class="data-name">同城配送</view>
+                    <view>
+                        <text class="couponnum">查看全部订单</text>
+                        <text class="iconfont iconfont icon-iconfont_arrow-right"></text>
+                    </view>
+                </navigator>
+            </view>
+            <view bindtap="buttonClicked" class="data-list-state" wx:if="{{cityWideDataFlag}}">
+                <view class="state">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/order/orderlist/index?status=30&distributionFlag=1">
+                        <text class="state-icon iconfont  icon-iconfont_unpay" style="color:#ff7a46"></text>
+                        <text class="state-tit">待付款</text>
+                        <text class="nuber {{cityWideData.No_Pay=='0'||cityWideData.No_Pay==null?'active':''}}">{{cityWideData.No_Pay>'99'?'...':cityWideData.No_Pay}}</text>
+                    </navigator>
+                </view>
+                <view bindtap="buttonClicked" class="state">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/order/orderlist/index?status=31,33&distributionFlag=1">
+                        <text class="state-icon iconfont  icon-kaiguanji_daijiedan" style="color:#ff7a46"></text>
+                        <text class="state-tit">待接单</text>
+                        <text class="nuber {{cityWideData.Wait_Accrpt=='0'||cityWideData.Wait_Accrpt==null?'active':''}} ">{{cityWideData.Wait_Accrpt>'99'?'...':cityWideData.Wait_Accrpt}}</text>
+                    </navigator>
+                </view>
+                <view bindtap="buttonClicked" class="state">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/order/orderlist/index?status=35&distributionFlag=1">
+                        <text class="state-icon iconfont icon-motuoche2" style="color:#ff7a46"></text>
+                        <text class="state-tit">配送中</text>
+                        <text class="nuber {{cityWideData.In_Delivery=='0'||cityWideData.In_Delivery==null?'active':''}} ">{{cityWideData.In_Delivery>'99'?'...':cityWideData.In_Delivery}}</text>
+                    </navigator>
+                </view>
+                <view bindtap="buttonClicked" class="state">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/order/orderlist/index?status=2,36,38&distributionFlag=1">
+                        <text class="state-icon iconfont icon-iconfont_complete" style="color:#ff7a46"></text>
+                        <text class="state-tit">已完成</text>
+                    </navigator>
+                </view>
+                <view bindtap="buttonClicked" class="state">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/refund/refundlist/index?status=37&distributionFlag=1">
+                        <text class="state-icon iconfont icon-iconfont_return" style="color:#ff7a46"></text>
+                        <text class="state-tit">售后</text>
+                    </navigator>
+                </view>
+            </view>
+            <view bindtap="buttonClicked" class="data-item borderBtm adcouponnum " wx:if="{{allInfo.bargainFlag||allInfo.PrizeFlag}}">
+                <navigator class="navText border1px" hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/bargain/bargainmanagement/index" wx:if="{{allInfo.bargainFlag}}">
+                    <view class="data-name">我的砍价</view>
+                    <view>
+                        <text class="couponnum">砍价中</text>
+                        <text class="couponnumcolor" wx:if="{{allInfo.bargainCount>0}}">（{{allInfo.bargainCount}}）</text>
+                        <text class="iconfont iconfont icon-iconfont_arrow-right"></text>
+                    </view>
+                </navigator>
+                <navigator class="navText" hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/lottery/myprize/index?currentIndex=0" wx:if="{{allInfo.PrizeFlag}}">
+                    <view class="data-name">我的奖品</view>
+                    <view>
+                        <text class="couponnum" wx:if="{{allInfo.PrizesCount>0}}">未兑奖</text>
+                        <text class="couponnumcolor" wx:if="{{allInfo.PrizesCount>0}}">（{{allInfo.PrizesCount}}）</text>
+                        <text class="iconfont iconfont icon-iconfont_arrow-right"></text>
+                    </view>
+                </navigator>
+            </view>
+            <view class="data-list-other">
+                <view bindtap="buttonClicked" class="other border1px">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/sundry/favorites/index?status=1">
+                        <view class="other-content">
+                            <text class="other-icon iconfont icon-iconfont_favorite-se"></text>
+                            <text class="other-tit">收藏夹</text>
+                        </view>
+                    </navigator>
+                </view>
+                <view bindtap="buttonClicked" class="other border1px">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/company/mycoupon?use=1">
+                        <view class="other-content">
+                            <text class="other-icon iconfont icon-iconfont_coupon-sec"></text>
+                            <text class="other-tit">优惠劵</text>
+                        </view>
+                    </navigator>
+                </view>
+                <view bindtap="buttonClicked" class="other border1px">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/sundry/address/addresslist/index?type=mycenter">
+                        <view class="other-content" hoverClass="none">
+                            <text class="other-icon iconfont icon-iconfont_location"></text>
+                            <text class="other-tit">收货地址</text>
+                        </view>
+                    </navigator>
+                </view>
+                <view bindtap="buttonClicked" class="other border1px">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/sundry/balance/balanceaccount/index">
+                        <view class="other-content">
+                            <text class="other-icon iconfont icon-iconfont_money"></text>
+                            <text class="other-tit">余额</text>
+                        </view>
+                    </navigator>
+                </view>
+                <view bindtap="buttonClicked" class="other">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/sundry/integral/integrallist/index?infoUserID={{infoUserID}}">
+                        <view class="other-content">
+                            <text class="other-icon iconfont icon-jifen"></text>
+                            <text class="other-tit">积分</text>
+                        </view>
+                    </navigator>
+                </view>
+                <view bindtap="buttonClicked" class="other">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/sundry/browserecord/index">
+                        <view class="other-content">
+                            <text class="  iconfont icon-liulanjilu"></text>
+                            <text class="other-tit">浏览记录</text>
+                        </view>
+                    </navigator>
+                </view>
+                <view bindtap="buttonClicked" class="other" wx:if="{{serviceFlag}}">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/shop/myreserve">
+                        <view class="other-content">
+                            <text class="iconfont icon-yuyue"></text>
+                            <text class="other-tit">我的预约</text>
+                        </view>
+                    </navigator>
+                </view>
+                <view bindtap="buttonClicked" class="other" wx:if="{{enableWxShare}}">
+                    <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/sundry/shareshop/index?userID={{userID}}">
+                        <view class="other-content">
+                            <text class="iconfont icon-erweima"></text>
+                            <text class="other-tit">分享店铺</text>
+                        </view>
+                    </navigator>
+                </view>
+                <view class="other" wx:if="{{showLastBox}}"></view>
+            </view>
+        </view>
+        <include src="/pages/shop/fenxiao.wxml"></include>
+        <include src="/pages/shop/businessCard.wxml"></include>
+    </view>
+    <include src="/pages/template/floatLayer.wxml"></include>
+</view>
+<include src="/pages/template/copyright.wxml"></include>
+<include src="/pages/template/getUserInfo.wxml"></include>
+<include src="/pages/common/phoneauthorization/index.wxml"></include>
+<include src="/pages/common/popout/index.wxml"></include>

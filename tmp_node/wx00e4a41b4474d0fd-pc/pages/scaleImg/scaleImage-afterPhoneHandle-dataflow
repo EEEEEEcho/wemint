@@ -1,0 +1,57 @@
+// \pages/scaleImg/scaleImage afterPhoneHandle Data Flow
+digraph {
+	a954be1e9450439b9ddbed57ababf4dd [label="FunctionCall,
+function name -> afterPhoneHandle,
+param -> a,
+a.,
+" color=blue]
+	"6cb9bf10b0f4402db027041c8d068fad" [label=VariableDeclarations color=blue]
+	b4558997132f43f7b2e58c14bf5d79e1 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	e23f034e12cd4f2182756d627af363cf [label="Object Properties
+{
+type -> a.detail.type
+}" color=blue]
+	b4558997132f43f7b2e58c14bf5d79e1 -> e23f034e12cd4f2182756d627af363cf
+	"6cb9bf10b0f4402db027041c8d068fad" -> b4558997132f43f7b2e58c14bf5d79e1
+	a954be1e9450439b9ddbed57ababf4dd -> "6cb9bf10b0f4402db027041c8d068fad"
+	"7b54ae7520554b07b9afa790569cac34" [label=SequenceExpression color=blue]
+	"87b6d074c57d4db8b85292de1170322f" [label="CallExpression,
+callee name -> console.log,
+param -> a.detail.type,
+" color=blue]
+	"7b54ae7520554b07b9afa790569cac34" -> "87b6d074c57d4db8b85292de1170322f"
+	"274bbaa166a24aa28a80422874334e47" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"75c6f1da6d484609a912cf65ebbf9023" [label=SequenceExpression color=blue]
+	"66f5352fa8184b38a2f18b32d53b44a7" [label="CallExpression,
+callee name -> console.log,
+param -> this.data.arrayStatus,
+" color=blue]
+	"75c6f1da6d484609a912cf65ebbf9023" -> "66f5352fa8184b38a2f18b32d53b44a7"
+	"274bbaa166a24aa28a80422874334e47" -> "75c6f1da6d484609a912cf65ebbf9023"
+	"7b54ae7520554b07b9afa790569cac34" -> "274bbaa166a24aa28a80422874334e47"
+	"8bfe7b63f9764f2aace74a833581a943" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	b4e83c61f90149179a9f2849b809291c [label=SequenceExpression color=blue]
+	"6341f194e81d4b68805dd0972b283fe6" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	e4b4f440b5e349d49afd35b9f8117c00 [label="Object Properties
+{
+arrayStatus -> this.data.arrayStatus
+}" color=blue]
+	"6341f194e81d4b68805dd0972b283fe6" -> e4b4f440b5e349d49afd35b9f8117c00
+	b4e83c61f90149179a9f2849b809291c -> "6341f194e81d4b68805dd0972b283fe6"
+	"16d4d01449e548d5bf3d9100125e2b01" [label="CallExpression,
+callee name -> console.log,
+param -> this.data.arrayStatus,
+" color=blue]
+	b4e83c61f90149179a9f2849b809291c -> "16d4d01449e548d5bf3d9100125e2b01"
+	"8bfe7b63f9764f2aace74a833581a943" -> b4e83c61f90149179a9f2849b809291c
+	"7b54ae7520554b07b9afa790569cac34" -> "8bfe7b63f9764f2aace74a833581a943"
+	a954be1e9450439b9ddbed57ababf4dd -> "7b54ae7520554b07b9afa790569cac34"
+}

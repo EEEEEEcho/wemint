@@ -1,0 +1,17 @@
+// \pages/returngoods/returngoods bindPickerChange Data Flow
+digraph {
+	bc8c14cb93dc41e59028f87de019166f [label="FunctionCall,
+function name -> bindPickerChange,
+param -> t.,
+t,
+" color=blue]
+	"7685d67a1541415aa953e7f53d044cd8" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"4422e2b407734965837b3715802de2b1" [label="Object Properties
+{
+index -> t.detail.value
+}" color=blue]
+	"7685d67a1541415aa953e7f53d044cd8" -> "4422e2b407734965837b3715802de2b1"
+	bc8c14cb93dc41e59028f87de019166f -> "7685d67a1541415aa953e7f53d044cd8"
+}

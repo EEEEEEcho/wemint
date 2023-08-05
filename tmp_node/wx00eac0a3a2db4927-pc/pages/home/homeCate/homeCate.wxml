@@ -1,0 +1,50 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="cate_container" style="margin-top:{{navH+status+10}}px">
+    <view class="header_display row">
+        <view class="tabbar-title">
+            <text class="selected-title" wx:if="{{dataList.length>0}}">{{dataList[active].name}}</text>
+        </view>
+        <view class="ul_searchbar row">
+            <view class="ul_view">
+                <image bindtap="showCateModel" class="ul" src="http://oss.shangmian.xin/weixin_applets_icon_ul.png"></image>
+            </view>
+            <view bindtap="toSearch" class="searchbar row">
+                <image class="search-img2" src="http://oss.shangmian.xin/weixin_applets_icon_searchbar.png"></image>
+                <text class="placeholder">搜索</text>
+            </view>
+        </view>
+    </view>
+    <view class="show_product">
+        <scroll-view scrollX class="scroll-view_H" scrollLeft="{{scrollLeft}}" scrollWithAnimation="true">
+            <view bindtap="chooseOne" class="product {{index===dataList.length-1?'product_last':''}}" data-catetitle="{{item.name}}" data-proindex="{{index}}" wx:for="{{dataList}}">
+                <view class="pro">
+                    <image class="pro_img" lazyLoad="true" mode="aspectFill" src="{{item.icon}}"></image>
+                    <view class="background-style" wx:if="{{active!=index}}">
+                        <text class="pro_back">{{item.name}}</text>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <goods-list categoryUuid="{{categoryUuid}}" id="goodsList" isClassify="{{isClassify}}" isComplex="{{isComplex}}" isFilter="{{isFilter}}" isPrice="{{isPrice}}"></goods-list>
+</view>
+<view catchtouchmove="preventMove">
+    <view class="cover_screen" wx:if="{{isShowCateModel}}"></view>
+    <view class="showCateModal {{options?'openCate':'closeCate'}}" wx:if="{{isShowCateModel}}">
+        <view class="close_img" style="margin-top:{{navH+status}}px;">
+            <image bindtap="closeModel" class="img" src="http://oss.shangmian.xin/weixin_applets_icon_close.png"></image>
+        </view>
+        <view class="modelTitle">{{cartPage}}切换</view>
+        <scroll-view scrollY class="main-content">
+            <view class="scroll_view">
+                <view class="list">
+                    <view class="cate_list" wx:for="{{dataList}}">
+                        <image bindtap="onClassify" class="category_img" data-index="{{index}}" data-uuid="{{item.categoryUuid}}" lazyLoad="true" mode="aspectFill" src="{{item.icon}}"></image>
+                        <text class="category_text">{{item.name}}</text>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+<loading-view isShow="{{isShowLoad}}"></loading-view>

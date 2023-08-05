@@ -1,0 +1,29 @@
+// \pages/questionnaire/ownerQuestionnaire inputB Data Flow
+digraph {
+	"63f729f5e2164056bbd480a0e15cf0d4" [label="FunctionCall,
+function name -> inputB,
+param -> e,
+e.,
+" color=blue]
+	"95308adb96ee4980b0424a59bf46a370" [label=VariableDeclarations color=blue]
+	"48291c14c4654bfe996afa56f2b7d9f6" [label="VariableDeclarator,
+left -> a,
+right -> e.detail.value" color=blue]
+	"95308adb96ee4980b0424a59bf46a370" -> "48291c14c4654bfe996afa56f2b7d9f6"
+	"63f729f5e2164056bbd480a0e15cf0d4" -> "95308adb96ee4980b0424a59bf46a370"
+	"49c4b8e0ff044219b72784454978235d" [label="Assignment,
+left -> this.data.questionArr[6].inputStr,
+right -> a" color=blue]
+	"63f729f5e2164056bbd480a0e15cf0d4" -> "49c4b8e0ff044219b72784454978235d"
+	"2f3e460ac288452b9fa8a09f0ba8f3cc" [label=VariableDeclarations color=blue]
+	ea69e3f50cf64d988eb1e3ce64252567 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"944c1556dfc74cabb286272189d98fda" [label="CallExpression,
+callee name -> parseInt,
+param -> a.length,
+" color=blue]
+	ea69e3f50cf64d988eb1e3ce64252567 -> "944c1556dfc74cabb286272189d98fda"
+	"2f3e460ac288452b9fa8a09f0ba8f3cc" -> ea69e3f50cf64d988eb1e3ce64252567
+	"63f729f5e2164056bbd480a0e15cf0d4" -> "2f3e460ac288452b9fa8a09f0ba8f3cc"
+}

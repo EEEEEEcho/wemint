@@ -1,0 +1,13 @@
+<scroll-view>
+    <view class="waitBox">
+        <view class="waitTitle">{{jiedanStatu}}</view>
+        <view class="waitNotice1">拒绝原因</view>
+        <view class="waitNotice2">{{reason}}</view>
+    </view>
+    <view class="storePhone">商家电话：{{phone}}</view>
+    <view class="storeAddress">店铺地址：{{address}}</view>
+</scroll-view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

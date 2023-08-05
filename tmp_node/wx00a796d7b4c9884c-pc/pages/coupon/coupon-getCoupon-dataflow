@@ -1,0 +1,23 @@
+// \pages/coupon/coupon getCoupon Data Flow
+digraph {
+	"1dcf32c48f5b49e8a5b3858b80ee6d78" [label="FunctionCall,
+function name -> getCoupon,
+param -> " color=blue]
+	"046502a7865c47f2b43958f6df3a76be" [label=SequenceExpression color=blue]
+	a1084dbb3db54f8ebf5bc110da66c752 [label="CallExpression,
+callee name -> console.log,
+param -> a.data.can,
+" color=blue]
+	"046502a7865c47f2b43958f6df3a76be" -> a1084dbb3db54f8ebf5bc110da66c752
+	cce440a626b746e393a99bba6b3341b3 [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"9c33cb2947074baaa00d3050727ae96a" [label="Object Properties
+{
+can -> a.data.can
+userid -> a.data.userid
+}" color=blue]
+	cce440a626b746e393a99bba6b3341b3 -> "9c33cb2947074baaa00d3050727ae96a"
+	"046502a7865c47f2b43958f6df3a76be" -> cce440a626b746e393a99bba6b3341b3
+	"1dcf32c48f5b49e8a5b3858b80ee6d78" -> "046502a7865c47f2b43958f6df3a76be"
+}

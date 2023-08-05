@@ -1,0 +1,31 @@
+// \pages/home/home navItemTap Data Flow
+digraph {
+	"8fe448642ba846b0b192d11878d141cb" [label="FunctionCall,
+function name -> navItemTap,
+param -> e.,
+e,
+" color=blue]
+	"0c67c21204194449b29c97436b464992" [label=VariableDeclarations color=blue]
+	"5709501be3c64fe4b2381494effab90b" [label="VariableDeclarator,
+left -> index,
+right -> e.target.dataset.index" color=blue]
+	"0c67c21204194449b29c97436b464992" -> "5709501be3c64fe4b2381494effab90b"
+	"8fe448642ba846b0b192d11878d141cb" -> "0c67c21204194449b29c97436b464992"
+	"56393bd34ceb4176bb9293fb515ca573" [label=VariableDeclarations color=blue]
+	af5d3bf09ddc48dba9860469f003f26e [label="VariableDeclarator,
+left -> cid,
+right -> e.target.dataset.cid" color=blue]
+	"56393bd34ceb4176bb9293fb515ca573" -> af5d3bf09ddc48dba9860469f003f26e
+	"8fe448642ba846b0b192d11878d141cb" -> "56393bd34ceb4176bb9293fb515ca573"
+	a07e803cf1d0460c870b420ded691cb3 [label="If Alternate" color=blue]
+	"0dd965bfe2c2452f9cf804050f69774b" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"50ea4b2914494335b833b6aba3c6a34c" [label="Object Properties
+{
+navBtnSelectIdx -> index
+}" color=blue]
+	"0dd965bfe2c2452f9cf804050f69774b" -> "50ea4b2914494335b833b6aba3c6a34c"
+	a07e803cf1d0460c870b420ded691cb3 -> "0dd965bfe2c2452f9cf804050f69774b"
+	"8fe448642ba846b0b192d11878d141cb" -> a07e803cf1d0460c870b420ded691cb3
+}

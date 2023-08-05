@@ -1,0 +1,20 @@
+// \pages/houseTypeModule/houseTypeModule onLoad Data Flow
+digraph {
+	e8d4ef84d4104a2c8ad7ed0584113d72 [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	e7fe3b8e8cf24744a39974b3f8a39b2c [label=SequenceExpression color=blue]
+	d759290a2ed442d8bf07b4beb3a648b2 [label="CallExpression,
+callee name -> this.getSystemInformation,
+param -> " color=blue]
+	"6577ae51ae64474f8c624400229c2bc6" [label="FunctionCall,
+function name -> getSystemInformation,
+param -> " color=blue]
+	"7e110b833d8c4246aa95acaf7c507604" [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> " color=blue]
+	"6577ae51ae64474f8c624400229c2bc6" -> "7e110b833d8c4246aa95acaf7c507604"
+	d759290a2ed442d8bf07b4beb3a648b2 -> "6577ae51ae64474f8c624400229c2bc6"
+	e7fe3b8e8cf24744a39974b3f8a39b2c -> d759290a2ed442d8bf07b4beb3a648b2
+	e8d4ef84d4104a2c8ad7ed0584113d72 -> e7fe3b8e8cf24744a39974b3f8a39b2c
+}

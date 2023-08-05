@@ -1,0 +1,17 @@
+<view class="page">
+    <view class="weui-cells tbornone bbornone mt0">
+        <view class="weui-cell" style="padding-bottom: 1rem;">
+            <view class="weui-cell__bd tc">
+                <view>
+                    <image class="tsimg" src="/image/zfok.png"></image>
+                </view>
+                <view class="fs30 mt20">支付成功</view>
+                <view class="fs24 text-muted mt10">您本次成功支付{{payMoney}}元</view>
+                <view class="mt50 btnsg">
+                    <navigator class="btn1" url="/pages/orderDetails/orderDetails?OrderID={{orderId}}">查看订单</navigator>
+                    <navigator class="btn2" url="/pages/shop/shop">继续购物</navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

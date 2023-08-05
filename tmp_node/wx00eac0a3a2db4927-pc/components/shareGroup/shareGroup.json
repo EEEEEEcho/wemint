@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "loading-view": "/components/loading/loading",
+        "empty": "/components/emptyView/emptyView"
+    },
+    "component": true
+}

@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "modal": "../popup/index",
+        "yz-button": "../button/index"
+    }
+}

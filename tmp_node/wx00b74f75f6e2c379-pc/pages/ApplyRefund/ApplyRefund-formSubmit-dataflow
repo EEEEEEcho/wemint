@@ -1,0 +1,47 @@
+// \pages/ApplyRefund/ApplyRefund formSubmit Data Flow
+digraph {
+	a042692434974b9f8e6bcab75d48827f [label="FunctionCall,
+function name -> formSubmit,
+param -> e,
+e.,
+" color=blue]
+	d62c39514fd5492494c5b041a60a9759 [label=VariableDeclarations color=blue]
+	ad0d55ad4b274ea2b4cf07684c2db1c5 [label="VariableDeclarator,
+left -> formId,
+right -> e.detail.formId" color=blue]
+	d62c39514fd5492494c5b041a60a9759 -> ad0d55ad4b274ea2b4cf07684c2db1c5
+	a042692434974b9f8e6bcab75d48827f -> d62c39514fd5492494c5b041a60a9759
+	"591b88595c3048ea9fcbe733027e7528" [label=VariableDeclarations color=blue]
+	"147f94664e7541388866a57ae9356dbe" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"04fd3d50ac6245419e0027e93ebdb7f7" [label="CallExpression,
+callee name -> that.ToTrim,
+param -> e.detail.value.txtBankName,
+" color=blue]
+	"147f94664e7541388866a57ae9356dbe" -> "04fd3d50ac6245419e0027e93ebdb7f7"
+	"591b88595c3048ea9fcbe733027e7528" -> "147f94664e7541388866a57ae9356dbe"
+	a042692434974b9f8e6bcab75d48827f -> "591b88595c3048ea9fcbe733027e7528"
+	e743cbac4d054558a7f089c1891ab476 [label=VariableDeclarations color=blue]
+	"278c2aa34805425e98854fd45b7b61e1" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	de5306c33dcb4adeaa86bf65f3b1b152 [label="CallExpression,
+callee name -> that.ToTrim,
+param -> e.detail.value.txtBankAccountName,
+" color=blue]
+	"278c2aa34805425e98854fd45b7b61e1" -> de5306c33dcb4adeaa86bf65f3b1b152
+	e743cbac4d054558a7f089c1891ab476 -> "278c2aa34805425e98854fd45b7b61e1"
+	a042692434974b9f8e6bcab75d48827f -> e743cbac4d054558a7f089c1891ab476
+	a9a1c027d3ab425bab0b72e8dbc4c6af [label=VariableDeclarations color=blue]
+	"09fc38ee405c421fbb2c2b3ad5ab5a8d" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"6dc9765b7ced415894fdf1f8cd64502c" [label="CallExpression,
+callee name -> that.ToTrim,
+param -> e.detail.value.txtBankAccountNo,
+" color=blue]
+	"09fc38ee405c421fbb2c2b3ad5ab5a8d" -> "6dc9765b7ced415894fdf1f8cd64502c"
+	a9a1c027d3ab425bab0b72e8dbc4c6af -> "09fc38ee405c421fbb2c2b3ad5ab5a8d"
+	a042692434974b9f8e6bcab75d48827f -> a9a1c027d3ab425bab0b72e8dbc4c6af
+}

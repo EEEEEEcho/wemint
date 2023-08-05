@@ -1,0 +1,13 @@
+// \pages/messagesList/messagesList getUserInfo Data Flow
+digraph {
+	"987aad01f9614388a48c8431ed0c73ef" [label="FunctionCall,
+function name -> getUserInfo,
+param -> e,
+e.,
+" color=blue]
+	f967fa8ad08846429a3a4ffbc12e6695 [label="CallExpression,
+callee name -> p.call,
+param -> e,
+" color=blue]
+	"987aad01f9614388a48c8431ed0c73ef" -> f967fa8ad08846429a3a4ffbc12e6695
+}

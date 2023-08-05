@@ -1,0 +1,207 @@
+page {
+    background: #f4f4f4;
+}
+
+.evaluation {
+    width: 100%;
+    padding-bottom: 100rpx;
+}
+
+.product_panel {
+    background: #fff;
+    width: 682rpx;
+    border-radius: 24rpx;
+    margin-left: 34rpx;
+    margin-top: 180rpx;
+    padding-top: 40rpx;
+}
+
+.product_image {
+    width: 152rpx;
+    height: 152rpx;
+    border-radius: 8rpx;
+    margin: 0rpx 20rpx 30rpx 30rpx;
+}
+
+.product_img {
+    width: 152rpx;
+    height: 152rpx;
+    border-radius: 8rpx;
+}
+
+.product {
+    flex: 1;
+    margin-right: 30rpx;
+    margin-top: 10rpx;
+}
+
+.product_name {
+    color: #51515c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    margin-bottom: 10rpx;
+}
+
+.product_type {
+    color: #aeaeb4;
+    font-size: 24rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.sales_price {
+    color: #ed7b43;
+    font-size: 26rpx;
+}
+
+.sales_total {
+    color: #999999;
+    font-size: 22rpx;
+}
+
+.content_txt {
+    background: #f4f4f4;
+    margin-left: 30rpx;
+    width: 622rpx;
+    font-size: 28rpx;
+    border-radius: 10rpx;
+}
+
+.textarea {
+    width: 596rpx;
+    height: 180rpx;
+    padding-top: 18rpx;
+    padding-left: 18rpx;
+    font-size: 26rpx;
+    color: #51515c;
+}
+
+.placeholder {
+    font-size: 28rpx;
+    color: #ccc;
+}
+
+.upload_images {
+    background: #fff;
+    border-bottom-left-radius: 24rpx;
+    border-bottom-right-radius: 24rpx;
+}
+
+.upload {
+    padding-top: 30rpx;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.uploadLayout {
+    width: 140rpx;
+    height: 140rpx;
+    margin-bottom: 30rpx;
+    margin-left: 30rpx;
+    position: relative;
+}
+
+.uploaded_img {
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 8rpx;
+    position: absolute;
+}
+
+.uploadDelete {
+    width: 36rpx;
+    height: 36rpx;
+    position: absolute;
+    top: 8rpx;
+    right: 8rpx;
+}
+
+.upload_img {
+    width: 140rpx;
+    height: 140rpx;
+    margin-bottom: 30rpx;
+    margin-left: 30rpx;
+    border-radius: 8rpx;
+}
+
+.erector_evaluation {
+    background: #fff;
+    margin-top: 40rpx;
+    border-radius: 24rpx;
+    width: 682rpx;
+    margin-left: 34rpx;
+    padding-bottom: 50rpx;
+    margin-bottom: 146rpx;
+}
+
+.erector_header {
+    padding-top: 48rpx;
+    align-items: center;
+}
+
+.erector_logo {
+    width: 45rpx;
+    height: 44rpx;
+    margin-left: 30rpx;
+    margin-right: 12rpx;
+}
+
+.erector_title {
+    font-size: 42rpx;
+    color: #51515c;
+}
+
+.erector_question {
+    font-size: 28rpx;
+    color: #aeaeb4;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    margin-top: 50rpx;
+}
+
+.erector_answer {
+    margin-left: 30rpx;
+    margin-top: 24rpx;
+    flex-wrap: wrap;
+}
+
+.answer {
+    font-size: 24rpx;
+    color: #999;
+    height: 46rpx;
+    border: 1rpx solid #eee;
+    border-radius: 10rpx;
+    text-align: center;
+    line-height: 46rpx;
+    padding: 0 16rpx;
+    margin-right: 16rpx;
+    margin-bottom: 16rpx;
+}
+
+.checked {
+    background: #51515c;
+    color: #fff;
+}
+
+.submit_evaluation {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #ed7b43;
+    color: #fff;
+    font-size: 36rpx;
+    text-align: center;
+    width: 750rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+}
+
+.question_layout {
+    width: 100%;
+}

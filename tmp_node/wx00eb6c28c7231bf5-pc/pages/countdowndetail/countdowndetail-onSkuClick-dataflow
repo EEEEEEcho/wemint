@@ -1,0 +1,82 @@
+// \pages/countdowndetail/countdowndetail onSkuClick Data Flow
+digraph {
+	"3f73e1fc3bb94ac68366e7fd54b25bf5" [label="FunctionCall,
+function name -> onSkuClick,
+param -> t,
+t.,
+" color=blue]
+	f5656857f7ff49b7a2834c60ddfeb04d [label=VariableDeclarations color=blue]
+	f56b9739465348819d64d7bb21e4d5d8 [label="VariableDeclarator,
+left -> e,
+right -> t.target.dataset.indexcount" color=blue]
+	f5656857f7ff49b7a2834c60ddfeb04d -> f56b9739465348819d64d7bb21e4d5d8
+	"62ab0c9ceeae41a2950e71e187437995" [label="VariableDeclarator,
+left -> a,
+right -> t.target.id" color=blue]
+	f5656857f7ff49b7a2834c60ddfeb04d -> "62ab0c9ceeae41a2950e71e187437995"
+	b50770799d144890b64c0a11e1112234 [label="VariableDeclarator,
+left -> o,
+right -> t.target.dataset.skuvalue" color=blue]
+	f5656857f7ff49b7a2834c60ddfeb04d -> b50770799d144890b64c0a11e1112234
+	"3f73e1fc3bb94ac68366e7fd54b25bf5" -> f5656857f7ff49b7a2834c60ddfeb04d
+	"1bf89a185f2b4fdb89fffe620a0c5966" [label=SequenceExpression color=blue]
+	bdc441fce3ea4394b201bdc069c9e958 [label="Assignment,
+left -> n.valueid,
+right -> a" color=blue]
+	"1bf89a185f2b4fdb89fffe620a0c5966" -> bdc441fce3ea4394b201bdc069c9e958
+	"8c5d5f868af04ea6acfb40870007ed8c" [label="Assignment,
+left -> n.value,
+right -> o" color=blue]
+	"1bf89a185f2b4fdb89fffe620a0c5966" -> "8c5d5f868af04ea6acfb40870007ed8c"
+	"3f73e1fc3bb94ac68366e7fd54b25bf5" -> "1bf89a185f2b4fdb89fffe620a0c5966"
+	e9d3f068e9ab470a931a8ae9305e2193 [label=VariableDeclarations color=blue]
+	"674743625d694034a81170909f9ff3d8" [label="VariableDeclarator,
+left -> u,
+right -> this.data.selectedskuList" color=blue]
+	e9d3f068e9ab470a931a8ae9305e2193 -> "674743625d694034a81170909f9ff3d8"
+	"3f73e1fc3bb94ac68366e7fd54b25bf5" -> e9d3f068e9ab470a931a8ae9305e2193
+	fe95dbd02b90418a9d46cb01063b85b6 [label=VariableDeclarations color=blue]
+	"39ad6e40e74c4ceb9e3b9937b519b2fd" [label="VariableDeclarator,
+left -> s,
+right -> this.data.SkuItemList" color=blue]
+	fe95dbd02b90418a9d46cb01063b85b6 -> "39ad6e40e74c4ceb9e3b9937b519b2fd"
+	"3f73e1fc3bb94ac68366e7fd54b25bf5" -> fe95dbd02b90418a9d46cb01063b85b6
+	"3f3538e3fd174338a3e46eaea755397b" [label="For Loop" color=blue]
+	"3e54fcbdbd004f358483b5baed4d957a" [label=VariableDeclarations color=blue]
+	cdc097fff54240ac867a47d660d37817 [label="VariableDeclarator,
+left -> d,
+right -> u[r]" color=blue]
+	"3e54fcbdbd004f358483b5baed4d957a" -> cdc097fff54240ac867a47d660d37817
+	"3f3538e3fd174338a3e46eaea755397b" -> "3e54fcbdbd004f358483b5baed4d957a"
+	baec312aca044a8d9e97838d94c521b0 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	b6527f9cb4544db29cece9efd66737d8 [label=SequenceExpression color=blue]
+	"5ad4fcd418d54da39af9d9de95955a2f" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	e4e5e1a69a074f959bd712bce52f761a [label="ConditionalExpression,
+ conditional list -> d.value,',' + d.value" color=blue]
+	"5ad4fcd418d54da39af9d9de95955a2f" -> e4e5e1a69a074f959bd712bce52f761a
+	b6527f9cb4544db29cece9efd66737d8 -> "5ad4fcd418d54da39af9d9de95955a2f"
+	"9716130c640c452db49c776578e64deb" [label="Assignment,
+left -> c,
+right -> '_' + d.valueid" color=blue]
+	b6527f9cb4544db29cece9efd66737d8 -> "9716130c640c452db49c776578e64deb"
+	baec312aca044a8d9e97838d94c521b0 -> b6527f9cb4544db29cece9efd66737d8
+	"3f3538e3fd174338a3e46eaea755397b" -> baec312aca044a8d9e97838d94c521b0
+	"3f73e1fc3bb94ac68366e7fd54b25bf5" -> "3f3538e3fd174338a3e46eaea755397b"
+	"521d5760445f439bbc88f2bca76f4d7c" [label=SequenceExpression color=blue]
+	"8f8a351b7367494cb14982f56c91bfd2" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"099331abf89d492c896f5f0e7fdc240f" [label="Object Properties
+{
+selectedskuList -> u
+selectedSku -> c
+SkuItemList -> s
+}" color=blue]
+	"8f8a351b7367494cb14982f56c91bfd2" -> "099331abf89d492c896f5f0e7fdc240f"
+	"521d5760445f439bbc88f2bca76f4d7c" -> "8f8a351b7367494cb14982f56c91bfd2"
+	"3f73e1fc3bb94ac68366e7fd54b25bf5" -> "521d5760445f439bbc88f2bca76f4d7c"
+}

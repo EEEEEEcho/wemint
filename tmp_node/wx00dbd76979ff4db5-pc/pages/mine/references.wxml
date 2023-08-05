@@ -1,0 +1,5 @@
+<view class="k10"></view>
+<view class="list">
+    <view class="list-l">我的推荐人</view>
+    <view class="list-r">{{name}}</view>
+</view>

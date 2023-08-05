@@ -1,0 +1,24 @@
+// \pages/customTheme/customTheme onSelect Data Flow
+digraph {
+	"6dc5c6dc9b2e437dacdd08b38efc3b46" [label="FunctionCall,
+function name -> onSelect,
+param -> t.,
+t,
+" color=blue]
+	f869bf41199d46f795d5883b873f1f2e [label=SequenceExpression color=blue]
+	d4350577b76646e495fbda6dff6d0f7b [label="CallExpression,
+callee name -> console.log,
+param -> t,
+" color=blue]
+	f869bf41199d46f795d5883b873f1f2e -> d4350577b76646e495fbda6dff6d0f7b
+	"5f1a0b90ceab4f22ad35e25abc4500ea" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"303f09959f684977b91facef611835dc" [label="Object Properties
+{
+selectTheme -> t.currentTarget.dataset.id
+}" color=blue]
+	"5f1a0b90ceab4f22ad35e25abc4500ea" -> "303f09959f684977b91facef611835dc"
+	f869bf41199d46f795d5883b873f1f2e -> "5f1a0b90ceab4f22ad35e25abc4500ea"
+	"6dc5c6dc9b2e437dacdd08b38efc3b46" -> f869bf41199d46f795d5883b873f1f2e
+}

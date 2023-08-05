@@ -1,0 +1,24 @@
+// \pages/collect/collect collectDel Data Flow
+digraph {
+	"6ba74fcc23de4bf48f3d9f47b2e738f9" [label="FunctionCall,
+function name -> collectDel,
+param -> e.,
+e,
+" color=blue]
+	d9abcf039a6a4963be1ae042a3aac73a [label="CallExpression,
+callee name -> console.log,
+param -> e.currentTarget.dataset.id,
+" color=blue]
+	"6ba74fcc23de4bf48f3d9f47b2e738f9" -> d9abcf039a6a4963be1ae042a3aac73a
+	"66110fd0b73547429ecbbcc56dd2e4c4" [label=SequenceExpression color=blue]
+	"27cafae3d8674a488751c84efb5593fe" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"8c38babce4984ef18215aad4c3df730e" [label="Object Properties
+{
+id -> e.currentTarget.dataset.id
+}" color=blue]
+	"27cafae3d8674a488751c84efb5593fe" -> "8c38babce4984ef18215aad4c3df730e"
+	"66110fd0b73547429ecbbcc56dd2e4c4" -> "27cafae3d8674a488751c84efb5593fe"
+	"6ba74fcc23de4bf48f3d9f47b2e738f9" -> "66110fd0b73547429ecbbcc56dd2e4c4"
+}

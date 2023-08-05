@@ -1,0 +1,127 @@
+// \pages/company/businessCard/cardDetails onShareAppMessage Data Flow
+digraph {
+	cb4c2b856bd44090b89013d33e3af166 [label="FunctionCall,
+function name -> onShareAppMessage,
+param -> " color=blue]
+	"1cd04b81eb074004aa21a11ead7dd4c2" [label=VariableDeclarations color=blue]
+	"6e24816303744c5a93add2a384870aca" [label="VariableDeclarator,
+left -> s,
+right -> e.data.currentTab" color=blue]
+	"1cd04b81eb074004aa21a11ead7dd4c2" -> "6e24816303744c5a93add2a384870aca"
+	"6dc6025ea2db46178c0551096760dc48" [label="VariableDeclarator,
+left -> i,
+right -> e.data.optionsobj" color=blue]
+	"1cd04b81eb074004aa21a11ead7dd4c2" -> "6dc6025ea2db46178c0551096760dc48"
+	cb4c2b856bd44090b89013d33e3af166 -> "1cd04b81eb074004aa21a11ead7dd4c2"
+	"0ffcf19e937348c8b6317a546e3bc1a8" [label="If Alternate" color=blue]
+	d2ac2b2e74ba40959d52d2ae254efab1 [label="If Alternate" color=blue]
+	cce36b011f0a404b9efe1507865d5122 [label=VariableDeclarations color=blue]
+	e26589ee21ae45369bc16a7516c78569 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"8d03123813714086a7c0445e5ea53e76" [label="Object Properties
+{
+}" color=blue]
+	a3b60eecb6b64d27ac90f2ef061f1a04 [label="ConditionalExpression,
+ conditional list -> e.data.optionsobj.BusinessCardID,e.data.optionsobj.cid" color=blue]
+	"8d03123813714086a7c0445e5ea53e76" -> a3b60eecb6b64d27ac90f2ef061f1a04
+	d59da4578b3d4d8897c2b86fc98f56b3 [label="ConditionalExpression,
+ conditional list -> e.data.optionsobj.BusinessCardID,e.data.optionsobj.cid" color=blue]
+	"8d03123813714086a7c0445e5ea53e76" -> d59da4578b3d4d8897c2b86fc98f56b3
+	e26589ee21ae45369bc16a7516c78569 -> "8d03123813714086a7c0445e5ea53e76"
+	cce36b011f0a404b9efe1507865d5122 -> e26589ee21ae45369bc16a7516c78569
+	d2ac2b2e74ba40959d52d2ae254efab1 -> cce36b011f0a404b9efe1507865d5122
+	"0ffcf19e937348c8b6317a546e3bc1a8" -> d2ac2b2e74ba40959d52d2ae254efab1
+	d69a9729d00a4ec09fe367c635149c48 [label="Assignment,
+left -> i.userid,
+right -> e.data.userID" color=blue]
+	"0ffcf19e937348c8b6317a546e3bc1a8" -> d69a9729d00a4ec09fe367c635149c48
+	db4511c61a7341d784b6fa6123b2ab9e [label=VariableDeclarations color=blue]
+	a63d1881591244068744d4608696c82d [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	e34fde409e524603bf5e162803f6875b [label="CallExpression,
+callee name -> a.getPageUrl,
+param -> e,
+i,
+" color=blue]
+	a63d1881591244068744d4608696c82d -> e34fde409e524603bf5e162803f6875b
+	db4511c61a7341d784b6fa6123b2ab9e -> a63d1881591244068744d4608696c82d
+	"0ffcf19e937348c8b6317a546e3bc1a8" -> db4511c61a7341d784b6fa6123b2ab9e
+	"5684d04e77134fa2902114786d4a3e3e" [label=SequenceExpression color=blue]
+	"7f7106d49ca247668e114f19e4bc2f79" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"8a0c41306d0c483ab9b43738d7a9d0fe" [label="Object Properties
+{
+}" color=blue]
+	"977cc1f9cb7e4c649974d5c831b1ea22" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	f642c3522e134d7ab8e91852a4fdd27d [label="CallExpression,
+callee name -> Number,
+param -> e.data.Transpondcon,
+" color=blue]
+	"977cc1f9cb7e4c649974d5c831b1ea22" -> f642c3522e134d7ab8e91852a4fdd27d
+	"8a0c41306d0c483ab9b43738d7a9d0fe" -> "977cc1f9cb7e4c649974d5c831b1ea22"
+	e000c4de010b426da8444eeb6f59945a [label="CallExpression,
+callee name -> Number,
+param -> e.data.Transpondcon,
+" color=blue]
+	"8a0c41306d0c483ab9b43738d7a9d0fe" -> e000c4de010b426da8444eeb6f59945a
+	"7f7106d49ca247668e114f19e4bc2f79" -> "8a0c41306d0c483ab9b43738d7a9d0fe"
+	"5684d04e77134fa2902114786d4a3e3e" -> "7f7106d49ca247668e114f19e4bc2f79"
+	"0ffcf19e937348c8b6317a546e3bc1a8" -> "5684d04e77134fa2902114786d4a3e3e"
+	"590d603e8c784129b841268200150a37" [label=VariableDeclarations color=blue]
+	"24bd1d883a6c48419c76c633e77f1efb" [label="VariableDeclarator,
+left -> r,
+right -> e.data.cardcontent" color=blue]
+	"590d603e8c784129b841268200150a37" -> "24bd1d883a6c48419c76c633e77f1efb"
+	"511c0b0781ce431ea4853273847d2428" [label="VariableDeclarator,
+left -> d,
+right -> '您好\uFF0C我是' + r.CompanyName + r.Position + r.UserName + '\uFF0C这是我的名片请惠存'" color=blue]
+	"590d603e8c784129b841268200150a37" -> "511c0b0781ce431ea4853273847d2428"
+	e77b0d96f4f74c22b7231c74b884f523 [label="VariableDeclarator,
+left -> c,
+right -> '' + e.data.baseUrl + r.PersonImg" color=blue]
+	"590d603e8c784129b841268200150a37" -> e77b0d96f4f74c22b7231c74b884f523
+	"0ffcf19e937348c8b6317a546e3bc1a8" -> "590d603e8c784129b841268200150a37"
+	"958cd0d3527040fba0305f36d62c50dd" [label=ReturnExpression color=blue]
+	"68651ba95bc84d25abebd355268ce44b" [label="CallExpression,
+callee name -> a.shareAppMessage,
+param -> " color=blue]
+	bf756e04df184c9d827824fc71c9aa59 [label="Object Properties
+{
+title -> d
+imageUrl -> c
+}" color=blue]
+	"68651ba95bc84d25abebd355268ce44b" -> bf756e04df184c9d827824fc71c9aa59
+	"958cd0d3527040fba0305f36d62c50dd" -> "68651ba95bc84d25abebd355268ce44b"
+	"0ffcf19e937348c8b6317a546e3bc1a8" -> "958cd0d3527040fba0305f36d62c50dd"
+	cb4c2b856bd44090b89013d33e3af166 -> "0ffcf19e937348c8b6317a546e3bc1a8"
+	affe1fd0f87f488a85664feb7a6d60d5 [label="If Alternate" color=blue]
+	a2a87bba05784356b5a0e03d4a4a5f0d [label="If Alternate" color=blue]
+	"394f035220944647a999c545a6b81ab7" [label=SequenceExpression color=blue]
+	"8e06f3d2811a4a3490106d456ae6a4c9" [label="Assignment,
+left -> l,
+right -> '' + e.data.baseUrl + t.target.dataset.img" color=blue]
+	"394f035220944647a999c545a6b81ab7" -> "8e06f3d2811a4a3490106d456ae6a4c9"
+	"10e9041ea44f43a79832965572d349f7" [label="Assignment,
+left -> g,
+right -> '/pages/shop/newsdetail?id=' + D + '&businessid=' + i.BusinessCardID + '&userid=' + a.globalData.WebUserID" color=blue]
+	"394f035220944647a999c545a6b81ab7" -> "10e9041ea44f43a79832965572d349f7"
+	a2a87bba05784356b5a0e03d4a4a5f0d -> "394f035220944647a999c545a6b81ab7"
+	affe1fd0f87f488a85664feb7a6d60d5 -> a2a87bba05784356b5a0e03d4a4a5f0d
+	a508f899739443fb8d558a154e8ae297 [label=ReturnExpression color=blue]
+	"3e25405495dc4b5b9198035c1f3b320a" [label="CallExpression,
+callee name -> a.shareAppMessage,
+param -> " color=blue]
+	ed0af5cd51b84fe38791ed22c87694c2 [label="Object Properties
+{
+url -> g
+imageUrl -> l
+}" color=blue]
+	"3e25405495dc4b5b9198035c1f3b320a" -> ed0af5cd51b84fe38791ed22c87694c2
+	a508f899739443fb8d558a154e8ae297 -> "3e25405495dc4b5b9198035c1f3b320a"
+	affe1fd0f87f488a85664feb7a6d60d5 -> a508f899739443fb8d558a154e8ae297
+	cb4c2b856bd44090b89013d33e3af166 -> affe1fd0f87f488a85664feb7a6d60d5
+}

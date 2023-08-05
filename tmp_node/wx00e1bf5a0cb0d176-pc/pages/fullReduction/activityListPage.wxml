@@ -1,0 +1,101 @@
+<view class="activityListPage">
+    <view class="layout-101 {{activityNoscrollState?'activityNoscroll':''}}">
+        <view class="activityTitle">
+            <view class="flexBox flexAlign flexJustify">
+                <image mode="widthFix" src="{{baseUrl}}{{activityBase.Image}}"></image>
+            </view>
+            <view class="activityTime flexBox flexAlign flexJustifyBetween">
+                <text class="activity-con-txt flexBox flexAlign flexJustify">
+                    <text class="activitySurplus">活动剩余</text>
+                    <text class="shi">{{activityTime.day}}</text>
+                    <text class="activityDay">天</text>
+                    <text class="shi">{{activityTime.hour}}</text>
+                    <text class="colon">:</text>
+                    <text class="shi">{{activityTime.minute}}</text>
+                    <text class="colon">:</text>
+                    <text class="shi">{{activityTime.second}}</text>
+                </text>
+                <text catchtap="activityStateTrue" class="activityRules">活动规则</text>
+            </view>
+        </view>
+        <scroll-view bindscrolltolower="loadMore" style="height:100%; box-sizing:border-box">
+            <view class="groupBooking flexBox flexJustifyBetween">
+                <view catchtap="activityNavTo" class="groupProItem flexDirectionColumn" data-linkid="{{item.ProductID}}" wx:for="{{productList}}" wx:key="{{item.ProductID}}">
+                    <view class="activityItemImgBox flexBox flexAlign flexJustify">
+                        <image class="groupProItemImage" mode="aspectFit" src="{{baseUrl}}{{item.ImgSmall}}"></image>
+                    </view>
+                    <view class="groupProMain">
+                        <view class="groupProTitle overflow1">{{item.Name}}</view>
+                        <view class="flexBox flexJustifyBetween groupProPriceAndbuy">
+                            <view class="groupProMoney">
+                                <span class="groupProPrice">￥{{item.Price}}</span>
+                            </view>
+                            <view class="flexBox flexJustify flexAlign">
+                                <view class="goGroup">
+                    立即抢购
+                  </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="groupDiscount  flexBox flexAlign flexJustify">满额优惠</view>
+                </view>
+            </view>
+            <view class="notList" wx:if="{{notListFlag}}">没有更多</view>
+        </scroll-view>
+        <view class="activityModal" wx:if="{{acitityState}}">
+            <view catchtap="activityStateFalse" class="activityModal-mask"></view>
+            <view class="activityModal-content">
+                <view class="activityModal-content-title">
+                    <text>活动规则</text>
+                    <text catchtap="activityStateFalse" class="iconfont icon-guanbi-copy iconsize modalClose"></text>
+                </view>
+                <view class="activityRuleContent">
+                    <view class="activityModal-list activityModal-list-one">
+                        <view class="activityContentColor">活动时间</view>
+                        <view class="activityrpx">
+                {{activityBase.StartTime}} 至 {{activityBase.EndTime}}
+              </view>
+                    </view>
+                    <view class="activityModal-list">
+                        <view class="activityContentColor">活动优惠</view>
+                        <view class="activityrpx {{activityDiscountsSate?'':'marginTopDiscount'}}">
+                            <view class="fullItem flexBox flexAlign" wx:if="{{activityDiscountsSate}}">
+                                <text class="fullicon" id="EnableFreeicon">满减</text>
+                                <view class="flexAlign">
+                                    <text class="fulltitle" wx:if="{{item.DecreaseAmount}}" wx:for="{{activityDiscounts}}" wx:key="item.ID">满{{item.Threshold}}减{{item.DecreaseAmount}};</text>
+                                    <text class="fulltitle" wx:if="{{item.Discount}}" wx:for="{{activityDiscounts}}" wx:key="item.ID">满{{item.Threshold}}打{{item.Discount}}折;</text>
+                                </view>
+                            </view>
+                            <view class="full-free" wx:if="{{fullGiftFlag}}">
+                                <text class="fullicon">满送</text>
+                                <view class="full-free-list">
+                                    <label wx:for="{{activityDiscounts}}" wx:key="item.ID">
+                                        <view class="full-free-item" wx:if="{{item.GiftType==2}}">
+                                            <text class="fulltitle">满{{item.Threshold}}送赠品一个，送完即止</text>
+                                            <text catchtap="goProductDetails" class="go-product-detail" data-productid="{{item.list[0].id}}">查看赠品</text>
+                                        </view>
+                                        <view class="full-free-item" wx:if="{{item.GiftType==1}}">
+                                            <text class="fulltitle">满{{item.Threshold}}送优惠券，送完即止</text>
+                                        </view>
+                                    </label>
+                                </view>
+                            </view>
+                            <view class="fullItem" wx:if="{{EnableFree}}">
+                                <text class="fullicon">免邮</text>
+                                <text class="fulltitle">满{{minThreshold}}免邮</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="activityModal-list activityModal-list-three">
+                        <view class="activityContentColor">温馨提示</view>
+                        <view class="activityrpx">
+                            <view>1. 满减活动不与优惠券同期参与。即下单时若参与了该满减活动则不能使用优惠券。</view>
+                            <view class="activityTips">2. 本活动不支持与其他活动【团购、秒杀、其他满减活动、会员折扣】同时参与。</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<include src="/pages/template/popupFromShare.wxml"></include>

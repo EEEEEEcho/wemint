@@ -1,0 +1,21 @@
+<view class="containerPoster">
+    <view class="card_wrap">
+        <view animation="{{id===0?animationData:''}}" class="card_item card{{id+1}} " data-index="{{id}}" wx:for="{{cardInfoList}}" wx:for-index="id" wx:key="unique">
+            <span bindtap="slidethis" class="change_icon" wx:if="{{id===0}}">
+                <image src="../../../image/changeicon.png"></image>
+            </span>
+            <image bindtap="previewImg" mode="widthFix" src="{{item}}"></image>
+        </view>
+    </view>
+</view>
+<view class="canvas-box">
+    <canvas canvasId="mycanvas" style="width: {{bgWidth}}px;height: {{bgHeight}}px;"></canvas>
+</view>
+<button bindgetuserinfo="onGotUserInfo" class="img-plus-style" lang="zh_CN" openType="getUserInfo">分享</button>
+<action-sheet bindchange="actionSheetChange2" hidden="{{actionSheetHidden2}}">
+    <action-sheet-item>
+        <button openType="share">分享给朋友</button>
+    </action-sheet-item>
+    <action-sheet-item bindtap="formSubmit" id="{{id}}">生成分享图片</action-sheet-item>
+    <action-sheet-cancel>取消</action-sheet-cancel>
+</action-sheet>

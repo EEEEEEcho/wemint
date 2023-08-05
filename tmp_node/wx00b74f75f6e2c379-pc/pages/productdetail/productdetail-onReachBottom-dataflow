@@ -1,0 +1,15 @@
+// \pages/productdetail/productdetail onReachBottom Data Flow
+digraph {
+	"9f2666e0f192403c8325bcc02b4395b3" [label="FunctionCall,
+function name -> onReachBottom,
+param -> " color=blue]
+	"6ea9c9f3acf54269925b074017bfe4d3" [label="If Alternate" color=blue]
+	f8a4cb79000142a6aa4cd605fee65caf [label="If Alternate" color=blue]
+	c8e01e21f87847a4b454130921a6ee59 [label="CallExpression,
+callee name -> WxParse.wxParse,
+param -> that,
+" color=blue]
+	f8a4cb79000142a6aa4cd605fee65caf -> c8e01e21f87847a4b454130921a6ee59
+	"6ea9c9f3acf54269925b074017bfe4d3" -> f8a4cb79000142a6aa4cd605fee65caf
+	"9f2666e0f192403c8325bcc02b4395b3" -> "6ea9c9f3acf54269925b074017bfe4d3"
+}

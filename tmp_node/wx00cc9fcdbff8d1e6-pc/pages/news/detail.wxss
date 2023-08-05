@@ -1,0 +1,27 @@
+.art-header {
+    width: 100%;
+}
+
+.art-title {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+.art-source {
+    position: absolute;
+    bottom: 8px;
+    font-size: 14px;
+    right: 8px;
+}
+
+.art-content {
+    font-size: 14px;
+    color: #616466;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 10px;
+    background-color: #FFF;
+    line-height: 1.5;
+}

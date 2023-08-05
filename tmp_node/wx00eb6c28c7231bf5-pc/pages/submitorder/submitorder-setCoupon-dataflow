@@ -1,0 +1,26 @@
+// \pages/submitorder/submitorder setCoupon Data Flow
+digraph {
+	c510f1101b544bcfad54a8b68928646e [label="FunctionCall,
+function name -> setCoupon,
+param -> t,
+t.,
+" color=blue]
+	b08ea04fac9542248b82d0819a32eb96 [label="If Alternate" color=blue]
+	"06ff6e68b67e4bcda29b539fbcd84352" [label=VariableDeclarations color=blue]
+	cb990f9bb0284c18afc365ec60ce7a5e [label="VariableDeclarator,
+left -> n,
+right -> o.data.CouponList[a]" color=blue]
+	"06ff6e68b67e4bcda29b539fbcd84352" -> cb990f9bb0284c18afc365ec60ce7a5e
+	b08ea04fac9542248b82d0819a32eb96 -> "06ff6e68b67e4bcda29b539fbcd84352"
+	"995413a5b0794481a1bdd149a377f3ec" [label="CallExpression,
+callee name -> o.setData,
+param -> " color=blue]
+	"8456bcf71875457b8c8036a3eb638ba3" [label="Object Properties
+{
+DefaultCouponCode -> n.ClaimCode
+DefaultCouponPrice -> n.Price
+}" color=blue]
+	"995413a5b0794481a1bdd149a377f3ec" -> "8456bcf71875457b8c8036a3eb638ba3"
+	b08ea04fac9542248b82d0819a32eb96 -> "995413a5b0794481a1bdd149a377f3ec"
+	c510f1101b544bcfad54a8b68928646e -> b08ea04fac9542248b82d0819a32eb96
+}

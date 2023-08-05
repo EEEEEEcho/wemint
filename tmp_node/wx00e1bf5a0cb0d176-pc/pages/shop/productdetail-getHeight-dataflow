@@ -1,0 +1,19 @@
+// \pages/shop/productdetail getHeight Data Flow
+digraph {
+	c459c11724404ca1bf6630d303e00176 [label="FunctionCall,
+function name -> getHeight,
+param -> " color=blue]
+	"818ba4aa86fc4183b8ab43c139ff2f97" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"90aaf5e8b46d4ae987fefd3ee9bd8d14" [label="Object Properties
+{
+}" color=blue]
+	"82f9d2679e8949fcba33bafe21e1cbc8" [label="CallExpression,
+callee name -> parseInt,
+param -> wx.getSystemInfoSync().windowHeight - wx.getSystemInfoSync().windowWidth / 750,
+" color=blue]
+	"90aaf5e8b46d4ae987fefd3ee9bd8d14" -> "82f9d2679e8949fcba33bafe21e1cbc8"
+	"818ba4aa86fc4183b8ab43c139ff2f97" -> "90aaf5e8b46d4ae987fefd3ee9bd8d14"
+	c459c11724404ca1bf6630d303e00176 -> "818ba4aa86fc4183b8ab43c139ff2f97"
+}

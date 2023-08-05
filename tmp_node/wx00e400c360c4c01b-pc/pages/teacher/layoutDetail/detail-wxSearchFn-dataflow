@@ -1,0 +1,11 @@
+// \pages/teacher/layoutDetail/detail wxSearchFn Data Flow
+digraph {
+	"3fe8e6f100d2417ba3e4991ae254852f" [label="FunctionCall,
+function name -> wxSearchFn,
+param -> " color=blue]
+	"8a7aa6f7ee86486d8e0fe15f30c651de" [label="CallExpression,
+callee name -> s.wxSearchAddHisKey,
+param -> a,
+" color=blue]
+	"3fe8e6f100d2417ba3e4991ae254852f" -> "8a7aa6f7ee86486d8e0fe15f30c651de"
+}

@@ -1,0 +1,63 @@
+.avatar {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 50rpx;
+    left: 40%;
+    z-index: 8;
+}
+
+.nickname {
+    color: #fff;
+    font-size: 32rpx;
+    line-height: 80rpx;
+    display: block;
+    font-weight: bold;
+    position: absolute;
+    top: 200rpx;
+    left: 47%;
+    z-index: 8;
+    font: "宋体","微软雅黑";
+}
+
+.section {
+    padding: 0;
+    color: #2e2e2e;
+    font-size: 35rpx;
+}
+
+.section .line {
+    margin-left: 30rpx;
+    padding-right: 30rpx;
+    line-height: 3;
+    border-bottom: 1px solid #efefef;
+}
+
+.section .line:active {
+    background: #eeeeee;
+}
+
+.section .line:before {
+    content: '>';
+    float: right;
+    color: #aaa;
+    margin-left: 20rpx;
+}
+
+.section .line .tl {
+    float: right;
+    color: #aaa;
+}
+
+.block {
+    display: flex;
+}
+
+.section .block image {
+    padding-top: 30rpx;
+    padding-right: 20rpx;
+    width: 40rpx;
+    height: 40rpx;
+}

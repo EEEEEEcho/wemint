@@ -1,0 +1,69 @@
+// \pages/prodlist/prodlist sellnumTap Data Flow
+digraph {
+	"3b88745f8fc8424795b6411cb1b76d56" [label="FunctionCall,
+function name -> sellnumTap,
+param -> a,
+a.,
+" color=blue]
+	"721dcac6f4b647f9831c5771ed592bae" [label=VariableDeclarations color=blue]
+	"15ad1ba2f82445c4bff6d7482d5e6953" [label="VariableDeclarator,
+left -> e,
+right -> a.currentTarget.dataset.status" color=blue]
+	"721dcac6f4b647f9831c5771ed592bae" -> "15ad1ba2f82445c4bff6d7482d5e6953"
+	"3b88745f8fc8424795b6411cb1b76d56" -> "721dcac6f4b647f9831c5771ed592bae"
+	"8d19c031a3ee498eb7cc72966ace9fe7" [label=SequenceExpression color=blue]
+	"0cb4d199eafa491bb7c3f0357f6e0c07" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"83513d4a30e840c9829ed00f814a43f8" [label="CallExpression,
+callee name -> this.searchGoods,
+param -> " color=blue]
+	"1ed1dc2405f54979baa89651819851cd" [label="FunctionCall,
+function name -> searchGoods,
+param -> " color=blue]
+	b2f7c7313c2b45e39294c54737a1cd84 [label=SequenceExpression color=blue]
+	"5f8e3ac2d08847a3af835d1e5332b7ae" [label="CallExpression,
+callee name -> console.log,
+param -> e.data.keyword,
+" color=blue]
+	b2f7c7313c2b45e39294c54737a1cd84 -> "5f8e3ac2d08847a3af835d1e5332b7ae"
+	"26cfb86534b94dcda4e345cac0d8ac10" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"6191abee4a654347a778e739ce8c4abd" [label="Object Properties
+{
+ordername -> e.data.ordername
+ordersort -> e.data.ordersort
+keywords -> e.data.keyword
+num -> e.data.num
+page -> e.data.page
+}" color=blue]
+	"26cfb86534b94dcda4e345cac0d8ac10" -> "6191abee4a654347a778e739ce8c4abd"
+	b2f7c7313c2b45e39294c54737a1cd84 -> "26cfb86534b94dcda4e345cac0d8ac10"
+	"1ed1dc2405f54979baa89651819851cd" -> b2f7c7313c2b45e39294c54737a1cd84
+	"83513d4a30e840c9829ed00f814a43f8" -> "1ed1dc2405f54979baa89651819851cd"
+	"0cb4d199eafa491bb7c3f0357f6e0c07" -> "83513d4a30e840c9829ed00f814a43f8"
+	"8b58e4eaf6b2419b9fab0760a2dde0da" [label="CallExpression,
+callee name -> this.getGoods,
+param -> " color=blue]
+	"9ffe8085621744c991236efa0b354633" [label="FunctionCall,
+function name -> getGoods,
+param -> " color=blue]
+	f1c68396a9e5415eaeded8ac9228ef1f [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	d574b43d49534a70a30f1a5d9f05394e [label="Object Properties
+{
+ordername -> e.data.ordername
+ordersort -> e.data.ordersort
+flag -> e.data.flag
+cid -> e.data.cid
+num -> e.data.num
+page -> e.data.page
+}" color=blue]
+	f1c68396a9e5415eaeded8ac9228ef1f -> d574b43d49534a70a30f1a5d9f05394e
+	"9ffe8085621744c991236efa0b354633" -> f1c68396a9e5415eaeded8ac9228ef1f
+	"8b58e4eaf6b2419b9fab0760a2dde0da" -> "9ffe8085621744c991236efa0b354633"
+	"0cb4d199eafa491bb7c3f0357f6e0c07" -> "8b58e4eaf6b2419b9fab0760a2dde0da"
+	"8d19c031a3ee498eb7cc72966ace9fe7" -> "0cb4d199eafa491bb7c3f0357f6e0c07"
+	"3b88745f8fc8424795b6411cb1b76d56" -> "8d19c031a3ee498eb7cc72966ace9fe7"
+}

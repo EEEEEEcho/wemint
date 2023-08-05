@@ -1,0 +1,86 @@
+.detail_account_panel {
+    width: 682rpx;
+    height: 292rpx;
+    background: #61616d;
+    border-radius: 24rpx;
+    margin-left: 33rpx;
+}
+
+.detail_txt {
+    margin-top: 56rpx;
+    align-items: center;
+    justify-content: space-between;
+    margin: 45rpx 30rpx 0;
+}
+
+.surplus {
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.detail {
+    width: 90rpx;
+    height: 34rpx;
+    font-size: 24rpx;
+    color: #50505b;
+    text-align: center;
+    line-height: 34rpx;
+    background: #fff;
+    border-radius: 50rpx;
+}
+
+.detail_account {
+    height: 83rpx;
+    line-height: 83rpx;
+    font-size: 110rpx;
+    color: #fff;
+    margin: 0 30rpx;
+    margin-top: 56rpx;
+    letter-spacing: 10rpx;
+}
+
+.cashout_type {
+    box-shadow: 0rpx 0rpx 16rpx #f0f0f0;
+    width: 682rpx;
+    border-radius: 24rpx;
+    margin-left: 33rpx;
+    margin-top: 40rpx;
+}
+
+.wechat,.alipay {
+    align-items: center;
+    height: 114rpx;
+}
+
+.wechat {
+    border-bottom: 1rpx solid #eee;
+}
+
+.wx,.ali {
+    align-items: center;
+    margin-right: auto;
+}
+
+.wx_img,.ali_img {
+    width: 52rpx;
+    height: 52rpx;
+    margin-left: 30rpx;
+}
+
+.wx_txt,.ali_txt {
+    font-size: 28rpx;
+    color: #51515c;
+    margin-left: 10rpx;
+}
+
+.noway {
+    font-size: 24rpx;
+    color: #ccc;
+    margin-right: 10rpx;
+}
+
+.arrow {
+    width: 14rpx;
+    height: 24rpx;
+    margin-right: 30rpx;
+}

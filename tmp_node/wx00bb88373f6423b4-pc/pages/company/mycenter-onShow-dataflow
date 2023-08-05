@@ -1,0 +1,56 @@
+// \pages/company/mycenter onShow Data Flow
+digraph {
+	cf8f27c429274d97876902d160486ab1 [label="FunctionCall,
+function name -> onShow,
+param -> " color=blue]
+	"0d4fd2de483840ed875ba323498eb584" [label=SequenceExpression color=blue]
+	"9e7f97ccff1a4a0285d8798034cbf691" [label="CallExpression,
+callee name -> this.getUserInfo,
+param -> " color=blue]
+	"8d86bdcd77114e22b6e3672f944ae98f" [label="FunctionCall,
+function name -> getUserInfo,
+param -> " color=blue]
+	ad9891255681427fbd189845a2ea15d9 [label=VariableDeclarations color=blue]
+	b83387ddaa6f4bfebd94b7b75be53966 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	ea31a6dd009f4f80912d443a42609f02 [label="Object Properties
+{
+}" color=blue]
+	db1d5ce944a64a71916df356c389c878 [label="FunctionCall,
+function name -> success,
+param -> e,
+e.,
+" color=blue]
+	"0a972a50942046749e816ab6d38c52d6" [label="If Alternate" color=blue]
+	"8ff521099cef44169221982c051237fd" [label=VariableDeclarations color=blue]
+	"6e2c5f1554ab498a8753e2467f771619" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"6a8c0728e7224cc7810ccd2d386d0b3f" [label="CallExpression,
+callee name -> parseInt,
+param -> e.info.UserType,
+" color=blue]
+	"6e2c5f1554ab498a8753e2467f771619" -> "6a8c0728e7224cc7810ccd2d386d0b3f"
+	"8ff521099cef44169221982c051237fd" -> "6e2c5f1554ab498a8753e2467f771619"
+	"0a972a50942046749e816ab6d38c52d6" -> "8ff521099cef44169221982c051237fd"
+	dac3b323bf05422ab4b05111e7be8fc6 [label=SequenceExpression color=blue]
+	"2d2db3131159430ca2d99b446e333d8c" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	"5a62c5da784d4ed199bb4adc2d93f8e1" [label="Object Properties
+{
+levelName -> e.info.UserLevel
+}" color=blue]
+	"2d2db3131159430ca2d99b446e333d8c" -> "5a62c5da784d4ed199bb4adc2d93f8e1"
+	dac3b323bf05422ab4b05111e7be8fc6 -> "2d2db3131159430ca2d99b446e333d8c"
+	"0a972a50942046749e816ab6d38c52d6" -> dac3b323bf05422ab4b05111e7be8fc6
+	db1d5ce944a64a71916df356c389c878 -> "0a972a50942046749e816ab6d38c52d6"
+	ea31a6dd009f4f80912d443a42609f02 -> db1d5ce944a64a71916df356c389c878
+	b83387ddaa6f4bfebd94b7b75be53966 -> ea31a6dd009f4f80912d443a42609f02
+	ad9891255681427fbd189845a2ea15d9 -> b83387ddaa6f4bfebd94b7b75be53966
+	"8d86bdcd77114e22b6e3672f944ae98f" -> ad9891255681427fbd189845a2ea15d9
+	"9e7f97ccff1a4a0285d8798034cbf691" -> "8d86bdcd77114e22b6e3672f944ae98f"
+	"0d4fd2de483840ed875ba323498eb584" -> "9e7f97ccff1a4a0285d8798034cbf691"
+	cf8f27c429274d97876902d160486ab1 -> "0d4fd2de483840ed875ba323498eb584"
+}

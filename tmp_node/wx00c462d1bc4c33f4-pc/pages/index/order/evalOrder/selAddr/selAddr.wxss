@@ -1,0 +1,113 @@
+.view_xian {
+    width: 100%;
+    height: 1px;
+    background: #999;
+}
+
+.text_timu {
+    font-size: 50rpx;
+    margin-left: 270rpx;
+    color: #999;
+}
+
+.text_dianming {
+    font-size: 36rpx;
+    color: #999;
+}
+
+.text_zhuangtai {
+    font-size: 32rpx;
+    color: #999;
+}
+
+.text_dizhi {
+    display: block;
+    margin-top: 25rpx;
+    font-size: 28rpx;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.viewyipai {
+    width: 200rpx;
+    height: 40rpx;
+}
+
+.text_moren {
+    font-size: 32rpx;
+}
+
+.check_moren {
+    zoom: 70%;
+}
+
+.text_bianji {
+    font-size: 32rpx;
+}
+
+.text_shanchu {
+    font-size: 32rpx;
+}
+
+.view_tou {
+    margin-top: 25rpx;
+    margin-bottom: 25rpx;
+    width: 650rpx;
+    align-items: center;
+}
+
+.view_meitiao {
+    padding: 18rpx;
+    margin-top: 35rpx;
+    width: 630rpx;
+    height: 170rpx;
+    margin-left: 40rpx;
+    border-radius: 5px;
+    border: 1px solid #999;
+}
+
+.tu_gundong {
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 5%;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+}
+
+.viewzonghe {
+    width: 230rpx;
+    height: 60rpx;
+}
+
+.view_dizhi {
+    margin-top: 20rpx;
+    width: 100%;
+    height: 80rpx;
+}
+
+.but_tijiao {
+    margin: 20rpx;
+    padding: 10rpx;
+    width: 100%;
+    background-color: #ffdf5e;
+    color: #333;
+}
+
+.tu_ssss {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 5%;
+    margin-top: 36rpx;
+}
+
+.toolong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.meitiao1 {
+    background-color: #666;
+}

@@ -1,0 +1,2 @@
+<myLoading id="myLoading"></myLoading>
+<web-view src="{{view}}"></web-view>

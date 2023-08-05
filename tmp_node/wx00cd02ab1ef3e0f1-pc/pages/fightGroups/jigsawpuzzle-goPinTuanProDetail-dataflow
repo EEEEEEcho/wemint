@@ -1,0 +1,17 @@
+// \pages/fightGroups/jigsawpuzzle goPinTuanProDetail Data Flow
+digraph {
+	"4b2ce131e83d46ba8c10323f27b9d843" [label="FunctionCall,
+function name -> goPinTuanProDetail,
+param -> " color=blue]
+	"68a0305b37024ea3b7f75e6ad07827a8" [label=SequenceExpression color=blue]
+	"59ec76b193564a49b11257250f8533be" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"5a0def26ac4f4db182528a66f03e3e3f" [label="Object Properties
+{
+url -> './productdetail?id=' + a.currentTarget.dataset.id + '&pintuan_id=' + t.data.pinTuanProByCate.id + '&buycount=' + a.currentTarget.dataset.buycount + '&img=' + a.currentTarget.dataset.img + '&price=' + a.currentTarget.dataset.price + '&storenum=' + a.currentTarget.dataset.storenum + '&proid=' + a.currentTarget.dataset.proid
+}" color=blue]
+	"59ec76b193564a49b11257250f8533be" -> "5a0def26ac4f4db182528a66f03e3e3f"
+	"68a0305b37024ea3b7f75e6ad07827a8" -> "59ec76b193564a49b11257250f8533be"
+	"4b2ce131e83d46ba8c10323f27b9d843" -> "68a0305b37024ea3b7f75e6ad07827a8"
+}

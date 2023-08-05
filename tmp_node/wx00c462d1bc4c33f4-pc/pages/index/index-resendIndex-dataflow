@@ -1,0 +1,61 @@
+// \pages/index/index resendIndex Data Flow
+digraph {
+	"850739f4f9cd4854bfccb2c5f64ff6da" [label="FunctionCall,
+function name -> resendIndex,
+param -> " color=blue]
+	b5f4da34000449debf402c129fec9325 [label=SequenceExpression color=blue]
+	"348107cd5b8e49bda5cfb9e72102d146" [label="CallExpression,
+callee name -> wx.login,
+param -> " color=blue]
+	"3f93f0f272704d2dbddacafa465a8d10" [label="FunctionCall,
+function name -> success,
+param -> o.,
+o,
+" color=blue]
+	e684ee82d03343dfb6319cc9bab39167 [label=VariableDeclarations color=blue]
+	bc4f18ca6fe24b80856fd61a17157fd0 [label="VariableDeclarator,
+left -> n,
+right -> o.code" color=blue]
+	e684ee82d03343dfb6319cc9bab39167 -> bc4f18ca6fe24b80856fd61a17157fd0
+	"3f93f0f272704d2dbddacafa465a8d10" -> e684ee82d03343dfb6319cc9bab39167
+	"3c1bf902e9da46f0bd3ce6d3015981d8" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"80ec2f25d39b4b748952327a8b34a4ff" [label=SequenceExpression color=blue]
+	b7ad0918db45489bb348882ac73338fa [label="CallExpression,
+callee name -> console.log,
+param -> 'res.code ==> ' + o.code,
+" color=blue]
+	"80ec2f25d39b4b748952327a8b34a4ff" -> b7ad0918db45489bb348882ac73338fa
+	"5a2cf19a0ca7446a846f597b2cfc3c41" [label="CallExpression,
+callee name -> wx.getSetting,
+param -> " color=blue]
+	d66c41151f13401fa4e147d2258ef712 [label="FunctionCall,
+function name -> success,
+param -> o,
+" color=blue]
+	"5a2cf19a0ca7446a846f597b2cfc3c41" -> d66c41151f13401fa4e147d2258ef712
+	"80ec2f25d39b4b748952327a8b34a4ff" -> "5a2cf19a0ca7446a846f597b2cfc3c41"
+	"3c1bf902e9da46f0bd3ce6d3015981d8" -> "80ec2f25d39b4b748952327a8b34a4ff"
+	ef6149e195184443baf113a3d7654563 [label="CallExpression,
+callee name -> console.log,
+param -> '获取用户登录态失败\uFF01' + o.errMsg,
+" color=blue]
+	"3c1bf902e9da46f0bd3ce6d3015981d8" -> ef6149e195184443baf113a3d7654563
+	"3f93f0f272704d2dbddacafa465a8d10" -> "3c1bf902e9da46f0bd3ce6d3015981d8"
+	"348107cd5b8e49bda5cfb9e72102d146" -> "3f93f0f272704d2dbddacafa465a8d10"
+	"5d6ed2eb04654b25a51c7695784b1a5d" [label="FunctionCall,
+function name -> fail,
+param -> e.,
+e,
+" color=blue]
+	d0e40286e7444d56aec8dab1916e501d [label=SequenceExpression color=blue]
+	"0a88bb0daa734b50b935da40f5c84949" [label="CallExpression,
+callee name -> console.log,
+param -> e,
+" color=blue]
+	d0e40286e7444d56aec8dab1916e501d -> "0a88bb0daa734b50b935da40f5c84949"
+	"5d6ed2eb04654b25a51c7695784b1a5d" -> d0e40286e7444d56aec8dab1916e501d
+	"348107cd5b8e49bda5cfb9e72102d146" -> "5d6ed2eb04654b25a51c7695784b1a5d"
+	b5f4da34000449debf402c129fec9325 -> "348107cd5b8e49bda5cfb9e72102d146"
+	"850739f4f9cd4854bfccb2c5f64ff6da" -> b5f4da34000449debf402c129fec9325
+}

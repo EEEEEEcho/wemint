@@ -1,0 +1,9 @@
+<view class="main_container">
+    <navigate bindisShowMask="onShowMask" cartPage="{{cartPage}}"></navigate>
+    <recommend bindonShopLocation="onShowMask" id="recommend" isShowMask="{{isShowMask}}" navH="{{navH}}" status="{{status}}"></recommend>
+    <image bindtap="toSearch" catchtouchend="buttonEnd" catchtouchmove="buttonMove" catchtouchstart="buttonStart" class="search_img {{isShowImg?'showImg':'hideImg'}}" src="http://oss.shangmian.xin/weixin_applets_icon_to_search.png" style="top:{{buttonTop}}px;left:{{buttonLeft}}px;" wx:if="{{isShowImg}}"></image>
+</view>
+<remind-add></remind-add>
+<model-mask bindcloseMask="onShowMask" id="modelMask" isShowMask="{{isShowMask}}"></model-mask>
+<wish-model isShowWishModel="{{isShowWish}}" wishUuid="{{wishUuid}}"></wish-model>
+<ad-popup></ad-popup>

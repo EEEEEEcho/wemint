@@ -1,0 +1,35 @@
+// \pages/shop/shopcart delAll Data Flow
+digraph {
+	aeecfde806c7401a8f3c3f45eb863255 [label="FunctionCall,
+function name -> delAll,
+param -> " color=blue]
+	"03a74e0fbbb3466ea1e10deccb85b431" [label=VariableDeclarations color=blue]
+	"8c8f0f09ef3842209ffcf0d21ffb4483" [label="VariableDeclarator,
+left -> a,
+right -> this.getSelectProduct" color=blue]
+	"03a74e0fbbb3466ea1e10deccb85b431" -> "8c8f0f09ef3842209ffcf0d21ffb4483"
+	aeecfde806c7401a8f3c3f45eb863255 -> "03a74e0fbbb3466ea1e10deccb85b431"
+	"5bb26bc51cf342139810afd36206e0ca" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	ebb3a3a607ee4b889a2a5af809ab3f6d [label=SequenceExpression color=blue]
+	"5fce179a4f7949fc811f66aaa7accce3" [label="CallExpression,
+callee name -> a.forEach,
+param -> " color=blue]
+	d113a63b0a9240edbe71c7ad372b9bc3 [label="FunctionCall,
+function name -> Anonymous Function,
+param -> t,
+" color=blue]
+	"5fce179a4f7949fc811f66aaa7accce3" -> d113a63b0a9240edbe71c7ad372b9bc3
+	ebb3a3a607ee4b889a2a5af809ab3f6d -> "5fce179a4f7949fc811f66aaa7accce3"
+	fce4bfc49d544adba2976b81bdc3ac90 [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	e05d5d810da04b6589ea140eab7eb797 [label="FunctionCall,
+function name -> success,
+param -> a,
+" color=blue]
+	fce4bfc49d544adba2976b81bdc3ac90 -> e05d5d810da04b6589ea140eab7eb797
+	ebb3a3a607ee4b889a2a5af809ab3f6d -> fce4bfc49d544adba2976b81bdc3ac90
+	"5bb26bc51cf342139810afd36206e0ca" -> ebb3a3a607ee4b889a2a5af809ab3f6d
+	aeecfde806c7401a8f3c3f45eb863255 -> "5bb26bc51cf342139810afd36206e0ca"
+}

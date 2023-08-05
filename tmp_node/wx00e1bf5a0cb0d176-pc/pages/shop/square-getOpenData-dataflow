@@ -1,0 +1,21 @@
+// \pages/shop/square getOpenData Data Flow
+digraph {
+	"9ae2f92bc71940098bdcbc71efe8689d" [label="FunctionCall,
+function name -> getOpenData,
+param -> t,
+t.,
+" color=blue]
+	a45f5bed28044f97bf21253d3a90a324 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	ffdf145c7f9c4ab4b6a9396f29a37b15 [label="Object Properties
+{
+}" color=blue]
+	d2275abcec0743b183ade869599d9544 [label="CallExpression,
+callee name -> Boolean,
+param -> t.detail.authSetting['scope.userLocation'],
+" color=blue]
+	ffdf145c7f9c4ab4b6a9396f29a37b15 -> d2275abcec0743b183ade869599d9544
+	a45f5bed28044f97bf21253d3a90a324 -> ffdf145c7f9c4ab4b6a9396f29a37b15
+	"9ae2f92bc71940098bdcbc71efe8689d" -> a45f5bed28044f97bf21253d3a90a324
+}

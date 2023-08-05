@@ -1,0 +1,15 @@
+// \pages/binding/binding sendmessg Data Flow
+digraph {
+	"197c991103b0429ea4d4c8b6fd57118f" [label="FunctionCall,
+function name -> sendmessg,
+param -> " color=blue]
+	"08168b6933394e93907eab749e394768" [label="If Alternate" color=blue]
+	d783259de1c6467294576a505dcba7c0 [label=SequenceExpression color=blue]
+	"2d188655cc20418eb35625fd3bc43daf" [label="CallExpression,
+callee name -> t,
+param -> e.data.mobile,
+" color=blue]
+	d783259de1c6467294576a505dcba7c0 -> "2d188655cc20418eb35625fd3bc43daf"
+	"08168b6933394e93907eab749e394768" -> d783259de1c6467294576a505dcba7c0
+	"197c991103b0429ea4d4c8b6fd57118f" -> "08168b6933394e93907eab749e394768"
+}

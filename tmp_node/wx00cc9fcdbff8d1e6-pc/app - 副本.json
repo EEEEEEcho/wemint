@@ -1,0 +1,64 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/product/detail",
+        "pages/search/search",
+        "pages/user/user",
+        "pages/news/index",
+        "pages/news/detail",
+        "pages/user/dingdan",
+        "pages/user/shoucang",
+        "pages/user/tuihuo",
+        "pages/order/pay",
+        "pages/order/detail",
+        "pages/order/downline",
+        "pages/cart/cart",
+        "pages/listdetail/listdetail",
+        "pages/cplist/listdetail",
+        "pages/bklist/listdetail",
+        "pages/address/address",
+        "pages/address/user-address/user-address",
+        "pages/category/index",
+        "pages/ritual/ritual",
+        "pages/rituall/rituall",
+        "pages/shop_store/shop_store"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#B4282D",
+        "navigationBarTitleText": "晶时珠宝",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#858585",
+        "selectedColor": "#B4282D",
+        "borderStyle": "white",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/icons/btn-tabs_01.png",
+                "selectedIconPath": "images/icons/btn-tabs_07.png"
+            },
+            {
+                "pagePath": "pages/category/index",
+                "text": "分类",
+                "iconPath": "images/icons/btn-tabs_03.png",
+                "selectedIconPath": "images/icons/btn-tabs_08.png"
+            },
+            {
+                "pagePath": "pages/news/index",
+                "text": "资讯",
+                "iconPath": "images/icons/btn-tabs_05.png",
+                "selectedIconPath": "images/icons/btn-tabs_09.png"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "text": "我的",
+                "iconPath": "images/icons/btn-tabs_06.png",
+                "selectedIconPath": "images/icons/btn-tabs_10.png"
+            }
+        ]
+    }
+}

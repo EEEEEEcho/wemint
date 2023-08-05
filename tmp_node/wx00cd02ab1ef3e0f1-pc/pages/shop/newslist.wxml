@@ -1,0 +1,30 @@
+<view class="container" style="border-top:1px solid #ccc;padding-top:80rpx;">
+    <scroll-view class="scrollView_top" scrollX="true" style="width: 100%" wx:if="{{showClassNav}}">
+        <view class="class-list">
+            <view bindtap="onClassChange" class="class-item" data-classid="{{item.ClassID}}" wx:for="{{classlist}}" wx:key="ClassID">
+                <text class="itemText {{classid==item.ClassID?'active':''}}">{{item.Name}}</text>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="nonewstips" style="display:{{hasnews?'none':'block'}}">
+    当前条件下搜索不到资讯
+  </view>
+    <view class="news-list">
+        <scroll-view bindscrolltolower="onNewsListScroll" lowerThreshold="20" scrollY="true" style="height:{{scrollHeight}}rpx;">
+            <view catchtap="goNewsDetail" class="news-item" data-newsid="{{item.ArticleID}}" wx:for="{{newslist}}" wx:key="id">
+                <view class="newsItemBorder border1px">
+                    <view class="news-img">
+                        <view class="news-date">{{item.day}}</view>
+                        <view class="news-year">{{item.dateYearAndMOnth}}</view>
+                    </view>
+                    <view class="news-text">
+                        <view class="title">{{item.Title}}</view>
+                        <view class="hits">
+                            <image mode="widthFix" src="../../images/eyes.png" style="width:34rpx"></image> {{item.Hits}}</view>
+                        <view class="desc">{{item.Descriptor?item.Descriptor:'暂无简介'}}</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

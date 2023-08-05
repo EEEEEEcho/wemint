@@ -1,0 +1,138 @@
+<view class="fixedTopBorder"></view>
+<view class="container">
+    <view class="withdrawal-amount">提现{{status==1?'金额':status==2?'佣金':'金额'}}：</view>
+    <form bindsubmit="{{!buttonClicked?'formSubmit':''}}">
+        <view class="amount-input border1px">
+            <view class="iconPrice">￥</view>
+            <input bindinput="inputPrice" focus="true" placeholder="请输入提现{{status==1?'金额':status==2?'佣金':'金额'}}" placeholderStyle="color:#999;font-size:28rpx;font-weight:200;" type="{{withdrawMoneyMustBeInteger==1?'number':'digit'}}" value="{{moneyNum}}"></input>
+            <view bindtap="buttonClicked" class="record">
+                <navigator hoverClass="none" openType="{{!buttonClicked?'navigate':''}}" url="/pages/shop/record?status={{status}}">
+                    <view class="record-btn">记录</view>
+                </navigator>
+            </view>
+        </view>
+        <view class="withdrawal-tips">
+            <view class="tips-left">
+                <view class="canWithdrawal" wx:if="{{flag}}">可提现金额：{{maxWithdrawMoney}}元</view>
+                <view class="service-charge" wx:if="{{flag2}}">手续费：<text class="chargeColor">￥{{serviceCharge}}</text>
+                </view>
+                <view id="overflow-amount" wx:if="{{flag7}}">不能大于最大提现金额{{overmoney}}元</view>
+                <view class="overwithdrawal" wx:if="{{flag3}}">不能大于可提现金额</view>
+                <view id="less-amount" wx:if="{{flag8}}">不能小于最小提现金额{{minWithdrawMoneyPerTime}}元</view>
+            </view>
+            <view bindtap="widthdrawalExplain" class="tips-right">
+                <text>提现说明</text>
+                <icon class="iconfont icon-xiangqing other-icon"></icon>
+            </view>
+        </view>
+        <view class="withdrawal-line"></view>
+        <view catchtap="chooseType" class="withdrawal-choose">
+            <view class="choose-left">
+                <text>提现到</text>
+            </view>
+            <view class="choose-right">
+                <icon class="iconfont {{chooseType===3&&bankflag?'icon-ai-pay-copy':chooseType===1&&weixinflag?'icon-weixinzhifu':chooseType===2&&zhifubaoflag?'icon-zhifubao':'icon-weixinzhifu'}} other-icon"></icon>
+                <text>{{chooseType===3&&bankflag?'银行卡':chooseType===1&&weixinflag?'微信':chooseType===2&&zhifubaoflag?'支付宝':'微信'}}</text>
+                <icon class="iconfont icon-iconfont_arrow-right other-icon"></icon>
+            </view>
+        </view>
+        <view class="withdrawal-line"></view>
+        <view class="bank-msg" wx:if="{{chooseType===3&&bankflag}}">
+            <view bindtap="{{!buttonClicked?'chooseBank':''}}" class="choose-bank border1px">
+                <view class="choose-left">
+                    <text>选择银行</text>
+                </view>
+                <view class="choose-right">
+                    <image src="../../images/{{bankImg}}.jpg" wx:if="{{bankImg!=''}}"></image>
+                    <text class="bank">{{bank!=''?bank:'请选择银行'}}</text>
+                    <icon class="iconfont icon-iconfont_arrow-right other-icon"></icon>
+                </view>
+            </view>
+            <view class="choose-bank border1px">
+                <view class="choose-left">
+                    <text>银行卡号</text>
+                </view>
+                <view class="choose-right">
+                    <input bindinput="bankcard" maxlength="19" placeholder="请输入银行卡号" placeholderStyle="color:#ccc;font-size:30rpx;text-align:right;" type="number" value="{{cardNum}}"></input>
+                </view>
+            </view>
+            <view class="choose-bank">
+                <view class="choose-left">
+                    <text>持卡人</text>
+                </view>
+                <view class="choose-right">
+                    <input bindinput="personName" placeholder="请输入持卡人姓名" placeholderStyle="color:#ccc;font-size:30rpx;text-align:right;" value="{{personName}}"></input>
+                </view>
+            </view>
+        </view>
+        <view class="alipay-msg" wx:if="{{chooseType===2&&zhifubaoflag}}">
+            <view class="alipay-accounts border1px">
+                <view class="alipay-left">
+                    <text>支付宝帐号</text>
+                </view>
+                <view class="alipay-right">
+                    <input bindinput="alipay" placeholder="请输入支付宝帐号" placeholderStyle="color:#ccc;font-size:30rpx;text-align:right;" type="number" value="{{alipay}}"></input>
+                </view>
+            </view>
+            <view class="alipay-name">
+                <view class="alipay-left">
+                    <text>支付宝昵称</text>
+                </view>
+                <view class="alipay-right">
+                    <input bindinput="alipayName" placeholder="请输入支付宝昵称" placeholderStyle="color:#ccc;font-size:30rpx;text-align:right;" value="{{alipayName}}"></input>
+                </view>
+            </view>
+        </view>
+        <view class="withdrawal-btn">
+            <button class="btn {{flag5?'canbeat':''}}" formType="{{flag5?'submit':''}}">提现</button>
+        </view>
+        <view class="choose-box {{flag6?'showChooseModel':''}}">
+            <view class="chooseBox-title border1px">
+                <text>请选择提现的方式</text>
+            </view>
+            <view class="choose-way">
+                <view catchtap="chooseway" class="weixin border1px" data-idx="1" wx:if="{{weixinflag}}">
+                    <view class="weixin-left">
+                        <icon class="iconfont icon-weixinzhifu other-icon"></icon>
+                        <text>微信</text>
+                    </view>
+                    <view class="weixin-right" wx:if="{{chooseType===1}}">
+                        <icon class="iconfont icon-duigou duigou"></icon>
+                    </view>
+                </view>
+                <view catchtap="chooseway" class="alipay border1px" data-idx="2" wx:if="{{zhifubaoflag}}">
+                    <view class="alipaychoose-left">
+                        <icon class="iconfont icon-zhifubao other-icon"></icon>
+                        <text>支付宝</text>
+                    </view>
+                    <view class="alipaychoose-right" wx:if="{{chooseType===2}}">
+                        <icon class="iconfont icon-duigou duigou"></icon>
+                    </view>
+                </view>
+                <view catchtap="chooseway" class="bankcard" data-idx="3" wx:if="{{bankflag}}">
+                    <view class="bankcard-left">
+                        <icon class="iconfont icon-ai-pay-copy other-icon"></icon>
+                        <text>银行卡</text>
+                    </view>
+                    <view class="bankcard-right" wx:if="{{chooseType===3}}">
+                        <icon class="iconfont icon-duigou duigou"></icon>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </form>
+    <view bindtap="confirm" class="mark {{flag4?'showModel':''}} {{flag6?'showModel':''}}"></view>
+    <view class="explain-tips {{flag4?'showModel':''}}">
+        <view class="explain-title">
+            <text>提现说明</text>
+        </view>
+        <view class="explain-content border1px">
+            <view class="first">1.{{cycleCalType=='d'?'每天':cycleCalType=='w'?'每周':cycleCalType=='m'?'每月':'每天'}}提现{{timesInCycle==0?'无限':timesInCycle}}次</view>
+            <view class="second">2.每次最小提现金额为￥{{minWithdrawMoneyPerTime}}，最大提现金额为￥{{overmoney}}</view>
+            <view>3.提现手续费为{{feeRatio}}%</view>
+        </view>
+        <view bindtap="sureClose" class="sure-btn">
+            <text>我知道了</text>
+        </view>
+    </view>
+</view>

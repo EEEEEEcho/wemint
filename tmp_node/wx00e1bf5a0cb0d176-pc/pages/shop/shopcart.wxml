@@ -1,0 +1,159 @@
+<view class="fixedTopBorder"></view>
+<view class="container colora">
+    <view class="container-wrapper">
+        <view class="heade-handle" style="position:{{headFlag?'static':'fixed'}}" wx:if="{{hasproduct}}">
+            <view class="heade-handle-left">
+                <text>购物车共</text>
+                <text class="colorFF">{{goodlength}}</text>
+                <text>件商品</text>
+            </view>
+            <view class="heade-handle-right">
+                <text bindtap="close" class="colorFF item-btm flexCenter" wx:if="{{couponlist.length>0}}">领券</text>
+                <text bindtap="changeStatus" class="item-btm flexCenter">{{headerFlag?'编辑':'完成'}}</text>
+            </view>
+        </view>
+        <scroll-view class="shop-wrapper" scrollY="{{scrollYFlag}}" style="height:{{productListHeight}}rpx;position:{{headFlag?'static':'fixed'}};margin-top:{{headFlag?0:'96rpx'}}">
+            <view class="noproduct" style="display:{{hasproduct?'none':'flex'}}">
+                <image mode="widthFix" src="{{baseUrl}}/images/wxapp/blank_18.png"></image>
+                <text style="font-size:24rpx;color:#999">购物车为空</text>
+            </view>
+            <view class="product-wrapper m-t-20" wx:for="{{showList}}" wx:key="index">
+                <view class="product-header border1px" wx:if="{{item.show_bar}}">
+                    <view class="product-header-left">
+                        <text class="product-label">{{item.tag}}</text>
+                        <text class="title">{{item.tips}}</text>
+                    </view>
+                    <navigator class="product-header-right" hoverClass="none" url="/{{item.path}}">
+                        <text class="colorFF look-activity">{{item.path_tips}}</text>
+                        <text class="iconfont icon-iconfont_arrow-right colorFF"></text>
+                    </navigator>
+                </view>
+                <view bindtouchend="touchEnd" bindtouchmove="touchMove" bindtouchstart="touchStart" class="product-main" data-idx="{{idx}}" data-index="{{index}}" style="{{itemVal.txtStyle}}" wx:for="{{item.pro_list}}" wx:for-index="idx" wx:for-item="itemVal" wx:key="idx">
+                    <view class="product-selectItem flexCenter">
+                        <view bindtap="onPkeyClick" class="checkboxStyle" color="#ff7200" data-check="{{itemVal.selectFlag}}" data-idx="{{idx}}" data-index="{{index}}" data-pkey="{{itemVal.pkey}}" id="pkey{{itemVal.pkey}}"></view>
+                        <icon class="iconText" color="{{itemVal.selectFlag?'#ff7200':'#ddd'}}" size="20" type="{{itemVal.selectFlag?'success':'circle'}}"></icon>
+                    </view>
+                    <view class="product-img">
+                        <image class="image" mode="aspectFit" src="{{baseUrl}}{{itemVal.img}}"></image>
+                    </view>
+                    <view class="product-info {{item.pro_list.length===idx+1?'':'border1px'}}">
+                        <view class="product-text">
+                            <view class="product-title two">{{itemVal.name}}</view>
+                            <view class="product-sku one" style="min-height:24rpx">{{itemVal.sku}}</view>
+                        </view>
+                        <view class="product-price-num">
+                            <view class="product-price-box">
+                                <text class="product-tis colorFF">{{itemVal.buy_limit>=0?itemVal.buy_limit>0?'限购'+itemVal.buy_limit+'件':'不限购':''}}</text>
+                                <view class="product-price-text">
+                                    <text class="product-price">￥{{itemVal.price}}</text>
+                                    <text class="product-market-price">{{itemVal.market_price}}</text>
+                                </view>
+                            </view>
+                            <view class="product-num">
+                                <button bindtap="changeCartItemNum" class="product-sub flexCenter {{itemVal.num==1?'':'active'}} " data-actId="{{itemVal.extra}}" data-idx="{{idx}}" data-index="{{index}}" data-pkey="{{itemVal.pkey}}" data-source="{{itemVal.source}}" data-type="1" hoverClass="hover-btn">-</button>
+                                <input bindblur="blurManual" bindinput="inputManual" class="num" data-idx="{{idx}}" data-index="{{index}}" type="number" value="{{itemVal.num}}"></input>
+                                <button bindtap="changeCartItemNum" class="product-add flexCenter {{itemVal.num==itemVal.limtNum?'':'active'}} " data-actId="{{itemVal.extra}}" data-idx="{{idx}}" data-index="{{index}}" data-pkey="{{itemVal.pkey}}" data-source="{{itemVal.source}}" data-type="2" hoverClass="hover-btn">+</button>
+                            </view>
+                        </view>
+                    </view>
+                    <view bindtap="delCartItem" class="product-del" data-idx="{{idx}}" data-index="{{index}}" data-pkey="{{itemVal.pkey}}" data-source="{{itemVal.source}}" style="display:{{itemVal.delBoxFlag?'flex':'none'}}">删除</view>
+                </view>
+            </view>
+            <view style="height:20rpx"></view>
+            <view class="product-wrapper" wx:if="{{invaildGoods.length}}">
+                <view class="product-header border1px">
+                    <view class="product-header-left">
+                    失效商品（{{invaildGoods.length}}）
+                    </view>
+                    <view class="product-header-right">
+                        <text bindtap="clearInvaildGoods" class="failureGoodsqk">清空</text>
+                    </view>
+                </view>
+                <view class="product-main no-efficacy-box" wx:for="{{invaildGoods}}" wx:key="index">
+                    <view class="product-selectItem flexCenter">
+                        <text style="color:#999;">失效</text>
+                    </view>
+                    <view class="product-img">
+                        <image class="image" mode="aspectFit" src="{{baseUrl}}{{item.img}}"></image>
+                    </view>
+                    <view class="product-info border1px">
+                        <view class="product-text">
+                            <view class="product-title two">{{item.name}}</view>
+                            <view class="product-sku one">{{item.sku}}</view>
+                        </view>
+                        <view class="product-price-num">
+                            <view class="product-price-box">
+                                <view class="product-price-text">
+                                    <text class="product-price">￥{{item.price}}</text>
+                                    <text class="product-market-price">{{item.market_price}}</text>
+                                </view>
+                            </view>
+                            <view class="product-num no-efficacy">
+                                <text>x{{item.num}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view style="height:20rpx" wx:if="{{invaildGoods.length}}"></view>
+        </scroll-view>
+    </view>
+    <view style="height:128rpx;"></view>
+    <view class="shopcart-account" wx:if="{{hasproduct}}">
+        <view class="shopcart-allselects flexCenter">
+            <checkbox catchtap="allCheckedBtn" class="checkboxStyle" color="#ff7200"></checkbox>
+            <icon class="iconText" color="{{allChecked?'#ff7200':'#ddd'}}" size="20" type="{{allChecked?'success':'circle'}}"></icon>
+            <text class="m-l-10">全选（{{lengthNum}}）</text>
+        </view>
+        <view class="shopcart-item" style="display:{{!headerFlag?'none':'flex'}}">
+            <view class="shopcart-total">
+                <text>合计：</text>
+                <text class="shopcart-total-num colorFF">￥{{ordermoney}}</text>
+            </view>
+            <button catchtap="{{!buttonClicked?'goSquare':''}}" class="shopcart-account-btn">结算</button>
+        </view>
+        <view class="shopcart-item" style="display:{{headerFlag?'none':'flex'}}">
+            <view catchtap="AddCollection" class="shopcart-favoriteBox">加入收藏夹</view>
+            <button catchtap="delAll" class="shopcart-account-btn">删除</button>
+        </view>
+    </view>
+    <view bindtap="close" class="mark" style="display:{{flag4?'block':'none'}}"></view>
+    <view class="discountList {{flag4?'showParam':'hideParam'}}">
+        <view class="dis-top">
+            <view class="dis-title">优惠券</view>
+            <view bindtap="close" class="markClose">
+                <icon class="closeIcon iconfont icon-guanbi-copy"></icon>
+            </view>
+        </view>
+        <scroll-view bindscrolltolower="onListScroll" class="coupon2" lowerThreshold="20" scrollY="true" style="height:100%">
+            <view class="coupon-item border1px" wx:for="{{couponlist}}" wx:key="CouponID">
+                <view class="item-title {{item.CanGet==1&&item.Available>0?'notget':''}} {{item.CanGet==0?'getJuan':''}} {{item.Available<=0?'getJuanHui':''}}">
+                    <view class="title">
+                        <view>
+                            <text class="titleText">{{item.Amount}}{{item.Type==0?'折':'元'}}</text>
+                            <text class="titleMoney">{{item.Type==0?'折扣券':'现金券'}}</text>
+                        </view>
+                    </view>
+                    <view class="intro" wx:if="{{item.OrderMoney>0}}">
+                        <view>{{item.OrderMoney==='0'?'无限制使用':'订单满'+item.OrderMoney+'元可使用'}}</view>
+                    </view>
+                    <view class="coupon-time">
+                        <view class="time">使用期限：{{item.EndTimeType==='0'?item.beginTime+'-'+item.timeLimit:item.timeLimit}}</view>
+                    </view>
+                </view>
+                <view class="button">
+                    <view bindtap="{{item.code===0?'':'getCoupon'}}" class="{{item.code===0?'getbtn1':'getbtn2'}} getbtn" data-couponid="{{item.CouponID}}" wx:if="{{item.countStatus==='100'&&item.code===1}}">领取</view>
+                    <view class="hasGet" wx:if="{{item.countStatus==='300'||item.code==='100'}}">已领取</view>
+                    <view class="hasGet" wx:elif="{{item.countStatus==='200'||item.code==='200'}}">已领完</view>
+                </view>
+            </view>
+            <view class="couponGetOver" wx:if="{{list.length==0}}">
+                <image mode="widthFix" src="{{baseUrl}}/images/wxapp/blank_15.png"></image>
+                <view>暂无优惠卷可领取</view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+<include src="/pages/template/getUserInfo.wxml"></include>
+<include src="/pages/common/popout/index.wxml"></include>
+<include src="/pages/common/phoneauthorization/index.wxml"></include>

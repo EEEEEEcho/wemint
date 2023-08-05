@@ -1,0 +1,27 @@
+// \pages/returngoods/returngoods onUploadPics Data Flow
+digraph {
+	b1d68176383f4ad1b5a6fd27a5b19092 [label="FunctionCall,
+function name -> onUploadPics,
+param -> t.,
+t,
+" color=blue]
+	"48e8c18dd98645e290a74830077cd2a3" [label="CallExpression,
+callee name -> wx.chooseImage,
+param -> " color=blue]
+	e1f62183a10e40e5a00cc168bee1e20b [label="FunctionCall,
+function name -> success,
+param -> t.,
+t,
+" color=blue]
+	fa203daaaa1d40a29752d7a9a5c3856b [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	de1a5efbedd04e30a4ab2f16f97c0527 [label="Object Properties
+{
+TempPics -> t.tempFilePaths
+}" color=blue]
+	fa203daaaa1d40a29752d7a9a5c3856b -> de1a5efbedd04e30a4ab2f16f97c0527
+	e1f62183a10e40e5a00cc168bee1e20b -> fa203daaaa1d40a29752d7a9a5c3856b
+	"48e8c18dd98645e290a74830077cd2a3" -> e1f62183a10e40e5a00cc168bee1e20b
+	b1d68176383f4ad1b5a6fd27a5b19092 -> "48e8c18dd98645e290a74830077cd2a3"
+}

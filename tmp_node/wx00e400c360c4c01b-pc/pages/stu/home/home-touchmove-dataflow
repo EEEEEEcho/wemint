@@ -1,0 +1,50 @@
+// \pages/stu/home/home touchmove Data Flow
+digraph {
+	ec8f72a3130e4d948b0f563516711dfb [label="FunctionCall,
+function name -> touchmove,
+param -> " color=blue]
+	f94ce05503a4409face650f7d78cc380 [label=VariableDeclarations color=blue]
+	"454a6d5949cf4c36a8d963b69e931ce4" [label="VariableDeclarator,
+left -> i,
+right -> a.data.startX" color=blue]
+	f94ce05503a4409face650f7d78cc380 -> "454a6d5949cf4c36a8d963b69e931ce4"
+	"5fe7356af29245d7a21242812ba4d0a6" [label="VariableDeclarator,
+left -> n,
+right -> a.data.startY" color=blue]
+	f94ce05503a4409face650f7d78cc380 -> "5fe7356af29245d7a21242812ba4d0a6"
+	"3e2bac8992df43a1942aca57b96e0d96" [label="VariableDeclarator,
+left -> s,
+right -> a.angle" color=blue]
+	cd3aec219e3146caa24aa537541b359c [label="CallExpression,
+callee name -> a.angle,
+param -> " color=blue]
+	e4de40ec84494779bd6cb71f95210a84 [label="Object Properties
+{
+X -> i
+Y -> n
+}" color=blue]
+	cd3aec219e3146caa24aa537541b359c -> e4de40ec84494779bd6cb71f95210a84
+	"3e2bac8992df43a1942aca57b96e0d96" -> cd3aec219e3146caa24aa537541b359c
+	f94ce05503a4409face650f7d78cc380 -> "3e2bac8992df43a1942aca57b96e0d96"
+	ec8f72a3130e4d948b0f563516711dfb -> f94ce05503a4409face650f7d78cc380
+	"129b312f06514334a3e420603b49cc9d" [label=SequenceExpression color=blue]
+	ae720b705fff45a5b0ebbe001315d4da [label="CallExpression,
+callee name -> a.data.noticeList.forEach,
+param -> " color=blue]
+	"768af045e03f4d02a68a76834fb9d3e2" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> a,
+" color=blue]
+	ae720b705fff45a5b0ebbe001315d4da -> "768af045e03f4d02a68a76834fb9d3e2"
+	"129b312f06514334a3e420603b49cc9d" -> ae720b705fff45a5b0ebbe001315d4da
+	"24ce6b97dab142c6ab9a1ad0c220e490" [label="CallExpression,
+callee name -> a.setData,
+param -> " color=blue]
+	ecdd6d26ea9c4cf4afbd101ca207da0a [label="Object Properties
+{
+noticeList -> a.data.noticeList
+}" color=blue]
+	"24ce6b97dab142c6ab9a1ad0c220e490" -> ecdd6d26ea9c4cf4afbd101ca207da0a
+	"129b312f06514334a3e420603b49cc9d" -> "24ce6b97dab142c6ab9a1ad0c220e490"
+	ec8f72a3130e4d948b0f563516711dfb -> "129b312f06514334a3e420603b49cc9d"
+}

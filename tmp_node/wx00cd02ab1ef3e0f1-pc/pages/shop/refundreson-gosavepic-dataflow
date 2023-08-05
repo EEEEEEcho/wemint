@@ -1,0 +1,22 @@
+// \pages/shop/refundreson gosavepic Data Flow
+digraph {
+	"5664559c56f34394803525bc3ab054e6" [label="FunctionCall,
+function name -> gosavepic,
+param -> " color=blue]
+	"54a98f7cbdf547ae9874ba6808af570d" [label=SequenceExpression color=blue]
+	dde67ebda64340528fbdd945dc8d5e06 [label="CallExpression,
+callee name -> console.log,
+param -> t.data.upload_picture_list[o],
+" color=blue]
+	"54a98f7cbdf547ae9874ba6808af570d" -> dde67ebda64340528fbdd945dc8d5e06
+	bc39a006491944eeb9c2cbdd6d35193b [label="CallExpression,
+callee name -> e.uploadRequest,
+param -> " color=blue]
+	d444f562ac454c80a7d4af2375cd575d [label="Object Properties
+{
+filePath -> t.data.upload_picture_list[o]
+}" color=blue]
+	bc39a006491944eeb9c2cbdd6d35193b -> d444f562ac454c80a7d4af2375cd575d
+	"54a98f7cbdf547ae9874ba6808af570d" -> bc39a006491944eeb9c2cbdd6d35193b
+	"5664559c56f34394803525bc3ab054e6" -> "54a98f7cbdf547ae9874ba6808af570d"
+}

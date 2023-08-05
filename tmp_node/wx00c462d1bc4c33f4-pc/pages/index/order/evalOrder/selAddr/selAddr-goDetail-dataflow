@@ -1,0 +1,21 @@
+// \pages/index/order/evalOrder/selAddr/selAddr goDetail Data Flow
+digraph {
+	"4faeb2100d404d1f983893f08482f17f" [label="FunctionCall,
+function name -> goDetail,
+param -> s.,
+s,
+" color=blue]
+	"17ffe9ac5b944219a11e30589e8dfe17" [label=VariableDeclarations color=blue]
+	ea6e8e13f0f8436595d7b5a1cd302d18 [label="VariableDeclarator,
+left -> t,
+right -> s.currentTarget.dataset.clickIndex" color=blue]
+	"17ffe9ac5b944219a11e30589e8dfe17" -> ea6e8e13f0f8436595d7b5a1cd302d18
+	"4faeb2100d404d1f983893f08482f17f" -> "17ffe9ac5b944219a11e30589e8dfe17"
+	"42e2a26f4ff14990bc185432303070b5" [label=SequenceExpression color=blue]
+	"414e8845a99a4a1bb427562af1fabe45" [label="CallExpression,
+callee name -> console.log,
+param -> t,
+" color=blue]
+	"42e2a26f4ff14990bc185432303070b5" -> "414e8845a99a4a1bb427562af1fabe45"
+	"4faeb2100d404d1f983893f08482f17f" -> "42e2a26f4ff14990bc185432303070b5"
+}

@@ -1,0 +1,16 @@
+// \pages/ordershow/ordershow orderDetail Data Flow
+digraph {
+	b098538862294dd9b1c719f72d1137fd [label="FunctionCall,
+function name -> orderDetail,
+param -> " color=blue]
+	ff48edc982084eb1a7292f9355480370 [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"54b5e2cd54db499c809ca3c5dfe84238" [label="Object Properties
+{
+userid -> e.data.userid
+orderid -> e.data.id
+}" color=blue]
+	ff48edc982084eb1a7292f9355480370 -> "54b5e2cd54db499c809ca3c5dfe84238"
+	b098538862294dd9b1c719f72d1137fd -> ff48edc982084eb1a7292f9355480370
+}

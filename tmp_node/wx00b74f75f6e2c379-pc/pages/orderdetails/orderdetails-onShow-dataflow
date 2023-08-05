@@ -1,0 +1,12 @@
+// \pages/orderdetails/orderdetails onShow Data Flow
+digraph {
+	"539b012935b1458fb009a6a071366e82" [label="FunctionCall,
+function name -> onShow,
+param -> " color=blue]
+	"68f31a8d2ab3455d8c22f174e958aa91" [label=VariableDeclarations color=blue]
+	b16467af30f04f25a6999dd6671d4e2e [label="VariableDeclarator,
+left -> orderid,
+right -> that.data.OrderId" color=blue]
+	"68f31a8d2ab3455d8c22f174e958aa91" -> b16467af30f04f25a6999dd6671d4e2e
+	"539b012935b1458fb009a6a071366e82" -> "68f31a8d2ab3455d8c22f174e958aa91"
+}

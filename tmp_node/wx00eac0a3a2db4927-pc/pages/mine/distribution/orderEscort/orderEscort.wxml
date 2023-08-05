@@ -1,0 +1,40 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view style="margin-top: {{navH+status+10}}px;">
+    <view class="applyAccompanyContain">
+        <view class="applyInformation">
+            <view class="applyColumn row">
+                <text class="applyTitle">品牌店铺</text>
+                <text class="applyContent">尚免家居北京城店</text>
+                <image class="featuresArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+            </view>
+            <view class="lineStyle"></view>
+            <view class="applyColumn row">
+                <text class="applyTitle">客户手机</text>
+                <text class="applyContent">13232323232</text>
+                <image class="featuresArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+            </view>
+            <view class="lineStyle"></view>
+            <view class="applyColumn row">
+                <text class="applyTitle">客户名称</text>
+                <image class="featuresArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+            </view>
+        </view>
+        <view class="applyNumber">
+            <view class="applyColumn row">
+                <text class="applyTitle">到店日期</text>
+                <text class="applyContent">2019-11-11</text>
+                <image class="featuresArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+            </view>
+            <view class="lineStyle"></view>
+            <view class="applyColumn row">
+                <text class="valicode">验证码</text>
+                <input class="inputCode" placeholder="输入验证码" placeholderClass="placeholderClass" type="number"></input>
+                <text class="sendValicode">输入验证码</text>
+            </view>
+        </view>
+        <view class="buttonGroup row">
+            <view class="cancleApply applyButton">取消陪同</view>
+            <view class="completeApply applyButton">完成陪同</view>
+        </view>
+    </view>
+</view>

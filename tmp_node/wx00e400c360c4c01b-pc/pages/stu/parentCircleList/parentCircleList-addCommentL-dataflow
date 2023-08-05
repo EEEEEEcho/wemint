@@ -1,0 +1,27 @@
+// \pages/stu/parentCircleList/parentCircleList addCommentL Data Flow
+digraph {
+	ab1c733963af4427abf7831850ea547d [label="FunctionCall,
+function name -> addCommentL,
+param -> " color=blue]
+	"53ebb80f86fe46a0aa8a3beebedf02a5" [label=VariableDeclarations color=blue]
+	"2ab4b54bda0f4f7c9eeeff0676b9f7e6" [label="VariableDeclarator,
+left -> a,
+right -> t.data.releaseIndex" color=blue]
+	"53ebb80f86fe46a0aa8a3beebedf02a5" -> "2ab4b54bda0f4f7c9eeeff0676b9f7e6"
+	b52f899d8d6049fa9c0248d5587544a5 [label="VariableDeclarator,
+left -> i,
+right -> t.data.releaseCircle_id" color=blue]
+	"53ebb80f86fe46a0aa8a3beebedf02a5" -> b52f899d8d6049fa9c0248d5587544a5
+	e727c2e88a3c4d64b5e6e1caa66e6692 [label="VariableDeclarator,
+left -> n,
+right -> t.data.releaseParent_id" color=blue]
+	"53ebb80f86fe46a0aa8a3beebedf02a5" -> e727c2e88a3c4d64b5e6e1caa66e6692
+	ab1c733963af4427abf7831850ea547d -> "53ebb80f86fe46a0aa8a3beebedf02a5"
+	bed7981fd8c640b6bd0162de42a15255 [label="CallExpression,
+callee name -> c,
+param -> i,
+t.data.content,
+n,
+" color=blue]
+	ab1c733963af4427abf7831850ea547d -> bed7981fd8c640b6bd0162de42a15255
+}

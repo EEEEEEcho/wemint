@@ -1,0 +1,23 @@
+// \pages/fightGroups/fightgroups sureBuy Data Flow
+digraph {
+	"9fbc64ffa6b34264817b45e65b98d320" [label="FunctionCall,
+function name -> sureBuy,
+param -> " color=blue]
+	"2327c79457764cf49d6c883877393ae3" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"4e8c0d02398f421f8f5facdebbcad18b" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	fbe6b4a090944ffc9d63974c8d2d0d20 [label=SequenceExpression color=blue]
+	c92664709d164509a2d827bf816dd63e [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"3e25204a951d4df0aaa5d683f939bdd8" [label="Object Properties
+{
+url -> '../order/square?pintuan_id=' + this.data.pintuan_id + '&pintuan_group_id=' + this.data.pintuan_group_id + '&pintuan_product_id=' + this.data.pintuan_product_id + '&pintuan_product_num=' + this.data.buyCount + '&sku_id=' + this.data.skuid + '&attrImg=' + this.data.attrImg
+}" color=blue]
+	c92664709d164509a2d827bf816dd63e -> "3e25204a951d4df0aaa5d683f939bdd8"
+	fbe6b4a090944ffc9d63974c8d2d0d20 -> c92664709d164509a2d827bf816dd63e
+	"4e8c0d02398f421f8f5facdebbcad18b" -> fbe6b4a090944ffc9d63974c8d2d0d20
+	"2327c79457764cf49d6c883877393ae3" -> "4e8c0d02398f421f8f5facdebbcad18b"
+	"9fbc64ffa6b34264817b45e65b98d320" -> "2327c79457764cf49d6c883877393ae3"
+}

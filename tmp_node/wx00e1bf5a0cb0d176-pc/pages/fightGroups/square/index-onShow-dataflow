@@ -1,0 +1,27 @@
+// \pages/fightGroups/square/index onShow Data Flow
+digraph {
+	"62f9f37c2d7742eb856a3d433f58754a" [label="FunctionCall,
+function name -> onShow,
+param -> " color=blue]
+	"7421ef134ebd4562b82531a807194362" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	ad044660a54e453084b608aab42923e2 [label="CallExpression,
+callee name -> this.getFreightByAddr,
+param -> " color=blue]
+	"04348f17102d4253b44485ae03ee54ab" [label="FunctionCall,
+function name -> getFreightByAddr,
+param -> " color=blue]
+	eb208f3592734540ad14a64a50ea5b70 [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	"72855453107043919a68323189d80a88" [label="Object Properties
+{
+url -> '/index.php?c=front/WxApp/pintuan&a=deliveryFee&district_id=' + e + '&products_str=' + this.data.squareInfo.product_id + '|' + this.data.queryparams.pintuan_product_num + '&ActivityID=' + a.data.ActivityID
+}" color=blue]
+	eb208f3592734540ad14a64a50ea5b70 -> "72855453107043919a68323189d80a88"
+	"04348f17102d4253b44485ae03ee54ab" -> eb208f3592734540ad14a64a50ea5b70
+	ad044660a54e453084b608aab42923e2 -> "04348f17102d4253b44485ae03ee54ab"
+	"7421ef134ebd4562b82531a807194362" -> ad044660a54e453084b608aab42923e2
+	"62f9f37c2d7742eb856a3d433f58754a" -> "7421ef134ebd4562b82531a807194362"
+}

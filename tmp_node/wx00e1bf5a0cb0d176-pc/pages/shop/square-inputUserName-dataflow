@@ -1,0 +1,17 @@
+// \pages/shop/square inputUserName Data Flow
+digraph {
+	"591d16926ec04554951b00c05c2928c2" [label="FunctionCall,
+function name -> inputUserName,
+param -> t,
+t.,
+" color=blue]
+	"9894626431674e9095c921be7a93efd1" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"6a709648732a4658acb23daaf6d9f0c8" [label="Object Properties
+{
+NickName -> t.detail.value
+}" color=blue]
+	"9894626431674e9095c921be7a93efd1" -> "6a709648732a4658acb23daaf6d9f0c8"
+	"591d16926ec04554951b00c05c2928c2" -> "9894626431674e9095c921be7a93efd1"
+}

@@ -1,0 +1,17 @@
+// \pages/shop/qrcode getQrcode Data Flow
+digraph {
+	"88a8a73e55ac43b591e4004cfd153aa3" [label="FunctionCall,
+function name -> getQrcode,
+param -> " color=blue]
+	a0f1f276041d4afcbaa6e6652656cd09 [label=VariableDeclarations color=blue]
+	"46106c0f80cb450ab4476b3271849038" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"1449ae8628ef43e0afef43654f28b687" [label="Object Properties
+{
+userID -> o.data.userID
+}" color=blue]
+	"46106c0f80cb450ab4476b3271849038" -> "1449ae8628ef43e0afef43654f28b687"
+	a0f1f276041d4afcbaa6e6652656cd09 -> "46106c0f80cb450ab4476b3271849038"
+	"88a8a73e55ac43b591e4004cfd153aa3" -> a0f1f276041d4afcbaa6e6652656cd09
+}

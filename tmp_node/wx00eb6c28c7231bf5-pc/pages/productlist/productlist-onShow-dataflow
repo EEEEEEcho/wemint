@@ -1,0 +1,13 @@
+// \pages/productlist/productlist onShow Data Flow
+digraph {
+	"1485f3c5a5a340c2b81b81ae4e7ad45f" [label="FunctionCall,
+function name -> onShow,
+param -> " color=blue]
+	"56a440abd9e840058e52df5dff4e9537" [label=SequenceExpression color=blue]
+	f7149df01b474185ac0dc7184ff746e0 [label="CallExpression,
+callee name -> t.loadData,
+param -> t,
+" color=blue]
+	"56a440abd9e840058e52df5dff4e9537" -> f7149df01b474185ac0dc7184ff746e0
+	"1485f3c5a5a340c2b81b81ae4e7ad45f" -> "56a440abd9e840058e52df5dff4e9537"
+}

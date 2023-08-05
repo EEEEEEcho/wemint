@@ -1,0 +1,13 @@
+// \pages/teacher/layoutDetail/detail searchStu Data Flow
+digraph {
+	bb5e381e17ce408caddff28c65e3f305 [label="FunctionCall,
+function name -> searchStu,
+param -> t,
+t.,
+" color=blue]
+	c7dbd71c60764f4dba2fe83bc1815efe [label="CallExpression,
+callee name -> i.collectFomrId,
+param -> t.detail.formId,
+" color=blue]
+	bb5e381e17ce408caddff28c65e3f305 -> c7dbd71c60764f4dba2fe83bc1815efe
+}

@@ -1,0 +1,50 @@
+// \pages/stu/mailbox/mailbox touchmove Data Flow
+digraph {
+	f9789ad4ef2647eba9fae3f962337cce [label="FunctionCall,
+function name -> touchmove,
+param -> " color=blue]
+	"7df9b252759842888bb00bbbe8682637" [label=VariableDeclarations color=blue]
+	"4e254ff9337441988acad411b0ae79c3" [label="VariableDeclarator,
+left -> i,
+right -> t.data.startX" color=blue]
+	"7df9b252759842888bb00bbbe8682637" -> "4e254ff9337441988acad411b0ae79c3"
+	c8462731297e4d90833c523ffaa1293e [label="VariableDeclarator,
+left -> o,
+right -> t.data.startY" color=blue]
+	"7df9b252759842888bb00bbbe8682637" -> c8462731297e4d90833c523ffaa1293e
+	"5f592916830a467e96bce648e2a08e10" [label="VariableDeclarator,
+left -> s,
+right -> t.angle" color=blue]
+	"0d53ef61231a4da5a1d266b9b3b20c96" [label="CallExpression,
+callee name -> t.angle,
+param -> " color=blue]
+	"4a32a481059245b1b33000e945736dc4" [label="Object Properties
+{
+X -> i
+Y -> o
+}" color=blue]
+	"0d53ef61231a4da5a1d266b9b3b20c96" -> "4a32a481059245b1b33000e945736dc4"
+	"5f592916830a467e96bce648e2a08e10" -> "0d53ef61231a4da5a1d266b9b3b20c96"
+	"7df9b252759842888bb00bbbe8682637" -> "5f592916830a467e96bce648e2a08e10"
+	f9789ad4ef2647eba9fae3f962337cce -> "7df9b252759842888bb00bbbe8682637"
+	c2912d62f2434668bf3a134f2073bf9e [label=SequenceExpression color=blue]
+	"74b69d27cf0545fd89f8d5e09aaf4e57" [label="CallExpression,
+callee name -> t.data.mailList.forEach,
+param -> " color=blue]
+	"5efd0a520a31425c8e5cbdf6ae83b445" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> t,
+" color=blue]
+	"74b69d27cf0545fd89f8d5e09aaf4e57" -> "5efd0a520a31425c8e5cbdf6ae83b445"
+	c2912d62f2434668bf3a134f2073bf9e -> "74b69d27cf0545fd89f8d5e09aaf4e57"
+	"5ef10ef71cb3497492da79862b08d322" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	cb87b63795ed4602806e806f399beb7f [label="Object Properties
+{
+mailList -> t.data.mailList
+}" color=blue]
+	"5ef10ef71cb3497492da79862b08d322" -> cb87b63795ed4602806e806f399beb7f
+	c2912d62f2434668bf3a134f2073bf9e -> "5ef10ef71cb3497492da79862b08d322"
+	f9789ad4ef2647eba9fae3f962337cce -> c2912d62f2434668bf3a134f2073bf9e
+}

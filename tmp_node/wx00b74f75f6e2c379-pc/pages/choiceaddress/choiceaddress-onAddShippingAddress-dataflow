@@ -1,0 +1,22 @@
+// \pages/choiceaddress/choiceaddress onAddShippingAddress Data Flow
+digraph {
+	"68c5038173c04264bdda38bdfac35a5d" [label="FunctionCall,
+function name -> onAddShippingAddress,
+param -> e,
+e.,
+" color=blue]
+	"7ec59c0ab39541e58e07b70c2b1b5875" [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	"49be6f7f2a71407cab6653ad5cf340c2" [label="FunctionCall,
+function name -> success,
+param -> " color=blue]
+	"9090091cc00e45018db15c0d97026762" [label="If Alternate" color=blue]
+	"5817040821fd4bec8bd8851c1c83ae14" [label="CallExpression,
+callee name -> wx.chooseAddress,
+param -> " color=blue]
+	"9090091cc00e45018db15c0d97026762" -> "5817040821fd4bec8bd8851c1c83ae14"
+	"49be6f7f2a71407cab6653ad5cf340c2" -> "9090091cc00e45018db15c0d97026762"
+	"7ec59c0ab39541e58e07b70c2b1b5875" -> "49be6f7f2a71407cab6653ad5cf340c2"
+	"68c5038173c04264bdda38bdfac35a5d" -> "7ec59c0ab39541e58e07b70c2b1b5875"
+}

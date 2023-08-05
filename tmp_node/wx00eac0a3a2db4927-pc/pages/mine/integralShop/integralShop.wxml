@@ -1,0 +1,33 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="integralShop" style="margin-top: {{navH+status}}px;">
+    <view class="integralAccount">
+        <image class="imageBack" src=""></image>
+        <view class="integral row">
+            <image class="integralSymbol" src=""></image>
+            <text class="myIntegral">我的积分：2032</text>
+            <text class="integralTitle">每日积分</text>
+            <image class="featuresArrow" src="http://oss.shangmian.xin/weixin_applets_icon_arrow_right.png"></image>
+        </view>
+    </view>
+    <view class="prizeDraw">
+        <view class="prizeTitle">今日抽奖</view>
+        <view class="prizeList">
+            <view class="eachPrize">
+                <image class="prizeImage" src=""></image>
+            </view>
+            <view class="eachPrize">
+                <image class="prizeImage" src=""></image>
+            </view>
+        </view>
+    </view>
+    <view class="prizeDraw">
+        <view class="prizeTitle">热门推荐</view>
+        <view class="eachPrize">
+            <image class="prizeImage" src=""></image>
+        </view>
+        <view class="images row">
+            <image class="image" src=""></image>
+            <image class="image" src=""></image>
+        </view>
+    </view>
+</view>

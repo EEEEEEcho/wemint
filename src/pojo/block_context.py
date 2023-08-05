@@ -3,17 +3,17 @@ from pojo.scope_enum import Scope
 
 class BlockContext:
     def __init__(self, scope: Scope, name: str = None):
-        # 当前上下文等级
+        # Current context level.
         self.scope = scope
-        # 当前上下文名字
+        # Current context name.
         self.name = name
-        # 变量表
+        # Variable table.
         self.variable_table = dict()
-        # 参数表
+        # Parameter table.
         self.arguments_table = dict()
-        # 常量表
+        # Constant table.
         self.const_variable_table = dict()
-        # 父上下文
+        # Parent context.
         self.father = None
 
     def __repr__(self):

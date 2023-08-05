@@ -1,0 +1,94 @@
+.s_table {
+    width: 100%;
+    float: left;
+    padding: 10px 0;
+    border-bottom: 15px solid #f3f3f3;
+}
+
+.s_tab1 {
+    width: 89%;
+    height: auto;
+    float: left;
+    margin: 2% 0 1% 4%;
+    padding: 5px 0;
+    border-bottom: 1px solid #e9e9e9;
+    font-size: 16px;
+    color: #333;
+    line-height: 40px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.s_tab1 input.tab1 {
+    width: 98%;
+    height: 40px;
+    float: left;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #333;
+    line-height: 40px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.s_tab2 {
+    width: 89%;
+    height: auto;
+    float: left;
+    margin: 2% 0 1% 4%;
+    padding: 5px 0;
+    border-bottom: 1px solid #fff;
+    font-size: 16px;
+    color: #333;
+    line-height: 40px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.s_tab2 textarea.tab2 {
+    width: 98%;
+    height: 100px;
+    float: left;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #333;
+    line-height: 20px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.s_tab3 {
+    width: 89%;
+    height: auto;
+    float: left;
+    margin: 3% 0 1% 4%;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #333;
+    line-height: 40px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.body-view {
+    float: right;
+}
+
+.footc {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    left: 10%;
+    background: #9139e1;
+    z-index: 100;
+    width: 76%;
+    font-size: 14px;
+    border: 1px solid #eee;
+    line-height: 50px;
+    font-weight: 700;
+    color: snow;
+    text-align: center;
+    border-radius: 10px;
+}

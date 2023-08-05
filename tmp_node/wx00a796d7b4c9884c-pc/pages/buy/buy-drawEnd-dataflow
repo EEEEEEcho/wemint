@@ -1,0 +1,31 @@
+// \pages/buy/buy drawEnd Data Flow
+digraph {
+	"10c3ff9ff432474c93e425c424d1b3d1" [label="FunctionCall,
+function name -> drawEnd,
+param -> " color=blue]
+	"665d8353128e4e3d8b10ff888426b9f3" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"03405618e5b040ee9ea5e906e29aff3d" [label=SequenceExpression color=blue]
+	a5274076efad4ea8baf1c80b74af11e2 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	ea505abf3fee4401909fd5170d39f74e [label="Object Properties
+{
+carts -> this.data.carts
+}" color=blue]
+	a5274076efad4ea8baf1c80b74af11e2 -> ea505abf3fee4401909fd5170d39f74e
+	"03405618e5b040ee9ea5e906e29aff3d" -> a5274076efad4ea8baf1c80b74af11e2
+	"665d8353128e4e3d8b10ff888426b9f3" -> "03405618e5b040ee9ea5e906e29aff3d"
+	efa356da570846caa5e251e97a9c2088 [label=SequenceExpression color=blue]
+	a5ffce78770a4065ae0e788023d45923 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"7ffc2278788d4420babdf81bb4d8d08e" [label="Object Properties
+{
+carts -> this.data.carts
+}" color=blue]
+	a5ffce78770a4065ae0e788023d45923 -> "7ffc2278788d4420babdf81bb4d8d08e"
+	efa356da570846caa5e251e97a9c2088 -> a5ffce78770a4065ae0e788023d45923
+	"665d8353128e4e3d8b10ff888426b9f3" -> efa356da570846caa5e251e97a9c2088
+	"10c3ff9ff432474c93e425c424d1b3d1" -> "665d8353128e4e3d8b10ff888426b9f3"
+}

@@ -1,0 +1,15 @@
+// \pages/fightGroups/fightgroups onShow Data Flow
+digraph {
+	"1cd7cf2ad292466b8e8e15ae2ee4ce34" [label="FunctionCall,
+function name -> onShow,
+param -> " color=blue]
+	cd3953e494f24403baf8c06c07fd1e88 [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	ea98368c178c4b21a2f082aa0d4e8fa1 [label="Object Properties
+{
+url -> '/index.php?c=front/WxApp/pintuan&a=getPintuanInfo&&pintuan_group_id=' + a.data.queryparams.pintuan_group_id
+}" color=blue]
+	cd3953e494f24403baf8c06c07fd1e88 -> ea98368c178c4b21a2f082aa0d4e8fa1
+	"1cd7cf2ad292466b8e8e15ae2ee4ce34" -> cd3953e494f24403baf8c06c07fd1e88
+}

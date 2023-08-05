@@ -1,0 +1,14 @@
+<view class="margintop5"></view>
+<view class="container">
+    <view class="sel">
+        <input bindinput="inputOld" class="inputText" focus="{{focus1}}" placeholder="原密码"></input>
+    </view>
+    <view class="line"></view>
+    <view class="sel">
+        <input bindinput="inputNew" class="inputText" focus="{{focus2}}" placeholder="新密码"></input>
+    </view>
+    <view class="line"></view>
+    <view class="loginBtnView">
+        <button bindtap="editPwd" class="loginBtn">保 存</button>
+    </view>
+</view>

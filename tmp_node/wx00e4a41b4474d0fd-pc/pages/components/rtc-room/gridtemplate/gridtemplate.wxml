@@ -1,0 +1,22 @@
+<template name="gridtemplate">
+    <view class="videoview">
+        <view class="pusher-box">
+            <live-pusher autopush aspect="{{aspect}}" audioQuality="high" backgroundMute="{{true}}" beauty="{{beauty}}" binderror="onError" bindstatechange="onPush" debug="{{debug}}" enableCamera="{{false}}" id="rtcpusher" maxBitrate="{{maxBitrate}}" minBitrate="{{minBitrate}}" mode="RTC" muted="{{muted}}" url="{{pushURL}}" waitingImage="https://mc.qcloudimg.com/static/img/daeed8616ac5df256c0591c22a65c4d3/pause_publish.jpg" wx:if="{{pushURL}}"></live-pusher>
+        </view>
+        <view class="player-box" wx:if="{{item.userID==assistant.userId}}" wx:for="{{members}}" wx:key="userID">
+            <live-player autoplay backgroundMute="{{true}}" bindstatechange="onPlay" debug="{{debug}}" id="{{item.userID}}" maxCache="0.3" minCache="0.1" mode="RTC" objectFit="fillCrop" src="{{item.accelerateURL}}" wx:if="{{item.accelerateURL}}">
+                <cover-view class="bg {{hideBg?'hidden':'visib'}}">
+                    <cover-image class="bg1" src="{{houseBgImg}}"></cover-image>
+                    <cover-view class="head-view" wx:if="{{assistant&&assistant.head}}">
+                        <cover-image class="head" src="{{assistant.head}}"></cover-image>
+                    </cover-view>
+                    <cover-view class="headTips">看房顾问{{assistant.name||''}}正在通话中···</cover-view>
+                </cover-view>
+            </live-player>
+            <cover-view class="operate" wx:if="{{item.accelerateURL}}">
+                <cover-image bindtap="decline" class="img i1" src="/image/wepy_pro/decline.png"></cover-image>
+                <cover-image bindtap="changeMute" class="img i2" src="/image/wepy_pro/{{muted?'muted':'mute'}}.png"></cover-image>
+            </cover-view>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,23 @@
+.storePhone {
+    color: #999;
+    font-size: 14px;
+    padding-left: 40px;
+}
+
+.storeAddress {
+    color: #999;
+    font-size: 14px;
+    padding-left: 40px;
+    padding-top: 4px;
+}
+
+.directOrder {
+    background: #777;
+    color: #ffbf20;
+    border-radius: 8px;
+    width: 80%;
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -1,0 +1,17 @@
+// \pages/stu/myMobile/myMobile inputMobile Data Flow
+digraph {
+	d5e2716d6b834a1d931f7d8417e27ffb [label="FunctionCall,
+function name -> inputMobile,
+param -> t,
+t.,
+" color=blue]
+	c080645ebd8741d2a7d2fcaebb013204 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"9f1c58aed94d43b6bf26044137ff7c91" [label="Object Properties
+{
+mobile -> t.detail.value
+}" color=blue]
+	c080645ebd8741d2a7d2fcaebb013204 -> "9f1c58aed94d43b6bf26044137ff7c91"
+	d5e2716d6b834a1d931f7d8417e27ffb -> c080645ebd8741d2a7d2fcaebb013204
+}

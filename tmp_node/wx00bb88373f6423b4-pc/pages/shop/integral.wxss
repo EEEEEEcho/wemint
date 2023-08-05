@@ -1,0 +1,145 @@
+page {
+    background-color: #fff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.container .integral-info {
+    height: 400rpx;
+    width: 100%;
+    position: relative;
+}
+
+.container .integral-info .integralimg {
+    height: 350rpx;
+    width: 100%;
+    position: relative;
+}
+
+.integralimg image {
+    width: 100%;
+}
+
+.container .integral-info .conIntegral {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.container .integral-info .conIntegral .integral {
+    font-size: 100rpx;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+.container .integral-info .conIntegral .conIntegral-name {
+    font-size: 30rpx;
+    color: rgba(255,255,255,0.65);
+}
+
+.container .integral-title {
+    height: 120rpx;
+    line-height: 120rpx;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container .integral-title .integral-line {
+    width: 96rpx;
+    height: 1rpx;
+    background-color: #ddd;
+    position: relative;
+    top: 60rpx;
+}
+
+.container .integral-title .integralName {
+    font-size: 30rpx;
+    color: #999;
+    margin: 0 28rpx;
+}
+
+.container .msg-box {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 30rpx 26rpx;
+}
+
+.container .msg-box .box-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .msg-box .box-left .box-leftTop {
+    display: flex;
+    font-size: 30rpx;
+    line-height: 30rpx;
+    color: #333;
+}
+
+.container .msg-box .box-left .box-leftTop .circle {
+    width: 10rpx;
+    height: 10rpx;
+    border-radius: 50%;
+    background-color: #ff7200;
+    margin-top: 10rpx;
+    margin-right: 22rpx;
+}
+
+.container .msg-box .box-left .box-leftTop .details {
+    width: 450rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.container .msg-box .box-left .integral-time {
+    font-size: 26rpx;
+    line-height: 26rpx;
+    color: #999;
+    margin-top: 16rpx;
+    margin-left: 32rpx;
+}
+
+.container .msg-box .box-right {
+    line-height: 40rpx;
+    font-size: 40rpx;
+    color: #ff7200;
+    margin-top: 20rpx;
+    font-weight: 600;
+}
+
+.noMore {
+    display: flex;
+    flex-direction: row;
+    width: 284rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 0 auto;
+    padding-left: 32rpx;
+    margin-bottom: 34rpx;
+}
+
+.noMore .line {
+    width: 56rpx;
+    height: 2rpx;
+    background-color: #bbb;
+    position: relative;
+    top: 40rpx;
+}
+
+.noMore .text {
+    color: #bbb;
+    font-size: 22rpx;
+    margin: 0 20rpx;
+}

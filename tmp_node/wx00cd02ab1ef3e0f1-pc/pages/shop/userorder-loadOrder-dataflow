@@ -1,0 +1,55 @@
+// \pages/shop/userorder loadOrder Data Flow
+digraph {
+	c54c36e1185f479dabde985683423bc9 [label="FunctionCall,
+function name -> loadOrder,
+param -> " color=blue]
+	b196b7cffef94a568f65eb5e27559298 [label="If Alternate" color=blue]
+	"5fb41a6899b74690b78cdfcba4c08665" [label=VariableDeclarations color=blue]
+	"78dad04895ee42fdbc5fbc3d754b20de" [label="VariableDeclarator,
+left -> o,
+right -> e.data.recordcount" color=blue]
+	"5fb41a6899b74690b78cdfcba4c08665" -> "78dad04895ee42fdbc5fbc3d754b20de"
+	"649130c7c0fa44828e7e2285a88b9ae9" [label="VariableDeclarator,
+left -> r,
+right -> e.data.orderlist.length" color=blue]
+	"5fb41a6899b74690b78cdfcba4c08665" -> "649130c7c0fa44828e7e2285a88b9ae9"
+	b196b7cffef94a568f65eb5e27559298 -> "5fb41a6899b74690b78cdfcba4c08665"
+	"7c1e7dc584ac491481de9b1c6cd65747" [label="If Alternate" color=blue]
+	"0e23ea1e485b4a57a624eaab0e00d891" [label=VariableDeclarations color=blue]
+	"428f54e69a65410ea74d690228b12f89" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"1f3c2a5de7224de2ab71e6e282b4c803" [label="CallExpression,
+callee name -> Math.ceil,
+param -> r / e.data.pagesize,
+" color=blue]
+	"428f54e69a65410ea74d690228b12f89" -> "1f3c2a5de7224de2ab71e6e282b4c803"
+	"0e23ea1e485b4a57a624eaab0e00d891" -> "428f54e69a65410ea74d690228b12f89"
+	"7c1e7dc584ac491481de9b1c6cd65747" -> "0e23ea1e485b4a57a624eaab0e00d891"
+	bfbcb4bffa2147d38f61b7cc84963893 [label=SequenceExpression color=blue]
+	"7e684730a3ba4f3d821a4c1f3c713d78" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	b6cad2b3f13d4612b46bd8516fc771d6 [label="Assignment,
+left -> e.data.status,
+right -> e.data.queryparams.status" color=blue]
+	"7e684730a3ba4f3d821a4c1f3c713d78" -> b6cad2b3f13d4612b46bd8516fc771d6
+	bfbcb4bffa2147d38f61b7cc84963893 -> "7e684730a3ba4f3d821a4c1f3c713d78"
+	de2fb501ca8e4ea5bbec8fb71f84734a [label="CallExpression,
+callee name -> console.log,
+param -> e.data.status,
+" color=blue]
+	bfbcb4bffa2147d38f61b7cc84963893 -> de2fb501ca8e4ea5bbec8fb71f84734a
+	"474f07fe05064a04b8844cf5e567605d" [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	"452901da4c744de6b718aca9a52dca9d" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=UserOrders&page=' + n + '&pagesize=' + e.data.pagesize + '&Status=' + e.data.status
+}" color=blue]
+	"474f07fe05064a04b8844cf5e567605d" -> "452901da4c744de6b718aca9a52dca9d"
+	bfbcb4bffa2147d38f61b7cc84963893 -> "474f07fe05064a04b8844cf5e567605d"
+	"7c1e7dc584ac491481de9b1c6cd65747" -> bfbcb4bffa2147d38f61b7cc84963893
+	b196b7cffef94a568f65eb5e27559298 -> "7c1e7dc584ac491481de9b1c6cd65747"
+	c54c36e1185f479dabde985683423bc9 -> b196b7cffef94a568f65eb5e27559298
+}

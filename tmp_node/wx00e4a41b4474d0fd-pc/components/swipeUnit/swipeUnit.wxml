@@ -1,0 +1,9 @@
+<scroll-view catchtouchmove bind:touchcancel="touchcancel" bind:touchend="touchend" bind:touchmove="touchmove" bind:touchstart="touchstart" bindscroll="swipeScrollExp" class="swipeView">
+    <view bindtap="changeTap" class="itemView" data-clickLength="{{imgsList.length}}" data-clickValue="{{index}}" data-clickid="{{area.type}}" data-clkName="{{area.areaStyle.burialName+'_'+objData[index].moduleStyle.burialName}}" data-expand="{{item.houseOption}}" data-functype="1" data-index="{{index}}" data-jumpLink="{{item.jumpLink}}" data-jumptype="{{item.jumpType}}" data-jumpvalue="{{item.jumpValue}}" data-schedule="{{item.schedule}}" id="{{'view_5-1_child_'+index}}" style="height:{{scheduleList[index].height}}rpx;" wx:if="{{item.hasShow}}" wx:for="{{imgsList}}" wx:key="item">
+        <image class="swipeImg" mode="aspectFill" src="{{item.imgUrl}}" style="top:{{(scheduleList[index].schedule-1)*focusPointY+'rpx'}};height:{{item.imgMaxHeight+'rpx'}}"></image>
+        <view class="backView" style="opacity:{{scheduleList[index].schedule}}"></view>
+        <view class="icon" style="{{item.titleObj.iconStyle_s}};bottom:{{scheduleList[index].height/2+30}}rpx;" wx:if="{{item.hasIcon&&item.hasIcon=='true'}}"></view>
+        <view class="title" style="{{item.titleObj.titleStyle_s}};bottom:{{item.imgMinHeight/2+(140-item.imgMinHeight/2)*scheduleList[index].schedule-(item.hasIcon&&item.hasIcon=='true'?30*(1-scheduleList[index].schedule):0)}}rpx;text-shadow: 0 0 2px rgba(0,0,0,0.74);" wx:if="{{item.hasTitle&&item.hasTitle=='true'}}">{{item.CN_name}}</view>
+        <view class="desc" style="{{item.titleObj.descStyle_s}};opacity:{{scheduleList[index].schedule}};overflow:visible;text-shadow: 0 0 2px rgba(0,0,0,0.74);" wx:if="{{item.hasDes&&item.hasDes=='true'}}">{{item.EN_name}}</view>
+    </view>
+</scroll-view>

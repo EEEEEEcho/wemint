@@ -1,0 +1,7 @@
+// \pages/multiroom/room/room onRoomEvent Data Flow
+digraph {
+	"4be0ce742e57449882d76131c0a66599" [label="FunctionCall,
+function name -> onRoomEvent,
+param -> " color=blue]
+	"4be0ce742e57449882d76131c0a66599" -> "61ef39eda88b487bb2ffdd0d46f65cc7"
+}

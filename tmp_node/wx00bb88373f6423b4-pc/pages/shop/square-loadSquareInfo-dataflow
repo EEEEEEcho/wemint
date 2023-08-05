@@ -1,0 +1,15 @@
+// \pages/shop/square loadSquareInfo Data Flow
+digraph {
+	ad7dcaf4ba724bddb0b41aef3285530c [label="FunctionCall,
+function name -> loadSquareInfo,
+param -> " color=blue]
+	ba9ccc5c4a4d43c29c185892e3cc9333 [label="CallExpression,
+callee name -> t.sendRequest,
+param -> " color=blue]
+	"40a047056329468f9ab3a11cc2869484" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=getSquareInfo&pkeys=' + e.queryparams.pkeys
+}" color=blue]
+	ba9ccc5c4a4d43c29c185892e3cc9333 -> "40a047056329468f9ab3a11cc2869484"
+	ad7dcaf4ba724bddb0b41aef3285530c -> ba9ccc5c4a4d43c29c185892e3cc9333
+}

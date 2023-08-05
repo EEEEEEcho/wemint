@@ -1,0 +1,46 @@
+// \pages/shopDetail/shopDetail chooseGoodsAttr Data Flow
+digraph {
+	"46bc55dca4424ca2bf17de5cbab970ae" [label="FunctionCall,
+function name -> chooseGoodsAttr,
+param -> o,
+o.,
+" color=blue]
+	fa744e19737045bda323aaa6da8313c1 [label=VariableDeclarations color=blue]
+	"850a5cc6709741c9b710f781e848c3dc" [label="VariableDeclarator,
+left -> t,
+right -> o.target.dataset.item" color=blue]
+	fa744e19737045bda323aaa6da8313c1 -> "850a5cc6709741c9b710f781e848c3dc"
+	"46bc55dca4424ca2bf17de5cbab970ae" -> fa744e19737045bda323aaa6da8313c1
+	"843b9617e6b94bab9b668601effeede2" [label="If Alternate" color=blue]
+	"125c540cda4c46269edc8825dcf3101a" [label=VariableDeclarations color=blue]
+	de7bc2ac01e34691a4e421be597f9f73 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"9b3d7078d8d5437480aab66a2a2383f8" [label="Object Properties
+{
+goods_id -> t.goods_id
+}" color=blue]
+	de7bc2ac01e34691a4e421be597f9f73 -> "9b3d7078d8d5437480aab66a2a2383f8"
+	"125c540cda4c46269edc8825dcf3101a" -> de7bc2ac01e34691a4e421be597f9f73
+	"843b9617e6b94bab9b668601effeede2" -> "125c540cda4c46269edc8825dcf3101a"
+	"7c2d996493da4b9986a0b0f075d1a4f6" [label=SequenceExpression color=blue]
+	b1bdb4417aaa4ee790adfb0154b0b09e [label="Assignment,
+left -> a.shop_token,
+right -> r.data.shopToken" color=blue]
+	"7c2d996493da4b9986a0b0f075d1a4f6" -> b1bdb4417aaa4ee790adfb0154b0b09e
+	"993e17ed94d24388ac3a1d3c2b97522b" [label="Assignment,
+left -> a.shop_id,
+right -> r.data.shopId" color=blue]
+	"7c2d996493da4b9986a0b0f075d1a4f6" -> "993e17ed94d24388ac3a1d3c2b97522b"
+	a31d7ed5707d4acd882e654958dea6f5 [label="CallExpression,
+callee name -> s.getApiJSON,
+param -> " color=blue]
+	eb0c0130d1f04e9ea0bd02314d312615 [label="FunctionCall,
+function name -> Anonymous Function,
+param -> o,
+" color=blue]
+	a31d7ed5707d4acd882e654958dea6f5 -> eb0c0130d1f04e9ea0bd02314d312615
+	"7c2d996493da4b9986a0b0f075d1a4f6" -> a31d7ed5707d4acd882e654958dea6f5
+	"843b9617e6b94bab9b668601effeede2" -> "7c2d996493da4b9986a0b0f075d1a4f6"
+	"46bc55dca4424ca2bf17de5cbab970ae" -> "843b9617e6b94bab9b668601effeede2"
+}

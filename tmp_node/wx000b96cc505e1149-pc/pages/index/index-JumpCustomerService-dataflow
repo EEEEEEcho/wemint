@@ -1,0 +1,20 @@
+// \pages/index/index JumpCustomerService Data Flow
+digraph {
+	ddab3416d6384a94a282b8ce92b04c58 [label="FunctionCall,
+function name -> JumpCustomerService,
+param -> e.,
+e,
+" color=blue]
+	"2aabf6074ccb40289f95fc2fb55f1d71" [label="CallExpression,
+callee name -> index.saveRecord,
+param -> e.currentTarget.dataset.target,
+e.currentTarget.dataset.path,
+e.currentTarget.dataset.appNameStr,
+" color=blue]
+	"39813422517c4038b1089e63ae3eaa13" [label="Object Properties
+{
+id -> e.currentTarget.dataset.event
+}" color=blue]
+	"2aabf6074ccb40289f95fc2fb55f1d71" -> "39813422517c4038b1089e63ae3eaa13"
+	ddab3416d6384a94a282b8ce92b04c58 -> "2aabf6074ccb40289f95fc2fb55f1d71"
+}

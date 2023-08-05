@@ -1,0 +1,19 @@
+// \pages/shop/searchPage onSearchSubmit Data Flow
+digraph {
+	"24c22a99bdef47a19a91e919a15c6e6c" [label="FunctionCall,
+function name -> onSearchSubmit,
+param -> a.,
+a,
+" color=blue]
+	"23d1504781b448d7a568983079eb37f5" [label=VariableDeclarations color=blue]
+	a3237c4674a34662a60b5925ecb0f3b5 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"2ece22e06d0d411f83124c678df5c25a" [label="CallExpression,
+callee name -> t.trim,
+param -> a.detail.value.keyword,
+" color=blue]
+	a3237c4674a34662a60b5925ecb0f3b5 -> "2ece22e06d0d411f83124c678df5c25a"
+	"23d1504781b448d7a568983079eb37f5" -> a3237c4674a34662a60b5925ecb0f3b5
+	"24c22a99bdef47a19a91e919a15c6e6c" -> "23d1504781b448d7a568983079eb37f5"
+}

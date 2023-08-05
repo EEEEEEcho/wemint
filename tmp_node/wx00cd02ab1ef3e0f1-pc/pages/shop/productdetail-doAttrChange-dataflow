@@ -1,0 +1,47 @@
+// \pages/shop/productdetail doAttrChange Data Flow
+digraph {
+	"3b3574921d2140e3bf8a2b3f811df2f6" [label="FunctionCall,
+function name -> doAttrChange,
+param -> " color=blue]
+	acf166f43022435985ec574eda70bd77 [label=VariableDeclarations color=blue]
+	"00924e4dea6143318d851388b3442e60" [label="VariableDeclarator,
+left -> n,
+right -> this.data.selectedAttrs" color=blue]
+	acf166f43022435985ec574eda70bd77 -> "00924e4dea6143318d851388b3442e60"
+	"3b3574921d2140e3bf8a2b3f811df2f6" -> acf166f43022435985ec574eda70bd77
+	"219d47a945d64dd8a712e365a9d97d0d" [label="For Loop" color=blue]
+	b71fdd015d5a4487b14c5de1e735aff7 [label=VariableDeclarations color=blue]
+	"294d975b5f0c4e6ab705e90a930d3545" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"82788be6ef5143d3a6ebc41b22664c56" [label="CallExpression,
+callee name -> this.findAttrValItemById,
+param -> n[r],
+" color=blue]
+	"294d975b5f0c4e6ab705e90a930d3545" -> "82788be6ef5143d3a6ebc41b22664c56"
+	b71fdd015d5a4487b14c5de1e735aff7 -> "294d975b5f0c4e6ab705e90a930d3545"
+	"219d47a945d64dd8a712e365a9d97d0d" -> b71fdd015d5a4487b14c5de1e735aff7
+	"3b3574921d2140e3bf8a2b3f811df2f6" -> "219d47a945d64dd8a712e365a9d97d0d"
+	ac2032e06abf4c1d90103d8f2c22fa6f [label=VariableDeclarations color=blue]
+	a03936ddba604d89bbacb65c84ee8e09 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"83816fca1b9d4466ae68076179e7e314" [label="CallExpression,
+callee name -> t.analyseProductSkusPrice,
+param -> n,
+" color=blue]
+	a03936ddba604d89bbacb65c84ee8e09 -> "83816fca1b9d4466ae68076179e7e314"
+	ac2032e06abf4c1d90103d8f2c22fa6f -> a03936ddba604d89bbacb65c84ee8e09
+	"3b3574921d2140e3bf8a2b3f811df2f6" -> ac2032e06abf4c1d90103d8f2c22fa6f
+	"2b62bad9759845dab08898c2ccac5847" [label=SequenceExpression color=blue]
+	a389ea12c2e74e718e70130bb824a065 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"03437b4311f14a0982e0ea3c2e518db8" [label="Object Properties
+{
+selectedAttrs -> n
+}" color=blue]
+	a389ea12c2e74e718e70130bb824a065 -> "03437b4311f14a0982e0ea3c2e518db8"
+	"2b62bad9759845dab08898c2ccac5847" -> a389ea12c2e74e718e70130bb824a065
+	"3b3574921d2140e3bf8a2b3f811df2f6" -> "2b62bad9759845dab08898c2ccac5847"
+}

@@ -1,0 +1,28 @@
+// \pages/tourist/album/album previewImage Data Flow
+digraph {
+	"80aa4f631fdb4401828516fba475055d" [label="FunctionCall,
+function name -> previewImage,
+param -> a.,
+a,
+" color=blue]
+	"0e8609478be742ccb4336a2be1db9554" [label=VariableDeclarations color=blue]
+	d42cc3646771430aaae8d2746d61d23b [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.index" color=blue]
+	"0e8609478be742ccb4336a2be1db9554" -> d42cc3646771430aaae8d2746d61d23b
+	fbfe3fe9b3d747a0b15840cd76287eab [label="VariableDeclarator,
+left -> e,
+right -> a.currentTarget.dataset.src" color=blue]
+	"0e8609478be742ccb4336a2be1db9554" -> fbfe3fe9b3d747a0b15840cd76287eab
+	"80aa4f631fdb4401828516fba475055d" -> "0e8609478be742ccb4336a2be1db9554"
+	"94c5a03d1fb7433a9986cfb661c6ce38" [label="CallExpression,
+callee name -> wx.previewImage,
+param -> " color=blue]
+	a34494b404834959bd1f916fc51f055d [label="Object Properties
+{
+current -> e[t]
+urls -> e
+}" color=blue]
+	"94c5a03d1fb7433a9986cfb661c6ce38" -> a34494b404834959bd1f916fc51f055d
+	"80aa4f631fdb4401828516fba475055d" -> "94c5a03d1fb7433a9986cfb661c6ce38"
+}

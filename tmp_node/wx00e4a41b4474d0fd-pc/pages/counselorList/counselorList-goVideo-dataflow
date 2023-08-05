@@ -1,0 +1,21 @@
+// \pages/counselorList/counselorList goVideo Data Flow
+digraph {
+	"3ce4fce3f0d9406cb6c91f2b7186b5a8" [label="FunctionCall,
+function name -> goVideo,
+param -> e,
+e.,
+" color=blue]
+	"5627996214814c919baa84ebd305f4cb" [label="If Alternate" color=blue]
+	c6609fda358949988405be6e488880aa [label=SequenceExpression color=blue]
+	"596d8f1319cf4653afcbdb04b850d9e2" [label="CallExpression,
+callee name -> wx.getSetting,
+param -> " color=blue]
+	"50de2e4ce565495c8358a72ef6220156" [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	"596d8f1319cf4653afcbdb04b850d9e2" -> "50de2e4ce565495c8358a72ef6220156"
+	c6609fda358949988405be6e488880aa -> "596d8f1319cf4653afcbdb04b850d9e2"
+	"5627996214814c919baa84ebd305f4cb" -> c6609fda358949988405be6e488880aa
+	"3ce4fce3f0d9406cb6c91f2b7186b5a8" -> "5627996214814c919baa84ebd305f4cb"
+}

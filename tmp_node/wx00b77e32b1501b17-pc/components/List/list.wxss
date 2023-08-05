@@ -1,0 +1,135 @@
+.oldprice {
+    text-decoration: line-through;
+    font-size: 24rpx;
+    color: #828282;
+}
+
+.nowprice {
+    color: #ff5606;
+    font-weight: bold;
+    font-size: 28rpx;
+    margin-right: 10px;
+}
+
+.imgbox image {
+    width: 100%;
+    height: 100%;
+}
+
+.protit {
+    font-size: 28rpx;
+    line-height: 1.4em;
+    height: 80rpx;
+    overflow: hidden;
+    color: #292828;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.list_item {
+    background-color: #fff;
+}
+
+.showWay_4 .list_item navigator {
+    display: flex;
+}
+
+.showWay_4 .list_item .imgbox {
+    width: 160rpx;
+    height: 160rpx;
+}
+
+.showWay_4 .list_item .textbox {
+    flex: 1;
+}
+
+.showWay_4 .list_item {
+    padding: 20rpx;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.showWay_4 .list_item .imgbox {
+    margin-right: 20rpx;
+}
+
+.showWay_4 .protit {
+    margin-bottom: 40rpx;
+}
+
+.showWay_1 .list_item {
+    float: left;
+    width: 50%;
+}
+
+.showWay_1 .list_item navigator {
+    border-bottom: 1px solid #f5f5f5;
+    border-right: 1px solid #f5f5f5;
+}
+
+.showWay_1 .list_item:nth-child(2n+0) navigator {
+    border-right: none;
+}
+
+.showWay_1 .imgbox {
+    width: 375rpx;
+    height: 375rpx;
+}
+
+.showWay_1 .textbox {
+    padding: 20rpx;
+}
+
+.showWay_2 .list_item {
+    width: 100%;
+}
+
+.showWay_2 .list_item navigator {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.showWay_2 .imgbox {
+    width: 750rpx;
+    height: 750rpx;
+}
+
+.showWay_2 .textbox {
+    padding: 20rpx;
+}
+
+.showWay_3 {
+    overflow: hidden;
+}
+
+.showWay_3 .list_item {
+    width: 50%;
+    float: left;
+}
+
+.showWay_3 .list_item:nth-child(3n+1) {
+    width: 100%;
+}
+
+.showWay_3 .list_item:nth-child(3n+1) .imgbox {
+    width: 750rpx;
+    height: 750rpx;
+}
+
+.showWay_3 .list_item navigator {
+    border-bottom: 1px solid #f5f5f5;
+    border-right: 1px solid #f5f5f5;
+}
+
+.showWay_3 .list_item:nth-child(3n+1) navigator {
+    border-right: none;
+}
+
+.showWay_3 .imgbox {
+    width: 375rpx;
+    height: 375rpx;
+}
+
+.showWay_3 .textbox {
+    padding: 20rpx;
+}

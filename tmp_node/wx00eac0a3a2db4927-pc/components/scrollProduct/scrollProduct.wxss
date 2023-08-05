@@ -1,0 +1,40 @@
+.scroll-view_H {
+    white-space: nowrap;
+}
+
+.show_product {
+    margin-top: 30rpx;
+    margin-left: 34rpx;
+}
+
+.product {
+    display: inline-block;
+    margin-right: 20rpx;
+}
+
+.product_last {
+    margin-right: 34rpx;
+}
+
+.pro {
+    display: flex;
+    flex-direction: column;
+}
+
+.pro_img {
+    width: 208rpx;
+    height: 208rpx;
+    border-radius: 24rpx;
+}
+
+.pro_title {
+    font-size: 24rpx;
+    color: #51515c;
+    margin-top: 12rpx;
+}
+
+.pro_title2 {
+    font-size: 20rpx;
+    color: #aeaeb4;
+    margin-top: 6rpx;
+}

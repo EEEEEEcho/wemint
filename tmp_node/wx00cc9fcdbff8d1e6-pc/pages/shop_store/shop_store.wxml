@@ -1,0 +1,65 @@
+<view class="dian">
+    <image class="log" src="{{shopInfo.logo}}"></image>
+    <view class="si">
+        <text>{{shopInfo.name}}</text>
+    </view>
+</view>
+<import src="../../wxParse/wxParse.wxml"></import>
+<view class="tab">
+    <view bindtap="tabFun" class="tab-left">
+        <view class="{{tabArr.curHdIndex=='0'?'active':''}}" data-id="0" id="tab-hd01">简介</view>
+        <text style="color:#ccc">|</text>
+        <view class="{{tabArr.curHdIndex=='1'?'active':''}}" data-id="1" id="tab-hd02">产品</view>
+        <text style="color:#ccc">|</text>
+        <view class="{{tabArr.curHdIndex=='2'?'active':''}}" data-id="2" id="tab-hd03">联系</view>
+    </view>
+    <view class="tab-right">
+        <view class="right-item {{tabArr.curBdIndex=='0'?'active':''}}">
+            <view class="boxx">
+                <view class="cl">
+                    <view class="wxParse">
+                        <scroll-view scrollY="true" style="height:2000rpx;">
+                            <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+                        </scroll-view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="right-item {{tabArr.curBdIndex=='1'?'active':''}}">
+            <view class="list">
+                <view class="ban" wx:for="{{proList}}" wx:key="*this">
+                    <navigator class="cover flex-wrp" url="../product/detail?productId={{item.id}}">
+                        <image class="banner" mode="widthFix" src="{{item.photo_x}}"></image>
+                        <view class="act-item ellipsis">
+                            <text class="type">{{item.name}}</text>
+                        </view>
+                        <view class="act-item ellipsis">
+                            <text class="kkk">{{item.intro}}</text>
+                        </view>
+                        <view class="act-item ellipsis">
+                            <text style="color:red">¥ {{item.price_yh}}</text>
+                        </view>
+                        <view class="act-item ellipsis">
+                            <text style="color:#999999;font-size:25rpx">已有{{item.shiyong}}人购买</text>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+        <view class="tab-right">
+            <view class="right-item {{tabArr.curBdIndex=='2'?'active':''}}">
+                <view class="boxx">
+                    <view class="cll">
+                        <text>公司法人：{{shopInfo.uname}}</text>
+                    </view>
+                    <view class="cll">
+                        <text>联系电话：{{shopInfo.tel}}</text>
+                    </view>
+                    <view class="cll">
+                        <text>公司地址：{{shopInfo.address}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

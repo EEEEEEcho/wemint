@@ -1,0 +1,32 @@
+// \pages/shop/filtrate chooseWay Data Flow
+digraph {
+	"63ad85a4be2d43b7a9ca7364cf5876fe" [label="FunctionCall,
+function name -> chooseWay,
+param -> e.,
+e,
+" color=blue]
+	"267a6f9d436e4fddbbae5b463ef522fa" [label=VariableDeclarations color=blue]
+	"1549b4afdcd549cc8459d141f3f6b8f4" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"8b61e9d013d542da868c8a99f0340637" [label="CallExpression,
+callee name -> parseInt,
+param -> e.currentTarget.dataset.idx,
+" color=blue]
+	"1549b4afdcd549cc8459d141f3f6b8f4" -> "8b61e9d013d542da868c8a99f0340637"
+	"267a6f9d436e4fddbbae5b463ef522fa" -> "1549b4afdcd549cc8459d141f3f6b8f4"
+	"68a45c8430ee48cda49303c9039da90a" [label="VariableDeclarator,
+left -> a,
+right -> e.currentTarget.dataset.text" color=blue]
+	"267a6f9d436e4fddbbae5b463ef522fa" -> "68a45c8430ee48cda49303c9039da90a"
+	"63ad85a4be2d43b7a9ca7364cf5876fe" -> "267a6f9d436e4fddbbae5b463ef522fa"
+	ab0c21ff1b284d688a49d8ae09f04eaf [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"3cb286aacb46424ab8b7318835158dbb" [label="Object Properties
+{
+chooseTypeText -> a
+}" color=blue]
+	ab0c21ff1b284d688a49d8ae09f04eaf -> "3cb286aacb46424ab8b7318835158dbb"
+	"63ad85a4be2d43b7a9ca7364cf5876fe" -> ab0c21ff1b284d688a49d8ae09f04eaf
+}

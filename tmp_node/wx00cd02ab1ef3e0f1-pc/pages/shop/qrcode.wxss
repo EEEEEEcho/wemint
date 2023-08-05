@@ -1,0 +1,72 @@
+.container {
+    width: 100%;
+    position: relative;
+}
+
+.tgbjImg {
+    width: 100%;
+}
+
+.botText {
+    position: absolute;
+    bottom: 154rpx;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.botText text {
+    display: block;
+}
+
+.botText text:nth-child(1) {
+    margin-bottom: 15rpx;
+    color: #999;
+    font-size: 24rpx;
+}
+
+.botText text:nth-child(2) {
+    color: #bbb;
+    font-size: 16rpx;
+}
+
+.code-box {
+    width: 300rpx;
+    height: 300rpx;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    background-color: #fff;
+    overflow: hidden;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.code-box image {
+    width: 85%;
+    height: 85%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.img-botm {
+    width: 90rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    background: #000;
+    opacity: .6;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 50rpx;
+    right: 50rpx;
+}
+
+.icon-xiazai {
+    color: #fff;
+    margin-top: -4rpx;
+    display: inline-block;
+}

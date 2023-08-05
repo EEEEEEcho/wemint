@@ -1,0 +1,166 @@
+// \pages/prodshow/prodshow handleStandardClick Data Flow
+digraph {
+	d3aaf38a8cad4abc8dcb6ec3535132d2 [label="FunctionCall,
+function name -> handleStandardClick,
+param -> t,
+t.,
+" color=blue]
+	"09b1ce3a346343fe996f47e2f1ffa8cd" [label=VariableDeclarations color=blue]
+	e49410a5270b49598feb3daad1d02a24 [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.id" color=blue]
+	"09b1ce3a346343fe996f47e2f1ffa8cd" -> e49410a5270b49598feb3daad1d02a24
+	"65335b5c90644cd3b02934f24793fc17" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.standardIndex" color=blue]
+	"09b1ce3a346343fe996f47e2f1ffa8cd" -> "65335b5c90644cd3b02934f24793fc17"
+	ebc7f587cb2442b3af910f077dd0de8f [label="VariableDeclarator,
+left -> s,
+right -> t.currentTarget.dataset.index" color=blue]
+	"09b1ce3a346343fe996f47e2f1ffa8cd" -> ebc7f587cb2442b3af910f077dd0de8f
+	a1c6f5b3dc97419db341dc6f282665f5 [label="VariableDeclarator,
+left -> o,
+right -> this.data.goods.norm" color=blue]
+	"09b1ce3a346343fe996f47e2f1ffa8cd" -> a1c6f5b3dc97419db341dc6f282665f5
+	d3aaf38a8cad4abc8dcb6ec3535132d2 -> "09b1ce3a346343fe996f47e2f1ffa8cd"
+	"27404b809240481dac8a3e47acb2cf9c" [label=SequenceExpression color=blue]
+	"16b2df839264438d8d2a60953167ab5e" [label="CallExpression,
+callee name -> console.log,
+param -> o,
+" color=blue]
+	"27404b809240481dac8a3e47acb2cf9c" -> "16b2df839264438d8d2a60953167ab5e"
+	"23e2abaebd1d497685bed86c5a3c1e09" [label="CallExpression,
+callee name -> console.log,
+param -> this.data.goods.norm.length,
+" color=blue]
+	"27404b809240481dac8a3e47acb2cf9c" -> "23e2abaebd1d497685bed86c5a3c1e09"
+	"312f910f0d9345968a6c49f283d26024" [label="CallExpression,
+callee name -> console.log,
+param -> e,
+" color=blue]
+	"27404b809240481dac8a3e47acb2cf9c" -> "312f910f0d9345968a6c49f283d26024"
+	"9a922de179ab4db5abc4360572132472" [label="CallExpression,
+callee name -> console.log,
+param -> o[e].selected,
+" color=blue]
+	"27404b809240481dac8a3e47acb2cf9c" -> "9a922de179ab4db5abc4360572132472"
+	"66675db8839246819dfdd3097a0f9b08" [label="CallExpression,
+callee name -> console.log,
+param -> o[e].selected.length,
+" color=blue]
+	"27404b809240481dac8a3e47acb2cf9c" -> "66675db8839246819dfdd3097a0f9b08"
+	d3aaf38a8cad4abc8dcb6ec3535132d2 -> "27404b809240481dac8a3e47acb2cf9c"
+	"9f46fb7efd674344add0df8416e3d94a" [label=VariableDeclarations color=blue]
+	"445b81edde7b4f07b76c0fde0c8647b2" [label="VariableDeclarator,
+left -> i,
+right -> o[e].selected.length" color=blue]
+	"9f46fb7efd674344add0df8416e3d94a" -> "445b81edde7b4f07b76c0fde0c8647b2"
+	f4acc018d4474382937a15c123a138cd [label="VariableDeclarator,
+left -> n,
+right -> this.data.selectedId" color=blue]
+	"9f46fb7efd674344add0df8416e3d94a" -> f4acc018d4474382937a15c123a138cd
+	d3aaf38a8cad4abc8dcb6ec3535132d2 -> "9f46fb7efd674344add0df8416e3d94a"
+	"88ba8a871e194b0082abefe1f07cef4d" [label="Assignment,
+left -> n[e],
+right -> a" color=blue]
+	d3aaf38a8cad4abc8dcb6ec3535132d2 -> "88ba8a871e194b0082abefe1f07cef4d"
+	cacbd0ec194648b891b23f15abe87b40 [label=VariableDeclarations color=blue]
+	bafb0390d089400a9287e927396543ec [label="VariableDeclarator,
+left -> r,
+right -> this.data.selectedStandard" color=blue]
+	cacbd0ec194648b891b23f15abe87b40 -> bafb0390d089400a9287e927396543ec
+	d3aaf38a8cad4abc8dcb6ec3535132d2 -> cacbd0ec194648b891b23f15abe87b40
+	e5af1ee2ad4246be850f2138d41e1a55 [label="CallExpression,
+callee name -> console.log,
+param -> s,
+" color=blue]
+	d3aaf38a8cad4abc8dcb6ec3535132d2 -> e5af1ee2ad4246be850f2138d41e1a55
+	a4ce61ac377344d9a199d6a6382b1088 [label=VariableDeclarations color=blue]
+	"18e5743d758d4d8a8f2bd0309f2c0df7" [label="VariableDeclarator,
+left -> l,
+right -> n.join" color=blue]
+	a4ce61ac377344d9a199d6a6382b1088 -> "18e5743d758d4d8a8f2bd0309f2c0df7"
+	d3aaf38a8cad4abc8dcb6ec3535132d2 -> a4ce61ac377344d9a199d6a6382b1088
+	"6b7c62d7fd2045debc82828b6c2e4b5b" [label="CallExpression,
+callee name -> console.log,
+param -> l,
+" color=blue]
+	d3aaf38a8cad4abc8dcb6ec3535132d2 -> "6b7c62d7fd2045debc82828b6c2e4b5b"
+	"0efc4ac9199d4714bcaa1bc746ecf892" [label=VariableDeclarations color=blue]
+	"43ca4a19b7e645d2ae35fbf286db752d" [label="VariableDeclarator,
+left -> u,
+right -> this.data.goods" color=blue]
+	"0efc4ac9199d4714bcaa1bc746ecf892" -> "43ca4a19b7e645d2ae35fbf286db752d"
+	d3aaf38a8cad4abc8dcb6ec3535132d2 -> "0efc4ac9199d4714bcaa1bc746ecf892"
+	"57ff3de7521e44548213b2feb3bf63c7" [label=SequenceExpression color=blue]
+	afced2d365394bbc86acece44f67b063 [label="Assignment,
+left -> u.norm,
+right -> o" color=blue]
+	"57ff3de7521e44548213b2feb3bf63c7" -> afced2d365394bbc86acece44f67b063
+	e628d94180e940f493350259df0bf55e [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"1e5c7243f3614b3ba2c718399625c1ba" [label="Object Properties
+{
+goods -> u
+mergeId -> l
+selectedStandard -> r
+}" color=blue]
+	e628d94180e940f493350259df0bf55e -> "1e5c7243f3614b3ba2c718399625c1ba"
+	"57ff3de7521e44548213b2feb3bf63c7" -> e628d94180e940f493350259df0bf55e
+	"3e206fbebc1f402d807f9470254a6e66" [label="CallExpression,
+callee name -> console.log,
+param -> o.length,
+" color=blue]
+	"57ff3de7521e44548213b2feb3bf63c7" -> "3e206fbebc1f402d807f9470254a6e66"
+	"03b151bd863745d3981b597407cffdbe" [label="CallExpression,
+callee name -> console.log,
+param -> n.length,
+" color=blue]
+	"57ff3de7521e44548213b2feb3bf63c7" -> "03b151bd863745d3981b597407cffdbe"
+	"40348da37a0e49cf946acc2442c8a574" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"0045074cefae4518b81af689dcbc4640" [label="CallExpression,
+callee name -> this.selectprice,
+param -> " color=blue]
+	fdcea68119ea41cca5176cd8ef39f0cb [label="FunctionCall,
+function name -> selectprice,
+param -> " color=blue]
+	b2a0c3d1398b4d958f41c76e1b0b5835 [label=SequenceExpression color=blue]
+	"7e5556a0eac54a0085729ce721cd9eeb" [label="CallExpression,
+callee name -> console.log,
+param -> a.data.selectedId,
+" color=blue]
+	b2a0c3d1398b4d958f41c76e1b0b5835 -> "7e5556a0eac54a0085729ce721cd9eeb"
+	"6d580cd0f0674676aa5e7375ab7e09a9" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	d72d46b285db4589b269012b77413b51 [label="Object Properties
+{
+id -> a.data.goods.id
+norm -> a.data.mergeId
+}" color=blue]
+	"6d580cd0f0674676aa5e7375ab7e09a9" -> d72d46b285db4589b269012b77413b51
+	b2a0c3d1398b4d958f41c76e1b0b5835 -> "6d580cd0f0674676aa5e7375ab7e09a9"
+	fdcea68119ea41cca5176cd8ef39f0cb -> b2a0c3d1398b4d958f41c76e1b0b5835
+	"0045074cefae4518b81af689dcbc4640" -> fdcea68119ea41cca5176cd8ef39f0cb
+	"40348da37a0e49cf946acc2442c8a574" -> "0045074cefae4518b81af689dcbc4640"
+	"57ff3de7521e44548213b2feb3bf63c7" -> "40348da37a0e49cf946acc2442c8a574"
+	"4554c16b380a49f1ac396847229b9d04" [label="CallExpression,
+callee name -> console.log,
+param -> r,
+" color=blue]
+	"57ff3de7521e44548213b2feb3bf63c7" -> "4554c16b380a49f1ac396847229b9d04"
+	"037de5a6c35c46c0a2a832b7086d549f" [label="CallExpression,
+callee name -> console.log,
+param -> o,
+" color=blue]
+	"57ff3de7521e44548213b2feb3bf63c7" -> "037de5a6c35c46c0a2a832b7086d549f"
+	a4d825e5c3be49a4ae24175e44ba3389 [label="CallExpression,
+callee name -> console.log,
+param -> this.data.goods.norm,
+" color=blue]
+	"57ff3de7521e44548213b2feb3bf63c7" -> a4d825e5c3be49a4ae24175e44ba3389
+	d3aaf38a8cad4abc8dcb6ec3535132d2 -> "57ff3de7521e44548213b2feb3bf63c7"
+}

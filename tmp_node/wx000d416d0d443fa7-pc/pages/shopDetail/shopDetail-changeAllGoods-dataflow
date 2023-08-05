@@ -1,0 +1,12 @@
+// \pages/shopDetail/shopDetail changeAllGoods Data Flow
+digraph {
+	b84045b6f3184ecc8b8426bb914c2e8e [label="FunctionCall,
+function name -> changeAllGoods,
+param -> " color=blue]
+	"430298305b5048bcbc289fa98e5bc5ff" [label=VariableDeclarations color=blue]
+	d921b608d9dd471c88436798b641deb6 [label="VariableDeclarator,
+left -> s,
+right -> this.data.allGoods" color=blue]
+	"430298305b5048bcbc289fa98e5bc5ff" -> d921b608d9dd471c88436798b641deb6
+	b84045b6f3184ecc8b8426bb914c2e8e -> "430298305b5048bcbc289fa98e5bc5ff"
+}

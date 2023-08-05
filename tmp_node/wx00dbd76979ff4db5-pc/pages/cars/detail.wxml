@@ -1,0 +1,176 @@
+<import src="../../wxParse/wxParse.wxml"></import>
+<view class="topimg">
+    <image class="img" mode="aspectFill" src="{{path}}{{list.img}}"></image>
+</view>
+<view class="cars-desc">
+    <view class="k40"></view>
+    <view class="cars-desc-title">
+        <view class="cars-desc-title-l">{{list.fine==1?'精品二手':'新车上市'}}</view>
+        <view class="cars-desc-title-r">{{list.title}}</view>
+    </view>
+    <view class="k30"></view>
+    <view class="price">
+        <view class="price-l">厂家指导价：</view>
+        <view class="price-r">{{list.price}}万</view>
+    </view>
+</view>
+<view class="guanggaowei">
+    <view class="k20"></view>
+    <view class="guanggaowei-img">
+        <image class="img" mode="aspectFill" src="{{path}}{{us.img}}"></image>
+    </view>
+</view>
+<view class="k10"></view>
+<view class="cars-info">
+    <view class="cars-info-detail">
+        <view class="k30"></view>
+        <view class="cars-info-detail-title">车辆配置</view>
+        <view class="k70"></view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">厂商</view>
+            <view class="cars-info-detail-list-r">{{list.brand}}</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">证件型号</view>
+            <view class="cars-info-detail-list-r">{{list.model}}</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">车型</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.cars_type==1}}">微小型车</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.cars_type==2}}">紧凑型车</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.cars_type==3}}">中型车</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.cars_type==4}}">中大型车</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.cars_type==5}}">SUV</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.cars_type==6}}">MPV</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.cars_type==7}}">跑车</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.cars_type==8}}">微面</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.cars_type==9}}">皮卡</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">发动机</view>
+            <view class="cars-info-detail-list-r">{{list.engine}}</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">变速箱</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.gearbox==1}}">手动</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.gearbox==2}}">自动</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">长*宽*高(mm)</view>
+            <view class="cars-info-detail-list-r">{{list.size}}</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">车身结构</view>
+            <view class="cars-info-detail-list-r">{{list.body_style}}</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">表显里程</view>
+            <view class="cars-info-detail-list-r">{{list.traveled}}万公里</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">出厂日期</view>
+            <view class="cars-info-detail-list-r">{{list.date}}</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">车龄</view>
+            <view class="cars-info-detail-list-r">{{list.cars_age}}年</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">所在地</view>
+            <view class="cars-info-detail-list-r">{{list.addr}}</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">车身颜色</view>
+            <view class="cars-info-detail-list-r">{{list.color}}</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">排量</view>
+            <view class="cars-info-detail-list-r">{{list.pailiang}}L</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">上牌时间</view>
+            <view class="cars-info-detail-list-r">{{list.spsj}}</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">排放标准</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.pfbz==1}}">国一</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.pfbz==2}}">国二</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.pfbz==3}}">国三</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.pfbz==4}}">国四</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.pfbz==5}}">国五</view>
+            <view class="cars-info-detail-list-r" wx:if="{{list.pfbz==6}}">国六</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">进气形式</view>
+            <view class="cars-info-detail-list-r">{{list.jqxs}}</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">安全气囊</view>
+            <view class="cars-info-detail-list-r">{{list.airbag==1?'有':'没有'}}</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">防抱死系统</view>
+            <view class="cars-info-detail-list-r">{{list.abs==1?'有':'没有'}}</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">无钥匙固定</view>
+            <view class="cars-info-detail-list-r">{{list.keyless==1?'有':'没有'}}</view>
+        </view>
+        <view class="cars-info-detail-list">
+            <view class="cars-info-detail-list-l">车身稳定控制系统</view>
+            <view class="cars-info-detail-list-r">{{list.esp==1?'有':'没有'}}</view>
+        </view>
+        <view class="k10"></view>
+    </view>
+</view>
+<view class="k20"></view>
+<view class="cars-info">
+    <view class="cars-info-content">
+        <view class="k30"></view>
+        <view class="cars-info-detail-title">车辆图文</view>
+        <view class="k30"></view>
+    </view>
+    <view class="bottom-line"></view>
+    <view class="cars-info-content2">
+        <rich-text nodes="{{notes}}"></rich-text>
+        <view class="k40"></view>
+    </view>
+</view>
+<view class="k20"></view>
+<view class="cars-info">
+    <view class="cars-info-content">
+        <view class="k30"></view>
+        <view class="cars-info-detail-title">购车说明</view>
+        <view class="k30"></view>
+    </view>
+    <view class="bottom-line"></view>
+    <view class="cars-info-content3">
+        <rich-text nodes="{{nodes}}"></rich-text>
+        <view class="k40"></view>
+    </view>
+</view>
+<view class="k130"></view>
+<view class="bottom">
+    <view bindtap="call" class="bottom-l" data-tel="{{us.tel}}">
+        <view class="bottom-l-img">
+            <image class="img" src="/pages/img/call.png"></image>
+        </view>
+        <view class="bottom-l-text">
+            <view class="zixun-text">电话咨询</view>
+            <view class="zixun-text">9:00-21:00</view>
+        </view>
+    </view>
+    <view bindtap="collect" class="bottom-m">
+        <view class="k20"></view>
+        <view class="bottom-m-img">
+            <image class="img" src="/pages/img/{{guanzhu==1?'':'un'}}like.png"></image>
+        </view>
+        <view class="k6"></view>
+        <view class="bottom-m-text">{{guanzhu==1?'已':'加入'}}关注</view>
+    </view>
+    <view bindtap="{{yystatus==1?'cancel':'yuyue'}}" class="bottom-r" wx:if="{{list.ticket_status==1}}">预约</view>
+    <view class="bottom-r2" wx:if="{{list.ticket_status!=1}}">
+        <view class="bottom-r2-t">该车已售出</view>
+        <view class="bottom-r2-b">无法预约</view>
+    </view>
+</view>

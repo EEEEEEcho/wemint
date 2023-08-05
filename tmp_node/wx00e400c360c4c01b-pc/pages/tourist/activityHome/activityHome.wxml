@@ -1,0 +1,165 @@
+<swiper autoplay="true" class="swiper" duration="1000" indicatorDots="true" interval="5000">
+    <swiper-item wx:for="{{activityList}}">
+        <image bindtap="topImgView" class="slide-image" data-id="{{item.id}}" src="{{item.img_path}}"></image>
+    </swiper-item>
+</swiper>
+<view class="client_head_back_style">
+    <view class="client_head_style" id="2">
+        <form reportSubmit bindsubmit="acList">
+            <button class="formBtn" data-is_pay="0" formType="submit">
+                <image src="{{ac_menu_02}}"></image>
+            </button>
+        </form>
+        <text>云课堂</text>
+    </view>
+    <view class="client_head_style" id="6">
+        <form reportSubmit bindsubmit="acUe">
+            <button class="formBtn" data-alias="xcxue03" formType="submit">
+                <image src="{{ac_menu_06}}"></image>
+            </button>
+        </form>
+        <text>课程体系</text>
+    </view>
+    <view class="client_head_style" id="3">
+        <form reportSubmit bindsubmit="acUe">
+            <button class="formBtn" data-alias="xcxue01" formType="submit">
+                <image src="{{ac_menu_03}}"></image>
+            </button>
+        </form>
+        <text>适龄</text>
+    </view>
+    <view class="client_head_style" id="4">
+        <form reportSubmit bindsubmit="album">
+            <button class="formBtn" formType="submit">
+                <image src="{{ac_menu_04}}"></image>
+            </button>
+        </form>
+        <text>相册</text>
+    </view>
+    <view class="client_head_style" id="5">
+        <form reportSubmit bindsubmit="acUe">
+            <button class="formBtn" data-alias="xcxue02" formType="submit">
+                <image src="{{ac_menu_05}}"></image>
+            </button>
+        </form>
+        <text>爱科技</text>
+    </view>
+    <view class="client_head_style" id="1">
+        <form reportSubmit bindsubmit="acList">
+            <button class="formBtn" data-is_pay="1" formType="submit">
+                <image src="{{ac_menu_01}}"></image>
+            </button>
+        </form>
+        <text>最新活动</text>
+    </view>
+    <view class="client_head_style" id="7">
+        <form reportSubmit bindsubmit="acUe">
+            <button class="formBtn" data-alias="xcxue04" formType="submit">
+                <image src="{{ac_menu_07}}"></image>
+            </button>
+        </form>
+        <text>故事</text>
+    </view>
+    <view class="client_head_style" id="8">
+        <form reportSubmit bindsubmit="acUe">
+            <button class="formBtn" data-alias="xcxue05" formType="submit">
+                <image src="{{ac_menu_08}}"></image>
+            </button>
+        </form>
+        <text>校区</text>
+    </view>
+</view>
+<view class="bt">
+    <view class="title">优惠活动</view>
+</view>
+<view class="userinfobt">
+    <view bindtap="gengduo" class="gengduo" data-is_pay="1">更多</view>
+</view>
+<view class="section">
+    <view class="wnr" wx:if="{{activityList.length==0}}">
+        <image src="http://p7mq9gjza.bkt.clouddn.com/non.png"></image>
+    </view>
+    <view class="acList" wx:if="{{activityList.length>0}}">
+        <view bindtap="viewTrip" class="m-trip">
+            <image class="cover" src="{{ac1.img_path}}"></image>
+        </view>
+        <view class="acname">{{ac1.title}}</view>
+        <view class="acbt">电话咨询 {{mobile}}</view>
+        <view class="acBtn">
+            <form reportSubmit bindsubmit="view">
+                <button class="classCurr_view_but" data-id="{{ac1.id}}" data-model="{{ac1}}" formType="submit" hoverClass="classCurr_view_but_hover">预约体验 </button>
+            </form>
+        </view>
+    </view>
+</view>
+<view class="sec">
+    <view class="acList2" wx:if="{{activityList.length>1}}">
+        <view bindtap="viewTrip" class="m-trip">
+            <image class="cover" src="{{ac2.img_path}}"></image>
+        </view>
+        <view class="acname">{{ac2.title}}</view>
+        <view class="acBtn">
+            <form reportSubmit bindsubmit="view">
+                <button class="classCurr_view_but" data-id="{{ac2.id}}" data-model="{{ac2}}" formType="submit" hoverClass="classCurr_view_but_hover">抢购</button>
+            </form>
+        </view>
+    </view>
+    <view class="acList2" wx:if="{{activityList.length>2}}">
+        <view bindtap="viewTrip" class="m-trip">
+            <image class="cover" src="{{ac3.img_path}}"></image>
+        </view>
+        <view class="acname">{{ac3.title}}</view>
+        <view class="acBtn">
+            <form reportSubmit bindsubmit="view">
+                <button class="classCurr_view_but" data-id="{{ac3.id}}" data-model="{{ac3}}" formType="submit" hoverClass="classCurr_view_but_hover">抢购</button>
+            </form>
+        </view>
+    </view>
+</view>
+<view class="bt">
+    <view class="title">体验课</view>
+</view>
+<view class="userinfobt">
+    <view bindtap="gengduo" class="gengduo" data-is_pay="0">更多</view>
+</view>
+<view class="section">
+    <view class="wnr" wx:if="{{activityList2.length==0}}">
+        <image src="http://p7mq9gjza.bkt.clouddn.com/non.png" style="width:276px; height:319px;"></image>
+    </view>
+    <view class="acList" wx:if="{{activityList2.length>0}}">
+        <view bindtap="viewTrip" class="m-trip">
+            <image class="cover" src="{{ac4.img_path}}"></image>
+        </view>
+        <view class="acname">{{ac4.title}}</view>
+        <view class="acbt">电话咨询 {{mobile}}</view>
+        <view class="acBtn">
+            <form reportSubmit bindsubmit="view">
+                <button class="classCurr_view_but" data-id="{{ac4.id}}" data-model="{{ac4}}" formType="submit" hoverClass="classCurr_view_but_hover">预约体验 </button>
+            </form>
+        </view>
+    </view>
+</view>
+<view class="sec">
+    <view class="acList2" wx:if="{{activityList2.length>1}}">
+        <view bindtap="viewTrip" class="m-trip">
+            <image class="cover" src="{{ac5.img_path}}"></image>
+        </view>
+        <view class="acname">{{ac5.title}}</view>
+        <view class="acBtn">
+            <form reportSubmit bindsubmit="view">
+                <button class="classCurr_view_but" data-id="{{ac5.id}}" data-model="{{ac5}}" formType="submit" hoverClass="classCurr_view_but_hover">预约体验 </button>
+            </form>
+        </view>
+    </view>
+    <view class="acList2" wx:if="{{activityList2.length>2}}">
+        <view bindtap="viewTrip" class="m-trip">
+            <image class="cover" src="{{ac6.img_path}}"></image>
+        </view>
+        <view class="acname">{{ac6.title}}</view>
+        <view class="acBtn">
+            <form reportSubmit bindsubmit="view">
+                <button class="classCurr_view_but" data-id="{{ac6.id}}" data-model="{{ac6}}" formType="submit" hoverClass="classCurr_view_but_hover">预约体验 </button>
+            </form>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,23 @@
+// \pages/ApplyRefund/ApplyRefund ChooseReason Data Flow
+digraph {
+	c8946698b1574d3492e1289f4bd8a3b6 [label="FunctionCall,
+function name -> ChooseReason,
+param -> e,
+e.,
+" color=blue]
+	efb3062ca4f44a7aa2bb48a5f28fb241 [label=VariableDeclarations color=blue]
+	"78711da4e2154e9a934322cdda6356fe" [label="VariableDeclarator,
+left -> t,
+right -> e.currentTarget.dataset.name" color=blue]
+	efb3062ca4f44a7aa2bb48a5f28fb241 -> "78711da4e2154e9a934322cdda6356fe"
+	c8946698b1574d3492e1289f4bd8a3b6 -> efb3062ca4f44a7aa2bb48a5f28fb241
+	c7a4c4897125464f82f1bedc21721000 [label="CallExpression,
+callee name -> a.setData,
+param -> " color=blue]
+	"952217027f164f139fad49dbd2bf7d25" [label="Object Properties
+{
+RefundReasonText -> t
+}" color=blue]
+	c7a4c4897125464f82f1bedc21721000 -> "952217027f164f139fad49dbd2bf7d25"
+	c8946698b1574d3492e1289f4bd8a3b6 -> c7a4c4897125464f82f1bedc21721000
+}

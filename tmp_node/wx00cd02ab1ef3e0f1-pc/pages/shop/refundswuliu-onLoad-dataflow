@@ -1,0 +1,51 @@
+// \pages/shop/refundswuliu onLoad Data Flow
+digraph {
+	eede135f71db4ba6a9c296591681dfbd [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	a57261d802b44fffb1f31de37cf8b542 [label=SequenceExpression color=blue]
+	"5ae332885dd34bc1aa2c6d4e8042f66f" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"482a84006aee41c9a81f0bd453d1d41c" [label="CallExpression,
+callee name -> e.getPageUrl,
+param -> a,
+" color=blue]
+	"5ae332885dd34bc1aa2c6d4e8042f66f" -> "482a84006aee41c9a81f0bd453d1d41c"
+	a57261d802b44fffb1f31de37cf8b542 -> "5ae332885dd34bc1aa2c6d4e8042f66f"
+	"6aa82690d97d44e79f57c0c7043de9ff" [label="CallExpression,
+callee name -> e.registerGlobalFunctions,
+param -> a,
+" color=blue]
+	a57261d802b44fffb1f31de37cf8b542 -> "6aa82690d97d44e79f57c0c7043de9ff"
+	c2f2361acdf6401a96368a15264b0406 [label="CallExpression,
+callee name -> this.loadrefundsreson,
+param -> " color=blue]
+	f588fd9c5ae746799e15a5933673a80d [label="FunctionCall,
+function name -> loadrefundsreson,
+param -> " color=blue]
+	f91ba252d9bd4547817c8fe8dd9dba18 [label="If Alternate" color=blue]
+	"318a2b8fb1b642f9be0d64a6d23d98c5" [label=SequenceExpression color=blue]
+	"479f8798f6934bbc87710d2228c56ca9" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"4cd7f721c77b4b9da69c3688ece6ae07" [label="Assignment,
+left -> a,
+right -> t.data.queryparams.pkey" color=blue]
+	"479f8798f6934bbc87710d2228c56ca9" -> "4cd7f721c77b4b9da69c3688ece6ae07"
+	"318a2b8fb1b642f9be0d64a6d23d98c5" -> "479f8798f6934bbc87710d2228c56ca9"
+	"6d404ec075c94c418825ffb0851b4dac" [label="CallExpression,
+callee name -> e.sendRequest,
+param -> " color=blue]
+	"9e7508529491445cb4e1016d627984ca" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/ShopApi&a=rdetail&pkey=' + a
+}" color=blue]
+	"6d404ec075c94c418825ffb0851b4dac" -> "9e7508529491445cb4e1016d627984ca"
+	"318a2b8fb1b642f9be0d64a6d23d98c5" -> "6d404ec075c94c418825ffb0851b4dac"
+	f91ba252d9bd4547817c8fe8dd9dba18 -> "318a2b8fb1b642f9be0d64a6d23d98c5"
+	f588fd9c5ae746799e15a5933673a80d -> f91ba252d9bd4547817c8fe8dd9dba18
+	c2f2361acdf6401a96368a15264b0406 -> f588fd9c5ae746799e15a5933673a80d
+	a57261d802b44fffb1f31de37cf8b542 -> c2f2361acdf6401a96368a15264b0406
+	eede135f71db4ba6a9c296591681dfbd -> a57261d802b44fffb1f31de37cf8b542
+}

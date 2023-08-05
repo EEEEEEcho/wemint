@@ -1,0 +1,19 @@
+// \pages/shopDetail/shopDetail onHide Data Flow
+digraph {
+	d9fe8ea0888b4e038e5ec7b5b0726b91 [label="FunctionCall,
+function name -> onHide,
+param -> " color=blue]
+	"318bcdbad0814bcaa6570ca07f523b6d" [label=VariableDeclarations color=blue]
+	b51cf27aa70d454a973417405f854148 [label="VariableDeclarator,
+left -> o,
+right -> this.data.shopCar" color=blue]
+	"318bcdbad0814bcaa6570ca07f523b6d" -> b51cf27aa70d454a973417405f854148
+	d9fe8ea0888b4e038e5ec7b5b0726b91 -> "318bcdbad0814bcaa6570ca07f523b6d"
+	a298a153a8274f55a03d73b9177ec1bd [label=SequenceExpression color=blue]
+	d6fb933d0e6d4960abc21334feaf26e5 [label="CallExpression,
+callee name -> wx.setStorageSync,
+param -> o,
+" color=blue]
+	a298a153a8274f55a03d73b9177ec1bd -> d6fb933d0e6d4960abc21334feaf26e5
+	d9fe8ea0888b4e038e5ec7b5b0726b91 -> a298a153a8274f55a03d73b9177ec1bd
+}

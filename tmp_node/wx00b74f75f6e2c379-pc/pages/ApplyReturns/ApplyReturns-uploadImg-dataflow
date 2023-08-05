@@ -1,0 +1,28 @@
+// \pages/ApplyReturns/ApplyReturns uploadImg Data Flow
+digraph {
+	"2a823c32180347ebb88ceb2653b5be20" [label="FunctionCall,
+function name -> uploadImg,
+param -> e,
+e.,
+" color=blue]
+	"9702354f181c4dc7a553d3834ca7012f" [label=VariableDeclarations color=blue]
+	"2ce750513d1f4d38a20c0108d29c03f9" [label="VariableDeclarator,
+left -> idx,
+right -> e.currentTarget.dataset.index" color=blue]
+	"9702354f181c4dc7a553d3834ca7012f" -> "2ce750513d1f4d38a20c0108d29c03f9"
+	"2a823c32180347ebb88ceb2653b5be20" -> "9702354f181c4dc7a553d3834ca7012f"
+	d0f1cfee160f4d01a3bdb7168d0f5f71 [label="CallExpression,
+callee name -> wx.chooseImage,
+param -> " color=blue]
+	"2f5e446dc6be479899908d163e86e607" [label="FunctionCall,
+function name -> success,
+param -> res,
+res.,
+" color=blue]
+	"998909cfa5dc4dd18d126b2fc081d7d6" [label="Assignment,
+left -> tempgreden[idx],
+right -> res.tempFilePaths[0]" color=blue]
+	"2f5e446dc6be479899908d163e86e607" -> "998909cfa5dc4dd18d126b2fc081d7d6"
+	d0f1cfee160f4d01a3bdb7168d0f5f71 -> "2f5e446dc6be479899908d163e86e607"
+	"2a823c32180347ebb88ceb2653b5be20" -> d0f1cfee160f4d01a3bdb7168d0f5f71
+}

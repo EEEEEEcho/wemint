@@ -1,0 +1,145 @@
+.contain-box {
+    padding: 10rpx;
+    height: 100vh;
+    background: rgb(39,42,52);
+    padding: 0rpx;
+}
+
+.contain-box .text-box {
+    padding: 200rpx 110rpx;
+    width: 530rpx;
+    color: #fff;
+}
+
+.contain-box .reject-box {
+    padding: 200rpx 80rpx;
+    width: 560rpx;
+    color: #fff;
+    padding-top: 265rpx;
+    padding-bottom: 94rpx;
+}
+
+.contain-box .resolve-box {
+    padding: 200rpx 110rpx;
+    width: 530rpx;
+    color: #fff;
+    padding-top: 212rpx;
+    padding-bottom: 280rpx;
+}
+
+.t1 {
+    font-size: 32rpx;
+    font-weight: lighter;
+}
+
+.t2 {
+    font-size: 40rpx;
+    margin: 60rpx 0rpx;
+    font-weight: bolder;
+    display: block;
+}
+
+.t3 {
+    font-size: 40rpx;
+    margin: 40rpx 0rpx;
+    font-weight: bolder;
+    display: block;
+}
+
+.t4 {
+    text-align: center;
+    display: block;
+    font-size: 27rpx;
+    color: #FFFFFF;
+    margin-top: 40rpx;
+}
+
+.contain-box .bottom-text .agree {
+    font-size: 32rpx;
+    color: #FFFFFF;
+    width: 550rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #35B376;
+    background-image: linear-gradient(-270deg,rgba(255,255,255,0.25) 0%,rgba(255,255,255,0.00) 100%);
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.10);
+    border-radius: 40px;
+}
+
+.reject .row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0rpx 80rpx;
+}
+
+.reject .row .ph {
+    width: 350rpx;
+    border-bottom: 2rpx solid #fff;
+    color: #fff;
+    font-size: 32rpx;
+}
+
+.reject .row .confirm {
+    background: #35B376;
+    background-image: linear-gradient(-270deg,rgba(255,255,255,0.25) 0%,rgba(255,255,255,0.00) 100%);
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.10);
+    border-radius: 100px;
+    width: 200rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #FFFFFF;
+}
+
+.model {
+    position: absolute;
+    width: 80vw;
+    left: 10vw;
+    top: 20vh;
+    border-radius: 20rpx;
+    background-color: white;
+    z-index: 16;
+}
+
+.model .modelTitle {
+    width: 100%;
+    padding: 20rpx 0rpx;
+    font-size: 40rpx;
+    text-align: center;
+    color: block;
+    border-bottom: 1rpx solid rgb(237,237,237);
+}
+
+.model .modelBody {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 50rpx 50rpx;
+    text-align: center;
+    color: rgb(178,178,178);
+    font-size: 30rpx;
+    border-bottom: 1rpx solid rgb(237,237,237);
+}
+
+.model .btns {
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+.model .btns .cancel {
+    width: 50%;
+    border-width: 0px;
+    color: #000;
+}
+
+.slide-image {
+    width: 40rpx;
+    height: 40rpx;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}

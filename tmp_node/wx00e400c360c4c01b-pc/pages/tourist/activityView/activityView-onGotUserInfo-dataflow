@@ -1,0 +1,63 @@
+// \pages/tourist/activityView/activityView onGotUserInfo Data Flow
+digraph {
+	"04a1923e8e0b45cbb3951a3cf9ab89f3" [label="FunctionCall,
+function name -> onGotUserInfo,
+param -> e,
+e.,
+" color=blue]
+	ac977317aba8487ab1af061b360ead95 [label=SequenceExpression color=blue]
+	"103c89a5ce1e40a6a6d402e10acae376" [label="Assignment,
+left -> n.globalData.userInfo,
+right -> e.detail.userInfo" color=blue]
+	ac977317aba8487ab1af061b360ead95 -> "103c89a5ce1e40a6a6d402e10acae376"
+	"4bb643ddbbd84a0e9f11281ef82f796f" [label="ConditionalExpression,
+ conditional list -> a.actionSheetChange2" color=blue]
+	"3ab080bd31f54e3b80970dfe127a9c39" [label=SequenceExpression color=blue]
+	ac1214179bf44c39af32e2a490b0ae43 [label="CallExpression,
+callee name -> wx.downloadFile,
+param -> " color=blue]
+	"18068c22a92642a5a7d718b844c8e49a" [label="Object Properties
+{
+url -> n.globalData.userInfo.avatarUrl
+}" color=blue]
+	ac1214179bf44c39af32e2a490b0ae43 -> "18068c22a92642a5a7d718b844c8e49a"
+	"3674514fd1e846688f0fa18bb3b3dab4" [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	ac1214179bf44c39af32e2a490b0ae43 -> "3674514fd1e846688f0fa18bb3b3dab4"
+	"3ab080bd31f54e3b80970dfe127a9c39" -> ac1214179bf44c39af32e2a490b0ae43
+	c52e0325c6014fbda015fa409c068a6b [label="CallExpression,
+callee name -> wx.login,
+param -> " color=blue]
+	"653db2cb8053469da271981963aadaea" [label="FunctionCall,
+function name -> success,
+param -> e,
+e.,
+" color=blue]
+	"84cdc85867e84e47a84a6459caca3e1a" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"4b21a219a37d4e75986dc91c1d0e0e3a" [label=SequenceExpression color=blue]
+	"98ef28866e284e678bdd7573c630684c" [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	a8800343f0b14dc08d25b9f7e0b71fd2 [label="Object Properties
+{
+code -> e.code
+}" color=blue]
+	"98ef28866e284e678bdd7573c630684c" -> a8800343f0b14dc08d25b9f7e0b71fd2
+	"4158ab2ca9434d0a93075ff0929a759c" [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	"98ef28866e284e678bdd7573c630684c" -> "4158ab2ca9434d0a93075ff0929a759c"
+	"4b21a219a37d4e75986dc91c1d0e0e3a" -> "98ef28866e284e678bdd7573c630684c"
+	"84cdc85867e84e47a84a6459caca3e1a" -> "4b21a219a37d4e75986dc91c1d0e0e3a"
+	"653db2cb8053469da271981963aadaea" -> "84cdc85867e84e47a84a6459caca3e1a"
+	c52e0325c6014fbda015fa409c068a6b -> "653db2cb8053469da271981963aadaea"
+	"3ab080bd31f54e3b80970dfe127a9c39" -> c52e0325c6014fbda015fa409c068a6b
+	"4bb643ddbbd84a0e9f11281ef82f796f" -> "3ab080bd31f54e3b80970dfe127a9c39"
+	ac977317aba8487ab1af061b360ead95 -> "4bb643ddbbd84a0e9f11281ef82f796f"
+	"04a1923e8e0b45cbb3951a3cf9ab89f3" -> ac977317aba8487ab1af061b360ead95
+}

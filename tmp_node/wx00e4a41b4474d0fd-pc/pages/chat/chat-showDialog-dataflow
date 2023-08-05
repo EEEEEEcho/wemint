@@ -1,0 +1,54 @@
+// \pages/chat/chat showDialog Data Flow
+digraph {
+	"2dff31f3ff044fdca587c786197a1ed9" [label="FunctionCall,
+function name -> showDialog,
+param -> e,
+e.,
+" color=blue]
+	"29f1f4c3ff3249758eee910f8f28d267" [label=SequenceExpression color=blue]
+	"1bcf3fdf8cd242eaa12b904ce6577475" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	c92a3957aa4149d3af56870a702193e6 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"93ba8f211338487f8178ed9b17b0e79d" [label="Object Properties
+{
+imgUrl -> encodeURI
+}" color=blue]
+	a97ff1a3b2524658bbdf9824bef798c8 [label="CallExpression,
+callee name -> encodeURI,
+param -> " color=blue]
+	"4c9c8513129a45668420bedf3e986ff3" [label="CallExpression,
+callee name -> decodeURIComponent,
+param -> e.currentTarget.dataset.url,
+" color=blue]
+	a97ff1a3b2524658bbdf9824bef798c8 -> "4c9c8513129a45668420bedf3e986ff3"
+	"93ba8f211338487f8178ed9b17b0e79d" -> a97ff1a3b2524658bbdf9824bef798c8
+	c92a3957aa4149d3af56870a702193e6 -> "93ba8f211338487f8178ed9b17b0e79d"
+	"1bcf3fdf8cd242eaa12b904ce6577475" -> c92a3957aa4149d3af56870a702193e6
+	"29f1f4c3ff3249758eee910f8f28d267" -> "1bcf3fdf8cd242eaa12b904ce6577475"
+	"7e65b52d423448c189b49240f83b0ae2" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	b592bcbbaefb4c2b90e59f4313ce5c59 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	d7aeb2a6a40d4ce6bf793fd5abaea25b [label="Object Properties
+{
+showvideo -> e.currentTarget.dataset.showvideo
+}" color=blue]
+	b592bcbbaefb4c2b90e59f4313ce5c59 -> d7aeb2a6a40d4ce6bf793fd5abaea25b
+	"7e65b52d423448c189b49240f83b0ae2" -> b592bcbbaefb4c2b90e59f4313ce5c59
+	"29f1f4c3ff3249758eee910f8f28d267" -> "7e65b52d423448c189b49240f83b0ae2"
+	"409cc11b67d34a88b876160f85b12704" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	f5ad00df7bf44005a7da4fbd34b064b8 [label="Object Properties
+{
+dialog -> e.currentTarget.dataset.dialog
+}" color=blue]
+	"409cc11b67d34a88b876160f85b12704" -> f5ad00df7bf44005a7da4fbd34b064b8
+	"29f1f4c3ff3249758eee910f8f28d267" -> "409cc11b67d34a88b876160f85b12704"
+	"2dff31f3ff044fdca587c786197a1ed9" -> "29f1f4c3ff3249758eee910f8f28d267"
+}

@@ -1,0 +1,15 @@
+// \pages/company/businessCard/cardDetails giveThumbs Data Flow
+digraph {
+	"9916009b71e44ef8a9a00fa8bb1cbdcb" [label="FunctionCall,
+function name -> giveThumbs,
+param -> " color=blue]
+	"92eebb0676d94d32a924cec3e44979a9" [label="CallExpression,
+callee name -> a.sendRequest,
+param -> " color=blue]
+	"6ac0c91d4a9c49c3b8f653266500ca47" [label="Object Properties
+{
+url -> '/index.php?c=front/WxApp/BusinessCard/BusinessCard&a=postLike&ID=' + t.data.cardcontent.ID + '&UserID=' + t.data.userID + '&SiteID=' + t.data.cardsiteID
+}" color=blue]
+	"92eebb0676d94d32a924cec3e44979a9" -> "6ac0c91d4a9c49c3b8f653266500ca47"
+	"9916009b71e44ef8a9a00fa8bb1cbdcb" -> "92eebb0676d94d32a924cec3e44979a9"
+}

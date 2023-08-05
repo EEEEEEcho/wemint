@@ -1,0 +1,6 @@
+<view class="container">
+	授权成功
+	<view bindtap="getUserInfo">
+		 获取信息
+	</view>
+</view>

@@ -1,0 +1,179 @@
+page {
+    width: 100%;
+    background: #F6F6F6;
+}
+
+.title {
+    width: 100%;
+    height: 100rpx;
+    background: #fff;
+}
+
+.title-b {
+    width: 50%;
+    height: 100rpx;
+    line-height: 100rpx;
+    float: left;
+    text-align: center;
+    color: #333;
+    font-size: 30rpx;
+}
+
+.active {
+    color: #FFB300;
+}
+
+.b-line {
+    width: 100%;
+    height: 6rpx;
+    background: #fff;
+}
+
+.b-line-b {
+    width: 50%;
+    height: 6rpx;
+    float: left;
+    background: #fff;
+}
+
+.b-line-a {
+    width: 50%;
+    height: 6rpx;
+    float: left;
+    background: #FFB300;
+}
+
+.rank1-list {
+    width: 100%;
+    height: 300rpx;
+    background: #fff;
+    box-sizing: border-box;
+    border-bottom: 2rpx solid #F1F1F1;
+    position: relative;
+}
+
+.rank3-list {
+    width: 100%;
+    height: 280rpx;
+    background: #fff;
+    box-sizing: border-box;
+    border-bottom: 2rpx solid #F1F1F1;
+    position: relative;
+}
+
+.first {
+    width: 136rpx;
+    height: 136rpx;
+    margin: 0 auto;
+    border-radius: 136rpx;
+    overflow: hidden;
+}
+
+.second {
+    width: 116rpx;
+    height: 116rpx;
+    margin: 0 auto;
+    border-radius: 116rpx;
+    overflow: hidden;
+}
+
+.first-img {
+    width: 190rpx;
+    height: 174rpx;
+    position: absolute;
+    z-index: 9;
+    left: 282rpx;
+    top: 20rpx;
+}
+
+.second-img {
+    width: 190rpx;
+    height: 174rpx;
+    position: absolute;
+    z-index: 9;
+    left: 280rpx;
+    top: 8rpx;
+}
+
+.name {
+    width: 100%;
+    height: 26rpx;
+    text-align: center;
+    line-height: 26rpx;
+    font-size: 26rpx;
+}
+
+.shouyi {
+    width: 100%;
+    height: 26rpx;
+    text-align: center;
+    line-height: 26rpx;
+    font-size: 24rpx;
+    color: #FF9416;
+}
+
+.color1 {
+    color: #E3C86F;
+}
+
+.color2 {
+    color: #A0C5CD;
+}
+
+.color3 {
+    color: #E7C78C;
+}
+
+.four {
+    width: 100%;
+    height: 120rpx;
+    background: #fff;
+}
+
+.four-li {
+    width: 670rpx;
+    height: 120rpx;
+    margin-left: 40rpx;
+    box-sizing: border-box;
+    border-bottom: 2rpx solid #F1F1F1;
+}
+
+.four-li-l {
+    width: 86rpx;
+    height: 120rpx;
+    line-height: 120rpx;
+    font-size: 26rpx;
+    color: #333;
+    float: left;
+}
+
+.four-li-m {
+    width: 96rpx;
+    height: 96rpx;
+    line-height: 69rpx;
+    margin-top: 12rpx;
+    border-radius: 96rpx;
+    overflow: hidden;
+    float: left;
+}
+
+.four-li-m2 {
+    width: 260rpx;
+    height: 120rpx;
+    margin-left: 20rpx;
+    overflow: hidden;
+    float: left;
+    line-height: 120rpx;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.four-li-r {
+    width: 200rpx;
+    height: 120rpx;
+    line-height: 120rpx;
+    float: right;
+    text-align: right;
+    font-size: 26rpx;
+    color: #FF497C;
+}

@@ -1,0 +1,33 @@
+.tabbar {
+    display: flex;
+    background-color: #fff;
+    flex-wrap: wrap;
+}
+
+.tabbar__item {
+    padding: 20rpx 0;
+    line-height: 1;
+    flex-direction: column;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabbar__icon image {
+    width: 78rpx;
+    height: 78rpx;
+}
+
+.tabbar__label {
+    font-size: 22rpx;
+    color: #292828;
+    margin-top: 10rpx;
+}
+
+.fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

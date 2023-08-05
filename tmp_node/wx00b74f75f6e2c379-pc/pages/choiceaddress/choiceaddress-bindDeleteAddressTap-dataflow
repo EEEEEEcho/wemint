@@ -1,0 +1,14 @@
+// \pages/choiceaddress/choiceaddress bindDeleteAddressTap Data Flow
+digraph {
+	d6886993795d4be6b542789702f61ba6 [label="FunctionCall,
+function name -> bindDeleteAddressTap,
+param -> e,
+e.,
+" color=blue]
+	"16ddc83b375641d389e51001d4e71531" [label=VariableDeclarations color=blue]
+	"6924151e389740b89f5bcec2de16159e" [label="VariableDeclarator,
+left -> shippingId,
+right -> e.currentTarget.dataset.shippingid" color=blue]
+	"16ddc83b375641d389e51001d4e71531" -> "6924151e389740b89f5bcec2de16159e"
+	d6886993795d4be6b542789702f61ba6 -> "16ddc83b375641d389e51001d4e71531"
+}

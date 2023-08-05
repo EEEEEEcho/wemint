@@ -1,0 +1,63 @@
+<myLoading id="myLoading"></myLoading>
+<view class="container">
+    <c-img cclass="section-img" mode="scaleToFill" src="https://dm.static.elab-plus.com/wuXiW3/index/明星户型排行榜_详情页.png"></c-img>
+    <view class="section-rank">
+        <view bindtap="onRouteDetail" class="custom-item" data-id="{{item.id}}" wx:if="{{index<3}}" wx:for="{{rankList}}" wx:key="item.id">
+            <view class="custom-card" data-id="{{item.id}}">
+                <view class="custom-card-box">
+                    <c-img cclass="custom-item-img" data-id="{{item.id}}" mode="aspectFill" src="{{item.src}}"></c-img>
+                    <view class="custom-feature-list">
+                        <view class="custom-feature" wx:for="{{item.special}}" wx:for-item="special" wx:key="special">{{special}}</view>
+                    </view>
+                    <view catch:tap="onLikeStar" class="custom-like" data-id="{{item.id}}">
+                        <c-img cclass="icon-like" mode="scaleToFill" src="{{cdn}}/like.png" wx:if="{{item.isLike}}"></c-img>
+                        <c-img cclass="icon-like" mode="scaleToFill" src="{{cdn}}/like_normal@1x.png" wx:else></c-img>
+	  					{{item.like}}
+	  				</view>
+                    <view class="custom-tag custom-tag-{{index+1}}">
+	  					TOP {{index+1}}
+	  					<c-img cclass="icon-hot" mode="scaleToFill" src="{{cdn}}/hot_icon.png"></c-img>
+                    </view>
+                </view>
+            </view>
+            <view class="rank-star-info">
+                <image class="rank-star-avatar" mode="scaleToFill" src="{{item.owner.avatar}}"></image>
+	  			{{item.owner.name}}
+	  		</view>
+            <image src="https://dm.static.elab-plus.com/wuXiW3/index/ccover.png" style="position: absolute;left: 0;bottom: 0;height: 260rpx;width: 100%"></image>
+        </view>
+    </view>
+    <view class="section-card">
+        <view bind:tap="onRouteDetail" class="rank-star-box" data-id="{{item.id}}" wx:if="{{index>2}}" wx:for="{{rankList}}" wx:key="{{item.id}}">
+            <image src="https://dm.static.elab-plus.com/wuXiW3/index/ccover.png" style="position: absolute;z-index:1;left: 0;bottom: 0;height: 120rpx;width: 100%"></image>
+            <view class="rank-star-album">
+                <c-img cclass="rank-star-img" mode="aspectFill" src="{{item.src}}"></c-img>
+                <view catch:tap="onLikeStar" class="custom-like" data-id="{{item.id}}">
+                    <c-img cclass="icon-like" mode="scaleToFill" src="{{cdn}}/like.png" wx:if="{{item.isLike}}"></c-img>
+                    <c-img cclass="icon-like" mode="scaleToFill" src="{{cdn}}/like_normal@1x.png" wx:else></c-img>
+					{{item.like}}
+				</view>
+            </view>
+            <view class="rank-star-info">
+                <image class="rank-star-avatar" mode="scaleToFill" src="{{item.owner.avatar}}"></image>
+				{{item.owner.name}}
+			</view>
+        </view>
+    </view>
+    <view class="featrue-list">
+        <view class="feature">
+            <c-img cclass="icon-privilege" mode="scaleToFill" src="{{cdn}}/icon_design_c.png"></c-img>
+			定制特权
+		</view>
+        <view class="feature">
+            <c-img cclass="icon-privilege" mode="scaleToFill" src="{{cdn}}/icon_refund_c.png"></c-img>
+			退款特权
+		</view>
+        <view class="feature">
+            <c-img cclass="icon-privilege" mode="scaleToFill" src="{{cdn}}/icon_chosen_c.png"></c-img>
+			入选特权
+		</view>
+    </view>
+    <view class="copywrite">定制服务，elab拥有最终完整解释权</view>
+    <view bind:tap="onRouteCustom" class="bottom" hidden="{{customizedStatus}}">DIY定制我的house</view>
+</view>

@@ -1,0 +1,13 @@
+.remindAdd {
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    right: 80rpx;
+}
+
+.imageIcon {
+    width: 430rpx;
+    height: 75rpx;
+}

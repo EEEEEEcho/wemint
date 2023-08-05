@@ -1,0 +1,1 @@
+<web-view src="{{projectUrl}}/program/getCouponsOpenId/{{merchantConfigId}}?smallOpenId={{smallOpenId}}&couponsConfigId={{couponsConfigId}}"></web-view>

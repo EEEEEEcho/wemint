@@ -1,0 +1,97 @@
+<view class="product-attrs {{showMask?'showParam':'hideParam'}}">
+    <view class="product-conTop border1px">
+        <view class="top-left">
+            <view class="img">
+                <image src="{{baseUrl}}{{AttrValSmallImg}}"></image>
+            </view>
+            <view class="content" wx:if="{{isShowbarg||SecKillProMsg&&SecKillProMsg.sku.attributesKeys&&SecKillProMsg.sku.attributesKeys.length>1}}">
+                <view class="product_detail chooseskuCss">
+                    <view class="pdgflag">砍价享</view>
+                    <view class="priceflag">
+                        <view class="rmb rmb_1">￥</view>
+                        <view class="rmb" style="font-size:{{~~SecKillProMsg.floorPrice>9999?'30rpx':'38rpx'}}">{{SecKillProMsg.floorPrice}}</view>
+                        <view class="originalprice">￥{{SecKillProMsg.originPrice}}</view>
+                    </view>
+                </view>
+                <view class="inventory">
+                    <text>仅剩：</text>
+                    <text>{{SecKillProMsg.stock}}</text>
+                    <text>件</text>
+                </view>
+                <view class="hasChoose" wx:if="{{showSku}}">
+                    <text>{{selectValArr.length==0?'请选择规格':'已选  '}}</text>
+                    <text class="message" wx:if="{{selectValArr.length!=0}}">{{selectSkuDes}}</text>
+                </view>
+            </view>
+            <view class="content" wx:elif="{{pinTuanProDetail.pintuan_config.pintuan_id}}">
+                <view class="price">
+                    <text>￥</text>
+                    <text>{{pinTuanProDetail.pintuan_price}}</text>
+                </view>
+                <view class="inventory">
+                    <text>库存：</text>
+                    <text>{{pinTuanProDetail.remain_stock}}</text>
+                    <text>件</text>
+                </view>
+                <view class="hasChoose" wx:if="{{showSku}}">
+                    <text>{{selectValArr.length==0?'请选择规格':'已选  '}}</text>
+                    <text class="message" wx:if="{{selectValArr.length!=0}}">{{selectSkuDes}}</text>
+                </view>
+            </view>
+            <view class="content" wx:else>
+                <view class="price">
+                    <text class="miaosha_title">秒杀价:</text>
+                    <text>￥</text>
+                    <text>{{ms_price}}</text>
+                </view>
+                <view class="inventory">
+                    <text>库存:</text>
+                    <text wx:if="{{!showSku}}">{{ms_stock}}</text>
+                    <text wx:if="{{showSku}}">{{skuInventory}}</text>
+                    <text>件</text>
+                </view>
+                <view class="hasChoose" wx:if="{{showSku}}">
+                    <text>{{selectValArr.length==0?'请选择规格':'已选  '}}</text>
+                    <text class="message" wx:if="{{selectValArr.length!=0}}">:{{selectSkuDes}}</text>
+                </view>
+            </view>
+        </view>
+        <view bindtap="close" class="close">
+            <icon class="closeIcon iconfont icon-guanbi-copy"></icon>
+        </view>
+    </view>
+    <view style="height:336px;">
+        <scroll-view class="paramChoose" lowerThreshold="20" scrollY="true" style="height:252px;padding-bottom:30rpx;box-sizing:border-box;">
+            <view class="pro-attrs" data-index="{{index}}" wx:if="{{showSku&&!isShowbarg}}" wx:for="{{attrkeys}}" wx:key="{{item.AttrKeyID}}">
+                <view class="attr-name">{{item.AttrKeyName}}</view>
+                <view class="attr-vals ">
+                    <block wx:for="{{item.attrVals}}" wx:for-index="idx" wx:for-item="attritem" wx:key="{{attritem.AttrValID}}">
+                        <view bindtap="selectSku" class="attr-val {{attritem.isSelect?'active':''}}  {{attritem.canSelect?'':'no-quantity'}}" data-attrKeyId="{{attritem.AttrKeyID}}" data-attrValId="{{attritem.AttrValID}}" data-attrValName="{{attritem.AttrValName}}" data-canSelect="{{attritem.canSelect}}" data-hasImage="{{item.hasImg}}" wx:if="{{!secKillCountLimit}}">{{attritem.AttrValName}}</view>
+                        <view bindtap="selectSku" class="attr-val {{attritem.isSelect?'active':''}}  {{attritem.canSelect?'':'no-quantity'}}" data-attrKeyId="{{attritem.KeyID}}" data-attrValId="{{attritem.ValID}}" data-attrValName="{{attritem.AttrValName}}" data-canSelect="{{attritem.canSelect}}" data-hasImage="{{item.hasImg}}" wx:if="{{secKillCountLimit}}">{{attritem.AttrValName}}</view>
+                    </block>
+                </view>
+            </view>
+            <view class="pro-attrs" data-index="{{index}}" wx:if="{{showSku&&isShowbarg}}" wx:for="{{attrkeys}}" wx:key="{{item.AttrKeyID}}">
+                <view class="attr-name">{{item.attrKeyName}}</view>
+                <view class="attr-vals ">
+                    <view bindtap="selectSku" class="attr-val {{attritem.isSelect?'active':''}}  {{attritem.canSelect?'':'no-quantity'}}" data-attrKeyId="{{attritem.attrKeyId}}" data-attrValId="{{attritem.attrValId}}" data-attrValName="{{attritem.attrValName}}" data-canSelect="{{attritem.canSelect}}" data-hasImage="{{item.hasImg}}" wx:if="{{!secKillCountLimit}}" wx:for="{{item.attrVals}}" wx:for-index="idx" wx:for-item="attritem" wx:key="{{attritem.attrValId}}">{{attritem.attrValName}}</view>
+                </view>
+            </view>
+            <view class="chooseCount" wx:if="{{!isShowbarg}}">
+                <view class="attr-name">数量</view>
+                <view class="btn">
+                    <view bindtap="decrease" class="decrease {{canClickDes?'normal':'disabled'}}">-</view>
+                    <input bindblur="blurManual" bindchange="bindManual" type="number" value="{{buyCount}}"></input>
+                    <view bindtap="increase" class="increase {{canClickAdd?'normal':'disabled'}} ">+</view>
+                    <view class="xiangou" wx:if="{{pinTuanProDetail.buy_limit_num>1}}">(每个ID限购{{pinTuanProDetail.buy_limit_num}}件)</view>
+                    <view class="xiangou" wx:if="{{buyCountLimit>=1&&secKillCountLimit}}">(每个ID限购{{buyCountLimit}}件)</view>
+                    <view class="xiangou" wx:if="{{buyCountLimit>=1&&bargainLimit}}">(每个ID限购{{buyCountLimit}}件)</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view bindtap="sureBuy" class="sureBuy">
+        <view class="sure {{secKillCountLimit||pinTuanProDetail.pintuan_config.pintuan_id?'activitycolor':''}}">确定</view>
+    </view>
+</view>
+<view bindtap="close" class="mask" wx:if="{{showMask}}"></view>

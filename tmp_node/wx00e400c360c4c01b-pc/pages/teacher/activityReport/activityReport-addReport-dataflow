@@ -1,0 +1,23 @@
+// \pages/teacher/activityReport/activityReport addReport Data Flow
+digraph {
+	b7ee98e2b5284a28b6e4557f6d5439aa [label="FunctionCall,
+function name -> addReport,
+param -> e,
+e.,
+" color=blue]
+	"940f13f0ce7b4400a05fd2b7455b8ac2" [label="CallExpression,
+callee name -> t.collectFomrId,
+param -> e.detail.formId,
+" color=blue]
+	b7ee98e2b5284a28b6e4557f6d5439aa -> "940f13f0ce7b4400a05fd2b7455b8ac2"
+	f42ed0d04500409dbad4c013114c9f3d [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"10b3d9424b4a4d2db21d1af045268b0c" [label="Object Properties
+{
+id -> a.data.id
+report_content -> a.data.report_content
+}" color=blue]
+	f42ed0d04500409dbad4c013114c9f3d -> "10b3d9424b4a4d2db21d1af045268b0c"
+	b7ee98e2b5284a28b6e4557f6d5439aa -> f42ed0d04500409dbad4c013114c9f3d
+}

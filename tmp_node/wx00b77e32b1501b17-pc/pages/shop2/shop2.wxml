@@ -1,0 +1,51 @@
+<view class="container">
+    <view class="ul">
+        <view class="weui-flex li">
+            <view class="li__hd">
+                <image mode="aspectFit" src="{{img_url}}"></image>
+            </view>
+            <view class="li__bd">
+                <view class="tit">{{name}}</view>
+                <view class="desc">{{remarks}}</view>
+                <view class="desc">电话：{{mobile}}</view>
+                <view class="desc">地址：{{province}}{{city}}{{area}}{{address}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="weui-panel">
+        <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_appmsg" wx:for="{{GoodsList}}">
+                <view bindtap="GoToDetail" class="weui-media-box__hd_in-appmsg" id="{{item.ID}}">
+                    <image class="weui-media-box__thumb" mode="aspectFit" src="{{item.img_url}}"></image>
+                </view>
+                <view bindtap="GoToDetail" class="weui-media-box__bd_in-appmsg" id="{{item.ID}}">
+                    <view class="title-group">
+                        <view class="weui-media-box__title">{{item.name}}</view>
+                        <view class="price weui-flex">
+                            <view class="weui-flex__item">
+                单价：
+                <text class="nowprice">￥{{item.price}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="media_ft">
+                    <view class="number-box">
+                        <view class="number">
+                            <text bindtap="minus" class="number-sub" data-count="{{item.count}}" id="{{item.ID}}">-</text>
+                            <input bindinput="bindCount" class="number-input" id="{{item.ID}}" type="text" value="{{item.count}}"></input>
+                            <text bindtap="plus" class="number-plus" data-count="{{item.count}}" id="{{item.ID}}">+</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="fixed-bottom2">
+    <view class="weui-flex">
+        <view class="weui-flex__item">
+            <view bindtap="GoBuy" class="btn-primary">去结算</view>
+        </view>
+    </view>
+</view>

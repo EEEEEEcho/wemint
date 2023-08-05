@@ -1,0 +1,11 @@
+<view class="canvas-box">
+    <canvas bindtap="clickImage" canvasId="myCanvas" data-src="{{shareImage}}" style="width: {{canvasWidth}}px;height: {{canvasHeight}}px;" wx:if="{{canvasShow}}"></canvas>
+    <view bindtap="saveImageToPhotosAlbum" class="save" wx:if="{{canvasShow&&canSave}}">{{language.TIPS_ShaFriend}}</view>
+    <button class="openSetting" openType="openSetting" wx:if="{{!canSave}}">{{language.TIPS_ShaFriend}}</button>
+    <view class="tips" wx:if="{{!canvasShow}}">
+        <view class="img">
+            <image mode="widthFix" src="{{baseUrl}}/images/wxapp/blank_22.png"></image>
+        </view>
+        <text>哦噢~您还没发布小程序哦</text>
+    </view>
+</view>

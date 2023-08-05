@@ -1,0 +1,11 @@
+// \pages/teacher/layoutDetail/detail wxSearchBlur Data Flow
+digraph {
+	a1c857bbd3dd42f6ab190d1851489cae [label="FunctionCall,
+function name -> wxSearchBlur,
+param -> " color=blue]
+	"4132d399fcb3400880abc65d40de8981" [label="CallExpression,
+callee name -> s.wxSearchBlur,
+param -> a,
+" color=blue]
+	a1c857bbd3dd42f6ab190d1851489cae -> "4132d399fcb3400880abc65d40de8981"
+}

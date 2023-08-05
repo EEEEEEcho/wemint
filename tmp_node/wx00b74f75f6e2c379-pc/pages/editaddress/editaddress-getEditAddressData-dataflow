@@ -1,0 +1,37 @@
+// \pages/editaddress/editaddress getEditAddressData Data Flow
+digraph {
+	"6899958ec57d4f9b81c218267326efb7" [label="FunctionCall,
+function name -> getEditAddressData,
+param -> " color=blue]
+	"37fc2571ad6245d0b651b9005d65819a" [label="If Alternate" color=blue]
+	d5422dec074a44a18bd902d18334f9ce [label=VariableDeclarations color=blue]
+	bf7e8fe68eba4d63bf94967598f663a1 [label="VariableDeclarator,
+left -> source,
+right -> this.data.Source" color=blue]
+	d5422dec074a44a18bd902d18334f9ce -> bf7e8fe68eba4d63bf94967598f663a1
+	"37fc2571ad6245d0b651b9005d65819a" -> d5422dec074a44a18bd902d18334f9ce
+	"47050e83e1874a32b67a811acb6e7a69" [label="If Alternate" color=blue]
+	aa844b906aba4667954a75a27a8a0488 [label="If Alternate" color=blue]
+	a9d2ce7772d241ac901e3bb8420d755e [label="Assignment,
+left -> toUrl,
+right -> '../choiceaddress/choiceaddress?productsku=' + this.data.ProductSku + '&cartItemIds=' + this.data.cartItemIds + '&buyamount=' + this.data.BuyAmount + '&frompage=' + this.data.FromPage + '&countdownid=' + this.data.CountdownId" color=blue]
+	aa844b906aba4667954a75a27a8a0488 -> a9d2ce7772d241ac901e3bb8420d755e
+	b6a8674a9cf14bcaa18cecc46fc0194e [label="Assignment,
+left -> toUrl,
+right -> '../submitorder/submitorder?productsku=' + this.data.ProductSku + '&cartItemIds=' + this.data.cartItemIds + '&buyamount=' + this.data.BuyAmount + '&frompage=' + this.data.FromPage + '&countdownid=' + this.data.CountdownId + '&shipaddressid=' + res.Message" color=blue]
+	aa844b906aba4667954a75a27a8a0488 -> b6a8674a9cf14bcaa18cecc46fc0194e
+	"47050e83e1874a32b67a811acb6e7a69" -> aa844b906aba4667954a75a27a8a0488
+	"37fc2571ad6245d0b651b9005d65819a" -> "47050e83e1874a32b67a811acb6e7a69"
+	"94c58e3cd3f44d49ac74b453f974ce0c" [label="If Alternate" color=blue]
+	b385a6c5f05e4fc18808be2d623c3b10 [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	"99200d56648b43fba012f3718b8db6c3" [label="Object Properties
+{
+url -> toUrl
+}" color=blue]
+	b385a6c5f05e4fc18808be2d623c3b10 -> "99200d56648b43fba012f3718b8db6c3"
+	"94c58e3cd3f44d49ac74b453f974ce0c" -> b385a6c5f05e4fc18808be2d623c3b10
+	"37fc2571ad6245d0b651b9005d65819a" -> "94c58e3cd3f44d49ac74b453f974ce0c"
+	"6899958ec57d4f9b81c218267326efb7" -> "37fc2571ad6245d0b651b9005d65819a"
+}

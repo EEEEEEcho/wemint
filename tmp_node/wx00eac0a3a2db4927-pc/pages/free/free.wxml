@@ -1,0 +1,12 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view class="main_container" style="margin-top: {{navH+status+10}}px">
+    <view class="result_cate">
+        <scroll-view scrollX class="scrollView">
+            <view bindtap="chooseTab" class="tab {{index===list.length-1?'tab_last':''}}" data-index="{{index}}" wx:for="{{tabList}}">
+                <text class="swiper {{active===index?'swiperSelect':'swiperTab'}}">{{item.name}}</text>
+            </view>
+        </scroll-view>
+    </view>
+    <free-list categoryUuid="{{categoryUuid}}" id="freeList"></free-list>
+</view>
+<loading-view isShow="{{isShowLoad}}"></loading-view>

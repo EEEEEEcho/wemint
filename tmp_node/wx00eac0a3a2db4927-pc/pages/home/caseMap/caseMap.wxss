@@ -1,0 +1,99 @@
+page {
+    background-color: #f4f4f4;
+}
+
+.casemap_container {
+    padding-top: 10rpx;
+}
+
+.casemap_panel {
+    width: 682rpx;
+    border-radius: 24rpx;
+    margin-left: 34rpx;
+    box-shadow: 0rpx 0rpx 16rpx #f0f0f0;
+    background: #fff;
+    margin-bottom: 40rpx;
+}
+
+.case_images {
+    position: relative;
+}
+
+.case_img {
+    width: 682rpx;
+    height: 633rpx;
+    border-top-left-radius: 24rpx;
+    border-top-right-radius: 24rpx;
+}
+
+.num_img {
+    position: absolute;
+    top: 24rpx;
+    left: 24rpx;
+}
+
+.num {
+    width: 50rpx;
+    height: 30rpx;
+    position: relative;
+}
+
+.num_back {
+    width: 50rpx;
+    height: 30rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.img_num {
+    width: 50rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 22rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.case_title {
+    font-size: 48rpx;
+    color: #50505b;
+    font-weight: 600;
+    margin: 30rpx 0 0 29rpx;
+    letter-spacing: 4rpx;
+}
+
+.explain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text {
+    font-size: 28rpx;
+    color: #aeaeb4;
+    margin-left: 29rpx;
+}
+
+.like {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.like_img {
+    width: 34rpx;
+    height: 28rpx;
+    padding: 26rpx 8rpx 40rpx 16rpx;
+}
+
+.like_num {
+    font-size: 26rpx;
+    color: #3f3f3f;
+    margin-right: 32rpx;
+    margin-bottom: 14rpx;
+}

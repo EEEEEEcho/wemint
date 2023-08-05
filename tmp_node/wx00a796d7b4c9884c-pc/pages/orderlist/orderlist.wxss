@@ -1,0 +1,350 @@
+page {
+    background: #f3f3f3;
+}
+
+.s_pagebg {
+    width: 100%;
+    float: left;
+    padding: 0 0 20% 0;
+}
+
+.s_head {
+    width: 100%;
+    height: 60px;
+    background: #fff;
+}
+
+.os_1 {
+    width: 16%;
+    height: 58px;
+    float: left;
+    margin: 0;
+}
+
+.os_1 view.navig {
+    width: 100%;
+    float: left;
+}
+
+.os_1 view.navig .font1 {
+    width: 100%;
+    float: left;
+    height: 58px;
+    font-size: 12px;
+    color: #333;
+    line-height: 58px;
+    text-align: center;
+    font-weight: normal;
+    padding: 0;
+    border-bottom: 2px solid #fff;
+}
+
+.os_1 view.navig .font2 {
+    width: 100%;
+    float: left;
+    height: 58px;
+    font-size: 12px;
+    color: #333;
+    line-height: 58px;
+    text-align: center;
+    font-weight: normal;
+    padding: 0;
+    border-bottom: 2px solid #c586ff;
+}
+
+@media screen and(max-width:480px) {
+    .os_1 view.navig .font1 {
+        width: 100%;
+        float: left;
+        height: 58px;
+        font-size: 16px;
+        color: #333;
+        line-height: 58px;
+        text-align: center;
+        font-weight: normal;
+        padding: 0;
+        border-bottom: 2px solid #fff;
+    }
+
+    .os_1 view.navig .font2 {
+        width: 100%;
+        float: left;
+        height: 58px;
+        font-size: 16px;
+        color: #333;
+        line-height: 58px;
+        text-align: center;
+        font-weight: normal;
+        padding: 0;
+        border-bottom: 2px solid #c586ff;
+    }
+}
+
+@media screen and(max-width:420px) {
+    .os_1 view.navig .font1 {
+        width: 100%;
+        float: left;
+        height: 58px;
+        font-size: 16px;
+        color: #333;
+        line-height: 58px;
+        text-align: center;
+        font-weight: normal;
+        padding: 0;
+        border-bottom: 2px solid #fff;
+    }
+
+    .os_1 view.navig .font2 {
+        width: 100%;
+        float: left;
+        height: 58px;
+        font-size: 16px;
+        color: #333;
+        line-height: 58px;
+        text-align: center;
+        font-weight: normal;
+        padding: 0;
+        border-bottom: 2px solid #c586ff;
+    }
+}
+
+@media screen and(max-width:380px) {
+    .os_1 view.navig .font1 {
+        width: 100%;
+        float: left;
+        height: 58px;
+        font-size: 14px;
+        color: #333;
+        line-height: 58px;
+        text-align: center;
+        font-weight: normal;
+        padding: 0;
+        border-bottom: 2px solid #fff;
+    }
+
+    .os_1 view.navig .font2 {
+        width: 100%;
+        float: left;
+        height: 58px;
+        font-size: 14px;
+        color: #333;
+        line-height: 58px;
+        text-align: center;
+        font-weight: normal;
+        padding: 0;
+        border-bottom: 2px solid #c586ff;
+    }
+}
+
+@media screen and(max-width:320px) {
+    .os_1 view.navig .font1 {
+        width: 100%;
+        float: left;
+        height: 58px;
+        font-size: 12px;
+        color: #333;
+        line-height: 58px;
+        text-align: center;
+        font-weight: normal;
+        padding: 0;
+        border-bottom: 2px solid #fff;
+    }
+
+    .os_1 view.navig .font2 {
+        width: 100%;
+        float: left;
+        height: 58px;
+        font-size: 12px;
+        color: #333;
+        line-height: 58px;
+        text-align: center;
+        font-weight: normal;
+        padding: 0;
+        border-bottom: 2px solid #c586ff;
+    }
+}
+
+.s_box {
+    width: 100%;
+    height: auto;
+    float: left;
+    background: #fff;
+    padding: 10px 0;
+    margin: 3% 0 2% 0;
+}
+
+.box {
+    width: 93%;
+    float: left;
+    margin: 1% 0 2% 3%;
+    padding: 5px 0;
+}
+
+.box_bt {
+    width: 100%;
+    float: left;
+    padding: 3px 0;
+    font-size: 16px;
+    color: #999999;
+    line-height: 30px;
+    text-align: left;
+    font-weight: normal;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.box_bt .font1 {
+    float: right;
+    font-size: 16px;
+    color: #999999;
+    line-height: 30px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.box_1 {
+    width: 100%;
+    float: left;
+    margin: 2% 0 0 0%;
+    padding: 10px 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.box_1_img {
+    width: 80px;
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.box_1_img image {
+    width: 80px;
+    border-radius: 10px;
+}
+
+.box_1_bt {
+    width: 62%;
+    height: 40px;
+    float: left;
+    margin: 0 10px 0 10px;
+    font-family: ' Microsoft YaHei';
+    font-size: 14px;
+    color: #333333;
+    line-height: 20px;
+    text-align: left;
+    font-weight: normal;
+    overflow: hidden;
+}
+
+.box_1_con {
+    width: 62%;
+    height: 20px;
+    float: left;
+    margin: 10px 10px 0 10px;
+    font-family: ' Microsoft YaHei';
+    font-size: 13px;
+    color: #b2b2b2;
+    line-height: 20px;
+    text-align: left;
+    font-weight: normal;
+    overflow: hidden;
+}
+
+.box_1_con .font1 {
+    float: right;
+    font-family: ' Microsoft YaHei';
+    font-size: 14px;
+    color: #b2b2b2;
+    line-height: 20px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.box_2 {
+    width: 100%;
+    float: left;
+    margin: 0% 0 0 0%;
+    padding: 10px 0;
+    font-family: ' Microsoft YaHei';
+    font-size: 16px;
+    color: #333333;
+    line-height: 30px;
+    text-align: right;
+    font-weight: normal;
+}
+
+.box_2 .font1 {
+    float: right;
+    font-family: ' Microsoft YaHei';
+    font-size: 16px;
+    color: #ff730f;
+    line-height: 30px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.box_3 {
+    width: 100%;
+    float: left;
+    margin: 0% 0 0 0%;
+    padding: 10px 0;
+    font-family: ' Microsoft YaHei';
+    font-size: 13px;
+    color: #333333;
+    line-height: 30px;
+    text-align: right;
+    font-weight: normal;
+}
+
+.box_31 {
+    float: right;
+    margin: 0% 4% 2% 2%;
+}
+
+.box_31 view.navig {
+    width: 100px;
+    height: 30px;
+    float: right;
+    background: #fff;
+    border: 1px solid #333;
+    border-radius: 10px;
+    font-family: ' Microsoft YaHei';
+    font-size: 13px;
+    color: #333;
+    line-height: 30px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.box_32 {
+    float: right;
+    margin: 0% 0% 2% 2%;
+}
+
+.box_32 view.navig {
+    width: 100px;
+    height: 30px;
+    float: right;
+    background: #fff;
+    border: 1px solid #9139e1;
+    border-radius: 10px;
+    font-family: ' Microsoft YaHei';
+    font-size: 13px;
+    color: #9139e1;
+    line-height: 30px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.box_32 view.navig1 {
+    width: 100px;
+    height: 30px;
+    float: right;
+    background: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    font-family: ' Microsoft YaHei';
+    font-size: 13px;
+    color: #9139e1;
+    line-height: 30px;
+    text-align: center;
+    font-weight: normal;
+}

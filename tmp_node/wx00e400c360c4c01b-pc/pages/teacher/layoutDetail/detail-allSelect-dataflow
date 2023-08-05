@@ -1,0 +1,19 @@
+// \pages/teacher/layoutDetail/detail allSelect Data Flow
+digraph {
+	b9989c415ecf4ac7a15aaa9ae009a897 [label="FunctionCall,
+function name -> allSelect,
+param -> t,
+t.,
+" color=blue]
+	ddaf786c014745168585c1e43ae182aa [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"9cf8c08280e045b3af1e145dac0512ed" [label="Object Properties
+{
+carts -> this.data.carts
+}" color=blue]
+	c5bc21747d4442c991d100b651c24d3d [label="!this.data.isAllSelect" color=blue]
+	"9cf8c08280e045b3af1e145dac0512ed" -> c5bc21747d4442c991d100b651c24d3d
+	ddaf786c014745168585c1e43ae182aa -> "9cf8c08280e045b3af1e145dac0512ed"
+	b9989c415ecf4ac7a15aaa9ae009a897 -> ddaf786c014745168585c1e43ae182aa
+}

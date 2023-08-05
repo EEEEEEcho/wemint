@@ -1,0 +1,19 @@
+// \pages/stu/mailbox/mailbox view Data Flow
+digraph {
+	db6aa91eee134db790cf136777b5df4f [label="FunctionCall,
+function name -> view,
+param -> a.,
+a,
+" color=blue]
+	"1aa773e495b64755a30da9667801c8f5" [label=VariableDeclarations color=blue]
+	"3b60076088154d48aa1d13c51a4afa3d" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"32fc259db771465daaafaea2fd96575a" [label="CallExpression,
+callee name -> JSON.stringify,
+param -> a.currentTarget.dataset.model,
+" color=blue]
+	"3b60076088154d48aa1d13c51a4afa3d" -> "32fc259db771465daaafaea2fd96575a"
+	"1aa773e495b64755a30da9667801c8f5" -> "3b60076088154d48aa1d13c51a4afa3d"
+	db6aa91eee134db790cf136777b5df4f -> "1aa773e495b64755a30da9667801c8f5"
+}

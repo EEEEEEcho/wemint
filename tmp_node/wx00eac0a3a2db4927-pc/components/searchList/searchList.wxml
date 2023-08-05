@@ -1,0 +1,49 @@
+<view class="commend" id="goodlist">
+    <view class="options" id="options" wx:if="{{pictureUrl==''}}">
+        <view bindtap="onClickItem" class="option1" data-index="1">
+            <text class="{{isAllBlack?'allActive':'all'}}">综合</text>
+        </view>
+        <view bindtap="onClickItem" class="option2" data-index="2">
+            <text class="{{isPriceBlack?'priceActive':'price'}}">价格</text>
+            <view class="updown">
+                <image class="up-img" src="{{isUpBlack?'http://oss.shangmian.xin/weixin_applets_icon_up_fill.png':'http://oss.shangmian.xin/weixin_applets_icon_up.png'}}"></image>
+                <image class="down-img" src="{{isDownBlack?'http://oss.shangmian.xin/weixin_applets_icon_down_fill.png':'http://oss.shangmian.xin/weixin_applets_icon_down.png'}}"></image>
+            </view>
+        </view>
+        <view bindtap="onClickItem" class="option4" data-index="4" wx:if="{{isStyle}}">
+            <text class="{{isCate?'cateActive':'cate'}}">风格</text>
+            <image class="down-img2" src="{{isCate?'http://oss.shangmian.xin/weixin_applets_icon_down_fill.png':'http://oss.shangmian.xin/weixin_applets_icon_down.png'}}"></image>
+        </view>
+        <view bindtap="onClickItem" class="option5" data-index="5">
+            <image class="filter-img" src="{{isSelect?'http://oss.shangmian.xin/weixin_applets_icon_filter.png':'http://oss.shangmian.xin/weixin_applets_icon_filter_gray.png'}}"></image>
+            <text class="{{isSelect?'filterActive':'filter'}}">筛选</text>
+        </view>
+    </view>
+    <view class="options_fixed" style="top: {{navH+status}}px;" wx:if="{{isFixed&&pictureUrl==''}}">
+        <view bindtap="onClickItem" class="option1" data-index="1">
+            <text class="{{isAllBlack?'allActive':'all'}}">综合</text>
+        </view>
+        <view bindtap="onClickItem" class="option2" data-index="2">
+            <text class="{{isPriceBlack?'priceActive':'price'}}">价格</text>
+            <view class="updown">
+                <image class="up-img" src="{{isUpBlack?'http://oss.shangmian.xin/weixin_applets_icon_up_fill.png':'http://oss.shangmian.xin/weixin_applets_icon_up.png'}}"></image>
+                <image class="down-img" src="{{isDownBlack?'http://oss.shangmian.xin/weixin_applets_icon_down_fill.png':'http://oss.shangmian.xin/weixin_applets_icon_down.png'}}"></image>
+            </view>
+        </view>
+        <view bindtap="onClickItem" class="option4" data-index="4" wx:if="{{isStyle}}">
+            <text class="{{isCate?'cateActive':'cate'}}">风格</text>
+            <image class="down-img2" src="{{isCate?'http://oss.shangmian.xin/weixin_applets_icon_down_fill.png':'http://oss.shangmian.xin/weixin_applets_icon_down.png'}}"></image>
+        </view>
+        <view bindtap="onClickItem" class="option5" data-index="5">
+            <image class="filter-img" src="{{isSelect?'http://oss.shangmian.xin/weixin_applets_icon_filter.png':'http://oss.shangmian.xin/weixin_applets_icon_filter_gray.png'}}"></image>
+            <text class="{{isSelect?'filterActive':'filter'}}">筛选</text>
+        </view>
+    </view>
+    <good goods="{{goodList}}"></good>
+    <empty iconPath="http://oss.shangmian.xin/weixin_applets_icon_good_empty_view.png" isShow="{{goodList.length==0}}" textContent="暂时还没有商品"></empty>
+</view>
+<view class="loadMoreLayout" wx:if="{{isLoadMore}}">
+    <text class="loadMoreText">加载更多...</text>
+</view>
+<right-cover-view bindonPropertySure="onPropertySure" childCategoryUuid="{{childCategoryUuid}}" foreCategoryUuid="{{categoryUuid}}" isShowRight="{{isSelect}}" spaceUuid="{{spaceUuid}}" styleUuid="{{styleUuid}}"></right-cover-view>
+<top-style-view bindisStyleShow="isStyleShow" bindonStyleSure="onStyleSure" isShowCate="{{isCate}}" keywords="{{keywords}}" styleCategoryUuid="{{categoryUuid}}"></top-style-view>

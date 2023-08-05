@@ -1,0 +1,19 @@
+// \pages/shop/shopcart_tabbar allCheckedBtn Data Flow
+digraph {
+	"628896dc7d44497a831bf46a0f118bcc" [label="FunctionCall,
+function name -> allCheckedBtn,
+param -> t,
+t.,
+" color=blue]
+	bd00c67661dc4b329b16185087f9f7f0 [label=SequenceExpression color=blue]
+	"4580828c33ff42ae81ea8467e14ca815" [label="CallExpression,
+callee name -> o.data.goods.forEach,
+param -> " color=blue]
+	b9aa49bbe37e43cb86a792a903f991e9 [label="FunctionCall,
+function name -> Anonymous Function,
+param -> t,
+" color=blue]
+	"4580828c33ff42ae81ea8467e14ca815" -> b9aa49bbe37e43cb86a792a903f991e9
+	bd00c67661dc4b329b16185087f9f7f0 -> "4580828c33ff42ae81ea8467e14ca815"
+	"628896dc7d44497a831bf46a0f118bcc" -> bd00c67661dc4b329b16185087f9f7f0
+}

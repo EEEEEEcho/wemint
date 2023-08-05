@@ -1,0 +1,23 @@
+// \pages/allCard/allCard bindViewTap Data Flow
+digraph {
+	"20c30e3ab3d740f0a0ae147f4b90cdb1" [label="FunctionCall,
+function name -> bindViewTap,
+param -> e.,
+e,
+" color=blue]
+	"9962ee6ac8854731b18ed2fad36e08da" [label=VariableDeclarations color=blue]
+	"05a1f8f615f64735af8ec3c6cc52f084" [label="VariableDeclarator,
+left -> t,
+right -> e.currentTarget.dataset.merchant.shortName + '|' + e.currentTarget.dataset.merchant.merchantConfigId" color=blue]
+	"9962ee6ac8854731b18ed2fad36e08da" -> "05a1f8f615f64735af8ec3c6cc52f084"
+	"20c30e3ab3d740f0a0ae147f4b90cdb1" -> "9962ee6ac8854731b18ed2fad36e08da"
+	"49243fb818824f5f9a376ddecd3c2a8a" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"66d9ec5324534d7e94bb01341554b39e" [label="Object Properties
+{
+url -> '/pages/merchant/merchant?param=' + t
+}" color=blue]
+	"49243fb818824f5f9a376ddecd3c2a8a" -> "66d9ec5324534d7e94bb01341554b39e"
+	"20c30e3ab3d740f0a0ae147f4b90cdb1" -> "49243fb818824f5f9a376ddecd3c2a8a"
+}

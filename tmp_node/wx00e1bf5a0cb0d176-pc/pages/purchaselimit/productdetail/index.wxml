@@ -1,0 +1,115 @@
+<view class="fixedTopBorder"></view>
+<import src="/components/wxParse/wxParse.wxml"></import>
+<view class="container">
+    <scroll-view scrollY="true">
+        <swiper autoplay="true" circular="true" duration="200" indicatorActiveColor="#ff4c5b" indicatorDots="{{productImgs.length<=1?'':true}}" interval="5000" style="height:{{bannerHeight}}px">
+            <swiper-item wx:for="{{productImgs}}" wx:for-index="idx" wx:key="{{idx}}">
+                <image bindload="onBannerImgLoad" class="slide-image" data-index="{{idx}}" mode="widthFix" src="{{item}}"></image>
+            </swiper-item>
+        </swiper>
+        <view class="product">
+            <view class="product-top">
+                <view class="secondkill">秒杀</view>
+                <view class="pice">
+                    <view class="pice_l">
+                        <text class="present-price">
+                            <text class="jiage">￥</text>{{SecKillProMsg.ms_price}}</text>
+                    </view>
+                    <view class="pice_r">
+                        <view class="time-txt">距结束还剩</view>
+                        <view class="time">
+                            <text class="t">{{intervalTime.hours}}</text> 时
+              <text class="branch">{{intervalTime.minutes}}</text> 分
+              <text class="second">{{intervalTime.seconds}}</text> 秒
+            </view>
+                    </view>
+                </view>
+            </view>
+            <view class="product-detail ">
+                <view class="detail-title two">{{SecKillProMsg.name}}</view>
+                <text class="stock">原价:￥{{SecKillProMsg.price}}</text>
+                <view class="stock">库存：{{SecKillProMsg.ms_stock}}</view>
+                <view class="freight border1px ">
+                    <view class="freight-l">运费：{{SecKillProMsg.freight_fee}}</view>
+                    <view class="freight-r">
+                        <view class="yuexiao">月销{{SecKillProMsg.sales_count}}笔</view>
+                        <view catchtap="share" class="expAndSales" wx:if="{{enableWxShare}}">
+                            <view class="shareicon">
+                                <icon class="iconfont icon-fenxiang"></icon>
+                            </view>
+                            <view class="share protext">{{language.TIPS_Sha}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="close" class="mark {{shareMarkFlag?'showMark':''}}"></view>
+            <view class="sharePopout {{shareMarkFlag?'showPopout':'hidePopout'}}">
+                <view class="btnGroup">
+                    <button catchtap="sharetoFriend" class="btns" openType="share">
+                        <view class="img">
+                            <image src="{{baseUrl}}/images/wxapp/fx.png"></image>
+                        </view>
+                        <text class="words">{{language.TIPS_SendToFriend}}</text>
+                    </button>
+                    <view catchtap="shareHfive" class="btns shareHfive">
+                        <view class="img">
+                            <image src="{{baseUrl}}/images/wxapp/bc.png"></image>
+                        </view>
+                        <text class="words">{{language.TIPS_ShaPoster}}</text>
+                    </view>
+                </view>
+                <view catchtap="close" class="cancelBtn">取消</view>
+            </view>
+            <view class="particulars-line"></view>
+            <view bindtap="buyMs" class="specification" wx:if="{{attrkeys.length!=0}}">
+                <view class="speLeft">
+                    <text class="titChoose">{{selectValArr.length!=0?'已选':'请选择规格'}}</text>
+                    <text>{{selectSkuDes}}</text>
+                </view>
+                <icon class="iconfont icon-iconfont_arrow-right iconsize"></icon>
+            </view>
+        </view>
+        <view class="particulars-page">
+            <view class="particulars-title border1px {{toFixed?'toFixed':''}}">
+                <text bindtap="navbarTap" class="item {{currentTab==0?'active':''}}" data-idx="0">商品详情</text>
+                <text bindtap="navbarTap" class="item {{currentTab==1?'active':''}}" data-idx="1">产品参数</text>
+            </view>
+            <view class="particulars-content {{toFixed?'pt88':''}}" hidden="{{currentTab!=0}}">
+                <rich-text nodes="{{deContent}}" type="text"></rich-text>
+            </view>
+            <view class="product-parameter {{toFixed?'pt88':''}}" hidden="{{currentTab!=1}}">
+                <view wx:if="{{SecKillProMsg.paramsList.length!=0}}">
+                    <view class="paramList" wx:for="{{SecKillProMsg.paramsList}}" wx:key="paramsList.ID">
+                        <view class="pro-name">{{item.Name}}</view>
+                        <view class="pro-content">{{item.Value}}</view>
+                    </view>
+                </view>
+                <view class="noParam" wx:if="{{SecKillProMsg.paramsList.length==0}}">
+                    <text>暂无参数</text>
+                </view>
+            </view>
+        </view>
+        <view class="particulars-line"></view>
+    </scroll-view>
+</view>
+<view class="footnav" style="display: {{shareMarkFlag?'none':''}};">
+    <view class="footLeft">
+        <view catchtap="backToHome" class="backToHome">
+            <icon class="iconfont icon-iconfont_homepage"></icon>
+            <text>首页</text>
+        </view>
+        <view>
+            <view catchtap="{{collection?'CanleCollection':'AddCollection'}}" class="favorite" data-ProID="{{queryparams.proid}}">
+                <icon class="iconfont {{collection?'icon-iconfont_favorite-fi':'icon-iconfont_favorite'}}  favorIcon {{collection?'collected':''}}"></icon>
+                <text>收藏</text>
+            </view>
+        </view>
+    </view>
+    <view bindtap="buyMs" class="footRight">
+    ¥
+    <text>{{SecKillProMsg.ms_price}}</text> 立即抢购
+  </view>
+</view>
+<include src="/pages/common/chooseSku.wxml"></include>
+<include src="/pages/template/floatLayer.wxml"></include>
+<include src="/pages/template/getUserInfo.wxml"></include>

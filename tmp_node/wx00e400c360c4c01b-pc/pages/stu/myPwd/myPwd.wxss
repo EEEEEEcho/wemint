@@ -1,0 +1,21 @@
+.sel {
+    padding-top: 50rpx;
+    padding-bottom: 20rpx;
+    width: 90%;
+}
+
+.inputText {
+    flex: block;
+    float: left;
+    text-align: left;
+    margin-top: 11px;
+    font-size: 14px;
+    width: 680rpx;
+}
+
+.line {
+    width: 90%;
+    height: 1px;
+    background-color: #cccccc;
+    margin-top: 1px;
+}

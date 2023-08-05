@@ -1,0 +1,63 @@
+// \pages/shop/distribution onShow Data Flow
+digraph {
+	"6241623f15024ef1b6b9c93e5fb332ea" [label="FunctionCall,
+function name -> onShow,
+param -> " color=blue]
+	"552662b97b3c463d97f114c04b7c3b0d" [label=SequenceExpression color=blue]
+	"88c46e7f15174295916c5e43f53a871f" [label="CallExpression,
+callee name -> this.getUserFenXiaoInfo,
+param -> " color=blue]
+	b39195c43dc14fe69c1f85e76b5e7f2f [label="FunctionCall,
+function name -> getUserFenXiaoInfo,
+param -> " color=blue]
+	c4a4e08096a947208b91cf9cc9f69db8 [label=VariableDeclarations color=blue]
+	b4aaa5389f3f4782a4a0787a99df9bd4 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"725550283f364efead6365cec85d2bd3" [label="Object Properties
+{
+}" color=blue]
+	"8d8a2d211e7849a98e1bca9495c3949a" [label="FunctionCall,
+function name -> success,
+param -> a.,
+a,
+" color=blue]
+	ac155059dc344d4cb724ee06b4e7fe72 [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"70c971fc5abd497db75a3cb42aa70420" [label="CallExpression,
+callee name -> t.setData,
+param -> " color=blue]
+	bc176d9fec4c435aafc3a88da1fed148 [label="Object Properties
+{
+count -> a.info.count
+allTotal -> a.info.allTotal
+applyTotal -> a.info.applyTotal
+canApplyTotal -> a.info.canApplyTotal
+auditedTotal -> a.info.auditedTotal
+notAuditedTotal -> a.info.notAuditedTotal
+}" color=blue]
+	"70c971fc5abd497db75a3cb42aa70420" -> bc176d9fec4c435aafc3a88da1fed148
+	ac155059dc344d4cb724ee06b4e7fe72 -> "70c971fc5abd497db75a3cb42aa70420"
+	"59b0a03619c7446a825da0220219b830" [label="CallExpression,
+callee name -> o.showModal,
+param -> " color=blue]
+	"1a1255772b0c4bb6a1505deb1f01851e" [label="Object Properties
+{
+content -> a.msg
+}" color=blue]
+	"59b0a03619c7446a825da0220219b830" -> "1a1255772b0c4bb6a1505deb1f01851e"
+	ac155059dc344d4cb724ee06b4e7fe72 -> "59b0a03619c7446a825da0220219b830"
+	"8d8a2d211e7849a98e1bca9495c3949a" -> ac155059dc344d4cb724ee06b4e7fe72
+	"725550283f364efead6365cec85d2bd3" -> "8d8a2d211e7849a98e1bca9495c3949a"
+	b4aaa5389f3f4782a4a0787a99df9bd4 -> "725550283f364efead6365cec85d2bd3"
+	c4a4e08096a947208b91cf9cc9f69db8 -> b4aaa5389f3f4782a4a0787a99df9bd4
+	b39195c43dc14fe69c1f85e76b5e7f2f -> c4a4e08096a947208b91cf9cc9f69db8
+	"88c46e7f15174295916c5e43f53a871f" -> b39195c43dc14fe69c1f85e76b5e7f2f
+	"552662b97b3c463d97f114c04b7c3b0d" -> "88c46e7f15174295916c5e43f53a871f"
+	baaa18de8883456bb5ccb37e608c7d92 [label="CallExpression,
+callee name -> console.log,
+param -> this.data.userID,
+" color=blue]
+	"552662b97b3c463d97f114c04b7c3b0d" -> baaa18de8883456bb5ccb37e608c7d92
+	"6241623f15024ef1b6b9c93e5fb332ea" -> "552662b97b3c463d97f114c04b7c3b0d"
+}

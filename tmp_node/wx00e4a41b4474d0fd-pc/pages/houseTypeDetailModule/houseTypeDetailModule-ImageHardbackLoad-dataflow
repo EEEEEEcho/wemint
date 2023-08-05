@@ -1,0 +1,43 @@
+// \pages/houseTypeDetailModule/houseTypeDetailModule ImageHardbackLoad Data Flow
+digraph {
+	"6c021f5d76c24e4cbc7bb75a813bfc1a" [label="FunctionCall,
+function name -> ImageHardbackLoad,
+param -> e,
+e.,
+" color=blue]
+	e6c483c36e524c44a905fa0811bed345 [label=VariableDeclarations color=blue]
+	ba0c4760a9144ba596caacb4ba8273a9 [label="VariableDeclarator,
+left -> a,
+right -> e.detail.width / (t = e.detail.height)" color=blue]
+	e6c483c36e524c44a905fa0811bed345 -> ba0c4760a9144ba596caacb4ba8273a9
+	c32ab6f73a394ac79758f08c37435d81 [label="VariableDeclarator,
+left -> t,
+right -> this.data.imgwidth / a" color=blue]
+	e6c483c36e524c44a905fa0811bed345 -> c32ab6f73a394ac79758f08c37435d81
+	"9442fdf09a404e9a931818f86be67fd0" [label="VariableDeclarator,
+left -> i,
+right -> this.data.hardbackImgheights" color=blue]
+	e6c483c36e524c44a905fa0811bed345 -> "9442fdf09a404e9a931818f86be67fd0"
+	"6c021f5d76c24e4cbc7bb75a813bfc1a" -> e6c483c36e524c44a905fa0811bed345
+	"48d45518b1c94e6ab299f1dadfe3f322" [label=SequenceExpression color=blue]
+	ded4ae06b64e435eb96f87b446d10d02 [label="Assignment,
+left -> i[e.currentTarget.dataset.index],
+right -> t" color=blue]
+	"48d45518b1c94e6ab299f1dadfe3f322" -> ded4ae06b64e435eb96f87b446d10d02
+	"16b6c7aacb6348afb2e6e54fb6e8a36a" [label="Assignment,
+left -> this.data.styleHardbackHeight,
+right -> this.data.styleHardbackHeight + t" color=blue]
+	"48d45518b1c94e6ab299f1dadfe3f322" -> "16b6c7aacb6348afb2e6e54fb6e8a36a"
+	"113dd9a621164a04909042b05717751d" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"3ce402e18acf44dfa8e7df53a810d632" [label="Object Properties
+{
+currentHardbackList -> this.data.currentHardbackList
+hardbackImgheights -> i
+styleHardbackHeight -> this.data.styleHardbackHeight
+}" color=blue]
+	"113dd9a621164a04909042b05717751d" -> "3ce402e18acf44dfa8e7df53a810d632"
+	"48d45518b1c94e6ab299f1dadfe3f322" -> "113dd9a621164a04909042b05717751d"
+	"6c021f5d76c24e4cbc7bb75a813bfc1a" -> "48d45518b1c94e6ab299f1dadfe3f322"
+}

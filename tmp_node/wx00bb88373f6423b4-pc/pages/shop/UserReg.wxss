@@ -1,0 +1,159 @@
+.modal {
+    position: fixed;
+    left: 100rpx;
+    top: 100rpx;
+    z-index: 2000;
+    width: 100%;
+}
+
+.modalContent {
+    width: 560rpx;
+    height: 710rpx;
+    background: #fff;
+    font-family: "微软雅黑";
+    border-radius: 10rpx;
+    margin-right: 0;
+}
+
+.modalContent .modalTop {
+    width: 560rpx;
+    height: 123rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    margin-bottom: 68rpx;
+}
+
+.modalContent .modalTop .icon-close {
+    position: absolute;
+    left: 520rpx;
+    top: 12rpx;
+}
+
+.modalContent .modalTop .iconfont {
+    font-size: 28rpx;
+    color: #ccc;
+}
+
+.modalContent .modalTop .topTitle {
+    flex: 1;
+    text-align: center;
+    height: 123rpx;
+    line-height: 123rpx;
+    font-size: 30rpx;
+    color: #666;
+}
+
+.modalContent .modalTop .active {
+    color: #ff7200;
+    border-bottom: 3px solid #ff7200;
+}
+
+.modalContent .memberInp {
+    width: 488rpx;
+    height: 96rpx;
+    line-height: 96rpx;
+    border: 1rpx solid #ccc;
+    border-radius: 10rpx;
+    margin: 6rpx auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.modalContent .memberInp:nth-child(1) {
+    margin-bottom: 16rpx;
+}
+
+.modalContent .tips {
+    color: #ff7200;
+    font-size: 26rpx;
+    margin-left: 30rpx;
+    position: relative;
+    top: -16rpx;
+}
+
+.modalContent .memberInp .icon {
+    color: #666;
+    margin: 0 24rpx;
+}
+
+.modalContent .getCode {
+    height: 67rpx;
+    width: 456rpx;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+    line-height: 67rpx;
+    font-size: 26rpx;
+    color: #666;
+    border-left: 1px solid #ccc;
+    text-align: center;
+}
+
+.modalContent .login {
+    width: 480rpx;
+    height: 88rpx;
+    margin: 70rpx auto;
+    margin-bottom: 40rpx;
+    line-height: 88rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #fff;
+    background: #ff7200;
+    border-radius: 45rpx;
+}
+
+.mask {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1999;
+    background: rgba(0,0,0,0.5);
+}
+
+.disabled {
+    color: #ddd;
+}
+
+.loginTitle {
+    width: 228rpx;
+    padding-top: 50rpx;
+    padding-bottom: 80rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    margin-left: 166rpx;
+}
+
+.loginTitle .title {
+    font-size: 30rpx;
+    color: #666;
+    height: 30rpx;
+    line-height: 3prpx;
+    margin: 0 16rpx;
+}
+
+.line {
+    width: 32rpx;
+    height: 2rpx;
+    background-color: #999;
+    position: relative;
+    top: 24rpx;
+}
+
+.bottomTypeBox {
+    width: 100%;
+    text-align: center;
+}
+
+.bottomType {
+    font-size: 28rpx;
+    color: #ff7200;
+}

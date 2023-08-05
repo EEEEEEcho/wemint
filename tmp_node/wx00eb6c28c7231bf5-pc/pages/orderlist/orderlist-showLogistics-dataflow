@@ -1,0 +1,23 @@
+// \pages/orderlist/orderlist showLogistics Data Flow
+digraph {
+	"8b6b574dc0ce4aa08ee59befbc728440" [label="FunctionCall,
+function name -> showLogistics,
+param -> t,
+t.,
+" color=blue]
+	aa464f18f60d44749ceefbf3f1cb0963 [label=VariableDeclarations color=blue]
+	"395b26753bba4942818bea3f2bda634b" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.orderid" color=blue]
+	aa464f18f60d44749ceefbf3f1cb0963 -> "395b26753bba4942818bea3f2bda634b"
+	"8b6b574dc0ce4aa08ee59befbc728440" -> aa464f18f60d44749ceefbf3f1cb0963
+	"91e3ecc574d14781a6beaeaa6260c2af" [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	d0467a002e9640f8b982bfa00134be0e [label="Object Properties
+{
+url -> '../logistics/logistics?orderid=' + e
+}" color=blue]
+	"91e3ecc574d14781a6beaeaa6260c2af" -> d0467a002e9640f8b982bfa00134be0e
+	"8b6b574dc0ce4aa08ee59befbc728440" -> "91e3ecc574d14781a6beaeaa6260c2af"
+}

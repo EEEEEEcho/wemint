@@ -1,0 +1,55 @@
+<view>
+    <image bindtap="actionSheetChange" src="{{bpImage}}" style="width:100%;height:400rpx;">背景图</image>
+    <view class="header">
+        <image bindtap="myIndex" class="avatar" src="{{cpc.icon}}"></image>
+        <view class="nickname">{{cpc.name}}</view>
+    </view>
+    <view class="section">
+        <view class="line judgement">
+            <view bindtap="spareTime" class="block">
+                <image src="../../../image/me_kecheng@2x.png"></image> 
+      剩余课时
+     </view>
+        </view>
+        <view class="line judgement">
+            <view bindtap="score" class="block">
+                <image src="../../../image/me_jifen@2x.png"></image> 
+      我的积分
+     </view>
+        </view>
+        <view bindtap="order" class="line judgement">
+            <view class="block">
+                <image src="../../../image/me_dingdan@2x.png"></image> 
+      我的订单
+     </view>
+        </view>
+        <view bindtap="activity" class="line judgement">
+            <view class="block">
+                <image src="../../../image/me_huodong@2x.png"></image> 
+      我的活动
+     </view>
+        </view>
+        <view bindtap="mailbox" class="line judgement">
+            <view class="block">
+                <image src="../../../image/me_dingdan@2x.png"></image> 
+      校长信箱
+     </view>
+        </view>
+        <view bindtap="myIndex" class="line judgement">
+            <view class="block">
+                <image src="../../../image/me_1@2x.png"></image> 
+      个人中心
+     </view>
+        </view>
+        <view bindtap="switchAccount" class="line judgement">
+            <view class="block">
+                <image src="../../../image/me_changeid@2x.png"></image> 
+      切换账号
+     </view>
+        </view>
+    </view>
+</view>
+<action-sheet bindchange="actionSheetChange" hidden="{{actionSheetHidden}}">
+    <action-sheet-item bindtap="bpImage">更换封面</action-sheet-item>
+    <action-sheet-cancel>取消</action-sheet-cancel>
+</action-sheet>

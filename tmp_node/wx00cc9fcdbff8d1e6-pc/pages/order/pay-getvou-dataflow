@@ -1,0 +1,45 @@
+// \pages/order/pay getvou Data Flow
+digraph {
+	b919c8da4f4d4958af8cf491bee4ef50 [label="FunctionCall,
+function name -> getvou,
+param -> t,
+t.,
+" color=blue]
+	d412090a1ec64bd9ab57eed3bf5a4861 [label=VariableDeclarations color=blue]
+	"910dfa2adf07448c989e86d608cb3ae2" [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.id" color=blue]
+	d412090a1ec64bd9ab57eed3bf5a4861 -> "910dfa2adf07448c989e86d608cb3ae2"
+	"66321a50d7994cab9fea097a6b57b492" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.price" color=blue]
+	d412090a1ec64bd9ab57eed3bf5a4861 -> "66321a50d7994cab9fea097a6b57b492"
+	"8952b79af4fd42a3bf691bcc9a6c00a6" [label="VariableDeclarator,
+left -> r,
+right -> this.data.vprice" color=blue]
+	d412090a1ec64bd9ab57eed3bf5a4861 -> "8952b79af4fd42a3bf691bcc9a6c00a6"
+	"4f7822a950e84124891da3a142023d25" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"00d5befbcc0c4da696a789aa7511ac47" [label="CallExpression,
+callee name -> parseFloat,
+param -> r,
+" color=blue]
+	"4f7822a950e84124891da3a142023d25" -> "00d5befbcc0c4da696a789aa7511ac47"
+	"972ae90923d44dcb974a09968d0ef3ab" [label="CallExpression,
+callee name -> parseFloat,
+param -> e,
+" color=blue]
+	"4f7822a950e84124891da3a142023d25" -> "972ae90923d44dcb974a09968d0ef3ab"
+	d412090a1ec64bd9ab57eed3bf5a4861 -> "4f7822a950e84124891da3a142023d25"
+	b919c8da4f4d4958af8cf491bee4ef50 -> d412090a1ec64bd9ab57eed3bf5a4861
+	"5eb1427f746944868e77716944029d26" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	b06ad8a2498a4d07a0e6c43acde87b83 [label="Object Properties
+{
+vid -> a
+}" color=blue]
+	"5eb1427f746944868e77716944029d26" -> b06ad8a2498a4d07a0e6c43acde87b83
+	b919c8da4f4d4958af8cf491bee4ef50 -> "5eb1427f746944868e77716944029d26"
+}

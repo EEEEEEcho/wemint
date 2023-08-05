@@ -1,0 +1,59 @@
+<view class="bg"></view>
+<view style="position:relative;z-index:2">
+    <myLoading id="myLoading"></myLoading>
+    <view class="model" wx:if="{{showImgModel}}">
+        <view class="modelTitle">
+            请求获取授权
+        </view>
+        <view class="modelBody">您还未授权相册权限,暂时无法使用此功能,点击确定重新获取授权。</view>
+        <view class="btns">
+            <button bindopensetting="getShareProgram" class="agree" lang="zh_CN" openType="openSetting" plain="true">下一步</button>
+        </view>
+    </view>
+    <view class="model" wx:if="{{reloadModel}}">
+        <view class="modelTitle">
+            请求图片超时
+        </view>
+        <view class="modelBody">是否重新加载？</view>
+        <view class="btns">
+            <button bindtap="cancel" class="cancel">取消</button>
+            <button bindtap="reload" class="agree">确定</button>
+        </view>
+    </view>
+    <view>
+        <view class="contain-box">
+            <scroll-view class="scroll-box" scrollY="true" style="padding-top:{{paddingTop+'rpx'}}">
+                <swiper bindchange="swipChage" circular="true" class="img-box" current="{{currentIndex}}" style="width:100%;height:1020rpx;position:relative;">
+                    <swiper-item style="text-align:center" wx:for="{{shareImg}}" wx:key="item">
+                        <image bindload="load" data-index="{{index}}" hidden="{{item.loadComplete==false}}" src="{{item.src}}" style="width:575rpx;height:1020rpx;border-radius:25rpx"></image>
+                        <image alt="" class="slide-image" hidden="{{item.loadComplete}}" src="{{defaultImagePath}}"></image>
+                    </swiper-item>
+                </swiper>
+            </scroll-view>
+            <view class="myload" wx:if="{{shareImg.length==0}}">
+                <view class="spinner"></view>
+                <view>正在为您生成分享图...</view>
+            </view>
+            <view class="right-box" wx:if="{{swipIndex==0&&shareImg.length>1}}">
+                <view style="font-size:20rpx;color:#fff;">
+                    滑动卡片隐藏个人信息
+                </view>
+                <image class="right-icon" src="https://dm.static.elab-plus.com/wepy_pro/index/left-icon.png"></image>
+                <view class="more-icon"></view>
+            </view>
+            <view class="left-box" wx:if="{{swipIndex==1&&shareImg.length>1}}">
+                <view style="font-size:20rpx;color:#fff;">
+                    滑动卡片展示个人信息
+                </view>
+                <image class="right-icon" src="https://dm.static.elab-plus.com/wepy_pro/index/left-icon.png"></image>
+                <view class="more-icon"></view>
+            </view>
+            <button bindtap="save" class="save-btn" wx:if="{{!showImgBtn}}">
+                保存至相册
+            </button>
+            <button bindopensetting="getShareProgram" class="save-btn" openType="openSetting" wx:else>
+                保存至相册
+            </button>
+        </view>
+    </view>
+</view>

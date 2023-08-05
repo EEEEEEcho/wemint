@@ -1,0 +1,104 @@
+<view class="margintop5"></view>
+<view class="swiper-tab">
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==0?'on':''}}" data-current="0">全部</view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==1?'on':''}}" data-current="1">待付款</view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==2?'on':''}}" data-current="2">已付款</view>
+</view>
+<swiper bindchange="bindChange" class="swiper-box" current="{{currentTab}}" duration="300" style="height:{{winHeight-31}}px">
+    <swiper-item>
+        <view class="section">
+            <view class="wnr" wx:if="{{dataList.length==0}}">
+                <image src="http://p7mq9gjza.bkt.clouddn.com/non.png" style="width:276px; height:319px;"></image>
+            </view>
+            <scroll-view bindscrolltolower="searchScrollLower" scrollY="true" style="height: {{scrollHeight}}rpx;" wx:else>
+                <block wx:for="{{dataList}}" wx:key="activity">
+                    <view class="currContent">
+                        <view class="currContent_list1">
+                            <view class="time">订单编号：{{item.order_code}}</view>
+                            <view class="time">下单时间：{{item.createtime}}</view>
+                        </view>
+                        <view class="currContent_list2" wx:if="{{item.pay_state==0}}">未支付</view>
+                        <view class="currContent_list3" wx:else>已付款</view>
+                    </view>
+                    <view class="obtn">
+                        <view class="btnTitle">{{item.ca.title}}</view>
+                        <view class="btnbtm">
+                            <view class="btMoney">￥{{item.pay_money}}</view>
+                            <view class="btn" wx:if="{{item.pay_state==0}}">
+                                <button bindtap="delOrder" class="classCurr_view_but_del" data-id="{{item.id}}" data-index="{{index}}" hoverClass="classCurr_view_but_hover_del">删除订单</button>
+                                <button bindtap="pay" class="classCurr_view_but" data-model="{{item}}" hoverClass="classCurr_view_but_hover">付款</button>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="margintop20"></view>
+                </block>
+                <view class="loading" hidden="{{!searchLoading}}">正在载入...</view>
+                <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+            </scroll-view>
+        </view>
+    </swiper-item>
+    <swiper-item>
+        <view class="section">
+            <view class="wnr" wx:if="{{dataListNoPay.length==0}}">
+                <image src="http://p7mq9gjza.bkt.clouddn.com/non.png" style="width:276px; height:319px;"></image>
+            </view>
+            <scroll-view bindscrolltolower="searchScrollLower" scrollY="true" style="height: {{scrollHeight}}rpx;" wx:else>
+                <block wx:for="{{dataListNoPay}}" wx:key="activity">
+                    <view class="currContent">
+                        <view class="currContent_list1">
+                            <view class="time">订单编号：{{item.order_code}}</view>
+                            <view class="time">下单时间：{{item.createtime}}</view>
+                        </view>
+                        <view class="currContent_list2" wx:if="{{item.pay_state==0}}">未支付</view>
+                        <view class="currContent_list3" wx:else>已付款</view>
+                    </view>
+                    <view class="obtn">
+                        <view class="btnTitle">{{item.ca.title}}</view>
+                        <view class="btnbtm">
+                            <view class="btMoney">￥{{item.pay_money}}</view>
+                            <view class="btn" wx:if="{{item.pay_state==0}}">
+                                <button bindtap="delOrder" class="classCurr_view_but_del" data-id="{{item.id}}" data-index="{{index}}" hoverClass="classCurr_view_but_hover_del">删除订单</button>
+                                <button bindtap="pay" class="classCurr_view_but" data-model="{{item}}" hoverClass="classCurr_view_but_hover">付款</button>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="margintop20"></view>
+                </block>
+                <view class="loading" hidden="{{!searchLoading}}">正在载入...</view>
+                <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+            </scroll-view>
+        </view>
+    </swiper-item>
+    <swiper-item>
+        <view class="section">
+            <view class="wnr" wx:if="{{dataListNoPay.length==0}}">
+                <image src="http://p7mq9gjza.bkt.clouddn.com/non.png" style="width:276px; height:319px;"></image>
+            </view>
+            <scroll-view bindscrolltolower="searchScrollLower" scrollY="true" style="height: {{scrollHeight}}rpx;" wx:else>
+                <block wx:for="{{dataListPay}}" wx:key="activity">
+                    <view class="currContent">
+                        <view class="currContent_list1">
+                            <view class="time">订单编号：{{item.order_code}}</view>
+                            <view class="time">下单时间：{{item.createtime}}</view>
+                        </view>
+                        <view class="currContent_list2" wx:if="{{item.pay_state==0}}">未支付</view>
+                        <view class="currContent_list3" wx:else>已付款</view>
+                    </view>
+                    <view class="obtn">
+                        <view class="btnTitle">{{item.ca.title}}</view>
+                        <view class="btnbtm">
+                            <view class="btMoney">￥{{item.pay_money}}</view>
+                            <view class="btn" wx:if="{{item.pay_state==0}}">
+                                <button bindtap="delOrder" class="classCurr_view_but_del" data-id="{{item.id}}" data-index="{{index}}" hoverClass="classCurr_view_but_hover_del">删除订单</button>
+                                <button bindtap="pay" class="classCurr_view_but" data-model="{{item}}" hoverClass="classCurr_view_but_hover">付款</button>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="margintop20"></view>
+                </block>
+                <view class="loading" hidden="{{!searchLoading}}">正在载入...</view>
+                <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+            </scroll-view>
+        </view>
+    </swiper-item>
+</swiper>

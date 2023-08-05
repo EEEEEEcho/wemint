@@ -1,0 +1,14 @@
+// \pages/index/order/evalOrder/evaluation/evaluation zan Data Flow
+digraph {
+	f880e3904d6642d8898e1d93678f6e4a [label="FunctionCall,
+function name -> zan,
+param -> t.,
+t,
+" color=blue]
+	"7cc264b920a0482e8f05cba8a90e4342" [label=VariableDeclarations color=blue]
+	"468b669bdc91473e8275c82e406b45a2" [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.zanIndex" color=blue]
+	"7cc264b920a0482e8f05cba8a90e4342" -> "468b669bdc91473e8275c82e406b45a2"
+	f880e3904d6642d8898e1d93678f6e4a -> "7cc264b920a0482e8f05cba8a90e4342"
+}

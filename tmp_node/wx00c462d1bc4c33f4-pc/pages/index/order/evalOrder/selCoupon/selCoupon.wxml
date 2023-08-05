@@ -1,0 +1,139 @@
+<view class="yhq">
+    <view class="yhqBox">
+        <view class="yhqTitle">
+            <view class="yhqC">我的优惠券
+        <image class="yhq_img" src="/images/myCoupon.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="coupon" wx:for="{{coupones}}" wx:key="key">
+    <view bindtap="huoqu" class="couponBox" data-index="{{index}}" wx:if="{{item.couponType=='2'&&item.validityEnd>=nowData&&item.validityBegin<=nowData}}">
+        <view class="center1_date">
+            <view>NO.{{filters.subString1(item.code)}} {{filters.subString2(item.code)}} {{filters.subString3(item.code)}}</view>
+        </view>
+        <view class="left1">
+            <view class="left1_quan">{{item.couponName}}</view>
+            <view class="left1_man1">消费满{{item.miniMoney}}元可用</view>
+        </view>
+        <view class="center1">
+            <view class="center1_zhe">{{item.derateMoney}}折</view>
+        </view>
+        <view class="center1_date">
+            <view>{{item.validityBegin}}至{{item.validityEnd}}</view>
+        </view>
+    </view>
+    <view class="right_bg1" wx:if="{{item.couponType=='2'&&item.validityEnd>=nowData&&item.validityBegin<=nowData}}">
+        <view class="right_bg1_text1" data-index="{{index}}">可使用</view>
+    </view>
+    <view class="couponBox" wx:if="{{item.couponType=='2'&&item.validityEnd<nowData}}">
+        <view class="center2_date2">
+            <view>NO.{{filters.subString1(item.code)}} {{filters.subString2(item.code)}} {{filters.subString3(item.code)}}</view>
+        </view>
+        <view class="left1">
+            <view class="left2_quan">{{item.couponName}}券</view>
+            <view class="left2_man2">消费满{{item.miniMoney}}元可用</view>
+        </view>
+        <view class="center1">
+            <view class="center2_zhe2">{{item.derateMoney}}折</view>
+        </view>
+        <view class="center2_date2">
+            <view>{{item.validityBegin}}至{{item.validityEnd}}</view>
+        </view>
+    </view>
+    <view class="right_bg2" wx:if="{{item.couponType=='2'&&item.validityEnd<nowData}}">
+        <view class="right_bg2_text2">已过期</view>
+    </view>
+    <view class="couponBox" wx:if="{{item.couponType=='2'&&item.validityBegin>nowData}}">
+        <view class="center2_date2">
+            <view>NO.{{filters.subString1(item.code)}} {{filters.subString2(item.code)}} {{filters.subString3(item.code)}}</view>
+        </view>
+        <view class="left1">
+            <view class="left2_quan">{{item.couponName}}券</view>
+            <view class="left2_man2">消费满{{item.miniMoney}}元可用</view>
+        </view>
+        <view class="center1">
+            <view class="center2_zhe2">{{item.derateMoney}}折</view>
+        </view>
+        <view class="center2_date2">
+            <view>{{item.validityBegin}}至{{item.validityEnd}}</view>
+        </view>
+    </view>
+    <view class="right_bg2" wx:if="{{item.couponType=='2'&&item.validityBegin>nowData}}">
+        <view class="right_bg2_text2">未生效</view>
+    </view>
+    <view bindtap="huoqu" class="couponBox" data-index="{{index}}" wx:if="{{item.couponType=='4'&&item.validityEnd>=nowData&&item.validityBegin<=nowData}}">
+        <view class="center1_date">
+            <view>NO.{{filters.subString1(item.code)}} {{filters.subString2(item.code)}} {{filters.subString3(item.code)}}</view>
+        </view>
+        <view class="left1">
+            <view class="left1_quan">{{item.couponName}}</view>
+            <view class="left1_man1">消费满{{item.miniMoney}}元可用</view>
+        </view>
+        <view class="center1">
+            <view class="center1_zhe">{{item.derateMoney}}元</view>
+        </view>
+        <view class="center1_date">
+            <view>{{item.validityBegin}}至{{item.validityEnd}}</view>
+        </view>
+    </view>
+    <view class="right_bg1" wx:if="{{item.couponType=='4'&&item.validityEnd>=nowData&&item.validityBegin<=nowData}}">
+        <view class="right_bg1_text1" data-index="{{index}}">可使用</view>
+    </view>
+    <view class="couponBox" wx:if="{{item.couponType=='4'&&item.validityEnd<nowData}}">
+        <view class="center2_date2">
+            <view>NO.{{filters.subString1(item.code)}} {{filters.subString2(item.code)}} {{filters.subString3(item.code)}}</view>
+        </view>
+        <view class="left1">
+            <view class="left2_quan">{{item.couponName}}券</view>
+            <view class="left2_man2">消费满{{item.miniMoney}}元可用</view>
+        </view>
+        <view class="center1">
+            <view class="center2_zhe2">{{item.derateMoney}}元</view>
+        </view>
+        <view class="center2_date2">
+            <view>{{item.validityBegin}}至{{item.validityEnd}}</view>
+        </view>
+    </view>
+    <view class="right_bg2" wx:if="{{item.couponType=='4'&&item.validityEnd<nowData}}">
+        <view class="right_bg2_text2">已过期</view>
+    </view>
+    <view class="couponBox" wx:if="{{item.couponType=='4'&&item.validityBegin>nowData}}">
+        <view class="center2_date2">
+            <view>NO.{{filters.subString1(item.code)}} {{filters.subString2(item.code)}} {{filters.subString3(item.code)}}</view>
+        </view>
+        <view class="left1">
+            <view class="left2_quan">{{item.couponName}}券</view>
+            <view class="left2_man2">消费满{{item.miniMoney}}元可用</view>
+        </view>
+        <view class="center1">
+            <view class="center2_zhe2">{{item.derateMoney}}元</view>
+        </view>
+        <view class="center2_date2">
+            <view>{{item.validityBegin}}至{{item.validityEnd}}</view>
+        </view>
+    </view>
+    <view class="right_bg2" wx:if="{{item.couponType=='4'&&item.validityBegin>nowData}}">
+        <view class="right_bg2_text2">未生效</view>
+    </view>
+</view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>
+<wxs module="filters">
+var subString1 = (function(value) {
+    return (value.substring(0, 4))
+});
+var subString2 = (function(value) {
+    return (value.substring(4, 8))
+});
+var subString3 = (function(value) {
+    return (value.substring(8, 12))
+});
+module.exports = ({
+    subString1: subString1,
+    subString2: subString2,
+    subString3: subString3,
+});
+</wxs>

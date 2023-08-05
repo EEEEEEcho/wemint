@@ -1,0 +1,17 @@
+// \pages/stu/activityPay/activityPay inputUser Data Flow
+digraph {
+	"7126cf4db9af45a08bcf8e25fde0d30c" [label="FunctionCall,
+function name -> inputUser,
+param -> a.,
+a,
+" color=blue]
+	"6c98c3e041524498adba2bf97e5a63a3" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"7d9af5b2b912400ca5a741426903feee" [label="Object Properties
+{
+userName -> a.detail.value
+}" color=blue]
+	"6c98c3e041524498adba2bf97e5a63a3" -> "7d9af5b2b912400ca5a741426903feee"
+	"7126cf4db9af45a08bcf8e25fde0d30c" -> "6c98c3e041524498adba2bf97e5a63a3"
+}

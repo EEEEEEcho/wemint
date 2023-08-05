@@ -1,0 +1,30 @@
+.popupFromShare {
+    position: fixed;
+    right: 10rpx;
+    bottom: 132rpx;
+    z-index: 99;
+    box-sizing: border-box;
+    width: 150rpx;
+}
+
+.popupFromShare .goToIndex {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 14rpx rgba(51,51,51,.2);
+    transition: all .3s;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.popupFromShare .goToIndex .homeBtn {
+    display: inline-block;
+    width: 60rpx;
+    height: 60rpx;
+}

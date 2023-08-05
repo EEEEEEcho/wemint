@@ -1,0 +1,53 @@
+page {
+    background-color: #f4f4f4;
+}
+
+.container {
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+.portrait {
+    height: 186rpx;
+}
+
+.member-name {
+    padding: 26rpx 0;
+    font-size: 30rpx;
+    display: flex;
+}
+
+.member-name .memberName {
+    width: 20%;
+}
+
+.member-name .member-name-color {
+    color: #999;
+    flex: 1;
+    text-align: right;
+}
+
+.portrait,.member-name {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 26rpx;
+    padding-right: 26rpx;
+    align-items: center;
+    background: #fff;
+}
+
+.portrait .portrait-img {
+    width: 136rpx;
+    height: 136rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.portrait .portrait-img image {
+    width: 100%;
+}
+
+.portrait .portrait-tit {
+    font-size: 30rpx;
+    color: #333;
+}

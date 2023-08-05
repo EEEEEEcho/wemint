@@ -1,0 +1,44 @@
+// \pages/cart/cart bindCheckbox Data Flow
+digraph {
+	ea9704f757b144979c5bd9fc144406ea [label="FunctionCall,
+function name -> bindCheckbox,
+param -> t,
+t.,
+" color=blue]
+	eb08a1c677c54184aef90f482a9c8cfc [label=VariableDeclarations color=blue]
+	ad19e23a5cfd4a6aa1b738b9ba848ab9 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"6cc8b55717d642edbe9e21d259a5c159" [label="CallExpression,
+callee name -> parseInt,
+param -> t.currentTarget.dataset.index,
+" color=blue]
+	ad19e23a5cfd4a6aa1b738b9ba848ab9 -> "6cc8b55717d642edbe9e21d259a5c159"
+	eb08a1c677c54184aef90f482a9c8cfc -> ad19e23a5cfd4a6aa1b738b9ba848ab9
+	"1376fcebd1414ec0b77a6f784a8adadb" [label="VariableDeclarator,
+left -> e,
+right -> this.data.carts[a].selected" color=blue]
+	eb08a1c677c54184aef90f482a9c8cfc -> "1376fcebd1414ec0b77a6f784a8adadb"
+	"271964d3a8a0480e8973731c81200fc7" [label="VariableDeclarator,
+left -> s,
+right -> this.data.carts" color=blue]
+	eb08a1c677c54184aef90f482a9c8cfc -> "271964d3a8a0480e8973731c81200fc7"
+	ea9704f757b144979c5bd9fc144406ea -> eb08a1c677c54184aef90f482a9c8cfc
+	"5e63500c27154d23b1b3ec8b7278ca17" [label=SequenceExpression color=blue]
+	"39d3900c3be443b8a6d63ae9afecd29d" [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	f02cbfb1c55a493697838cbdffbdb8f1 [label="!e" color=blue]
+	"39d3900c3be443b8a6d63ae9afecd29d" -> f02cbfb1c55a493697838cbdffbdb8f1
+	"5e63500c27154d23b1b3ec8b7278ca17" -> "39d3900c3be443b8a6d63ae9afecd29d"
+	"35b0ac0ca5a34f3fb67de8804328f859" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"90c44180001c46cba928b285949c2e58" [label="Object Properties
+{
+carts -> s
+}" color=blue]
+	"35b0ac0ca5a34f3fb67de8804328f859" -> "90c44180001c46cba928b285949c2e58"
+	"5e63500c27154d23b1b3ec8b7278ca17" -> "35b0ac0ca5a34f3fb67de8804328f859"
+	ea9704f757b144979c5bd9fc144406ea -> "5e63500c27154d23b1b3ec8b7278ca17"
+}

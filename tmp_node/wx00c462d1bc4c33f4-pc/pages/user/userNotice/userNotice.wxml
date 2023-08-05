@@ -1,0 +1,17 @@
+<view class="line"></view>
+<view class="noticebox" wx:for="{{notices}}" wx:key="key">
+    <view class="date">{{notices[index].creationTime}}</view>
+    <view class="textbox">
+        <view class="title" wx:if="{{notices[index].bonusType=='X'}}">记录：消费</view>
+        <view class="title" wx:if="{{notices[index].bonusType=='C'}}">记录：充值</view>
+        <view class="text">
+            <text class="textcontent" wx:if="{{notices[index].bonusType=='X'}}">消费:{{notices[index].realPrice}}元,赠送{{notices[index].addMinusBonus}}积分,赠送:{{notices[index].balanceGive==''?0:notices[index].balanceGive}}元。</text>
+            <text class="textcontent" wx:if="{{notices[index].bonusType=='C'}}">充值:{{notices[index].realPrice}}元,赠送{{notices[index].addMinusBonus}}积分,赠送:{{notices[index].balanceGive==''?0:notices[index].balanceGive}}元。</text>
+        </view>
+    </view>
+</view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>
+<wxs module="filters" src="../../../addmu.wxs" />

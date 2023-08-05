@@ -1,0 +1,17 @@
+// \pages/customCenter/customCenter selectReason Data Flow
+digraph {
+	"5965f23be3eb4beeae57e5dbea04a8ee" [label="FunctionCall,
+function name -> selectReason,
+param -> e,
+e.,
+" color=blue]
+	ff8678909e8f42158ef5276d7e07f991 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"622d874a4cb948d6908f334f2ae0b4ee" [label="Object Properties
+{
+selectedReason -> e.currentTarget.dataset.id
+}" color=blue]
+	ff8678909e8f42158ef5276d7e07f991 -> "622d874a4cb948d6908f334f2ae0b4ee"
+	"5965f23be3eb4beeae57e5dbea04a8ee" -> ff8678909e8f42158ef5276d7e07f991
+}

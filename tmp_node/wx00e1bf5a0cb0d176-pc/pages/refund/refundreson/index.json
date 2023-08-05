@@ -1,0 +1,10 @@
+{
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "售后申请",
+    "backgroundColor": "#f4f4f4",
+    "backgroundTextStyle": "light",
+    "usingComponents": {
+        "common-modal": "../../../components/popup/index"
+    }
+}

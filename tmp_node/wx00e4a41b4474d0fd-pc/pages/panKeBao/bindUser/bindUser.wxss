@@ -1,0 +1,434 @@
+.buildingContainer {
+    position: relative;
+    width: 750rpx;
+}
+
+.building-prograss {
+    position: relative;
+    width: 750rpx;
+    height: 136rpx;
+    vertical-align: middle;
+    line-height: 136rpx;
+    background-color: #fff;
+    text-align: center;
+    font-size: 0px;
+}
+
+.building-prograss-item {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 194rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 0px;
+}
+
+.building-prograss-item text {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    letter-spacing: 0;
+}
+
+.building-prograss-divide {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 38rpx;
+    height: 2rpx;
+    background-color: #2359CC;
+}
+
+.building-prograss-bottom {
+    position: relative;
+    width: 750rpx;
+    height: 16rpx;
+    background-color: #F3F1F4;
+}
+
+.building-information {
+    position: relative;
+    width: 750rpx;
+}
+
+.building-title {
+    position: relative;
+    width: 656rpx;
+    height: 88rpx;
+    margin-left: 47rpx;
+    text-align: left;
+}
+
+.building-title text {
+    font-family: PingFangSC-Medium;
+    font-size: 30rpx;
+    color: #202020;
+    letter-spacing: 0;
+    line-height: 88rpx;
+}
+
+.building-item {
+    position: relative;
+    width: 656rpx;
+    height: 90rpx;
+    margin-left: 47rpx;
+    margin-bottom: 20rpx;
+}
+
+.building-item-input-name {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 456rpx;
+    height: 90rpx;
+    border-radius: 10px;
+    line-height: 90rpx;
+    background: #F2F2F2;
+}
+
+.building-item-input-name input {
+    width: 436rpx;
+    height: 90rpx;
+    font-size: 30rpx;
+    color: #000;
+    margin-left: 20rpx;
+}
+
+.building-item-input {
+}
+
+.building-item-input-placeholder {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #A5A5A5;
+    letter-spacing: 0;
+    line-height: 90rpx;
+}
+
+.building-item-male {
+    position: relative;
+    display: inline-block;
+    margin-left: 10rpx;
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 90rpx;
+    vertical-align: middle;
+}
+
+.building-item-male text {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    letter-spacing: 0;
+}
+
+.building-item-female {
+    position: relative;
+    display: inline-block;
+    margin-left: 10rpx;
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 90rpx;
+    vertical-align: middle;
+}
+
+.building-item-female text {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.building-item-input-ID {
+    width: 656rpx;
+    height: 90rpx;
+    border-radius: 10rpx;
+    line-height: 90rpx;
+    background: #F2F2F2;
+}
+
+.building-item-input-ID input {
+    width: 636rpx;
+    height: 90rpx;
+    font-size: 30rpx;
+    color: #000;
+    margin-left: 20rpx;
+}
+
+.building-userID-description {
+    position: relative;
+    width: 628rpx;
+    background: #F2F2F2;
+    margin-left: 47rpx;
+    padding: 10rpx 14rpx 10rpx 14rpx;
+}
+
+.building-userID-description {
+    font-family: PingFangSC-Regular;
+    font-size: 22rpx;
+    color: #A5A5A5;
+    letter-spacing: 0;
+    line-height: 30rpx;
+}
+
+.building-userID {
+    position: relative;
+    width: 656rpx;
+    height: 278rpx;
+    background: #F2F2F2;
+    border-radius: 10px;
+    margin-left: 47rpx;
+    margin-top: 20rpx;
+}
+
+.building-userID-content {
+    position: relative;
+    width: 656rpx;
+    height: 216rpx;
+    text-align: center;
+    line-height: 216rpx;
+}
+
+.building-userID-content-bg {
+    position: absolute;
+    width: 656rpx;
+    height: 216rpx;
+}
+
+.building-userID-content-bg-img {
+    width: 656rpx;
+    height: 216rpx;
+}
+
+.building-userID-content-logo {
+    position: absolute;
+    width: 656rpx;
+    height: 216rpx;
+}
+
+.building-userID-content-logo-border {
+    position: relative;
+    margin-left: 278rpx;
+    margin-top: 56rpx;
+    width: 100rpx;
+    height: 100rpx;
+    text-align: center;
+    line-height: 100rpx;
+    border: 2px dashed #A5A5A5;
+    font-size: 0px;
+}
+
+.building-userID-content-logo-border text {
+    color: #A5A5A5;
+    font-size: 40px;
+    line-height: 100rpx;
+}
+
+.building-userID-content-description {
+    position: relative;
+    width: 656rpx;
+    height: 62rpx;
+    line-height: 62rpx;
+    text-align: center;
+    background-color: #A5A5A5;
+    border-bottom-right-radius: 10rpx;
+    border-bottom-left-radius: 10rpx;
+}
+
+.building-userID-content-description text {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.building-userID-warning {
+    position: relative;
+    width: 624rpx;
+    padding: 10rpx 16rpx;
+    margin-left: 47rpx;
+    background-color: #F2F2F2;
+    margin-top: 30rpx;
+}
+
+.building-userID-warning-description {
+    position: relative;
+    width: 464rpx;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0px;
+}
+
+.building-userID-warning-description text {
+    font-family: PingFangSC-Regular;
+    font-size: 22rpx;
+    color: #A5A5A5;
+    letter-spacing: 0;
+    line-height: 26rpx;
+}
+
+.building-userID-warning-button {
+    position: relative;
+    width: 152rpx;
+    height: 46rpx;
+    line-height: 46rpx;
+    border: 1px solid #2359CC;
+    border-radius: 23px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0px;
+}
+
+.building-userID-warning-button text {
+    font-family: PingFangSC-Regular;
+    font-size: 22rpx;
+    line-height: 46rpx;
+    color: #2359CC;
+    letter-spacing: 0;
+}
+
+.building-commit {
+    position: absolute;
+    bottom: 86rpx;
+    left: 0rpx;
+    width: 750rpx;
+}
+
+.building-commit-content {
+    position: relative;
+    width: 656rpx;
+    height: 90rpx;
+    margin-left: 47rpx;
+    background-color: #2359CC;
+    border-radius: 45rpx;
+    text-align: center;
+    line-height: 90rpx;
+}
+
+.building-commit-content text {
+    font-family: PingFangSC-Semibold;
+    font-size: 36rpx;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.building-commit-content-edit {
+    position: relative;
+    width: 656rpx;
+    height: 30rpx;
+    margin-top: 10rpx;
+    margin-left: 47rpx;
+    text-align: center;
+}
+
+.building-commit-content-edit text {
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    color: #2359CC;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 28rpx;
+}
+
+.building-commit-warning {
+    position: fixed;
+    width: 750rpx;
+    z-index: 10;
+}
+
+.building-commit-warning-bg {
+    position: absolute;
+    width: 750rpx;
+    background-color: #000;
+    opacity: 0.5;
+}
+
+.building-commit-warning-content {
+    position: absolute;
+    width: 610rpx;
+    height: 314rpx;
+    top: 50%;
+    margin-top: -157rpx;
+    left: 50%;
+    margin-left: -305rpx;
+    background-color: #FFFFFF;
+    border-radius: 16rpx;
+    text-align: center;
+}
+
+.building-commit-warning-content-title {
+    position: relative;
+    width: 610rpx;
+    height: 156rpx;
+    line-height: 156rpx;
+    text-align: center;
+}
+
+.building-commit-warning-content-title text {
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    color: #232323;
+    text-align: center;
+}
+
+.building-commit-warning-btn {
+    position: relative;
+    width: 200rpx;
+    height: 80rpx;
+    margin-left: 205rpx;
+    background-color: #2359CC;
+    border-radius: 16rpx;
+}
+
+.building-commit-warning-btn text {
+    font-family: PingFangSC-Semibold;
+    font-size: 30rpx;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 40px;
+}
+
+.building-information-content {
+    position: relative;
+}
+
+.building-commit-success {
+    position: absolute;
+    width: 750rpx;
+    background-color: #ffffff;
+    text-align: center;
+    z-index: 10;
+    top: 0px;
+}
+
+.building-commit-success-content {
+    text-align: center;
+    position: relative;
+    margin-top: 220rpx;
+}
+
+.building-commit-success-content-logo {
+    position: relative;
+    width: 432rpx;
+    height: 274rpx;
+}
+
+.building-commit-success-content-des {
+    position: relative;
+    text-align: center;
+}
+
+.building-commit-success-content-des text {
+    font-family: PingFangSC-Medium;
+    font-size: 30rpx;
+    color: #656565;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 50rpx;
+}

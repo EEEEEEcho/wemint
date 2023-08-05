@@ -1,0 +1,270 @@
+<view class="swiper-tab">
+    <view bindtap="clickTab" class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0">预定</view>
+    <view style="background: #999;width:1px;height:20px;margin-top:14px;"></view>
+    <view bindtap="clickTab" class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1">点餐</view>
+    <view style="background: #999;width:1px;height:20px;margin-top:14px;"></view>
+    <view bindtap="clickTab" class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2">外卖</view>
+</view>
+<swiper bindchange="swiperTab" current="{{currentTab}}" duration="300" style="padding-bottom:15px; height:{{heightFlg}}; overflow:{{overFlowFlg}}">
+    <swiper-item style="overflow:scroll">
+        <view wx:if="{{item.foodList.length>0}}" wx:for="{{infos21}}" wx:key="key">
+            <view class="line"></view>
+            <view style="width:100%;">
+                <view class="orderTime">{{item.orderCreateTimes}}</view>
+                <view class="timeline">
+                    <view>
+                        <view style="width:95%;">
+                            <view bindtap="goToDetaY" class="orderbox" data-bohui-reason="{{item.bohuiReason}}" data-current-tab="{{currentTab}}" data-id="{{item.id}}" data-order-id="{{item.id}}" data-order-state="{{item.orderState}}">
+                                <view class="first">
+                                    <view class="first-state first-state-storename">
+                    {{item.storename}}
+                  </view>
+                                    <view class="first-state" wx:if="{{item.orderState==1}}">已提交</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==2}}">已接单</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==5}}">已取消</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==6}}">已驳回</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==9}}">待评价</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==4}}">待评价</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==10}}">已完成</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==11}}">已退款</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==12}}">待退款</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==13}}">退款已驳回</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==14}}">已取消</view>
+                                    <view class="first-state" wx:else>未支付</view>
+                                </view>
+                                <view class="second" style="display:flex;flex-flow:row;justify-content:space-between;" wx:for="{{orders[index].foodList}}" wx:for-index="cellindex" wx:for-item="cell">
+                                    <view class="menu" style="color:#ccc;padding-left:10px;font-size:14px;" wx:if="{{cell.sizeName==null}}">{{cell.foodName}}×{{cell.foodCount}}</view>
+                                    <view class="menu" style="color:#ccc;padding-left:10px;font-size:14px;" wx:if="{{cell.sizeName!=''&&cell.sizeName!=null}}">{{cell.foodName}}({{cell.sizeName}})×{{cell.foodCount}}</view>
+                                    <view class="order-detail-foodname" wx:if="{{item.sizeName==null}}">{{item.foodName}}</view>
+                                    <view class="price" style="color:#ccc;padding-right:10px;font-size:14px;">￥{{cell.realPrice}}</view>
+                                </view>
+                                <view class="orderRealPrice">
+                                    <view class="float-left">总金额</view>
+                                    <view class="float-right">{{item.orderRealPrice==null||item.orderRealPrice==undefined?0:item.orderRealPrice}}</view>
+                                    <view class="orderRealPrice3" wx:if="{{orderYHprice21!=null&&orderYHprice21[index]!=0}}">优惠金额￥{{orderYHprice21[index]}}</view>
+                                    <view class="clear"></view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="btnbox" wx:if="{{item.orderState!=5&&item.orderState!=9&&item.orderState!=10&&item.orderState!=6&&item.orderState!=4&&item.orderState!=11&&item.orderState!=12&&item.orderState!=13&&item.orderState!=14}}">
+                <button bindtap="payOrder" data-current-tab="{{currentTab}}" data-id="{{item.id}}" data-order-state="{{item.orderState}}">支付订单</button>
+                <button bindtap="editOrder" data-current-tab="{{currentTab}}" data-id="{{item.id}}" data-item="{{item}}" data-order-state="{{item.orderState}}">修改订单</button>
+                <button bindtap="cancelOrder" data-current-tab="{{currentTab}}" data-id="{{item.id}}" data-order-state="{{item.orderState}}">取消订单</button>
+            </view>
+            <view class="btnbox" wx:if="{{item.orderState==6}}">
+                <button bindtap="cancelOrder" data-current-tab="{{currentTab}}" data-id="{{item.id}}" data-order-state="{{item.orderState}}">取消订单</button>
+            </view>
+            <view class="btnbox" data-order-state="{{item.orderState}}" wx:elif="{{item.orderState==9||item.orderState==4}}">
+                <button bindtap="evalOrder" data-current-tab="{{currentTab}}" data-id="{{item.id}}">评价订单</button>
+                <button bindtap="payBack" data-current-tab="{{currentTab}}" data-id="{{item.id}}">申请退款</button>
+            </view>
+            <view class="btnbox" wx:elif="{{item.orderState==4||item.orderState==9||item.orderState==10||item.orderState==14}}">
+                <button bindtap="payBack" data-current-tab="{{currentTab}}" data-id="{{item.id}}">申请退款</button>
+            </view>
+            <view class="btnbox" wx:elif="{{item.orderState==12}}">
+                <button bindtap="resumePayBack" data-current-tab="{{currentTab}}" data-id="{{item.id}}">取消退款</button>
+            </view>
+            <view class="btnbox" wx:elif="{{item.orderState==13}}">
+                <button bindtap="payBack" data-current-tab="{{currentTab}}" data-id="{{item.id}}">申请退款</button>
+                <button bindtap="bohuiReason" data-current-tab="{{currentTab}}" data-id="{{item.id}}">驳回原因</button>
+            </view>
+            <view class="clear"></view>
+        </view>
+    </swiper-item>
+    <swiper-item style="overflow:scroll">
+        <view wx:for="{{infos22}}" wx:key="key">
+            <view class="line"></view>
+            <view style="width:100%;">
+                <view class="orderTime">{{item.orderCreateTimes}}</view>
+                <view class="timeline">
+                    <view>
+                        <view style="width:95%;">
+                            <view bindtap="goToDetaD" class="orderbox" data-bohui-reason="{{item.bohuiReason}}" data-current-tab="{{currentTab}}" data-dc-beizhu="{{item.orderRemarke}}" data-id="{{item.id}}" data-order-state="{{item.orderState}}">
+                                <view class="first">
+                                    <view class="first-state first-state-storename">
+                    {{item.storeName}}
+                  </view>
+                                    <view class="first-state" wx:if="{{item.orderState==1}}">已提交</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==2}}">已接单</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==5}}">已取消</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==6}}">已驳回</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==9}}">待评价</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==4}}">待评价</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==10}}">已完成</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==11}}">已退款</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==12}}">待退款</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==13}}">退款已驳回</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==14}}">已取消</view>
+                                    <view class="first-state" wx:else>未支付</view>
+                                </view>
+                                <view class="second" style="display:flex;flex-flow:row;justify-content:space-between;" wx:for="{{orders1[index].foodList}}" wx:for-index="cellindex" wx:for-item="cell">
+                                    <view class="menu" style="color:#ccc;padding-left:10px;font-size:14px;" wx:if="{{cell.sizeName==null}}">{{cell.foodName}}×{{cell.foodCount}}</view>
+                                    <view class="menu" style="color:#ccc;padding-left:10px;font-size:14px;" wx:if="{{cell.sizeName!=''&&cell.sizeName!=null}}">{{cell.foodName}}({{cell.sizeName}})×{{cell.foodCount}}</view>
+                                    <view class="order-detail-foodname" wx:if="{{item.sizeName==null}}">{{item.foodName}}</view>
+                                    <view class="price" style="color:#ccc;padding-right:10px;font-size:14px;">￥{{cell.realPrice}}</view>
+                                </view>
+                                <view class="orderRealPrice">
+                                    <view class="float-left">总金额</view>
+                                    <view class="float-right">{{item.orderRealPrice==null||item.orderRealPrice==undefined?0:item.orderRealPrice}}</view>
+                                    <view class="orderRealPrice3" wx:if="{{orderYHDprice22!=null&&orderYHDprice22[index]!=0}}">优惠金额￥{{orderYHDprice22[index]}}</view>
+                                    <view class="clear"></view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="btnbox" wx:if="{{item.orderState!=5&&item.orderState!=9&&item.orderState!=10&&item.orderState!=6&&item.orderState!=4&&item.orderState!=11&&item.orderState!=12&&item.orderState!=13&&item.orderState!=14}}">
+                <button bindtap="payOrder" data-current-tab="{{currentTab}}" data-id="{{item.id}}" data-money="{{item.orderRealPrice}}" data-order-num="{{item.id}}">支付订单</button>
+                <button bindtap="editOrder" data-current-tab="{{currentTab}}" data-id="{{item.id}}" data-item="{{item}}">修改订单</button>
+                <button bindtap="cancelOrder" data-current-tab="{{currentTab}}" data-id="{{item.id}}">取消订单</button>
+            </view>
+            <view class="btnbox" wx:elif="{{item.orderState==9||item.orderState==4}}">
+                <button bindtap="evalOrder" data-current-tab="{{currentTab}}" data-id="{{item.id}}">评价订单</button>
+                <button bindtap="payBack" data-current-tab="{{currentTab}}" data-id="{{item.id}}">申请退款</button>
+            </view>
+            <view class="btnbox" wx:elif="{{item.orderState==10||item.orderState==14}}">
+                <button bindtap="payBack" data-current-tab="{{currentTab}}" data-id="{{item.id}}">申请退款</button>
+            </view>
+            <view class="btnbox" wx:elif="{{item.orderState==12}}">
+                <button bindtap="resumePayBack" data-current-tab="{{currentTab}}" data-id="{{item.id}}">取消退款</button>
+            </view>
+            <view class="btnbox" wx:elif="{{item.orderState==13}}">
+                <button bindtap="payBack" data-current-tab="{{currentTab}}" data-id="{{item.id}}">申请退款</button>
+                <button bindtap="bohuiReason" data-current-tab="{{currentTab}}" data-id="{{item.id}}">驳回原因</button>
+            </view>
+            <view class="clear"></view>
+        </view>
+    </swiper-item>
+    <swiper-item style="overflow:scroll">
+        <view wx:for="{{infos23}}" wx:key="key">
+            <view class="line"></view>
+            <view style="width:100%;">
+                <view class="orderTime">{{item.orderCreateTimes}}</view>
+                <view class="timeline">
+                    <view>
+                        <view style="width:95%;">
+                            <view bindtap="goToDetaW" class="orderbox" data-bohui-reason="{{item.bohuiReason}}" data-current-tab="{{currentTab}}" data-id="{{item.id}}" data-order-state="{{item.orderState}}">
+                                <view class="first">
+                                    <view class="first-state first-state-storename">
+                    {{item.storeName}}
+                  </view>
+                                    <view class="first-state" wx:if="{{item.orderState==1}}">已提交</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==2}}">已接单</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==5}}">已取消</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==6}}">已驳回</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==9}}">待配送</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==4}}">待评价</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==3}}">配送中</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==10}}">已完成</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==11}}">已退款</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==12}}">待退款</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==13}}">退款已驳回</view>
+                                    <view class="first-state" wx:elif="{{item.orderState==14}}">已取消</view>
+                                    <view class="first-state" wx:else>未支付</view>
+                                </view>
+                                <view class="second" style="display:flex;flex-flow:row;justify-content:space-between;" wx:for="{{orders2[index].foodList}}" wx:for-index="cellindex" wx:for-item="cell">
+                                    <view class="menu" style="color:#ccc;padding-left:10px;font-size:14px;" wx:if="{{cell.sizeName==null}}">{{cell.foodName}}×{{cell.foodCount}}</view>
+                                    <view class="menu" style="color:#ccc;padding-left:10px;font-size:14px;" wx:if="{{cell.sizeName!=''&&cell.sizeName!=null}}">{{cell.foodName}}({{cell.sizeName}})×{{cell.foodCount}}</view>
+                                    <view class="order-detail-foodname" wx:if="{{item.sizeName==null}}">{{item.foodName}}</view>
+                                    <view class="price" style="color:#ccc;padding-right:10px;font-size:14px;">￥{{cell.realPrice}}</view>
+                                </view>
+                                <view class="orderRealPrice">
+                                    <view class="float-left">总金额</view>
+                                    <view class="float-right">{{item.orderRealPrice==null||item.orderRealPrice==undefined?0:item.orderRealPrice}}</view>
+                                    <view class="orderRealPrice3" wx:if="{{orderYHprice23!=null&&orderYHprice23[index]!=0}}">优惠金额￥{{orderYHprice23[index]}}</view>
+                                    <view class="clear"></view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="btnbox" wx:if="{{item.orderState!=5&&item.orderState!=9&&item.orderState!=10&&item.orderState!=6&&item.orderState!=4&&item.orderState!=3&&item.orderState!=11&&item.orderState!=12&&item.orderState!=13&&item.orderState!=14}}">
+                <button bindtap="goToDetaW" data-current-tab="{{currentTab}}" data-id="{{item.id}}" data-money="{{item.orderRealPrice}}" data-order-num="{{item.id}}">支付订单</button>
+                <button bindtap="editOrder" data-current-tab="{{currentTab}}" data-id="{{item.id}}" data-item="{{item}}">修改订单</button>
+                <button bindtap="cancelOrder" data-current-tab="{{currentTab}}" data-id="{{item.id}}">取消订单</button>
+            </view>
+            <view class="btnbox" wx:elif="{{item.orderState==3||item.orderState==4||item.orderState==9}}">
+                <button bindtap="evalOrder" data-current-tab="{{currentTab}}" data-id="{{item.id}}">评价订单</button>
+                <button bindtap="payBack" data-current-tab="{{currentTab}}" data-id="{{item.id}}">申请退款</button>
+            </view>
+            <view class="btnbox" wx:elif="{{item.orderState==10||item.orderState==14}}">
+                <button bindtap="payBack" data-current-tab="{{currentTab}}" data-id="{{item.id}}">申请退款</button>
+            </view>
+            <view class="btnbox" wx:elif="{{item.orderState==12}}">
+                <button bindtap="resumePayBack" data-current-tab="{{currentTab}}" data-id="{{item.id}}">取消退款</button>
+            </view>
+            <view class="btnbox" wx:elif="{{item.orderState==13}}">
+                <button bindtap="payBack" data-current-tab="{{currentTab}}" data-id="{{item.id}}">申请退款</button>
+                <button bindtap="bohuiReason" data-current-tab="{{currentTab}}" data-id="{{item.id}}">驳回原因</button>
+            </view>
+            <view class="clear"></view>
+        </view>
+    </swiper-item>
+</swiper>
+<view class="cover" wx:if="{{disp1==true||disp2==true||disp3==true}}">
+    <view class="cover" wx:if="{{disp1==true||disp2==true||disp3==true}}"></view>
+    <view class="pb-container" wx:if="{{disp1==true}}">
+        <view bindtap="resume" class="text-right100">X</view>
+        <view class="pb-title">申请退款</view>
+        <view class="pb-orderId">
+            <view class="pb-left">订单编号</view>
+            <view class="pb-right">{{orderNum}}</view>
+        </view>
+        <view class="pb-payBackMoney">
+            <view class="pb-left">退款金额</view>
+            <view class="pb-right">￥{{payBackMoney}}</view>
+        </view>
+        <view class="pb-payBackReason0">退款理由</view>
+        <textarea bindblur="getReason" class="pb-payBackReason" placeholder="请输入退款理由(不超过100个字符)"></textarea>
+        <view bindtap="submitPayBack" class="pb-submit">提交退款</view>
+    </view>
+    <view class="pb-container" wx:if="{{disp2==true}}">
+        <view bindtap="resume" class="text-right100">X</view>
+        <view class="pb-title">商家驳回原因</view>
+        <view class="pb-orderId">
+            <view class="pb-left">订单编号</view>
+            <view class="pb-right">{{orderNum}}</view>
+        </view>
+        <view class="pb-payBackMoney">
+            <view class="pb-left">退款金额</view>
+            <view class="pb-right">￥{{payBackMoney}}</view>
+        </view>
+        <view class="pb-bohuiReason">
+            <view class="pb-left1">驳回原因</view>
+            <view class="pb-right1">{{bohuiReason}}</view>
+        </view>
+        <view class="pb-bottom">
+            <view bindtap="contact" class="pb-contact">联系商家</view>
+            <view bindtap="resume" class="pb-confirm">确定</view>
+        </view>
+    </view>
+    <view class="pb-container" wx:if="{{disp3==true}}">
+        <view bindtap="resume" class="text-right100">X</view>
+        <view class="pb-title">商家已退款</view>
+        <view class="pb-orderId">
+            <view class="pb-left">订单编号</view>
+            <view class="pb-right">{{orderNum}}</view>
+        </view>
+        <view class="pb-payBackMoney">
+            <view class="pb-left">退款金额</view>
+            <view class="pb-right">￥{{payBackMoney}}</view>
+        </view>
+        <view class="pb-bohuiReason">
+            <view class="pb-left1">退款理由</view>
+            <view class="pb-right1">{{refundresult}}</view>
+        </view>
+        <view class="pb-bottom">
+            <view bindtap="contact" class="pb-contact">联系商家</view>
+            <view bindtap="resume" class="pb-confirm">确定</view>
+        </view>
+    </view>
+</view>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

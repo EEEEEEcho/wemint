@@ -1,0 +1,22 @@
+// \pages/fightGroups/fightgroups goPinTuanProDetail Data Flow
+digraph {
+	"021c65eeb9ad4832baa30a512565ca56" [label="FunctionCall,
+function name -> goPinTuanProDetail,
+param -> " color=blue]
+	ede6e88929ec47ad8773dfff433d332f [label=SequenceExpression color=blue]
+	c8829f23777c4621ae041db6707a7614 [label="CallExpression,
+callee name -> console.log,
+param -> '拼团ID' + t.data.product.sale_price,
+" color=blue]
+	ede6e88929ec47ad8773dfff433d332f -> c8829f23777c4621ae041db6707a7614
+	e08cd058966e4425a1e9924edfc3d5eb [label="CallExpression,
+callee name -> wx.redirectTo,
+param -> " color=blue]
+	"52f1a8a603014197b2dfc8865f5af4a0" [label="Object Properties
+{
+url -> './productdetail?pintuan_id=' + this.data.pintuan_id + '&id=' + this.data.pintuan_product_id + '&img=' + t.data.product.img_src + '&price=' + t.data.product.sale_price + '&storenum=' + t.data.product.remain_stock + '&proid=' + t.data.product.product_id + '&buycount=' + t.data.product.buy_limit_num
+}" color=blue]
+	e08cd058966e4425a1e9924edfc3d5eb -> "52f1a8a603014197b2dfc8865f5af4a0"
+	ede6e88929ec47ad8773dfff433d332f -> e08cd058966e4425a1e9924edfc3d5eb
+	"021c65eeb9ad4832baa30a512565ca56" -> ede6e88929ec47ad8773dfff433d332f
+}

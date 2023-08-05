@@ -1,0 +1,21 @@
+// \pages/shop/square changePaymentWay Data Flow
+digraph {
+	"1ebf6352ddd24368b07fbd954cc259ff" [label="FunctionCall,
+function name -> changePaymentWay,
+param -> t,
+t.,
+" color=blue]
+	b20daf615bb14d3e9dee24cb31a51e27 [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"842d4626b96343758b5d7e861d9056e9" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"6b25d5723d0b4462a2894ec0ebcf85d4" [label="Object Properties
+{
+paymentFlag -> t.currentTarget.dataset.paymentflag
+}" color=blue]
+	"842d4626b96343758b5d7e861d9056e9" -> "6b25d5723d0b4462a2894ec0ebcf85d4"
+	b20daf615bb14d3e9dee24cb31a51e27 -> "842d4626b96343758b5d7e861d9056e9"
+	"1ebf6352ddd24368b07fbd954cc259ff" -> b20daf615bb14d3e9dee24cb31a51e27
+}

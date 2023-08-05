@@ -1,0 +1,43 @@
+// \pages/company/businessCard/cardDetails navigationalmap Data Flow
+digraph {
+	"768925bfd5a34a3982f6132b88fd848c" [label="FunctionCall,
+function name -> navigationalmap,
+param -> " color=blue]
+	b40e69c373af4e99a00edb02ac969bf0 [label="If Alternate" color=blue]
+	f3ecded349644fd28377275a989ac669 [label=VariableDeclarations color=blue]
+	"6f9aca7bc1244b978bb4d8ce22a106f9" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"6a55b9c2919b4c7e9933091f17080a66" [label="Object Properties
+{
+}" color=blue]
+	"057fc6e95e484cb59841d61794962c67" [label="ConditionalExpression,
+ conditional list -> t.data.optionsobj.BusinessCardID,t.data.optionsobj.cid" color=blue]
+	"6a55b9c2919b4c7e9933091f17080a66" -> "057fc6e95e484cb59841d61794962c67"
+	"01bca79a3f644b19bcf3502b89afe37f" [label="ConditionalExpression,
+ conditional list -> t.data.optionsobj.BusinessCardID,t.data.optionsobj.cid" color=blue]
+	"6a55b9c2919b4c7e9933091f17080a66" -> "01bca79a3f644b19bcf3502b89afe37f"
+	"6f9aca7bc1244b978bb4d8ce22a106f9" -> "6a55b9c2919b4c7e9933091f17080a66"
+	f3ecded349644fd28377275a989ac669 -> "6f9aca7bc1244b978bb4d8ce22a106f9"
+	b40e69c373af4e99a00edb02ac969bf0 -> f3ecded349644fd28377275a989ac669
+	"768925bfd5a34a3982f6132b88fd848c" -> b40e69c373af4e99a00edb02ac969bf0
+	"6d148d3dee2842bf8b804d72b9fc0d2c" [label="CallExpression,
+callee name -> wx.openLocation,
+param -> " color=blue]
+	"6c5a824f13784263bd8583d95edf770b" [label="Object Properties
+{
+address -> t.data.cardcontent.Address
+}" color=blue]
+	"1b802c3762f442f7b4335cdeaa95440d" [label="CallExpression,
+callee name -> Number,
+param -> t.data.cardcontent.Lng,
+" color=blue]
+	"6c5a824f13784263bd8583d95edf770b" -> "1b802c3762f442f7b4335cdeaa95440d"
+	"4da005d21bff4ff39bb9e8b3bacde51c" [label="CallExpression,
+callee name -> Number,
+param -> t.data.cardcontent.Lat,
+" color=blue]
+	"6c5a824f13784263bd8583d95edf770b" -> "4da005d21bff4ff39bb9e8b3bacde51c"
+	"6d148d3dee2842bf8b804d72b9fc0d2c" -> "6c5a824f13784263bd8583d95edf770b"
+	"768925bfd5a34a3982f6132b88fd848c" -> "6d148d3dee2842bf8b804d72b9fc0d2c"
+}

@@ -1,0 +1,22 @@
+<navigate cartPage="{{cartPage}}"></navigate>
+<view style="margin-top: {{navH+status+10}}px;">
+    <view class="suggestion">
+        <view class="sug_cate">
+            <text class="sug_cate_title">反馈类型</text>
+            <view class="sug_cate_label">
+                <view bindtap="changeType" class="label {{active==index?'label_select':''}}" data-index="{{index}}" data-typeId="{{index+1}}" wx:for="{{sugCateList}}">{{item.typeName}}</view>
+            </view>
+        </view>
+        <view class="sug_content">
+            <text class="sug_content_title">反馈内容</text>
+            <view class="sug_content_txt">
+                <textarea bindblur="getContent" class="textarea" maxlength="-1" placeholder="请填写您的建议" placeholderClass="placeholder"></textarea>
+            </view>
+        </view>
+    </view>
+    <view class="describe">
+        <view class="describe_up">致力为您提供专业，高效，高品质的家居和服务。</view>
+        <text class="describe_down">欢迎您提供宝贵的意见和建议</text>
+    </view>
+    <view bindtap="formSubmit" class="btn">提交反馈</view>
+</view>

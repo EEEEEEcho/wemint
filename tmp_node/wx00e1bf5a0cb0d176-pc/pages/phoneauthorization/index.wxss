@@ -1,0 +1,71 @@
+.phoneauthorization {
+    width: 100%;
+    padding: 0 26rpx;
+    box-sizing: border-box;
+}
+
+.phoneauthorization-img {
+    width: 140rpx;
+    height: 140rpx;
+    margin: 80rpx auto 110rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #ccc;
+}
+
+.phoneauthorization-img image {
+    width: 140rpx;
+    height: 140rpx;
+}
+
+.information {
+    padding: 56rpx 0 96rpx;
+}
+
+.information .information-title {
+    font-size: 30rpx;
+    color: #333;
+    text-align: center;
+    padding-bottom: 48rpx;
+}
+
+.information .information-phone {
+    font-size: 24rpx;
+    color: #333;
+    text-align: center;
+}
+
+.btn-groupss button {
+    height: 88rpx;
+    background: #2ab31b;
+    border-radius: 44rpx;
+    border: 1rpx solid #2ab31b;
+    box-shadow: 0 4rpx 10rpx rgba(42,179,27,0.2);
+}
+
+.back-homepage button {
+    height: 88rpx;
+    background: #fff;
+    border-radius: 44rpx;
+    border: 1rpx solid #ddd;
+    margin-top: 30rpx;
+    color: #2ab31b;
+    box-shadow: 0 4rpx 10rpx rgba(238,238,238,0.2);
+}
+
+.identifying {
+    width: 8rpx;
+    height: 8rpx;
+    border-radius: 50%;
+    background: #333;
+}
+
+.tips {
+    text-align: center;
+    font-size: 24rpx;
+    color: #999;
+    position: fixed;
+    bottom: 48rpx;
+    left: 50%;
+    transform: translate(-50%,0);
+}

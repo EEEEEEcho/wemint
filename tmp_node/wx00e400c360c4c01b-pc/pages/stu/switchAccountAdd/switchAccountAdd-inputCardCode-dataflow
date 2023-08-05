@@ -1,0 +1,17 @@
+// \pages/stu/switchAccountAdd/switchAccountAdd inputCardCode Data Flow
+digraph {
+	e6d3d0679a4a42a58f449480fe5eadb4 [label="FunctionCall,
+function name -> inputCardCode,
+param -> a.,
+a,
+" color=blue]
+	"5a20f6739169468992b142002dff87b4" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	fcfb5f6fb36d432287cdaee6aa46eae4 [label="Object Properties
+{
+cardCode -> a.detail.value
+}" color=blue]
+	"5a20f6739169468992b142002dff87b4" -> fcfb5f6fb36d432287cdaee6aa46eae4
+	e6d3d0679a4a42a58f449480fe5eadb4 -> "5a20f6739169468992b142002dff87b4"
+}

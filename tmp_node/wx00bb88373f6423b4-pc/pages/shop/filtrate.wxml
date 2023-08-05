@@ -1,0 +1,62 @@
+<view class="container">
+    <view class="order-time">
+        <text>下单时间</text>
+    </view>
+    <view class="section">
+        <picker bindchange="startDateChange" class="startDate" end="2018-09-01" mode="date" start="2015-09-01" value="{{startDate}}">
+            <view class="picker">
+                <icon class="iconfont icon-riqi other-icon"></icon>
+                <text class="{{startDate!=''?'startTime':''}}">{{startDate==''?'开始时间':startDate}}</text>
+            </view>
+        </picker>
+        <view class="section-line">
+            <view class="line"></view>
+        </view>
+        <picker bindchange="endDateChange" class="endDate" end="2018-09-01" mode="date" start="2015-09-01" value="{{endDate}}">
+            <view class="picker">
+                <icon class="iconfont icon-riqi other-icon"></icon>
+                <text class="{{endDate!=''?'endTime':''}}">{{endDate!=''?endDate:'截止时间'}}</text>
+            </view>
+        </picker>
+    </view>
+    <view class="audit-status">
+        <text>审核状态</text>
+    </view>
+    <view class="choose-status">
+        <view catchtap="chooseWay" class="all border1px" data-idx="0" data-text="全部">
+            <view class="all-name">
+                <text>全部</text>
+            </view>
+            <view class="circle">
+                <icon class="iconfont {{chooseType===0?'icon-iconfont_select-acti1':'icon-iconfont_select'}} other-icon"></icon>
+            </view>
+        </view>
+        <view catchtap="chooseWay" class="audited border1px" data-idx="1" data-text="已审核">
+            <view class="audited-name">
+                <text>已审核</text>
+            </view>
+            <view class="circle">
+                <icon class="iconfont {{chooseType===1?'icon-iconfont_select-acti1':'icon-iconfont_select'}} other-icon"></icon>
+            </view>
+        </view>
+        <view catchtap="chooseWay" class="unaudited border1px" data-idx="2" data-text="未审核">
+            <view class="unaudited-name">
+                <text>未审核</text>
+            </view>
+            <view class="circle">
+                <icon class="iconfont {{chooseType===2?'icon-iconfont_select-acti1':'icon-iconfont_select'}} other-icon"></icon>
+            </view>
+        </view>
+        <view catchtap="chooseWay" class="cancel border1px" data-idx="3" data-text="取消审核">
+            <view class="cancel-name">
+                <text>取消审核</text>
+            </view>
+            <view class="circle">
+                <icon class="iconfont {{chooseType===3?'icon-iconfont_select-acti1':'icon-iconfont_select'}} other-icon"></icon>
+            </view>
+        </view>
+    </view>
+    <view bindtap="navigateBack" class="filtrate-sure">
+        <text>确定</text>
+    </view>
+</view>

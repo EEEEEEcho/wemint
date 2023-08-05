@@ -1,0 +1,18 @@
+// \pages/teacher/parentCircle/parentCircle claSelect3 Data Flow
+digraph {
+	"48429352671f4d26a99260a588f00815" [label="FunctionCall,
+function name -> claSelect3,
+param -> t,
+t.,
+" color=blue]
+	"3f26f64ae5144561a81a1c8d4ff13571" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"9f95a85029ac4a89945ac991ffe361a0" [label="Object Properties
+{
+}" color=blue]
+	"601c5a6874db4616bc07376fe05737e8" [label="!this.data.isCheckF3" color=blue]
+	"9f95a85029ac4a89945ac991ffe361a0" -> "601c5a6874db4616bc07376fe05737e8"
+	"3f26f64ae5144561a81a1c8d4ff13571" -> "9f95a85029ac4a89945ac991ffe361a0"
+	"48429352671f4d26a99260a588f00815" -> "3f26f64ae5144561a81a1c8d4ff13571"
+}

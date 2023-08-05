@@ -1,0 +1,23 @@
+// \pages/teacher/activity/activity activityView Data Flow
+digraph {
+	b1a3e85791c84f789cadfa75922746d5 [label="FunctionCall,
+function name -> activityView,
+param -> a.,
+a,
+" color=blue]
+	"376f9c7104664758aa1ee35a8739408e" [label=VariableDeclarations color=blue]
+	fd79758e408b46368afabc9e6a40a015 [label="VariableDeclarator,
+left -> t,
+right -> a.currentTarget.dataset.id" color=blue]
+	"376f9c7104664758aa1ee35a8739408e" -> fd79758e408b46368afabc9e6a40a015
+	b1a3e85791c84f789cadfa75922746d5 -> "376f9c7104664758aa1ee35a8739408e"
+	cb7c9b6edc8d4b5fb1b39f681490dceb [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	abdb5199f8214e15ae1734e94334070a [label="Object Properties
+{
+url -> '../activityView/activityView?id=' + t
+}" color=blue]
+	cb7c9b6edc8d4b5fb1b39f681490dceb -> abdb5199f8214e15ae1734e94334070a
+	b1a3e85791c84f789cadfa75922746d5 -> cb7c9b6edc8d4b5fb1b39f681490dceb
+}

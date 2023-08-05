@@ -1,0 +1,20 @@
+// \pages/addressModule/addressModule bindHistoryCity Data Flow
+digraph {
+	"699346213f5a461b95cf172e8089f8cf" [label="FunctionCall,
+function name -> bindHistoryCity,
+param -> t.,
+t,
+" color=blue]
+	"5ddeb8d281c1418d9e9cd814a8e03bf3" [label=SequenceExpression color=blue]
+	"6110e193bc954ae78170b80278b32d09" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	c9e318827bc84f4583573c342166fd60 [label="Object Properties
+{
+currentCity -> t.currentTarget.dataset.city
+selectCityCode -> t.currentTarget.dataset.citycode
+}" color=blue]
+	"6110e193bc954ae78170b80278b32d09" -> c9e318827bc84f4583573c342166fd60
+	"5ddeb8d281c1418d9e9cd814a8e03bf3" -> "6110e193bc954ae78170b80278b32d09"
+	"699346213f5a461b95cf172e8089f8cf" -> "5ddeb8d281c1418d9e9cd814a8e03bf3"
+}

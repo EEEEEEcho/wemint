@@ -1,0 +1,36 @@
+// \pages/shareFriend/shareFriend getPhoneNumber Data Flow
+digraph {
+	f414b32b1e324072b2a559c6326edf5f [label="FunctionCall,
+function name -> getPhoneNumber,
+param -> e,
+e.,
+" color=blue]
+	"279454ca99f7498c8d95e092a2d8956d" [label=VariableDeclarations color=blue]
+	"5bd19fe6e8b242329f1a49490bcb5080" [label="VariableDeclarator,
+left -> t,
+right -> e.detail.iv" color=blue]
+	"279454ca99f7498c8d95e092a2d8956d" -> "5bd19fe6e8b242329f1a49490bcb5080"
+	"7fee7ea045744df7864e4cd1c6483685" [label="VariableDeclarator,
+left -> r,
+right -> e.detail.encryptedData" color=blue]
+	"279454ca99f7498c8d95e092a2d8956d" -> "7fee7ea045744df7864e4cd1c6483685"
+	f414b32b1e324072b2a559c6326edf5f -> "279454ca99f7498c8d95e092a2d8956d"
+	"6025681e669a484c8edfc18bbd35d8a5" [label=SequenceExpression color=blue]
+	"90bd2ac79f4f494d9920b71344472d90" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	dfdf5d5b789543ffafa3ff64778195ab [label=SequenceExpression color=blue]
+	"84cb702f2ada438ca9888438716f7d52" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"0095c5340f4f4368ad29ef4db82f51dc" [label=SequenceExpression color=blue]
+	c19814130754488b9db0b53299fa95bc [label="CallExpression,
+callee name -> i.getPhone,
+param -> r,
+t,
+" color=blue]
+	"0095c5340f4f4368ad29ef4db82f51dc" -> c19814130754488b9db0b53299fa95bc
+	"84cb702f2ada438ca9888438716f7d52" -> "0095c5340f4f4368ad29ef4db82f51dc"
+	dfdf5d5b789543ffafa3ff64778195ab -> "84cb702f2ada438ca9888438716f7d52"
+	"90bd2ac79f4f494d9920b71344472d90" -> dfdf5d5b789543ffafa3ff64778195ab
+	"6025681e669a484c8edfc18bbd35d8a5" -> "90bd2ac79f4f494d9920b71344472d90"
+	f414b32b1e324072b2a559c6326edf5f -> "6025681e669a484c8edfc18bbd35d8a5"
+}

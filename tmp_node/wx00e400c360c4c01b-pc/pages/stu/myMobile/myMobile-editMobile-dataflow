@@ -1,0 +1,25 @@
+// \pages/stu/myMobile/myMobile editMobile Data Flow
+digraph {
+	"547cadbb478d445598f7de94619dadb3" [label="FunctionCall,
+function name -> editMobile,
+param -> " color=blue]
+	"7301a37ec15e428e8b118516d9d3daa0" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"341a0ac56aeb4e30999fa7146b29d7ca" [label="ConditionalExpression,
+ conditional list -> this.setData" color=blue]
+	"7301a37ec15e428e8b118516d9d3daa0" -> "341a0ac56aeb4e30999fa7146b29d7ca"
+	"60455c572c634c2fa9a1410ea7125641" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	c5f7677ddc1043ad919476a470547d9a [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"28fa8ae844cc4e93b987591054a57df5" [label="Object Properties
+{
+cpcId -> t.data.id
+mobile -> t.data.mobile
+}" color=blue]
+	c5f7677ddc1043ad919476a470547d9a -> "28fa8ae844cc4e93b987591054a57df5"
+	"60455c572c634c2fa9a1410ea7125641" -> c5f7677ddc1043ad919476a470547d9a
+	"7301a37ec15e428e8b118516d9d3daa0" -> "60455c572c634c2fa9a1410ea7125641"
+	"547cadbb478d445598f7de94619dadb3" -> "7301a37ec15e428e8b118516d9d3daa0"
+}

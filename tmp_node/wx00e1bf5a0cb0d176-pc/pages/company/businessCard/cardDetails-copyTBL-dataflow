@@ -1,0 +1,41 @@
+// \pages/company/businessCard/cardDetails copyTBL Data Flow
+digraph {
+	"5bf531ed05a34e27986d432500340c9f" [label="FunctionCall,
+function name -> copyTBL,
+param -> t,
+t.,
+" color=blue]
+	"751d9182620b476699e75b5d601aa304" [label="If Alternate" color=blue]
+	d2755832d070426f8256319eb62bda38 [label=VariableDeclarations color=blue]
+	fc852b874adc47f886b65c0902273f38 [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	fab71f49f4e9484baebd287e0753007c [label="Object Properties
+{
+tbType -> t.currentTarget.dataset.tbtype
+}" color=blue]
+	"3a7c16389a0f4e90b8d1375d16da5626" [label="ConditionalExpression,
+ conditional list -> e.data.optionsobj.BusinessCardID,e.data.optionsobj.cid" color=blue]
+	fab71f49f4e9484baebd287e0753007c -> "3a7c16389a0f4e90b8d1375d16da5626"
+	"047ce360239249138ee9255be652b44f" [label="ConditionalExpression,
+ conditional list -> e.data.optionsobj.BusinessCardID,e.data.optionsobj.cid" color=blue]
+	fab71f49f4e9484baebd287e0753007c -> "047ce360239249138ee9255be652b44f"
+	fc852b874adc47f886b65c0902273f38 -> fab71f49f4e9484baebd287e0753007c
+	d2755832d070426f8256319eb62bda38 -> fc852b874adc47f886b65c0902273f38
+	"751d9182620b476699e75b5d601aa304" -> d2755832d070426f8256319eb62bda38
+	"5bf531ed05a34e27986d432500340c9f" -> "751d9182620b476699e75b5d601aa304"
+	"3137ad562fe9432c9372628409602bea" [label="CallExpression,
+callee name -> wx.setClipboardData,
+param -> " color=blue]
+	"7d2056bf1a9048c7913c07969f1e4eb5" [label="Object Properties
+{
+data -> t.currentTarget.dataset.text
+}" color=blue]
+	"3137ad562fe9432c9372628409602bea" -> "7d2056bf1a9048c7913c07969f1e4eb5"
+	c414fd1a7647422c825549d49d35359e [label="FunctionCall,
+function name -> success,
+param -> t,
+" color=blue]
+	"3137ad562fe9432c9372628409602bea" -> c414fd1a7647422c825549d49d35359e
+	"5bf531ed05a34e27986d432500340c9f" -> "3137ad562fe9432c9372628409602bea"
+}

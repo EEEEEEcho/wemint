@@ -1,0 +1,39 @@
+.big-box {
+    background: url('https://imgs.52wxr.com/upload/image/201901/20190122/1548122666479072662.png') no-repeat;
+    background-color: #d51e19;
+    background-size: 100%;
+    background-position: center 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.detail-coupon {
+    width: 605rpx;
+    height: 232rpx;
+    margin-bottom: 30rpx;
+}
+
+.lt-detail-coupon {
+    width: 100%;
+    height: 100vh;
+}
+
+.detail-rule {
+    width: 534rpx;
+    height: 413rpx;
+}
+
+.other-img {
+    position: absolute;
+    bottom: 400rpx;
+}
+
+.detail-btn {
+    position: absolute;
+    bottom: 150rpx;
+    width: 656rpx;
+    height: 126rpx;
+    left: 0;
+    right: 0;
+    margin: auto;
+}

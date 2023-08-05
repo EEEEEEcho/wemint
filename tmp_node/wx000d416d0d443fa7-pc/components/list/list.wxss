@@ -1,0 +1,145 @@
+@import "../../app.wxss";
+
+.list {
+    display: flex;
+    margin-bottom: 20rpx;
+    justify-content: space-between;
+    padding: 10rpx;
+    padding-left: 40rpx;
+    border-bottom: 1rpx solid rgba(9,9,9,.1);
+}
+
+.shopListName {
+    height: 57rpx;
+    width: 360rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.listLeft {
+    margin-top: 10rpx;
+}
+
+.listLeft image {
+    width: 140rpx;
+    height: 140rpx;
+}
+
+.listMid {
+    width: 60%;
+    margin: 0 20rpx;
+}
+
+.shopName {
+    font-size: 22px;
+}
+
+.shopLevel {
+    display: flex;
+    align-items: flex-end;
+    height: 30rpx;
+    padding-top: 10rpx;
+}
+
+.levelStar {
+    margin-right: 20rpx;
+    color: rgb(254,208,95);
+    font-size: 12px;
+}
+
+.sumMonth {
+    font-size: 12px;
+    color: rgba(9,9,9,.7);
+}
+
+.shopPrice {
+    display: flex;
+    font-size: 12px;
+    color: rgba(9,9,9,.7);
+    padding-top: 20rpx;
+}
+
+.minPrice {
+    padding-right: 10rpx;
+}
+
+.disCost {
+    padding-left: 10rpx;
+}
+
+.shopPreferen>view {
+    color: rgba(9,9,9,.5);
+    margin-top: 10rpx;
+}
+
+.active_rule {
+    display: inline-block;
+    width: 35rpx;
+    height: 35rpx;
+    text-align: center;
+    line-height: 35rpx;
+    margin-right: 20rpx;
+    box-sizing: content-box;
+    border-radius: 5rpx;
+    color: white;
+}
+
+.active_rule1 {
+    background-color: rgb(50,195,255);
+}
+
+.active_rule2 {
+    background-color: rgb(252,142,58);
+}
+
+.active_rule3 {
+    background-color: rgb(255,100,100);
+}
+
+.active_rule4 {
+    background-color: rgb(10,225,165);
+}
+
+.shopState1 {
+    padding: 2rpx 10rpx;
+    border: 1rpx solid #ff6600;
+    color: #ff6600;
+    margin-bottom: 100rpx;
+    text-align: center;
+    width: 120rpx;
+}
+
+.shopState2 {
+    padding: 2rpx 10rpx;
+    border: 1rpx solid #00dcb5;
+    color: #00dcb5;
+    margin-bottom: 100rpx;
+    text-align: center;
+    width: 120rpx;
+}
+
+.shopState3 {
+    padding: 2rpx 10rpx;
+    border: 1rpx solid #8c8c8c;
+    color: #8c8c8c;
+    margin-bottom: 100rpx;
+    text-align: center;
+    width: 120rpx;
+}
+
+.listRight {
+    width: 20%;
+    margin-right: 20rpx;
+}
+
+.shopDistance {
+    text-align: center;
+    color: rgba(9,9,9,.3);
+}
+
+.shopActive {
+    font-size: 12px;
+    color: rgba(9,9,9,.5);
+    text-align: right;
+}

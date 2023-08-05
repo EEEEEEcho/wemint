@@ -1,0 +1,16 @@
+<view class="list-box showWay_{{pageData.ShowWay}}">
+    <view class="list_item" wx:for="{{pageData.Item}}">
+        <navigator url="/pages/details/details?productId={{item.ProductID}}">
+            <view class="imgbox">
+                <image src="{{item.Img}}"></image>
+            </view>
+            <view class="textbox">
+                <view class="protit" wx:if="{{pageData.ShowProductName==1}}">{{item.ProductName}}</view>
+                <view class="proprice">
+                    <text class="nowprice" wx:if="{{pageData.ShowPrice==1}}">￥{{item.Price}}</text>
+                    <text class="oldprice" wx:if="{{pageData.ShowOldPrice==1}}">￥{{item.OldPrice}}</text>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>

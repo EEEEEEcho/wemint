@@ -1,0 +1,13 @@
+// \pages/messagesList/messagesList sortList Data Flow
+digraph {
+	"76441008f17944d6b8cee4375f7aef74" [label="FunctionCall,
+function name -> sortList,
+param -> " color=blue]
+	"21cd9c4e027e425aae11c1ae227082ec" [label=SequenceExpression color=blue]
+	"22803a5a3d864c8b9fd9001eb133ea0a" [label="CallExpression,
+callee name -> console.log,
+param -> this.data.isSentAdviserList,
+" color=blue]
+	"21cd9c4e027e425aae11c1ae227082ec" -> "22803a5a3d864c8b9fd9001eb133ea0a"
+	"76441008f17944d6b8cee4375f7aef74" -> "21cd9c4e027e425aae11c1ae227082ec"
+}

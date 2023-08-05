@@ -1,0 +1,42 @@
+// \pages/user/comment/comment getDetail Data Flow
+digraph {
+	"06a6bbd2f49c4c639d4faf29829aa53b" [label="FunctionCall,
+function name -> getDetail,
+param -> t.,
+t,
+" color=blue]
+	"94d9f4c06289414fa89bd84043d3d49e" [label=VariableDeclarations color=blue]
+	ab712c7b6808409090b568f5c1f20c5a [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.index" color=blue]
+	"94d9f4c06289414fa89bd84043d3d49e" -> ab712c7b6808409090b568f5c1f20c5a
+	e3250de33701423a882feb0c85f8bf19 [label="VariableDeclarator,
+left -> r,
+right -> t.currentTarget.dataset.orderId" color=blue]
+	"94d9f4c06289414fa89bd84043d3d49e" -> e3250de33701423a882feb0c85f8bf19
+	"5986c3359ef94d429ea53f236969d59e" [label="VariableDeclarator,
+left -> s,
+right -> t.currentTarget.dataset.orderType" color=blue]
+	"94d9f4c06289414fa89bd84043d3d49e" -> "5986c3359ef94d429ea53f236969d59e"
+	"06a6bbd2f49c4c639d4faf29829aa53b" -> "94d9f4c06289414fa89bd84043d3d49e"
+	"675cf7ef94f249378828bbcdc842a7a1" [label=SequenceExpression color=blue]
+	"75dad5314fe349c88ca45a4c6c3ed7d5" [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	"95674500c8ef49e4a75cc668694dfd00" [label="Object Properties
+{
+data -> r
+}" color=blue]
+	"75dad5314fe349c88ca45a4c6c3ed7d5" -> "95674500c8ef49e4a75cc668694dfd00"
+	"675cf7ef94f249378828bbcdc842a7a1" -> "75dad5314fe349c88ca45a4c6c3ed7d5"
+	e99a0bac126a47008d2e0d8d8429a1d1 [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	"941eaf4e86a5480c945f0299d0089e7a" [label="Object Properties
+{
+data -> s
+}" color=blue]
+	e99a0bac126a47008d2e0d8d8429a1d1 -> "941eaf4e86a5480c945f0299d0089e7a"
+	"675cf7ef94f249378828bbcdc842a7a1" -> e99a0bac126a47008d2e0d8d8429a1d1
+	"06a6bbd2f49c4c639d4faf29829aa53b" -> "675cf7ef94f249378828bbcdc842a7a1"
+}

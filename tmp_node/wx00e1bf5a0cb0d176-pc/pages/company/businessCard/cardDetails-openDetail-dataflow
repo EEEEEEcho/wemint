@@ -1,0 +1,16 @@
+// \pages/company/businessCard/cardDetails openDetail Data Flow
+digraph {
+	"94cb98dbd48a489ebaa566f7f7a04467" [label="FunctionCall,
+function name -> openDetail,
+param -> " color=blue]
+	"84f21f9e18e845f8a74aa9a07ce8f797" [label="CallExpression,
+callee name -> a.setData,
+param -> " color=blue]
+	d0257a9580d94914a0a5b6c99c2a61d4 [label="Object Properties
+{
+}" color=blue]
+	"142390c9d32f4f349aca13ddea12fb57" [label="!a.data.openDetailFlag" color=blue]
+	d0257a9580d94914a0a5b6c99c2a61d4 -> "142390c9d32f4f349aca13ddea12fb57"
+	"84f21f9e18e845f8a74aa9a07ce8f797" -> d0257a9580d94914a0a5b6c99c2a61d4
+	"94cb98dbd48a489ebaa566f7f7a04467" -> "84f21f9e18e845f8a74aa9a07ce8f797"
+}

@@ -1,0 +1,90 @@
+// \pages/shop/square onCouponChange Data Flow
+digraph {
+	"8d2048bc659d4c8a8119981521fa1502" [label="FunctionCall,
+function name -> onCouponChange,
+param -> t,
+t.,
+" color=blue]
+	"0ba93f56dd45414db72ba928c55048a0" [label=VariableDeclarations color=blue]
+	bfb9423c0be7421cbfa13f022ade529e [label="VariableDeclarator,
+left -> e,
+right -> t.currentTarget.dataset.type" color=blue]
+	"0ba93f56dd45414db72ba928c55048a0" -> bfb9423c0be7421cbfa13f022ade529e
+	e3b9065cb2aa4021860e6a4bde27a21e [label="VariableDeclarator,
+left -> a,
+right -> t.currentTarget.dataset.itemid" color=blue]
+	"0ba93f56dd45414db72ba928c55048a0" -> e3b9065cb2aa4021860e6a4bde27a21e
+	"968463a7b2944b0bb394fe0305c05147" [label="VariableDeclarator,
+left -> n,
+right -> t.currentTarget.dataset.amount" color=blue]
+	"0ba93f56dd45414db72ba928c55048a0" -> "968463a7b2944b0bb394fe0305c05147"
+	"7379d07e98f341328c8c8967868fe7a7" [label="VariableDeclarator,
+left -> i,
+right -> t.currentTarget.dataset.idx" color=blue]
+	"0ba93f56dd45414db72ba928c55048a0" -> "7379d07e98f341328c8c8967868fe7a7"
+	"8d2048bc659d4c8a8119981521fa1502" -> "0ba93f56dd45414db72ba928c55048a0"
+	"073d7889098941dc9de6106980507cb2" [label="If Alternate" color=blue]
+	"1d5e180d0dae4c07b5c7bfe91982ea5e" [label=VariableDeclarations color=blue]
+	"23762879d6f742269bbd527265291faf" [label="VariableDeclarator,
+left -> o,
+right -> this.data.squareInfo.coupons[i]" color=blue]
+	"1d5e180d0dae4c07b5c7bfe91982ea5e" -> "23762879d6f742269bbd527265291faf"
+	"073d7889098941dc9de6106980507cb2" -> "1d5e180d0dae4c07b5c7bfe91982ea5e"
+	c51486fa15a046b1a021df15d4d95294 [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"887e5ff84d5741f89b13f9564aaa6267" [label="Object Properties
+{
+ItemID -> o.ItemID
+}" color=blue]
+	d0ebf8f0566b441b9ff0ef378c47cf75 [label="ConditionalExpression,
+ conditional list -> o.Amount / 10 + '折','订单满' + o.OrderMoney + '元减' + o.Amount + '元'" color=blue]
+	"887e5ff84d5741f89b13f9564aaa6267" -> d0ebf8f0566b441b9ff0ef378c47cf75
+	c51486fa15a046b1a021df15d4d95294 -> "887e5ff84d5741f89b13f9564aaa6267"
+	"073d7889098941dc9de6106980507cb2" -> c51486fa15a046b1a021df15d4d95294
+	"8d2048bc659d4c8a8119981521fa1502" -> "073d7889098941dc9de6106980507cb2"
+	"49eab0426a1e4efb88c3a36ddc590182" [label=SequenceExpression color=blue]
+	e446cbf17e934346adf8692a097b115b [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"39e7b7bc1ca54a58bfd4852e80a33364" [label="Object Properties
+{
+}" color=blue]
+	"7519a893975945fca6c5d0a17e4b3731" [label="!this.data.couponinfoFlag" color=blue]
+	"39e7b7bc1ca54a58bfd4852e80a33364" -> "7519a893975945fca6c5d0a17e4b3731"
+	"54f3ed594b5b46dd9956907cd9f74c40" [label="!this.data.textareaFlag" color=blue]
+	"39e7b7bc1ca54a58bfd4852e80a33364" -> "54f3ed594b5b46dd9956907cd9f74c40"
+	e446cbf17e934346adf8692a097b115b -> "39e7b7bc1ca54a58bfd4852e80a33364"
+	"49eab0426a1e4efb88c3a36ddc590182" -> e446cbf17e934346adf8692a097b115b
+	"261e0713256642ccb356982f42405aae" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"0a8d764651984a45aeccad95393e43cd" [label="Object Properties
+{
+Type -> e
+ItemID -> a
+Amount -> n
+}" color=blue]
+	"261e0713256642ccb356982f42405aae" -> "0a8d764651984a45aeccad95393e43cd"
+	"49eab0426a1e4efb88c3a36ddc590182" -> "261e0713256642ccb356982f42405aae"
+	f09356706be04831b4cb9a3441e2e47d [label="CallExpression,
+callee name -> this.reCalMoney,
+param -> " color=blue]
+	"114310dfb0c047a397407187d0b42b79" [label="FunctionCall,
+function name -> reCalMoney,
+param -> " color=blue]
+	"9fdef4cc2546446e8e752d65820e0eb7" [label=SequenceExpression color=blue]
+	b49bf3c92e1f4cf89747ae4b55a4ab32 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"0bffb318f9bf4a75aab4c2e8b5c14744" [label="Object Properties
+{
+squareInfo -> this.data.squareInfo
+}" color=blue]
+	b49bf3c92e1f4cf89747ae4b55a4ab32 -> "0bffb318f9bf4a75aab4c2e8b5c14744"
+	"9fdef4cc2546446e8e752d65820e0eb7" -> b49bf3c92e1f4cf89747ae4b55a4ab32
+	"114310dfb0c047a397407187d0b42b79" -> "9fdef4cc2546446e8e752d65820e0eb7"
+	f09356706be04831b4cb9a3441e2e47d -> "114310dfb0c047a397407187d0b42b79"
+	"49eab0426a1e4efb88c3a36ddc590182" -> f09356706be04831b4cb9a3441e2e47d
+	"8d2048bc659d4c8a8119981521fa1502" -> "49eab0426a1e4efb88c3a36ddc590182"
+}

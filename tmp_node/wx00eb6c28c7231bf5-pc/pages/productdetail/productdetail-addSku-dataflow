@@ -1,0 +1,29 @@
+// \pages/productdetail/productdetail addSku Data Flow
+digraph {
+	e2a3cf238bcd4bf1a68cdbd3ffc334f4 [label="FunctionCall,
+function name -> addSku,
+param -> e,
+e.,
+" color=blue]
+	"214a24a6a55142a086f0d88c5a6eda8e" [label="If Alternate" color=blue]
+	ebb8bd18e5a842a988fbebb696363426 [label=VariableDeclarations color=blue]
+	f2c7a26fcced434aaf95833159733bf2 [label="VariableDeclarator,
+left -> s,
+right -> this.data.buyAmount" color=blue]
+	ebb8bd18e5a842a988fbebb696363426 -> f2c7a26fcced434aaf95833159733bf2
+	"5637201eb296469283b8e46a0e77279d" [label="VariableDeclarator,
+left -> i,
+right -> this.data.selectedSku" color=blue]
+	ebb8bd18e5a842a988fbebb696363426 -> "5637201eb296469283b8e46a0e77279d"
+	"214a24a6a55142a086f0d88c5a6eda8e" -> ebb8bd18e5a842a988fbebb696363426
+	"66facabdd2ef4120946b56c9e6859c5a" [label="CallExpression,
+callee name -> t.getOpenId,
+param -> " color=blue]
+	"4ae96a8af87e4ea68e1e4cc931d47c4a" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> e,
+" color=blue]
+	"66facabdd2ef4120946b56c9e6859c5a" -> "4ae96a8af87e4ea68e1e4cc931d47c4a"
+	"214a24a6a55142a086f0d88c5a6eda8e" -> "66facabdd2ef4120946b56c9e6859c5a"
+	e2a3cf238bcd4bf1a68cdbd3ffc334f4 -> "214a24a6a55142a086f0d88c5a6eda8e"
+}

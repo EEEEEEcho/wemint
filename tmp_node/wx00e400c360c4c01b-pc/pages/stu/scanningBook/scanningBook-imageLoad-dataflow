@@ -1,0 +1,23 @@
+// \pages/stu/scanningBook/scanningBook imageLoad Data Flow
+digraph {
+	"28510e118d7445f7b1837083622aac9a" [label="FunctionCall,
+function name -> imageLoad,
+param -> a.,
+a,
+" color=blue]
+	"75dfd78856b54e34b313c55d2f0a6119" [label=VariableDeclarations color=blue]
+	"74ffa16f5acf40aa924cc81ed130886a" [label="VariableDeclarator,
+left -> t,
+right -> 500 / (a.detail.width / a.detail.height)" color=blue]
+	"75dfd78856b54e34b313c55d2f0a6119" -> "74ffa16f5acf40aa924cc81ed130886a"
+	"28510e118d7445f7b1837083622aac9a" -> "75dfd78856b54e34b313c55d2f0a6119"
+	f9bba094e059424286226ea277a57d35 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	c3b9e0fd0b094cd19158628649c0963f [label="Object Properties
+{
+imgheight -> t
+}" color=blue]
+	f9bba094e059424286226ea277a57d35 -> c3b9e0fd0b094cd19158628649c0963f
+	"28510e118d7445f7b1837083622aac9a" -> f9bba094e059424286226ea277a57d35
+}

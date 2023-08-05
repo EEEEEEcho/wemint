@@ -1,0 +1,10 @@
+<view bindtap="checkbox" class="checkbox {{item.checked?'checkedActive':''}}" data-id="{{index}}" wx:for="{{items}}" wx:key="{{index}}">
+    <view class="container">
+        <image src="{{item.checked?'https://dm.static.elab-plus.com/JinmaoQ/Selected.png':'https://dm.static.elab-plus.com/JinmaoQ/NotSelected.png'}}"></image>
+        <view class="mark">{{item.mark}}.</view>
+        <view class="right">
+            <view class="detail">{{item.detail}}</view>
+            <text class="checkbox_text">{{item.remark}}</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,72 @@
+// \pages/shop/userfinance onLoad Data Flow
+digraph {
+	"89b116abd3384ff3acb6a6a1262a4df4" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	a312cd4c08dc4db2ba51069e30e3a8a9 [label=SequenceExpression color=blue]
+	bce2af72ed28400abc115cda0fba4654 [label="CallExpression,
+callee name -> wx.getSystemInfo,
+param -> " color=blue]
+	c72549a5a17c4ccc87801d2427fce36c [label="FunctionCall,
+function name -> success,
+param -> a,
+a.,
+" color=blue]
+	"54ca0e43ae1641709e0702d48f39cd1e" [label="CallExpression,
+callee name -> i.setData,
+param -> " color=blue]
+	e1b1e0b2cd9d4b94b1ed801dad7fb31f [label="Object Properties
+{
+imgWidth -> (a.windowWidth - 39) / 2
+scrollHeight -> a.windowHeight - 40 - 48
+}" color=blue]
+	"54ca0e43ae1641709e0702d48f39cd1e" -> e1b1e0b2cd9d4b94b1ed801dad7fb31f
+	c72549a5a17c4ccc87801d2427fce36c -> "54ca0e43ae1641709e0702d48f39cd1e"
+	bce2af72ed28400abc115cda0fba4654 -> c72549a5a17c4ccc87801d2427fce36c
+	a312cd4c08dc4db2ba51069e30e3a8a9 -> bce2af72ed28400abc115cda0fba4654
+	"95b7288650564075ba3e094c19f7658e" [label="CallExpression,
+callee name -> this.loadOrder,
+param -> " color=blue]
+	"6541201e4baa4cff9a35f6a303499052" [label="FunctionCall,
+function name -> loadOrder,
+param -> " color=blue]
+	d217a5c67b3f4f90a615c556166aba5c [label="If Alternate" color=blue]
+	"497c7f8931e94c2e836c510f29773696" [label=VariableDeclarations color=blue]
+	"404864f1e1f7461abdc2e5c32fab067d" [label="VariableDeclarator,
+left -> e,
+right -> i.data.recordcount" color=blue]
+	"497c7f8931e94c2e836c510f29773696" -> "404864f1e1f7461abdc2e5c32fab067d"
+	"14dfb03290dc4d1abde12407288b9361" [label="VariableDeclarator,
+left -> n,
+right -> i.data.orderlist.length" color=blue]
+	"497c7f8931e94c2e836c510f29773696" -> "14dfb03290dc4d1abde12407288b9361"
+	d217a5c67b3f4f90a615c556166aba5c -> "497c7f8931e94c2e836c510f29773696"
+	"72bdd1eef6e3486fa9b196b78fe1d824" [label="If Alternate" color=blue]
+	fbc85650ee9842819b4431500f692479 [label=VariableDeclarations color=blue]
+	"8be710556aa6440d905b1e12f39fc5f7" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	d3f3d8a1a4364461ba371e97162ae2ea [label="CallExpression,
+callee name -> Math.ceil,
+param -> n / i.data.pagesize,
+" color=blue]
+	"8be710556aa6440d905b1e12f39fc5f7" -> d3f3d8a1a4364461ba371e97162ae2ea
+	fbc85650ee9842819b4431500f692479 -> "8be710556aa6440d905b1e12f39fc5f7"
+	"72bdd1eef6e3486fa9b196b78fe1d824" -> fbc85650ee9842819b4431500f692479
+	c097b63d45eb4240ad7e974ccc0cc416 [label=SequenceExpression color=blue]
+	"6d845d1067264af78c5092045a0f6923" [label="CallExpression,
+callee name -> a.sendRequest,
+param -> " color=blue]
+	a13d551ef47a424b982f803a34041dac [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/JsonApi&a=getFinance&page=' + s + '&pagesize=' + i.data.pagesize
+}" color=blue]
+	"6d845d1067264af78c5092045a0f6923" -> a13d551ef47a424b982f803a34041dac
+	c097b63d45eb4240ad7e974ccc0cc416 -> "6d845d1067264af78c5092045a0f6923"
+	"72bdd1eef6e3486fa9b196b78fe1d824" -> c097b63d45eb4240ad7e974ccc0cc416
+	d217a5c67b3f4f90a615c556166aba5c -> "72bdd1eef6e3486fa9b196b78fe1d824"
+	"6541201e4baa4cff9a35f6a303499052" -> d217a5c67b3f4f90a615c556166aba5c
+	"95b7288650564075ba3e094c19f7658e" -> "6541201e4baa4cff9a35f6a303499052"
+	a312cd4c08dc4db2ba51069e30e3a8a9 -> "95b7288650564075ba3e094c19f7658e"
+	"89b116abd3384ff3acb6a6a1262a4df4" -> a312cd4c08dc4db2ba51069e30e3a8a9
+}

@@ -8,14 +8,6 @@ import utils.utils as utils
 
 
 def variable_declarator_analysis(variable_declarator: dict, context, mini_program: MiniProgram):
-    """
-    todo: 规则定义，风险检测
-    :param variable_declarator:
-    :param context:
-    :param mini_program:
-    :return:
-    """
-    # todo:对变量名字的校验？
     if 'id' in variable_declarator and 'name' in variable_declarator['id']:
         variable_name = variable_declarator['id']['name']
         if 'init' in variable_declarator:
@@ -31,11 +23,9 @@ def variable_declarator_analysis(variable_declarator: dict, context, mini_progra
                 elif variable_type == 'ObjectExpression' or variable_type == 'ArrayExpression':
                     variable_value = object_node_analysis(variable_init, context, mini_program)
                 elif variable_type == 'MemberExpression':
-                    # todo:校验？
                     variable_identifier = member_expression_analysis(variable_init)
                     if variable_identifier is not None:
                         if 'getApp' in variable_identifier:
-                            # 解决在app.js中调用getApp造成的循环解析
                             tmp_context = context
                             while tmp_context.father:
                                 tmp_context = tmp_context.father
@@ -45,7 +35,6 @@ def variable_declarator_analysis(variable_declarator: dict, context, mini_progra
                             else:
                                 co.add_brother_to_context(context, mini_program)
                     variable_value = co.search_identifier(variable_identifier, context)
-                    # 如果找不到值，那就以调用形式出现吧
                     if variable_value is None:
                         variable_value = variable_identifier
                 elif variable_type == 'BinaryExpression':
@@ -79,12 +68,9 @@ def block_statement_analysis(block_statement: dict, context, mini_program: MiniP
             return_statement_analysis(node, context, mini_program)
         else:
             continue
-    # # 测试上下文分析情况的语句
-    # logger.info(context.const_variable_table)
 
 
 def if_statement_analysis(if_statement: dict, context, mini_program: MiniProgram):
-    # if语句的两端都需要进行分析
     if 'consequent' in if_statement:
         if if_statement['consequent'] and \
                 'type' in if_statement['consequent']:
@@ -107,7 +93,6 @@ def if_statement_analysis(if_statement: dict, context, mini_program: MiniProgram
 
 
 def for_statement_analysis(for_statement: dict, context, mini_program: MiniProgram):
-    # for循环，只分析循环体中的语句
     if 'body' in for_statement and for_statement['body']['type'] == 'BlockStatement':
         block_context = BlockContext(Scope.BLOCK)
         block_context.father = context
@@ -115,7 +100,6 @@ def for_statement_analysis(for_statement: dict, context, mini_program: MiniProgr
 
 
 def while_statement_analysis(while_statement: dict, context, mini_program: MiniProgram):
-    # while循环，只分析循环体中的语句
     if 'body' in while_statement and while_statement['body']['type'] == 'BlockStatement':
         block_context = BlockContext(Scope.BLOCK)
         block_context.father = context
@@ -139,11 +123,9 @@ def function_declaration_analysis(function_declaration: dict, context,
         scope_value = Scope.BLOCK
         function_context = BlockContext(scope_value)
     function_context.father = context
-    # 形参列表
     for param in function_declaration['params']:
         if param['type'] == 'Identifier':
             function_context.arguments_table[param['name']] = None
-    # 分析函数中的节点
     if 'body' in function_declaration and function_declaration['body']['type'] == 'BlockStatement':
         block_statement = function_declaration['body']
         block_statement_analysis(block_statement, function_context, mini_program)
@@ -171,7 +153,6 @@ def switch_statement_analysis(switch_statement: dict, context,
         block_context = BlockContext(Scope.BLOCK)
         block_context.father = context
         block_statement_analysis(fake_block, block_context, mini_program)
-        # logger.info(block_context.const_variable_table)
 
 
 def expression_statement_analysis(expression_statement: dict, context, mini_program: MiniProgram):
@@ -196,8 +177,6 @@ def expression_statement_analysis(expression_statement: dict, context, mini_prog
 
 
 def assign_expression_analysis(assign_expression: dict, context, mini_program: MiniProgram):
-    # todo: 右边是函数调用表达式
-    # 对赋值表达式进行封装，封装为一个VariableDeclaration,进行分析
     if 'left' in assign_expression and 'right' in assign_expression:
         left_type = assign_expression['left']['type']
         variable_name = None
@@ -274,7 +253,6 @@ def call_expression_analysis(call_expression: dict, context, mini_program: MiniP
         elif argument['type'] == 'ObjectExpression' or argument['type'] == 'ArrayExpression':
             object_value = object_node_analysis(argument, context, mini_program)
             mini_program.secret_leak_checker.check_object(object_value)
-        # exec("cmd" + ":xxxx")
         elif argument['type'] == 'BinaryExpression':
             object_value = binary_expression_analysis(argument, context)
             mini_program.secret_leak_checker.check_literal(object_value)
@@ -290,7 +268,6 @@ def call_expression_analysis(call_expression: dict, context, mini_program: MiniP
 
 
 def logical_expression_analysis(logical_expression: dict, context, mini_program: MiniProgram):
-    # todo:做改动
     node_list = list()
 
     if 'left' in logical_expression:
@@ -343,7 +320,6 @@ def find_object_from_ast(tree, object_list: list):
 
 
 def member_expression_analysis(member_expression: dict):
-    # let n = 'name';let name = dict[n] 这种情况不好分析,后续想办法
     if 'object' in member_expression and 'property' in member_expression:
         obj = member_expression['object']
         prop = member_expression['property']
@@ -361,8 +337,6 @@ def member_expression_analysis(member_expression: dict):
             else:
                 return None
         elif obj['type'] == 'CallExpression':
-            # todo:优化
-            # call_expression_analysis(obj, BlockContext(Scope.BLOCK), MiniProgram("xx", "xx"))
             if 'callee' in obj and 'name' in obj['callee'] and \
                     'name' in prop:
                 return obj['callee']['name'] + '.' + prop['name']

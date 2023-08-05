@@ -1,0 +1,28 @@
+<view class="goods">
+    <view bindtap="getGoodDetail" class="good" data-uuid="{{item.goodsUuid}}" wx:for="{{goods}}">
+        <image class="goodImg" lazyLoad="true" mode="aspectFill" src="{{item.covers[0]}}"></image>
+        <view class="goodIntro">
+            <view class="label111">
+                <text class="label11" wx:if="{{item.tags.length>0&&item.tags[0].length>5}}">{{freeGoodFilter.getTag( item.tags[0] )}}</text>
+                <text class="label11" wx:elif="{{item.tags.length>0}}">{{item.tags[0]}}</text>
+                <text class="label12" wx:if="{{item.tags.length>1&&item.tags[1].length>5}}">{{freeGoodFilter.getTag( item.tags[1] )}}</text>
+                <text class="label12" wx:elif="{{item.tags.length>1}}">{{item.tags[1]}}</text>
+            </view>
+            <text class="goodName">{{item.title}}</text>
+            <view class="goodPrice">
+                <text class="newPricePre">¥</text>
+                <text class="newPrice">{{item.activityPrice/100}}</text>
+                <text class="oldPricePre">¥</text>
+                <text class="oldPrice">{{item.maxMarketPrice/100}}</text>
+            </view>
+            <text class="flag">{{freeGoodFilter.getDrawNum(item.drawNum)+'人拼团 一人免单'}}</text>
+            <view class="freeUser">
+                <text class="spell" wx:if="{{item.user.length>0}}">已拼</text>
+                <text class="waitSpell" wx:if="{{item.user.length==0}}">等待拼团</text>
+                <image class="avatar" mode="aspectFill" src="{{item.avatar}}" wx:if="{{item!=''}}" wx:for="{{item.user}}"></image>
+                <image class="waitFree" src="http://oss.shangmian.xin/weixin_applets_icon_single_wait_free.png" wx:if="{{item.user.length==0}}"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="freeGoodFilter" src="freeGood.wxs" />

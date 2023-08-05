@@ -1,0 +1,116 @@
+<view class="userinfo">
+    <view class="k10"></view>
+    <view class="headimg-w">
+        <view class="k6"></view>
+        <view class="headimg-n">
+            <image class="img" src="{{user.headimgurl}}"></image>
+        </view>
+    </view>
+    <view class="k20"></view>
+    <view class="nickname">{{user.nickname}}</view>
+    <button bindgetuserinfo="userInfoHandler" class="getuser" openType="getUserInfo" plain="true" style="border:#F8B62C;padding:0px;color:#fff;">刷新</button>
+    <view class="k16"></view>
+    <view class="cellphone">{{user.hidephone}}</view>
+</view>
+<view class="k16"></view>
+<view class="nav">
+    <view class="k40"></view>
+    <view bindtap="collect" class="nav-list" style="border-right: 1px solid #e7e7e7;">
+        <view class="nav-list-l">
+            <image class="img" src="/pages/img/wodeguanzhu.png"></image>
+        </view>
+        <view class="nav-list-r">
+            <view class="nav-list-r-t">我的关注</view>
+            <view class="k20"></view>
+            <view class="nav-list-r-b">{{collect}}</view>
+        </view>
+    </view>
+    <view bindtap="record" class="nav-list" style="border-left: 1px solid #e7e7e7;">
+        <view class="nav-list-l">
+            <image class="img" src="/pages/img/liulanjilu.png"></image>
+        </view>
+        <view class="nav-list-r">
+            <view class="nav-list-r-t">浏览记录</view>
+            <view class="k20"></view>
+            <view class="nav-list-r-b">{{record}}</view>
+        </view>
+    </view>
+</view>
+<view class="k16"></view>
+<view class="menu-list">
+    <view bindtap="yuyue" class="menu-list-item">
+        <view class="menu-list-item-li">
+            <view class="menu-list-item-li-l">
+                <view class="menu-list-item-li-l-l">
+                    <image class="img" src="/pages/img/wodeyuyue.png"></image>
+                </view>
+                <view class="menu-list-item-li-l-r">我的预约</view>
+            </view>
+            <view class="menu-list-item-li-r">
+                <view class="menu-list-item-li-r-l" wx:if="{{yynum>0}}">{{yynum}}</view>
+                <view class="menu-list-item-li-r-r">
+                    <image class="img" src="/pages/img/right.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="resetinfo" class="menu-list-item">
+        <view class="menu-list-item-li">
+            <view class="menu-list-item-li-l">
+                <view class="menu-list-item-li-l-l">
+                    <image class="img" src="/pages/img/xiugaiziliao.png"></image>
+                </view>
+                <view class="menu-list-item-li-l-r">修改会员资料</view>
+            </view>
+            <view class="menu-list-item-li-r">
+                <view class="menu-list-item-li-r-r">
+                    <image class="img" src="/pages/img/right.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="rank" class="menu-list-item">
+        <view class="menu-list-item-li">
+            <view class="menu-list-item-li-l">
+                <view class="menu-list-item-li-l-l">
+                    <image class="img" src="/pages/img/paihangbang.png"></image>
+                </view>
+                <view class="menu-list-item-li-l-r">排行榜</view>
+            </view>
+            <view class="menu-list-item-li-r">
+                <view class="menu-list-item-li-r-r">
+                    <image class="img" src="/pages/img/right.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="k16"></view>
+<view class="menu-list">
+    <view bindtap="references" class="menu-list-item">
+        <view class="menu-list-item-li">
+            <view class="menu-list-item-li-l">
+                <view class="menu-list-item-li-l-l">
+                    <image class="img" src="/pages/img/tuijianren.png"></image>
+                </view>
+                <view class="menu-list-item-li-l-r">我的推荐人</view>
+            </view>
+            <view class="menu-list-item-li-r">
+                <view class="menu-list-item-li-r-r">
+                    <image class="img" src="/pages/img/right.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="menu-list-item">
+        <view class="menu-list-item-li">
+            <view class="menu-list-item-li-l">
+                <view class="menu-list-item-li-l-l">
+                    <image class="img" src="/pages/img/coin.png"></image>
+                </view>
+                <view class="menu-list-item-li-l-r2">我的收益: {{user.gains}} 积分</view>
+            </view>
+            <view class="menu-list-item-li-r"></view>
+        </view>
+    </view>
+</view>

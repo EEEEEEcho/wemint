@@ -1,0 +1,89 @@
+page {
+    background-color: #f4f4f4;
+}
+
+.container .beMember {
+    position: relative;
+    height: 180rpx;
+    width: 100%;
+}
+
+.container .beMember .beMember-img {
+    height: 180rpx;
+    width: 100%;
+}
+
+.container .beMember .beMember-img image {
+    height: 180rpx;
+    width: 100%;
+}
+
+.container .beMember .conRule {
+    display: flex;
+    padding-left: 50rpx;
+    position: absolute;
+    top: 50rpx;
+}
+
+.container .beMember .conRule .rule-left .other-icon {
+    font-size: 90rpx;
+    color: rgba(255,255,255,.5);
+    margin-top: 6rpx;
+    margin-right: 26rpx;
+}
+
+.container .beMember .conRule .rule-right .rule1 {
+    font-size: 36rpx;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 22rpx;
+}
+
+.container .beMember .conRule .rule-right .rule2 {
+    font-size: 25rpx;
+    color: #fff;
+}
+
+.container .condition {
+    height: 120rpx;
+    background-color: #fff;
+    padding: 0 26rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .condition .condition-left {
+    display: flex;
+    align-items: center;
+}
+
+.container .condition .condition-left .circle {
+    width: 10rpx;
+    height: 10rpx;
+    background-color: #ff7200;
+    margin-right: 14rpx;
+    border-radius: 50%;
+}
+
+.container .condition .condition-left .condition-con {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.container .condition .condition-left .condition-con .price {
+    color: #ff7200;
+    font-weight: bold;
+    padding: 0 6rpx;
+}
+
+.container .condition .condition-right {
+    border: 1rpx solid #ff7200;
+    width: 160rpx;
+    height: 66rpx;
+    line-height: 66rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #ff7200;
+    border-radius: 33rpx;
+}

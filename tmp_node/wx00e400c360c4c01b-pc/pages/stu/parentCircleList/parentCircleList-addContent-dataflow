@@ -1,0 +1,24 @@
+// \pages/stu/parentCircleList/parentCircleList addContent Data Flow
+digraph {
+	c274b06e582347eea4e8b725e207e196 [label="FunctionCall,
+function name -> addContent,
+param -> e,
+e.,
+" color=blue]
+	"0dceaee5545d4fbda2f8e12c7526a5ac" [label=SequenceExpression color=blue]
+	"2eadfb240a3043b2be076edc0036e7f6" [label="CallExpression,
+callee name -> console.log,
+param -> e.detail.value,
+" color=blue]
+	"0dceaee5545d4fbda2f8e12c7526a5ac" -> "2eadfb240a3043b2be076edc0036e7f6"
+	e7e70893eee2410bb517aa65c5b43310 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"8a827c359d984feeb3ca9566e96fa1ec" [label="Object Properties
+{
+content -> e.detail.value
+}" color=blue]
+	e7e70893eee2410bb517aa65c5b43310 -> "8a827c359d984feeb3ca9566e96fa1ec"
+	"0dceaee5545d4fbda2f8e12c7526a5ac" -> e7e70893eee2410bb517aa65c5b43310
+	c274b06e582347eea4e8b725e207e196 -> "0dceaee5545d4fbda2f8e12c7526a5ac"
+}

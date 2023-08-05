@@ -1,0 +1,27 @@
+<view class="s_coll">
+    <view class="s_coll_1" wx:for="{{collect}}" wx:key="*this">
+        <block wx:if="{{item.housenum>0}}">
+            <image mode="widthFix" src="{{url}}{{item.picurl}}" style="width:100px;"></image>
+            <navigator class="h3" url="../prodshow/prodshow?id={{item.id}}&cid={{item.classid}}">{{item.title}}</navigator>
+            <view class="h4">已售{{item.sellnum}}</view>
+            <view class="h5">¥{{item.salesprice}} <button bindtap="collectDel" class="navig" data-id="{{item.id}}">
+                    <image mode="widthFix" src="../../images/dele2.jpg" style="width:90px;"></image>
+                </button>
+            </view>
+        </block>
+        <view style="position:relative;" wx:else>
+            <view style="position: absolute;top:0;left: 0;z-index: 1;width: 100%;height: 100%;background: url(../../images/tou.png) no-repeat;background-size: 100% 100%;"></view>
+            <view style="width:100px; float:left; position:relative;">
+                <view style="position: absolute;top:0px;left: 0px;z-index: 2;width: 100px;height:100px;background: url(../../images/wuhuo.png) no-repeat;background-size: 100% 100%; margin:0px 0 0 0px; "></view>
+                <image mode="widthFix" src="{{url}}{{item.picurl}}" style="width:100px;"></image>
+            </view>
+            <navigator class="h3" url="../prodshow/prodshow?id={{item.id}}&cid={{item.classid}}">{{item.title}}</navigator>
+            <view class="h4">已售{{item.sellnum}}</view>
+            <view class="h5">¥{{item.salesprice}} <button bindtap="collectDel" class="navig" data-id="{{item.id}}">
+                    <image mode="widthFix" src="../../images/dele2.jpg" style="width:90px;"></image>
+                </button>
+            </view>
+        </view>
+    </view>
+    <view style="text-align:center; line-height:40px;" wx:if="{{collect.length==0}}">暂未添加任何收藏</view>
+</view>

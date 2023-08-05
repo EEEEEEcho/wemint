@@ -1,0 +1,87 @@
+<view class="head-box">
+    <image class="head-img" src="./../../utils/imgs/monthcardbg.png"></image>
+    <view class="month-card-box">
+        <image class="head-img" src="./../../utils/imgs/monthcard.png"></image>
+        <image class="open-month-card" src="./../../utils/imgs/monthbtn.png"></image>
+    </view>
+</view>
+<view class="middle-box">
+    <view class="value-title">探惠月卡会员</view>
+    <view class="value-box" wx:if="{{!state}}">
+        <view bindtap="checkSetMeal" class="vip-item {{checkItem=='1'?'vip-item-active':''}}" data-check="1">
+            <view>1个月</view>
+            <view class="month-card-price">￥<text>9.90</text>
+            </view>
+        </view>
+        <view bindtap="checkSetMeal" class="vip-item {{checkItem=='2'?'vip-item-active':''}}" data-check="2">
+            <view>3个月</view>
+            <view class="month-card-price">￥<text>21.00</text>
+            </view>
+            <view class="month-tip">折合￥7/月</view>
+        </view>
+        <view bindtap="checkSetMeal" class="vip-item {{checkItem=='3'?'vip-item-active':''}}" data-check="3">
+            <view>12个月</view>
+            <view class="month-card-price">￥<text>60.00</text>
+            </view>
+            <view class="month-tip">折合￥5/月</view>
+            <view class="month-card-com">
+                <image src="./../../utils/imgs/com.png"></image>强烈推荐</view>
+        </view>
+    </view>
+    <view class="pay-with-lt">
+        <label bindtap="checkLt" class="checkbox">
+            <checkbox disabled="true" value="1"></checkbox>
+            <text style="position:relative;top:5rpx;">探惠月卡与联通权益一起购买</text>
+        </label>
+    </view>
+    <view class="open-vip">
+        <image bindtap="payMonthCard" src="./../../utils/imgs/openvip.png"></image>
+    </view>
+</view>
+<view class="line"></view>
+<view class="zhuanshu-box">
+    <image class="zhuanshu" src="./../../utils/imgs/zhuanshu.png"></image>
+    <view class="tequan-box">
+        <view>
+            <image src="./../../utils/imgs/icon1.png"></image>
+            <view class="tq-title">优惠升级</view>
+            <view class="tequan-tip">尊享额外会员折扣</view>
+        </view>
+        <view>
+            <image src="./../../utils/imgs/icon2.png"></image>
+            <view class="tq-title">转赠特权</view>
+            <view class="tequan-tip">赠送专享券给好友</view>
+        </view>
+        <view>
+            <image src="./../../utils/imgs/icon3.png"></image>
+            <view class="tq-title">尊贵标识</view>
+            <view class="tequan-tip">尊享月卡钻石身份</view>
+        </view>
+    </view>
+</view>
+<view class="line"></view>
+<view class="title-box">
+    <text>会员升级专享折扣</text>
+</view>
+<view class="month-text-tip">
+  说明：开通月卡后，系统会派发<text>月卡专享</text>优惠券，<text>升级原有的商家优惠券</text>
+</view>
+<view class="example-box">
+    <view>示例1：</view>
+    <image src="./../../utils/imgs/p1.png"></image>
+    <view>示例2：</view>
+    <image src="./../../utils/imgs/p2.png"></image>
+</view>
+<view class="title-box">
+    <text>会员专享转赠特权</text>
+</view>
+<view class="month-text-tip">
+  说明：会员可把月卡专享优惠券转赠给自己的好友使用，每个月10次转赠机会
+  <view style="color: #fc5b7e;">(转增后会员仍有专享优惠)</view>
+</view>
+<view class="title-box">
+    <text>会员专享尊贵标识</text>
+</view>
+<view class="month-text-tip" style="margin-bottom:25rpx;">
+  说明：会员拥有区别于普通会员的钻石标识
+</view>

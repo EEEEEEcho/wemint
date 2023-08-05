@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "发布惠圈",
+    "usingComponents": {
+        "loading-component": "/pages/components/loading/loading"
+    }
+}

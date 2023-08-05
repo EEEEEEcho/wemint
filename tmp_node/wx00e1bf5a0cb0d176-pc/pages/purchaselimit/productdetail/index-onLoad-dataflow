@@ -1,0 +1,17 @@
+// \pages/purchaselimit/productdetail/index onLoad Data Flow
+digraph {
+	"9b42418564ff4fa69193219f5b57b5cc" [label="FunctionCall,
+function name -> onLoad,
+param -> " color=blue]
+	b998d45b905d4a6b94660497a05319da [label=SequenceExpression color=blue]
+	bbc028b588264010ba01d4e718efe036 [label="Assignment,
+left -> None,
+right -> None" color=blue]
+	"7efa313afc504e5fa87cb3ad6b4c3212" [label="CallExpression,
+callee name -> t.getPageUrl,
+param -> e,
+" color=blue]
+	bbc028b588264010ba01d4e718efe036 -> "7efa313afc504e5fa87cb3ad6b4c3212"
+	b998d45b905d4a6b94660497a05319da -> bbc028b588264010ba01d4e718efe036
+	"9b42418564ff4fa69193219f5b57b5cc" -> b998d45b905d4a6b94660497a05319da
+}

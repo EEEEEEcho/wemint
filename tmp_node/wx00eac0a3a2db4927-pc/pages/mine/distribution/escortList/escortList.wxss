@@ -1,0 +1,85 @@
+.escortedPanel {
+    width: 682rpx;
+    margin: 0 34rpx;
+}
+
+.escortedList {
+    box-shadow: 0 0 6rpx 2rpx #edeeee;
+    border-radius: 24rpx;
+    margin-bottom: 30rpx;
+}
+
+.eachPanel {
+    padding: 20rpx;
+    align-items: center;
+}
+
+.avatar {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50rpx;
+    background: #aeaeb4;
+}
+
+.information {
+    margin-left: 15rpx;
+    flex: 1;
+}
+
+.informationDetail {
+    margin-bottom: 10rpx;
+}
+
+.informationDetail,.contact {
+    align-items: center;
+}
+
+.nickname {
+    font-size: 28rpx;
+    color: #51515c;
+    letter-spacing: 2rpx;
+}
+
+.state {
+    color: #fff;
+    font-size: 20rpx;
+    background: #ed7b43;
+    padding: 6rpx 16rpx;
+    margin-left: auto;
+    border-radius: 24rpx;
+}
+
+.stateAlready {
+    color: #fff;
+    font-size: 20rpx;
+    background: #aeaeb4;
+    padding: 6rpx 16rpx;
+    margin-left: auto;
+    border-radius: 24rpx;
+}
+
+.mobile {
+    font-size: 28rpx;
+    color: #51515c;
+    letter-spacing: 2rpx;
+}
+
+.datetime {
+    font-size: 28rpx;
+    color: #aeaeb4;
+    margin-left: auto;
+}
+
+.escortedButton {
+    position: absolute;
+    bottom: 40rpx;
+    left: 34rpx;
+    background: #51515c;
+    color: #fff;
+    font-size: 28rpx;
+    text-align: center;
+    border-radius: 50rpx;
+    width: 682rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+}

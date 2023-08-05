@@ -1,0 +1,60 @@
+// \pages/classhome/classhome tourist Data Flow
+digraph {
+	"940797e2b2b94de98b0923fd33a89021" [label="FunctionCall,
+function name -> tourist,
+param -> t,
+t.,
+" color=blue]
+	b4289d2000194ebab4a49f1207d469dc [label=VariableDeclarations color=blue]
+	e093ea42af504e60b5827e27f8a71b86 [label="VariableDeclarator,
+left -> e,
+right -> t.detail.userInfo" color=blue]
+	b4289d2000194ebab4a49f1207d469dc -> e093ea42af504e60b5827e27f8a71b86
+	"940797e2b2b94de98b0923fd33a89021" -> b4289d2000194ebab4a49f1207d469dc
+	abcfeaeb9733416a9cb153178738936b [label=SequenceExpression color=blue]
+	"9284b03af14246cb98585498d271dd88" [label="Assignment,
+left -> a.globalData.userInfo,
+right -> t.detail.userInfo" color=blue]
+	abcfeaeb9733416a9cb153178738936b -> "9284b03af14246cb98585498d271dd88"
+	cce92c40a127426baeb119ffdcf7120f [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"3422d21b43ed480ea8083ac8cd2e5340" [label=SequenceExpression color=blue]
+	"1f9fef37a6a749f4ad959a7a58d4efcd" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"7f01b39c6a324609a273c4773eaca73c" [label="Object Properties
+{
+userInfo -> e
+}" color=blue]
+	"1f9fef37a6a749f4ad959a7a58d4efcd" -> "7f01b39c6a324609a273c4773eaca73c"
+	"3422d21b43ed480ea8083ac8cd2e5340" -> "1f9fef37a6a749f4ad959a7a58d4efcd"
+	"5ae2de31dc7c438e90b86db2679ad383" [label="CallExpression,
+callee name -> wx.login,
+param -> " color=blue]
+	"1bc70ff6538147cdaa33702a8cee2f51" [label="FunctionCall,
+function name -> success,
+param -> t,
+t.,
+" color=blue]
+	"586613f40af0452d8a8e8f9fe29e09fd" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"32e49a87b3ca4c029184e5c2f5e53f30" [label=SequenceExpression color=blue]
+	e9082a603e1b4a8181ae4772eb93443f [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"795690bc34fa4fb5a7b2bd8764aadf79" [label="Object Properties
+{
+code -> t.code
+}" color=blue]
+	e9082a603e1b4a8181ae4772eb93443f -> "795690bc34fa4fb5a7b2bd8764aadf79"
+	"32e49a87b3ca4c029184e5c2f5e53f30" -> e9082a603e1b4a8181ae4772eb93443f
+	"586613f40af0452d8a8e8f9fe29e09fd" -> "32e49a87b3ca4c029184e5c2f5e53f30"
+	"1bc70ff6538147cdaa33702a8cee2f51" -> "586613f40af0452d8a8e8f9fe29e09fd"
+	"5ae2de31dc7c438e90b86db2679ad383" -> "1bc70ff6538147cdaa33702a8cee2f51"
+	"3422d21b43ed480ea8083ac8cd2e5340" -> "5ae2de31dc7c438e90b86db2679ad383"
+	cce92c40a127426baeb119ffdcf7120f -> "3422d21b43ed480ea8083ac8cd2e5340"
+	abcfeaeb9733416a9cb153178738936b -> cce92c40a127426baeb119ffdcf7120f
+	"940797e2b2b94de98b0923fd33a89021" -> abcfeaeb9733416a9cb153178738936b
+}

@@ -1,0 +1,94 @@
+// \pages/shopDetail/shopDetail finishChoose Data Flow
+digraph {
+	"7437f8c8f111465ca7e13abb6a86e03e" [label="FunctionCall,
+function name -> finishChoose,
+param -> o,
+o.,
+" color=blue]
+	"82d00b30f07b443f9c3bdb20f0b4a78f" [label="If Alternate" color=blue]
+	bde41ba162914bae80ce95707f0dcd72 [label=VariableDeclarations color=blue]
+	bc751d59b50544b6b2c744b90f43fe57 [label="VariableDeclarator,
+left -> t,
+right -> this.data.chooseAttr" color=blue]
+	bde41ba162914bae80ce95707f0dcd72 -> bc751d59b50544b6b2c744b90f43fe57
+	"921601f594d3424ea63aa49b09e8cb35" [label="VariableDeclarator,
+left -> s,
+right -> this.data.goodsAttr" color=blue]
+	bde41ba162914bae80ce95707f0dcd72 -> "921601f594d3424ea63aa49b09e8cb35"
+	"586fd54bc43f45388bf6703ddb4a7fb2" [label="VariableDeclarator,
+left -> e,
+right -> this.createAttrGoods" color=blue]
+	f6ce403cf0664afc9c85e695fca51609 [label="CallExpression,
+callee name -> this.createAttrGoods,
+param -> t,
+s,
+" color=blue]
+	"586fd54bc43f45388bf6703ddb4a7fb2" -> f6ce403cf0664afc9c85e695fca51609
+	bde41ba162914bae80ce95707f0dcd72 -> "586fd54bc43f45388bf6703ddb4a7fb2"
+	be692d60a3c1414580e6b7b7cab132fd [label="VariableDeclarator,
+left -> a,
+right -> this.getNowShopCar" color=blue]
+	bde41ba162914bae80ce95707f0dcd72 -> be692d60a3c1414580e6b7b7cab132fd
+	"6addfeff45eb40a6a1fd3a1714951152" [label="VariableDeclarator,
+left -> i,
+right -> this.compareAddShopCar" color=blue]
+	b05ae7a49ed14386a2f318fbf7314665 [label="CallExpression,
+callee name -> this.compareAddShopCar,
+param -> e,
+a,
+" color=blue]
+	"6addfeff45eb40a6a1fd3a1714951152" -> b05ae7a49ed14386a2f318fbf7314665
+	bde41ba162914bae80ce95707f0dcd72 -> "6addfeff45eb40a6a1fd3a1714951152"
+	"31ee461f25a04be19f17a0d79b623aca" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	"4deb3f2e6e07483486785f59c9b23350" [label=SequenceExpression color=blue]
+	"6238ae4a07a24b01a3d87f2578ddb650" [label="CallExpression,
+callee name -> this.changeShopCar,
+param -> i,
+" color=blue]
+	"4deb3f2e6e07483486785f59c9b23350" -> "6238ae4a07a24b01a3d87f2578ddb650"
+	"816321b8380e456d8f6e1223c0182f36" [label="CallExpression,
+callee name -> this.changeNowAttrGoods,
+param -> i,
+" color=blue]
+	"4deb3f2e6e07483486785f59c9b23350" -> "816321b8380e456d8f6e1223c0182f36"
+	"31ee461f25a04be19f17a0d79b623aca" -> "4deb3f2e6e07483486785f59c9b23350"
+	bde41ba162914bae80ce95707f0dcd72 -> "31ee461f25a04be19f17a0d79b623aca"
+	b7f70a8b02bb489e9ffb9b96648a5ccd [label="VariableDeclarator,
+left -> d,
+right -> this.changeAllAttrGoods" color=blue]
+	"2735cfac9b6345658c182a478f80c3f8" [label="CallExpression,
+callee name -> this.changeAllAttrGoods,
+param -> i,
+" color=blue]
+	b7f70a8b02bb489e9ffb9b96648a5ccd -> "2735cfac9b6345658c182a478f80c3f8"
+	bde41ba162914bae80ce95707f0dcd72 -> b7f70a8b02bb489e9ffb9b96648a5ccd
+	"57b8e204287e41679c5b18c57b7cbe26" [label="VariableDeclarator,
+left -> n,
+right -> this.priceTotal" color=blue]
+	bde41ba162914bae80ce95707f0dcd72 -> "57b8e204287e41679c5b18c57b7cbe26"
+	"18b807bb489243c5bd53fa4a60e8361b" [label="VariableDeclarator,
+left -> h,
+right -> this.nowSum" color=blue]
+	bde41ba162914bae80ce95707f0dcd72 -> "18b807bb489243c5bd53fa4a60e8361b"
+	"1930cf3f20a74e219e9449fdbc0f4e1a" [label="VariableDeclarator,
+left -> c,
+right -> this.getNowShopCar" color=blue]
+	bde41ba162914bae80ce95707f0dcd72 -> "1930cf3f20a74e219e9449fdbc0f4e1a"
+	"82d00b30f07b443f9c3bdb20f0b4a78f" -> bde41ba162914bae80ce95707f0dcd72
+	a5bc9188a0cf424d9fd2ce46db3c2313 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"7e8f8b4a0df940b2adcc5427de651907" [label="Object Properties
+{
+nowShopCar -> c
+allGoods -> d
+allshopCarSum -> h
+}" color=blue]
+	"81a64d83b5ed40dc867a953f46736f88" [label="+n" color=blue]
+	"7e8f8b4a0df940b2adcc5427de651907" -> "81a64d83b5ed40dc867a953f46736f88"
+	a5bc9188a0cf424d9fd2ce46db3c2313 -> "7e8f8b4a0df940b2adcc5427de651907"
+	"82d00b30f07b443f9c3bdb20f0b4a78f" -> a5bc9188a0cf424d9fd2ce46db3c2313
+	"7437f8c8f111465ca7e13abb6a86e03e" -> "82d00b30f07b443f9c3bdb20f0b4a78f"
+}

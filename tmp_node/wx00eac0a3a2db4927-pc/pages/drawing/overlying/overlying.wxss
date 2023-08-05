@@ -1,0 +1,251 @@
+.overlyingContain {
+    width: 682rpx;
+    margin-left: 34rpx;
+}
+
+.title {
+    font-size: 42rpx;
+    color: #51515c;
+}
+
+.showProduct {
+    margin-top: 20rpx;
+}
+
+.scrollViewH {
+    white-space: nowrap;
+}
+
+.furnitureCateContain {
+    width: 682rpx;
+    margin-left: 34rpx;
+}
+
+.tab {
+    display: inline-block;
+}
+
+.swiper {
+    display: inline-block;
+    padding: 0 16rpx;
+    text-align: center;
+    line-height: 48rpx;
+    height: 48rpx;
+    font-size: 24rpx;
+}
+
+.swiperTab {
+    color: #51515c;
+}
+
+.swipertabSelect {
+    background: #ed7b43;
+    color: #fff;
+    border-radius: 50rpx;
+}
+
+.count {
+    align-items: center;
+    margin-top: 30rpx;
+}
+
+.product,.price {
+    font-size: 28rpx;
+    color: #51515c;
+}
+
+.price {
+    margin-left: auto;
+}
+
+.arrow {
+    margin-left: 8rpx;
+}
+
+.up,.down {
+    width: 16rpx;
+    height: 8rpx;
+}
+
+.up {
+    margin-bottom: 8rpx;
+}
+
+.productList {
+    margin-top: 20rpx;
+    align-items: center;
+}
+
+.selected {
+    font-size: 26rpx;
+    color: #51515c;
+    margin-right: 18rpx;
+}
+
+.showProducts {
+    width: 380rpx;
+    margin-right: 10rpx;
+    align-items: center;
+}
+
+.goodImages {
+    background: #eee;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+}
+
+.leftArrow {
+    width: 10rpx;
+    height: 18rpx;
+    margin-left: 12rpx;
+}
+
+.overlying {
+    font-size: 26rpx;
+    color: #fff;
+    width: 152rpx;
+    height: 52rpx;
+    background: #ed7b43;
+    border-radius: 24rpx;
+    text-align: center;
+    line-height: 52rpx;
+    margin-left: auto;
+}
+
+.goodsListPanel {
+    margin-top: 20rpx;
+    align-items: center;
+}
+
+.goodPanel {
+    align-items: center;
+}
+
+.good {
+    padding: 30rpx;
+    background: #fff;
+    border-radius: 24rpx;
+    box-shadow: 0 0 2rpx 2rpx #efeeee;
+}
+
+.goodImage {
+    width: 190rpx;
+    height: 190rpx;
+    border-radius: 24rpx;
+    margin-right: 20rpx;
+    background: #ccc;
+}
+
+.goodInfo {
+    margin-top: 6rpx;
+}
+
+.goodName {
+    width: 342rpx;
+    font-size: 32rpx;
+    color: #51515c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-weight: bold;
+}
+
+.pricePair {
+    align-items: center;
+    margin-bottom: 8rpx;
+    margin-top: 4rpx;
+}
+
+.newPricePre {
+    font-size: 22rpx;
+    color: #ed7b43;
+    margin-top: 6rpx;
+}
+
+.newPrice {
+    font-size: 36rpx;
+    color: #ed7b43;
+    margin-right: 30rpx;
+}
+
+.oldPricePre,.oldPrice {
+    font-size: 26rpx;
+    color: #aeaeb4;
+    text-decoration: line-through;
+}
+
+.tips {
+    flex-wrap: wrap;
+    width: 342rpx;
+}
+
+.tip {
+    font-size: 20rpx;
+    color: #fff;
+    padding: 4rpx 16rpx;
+    margin-right: 14rpx;
+    margin-top: 6rpx;
+    background: #ed7b43;
+    border-radius: 24rpx;
+}
+
+.checkedImages {
+    margin-left: auto;
+    padding: 40rpx 0 40rpx 20rpx;
+}
+
+.checkedImage {
+    width: 45rpx;
+    height: 45rpx;
+    margin-left: 10rpx;
+}
+
+.recommend {
+    margin-top: 40rpx;
+}
+
+.shopRecommend {
+    font-size: 42rpx;
+    color: #51515c;
+}
+
+.new {
+    font-size: 24rpx;
+    color: #aeaeb4;
+    margin-top: 8rpx;
+}
+
+.recommendPanel {
+    margin-top: 30rpx;
+}
+
+.recommendGoodPanel {
+    align-items: center;
+    background: #fff;
+    border-radius: 24rpx;
+    box-shadow: 0 0 2rpx 2rpx #efeeee;
+}
+
+.recommendGood {
+    margin: 30rpx;
+}
+
+.recommendGoodName {
+    width: 392rpx;
+    font-size: 30rpx;
+    color: #51515c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    font-weight: bold;
+}
+
+.recommendTips {
+    flex-wrap: wrap;
+    width: 392rpx;
+}

@@ -1,0 +1,23 @@
+// \pages/shop/productdetail bindManual Data Flow
+digraph {
+	"33c7413074174acd8e2785c32044dcb2" [label="FunctionCall,
+function name -> bindManual,
+param -> t,
+t.,
+" color=blue]
+	"10b4e781fe5c4b938f3de395336a8073" [label=VariableDeclarations color=blue]
+	c34e096c99cd45a9a6861ce804f9d1f9 [label="VariableDeclarator,
+left -> a,
+right -> t.detail.value" color=blue]
+	"10b4e781fe5c4b938f3de395336a8073" -> c34e096c99cd45a9a6861ce804f9d1f9
+	"33c7413074174acd8e2785c32044dcb2" -> "10b4e781fe5c4b938f3de395336a8073"
+	"5ceb8aba37334d37970b433f20d51024" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	"20d3dd1bf929467d9e07161fb85ed05d" [label="Object Properties
+{
+count -> a
+}" color=blue]
+	"5ceb8aba37334d37970b433f20d51024" -> "20d3dd1bf929467d9e07161fb85ed05d"
+	"33c7413074174acd8e2785c32044dcb2" -> "5ceb8aba37334d37970b433f20d51024"
+}

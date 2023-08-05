@@ -1,0 +1,49 @@
+// \pages/teacher/myIndex/myIndex changeImage Data Flow
+digraph {
+	fce265f495da447089395f86d9ec6b3a [label="FunctionCall,
+function name -> changeImage,
+param -> " color=blue]
+	fb77c20b74ea4bb0aaf1dead488e196a [label=SequenceExpression color=blue]
+	"91d29fa127444ffeaec833ec8c07cb8c" [label="CallExpression,
+callee name -> wx.chooseImage,
+param -> " color=blue]
+	"124e44c82440439c892582ea0ccae209" [label="FunctionCall,
+function name -> success,
+param -> e,
+e.,
+" color=blue]
+	"7d876cbc0b7b4f93ab550c64e349bdc3" [label=VariableDeclarations color=blue]
+	e7bceef7b75647758fe0c9e52cc48fee [label="VariableDeclarator,
+left -> i,
+right -> e.tempFilePaths[0]" color=blue]
+	"7d876cbc0b7b4f93ab550c64e349bdc3" -> e7bceef7b75647758fe0c9e52cc48fee
+	"124e44c82440439c892582ea0ccae209" -> "7d876cbc0b7b4f93ab550c64e349bdc3"
+	"6e0288acde514317860eced11141369e" [label=SequenceExpression color=blue]
+	"642025b416614e2d99250da49e28e3f2" [label="CallExpression,
+callee name -> console.log,
+param -> i,
+" color=blue]
+	"6e0288acde514317860eced11141369e" -> "642025b416614e2d99250da49e28e3f2"
+	"3d25e2a3248d47bcbc938e3722bc2ea2" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	cfb5f3fe00c74f0ba5d772a8f424898a [label="CallExpression,
+callee name -> a.upload,
+param -> i,
+" color=blue]
+	"00539dbdd843444eac8edd205a7055ac" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> e,
+" color=blue]
+	cfb5f3fe00c74f0ba5d772a8f424898a -> "00539dbdd843444eac8edd205a7055ac"
+	"7b7903d526414ec7a06d2440febb36f9" [label="FunctionCall,
+function name -> Anonymous Function,
+param -> e,
+" color=blue]
+	cfb5f3fe00c74f0ba5d772a8f424898a -> "7b7903d526414ec7a06d2440febb36f9"
+	"3d25e2a3248d47bcbc938e3722bc2ea2" -> cfb5f3fe00c74f0ba5d772a8f424898a
+	"6e0288acde514317860eced11141369e" -> "3d25e2a3248d47bcbc938e3722bc2ea2"
+	"124e44c82440439c892582ea0ccae209" -> "6e0288acde514317860eced11141369e"
+	"91d29fa127444ffeaec833ec8c07cb8c" -> "124e44c82440439c892582ea0ccae209"
+	fb77c20b74ea4bb0aaf1dead488e196a -> "91d29fa127444ffeaec833ec8c07cb8c"
+	fce265f495da447089395f86d9ec6b3a -> fb77c20b74ea4bb0aaf1dead488e196a
+}

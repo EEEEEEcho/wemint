@@ -1,0 +1,23 @@
+// \pages/tourist/activityView/activityView setImagePic Data Flow
+digraph {
+	"3d2e4d4381cf4d1dbf1cb15fa5e3cbbe" [label="FunctionCall,
+function name -> setImagePic,
+param -> " color=blue]
+	b4c1ba6511154a00b7fc725b4fb26dba [label=VariableDeclarations color=blue]
+	cf2a903b0e304648967dc7452ce24471 [label="VariableDeclarator,
+left -> a,
+right -> t.data.bgWidth" color=blue]
+	b4c1ba6511154a00b7fc725b4fb26dba -> cf2a903b0e304648967dc7452ce24471
+	"84170c90c38247a2a3f46532f3de56ff" [label="VariableDeclarator,
+left -> n,
+right -> t.data.bgHeight" color=blue]
+	b4c1ba6511154a00b7fc725b4fb26dba -> "84170c90c38247a2a3f46532f3de56ff"
+	"3d2e4d4381cf4d1dbf1cb15fa5e3cbbe" -> b4c1ba6511154a00b7fc725b4fb26dba
+	e57b6ab02a804459a34b335b75a5890f [label="CallExpression,
+callee name -> e.drawImage,
+param -> this.data.bgImg,
+a,
+n,
+" color=blue]
+	"3d2e4d4381cf4d1dbf1cb15fa5e3cbbe" -> e57b6ab02a804459a34b335b75a5890f
+}

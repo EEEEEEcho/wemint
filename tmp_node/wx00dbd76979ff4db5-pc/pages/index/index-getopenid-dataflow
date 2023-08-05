@@ -1,0 +1,36 @@
+// \pages/index/index getopenid Data Flow
+digraph {
+	"4fa8564902a84cb7a1ec73940f55adc8" [label="FunctionCall,
+function name -> getopenid,
+param -> " color=blue]
+	edc1d09c11b8417ca4835a003feaf26f [label=SequenceExpression color=blue]
+	"374ca6afaf1846a7879bdb3ffb01dc21" [label="CallExpression,
+callee name -> wx.login,
+param -> " color=blue]
+	"45dfaebb3f57422d90edf9ebccb90f4b" [label="FunctionCall,
+function name -> success,
+param -> n,
+n.,
+" color=blue]
+	"7631c4bfe1904de49f082b1ac7715194" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	c67188d8a6444a40b5f89810f65973a7 [label="CallExpression,
+callee name -> wx.request,
+param -> " color=blue]
+	"5d38b71ba1c9446c814ba3b1bc3f856b" [label="Object Properties
+{
+js_code -> n.code
+}" color=blue]
+	c67188d8a6444a40b5f89810f65973a7 -> "5d38b71ba1c9446c814ba3b1bc3f856b"
+	"68321ecac9474bf185cabfd522d9fa30" [label="FunctionCall,
+function name -> success,
+param -> n,
+" color=blue]
+	c67188d8a6444a40b5f89810f65973a7 -> "68321ecac9474bf185cabfd522d9fa30"
+	"7631c4bfe1904de49f082b1ac7715194" -> c67188d8a6444a40b5f89810f65973a7
+	"45dfaebb3f57422d90edf9ebccb90f4b" -> "7631c4bfe1904de49f082b1ac7715194"
+	"374ca6afaf1846a7879bdb3ffb01dc21" -> "45dfaebb3f57422d90edf9ebccb90f4b"
+	edc1d09c11b8417ca4835a003feaf26f -> "374ca6afaf1846a7879bdb3ffb01dc21"
+	"4fa8564902a84cb7a1ec73940f55adc8" -> edc1d09c11b8417ca4835a003feaf26f
+}

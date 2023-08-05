@@ -1,0 +1,14 @@
+// \pages/company/businessCard/cardDetails touchstart Data Flow
+digraph {
+	"59d1418fe69546f49d624faf882e42aa" [label="FunctionCall,
+function name -> touchstart,
+param -> a.,
+a,
+" color=blue]
+	cfbe87cbd0904657a20399b6a4f9d3ec [label="ConditionalExpression,
+ conditional list -> t.setData" color=blue]
+	e8fac8f9708f4067a5b31b9fec85207a [label="ConditionalExpression,
+ conditional list -> t.setData,t.setData" color=blue]
+	cfbe87cbd0904657a20399b6a4f9d3ec -> e8fac8f9708f4067a5b31b9fec85207a
+	"59d1418fe69546f49d624faf882e42aa" -> cfbe87cbd0904657a20399b6a4f9d3ec
+}

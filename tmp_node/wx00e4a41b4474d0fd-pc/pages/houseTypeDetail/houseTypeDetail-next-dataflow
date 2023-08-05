@@ -1,0 +1,15 @@
+// \pages/houseTypeDetail/houseTypeDetail next Data Flow
+digraph {
+	"07aaee93687c4402afe74e31a360bd3a" [label="FunctionCall,
+function name -> next,
+param -> " color=blue]
+	df834f4b4e4c407e855758641d062177 [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	b00c495863ed4f9ebf25385af32b5775 [label="Object Properties
+{
+current -> this.data.current + 1
+}" color=blue]
+	df834f4b4e4c407e855758641d062177 -> b00c495863ed4f9ebf25385af32b5775
+	"07aaee93687c4402afe74e31a360bd3a" -> df834f4b4e4c407e855758641d062177
+}

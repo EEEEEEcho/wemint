@@ -1,0 +1,18 @@
+// \pages/wx-cropper/index dragStart Data Flow
+digraph {
+	"3f67082bc1664854a4aa8951cacfcb8b" [label="FunctionCall,
+function name -> dragStart,
+param -> t,
+t.,
+" color=blue]
+	"92efa455f8d049f89460b6c74970ad02" [label=SequenceExpression color=blue]
+	"9d8530756b7a436f8ff5184f1f2d126e" [label="Assignment,
+left -> o,
+right -> t.touches[0].pageX" color=blue]
+	"92efa455f8d049f89460b6c74970ad02" -> "9d8530756b7a436f8ff5184f1f2d126e"
+	"699365f58a454b15b82fd8b5c535d234" [label="Assignment,
+left -> n,
+right -> t.touches[0].pageY" color=blue]
+	"92efa455f8d049f89460b6c74970ad02" -> "699365f58a454b15b82fd8b5c535d234"
+	"3f67082bc1664854a4aa8951cacfcb8b" -> "92efa455f8d049f89460b6c74970ad02"
+}

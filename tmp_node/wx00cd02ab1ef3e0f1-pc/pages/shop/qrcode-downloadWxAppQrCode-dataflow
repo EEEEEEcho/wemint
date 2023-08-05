@@ -1,0 +1,20 @@
+// \pages/shop/qrcode downloadWxAppQrCode Data Flow
+digraph {
+	"57045896e6e248cebeb77e0af6206fb6" [label="FunctionCall,
+function name -> downloadWxAppQrCode,
+param -> " color=blue]
+	aec88b7632dd4c069597f5e7e2ec29b7 [label="CallExpression,
+callee name -> wx.downloadFile,
+param -> " color=blue]
+	faf98c2d363b4dfe9cf4de1dfab0e7ee [label="Object Properties
+{
+url -> e.data.bg_src
+}" color=blue]
+	aec88b7632dd4c069597f5e7e2ec29b7 -> faf98c2d363b4dfe9cf4de1dfab0e7ee
+	"70c6199f1fcf43ea9dfb56a938ff92ba" [label="FunctionCall,
+function name -> success,
+param -> e,
+" color=blue]
+	aec88b7632dd4c069597f5e7e2ec29b7 -> "70c6199f1fcf43ea9dfb56a938ff92ba"
+	"57045896e6e248cebeb77e0af6206fb6" -> aec88b7632dd4c069597f5e7e2ec29b7
+}

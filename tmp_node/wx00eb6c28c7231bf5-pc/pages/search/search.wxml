@@ -1,0 +1,22 @@
+<view class="searchk">
+    <view class="searchl">
+        <icon size="14" type="search"></icon>
+        <input bindconfirm="onConfirmSearch" bindinput="onInputKeyword" confirmType="search" focus="true" placeholder="搜索商品"></input>
+    </view>
+    <view bindtap="gotoHome" class="searchr">取消</view>
+</view>
+<view class="searls">
+    <view class="searlsl">搜索历史</view>
+    <view class="searlsr">
+        <image hidden="true" src="/images/shanchu.jpg"></image>
+    </view>
+</view>
+<view class="searchlslist">
+    <view class="searclibut" wx:for="{{KeyWordList}}" wx:key="*this">
+        <button bindtap="onHistoryKeyWordClick" data-keyword="{{item}}">{{item}}</button>
+        <icon bindtap="removeKeyWord" color="#bababa" data-keyword="{{item}}" size="18" type="clear"></icon>
+    </view>
+</view>
+<view class="searchlslistq">
+    <button bindtap="ClearKeyWord" class="qkls">清空历史</button>
+</view>

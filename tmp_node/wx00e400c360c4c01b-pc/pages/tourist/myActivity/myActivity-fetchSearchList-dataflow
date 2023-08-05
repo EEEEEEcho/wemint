@@ -1,0 +1,12 @@
+// \pages/tourist/myActivity/myActivity fetchSearchList Data Flow
+digraph {
+	"3a7d9e97da024ad7b5e42c70d0fdf4ab" [label="FunctionCall,
+function name -> fetchSearchList,
+param -> " color=blue]
+	a53535f5e2cd497a883cd2d82307c5de [label="CallExpression,
+callee name -> a,
+param -> t.data.searchPageNum,
+t.data.callbackcount,
+" color=blue]
+	"3a7d9e97da024ad7b5e42c70d0fdf4ab" -> a53535f5e2cd497a883cd2d82307c5de
+}

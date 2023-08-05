@@ -1,0 +1,1 @@
+<view class="blank-box" style="background-color:{{pageData.BackgroundColor}}; height: {{pageData.Height}}px"></view>

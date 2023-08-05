@@ -1,0 +1,17 @@
+// \pages/chinaSy/chinaSy bindKeyInput Data Flow
+digraph {
+	"1c8c3c3e43c54879bf9cc97653ddb11c" [label="FunctionCall,
+function name -> bindKeyInput,
+param -> o,
+o.,
+" color=blue]
+	"40892489baa741f49728579f5d4dfc5c" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	c303d90c23f54e3cb256c1f582861e8d [label="Object Properties
+{
+tel -> o.detail.value
+}" color=blue]
+	"40892489baa741f49728579f5d4dfc5c" -> c303d90c23f54e3cb256c1f582861e8d
+	"1c8c3c3e43c54879bf9cc97653ddb11c" -> "40892489baa741f49728579f5d4dfc5c"
+}

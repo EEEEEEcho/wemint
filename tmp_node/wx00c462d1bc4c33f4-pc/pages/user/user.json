@@ -1,0 +1,6 @@
+{
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "component-timeLine": "../components/timeLine/timeLine"
+    }
+}

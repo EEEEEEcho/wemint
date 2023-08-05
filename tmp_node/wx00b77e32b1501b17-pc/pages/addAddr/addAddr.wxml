@@ -1,0 +1,51 @@
+<view class="page">
+    <view class="weui-cells mt0 vux-1px-t">
+        <view class="weui-cell">
+            <view class="weui-clell__hd">
+                <view class="weui-label">姓名</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="bindNameInput" class="weui-input" placeholder="请输入姓名" type="text" value="{{name}}"></input>
+            </view>
+        </view>
+        <view class="weui-cell">
+            <view class="weui-clell__hd">
+                <view class="weui-label">手机号码</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="bindMobileInput" class="weui-input" placeholder="请输入手机号码" type="text" value="{{mobile}}"></input>
+            </view>
+        </view>
+        <view class="weui-cell">
+            <view class="weui-clell__hd">
+                <view class="weui-label">学校名称</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="bindSchoolInput" class="weui-input" placeholder="请输入学校名称" type="text" value="{{school}}"></input>
+            </view>
+        </view>
+        <view class="weui-cell">
+            <view class="weui-clell__hd">
+                <view class="weui-label">年级</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="bindGradeInput" class="weui-input" placeholder="请输入年级" type="text" value="{{grade}}"></input>
+            </view>
+        </view>
+        <view class="weui-cell">
+            <view class="weui-clell__hd">
+                <view class="weui-label">出生日期</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker bindchange="bindBirthDateChange" end="2018-04-01" mode="date" start="1980-01-01" value="{{birth_date}}">
+                    <view class="picker">
+            {{birth_date}}
+          </view>
+                </picker>
+            </view>
+        </view>
+    </view>
+    <view class="btn-area">
+        <view bindtap="bindSaveTap" class="btn-primary">保存</view>
+    </view>
+</view>

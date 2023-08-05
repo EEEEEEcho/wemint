@@ -1,0 +1,27 @@
+// \pages/tourist/order/order delOrder Data Flow
+digraph {
+	"5cb0920e34714625b0226c606ed4da10" [label="FunctionCall,
+function name -> delOrder,
+param -> a.,
+a,
+" color=blue]
+	f9b85a2a191f4f0fa6c687f8dc0c01a0 [label=VariableDeclarations color=blue]
+	ec3d67c7d9514a93b787fef0be2bcd95 [label="VariableDeclarator,
+left -> n,
+right -> a.currentTarget.dataset.id" color=blue]
+	f9b85a2a191f4f0fa6c687f8dc0c01a0 -> ec3d67c7d9514a93b787fef0be2bcd95
+	"7597fb60a6a64fb48131288bd398ab72" [label="VariableDeclarator,
+left -> i,
+right -> a.currentTarget.dataset.index" color=blue]
+	f9b85a2a191f4f0fa6c687f8dc0c01a0 -> "7597fb60a6a64fb48131288bd398ab72"
+	"5cb0920e34714625b0226c606ed4da10" -> f9b85a2a191f4f0fa6c687f8dc0c01a0
+	"979ca3af4b2244c9b133b1172263bb2b" [label="CallExpression,
+callee name -> wx.showModal,
+param -> " color=blue]
+	a38bed3a288f495abb45e47cfb37751a [label="FunctionCall,
+function name -> success,
+param -> a,
+" color=blue]
+	"979ca3af4b2244c9b133b1172263bb2b" -> a38bed3a288f495abb45e47cfb37751a
+	"5cb0920e34714625b0226c606ed4da10" -> "979ca3af4b2244c9b133b1172263bb2b"
+}

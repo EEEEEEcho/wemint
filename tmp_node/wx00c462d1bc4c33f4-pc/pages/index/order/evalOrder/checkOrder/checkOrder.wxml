@@ -1,0 +1,82 @@
+<view class="xzdz">
+    <view class="xzdzBox">
+        <view class="xzdzTitle">
+            <view class="xzdzC">订单详情
+        <image class="xzdz_img" src="../../../../../images/orderDetails.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="order-detail-box">
+    <view class="order-detail-title">
+        <image class="order-detail-storelogo" src="{{storeInfo.storeInfoHeadImgUrl}}"></image>
+        <view class="order-detail-storename">{{storeInfo.storeInfoName}}</view>
+    </view>
+    <view wx:for="{{orderInfo.foodList}}" wx:for-item="food" wx:key="key">
+        <view class="row order-detail-content">
+            <view class="col-9">
+                <image class="order-detail-foodsrc" src="{{food.imgUrl}}"></image>
+                <view style="float:left;">
+                    <view class="order-detail-foodname" wx:if="{{food.sizeName==null||food.sizeName==''}}">{{food.foodName}}</view>
+                    <view class="order-detail-foodname" wx:else>{{food.foodName}}({{food.sizeName}})</view>
+                    <view class="order-detail-foodcount">×{{food.foodCount}}</view>
+                </view>
+            </view>
+            <view class="col-3 order-detail-price">{{food.realPrice}}￥</view>
+        </view>
+    </view>
+    <view class="mj-box">
+        <view class="mj-box-youhui">
+            <view class="mj-logo" wx:if="{{derateMoney>0}}">
+                <image class="mj-logo-size" src="../../../../../images/manjian.png"></image>
+            </view>
+            <view class="mj-youhui" wx:if="{{derateMoney>0}}">优惠（{{couponName}}）</view>
+        </view>
+        <view class="mj-box-price" wx:if="{{derateMoney>0}}">-{{derateMoney}}￥</view>
+    </view>
+    <view class="mj-detail">
+        <view class="mj-zhuo" wx:if="{{dcFlg==true}}">桌:{{deskNum}}</view>
+        <view class="float-right" style="float:right;">
+            <em class="mj-yyh" wx:if="{{derateMoney>0}}">已优惠{{derateMoney}}￥</em>
+            <em class="mj-hj">合计</em>
+            <em class="mj-jm">{{orderInfo.orderRealPrice}}￥</em>
+        </view>
+    </view>
+</view>
+<view class="order-number" wx:if="{{wmFlg==true}}">
+    <view class="order-number-con">
+    订单备注
+    <em style="padding-left:5px;">{{beizhu==null||beizhu==undefined||beizhu==''?'无':beizhu}}</em>
+    </view>
+    <view class="order-time">配送地址<em style="padding-left:5px;">{{wechatUserAddressAddress}}{{wechatUserAddressFullAddress}}</em>
+    </view>
+    <view class="order-pay">联系方式<em style="padding-left:5px;">{{wechatUserAddressReceiverName}} {{wechatUserAddressReceiverPhoneNum}}</em>
+    </view>
+</view>
+<view class="order-number">
+    <view class="order-number-con">
+    订单号码
+    <em style="padding-left:5px;">{{orderInfo.orderNum}}</em>
+    </view>
+    <view class="order-time">订单时间<em style="padding-left:5px;">{{orderInfo.orderCreateTimes}}</em>
+    </view>
+    <view class="order-pay">支付方式<em style="padding-left:5px;">{{orderStyle}}</em>
+    </view>
+</view>
+<view wx:if="{{ydFlg==true}}">
+    <view class="waitInfo">预订信息</view>
+    <view class="destineInfo">
+        <view>预定日期：{{orderDate}}</view>
+        <view>预定时间：{{orderTime}}</view>
+        <view>选择桌型：{{orderTable}}</view>
+        <view>用餐人数：{{orderPersonNumber}}</view>
+        <view>联 系 人<text style="padding-left:7px;">：{{orderContractName}}</text>
+        </view>
+        <view>联系电话：{{orderContractTel}}</view>
+    </view>
+</view>
+<button bindtap="toPingjia" class="evaluation" wx:if="{{wmFlg!=true}}">评 价 订 单</button>
+<view class="pb-container" wx:if="{{displa}}">
+    <view bindtap="closeTk" class="text-right100">X</view>
+    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
+</view>

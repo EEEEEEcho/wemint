@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "navigate": "/components/navigate/navigate",
+        "selection-list": "/components/selectionList/selectionList",
+        "loading-view": "/components/loading/loading",
+        "empty": "/components/emptyView/emptyView"
+    },
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 300
+}

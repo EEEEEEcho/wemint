@@ -1,0 +1,50 @@
+// \pages/index/order/order editOrder Data Flow
+digraph {
+	add5782b1b514c32804262c25046fe7f [label="FunctionCall,
+function name -> editOrder,
+param -> e.,
+e,
+" color=blue]
+	"3579bba9dcf24d3a92aa4bb88bced1c8" [label=VariableDeclarations color=blue]
+	bb6cd45ebcd94839b67122fa5c600551 [label="VariableDeclarator,
+left -> r,
+right -> e.currentTarget.dataset.id" color=blue]
+	"3579bba9dcf24d3a92aa4bb88bced1c8" -> bb6cd45ebcd94839b67122fa5c600551
+	c6d392ddaad346048b65f35416a6a52f [label="VariableDeclarator,
+left -> t,
+right -> e.currentTarget.dataset.currentTab" color=blue]
+	"3579bba9dcf24d3a92aa4bb88bced1c8" -> c6d392ddaad346048b65f35416a6a52f
+	"717f011914ac4553bae97e59c0163b66" [label="VariableDeclarator,
+left -> o,
+right -> e.currentTarget.dataset.orderState" color=blue]
+	"3579bba9dcf24d3a92aa4bb88bced1c8" -> "717f011914ac4553bae97e59c0163b66"
+	add5782b1b514c32804262c25046fe7f -> "3579bba9dcf24d3a92aa4bb88bced1c8"
+	"11acd9984c59452d85a67f97a8b7d81f" [label=SequenceExpression color=blue]
+	ed8c6bde534d4e0fad574261ee41ce8e [label="CallExpression,
+callee name -> console.log,
+param -> a + o,
+" color=blue]
+	"11acd9984c59452d85a67f97a8b7d81f" -> ed8c6bde534d4e0fad574261ee41ce8e
+	d5f0d7991b9141cdb32ba574e18ed3c6 [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	df4d7d2a5ba14b86a11178f0dea5a8a5 [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"14a738085f8a43feb0744b424db94ef4" [label="Object Properties
+{
+url -> '../destine/destine?orderId=' + r + '&editType=N'
+}" color=blue]
+	df4d7d2a5ba14b86a11178f0dea5a8a5 -> "14a738085f8a43feb0744b424db94ef4"
+	d5f0d7991b9141cdb32ba574e18ed3c6 -> df4d7d2a5ba14b86a11178f0dea5a8a5
+	"521821b136684ebba5294cd7472334df" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	b41c66ac3eda49f88ec34d11cd16a1ce [label="Object Properties
+{
+url -> '../takeOut/takeOut?flag=' + a + '&orderId=' + r + '&editType=N'
+}" color=blue]
+	"521821b136684ebba5294cd7472334df" -> b41c66ac3eda49f88ec34d11cd16a1ce
+	d5f0d7991b9141cdb32ba574e18ed3c6 -> "521821b136684ebba5294cd7472334df"
+	"11acd9984c59452d85a67f97a8b7d81f" -> d5f0d7991b9141cdb32ba574e18ed3c6
+	add5782b1b514c32804262c25046fe7f -> "11acd9984c59452d85a67f97a8b7d81f"
+}

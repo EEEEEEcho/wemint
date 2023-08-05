@@ -1,0 +1,3 @@
+<template name="ModuleButton">
+    <view bindtap="navTo" class="button" data-linkdata="{{m.LinkVal}}" data-linkid="{{m.LinkID}}" data-linktype="{{m.LinkType}}" style="{{'background-color:'+m.BgColor+';color:'+m.FontColor+';border-radius:'+m.Radius+'px;border-color:'+m.BorderColor+';width:'+m.Width*2+'rpx'}}">{{m.BtnText}}</view>
+</template>

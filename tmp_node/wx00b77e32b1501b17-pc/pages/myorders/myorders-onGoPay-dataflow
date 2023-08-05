@@ -1,0 +1,22 @@
+// \pages/myorders/myorders onGoPay Data Flow
+digraph {
+	f1f52784520647e0962e8c32fc5ab0f7 [label="FunctionCall,
+function name -> onGoPay,
+param -> t.,
+t,
+" color=blue]
+	"86d376e930d54de3a62c37186f846413" [label="CallExpression,
+callee name -> wx.navigateTo,
+param -> " color=blue]
+	"924fab306ad5432d9c4b6e4774005b76" [label="Object Properties
+{
+url -> '/pages/submitOrder2/submitOrder2?OrderID=' + t.currentTarget.id
+}" color=blue]
+	"86d376e930d54de3a62c37186f846413" -> "924fab306ad5432d9c4b6e4774005b76"
+	"24252c564e0f4cc79d1c177bb0efb787" [label="FunctionCall,
+function name -> complete,
+param -> t,
+" color=blue]
+	"86d376e930d54de3a62c37186f846413" -> "24252c564e0f4cc79d1c177bb0efb787"
+	f1f52784520647e0962e8c32fc5ab0f7 -> "86d376e930d54de3a62c37186f846413"
+}

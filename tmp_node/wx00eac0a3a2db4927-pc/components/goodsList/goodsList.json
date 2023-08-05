@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "good": "/components/good/good",
+        "right-cover-view": "/components/rightCoverView/rightCoverView",
+        "top-cover-view": "/components/topCoverView/topCoverView",
+        "loading-view": "/components/loading/loading",
+        "empty": "/components/emptyView/emptyView"
+    },
+    "component": true
+}

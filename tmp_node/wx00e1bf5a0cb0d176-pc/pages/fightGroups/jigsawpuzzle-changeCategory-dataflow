@@ -1,0 +1,49 @@
+// \pages/fightGroups/jigsawpuzzle changeCategory Data Flow
+digraph {
+	"99c3695b3c4b44d4a19e9085004e72a7" [label="FunctionCall,
+function name -> changeCategory,
+param -> t,
+t.,
+" color=blue]
+	ee4551552f3b40208e325f6913f55fbb [label=VariableDeclarations color=blue]
+	d9a1f0ffaf2e472e9838fa0e05069a03 [label="VariableDeclarator,
+left -> n,
+right -> t.currentTarget.dataset.index" color=blue]
+	ee4551552f3b40208e325f6913f55fbb -> d9a1f0ffaf2e472e9838fa0e05069a03
+	f870129bfff24d6ebefd7dfb58fcae65 [label="VariableDeclarator,
+left -> r,
+right -> t.currentTarget.dataset.id" color=blue]
+	ee4551552f3b40208e325f6913f55fbb -> f870129bfff24d6ebefd7dfb58fcae65
+	"99c3695b3c4b44d4a19e9085004e72a7" -> ee4551552f3b40208e325f6913f55fbb
+	"4a54330415d445edb0af08c994e8ebf0" [label=SequenceExpression color=blue]
+	"3a753d224b3546eea05169c1e905b8d8" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	"26e943e476254512a35bd331720702d1" [label="CallExpression,
+callee name -> e.hasCategoryPro,
+param -> r,
+" color=blue]
+	"3a753d224b3546eea05169c1e905b8d8" -> "26e943e476254512a35bd331720702d1"
+	a3498c6a461248f3ba6e8454ff61de5e [label="CallExpression,
+callee name -> a.sendRequest,
+param -> " color=blue]
+	"5cd3e1c58fde4d4793c6b57bfa7960d4" [label="Object Properties
+{
+url -> '/index.php?c=Front/WxApp/pintuan&a=getProductsList&pintuan_id=' + r + '&page=1'
+}" color=blue]
+	a3498c6a461248f3ba6e8454ff61de5e -> "5cd3e1c58fde4d4793c6b57bfa7960d4"
+	"3a753d224b3546eea05169c1e905b8d8" -> a3498c6a461248f3ba6e8454ff61de5e
+	"4a54330415d445edb0af08c994e8ebf0" -> "3a753d224b3546eea05169c1e905b8d8"
+	"99c3695b3c4b44d4a19e9085004e72a7" -> "4a54330415d445edb0af08c994e8ebf0"
+	fbe22b7a8ae143eabb0d1d69659c6485 [label=SequenceExpression color=blue]
+	"90037cdba86049e98940af9d07fa03ad" [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	b903af8bf8574d5583b9224eab35e587 [label="Object Properties
+{
+currentIndex -> n
+}" color=blue]
+	"90037cdba86049e98940af9d07fa03ad" -> b903af8bf8574d5583b9224eab35e587
+	fbe22b7a8ae143eabb0d1d69659c6485 -> "90037cdba86049e98940af9d07fa03ad"
+	"99c3695b3c4b44d4a19e9085004e72a7" -> fbe22b7a8ae143eabb0d1d69659c6485
+}

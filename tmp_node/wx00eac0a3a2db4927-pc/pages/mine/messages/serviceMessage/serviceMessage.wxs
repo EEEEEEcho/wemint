@@ -1,0 +1,49 @@
+module.exports = ({
+    getDate: (function(time) {
+        if ((time + '').length === 10) {
+            time = +time * 1000
+        };
+        var date = getDate(time);
+        var y = date.getFullYear();
+        var m = date.getMonth() + 1;
+        m = m < 10 ? ('0' + m) : m;
+        var d = date.getDate();
+        d = d < 10 ? ('0' + d) : d;
+        return (y + '-' + m + '-' + d)
+    }),
+    getTime: (function(time) {
+        if ((time + '').length === 10) {
+            time = +time * 1000
+        };
+        var date = getDate(time);
+        var h = date.getHours();
+        h = h < 10 ? ('0' + h) : h;
+        var minute = date.getMinutes();
+        minute = minute < 10 ? ('0' + minute) : minute;
+        return (h + ':' + minute)
+    }),
+    getStatus: (function(status) {
+        var text;
+        switch (status) {
+            case 1:
+                text = '在途中';
+                break;
+            case 2:
+                text = '正在派件';
+                break;
+            case 3:
+                text = '已签收';
+                break;
+            case 4:
+                text = '派送失败';
+                break;
+            case 5:
+                text = '疑难件';
+                break;
+            case 6:
+                text = '退件签收';
+                break;
+        };
+        return (text)
+    }),
+});

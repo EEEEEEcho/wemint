@@ -1,0 +1,18 @@
+// \pages/stu/mine/mine actionSheetChange Data Flow
+digraph {
+	af99070486bc4ab28a8dfa62d0b3405a [label="FunctionCall,
+function name -> actionSheetChange,
+param -> t,
+t.,
+" color=blue]
+	"80d681b6f7504b19825e2daa20d0ff98" [label="CallExpression,
+callee name -> this.setData,
+param -> " color=blue]
+	f295f0d4f5fd4292b7672c6db6297644 [label="Object Properties
+{
+}" color=blue]
+	"945b5e7b77e940feaacbdcfbbcaa6e1c" [label="!this.data.actionSheetHidden" color=blue]
+	f295f0d4f5fd4292b7672c6db6297644 -> "945b5e7b77e940feaacbdcfbbcaa6e1c"
+	"80d681b6f7504b19825e2daa20d0ff98" -> f295f0d4f5fd4292b7672c6db6297644
+	af99070486bc4ab28a8dfa62d0b3405a -> "80d681b6f7504b19825e2daa20d0ff98"
+}

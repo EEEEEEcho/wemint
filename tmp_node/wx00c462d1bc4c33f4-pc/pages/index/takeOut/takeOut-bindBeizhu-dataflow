@@ -1,0 +1,37 @@
+// \pages/index/takeOut/takeOut bindBeizhu Data Flow
+digraph {
+	"014d3f6e56e347b4be95573de0fccddf" [label="FunctionCall,
+function name -> bindBeizhu,
+param -> o.,
+o,
+" color=blue]
+	"7b4b1afd99414833848848eb77795e5e" [label=VariableDeclarations color=blue]
+	"26c3ae73d44c4ffeabeadbd61ab87ae6" [label="VariableDeclarator,
+left -> t,
+right -> o.detail.value" color=blue]
+	"7b4b1afd99414833848848eb77795e5e" -> "26c3ae73d44c4ffeabeadbd61ab87ae6"
+	"014d3f6e56e347b4be95573de0fccddf" -> "7b4b1afd99414833848848eb77795e5e"
+	c0e36276f4534c9f8e6020dc3fba8261 [label=SequenceExpression color=blue]
+	"59f4bd2daf3344a8bd202fb081cd7f1c" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	eca2d6eae21d4f8d8d7820376abe0e16 [label="CallExpression,
+callee name -> e.setData,
+param -> " color=blue]
+	"8f4516331e5540468d806b1b03195824" [label="Object Properties
+{
+dcBeizhu -> t
+}" color=blue]
+	eca2d6eae21d4f8d8d7820376abe0e16 -> "8f4516331e5540468d806b1b03195824"
+	"59f4bd2daf3344a8bd202fb081cd7f1c" -> eca2d6eae21d4f8d8d7820376abe0e16
+	c0e36276f4534c9f8e6020dc3fba8261 -> "59f4bd2daf3344a8bd202fb081cd7f1c"
+	"646dbf8553924908975827641aaa8a2b" [label="CallExpression,
+callee name -> wx.setStorage,
+param -> " color=blue]
+	"66d0834a0e4940a2a5c3ab0c49fe027e" [label="Object Properties
+{
+data -> t
+}" color=blue]
+	"646dbf8553924908975827641aaa8a2b" -> "66d0834a0e4940a2a5c3ab0c49fe027e"
+	c0e36276f4534c9f8e6020dc3fba8261 -> "646dbf8553924908975827641aaa8a2b"
+	"014d3f6e56e347b4be95573de0fccddf" -> c0e36276f4534c9f8e6020dc3fba8261
+}

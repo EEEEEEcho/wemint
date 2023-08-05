@@ -1,0 +1,14 @@
+// \pages/comment/comment formSubmit Data Flow
+digraph {
+	"2d5c7325f3394a70a4c5664d5e269308" [label="FunctionCall,
+function name -> formSubmit,
+param -> e,
+e.,
+" color=blue]
+	fc397dde40df43518f031f1eec4cb2ed [label=VariableDeclarations color=blue]
+	"9de129374bf54e478575e4c0c121a5e3" [label="VariableDeclarator,
+left -> formId,
+right -> e.detail.formId" color=blue]
+	fc397dde40df43518f031f1eec4cb2ed -> "9de129374bf54e478575e4c0c121a5e3"
+	"2d5c7325f3394a70a4c5664d5e269308" -> fc397dde40df43518f031f1eec4cb2ed
+}

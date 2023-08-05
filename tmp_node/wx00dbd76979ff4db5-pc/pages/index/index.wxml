@@ -1,0 +1,87 @@
+<view class="banner">
+    <swiper autoplay="true" circular="true" class="banner" duration="2000" indicatorDots="" interval="5000">
+        <swiper-item wx:for="{{banner}}" wx:key="k1">
+            <image class="img" mode="aspectFill" src="{{path}}{{item.src}}"></image>
+        </swiper-item>
+    </swiper>
+</view>
+<view class="k20"></view>
+<view class="jingpin">
+    <view bindtap="jingpin">
+        <view class="k40"></view>
+        <view class="jingpin-title">
+            <view class="jingpin-title-img">
+                <image class="img" src="/pages/img/img1.png"></image>
+            </view>
+            <view class="jingpin-title-text">精品二手</view>
+            <view class="jingpin-title-more">查看全部>></view>
+        </view>
+        <view class="k10"></view>
+    </view>
+    <view class="jingpin-list">
+        <view bindtap="detail" class="jingpin-item" data-id="{{item.id}}" wx:for="{{jingpin}}" wx:key="k2">
+            <view class="jingpin-item-t">
+                <image class="img" mode="aspectFill" src="{{path}}{{item.img}}"></image>
+                <view class="jingpin-item-t-tips">
+                    <image class="img" src="/pages/img/jpcy.png"></image>
+                </view>
+            </view>
+            <view class="jingpin-item-b">
+                <view class="k20"></view>
+                <view class="goods-name">{{item.title}}</view>
+                <view class="goods-desc">{{item.date}} / {{item.traveled}}万公里 / {{item.gearbox==1?'手动':'自动'}}</view>
+                <view class="goods-price">{{item.price}}万</view>
+            </view>
+        </view>
+    </view>
+    <view class="k40"></view>
+</view>
+<view class="k20 clear"></view>
+<view class="jingpin">
+    <view bindtap="newcar">
+        <view class="k40"></view>
+        <view class="jingpin-title">
+            <view class="jingpin-title-img">
+                <image class="img" src="/pages/img/img2.png"></image>
+            </view>
+            <view class="jingpin-title-text">新车上市</view>
+            <view class="jingpin-title-more">查看全部>></view>
+        </view>
+        <view class="k10 clear"></view>
+    </view>
+    <view bindtap="detail" class="xinche-item" data-id="{{item.id}}" wx:for="{{xinche}}" wx:key="k3">
+        <view class="xinche-item-t">
+            <image class="img" mode="aspectFill" src="{{path}}{{item.img}}"></image>
+        </view>
+        <view class="xinche-item-b">
+            <view class="goods-name">{{item.title}}</view>
+            <view class="goods-desc">{{item.date}} / {{item.gearbox==1?'手动':'自动'}}</view>
+            <view class="goods-price">{{item.price}}万</view>
+        </view>
+    </view>
+    <view class="k30 clear"></view>
+</view>
+<view class="k20"></view>
+<view class="jingpin">
+    <view class="k40"></view>
+    <view class="jingpin-title">
+        <view class="jingpin-title-img">
+            <image class="img" src="/pages/img/img3.png"></image>
+        </view>
+        <view class="jingpin-title-text">新闻资讯</view>
+        <view bindtap="newslist" class="jingpin-title-more">查看全部>></view>
+    </view>
+    <view class="k40 clear"></view>
+    <view bindtap="newsdetail" class="xinwen-list" data-id="{{item.id}}" wx:for="{{news}}" wx:key="k4">
+        <view class="xinwen-list-item">
+            <view class="xinwen-list-item-l">
+                <view class="xinwen-list-item-l-t">{{item.title}}</view>
+                <view class="xinwen-list-item-l-b">{{item.update_time}}</view>
+            </view>
+            <view class="xinwen-list-item-r">
+                <image class="img" mode="aspectfill" src="{{path}}{{item.img}}"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="k20"></view>

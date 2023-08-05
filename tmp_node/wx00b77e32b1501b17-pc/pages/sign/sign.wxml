@@ -1,0 +1,6 @@
+<view class="byr">
+    <view class="byr_img">
+        <image src="/image/logo.jpg"></image>
+    </view>
+    <button bindgetuserinfo="onGotUserInfo" class="bygd" lang="zh_CN" openType="getUserInfo">微信授权登录</button>
+</view>

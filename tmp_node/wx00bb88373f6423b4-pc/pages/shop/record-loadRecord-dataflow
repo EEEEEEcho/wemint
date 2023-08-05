@@ -1,0 +1,48 @@
+// \pages/shop/record loadRecord Data Flow
+digraph {
+	fe8ab11d6d9847b8bd9f067e4c557891 [label="FunctionCall,
+function name -> loadRecord,
+param -> " color=blue]
+	"473b1228d621425f933e49097cb0e12b" [label="If Alternate" color=blue]
+	"43108938a90c47138c27f41919b62ebf" [label=VariableDeclarations color=blue]
+	be2ddf44185f4461a2272eebc194ad92 [label="VariableDeclarator,
+left -> i,
+right -> e.data.total" color=blue]
+	"43108938a90c47138c27f41919b62ebf" -> be2ddf44185f4461a2272eebc194ad92
+	"473b1228d621425f933e49097cb0e12b" -> "43108938a90c47138c27f41919b62ebf"
+	"1bc7b0b04b5443ba9d9f58c841805fd7" [label="ConditionalExpression,
+ conditional list -> " color=blue]
+	"3b1cd7946c3a41df90ec68724ecf5c64" [label="LogicalExpression,
+left -> None,
+right -> None" color=blue]
+	b4a22e1dcf9348cf90d979e240c98e80 [label="Assignment,
+left -> e.data.recordcount,
+right -> i" color=blue]
+	"3b1cd7946c3a41df90ec68724ecf5c64" -> b4a22e1dcf9348cf90d979e240c98e80
+	"1bc7b0b04b5443ba9d9f58c841805fd7" -> "3b1cd7946c3a41df90ec68724ecf5c64"
+	"473b1228d621425f933e49097cb0e12b" -> "1bc7b0b04b5443ba9d9f58c841805fd7"
+	"957832c7a79345dba701e456fb4e0b27" [label=VariableDeclarations color=blue]
+	"550e00951b504746ac19b87f5b15bef3" [label="VariableDeclarator,
+left -> o,
+right -> e.data.recordcount" color=blue]
+	"957832c7a79345dba701e456fb4e0b27" -> "550e00951b504746ac19b87f5b15bef3"
+	"9b0e8aba873043a0bb39878084dd192b" [label="VariableDeclarator,
+left -> n,
+right -> e.data.List.length" color=blue]
+	"957832c7a79345dba701e456fb4e0b27" -> "9b0e8aba873043a0bb39878084dd192b"
+	"473b1228d621425f933e49097cb0e12b" -> "957832c7a79345dba701e456fb4e0b27"
+	"856a1898395e4986843a21714e70597e" [label="If Alternate" color=blue]
+	fa64f69a6c5b4390b9b67f5a2eba0ed0 [label=VariableDeclarations color=blue]
+	"9afde64bbd4c457d94f3bb0de4851802" [label="VariableDeclarator,
+left -> None,
+right -> None" color=blue]
+	aff2bc08453d4070badd1962f3cc7565 [label="CallExpression,
+callee name -> Math.ceil,
+param -> n / e.data.pagesize,
+" color=blue]
+	"9afde64bbd4c457d94f3bb0de4851802" -> aff2bc08453d4070badd1962f3cc7565
+	fa64f69a6c5b4390b9b67f5a2eba0ed0 -> "9afde64bbd4c457d94f3bb0de4851802"
+	"856a1898395e4986843a21714e70597e" -> fa64f69a6c5b4390b9b67f5a2eba0ed0
+	"473b1228d621425f933e49097cb0e12b" -> "856a1898395e4986843a21714e70597e"
+	fe8ab11d6d9847b8bd9f067e4c557891 -> "473b1228d621425f933e49097cb0e12b"
+}

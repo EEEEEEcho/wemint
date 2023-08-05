@@ -1,0 +1,82 @@
+page {
+}
+
+.book {
+    display: flex;
+    width: 100%;
+    height: 150rpx;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bookSm {
+    width: 370rpx;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bookSm image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.bookSm text {
+    margin-left: 20rpx;
+}
+
+.book_record {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    margin-top: 20rpx;
+}
+
+.tongzhi {
+    display: flex;
+    font-size: 15px;
+    font-weight: 700;
+    margin-left: 25rpx;
+    height: 60rpx;
+}
+
+.bookList {
+    display: flex;
+    justify-content: center;
+    height: 180rpx;
+    margin-top: 30rpx;
+    padding: 10rpx 10rpx 10rpx 10rpx;
+}
+
+.bookListImg {
+    width: 30%;
+}
+
+.bookListContent {
+    width: 50%;
+    padding-left: 20rpx;
+}
+
+.bookListContent .lable {
+    font-size: 30rpx;
+    color: #3C3C3C;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bookListContent .text {
+    font-size: 25rpx;
+    color: #9D9D9D;
+    padding-top: 10rpx;
+}
+
+.bookListState {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    font-size: 30rpx;
+    color: red;
+}

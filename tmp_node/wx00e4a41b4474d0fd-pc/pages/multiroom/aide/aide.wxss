@@ -1,0 +1,129 @@
+.list {
+    height: 60px;
+    width: 100%;
+    line-height: 60px;
+    background: #eeeeee;
+    border-bottom: 1px solid #ffffff;
+}
+
+.model {
+    position: fixed;
+    width: 80vw;
+    left: 10vw;
+    top: 20vh;
+    border-radius: 20rpx;
+    background-color: white;
+    z-index: 9999999;
+}
+
+.model .modelTitle {
+    width: 100%;
+    padding: 20rpx 0rpx;
+    font-size: 40rpx;
+    text-align: center;
+    color: block;
+    border-bottom: 1rpx solid rgb(237,237,237);
+}
+
+.model .modelBody {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 50rpx 50rpx;
+    text-align: center;
+    color: rgb(178,178,178);
+    font-size: 30rpx;
+    border-bottom: 1rpx solid rgb(237,237,237);
+}
+
+.mask2 {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(155,155,155,0.6);
+    z-index: 999999;
+}
+
+.model .btns {
+    width: 100%;
+    text-align: center;
+}
+
+.model .btns .agree {
+    border-width: 0px;
+    color: rgb(26,172,25);
+}
+
+.modeContainer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.showPhoneView {
+    position: absolute;
+    color: white;
+    z-index: 101;
+    width: 610rpx;
+    left: 70rpx;
+    top: 300rpx;
+    text-align: center;
+    font-size: 32rpx;
+    padding: 60rpx 43rpx;
+    box-sizing: border-box;
+}
+
+.showPhoneView .backView {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0rpx;
+    top: 0rpx;
+    opacity: 0.9;
+    background: #363636;
+    border-radius: 16rpx;
+    z-index: 1;
+}
+
+.showPhoneView .titleWord {
+    position: relative;
+    z-index: 2;
+}
+
+.showPhoneView .btnList {
+    position: relative;
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40rpx;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.showPhoneView .btnList .im_btn {
+    width: 220rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: nowrap;
+    background-color: transparent;
+    overflow: visible;
+    font-size: 30rpx;
+    border-radius: 16rpx;
+    margin: auto;
+}
+
+.showPhoneView .btnList .im_btn1 {
+    color: white;
+    background: #1B93F2;
+}

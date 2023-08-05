@@ -1,0 +1,31 @@
+<view class="margintop5"></view>
+<view class="search-bar">
+    <view class="search-wrap">
+        <icon class="icon-search" size="16" type="search"></icon>
+        <input bindblur="wxSearchBlur" bindfocus="wxSerchFocus" bindinput="wxSearchInput" class="search-input" name="searchKeyword" placeholder="请输入学员名称" type="text" value="{{keyword}}"></input>
+    </view>
+</view>
+<scroll-view bindscrolltolower="searchScrollLower" scrollY="true" style="height: {{scrollHeight}}rpx;">
+    <view class="section">
+        <view wx:for="{{carts}}" wx:for-index="idx" wx:key="car">
+            <view class="cart_container">
+                <image bindtap="switchSelect" class="item-select" data-id="{{idx}}" data-index="{{idx}}" src="{{item.isSelect?'../../../image/choose@2x.png':'../../../image/choose_no@2x.png'}}"></image>
+                <image bindtap="switchSelect" class="item-image" data-id="{{idx}}" data-index="{{idx}}" src="{{item.icon}}"></image>
+                <view class="column">
+                    <text bindtap="switchSelect" class="column_title" data-id="{{idx}}" data-index="{{idx}}">{{item.cpc_name}}</text>
+                </view>
+                <view bindtap="switchSelect" class="column_bir" data-id="{{idx}}" data-index="{{idx}}">{{item.birthday}}</view>
+            </view>
+        </view>
+        <view class="loading" hidden="{{!searchLoading}}">正在载入...</view>
+        <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+    </view>
+</scroll-view>
+<view class="bottom_total">
+    <view class="bottom_line"></view>
+    <view class="row">
+        <image bindtap="allSelect" class="item-allselect" src="{{isAllSelect?'../../../image/choose@2x.png':'../../../image/choose_no@2x.png'}}"></image>
+        <text class="small_text">全选</text>
+        <button bindtap="showModal" class="button-red" formType="submit">确定</button>
+    </view>
+</view>
