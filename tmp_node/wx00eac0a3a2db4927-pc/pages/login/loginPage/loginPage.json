@@ -1,8 +1,0 @@
-{
-    "usingComponents": {
-        "navigate": "/components/navigate/navigate",
-        "get-user": "/components/getUser/getUser",
-        "loading-view": "/components/loading/loading",
-        "empty": "/components/emptyView/emptyView"
-    }
-}

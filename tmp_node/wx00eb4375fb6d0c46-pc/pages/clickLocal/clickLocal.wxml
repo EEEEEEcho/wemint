@@ -1,2 +1,0 @@
-<text>领取券中...</text>
-<web-view src="{{projectUrl}}/h5/cardevo/index.html#/getCoupon?merchantConfigId={{merchantConfigId}}&promoteId={{promoteId}}&openId={{openId}}">进入微信</web-view>

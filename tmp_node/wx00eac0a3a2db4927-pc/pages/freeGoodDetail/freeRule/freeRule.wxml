@@ -1,4 +1,0 @@
-<navigate cartPage="{{cartPage}}"></navigate>
-<view class="rule_view" style="margin-top: {{navH+status+10}}px;">
-    <rich-text nodes="{{exemptionRule}}"></rich-text>
-</view>

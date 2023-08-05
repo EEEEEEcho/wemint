@@ -1,9 +1,0 @@
-<navigate cartPage="{{cartPage}}"></navigate>
-<view class="recommended-product-container" style="margin-top: {{navH+status+10}}px;">
-    <view class="searchbar">
-        <image class="loupe" src="http://oss.shangmian.xin/weixin_applets_icon_loupe.png"></image>
-        <input bindblur="getKeywords" class="loupe_txt" focus="true" placeholderClass="placeholder" wx:if="{{isShowInput}}"></input>
-        <view catchtap="getFocus" class="text_style" wx:else>搜索品牌/单品/风格</view>
-    </view>
-    <selection-list id="selectionList" keywords="{{keywords}}"></selection-list>
-</view>

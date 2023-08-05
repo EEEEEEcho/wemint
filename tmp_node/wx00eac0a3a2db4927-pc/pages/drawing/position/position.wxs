@@ -1,7 +1,0 @@
-module.exports = ({
-    getDistance: (function(distance) {
-        var dis = distance / 1000;
-        var far = dis.toFixed(1);
-        return (far)
-    }),
-});

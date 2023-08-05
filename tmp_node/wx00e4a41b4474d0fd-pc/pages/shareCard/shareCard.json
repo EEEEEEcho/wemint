@@ -1,8 +1,0 @@
-{
-    "usingComponents": {
-        "shareView": "../../components/shareHandle/shareHandle",
-        "myLoading": "../../components/globalLoad/globalLoad",
-        "navbar": "/components/navbar/navbar",
-        "c-img": "../components/indexImg/indexImg"
-    }
-}

@@ -1,4 +1,0 @@
-<myLoading id="myLoading"></myLoading>
-<view>
-    <video autoplay="true" bindfullscreenchange="queitFull" bindplay="play" class="video" controls="{{true}}" customCache="{{false}}" direction="90" enableProgressGesture="{{false}}" id="myVideo" loop="true" src="{{source}}"></video>
-</view>

@@ -1,8 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "c-img": "../img/img",
-        "myLoading": "../globalLoad/globalLoad",
-        "navbar": "/components/navbar/navbar"
-    }
-}

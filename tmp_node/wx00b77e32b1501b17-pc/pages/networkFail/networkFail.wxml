@@ -1,6 +1,0 @@
-<view class="page">
-    <view class="tc" style="padding-top: 3rem;">
-        <image class="img404" src="/image/404.png"></image>
-        <view class="fs12 text-muted mt20">访问失败，请检查您的网络连接</view>
-    </view>
-</view>

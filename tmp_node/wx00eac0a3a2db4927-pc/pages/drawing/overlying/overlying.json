@@ -1,9 +1,0 @@
-{
-    "usingComponents": {
-        "navigate": "/components/navigate/navigate",
-        "loading-view": "/components/loading/loading",
-        "empty": "/components/emptyView/emptyView"
-    },
-    "enablePullDownRefresh": true,
-    "onReachBottomDistance": 300
-}

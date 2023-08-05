@@ -1,3 +1,0 @@
-<view class="container">
-    <web-view bindload="onBindLoad" src="{{loadUrl}}"></web-view>
-</view>

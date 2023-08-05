@@ -1,7 +1,0 @@
-<navigate cartPage="{{cartPage}}"></navigate>
-<view class="update_avatar_container column overflow" style="margin-top: {{navH+status+10}}px;">
-    <view class="largeAvatar">
-        <image class="avatar" lazyLoad="true" mode="aspectFit" src="{{avatar}}"></image>
-    </view>
-    <view catchtap="changeAvatar" class="changeBtn">更换头像</view>
-</view>

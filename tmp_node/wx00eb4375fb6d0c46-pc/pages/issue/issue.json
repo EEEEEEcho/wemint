@@ -1,7 +1,0 @@
-{
-    "navigationBarTitleText": "发布惠圈",
-    "backgroundColor": "#f7f7f7",
-    "usingComponents": {
-        "loading-component": "/pages/components/loading/loading"
-    }
-}

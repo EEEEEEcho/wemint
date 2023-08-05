@@ -1,9 +1,0 @@
-module.exports = ({
-    getProperty: (function(item) {
-        if (typeof item.value === 'object') {
-            return (item.name + ':' + item.value.value)
-        } else {
-            return (item.name + ':' + item.value)
-        }
-    }),
-});

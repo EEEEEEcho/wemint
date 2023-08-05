@@ -1,3 +1,0 @@
-<image class="avatr_img" src="{{imgurl}}"></image>
-<button bindgetuserinfo="goDetail" class="activate" openType="getUserInfo">一键授权</button>
-<view class="wxsq">微信规则限制，必须您主动授权</view>

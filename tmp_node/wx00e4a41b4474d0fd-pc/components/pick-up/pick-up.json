@@ -1,9 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "component-preview-image": "../preview-image/preview-image",
-        "c-img": "../../components/img/img",
-        "myLoading": "../globalLoad/globalLoad",
-        "navbar": "/components/navbar/navbar"
-    }
-}

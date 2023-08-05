@@ -1,4 +1,0 @@
-<navigate cartPage="{{cartPage}}"></navigate>
-<view class="friend_recommend_container overflow" style="margin-top: {{navH+status+10}}px;">
-    <goods-list id="goodsList" isComplex="{{isComplex}}" isPrice="{{isPrice}}" isRecommend="{{isRecommend}}"></goods-list>
-</view>

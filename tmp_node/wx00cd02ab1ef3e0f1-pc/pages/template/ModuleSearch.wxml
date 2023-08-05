@@ -1,7 +1,0 @@
-<template name="ModuleSearch">
-    <view>
-        <view class="layui-icon m-iconfont m-icon-iconfont_search" style="font-size:40rpx; color:{{m.FontColor}}"></view>
-        <input bindblur="M_onSearchInputBlur" bindconfirm="M_doSearch" bindfocus="M_onSearchInputFocus" bindinput="M_onSearchInput" class="searchbox" data-moduleid="{{m.ModuleID}}" style="background-color:{{m.BgColor}};color:{{m.FontColor}};border-color:{{m.BorderColor}};" type="text"></input>
-        <div class="placeholder" style="color:{{m.FontColor}}" wx:if="{{m.HidePlaceHolder!=1}}">{{m.BtnText}}</div>
-    </view>
-</template>

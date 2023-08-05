@@ -1,9 +1,0 @@
-<view class="mask">
-    <view class="popup">
-        <view class="content">
-            <c-img cclass="content-img" mode="scaleToFill" src="{{contentSrc}}"></c-img>
-        </view>
-        <view bind:tap="onKnown" class="pop-btn" wx:if="{{hasInnerBtn}}">我知道了</view>
-        <image bind:tap="onClose" class="pop-close" src="https://dm.static.elab-plus.com/wuXiW3/img/close.png" wx:if="{{hasClose}}"></image>
-    </view>
-</view>

@@ -1,6 +1,0 @@
-module.exports = ({
-    getPrice: (function(price) {
-        var dis = price / 100;
-        return (dis)
-    }),
-});

@@ -1,9 +1,0 @@
-// \pages/editaddress/editaddress setAreaData Data Flow
-digraph {
-	d06218e6cc9f48bf852db402d9c94e03 [label="FunctionCall,
-function name -> setAreaData,
-param -> " color=blue]
-	"649525b83f1442b685514451d3dc2644" [label="ConditionalExpression,
- conditional list -> d.setProvinceCityData" color=blue]
-	d06218e6cc9f48bf852db402d9c94e03 -> "649525b83f1442b685514451d3dc2644"
-}

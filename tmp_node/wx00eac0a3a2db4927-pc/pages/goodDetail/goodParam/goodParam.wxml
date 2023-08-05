@@ -1,9 +1,0 @@
-<navigate cartPage="{{cartPage}}"></navigate>
-<view class="params-container overflow" style="margin-top: {{navH+status+10}}px;">
-    <view class="params">
-        <view class="param_brand" wx:for="{{parameter}}">
-            <view class="brand">{{item.name}}</view>
-            <view class="brand_name">{{item.value}}</view>
-        </view>
-    </view>
-</view>

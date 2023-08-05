@@ -1,7 +1,0 @@
-{
-    "navigationBarTitleText": "探惠月卡",
-    "navigationBarBackgroundColor": "#fff",
-    "usingComponents": {
-        "loading-component": "/pages/components/loading/loading"
-    }
-}

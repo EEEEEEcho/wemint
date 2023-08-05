@@ -1,4 +1,0 @@
-<myLoading id="myLoading"></myLoading>
-<authView bindafterPhoneHandle="afterPhoneHandle" bindafterUserHandle="afterUserHandle" phoneText="我们请求获取您的手机号码，用于生成您的个人专属分享卡片。" phoneTitle="为您生成个人专属分享卡片" showInfoModel="{{showInfoModel}}" showPhoneModel="{{true}}"></authView>
-<view class="view" wx:if="{{!coverImage}}"></view>
-<image class="coverImage" mode="widthFix" src="{{coverImage}}" wx:if="{{coverImage}}"></image>

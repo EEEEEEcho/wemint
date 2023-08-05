@@ -1,7 +1,0 @@
-<view class="ban1">
-    <image class="img" src="/pages/img/QRcode.jpg"></image>
-</view>
-<view class="in1">
-  微信规则限制,必须您主动授权
-</view>
-<button bindgetuserinfo="userInfoHandler" class="btn8" openType="getUserInfo">一键授权</button>

@@ -1,1 +1,0 @@
-<video autoplay="true" bindended="hideModal" binderror="hideModal" controls="controls" id="myVideo" showProgress="true" src="{{videoUrl}}" style="toop:0rpx;width: 100%;height: 100vh;z-index: 2000;"></video>

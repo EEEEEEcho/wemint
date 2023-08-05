@@ -1,3 +1,0 @@
-<button appParameter="{{appParameter}}" bindcontact="bindcontact" binderror="{{binderror}}" bindgetuserinfo="bindgetuserinfo" bindopensetting="{{bindopensetting}}" class="button-{{type}} {{hue}} button-{{size}}" disabled="{{disabled}}" formType="{{formType}}" hoverClass="{{hoverClass}}" hoverStartTime="{{hoverStartTime}}" hoverStayTime="{{hoverStayTime}}" hoverStopPropagation="{{hoverStopPropagation}}" lang="{{lang}}" loading="{{loading}}" openType="{{openType}}" plain="{{plain}}" sendMessageImg="{{sendMessageImg}}" sendMessagePath="{{sendMessagePath}}" sendMessageTitle="{{sendMessageTitle}}" sessionFrom="{{sessionFrom}}" showMessageCard="{{showMessageCard}}" size="{{size}}">
-    <slot></slot>
-</button>

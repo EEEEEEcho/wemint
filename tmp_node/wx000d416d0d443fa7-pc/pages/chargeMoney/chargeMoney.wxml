@@ -1,7 +1,0 @@
-<view class="container">
-    <view class="chargeMoney">
-        <view class="fs_16 chargeMoneyItem">
-      会员余额： <text class="fc_red fs_20">￥{{chargeMoney}}</text>
-        </view>
-    </view>
-</view>

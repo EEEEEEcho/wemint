@@ -1,3 +1,0 @@
-<view class="section">
-    <input maxlength="10" placeholder="金额"></input>
-</view>

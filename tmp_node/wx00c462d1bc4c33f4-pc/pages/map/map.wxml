@@ -1,7 +1,0 @@
-<map bindcontroltap="controlClick" bindregionchange="regionChange" circles="{{circles}}" controls="{{controls}}" id="map" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" polyline="{{polyline}}" style="width: 100%; height:calc(100vh - 90px)"></map>
-<button bindtap="locationClick" type="primary">定位位置</button>
-<button bindtap="selectedClick" type="primary">选择位置</button>
-<view class="pb-container" wx:if="{{displa}}">
-    <view bindtap="closeTk" class="text-right100">X</view>
-    <component-timeLine refundId="{{refundId}}" refundTitle="{{refundTitle}}"></component-timeLine>
-</view>

@@ -1,8 +1,0 @@
-{
-    "usingComponents": {
-        "navigate": "/components/navigate/navigate",
-        "goods-list": "/components/goodsList/goodsList",
-        "loading-view": "/components/loading/loading",
-        "empty": "/components/emptyView/emptyView"
-    }
-}

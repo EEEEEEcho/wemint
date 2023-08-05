@@ -1,9 +1,0 @@
-<import src="/pages/template/modules.wxml"></import>
-<view class="homeWrapper">
-    <template is="modules" data="{{modules:modules,globaldata:globaldata}}"></template>
-</view>
-<view class="kefu">
-    <contact-button sessionFrom="weapp" size="50" type="default-dark"></contact-button>
-    <text class="iconfont icon-kefu"></text>
-</view>
-<include src="UserReg.wxml"></include>

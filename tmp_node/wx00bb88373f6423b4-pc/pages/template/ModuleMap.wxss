@@ -1,9 +1,0 @@
-.ModuleMap {
-    background-color: #ffffff;
-    box-sizing: border-box;
-}
-
-.ModuleMap .mapcontainer {
-    width: 100%;
-    margin: auto;
-}

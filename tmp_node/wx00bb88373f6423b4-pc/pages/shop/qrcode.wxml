@@ -1,3 +1,0 @@
-<view class="container" style="height:{{windowHeight}}px">
-    <image bindtap="clickImage" class="tgbjImg" data-src="{{bg_src}}" mode="widthFix" src="{{bg_src}}"></image>
-</view>

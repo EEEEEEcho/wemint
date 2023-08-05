@@ -1,7 +1,0 @@
-{
-    "navigationBarTitleText": "全部活动",
-    "navigationBarBackgroundColor": "#ffc80b",
-    "usingComponents": {
-        "loading-component": "/pages/components/loading/loading"
-    }
-}

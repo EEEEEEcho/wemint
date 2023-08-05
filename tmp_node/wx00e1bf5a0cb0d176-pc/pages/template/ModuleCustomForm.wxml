@@ -1,9 +1,0 @@
-<template name="ModuleCustomForm">
-    <view class="no-info" wx:if="{{m.FormData===null}}">暂无表单数据</view>
-    <block wx:else>
-        <import src="/pages/template/customform.wxml"></import>
-        <view class="layout-101">
-            <template is="customform" data="{{customformdata:m.FormData,customformvalues:globaldata.customformvalues,info:m}}"></template>
-        </view>
-    </block>
-</template>

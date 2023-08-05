@@ -1,3 +1,0 @@
-<view class="remindAdd" style="margin-top:{{navH+status}}px" wx:if="{{isShow}}">
-    <image catchtap="onRemindClick" class="imageIcon" src="http://oss.shangmian.xin/weixin_applets_icon_ic_home_remind_collection.png"></image>
-</view>

@@ -1,8 +1,0 @@
-{
-    "disableScroll": true,
-    "usingComponents": {
-        "myLoading": "../../../../components/globalLoad/globalLoad",
-        "navbar": "/components/navbar/navbar",
-        "c-img": "../../../../pages/components/indexImg/indexImg"
-    }
-}

@@ -1,6 +1,0 @@
-<import src="/pages/template/modules.wxml"></import>
-<view class="homeWrapper {{copyrightInfo.contentClassName}}">
-    <template is="modules" data="{{modules:modules,globaldata:globaldata}}"></template>
-</view>
-<include src="/pages/template/copyright.wxml"></include>
-<include src="/pages/template/floatLayer.wxml"></include>

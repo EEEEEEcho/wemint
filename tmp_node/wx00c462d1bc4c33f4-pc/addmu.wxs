@@ -1,8 +1,0 @@
-var filters = ({
-    toFix: (function(value) {
-        return (value.toFixed(0))
-    }),
-});
-module.exports = ({
-    toFix: filters.toFix,
-});

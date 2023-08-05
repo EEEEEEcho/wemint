@@ -1,5 +1,0 @@
-<view class="loadingLayout" wx:if="{{isShow}}">
-    <view class="loadingBg">
-        <view class="loading"></view>
-    </view>
-</view>

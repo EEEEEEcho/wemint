@@ -1,9 +1,0 @@
-// \pages/search/search onLoad Data Flow
-digraph {
-	"43c94ef52a864083a7312fdf1851fdf5" [label="FunctionCall,
-function name -> onLoad,
-param -> " color=blue]
-	"9c37bc9de9ea4978a0e335564477adb7" [label="ConditionalExpression,
- conditional list -> t.setData" color=blue]
-	"43c94ef52a864083a7312fdf1851fdf5" -> "9c37bc9de9ea4978a0e335564477adb7"
-}

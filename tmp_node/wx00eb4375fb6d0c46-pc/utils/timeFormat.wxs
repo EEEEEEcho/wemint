@@ -1,8 +1,0 @@
-function format(ts, type) {
-    var d = getDate(ts);
-    if (type) {
-        return ([d.getFullYear(), d.getMonth() + 1, d.getDate()].join('-'))
-    };
-    return ([d.getFullYear(), d.getMonth() + 1, d.getDate()].join('-') + ' ' + [d.getHours(), d.getMinutes(), d.getSeconds()].join(':'))
-};
-module.exports.format = format;

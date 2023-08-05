@@ -1,8 +1,0 @@
-<view class="mask">
-    <view class="customer_service">
-        <button class="weixink" openType="contact">联系客服</button>
-        <button bindtap="calling" type="default">拨打座机</button>
-        <button bindtap="calling1" type="default">拨打电话</button>
-        <view bindtouchend="touchEnd" class="cancels">取消</view>
-    </view>
-</view>
