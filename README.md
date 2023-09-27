@@ -2,6 +2,8 @@
 ASE 2023 paper #554 submission
 ## Prerequisites
 
+**Our Github https://github.com/EEEEEEcho/wemint/**
+
 **Install requirements for `wemint` first.**
 
 ```bash
